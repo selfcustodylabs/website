@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: AGC Basics
-slug: /air-gapped-computer/basics/
+slug: /air-gapped-computer
 tags: [air-gapped, computer, AGC, seedsigner, seed, wallet]
 ---
 

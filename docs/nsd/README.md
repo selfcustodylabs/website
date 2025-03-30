@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Nostr Signing Device (NSD)
-slug: /nostr-signing-device/basics
+slug: /nostr-signing-device
 tags: [nostr, nsd, signing device]
 ---
 

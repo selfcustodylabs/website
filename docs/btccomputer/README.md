@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Bitcoin Computer Basics
-slug: /bitcoin-computer/basics/
+title: Bitcoin Computer
+slug: /bitcoin-computer/
 tags: [bitcoin, computer, malware]
 ---
 

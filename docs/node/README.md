@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: What is a Bitcoin Node
-slug: /bitcoin-node/what-is
+slug: /bitcoin-node/
 tags: [bitcoin node, self custody, wallet]
 ---
 
