@@ -84,6 +84,12 @@ const config = {
             label: 'DIY Seed 🎲',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'tutorialBitcoinNode',
+            position: 'left',
+            label: 'Bitcoin Node',
+          },
+          {
             label: 'Devices',
             type: 'dropdown',
             position: 'left',
