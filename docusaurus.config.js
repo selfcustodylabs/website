@@ -95,17 +95,17 @@ const config = {
             position: 'left',
             items: [
               {
-                to: '/docs/bitcoin-computer/basics/', //this is a slug
+                to: '/docs/bitcoin-computer', //this is a slug
                 sidebarId: 'tutorialBitcoinComputer',
                 label: 'Bitcoin Computer',
               },
               {
-                to: '/docs/air-gapped-computer/basics/', //this is a slug
+                to: '/docs/air-gapped-computer', //this is a slug
                 sidebarId: 'tutorialAirgappedComputer',
                 label: 'Air-Gapped Computer',
               },
               {
-                to: '/docs/nostr-signing-device/basics/', //this is a slug
+                to: '/docs/nostr-signing-device', //this is a slug
                 sidebarId: 'tutorialNostrSigningDevice',
                 label: 'Nostr Signing Device',
               },
@@ -116,6 +116,11 @@ const config = {
             sidebarId: 'tutorialLibreboot',
             position: 'left',
             label: 'Libreboot',
+          },
+          {
+            to: 'books',
+            position: 'left',
+            label: 'Books',
           },
           {
             label: 'Resources',
@@ -164,6 +169,27 @@ const config = {
                 label: 'Libreboot',
                 to: '/docs/libreboot',
               },
+              {
+                label: 'Bitcoin Node',
+                to: '/docs/bitcoin-node',
+              },
+            ],
+          },
+          {
+            title: 'Devices',
+            items: [
+              {
+                label: 'Bitcoin computer',
+                href: '/docs/bitcoin-computer',
+              },
+              {
+                label: 'Air-gapped computer',
+                href: '/docs/air-gapped-computer',
+              },
+              {
+                label: 'Nostr Signing Device',
+                href: '/docs/nostr-signing-device',
+              }
             ],
           },
           {
@@ -177,11 +203,6 @@ const config = {
                 label: 'Keybase',
                 href: 'https://keybase.io/btcselfcustody',
               },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
               {
                 label: 'Orange Pill App',
                 href: 'https://orangepill.app.link/btcselfcustody',
