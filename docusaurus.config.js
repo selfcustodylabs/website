@@ -178,7 +178,7 @@ const config = {
               },
               {
                 label: 'Libreboot',
-                to: '/docs/libreboot BIOS',
+                to: '/docs/libreboot',
               },
               {
                 label: 'Bitcoin Node',
