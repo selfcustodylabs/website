@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} personal website`}
-      description="This is the personal website of Dr Self Custody, in the landing page I describe my role and skills"
+      description="This is the personal website of Self Custody Dude, in the landing page I describe my role and skills"
     >
       <HomepageHeader />
 
