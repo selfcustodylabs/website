@@ -66,7 +66,7 @@ export default function HomepageHeader() {
             }}
           >
             <img
-              alt={"Dr. Self Custody"}
+              alt={"Self Custody Dude"}
               src={useBaseUrl("/img/logo.svg")}
               style={{
                 borderRadius: "50%",
@@ -120,7 +120,7 @@ export default function HomepageHeader() {
             <h2>
               Guides made easy for becoming a self sovereign
             </h2>
-              <h3>Dr. Self Custody <br/> The University of Satoshi</h3>
+              <h3>Self Custody Dude <br/> The University of Satoshi</h3>
 
               <p>
                 I specialize in simplifying complex concepts and making them easy to understand — something I realized a bit late, but better late than never, right?
