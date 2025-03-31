@@ -5,7 +5,7 @@ slug: /libreboot/
 tags: [libreboot, open source, bios]
 ---
 
-# Libreboot
+# Libreboot BIOS
 
 ## Why Libreboot?
 

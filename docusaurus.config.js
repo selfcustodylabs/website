@@ -79,9 +79,26 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSeed',
+            sidebarId: 'tutorialBasics',
             position: 'left',
-            label: 'DIY Seed 🎲',
+            label: 'Basics',
+          },
+          {
+            label: 'Guides',
+            type: 'dropdown',
+            position: 'left',
+            items: [
+              {
+                to: '/docs/seed', //this is a slug
+                sidebarId: 'tutorialSeed',
+                label: 'DIY Seed 🎲',
+              },
+              {
+                to: '/docs/libreboot', //this is a slug
+                sidebarId: 'tutorialLibreboot',
+                label: 'Libreboot BIOS',
+              },
+            ],
           },
           {
             type: 'docSidebar',
@@ -110,12 +127,6 @@ const config = {
                 label: 'Nostr Signing Device',
               },
             ],
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialLibreboot',
-            position: 'left',
-            label: 'Libreboot',
           },
           {
             to: 'books',
@@ -159,7 +170,7 @@ const config = {
         //style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Guides',
             items: [
               {
                 label: 'DIY Seed',
@@ -167,7 +178,7 @@ const config = {
               },
               {
                 label: 'Libreboot',
-                to: '/docs/libreboot',
+                to: '/docs/libreboot BIOS',
               },
               {
                 label: 'Bitcoin Node',
