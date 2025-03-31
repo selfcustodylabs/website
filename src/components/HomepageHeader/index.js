@@ -1,6 +1,8 @@
 import Grid from "@mui/material/Grid";
 import clsx from "clsx";
+import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from "@mui/icons-material/GitHub";
+import XIcon from '@mui/icons-material/X';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Container } from "@mui/material";
 import Link from "@docusaurus/Link";
@@ -128,16 +130,23 @@ export default function HomepageHeader() {
                 I'm also a naturally curious person who loves diving deep down the rabbit hole, documenting my findings, and sharing my research and knowledge with a global audience.
               </p>
 
-              <p>
-              📬 <b>btcselfcustody@proton.me</b>
-              </p>
-
               <Grid
               container
               justifyContent="center"
               alignItems="center"
               style={{ paddingBottom: 20 }}
             >
+
+              <Grid item>
+                <Link
+                  className="button"
+                  href="mailto:btcselfcustody@proton.me"
+                  style={{ padding: "1rem" }}
+                >
+                  <EmailIcon fontSize={"large"} />
+                </Link>
+              </Grid>
+
               <Grid item>
                 <Link
                   className="button"
@@ -145,6 +154,16 @@ export default function HomepageHeader() {
                   style={{ padding: "1rem" }}
                 >
                   <GitHubIcon fontSize={"large"} />
+                </Link>
+              </Grid>
+
+              <Grid item>
+                <Link
+                  className="button"
+                  to="https://x.com/btcselfcustody"
+                  style={{ padding: "1rem" }}
+                >
+                  <XIcon fontSize={"large"} />
                 </Link>
               </Grid>
 
