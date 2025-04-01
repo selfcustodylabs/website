@@ -94,6 +94,11 @@ const config = {
                 label: 'DIY Seed 🎲',
               },
               {
+                to: '/docs/passphrase', //this is a slug
+                sidebarId: 'tutorialPassphrase',
+                label: 'DIY Passphrase 🎲',
+              },
+              {
                 to: '/docs/libreboot', //this is a slug
                 sidebarId: 'tutorialLibreboot',
                 label: 'Libreboot BIOS',

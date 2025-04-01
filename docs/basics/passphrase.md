@@ -27,3 +27,12 @@ Adding a passphrase to your seed offers strong security benefits, especially if 
 - **Potential for Mistakes** – Even a small typo creates an entirely new wallet, making it easy to lock yourself out.
 - **Not All Wallets Support It** – Some hardware and software wallets don’t support passphrases, limiting compatibility.
 - **Social Engineering Risk** – If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
+
+
+## Create your Passphrase
+
+If you aim to use a passphrase for your Bitcoin seed phrase, I highly recommend to create your own one generating a true entropy
+
+:::tip DIY Passphrase
+This the guide [link](/docs/passphrase)
+:::
