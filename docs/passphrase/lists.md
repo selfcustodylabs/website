@@ -31,27 +31,3 @@ The final result is a 7,776-word list suitable for dice-generated passphrases. O
 The security of passphrases generated with this list is the same as those made with Diceware—the difference is in usability, not security. For most cases, EFF recommend generating a **six word passphrase**, which provides 77 bits of entropy (a standard way to measure password strength). Each additional word increases security by 12.9 bits, making the passphrase exponentially harder to crack. Adding one extra bit of entropy doubles the number of guesses required to break the passphrase, making brute-force attacks significantly more difficult.
 
 Now you are ready to go to next section and create your seed passphrase by rolling the dice.
-
-
-
-
-### **2. Generate the Passphrase Securely**
-- Use **physical dice** (five six-sided dice) and roll for each word.  
-- You can use a tool like `diceware` in Linux, but physical dice ensure **no digital footprint**.  
-- If using software, ensure it’s **offline and open-source** (e.g., `passphrase.py` with verified code).  
-
-### **3. Store the Passphrase Safely**
-Since this is your **main vault**, you should store the passphrase securely:  
-- **Write it down** on high-quality paper, laminated or stored in a fireproof safe.  
-- **Backup a copy** in a secure location (e.g., a bank deposit box or a second fireproof safe).  
-- **Do NOT store it digitally**—even encrypted files can be compromised.  
-
-### **4. Test Memorability**
-- Try to memorize it gradually by writing it down multiple times.  
-- If necessary, use a **mnemonic technique** (e.g., forming a mental story using the words).  
-
-### **5. Use It Only When Necessary**
-- Since this is a **rare-use vault**, avoid frequent access to reduce the risk of exposure.  
-- Consider using a **separate, lower-security passphrase** for frequent use wallets and only move funds to/from the vault occasionally.  
-
-Would you like a script or printable template to help with generating and writing down the passphrase securely?
