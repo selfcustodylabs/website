@@ -33,5 +33,5 @@ In a sense, your seed phrase becomes your wallet’s master key. It’s also far
 If you feel to go deep down the Seed Phrase rabbit hole, I highly recommend to create your own seed phrase generating a true entropy
 
 :::tip DIY Seed
-This the guide link: https://btcselfcustody.io/docs/seed
+This the guide [link](/docs/seed)
 :::
