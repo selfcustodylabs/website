@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Bitcoin Self Custody",
+  title: "BTC Self Custody",
   tagline: "Guide Writer| The University of Satoshi",
   favicon: "img/logo.svg",
 
