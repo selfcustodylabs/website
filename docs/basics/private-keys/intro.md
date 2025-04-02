@@ -1,13 +1,15 @@
 ---
-sidebar_position: 3
-title: Private Keys
-slug: /basics/private-keys
-tags: [self custody, private keys]
+sidebar_position: 1
+title: Introduction
+slug: /basics/private-keys/intro
+tags: [private keys]
 ---
 
 # Private Keys
 
 One of the key components in the Self custody world is the private key. But what exactly is a private key, and why is it so important?
+
+![](/img/basics/diagram.png)
 
 
 ## What is a Private Key?
@@ -29,4 +31,4 @@ The private key signs transactions, confirming your ownership of the Bitcoin you
 
 Storing private keys securely is tricky. If stored online, they can be stolen. If kept offline, they could be lost or damaged. This is why managing private keys can be difficult for many users.
 
-Here is where it come the Seed Phrase, that you can read in the next page.
+This is where the Seed Phrase comes in. We'll explore this in more detail, starting with the private key and gradually working our way through how the seed phrase helps improve security.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: Seed Phrase
 slug: /basics/seed-phrase
 tags: [self custody, seed phrase]
@@ -8,6 +8,7 @@ tags: [self custody, seed phrase]
 # Seed Phrase
 
 When it comes to securing your Bitcoin, the seed phrase is one of the most important tools you can use. But what exactly is a seed phrase, and why is it so essential for Bitcoin security?
+
 
 ## What is a Seed Phrase?
 
@@ -34,4 +35,10 @@ If you feel to go deep down the Seed Phrase rabbit hole, I highly recommend to c
 
 :::tip DIY Seed
 This the guide [link](/docs/seed)
+:::
+
+Understanding how private keys are generated from your seed
+
+:::tip Private Keys 
+This the guide [link](/docs/private-keys)
 :::
