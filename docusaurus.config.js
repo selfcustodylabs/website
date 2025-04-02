@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "BTC Self Custody",
   tagline: "Guide Writer| The University of Satoshi",
-  favicon: "img/logo.svg",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://btcselfcustody.io",
