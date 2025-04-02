@@ -40,5 +40,5 @@ This the guide [link](/docs/seed)
 Understanding how private keys are generated from your seed
 
 :::tip Private Keys 
-This the guide [link](/docs/private-keys)
+This the guide [link](/docs/category/private-keys)
 :::
