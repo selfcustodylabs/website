@@ -1,0 +1,109 @@
+---
+sidebar_position: 5
+title: Derivation Path
+slug: /basics/private-keys/derivation-path
+tags: [private keys, derivation path, bip39, seed]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Derivation Path
+
+A derivation path determines how your private keys are derived from your seed phrase and which addresses are generated from those keys.
+
+
+## The BIP32 Standard
+
+The BIP32 (Bitcoin Improvement Proposal) standard defines how hierarchical deterministic (HD) wallets work. HD wallets use a tree-like structure where every branch can produce a new keypair (private and public key). This means you only need to back up the seed phrase, and the wallet can regenerate all keys and addresses from that phrase.
+
+
+## Anatomy of a Derivation Path
+
+A typical derivation path looks like this:
+
+```text
+m / 44' / 0' / 0' / 0 / 0
+```
+
+Here’s what each part means:
+
+- `m` - The master node (your seed phrase). This is the root of the tree.
+- `44'` - The purpose or protocol. The apostrophe ('), known as the hardened separator, indicates that these keys are hardened for security.
+- `0'` - The coin type. **For Bitcoin, this is always 0** (but for other cryptocurrencies, it would be a different number).
+- `0'` - The account. A wallet can have multiple accounts, each with its own address.
+- `0` - The change type (0 for external addresses, 1 for internal addresses like change).
+- `0` - The address index. This is used to generate a new address each time.
+
+
+## Common Derivation Paths
+
+Here are some of the most common derivation paths used in Bitcoin wallets:
+
+<Tabs queryString="derivation-path">
+  <TabItem value="bip44" label="BIP44">
+    #### BIP-44 (Universal Path for Multiple Coins)
+    BIP-44 is the most widely used standard for creating wallets that manage multiple cryptocurrencies. It’s designed to support multi-asset wallets and has a clear, structured path for generating different addresses.
+
+    Standard Path:
+
+    ```text
+    m / 44' / 0' / 0' / 0 / 0
+    ```
+    - `44'`: Indicates the wallet follows BIP-44 for multi-asset support.
+    - `0'`: This specifies the Bitcoin coin type.
+    - `0'`: Refers to the first account in the wallet.
+    - `0`: The external addresses (i.e., the ones used to receive funds).
+    - `0`: The first address in the external address list.
+
+    Addresses starts with `1`:
+
+    ```text
+    137oszRjc8tdUVWr5nSp6fzSND938PStMZ
+    ```
+  </TabItem>
+  <TabItem value="bip49" label="BIP49">
+    #### BIP-49 (Pay-to-Script-Hash with SegWit)
+
+    BIP-49 defines a path for creating P2SH (Pay-to-Script-Hash) addresses, a type of Bitcoin address that begins with 3. This path is used for SegWit transactions, improving transaction efficiency and lowering fees.
+
+    Standard Path:
+
+    ```text
+    m / 49' / 0' / 0' / 0 / 0
+    ```
+    - `49'`: Indicates SegWit addresses that start with 3 (P2SH).
+    - `0'`: Specifies Bitcoin as the coin type.
+    - `0'`: Refers to the first account.
+    - `0`: External addresses.
+    - `0`: The first address for receiving.
+
+    Addresses starts with `3`:
+
+    ```text
+    33S43b6qmVHVTjwp75M7XoTTPEvKVh8zqH
+    ```
+  </TabItem>
+  <TabItem value="bip84" label="BIP84">
+    #### BIP-84 (Native SegWit with Bech32)
+
+    BIP-84 is used to generate native SegWit addresses, which start with bc1q and are more efficient than older types of Bitcoin addresses. These addresses have a lower transaction fee and are fully compatible with the SegWit protocol.
+
+    Standard Path:
+
+    ```text
+    m / 84' / 0' / 0' / 0 / 0
+    ```
+    - `84'`: Specifies **native SegWit** addresses (starting with bc1q).
+    - `0'`: The coin type for Bitcoin.
+    - `0'`: The first account.
+    - `0`: External addresses.
+    - `0`: The first address.
+
+    Addresses starts with `bc1`:
+
+    ```text
+    bc1q6khgephuq2hyvrn49zrvsxztmtjg4ze7sxkpp4
+    ```
+  </TabItem>
+</Tabs>
