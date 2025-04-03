@@ -2,6 +2,7 @@
     "label": "Seed & Private Keys",
     "position": 4,
     "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "/basics/private-keys"
   }
 }
