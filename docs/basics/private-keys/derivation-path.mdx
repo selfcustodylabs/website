@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Derivation Path
 slug: /basics/private-keys/derivation-path
 tags: [private keys, derivation path, bip39, seed]
@@ -104,6 +104,28 @@ Here are some of the most common derivation paths used in Bitcoin wallets:
 
     ```text
     bc1q6khgephuq2hyvrn49zrvsxztmtjg4ze7sxkpp4
+    ```
+  </TabItem>
+  <TabItem value="bip86" label="BIP86">
+    #### BIP-86 (Taproot with Bech32m)
+
+    BIP-86 is used to generate Taproot addresses, which start with `bc1p`. These addresses improve privacy and efficiency by leveraging Schnorr signatures and Merkelized Abstract Syntax Trees (MAST).
+
+    Standard Path:
+
+    ```text
+    m / 86' / 0' / 0' / 0 / 0
+    ```
+    - `86'`: Specifies **Taproot** addresses (starting with bc1p).
+    - `0'`: The coin type for Bitcoin.
+    - `0'`: The first account.
+    - `0`: External addresses.
+    - `0`: The first address.
+
+    Addresses start with `bc1p`:
+
+    ```text
+    bc1ps3yjzpnxeg9yx43f9zmrl9njhvlwh4pm5peuu5ucqqp7f4362cvqeesncf
     ```
   </TabItem>
 </Tabs>

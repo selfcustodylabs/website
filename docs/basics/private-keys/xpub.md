@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: Extended Public Key (XPUB)
 slug: /basics/private-keys/xpub
 tags: [private keys, xpub, bip39, seed]

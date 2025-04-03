@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
 title: Passphrase
-slug: /basics/seed-passphrase
-tags: [self custody, seed phrase, passphrase]
+slug: /basics/private-keys/passphrase
+tags: [private keys, seed, passphrase]
 ---
 
 # Passphrase

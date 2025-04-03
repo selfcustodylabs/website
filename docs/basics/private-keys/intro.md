@@ -7,7 +7,11 @@ tags: [private keys]
 
 # Private Keys
 
-One of the key components in the Self custody world is the private key. But what exactly is a private key, and why is it so important?
+:::warning
+Private keys are essential because they give you full control over your funds, and losing or exposing them can result in loss of access or theft. I recommend following this section step by step, as it's a foundational concept, and doing so will give you a much clearer understanding.
+:::
+
+Now, take a look at this image before and while you read each section.
 
 ![](/img/basics/diagram.png)
 
