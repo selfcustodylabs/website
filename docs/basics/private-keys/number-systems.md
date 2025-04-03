@@ -7,7 +7,11 @@ tags: [private keys]
 
 # Number Systems
 
-Before diving into Bitcoin keys, it’s important to understand how different number systems work. If you’re already familiar with binary, decimal, and hexadecimal, feel free to skip ahead.
+Before diving into Bitcoin private keys, it’s important to understand how different number systems work.
+
+:::note
+If you’re already familiar with binary, decimal, and hexadecimal, feel free to skip ahead.
+:::
 
 ### Decimal (Base 10):
 

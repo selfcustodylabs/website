@@ -7,7 +7,7 @@ tags: [passphrase, self custody, entropy]
 
 # DIY Bitcoin Passphrase 🎲🎲
 
-In our [basics](/docs/basics/passphrase.md) section, we covered the fundamentals of passphrases. Now, let's dive into how to create a secure and reliable passphrase for your Bitcoin seed.
+In our [basics](/docs/basics/private-keys/passphrase) section, we covered the fundamentals of passphrases. Now, let's dive into how to create a secure and reliable passphrase for your Bitcoin seed.
 
 
 ## Why Random Passphrases Matter
