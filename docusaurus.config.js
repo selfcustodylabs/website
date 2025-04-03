@@ -106,16 +106,15 @@ const config = {
             ],
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialBitcoinNode',
-            position: 'left',
-            label: 'Bitcoin Node',
-          },
-          {
-            label: 'Devices',
+            label: 'Bitcoin Devices',
             type: 'dropdown',
             position: 'left',
             items: [
+              {
+                to: '/docs/bitcoin-node', //this is a slug
+                sidebarId: 'tutorialBitcoinNode',
+                label: 'Bitcoin Node',
+              },
               {
                 to: '/docs/bitcoin-computer', //this is a slug
                 sidebarId: 'tutorialBitcoinComputer',
@@ -134,9 +133,19 @@ const config = {
             ],
           },
           {
-            to: 'books',
+            label: 'Education',
+            type: 'dropdown',
             position: 'left',
-            label: 'Books',
+            items: [
+              {
+                to: 'books',
+                label: 'Books',
+              },
+              {
+                to: 'podcasts',
+                label: 'Podcasts',
+              },
+            ],
           },
           {
             label: 'Resources',
