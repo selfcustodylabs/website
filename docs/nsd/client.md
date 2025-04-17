@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: Connect to a Nostr Client
-slug: /nostr-signing-device/connect-t0-client
+slug: /nostr-signing-device/connect-to-client
 tags: [nostr, nsd, signing device, client]
 ---
 

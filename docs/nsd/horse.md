@@ -42,7 +42,7 @@ npm run build
 - Open Chromium.
 - Type `chrome://extensions/` in the address bar and press Enter.
 - Enable `Developer mode` (toggle in the top right corner).
-- Click L`oad unpacked` (top left).
+- Click `Load unpacked` (top left).
 - Select the `horse/extension` folder.
 
 Once installed, the Horse extension should appear among your extensions.
