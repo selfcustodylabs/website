@@ -7,6 +7,8 @@ tags: [libreboot, open source, bios]
 
 # Libreboot BIOS
 
+![](/img/libreboot/libreboot.png)
+
 ## Why Libreboot?
 
 If you're running a Bitcoin focused laptop, security and privacy should be top priorities. Libreboot helps by:
