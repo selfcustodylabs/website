@@ -12,8 +12,7 @@ To build and install Flashprog, follow these steps
 Into `~/lbmk` directory, execute the following command to update trees by installing Flashprog directory:
 
 ```bash
-./update trees -b flashprog
-
+./mk -b flashprog
 ```
 Navigate into the directory and install Flashprog
 
