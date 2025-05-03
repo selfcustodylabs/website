@@ -132,7 +132,7 @@ If the hashes match, you should see something like this:
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr new_dump.bin
+rm -fr new_dump.bin
 ```
 
 Now you can reboot your laptop with the updated bios!
