@@ -54,8 +54,8 @@ cd lbmk
 Download the necessary dependencies. Depending on your distribution, choose the appropriate command:
 
 ```bash
-sudo ./build dependencies arch
-sudo ./build dependencies ubuntu
-sudo ./build dependencies debian
-sudo ./build dependencies fedora
+sudo ./mk dependencies arch
+sudo ./mk dependencies ubuntu
+sudo ./mk dependencies debian
+sudo ./mk dependencies fedora
 ```

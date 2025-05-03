@@ -10,7 +10,7 @@ tags: [libreboot, update, rom, bios]
 Generate the roms list
 
 ```bash
-./build roms list
+./mk -b coreboot list
 ```
 
 Take note of your laptop model and BIOS chip (e.g., `x230_12mb` or `t430_12mb` or `t480s_vfsp_16mb`).
@@ -24,7 +24,7 @@ sudo dmidecode | grep ROM
 Build your ROM (this process may take some time):
 
 ```bash
-./build roms <your_laptop_model>
+./mk -b coreboot <your_laptop_model>
 ```
 
 Once the ROM has been compiled, navigate to the directory:
@@ -37,5 +37,5 @@ You'll find a comprehensive list of BIOS options available for flashing into the
 As example, select SEABIOS and copy it to a easily accessible location:
 
 ```bash
-cp seabios_<your_laptop_model>_libgfxinit_corebootfb.rom /home/neo/libreboot
+cp seabios_<your_laptop_model>_libgfxinit_corebootfb.rom /home/$USER
 ```
