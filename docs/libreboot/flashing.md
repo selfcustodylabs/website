@@ -90,7 +90,7 @@ If the hashes match, you should see something like this:
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr factory_top2.bin factory_top3.bin
+rm -fr factory_top2.bin factory_top3.bin
 ```
 
 ### factory_bottom.bin
@@ -118,7 +118,7 @@ If the hashes match, you should see something like this:
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr factory_bottom2.bin factory_bottom3.bin
+rm -fr factory_bottom2.bin factory_bottom3.bin
 ```
 
 ## Write the Rom to the Chip
@@ -153,7 +153,7 @@ If the hashes match, you should see something like this:
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr flashed_top.bin
+rm -fr flashed_top.bin
 ```
 
 ### libreboot_bottom.rom
@@ -184,7 +184,7 @@ If the hashes match, you should see something like this:
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr flashed_bottom.bin
+rm -fr flashed_bottom.bin
 ```
 
 If everything went well, simply restart your laptop before putting it back together to ensure that Libreboot starts properly.
