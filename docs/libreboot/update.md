@@ -89,7 +89,7 @@ f79eac66c119da200460153019d3d2d5b2c22839  dump3.bin
 Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-sudo rm -fr dump2.bin dump3.bin
+rm -fr dump2.bin dump3.bin
 ```
 
 ## Write the Rom to the Chip
