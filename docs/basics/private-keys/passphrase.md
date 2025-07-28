@@ -13,7 +13,7 @@ Your wallet (collection of addresses) is derived from both the seed phrase and p
 
 For example, if you use the seed with the passphrase `Martha`, the attacker will only see Wallet A (which has no funds) when accessing the seed without the passphrase. However, you store your Bitcoin in `Wallet B`, which is only accessible with the passphrase Martha.
 
-![](/img/basics/passphrase.jpg)
+![](/img/basics/passphrase.png)
 
 You can also use `Wallet A` without a passphrase as a **decoy wallet**, storing a small amount of Bitcoin in it. If you're ever forced to reveal your wallet under pressure, you can show this decoy without exposing your main holdings. And remember, never share the full extent of your Bitcoin holdings with anyone, even those you trust, as accidental leaks can make you a target.
 
