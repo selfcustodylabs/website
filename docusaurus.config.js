@@ -89,6 +89,10 @@ const config = {
             position: 'left',
             items: [
               {
+                type: 'html',
+                value: '<b>Seed</b>',
+              },
+              {
                 to: '/docs/seed', //this is a slug
                 sidebarId: 'tutorialSeed',
                 label: 'DIY Seed 🎲',
@@ -99,9 +103,18 @@ const config = {
                 label: 'DIY Passphrase 🎲',
               },
               {
+                type: 'html',
+                value: '<b>BIOS</b>',
+              },
+              {
                 to: '/docs/libreboot', //this is a slug
                 sidebarId: 'tutorialLibreboot',
-                label: 'Libreboot BIOS',
+                label: 'Libreboot',
+              },
+              {
+                to: '/docs/coreboot', //this is a slug
+                sidebarId: 'tutorialCoreboot',
+                label: 'Coreboot',
               },
             ],
           },
