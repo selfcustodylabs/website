@@ -40,7 +40,7 @@ This does not back up the entire firmware, only the BIOS region. The Intel Manag
 Once everything looks correct, flash the prepared Coreboot BIOS region:
 
 ```bash
-sudo flashrom -p internal -w coreboot.rom --ifd -i bios
+sudo flashrom -p internal -w coreboot.rom --ifd -i bios -N
 ```
 
 ### Verify the Flashed Image
