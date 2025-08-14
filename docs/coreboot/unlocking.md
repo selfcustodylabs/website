@@ -236,7 +236,7 @@ These scripts are stored in RAM, which means we can edit them before waking—an
 Run:
 
 ```bash
-sudo chipsec_util uefi s3bootscript
+sudo python chipsec_util.py uefi s3bootscript
 ```
 
 This lists many entries. Look for one that writes to the HSFS register (`SPIBAR + 0x04`).
@@ -305,7 +305,7 @@ This clears bit 15 (`FLOCKDN`), leaving it unlocked after resume.
 Run:
 
 ```bash
-sudo chipsec_main -m tools.uefi.s3script_modify -a replace_op,mmio_wr,0xFED1F804,0x6009,0x2
+sudo python chipsec_main.py -m tools.uefi.s3script_modify -a replace_op,mmio_wr,0xFED1F804,0x6009,0x2
 ```
 
 <details>
