@@ -18,23 +18,41 @@ Always back up your current BIOS before writing Coreboot.
 We will use the flashrom utility to read and write the BIOS chip, and cbfstool to inspect Coreboot images.
 
 ```bash
-sudo apt install coreboot-utils
+sudo apt install flashrom coreboot-utils
 ```
 
-
-### Back Up Your Existing BIOS
+### Back Up Your Existing BIOS Region
 
 Before doing anything else, make a full backup of your current BIOS.
 This is your recovery point if you need to restore the original firmware.
 
 ```bash
-sudo flashrom -p internal -r flashed.rom --ifd -i bios
+sudo flashrom -p internal -r factory.rom --ifd -i bios
 ```
 
-This reads only the BIOS region from the internal programmer and saves it to flashed.rom.
+:::warning
+This does not back up the entire firmware, only the BIOS region. The Intel Management Engine and descriptor regions are excluded, so this is not a full recovery image.
+:::
 
 
-### Prepare the Coreboot BIOS Image
+### Flash the Coreboot BIOS
+
+Once everything looks correct, flash the prepared Coreboot BIOS region:
+
+```bash
+sudo flashrom -p internal -w coreboot.rom --ifd -i bios
+```
+
+### Verify the Flashed Image
+
+After flashing, always re-read the chip and compare it against the file you wrote.
+This ensures the flash was successful and the chip contains exactly what you intended.
+
+Read back the flashed chip:
+
+```bash
+sudo flashrom -p internal -r flashed_bios.rom --ifd -i bios
+```
 
 Your compiled coreboot.rom contains more than just the BIOS region, so we must extract only the BIOS part to match the layout of the original firmware.
 
@@ -47,98 +65,49 @@ Here:
 - skip=5242880 skips the first 5 MB (non-BIOS regions such as Intel ME).
 - count=11534336 copies the remaining 11 MB, which is the BIOS region.
 
+### Quick Byte-for-Byte Comparison
 
-### Verify Before Flashing
-
-Compare file checksums:
-
-```bash
-sha1sum coreboot_bios.rom flashed.rom
-```
-
-Check the Coreboot File System (CBFS) contents:
+Check that the flashed BIOS region matches the extracted BIOS region:
 
 ```bash
-cbfstool coreboot_bios.rom print
-cbfstool flashed.rom print
+cmp -l coreboot_bios.rom flashed_bios.rom | head -n 20
 ```
 
-See the first 20 mismatched bytes (if any):
+If no differences appear, the BIOS region was flashed correctly.
 
-```bash
-cmp -l coreboot_bios.rom flashed.rom | head -n 20
-```
-
-Save CBFS listings to files and compare them:
-
-```bash
-cbfstool coreboot_bios.rom print > cbfs1.txt
-cbfstool flashed.rom print > cbfs2.txt
-diff -u cbfs1.txt cbfs2.txt
-```
-
-### Compare Build Information
+### Compare Build Information Inside CBFS
 
 Extract the `build_info` file from each image:
 
 ```bash
-cbfstool coreboot_bios.rom extract -n build_info -f build_info.rom
-cbfstool coreboot.rom extract -n build_info -f build_info.rom
-cbfstool flashed.rom extract -n build_info -f build_info_flashed.rom
+cbfstool coreboot_bios.rom extract -n build_info -f build_info_expected.rom
+cbfstool flashed_bios.rom extract -n build_info -f build_info_actual.rom
 ```
 
 Compare them:
 
 ```bash
-diff -u build_info.rom build_info_flashed.rom
+diff -u build_info_expected.rom build_info_actual.rom
 ```
 
-### Flash the New Coreboot BIOS
+If the output is empty, the `build_info` files match.
 
-Once everything looks correct, flash the prepared Coreboot BIOS region:
+### Check CBFS Contents
+
+Print the CBFS layout of the flashed BIOS:
 
 ```bash
-sudo flashrom -p internal -w coreboot_bios.rom --ifd -i bios
+cbfstool flashed_bios.rom print
 ```
 
-### Verify the Flashed Image
-
-After flashing, always re-read the chip and compare it against the file you wrote.
-This ensures the flash was successful and the chip contains exactly what you intended.
-
-Read back the flashed chip:
+Compare it with the intended Coreboot image:
 
 ```bash
-sudo flashrom -p internal -r flashed_after.rom --ifd -i bios
+cbfstool coreboot_bios.rom print > cbfs_expected.txt
+cbfstool flashed_bios.rom print > cbfs_actual.txt
+diff -u cbfs_expected.txt cbfs_actual.txt
 ```
 
-Check CBFS contents:
+### Conclusion
 
-```bash
-cbfstool flashed_after.rom print
-```
-
-Compare with the intended Coreboot image:
-
-```bash
-cmp -l coreboot_bios.rom flashed_after.rom | head -n 20
-```
-
-Optional — compare CBFS listings in detail:
-
-```bash
-cbfstool coreboot_bios.rom print > cbfs_final_expected.txt
-cbfstool flashed_after.rom print > cbfs_final_actual.txt
-diff -u cbfs_final_expected.txt cbfs_final_actual.txt
-```
-
-Optional — verify build_info after flashing:
-
-```bash
-cbfstool flashed_after.rom extract -n build_info -f build_info_after.rom
-diff -u build_info.rom build_info_after.rom
-```
-
-If all comparisons match, your new Coreboot firmware is flashed correctly.
-
-You can now reboot into Coreboot!
+If all comparisons match, your new Coreboot firmware has been flashed correctly and is ready to boot.
