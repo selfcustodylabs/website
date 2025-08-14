@@ -51,13 +51,14 @@ This ensures the flash was successful and the chip contains exactly what you int
 Read back the flashed chip:
 
 ```bash
-sudo flashrom -p internal -r flashed_bios.rom --ifd -i bios
+sudo flashrom -p internal -r flashed.rom --ifd -i bios
 ```
 
 Your compiled coreboot.rom contains more than just the BIOS region, so we must extract only the BIOS part to match the layout of the original firmware.
 
 ```bash
 dd if=coreboot.rom of=coreboot_bios.rom bs=1 skip=5242880 count=11534336
+dd if=flashed.rom of=flashed_bios.rom bs=1 skip=5242880 count=11534336
 ```
 
 Here:
@@ -77,11 +78,11 @@ If no differences appear, the BIOS region was flashed correctly.
 
 ### Compare Build Information Inside CBFS
 
-Extract the `build_info` file from each image:
+Extract the `build_info` file from each full rom image:
 
 ```bash
-cbfstool coreboot_bios.rom extract -n build_info -f build_info_expected.rom
-cbfstool flashed_bios.rom extract -n build_info -f build_info_actual.rom
+cbfstool coreboot.rom extract -n build_info -f build_info_expected.rom
+cbfstool flashed.rom extract -n build_info -f build_info_actual.rom
 ```
 
 Compare them:
@@ -94,17 +95,75 @@ If the output is empty, the `build_info` files match.
 
 ### Check CBFS Contents
 
-Print the CBFS layout of the flashed BIOS:
+Print the CBFS layout of the Coreboot BIOS:
 
 ```bash
-cbfstool flashed_bios.rom print
+cbfstool coreboot.rom print
 ```
+
+<details>
+<summary>Output</summary>
+<p>
+
+```text
+FMAP REGION: COREBOOT
+Name                           Offset     Type           Size   Comp
+cbfs_master_header             0x0        cbfs header        32 none
+cpu_microcode_blob.bin         0x80       microcode       26624 none
+fallback/romstage              0x68c0     stage           92312 none
+fallback/ramstage              0x1d1c0    stage          120593 LZMA (255636 decompressed)
+config                         0x3a940    raw              3332 LZMA (10602 decompressed)
+revision                       0x3b680    raw               774 none
+build_info                     0x3b9c0    raw               105 none
+fallback/dsdt.aml              0x3ba80    raw             14537 none
+vbt.bin                        0x3f380    raw              1409 LZMA (4459 decompressed)
+cmos_layout.bin                0x3f940    cmos_layout      2060 none
+fallback/postcar               0x40180    stage           23488 none
+fallback/payload               0x45dc0    simple elf     473556 none
+(empty)                        0xb97c0    null           202212 none
+bootblock                      0xeadc0    bootblock       20480 none
+```
+
+</p>
+</details>
+
+Print the CBFS layout of the Flashed BIOS:
+
+```bash
+cbfstool flashed.rom print
+```
+
+<details>
+<summary>Output</summary>
+<p>
+
+```text
+FMAP REGION: COREBOOT
+Name                           Offset     Type           Size   Comp
+cbfs_master_header             0x0        cbfs header        32 none
+cpu_microcode_blob.bin         0x80       microcode       26624 none
+fallback/romstage              0x68c0     stage           92312 none
+fallback/ramstage              0x1d1c0    stage          120593 LZMA (255636 decompressed)
+config                         0x3a940    raw              3332 LZMA (10602 decompressed)
+revision                       0x3b680    raw               774 none
+build_info                     0x3b9c0    raw               105 none
+fallback/dsdt.aml              0x3ba80    raw             14537 none
+vbt.bin                        0x3f380    raw              1409 LZMA (4459 decompressed)
+cmos_layout.bin                0x3f940    cmos_layout      2060 none
+fallback/postcar               0x40180    stage           23488 none
+fallback/payload               0x45dc0    simple elf     473556 none
+(empty)                        0xb97c0    null           202212 none
+bootblock                      0xeadc0    bootblock       20480 none
+```
+
+</p>
+</details>
 
 Compare it with the intended Coreboot image:
 
 ```bash
-cbfstool coreboot_bios.rom print > cbfs_expected.txt
-cbfstool flashed_bios.rom print > cbfs_actual.txt
+cbfstool coreboot.rom print > cbfs_expected.txt
+cbfstool flashed.rom print > cbfs_actual.txt
 diff -u cbfs_expected.txt cbfs_actual.txt
 ```
 
