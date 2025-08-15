@@ -1,0 +1,147 @@
+---
+sidebar_position: 7
+title: External Flashing
+slug: /coreboot/external-flashing/
+tags: [coreboot, chipsec, bios, external, flashing]
+---
+
+# External Flashing
+
+If something goes wrong during internal flashing, the only way to restore the stock BIOS (or flash a new image) is by using an external programmer. In fact, for most motherboards, external flashing is the only available method unless the board specifically supports internal flashing.
+
+## Detect the Chip
+
+Now, you need to detect the chip model using flashrom. To ensure accurate detection, follow these steps for the BIOS chip:
+
+- Based on your BIOS Chip type (`SOIC` or `WSON`) Connect the Raspberry Pico to your Pomona Clip (1st photo) or Pogo Pin Adapter (2nd photo) using Dupont cables, as showed in Libreboot guide.
+- Plug/Insert onto the BIOS chip firmly
+- Plug the Raspberry Pico into the laptop using a USB cable
+
+import Grid from '@mui/material/Grid';
+
+<Grid container spacing={2}>
+  <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'center' }}>
+    <img src="/img/libreboot/connection.jpg" alt="Connection Setup" style={{ width: '100%', maxWidth: '100%' }} />
+  </Grid>
+  
+  <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'center' }}>
+    <img src="/img/coreboot/connection.jpg" alt="Connection Clip" style={{ width: '100%', maxWidth: '100%' }} />
+  </Grid>
+</Grid>
+
+
+Execute the following command to detect the chip
+
+```bash
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M
+```
+
+If multiple chips are detected, verify whether the one you previously photographed or one closely resembling it is present. Subsequently, re-run the command, making sure to specify the name of the pertinent chip.
+
+```bash
+sudo flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
+```
+
+If the Raspberry Pico detects the chip, you may proceed by creating a backup.
+
+
+## Backup the Factory Bios
+
+:::note
+If you are coming from a unsuccessful internal flashing, you can skip this part as there is no point to dump a bios that does not work.
+:::
+
+To create a reliable backup of the BIOS chip(s), it's advisable to perform a triple dump of them
+
+```bash
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory.bin
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory2.bin
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory3.bin
+```
+
+Next, use `sha1sum` to compare the dumped BIOS images
+
+```bash
+sha1sum factory.bin factory.bin factory.bin
+```
+
+If the hashes match, you should see something like this:
+
+```bash
+6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory.bin
+6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory2.bin
+6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory3.bin
+```
+
+Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
+
+```bash
+rm -fr factory2.bin factory3.bin
+```
+
+## Flash the Coreboot BIOS
+
+Once everything looks correct:
+
+:::note
+Before writing the BIOS into the chip(s), ensure to remove the CMOS battery as a security precaution.
+:::
+
+Make sure the writing protection is disabled:
+
+```bash
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" --wp-disable
+```
+
+You will get the below output:
+
+```text
+Disabled hardware protection
+```
+
+Flash the prepared `coreboot.rom` image:
+
+```bash
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w coreboot.rom --ifd -i bios -N
+```
+
+You should likely get these logs:
+
+```text
+Using region: "bios"
+Reading ich decriptor... done.
+Erasing and writing flash chip... Erase/write done.
+Verifying flash... VERIFIED.
+```
+
+## Verify the Flashed Image
+
+After flashing, always re-read the chip and compare it against the file you wrote (`coreboot.rom`).
+This ensures the flash was successful and the chip contains exactly what you intended.
+
+To double-check, you can dump the newly flashed BIOS image
+
+```bash
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r flashed.bin
+```
+
+Next, use sha1sum to compare the dumped BIOS image with the original libreboot_top.rom file
+
+```bash
+sha1sum coreboot.rom flashed.bin
+```
+
+If the hashes match, you should see something like this:
+
+```bash
+42489cdfda9666177cd9abc1876f4dea258f7ab8  coreboot.rom
+42489cdfda9666177cd9abc1876f4dea258f7ab8  flashed.bin
+```
+
+Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
+
+```bash
+rm -fr flashed.bin
+```
+
+Your new Coreboot firmware has been flashed correctly and is ready to boot!
