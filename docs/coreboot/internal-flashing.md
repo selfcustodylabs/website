@@ -1,11 +1,11 @@
 ---
 sidebar_position: 6
-title: Flashing
-slug: /coreboot/flashing/
-tags: [coreboot, chipsec, bios, flashing]
+title: Internal Flashing
+slug: /coreboot/internal-flashing/
+tags: [coreboot, chipsec, bios, internal, flashing]
 ---
 
-# Flashing
+# Internal Flashing
 
 :::warning
 Flashing firmware always carries some risk.
@@ -43,7 +43,7 @@ Once everything looks correct, flash the prepared Coreboot BIOS region:
 sudo flashrom -p internal -w coreboot.rom --ifd -i bios -N
 ```
 
-### Verify the Flashed Image
+## Verify the Flashed Image
 
 After flashing, always re-read the chip and compare it against the file you wrote.
 This ensures the flash was successful and the chip contains exactly what you intended.
@@ -53,6 +53,12 @@ Read back the flashed chip:
 ```bash
 sudo flashrom -p internal -r flashed.rom --ifd -i bios
 ```
+
+You can now choose among 3 distinct verification methods:
+
+### 1. Quick Byte-for-Byte Comparison
+
+This method operates at the raw binary level and checks that the flashed BIOS region matches the extracted BIOS region.
 
 Your compiled coreboot.rom contains more than just the BIOS region, so we must extract only the BIOS part to match the layout of the original firmware.
 
@@ -66,9 +72,7 @@ Here:
 - skip=5242880 skips the first 5 MB (non-BIOS regions such as Intel ME).
 - count=11534336 copies the remaining 11 MB, which is the BIOS region.
 
-### Quick Byte-for-Byte Comparison
-
-Check that the flashed BIOS region matches the extracted BIOS region:
+Now perform the check:
 
 ```bash
 cmp -l coreboot_bios.rom flashed_bios.rom | head -n 20
@@ -76,7 +80,9 @@ cmp -l coreboot_bios.rom flashed_bios.rom | head -n 20
 
 If no differences appear, the BIOS region was flashed correctly.
 
-### Compare Build Information Inside CBFS
+### 2. Compare Build Information Inside CBFS
+
+This method operates at the specific metadata level.
 
 Extract the `build_info` file from each full rom image:
 
@@ -93,7 +99,9 @@ diff -u build_info_expected.rom build_info_actual.rom
 
 If the output is empty, the `build_info` files match.
 
-### Check CBFS Contents
+### 3. Check CBFS Contents
+
+This method operates at the filesystem content level.
 
 Print the CBFS layout of the Coreboot BIOS:
 

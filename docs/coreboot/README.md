@@ -26,4 +26,6 @@ Coreboot is a free and open-source replacement for traditional BIOS/UEFI. It ini
 
 Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (which sets up memory), then ramstage (which initializes the rest of the hardware). Finally, it launches the chosen payload. This structure makes the boot process faster, simpler, and easier to audit—perfect for anyone who values system integrity.
 
-![](/img/libreboot/t480s.jpg)
+
+
+![](/img/coreboot/t430s.jpg)
