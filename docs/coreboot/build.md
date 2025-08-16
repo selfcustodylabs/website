@@ -99,18 +99,21 @@ make crossgcc-riscv CPUS=$(nproc)      # build RISC-V toolchain
 - You can try building with your system’s compiler, but this often causes build errors. The Coreboot toolchain is strongly recommended.
 
 
-## Step 4: Configure the Build for your Motherboard
+## Step 4: Configure the Build
 
-We will now configure Coreboot for the Lenovo ThinkPad T430s.
-The configuration menu lets you choose the correct mainboard, ROM chip size, and payload.
+In this step, we configure Coreboot for your specific computer, in this example, the Lenovo ThinkPad T430s. Coreboot is highly modular, and the configuration determines how it initializes your hardware and what additional software (“payloads”) it will run after startup.
 
-Run the configuration menu:
+Run the interactive configuration menu:
 
 ```bash
 make menuconfig
 ```
 
-In the menu, set:
+This menu lets you select various options such as the motherboard, ROM chip size, and payload.
+
+### Motherboard
+
+Navigate in the menu:
 
 ```text
 Mainboard  --->  
@@ -124,9 +127,17 @@ Mainboard  --->
 Make sure the ROM chip size matches your actual hardware. Using the wrong size may result in a non-working firmware.
 :::
 
-Now select a payload. A payload is the small program Coreboot loads after initializing the hardware.
+### Payload
 
-We will use **SeaBIOS** in this example:
+A payload in Coreboot is a small program that Coreboot loads after it finishes initializing the hardware. Common payloads include:
+- **SeaBIOS**: provides a legacy BIOS environment to boot traditional operating systems.
+- **GRUB2**: a modern bootloader capable of booting Linux, Windows, and other systems, with more features than SeaBIOS.
+
+Next, select your preferred payload.
+
+#### SeaBIOS
+
+SeaBIOS provides a traditional BIOS interface, making it a simple choice for booting legacy operating systems or when you want a classic BIOS like experience.
 
 ```text
 Payload  --->
@@ -137,18 +148,93 @@ Payload  --->
 < Yes >
 ```
 
-(Optional) Save your configuration to a file:
+#### GRUB2
+
+GRUB2 is a modern, flexible bootloader that can boot Linux, Windows, and other systems. It is more powerful than SeaBIOS but requires some extra configuration.
+
+Install the required dependencies for building the GRUB2 payload:
+```bash
+sudo apt install automake autoconf autopoint libfreetype6-dev unifont fonts-unifont unifont-bin gawk
+```
+
+In the configuration menu:
+
+```text
+Payload  --->
+     Payload to add (GRUB2)
+     GRUB version (2.12)
+     Extra modules to include in GRUB image (NEW)
+  [*]Include GRUB2 runtime config file into ROM image (NEW)
+< Exit >
+< Exit >
+< Yes >
+```
+Add GRUB2 Extra Modules.
+
+Modules extend GRUB’s capabilities, for example supporting USB, LVM, encryption, or different filesystems. For a typical laptop, include:
+
+```text
+cryptodisk nativedisk ehci ohci usb usbms usbserial_pl2303 usbserial_ftdi usbserial_usbdebug jpeg all_video hashsum regexp linux part_msdos part_gpt lvm luks gcry_md5 gcry_sha1 gcry_sha256 gcry_sha512 gcry_rsa gcry_rijndael gcry_des search search_fs_file search_fs_uuid configfile probe
+```
+
+These modules ensure that GRUB can boot from internal disks, USB sticks, handle encrypted drives, and support multiple filesystems.
+
+Create a basic `grub.cfg` to define the boot behavior and include it in the “Include GRUB2 runtime config file into ROM image” option.
+
+<details>
+<summary>grub.cfg</summary>
+<p>
+
+```text
+# Coreboot GRUB2: auto-boot with ESC menu and user instructions
+
+set timeout=2
+set timeout_style=hidden
+set default=0
+
+# Show instructions
+echo "Press ESC to access the boot menu."
+echo "Otherwise, the system will boot from the hard drive automatically."
+
+### Primary entry: Boot internal disk ###
+menuentry "Boot first disk" {
+    echo "Booting from the hard drive..."
+    search --no-floppy --set=root --file /grub/grub.cfg
+    configfile /grub/grub.cfg
+}
+
+### Secondary entry: Boot from USB via ESC ###
+menuentry "Boot USB" {
+    search --no-floppy --removable --file /boot/grub/grub.cfg --set=root
+    configfile /grub/grub.cfg
+}
+```
+
+</p>
+</details>
+
+#### (Optional) Save your configuration to a file:
 
 ```bash
 make savedefconfig
 cat defconfig
 ```
 
-You should see something similar to:
+For SeaBIOS, your configuration might include:
 
 ```text
 CONFIG_VENDOR_LENOVO=y
 CONFIG_BOARD_LENOVO_T430S=y
+```
+
+For GRUB2, it might look like:
+
+```text
+CONFIG_VENDOR_LENOVO=y
+CONFIG_BOARD_LENOVO_T430S=y
+CONFIG_PAYLOAD_GRUB2=y
+CONFIG_GRUB2_EXTRA_MODULES="cryptodisk nativedisk ehci ohci usb usbms usbserial_pl2303 usbserial_ftdi usbserial_usbdebug jpeg all_video hashsum regexp linux part_msdos part_gpt lvm luks gcry_md5 gcry_sha1 gcry_sha256 gcry_sha512 gcry_rsa gcry_rijndael gcry_des search search_fs_file search_fs_uuid configfile probe"
+CONFIG_GRUB2_INCLUDE_RUNTIME_CONFIG_FILE=y
 ```
 
 :::note
