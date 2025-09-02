@@ -7,19 +7,15 @@ tags: [coreboot, chipsec, bios, internal, flashing]
 
 # Internal Flashing
 
-:::warning
 Flashing firmware always carries some risk.
-If something goes wrong, your device might not boot until you reflash it using an external programmer.
-Always back up your current BIOS before writing Coreboot.
+If something goes wrong, your device may fail to boot and will require recovery with an external programmer.
+Always make a full backup of your current BIOS before attempting to flash Coreboot.
+
+:::note
+Note that **internal flashing cannot be used to disable Intel ME**, because the ME region is locked and cannot be read or written from the host.
+If your goal is to neutralize or disable Intel ME, the only reliable method is to use an **external programmer** to dump, modify, and reflash the entire firmware image (see the External Flashing section).
 :::
 
-### Install Flashing Tools
-
-We will use the flashrom utility to read and write the BIOS chip, and cbfstool to inspect Coreboot images.
-
-```bash
-sudo apt install flashrom coreboot-utils
-```
 
 ### Back Up Your Existing BIOS Region
 
