@@ -19,7 +19,7 @@ External flashing is sometimes necessary instead of internal flashing. The main 
 Now, you need to detect the chip model using flashrom. To ensure accurate detection, follow these steps for the BIOS chip:
 
 - Based on your BIOS Chip type (`SOIC` or `WSON`) Connect the Raspberry Pico to your Pomona Clip (1st photo) or Pogo Pin Adapter (2nd photo) using Dupont cables, as showed in Libreboot guide.
-- Plug/Insert onto the BIOS chip firmly
+- Attach the clip firmly onto the BIOS chip, ensuring proper contact with all pins
 - Plug the Raspberry Pico into the laptop using a USB cable
 
 import Grid from '@mui/material/Grid';
@@ -41,10 +41,10 @@ Execute the following command to detect the chip
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M
 ```
 
-If multiple chips are detected, verify whether the one you previously photographed or one closely resembling it is present. Subsequently, re-run the command, making sure to specify the name of the pertinent chip.
+If multiple chips are detected, identify the correct BIOS chip based on prior photos or markings. Subsequently, re-run the command, making sure to specify the name of the pertinent chip.
 
 ```bash
-sudo flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
 ```
 
 If the Raspberry Pico detects the chip, you may proceed by creating a backup.
@@ -67,7 +67,7 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory
 Next, use `sha1sum` to compare the dumped BIOS images
 
 ```bash
-sha1sum factory.bin factory.bin factory.bin
+sha1sum factory.bin factory2.bin factory3.bin
 ```
 
 If the hashes match, you should see something like this:
@@ -586,6 +586,10 @@ rm -fr flashregion_1_bios.bin flashregion_2_intel_me.bin
 
 Use `dd` to extract the BIOS region from the built Coreboot ROM. Make sure to skip the offset noted from the factory BIOS output (0x500000 for the BIOS region):
 
+:::danger
+The offset (0x500000 in this example) must match the BIOS region start in your factory dump. This value can be different for other laptop models. Using the wrong offset will corrupt your firmware and can brick your laptop.
+:::
+
 ```bash
 dd if=coreboot.rom of=flashregion_1_bios_coreboot.bin bs=1 skip=$((0x500000))
 ```
@@ -611,7 +615,7 @@ The resulting final_coreboot_me_neutralized.rom is now ready for flashing.
 Once everything looks correct:
 
 :::note
-Before writing the BIOS into the chip(s), ensure to remove the CMOS battery as a security precaution.
+Before flashing the BIOS, remove the CMOS battery. Some laptops use CMOS/EC settings to protect the SPI chip, and removing the battery also adds a layer of safety.
 :::
 
 Make sure the writing protection is disabled:
