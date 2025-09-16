@@ -86,13 +86,6 @@ rm -fr factory2.bin factory3.bin
 
 ## Neutralize Intel ME
 
-You have two ways to disable Intel ME
-
-- **After Coreboot is already flashed (RECOMMENDED)**: This is the safer and easier method. You simply dump the BIOS from the SPI chip, neutralize Intel ME using me_cleaner, and then flash the modified ME region back externally.
-- **Before flashing Coreboot for the first time**: This method is more complex and requires extra caution. You need to extract the factory BIOS, modify the Intel ME region, and then combine it with your Coreboot image before flashing.
-
-### After Flashing Coreboot
-
 Check if the dumped image has the correct structure by using `ifdtool`:
 
 ```bash
@@ -396,7 +389,7 @@ Apply `me_cleaner`
 To neutralize Intel ME you can just use `me_cleaner` on it:
 
 ```bash
-python me_cleaner.py -S -O output.bin factory.bin
+python me_cleaner.py -S -O factory_me_neutralized.bin factory.bin
 ```
 
 You should get an output like the one below:
@@ -467,155 +460,45 @@ Done! Good luck!
 </details>
 
 
-### Before Flashing Coreboot
+## Flash the Neutralized Intel ME
 
-#### Step 1 – Neutralize Intel ME
-
-Apply `me_cleaner` to the factory BIOS dump (`factory.bi`n) and extract the neutralized Intel ME as a separate file:
+Now flash the full factory image with the neutralized Intel ME:
 
 ```bash
-python me_cleaner.py -S -M flashregion_2_intel_me_disabled.bin factory.bin
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w factory_me_neutralized.bin
 ```
 
-The output should look similar to this:
-
-<details>
-<summary>Output</summary>
-<p>
-
-```text
-Full image detected
-The ME/TXE region goes from 0x3000 to 0x500000
-Found FPT header at 0x3010
-Found 23 partition(s)
-Found FTPR header: FTPR partition spans from 0x180000 to 0x24a000
-ME/TXE firmware version 8.1.40.1416
-Public key match: Intel ME, firmware versions 7.x.x.x, 8.x.x.x
-The AltMeDisable bit is NOT SET
-Reading partitions list...
- ???? (0x000003c0 - 0x000000400, 0x00000040 total bytes): removed
- FOVD (0x00000400 - 0x000001000, 0x00000c00 total bytes): removed
- MDES (0x00001000 - 0x000002000, 0x00001000 total bytes): removed
- FCRS (0x00002000 - 0x000003000, 0x00001000 total bytes): removed
- EFFS (0x00003000 - 0x0000df000, 0x000dc000 total bytes): removed
- BIAL (NVRAM partition, no data, 0x0000add0 total bytes): nothing to remove
- BIEL (NVRAM partition, no data, 0x00003000 total bytes): nothing to remove
- BIIS (NVRAM partition, no data, 0x00036000 total bytes): nothing to remove
- NVCL (NVRAM partition, no data, 0x00010511 total bytes): nothing to remove
- NVCM (NVRAM partition, no data, 0x0000493f total bytes): nothing to remove
- NVCP (NVRAM partition, no data, 0x0000a553 total bytes): nothing to remove
- NVJC (NVRAM partition, no data, 0x00004000 total bytes): nothing to remove
- NVKR (NVRAM partition, no data, 0x0001257d total bytes): nothing to remove
- NVOS (NVRAM partition, no data, 0x00034af5 total bytes): nothing to remove
- NVSH (NVRAM partition, no data, 0x00007609 total bytes): nothing to remove
- NVTD (NVRAM partition, no data, 0x00001eac total bytes): nothing to remove
- PLDM (NVRAM partition, no data, 0x0000a000 total bytes): nothing to remove
- GLUT (0x000df000 - 0x0000e3000, 0x00004000 total bytes): removed
- LOCL (0x000e3000 - 0x0000e7000, 0x00004000 total bytes): removed
- WCOD (0x000e7000 - 0x000140000, 0x00059000 total bytes): removed
- MDMV (0x00140000 - 0x000180000, 0x00040000 total bytes): removed
- FTPR (0x00180000 - 0x00024a000, 0x000ca000 total bytes): NOT removed
- NFTP (0x0024a000 - 0x0004a4000, 0x0025a000 total bytes): removed
-Removing partition entries in FPT...
-Removing EFFS presence flag...
-Correcting checksum (0x2f)...
-Reading FTPR modules list...
- UPDATE           (LZMA   , 0x1cc507 - 0x1cc6c5       ): removed
- ROMP             (Huffman, fragmented data, ~2 KiB   ): NOT removed, essential
- BUP              (Huffman, fragmented data, ~56 KiB  ): NOT removed, essential
- KERNEL           (Huffman, fragmented data, ~135 KiB ): removed
- POLICY           (Huffman, fragmented data, ~91 KiB  ): removed
- HOSTCOMM         (LZMA   , 0x1cc6c5 - 0x1d349f       ): removed
- RSA              (LZMA   , 0x1d349f - 0x1d86f5       ): removed
- CLS              (LZMA   , 0x1d86f5 - 0x1dde8a       ): removed
- TDT              (LZMA   , 0x1dde8a - 0x1e4580       ): removed
- FTCS             (Huffman, fragmented data, ~18 KiB  ): removed
- ClsPriv          (LZMA   , 0x1e4580 - 0x1e4961       ): removed
- SESSMGR          (LZMA   , 0x1e4961 - 0x1f328b       ): removed
-The ME minimum size should be 1667072 bytes (0x197000 bytes)
-The ME region can be reduced up to:
- 00003000:00199fff me
-Setting the AltMeDisable bit in PCHSTRP10 to disable Intel ME...
-Extracting the ME image to "flasregion_2_intel_me_neutralized.bin"...
-Checking the FTPR RSA signature of the extracted ME image... VALID
-Checking the FTPR RSA signature... VALID
-Done! Good luck!
-```
-
-</p>
-</details>
-
-
-#### Step 2 – Split the factory BIOS into regions
-
-Use `ifdtool` to extract the different flash regions from `factory.bin`. These regions will later be recombined with the Coreboot BIOS and the neutralized ME:
+To double-check, you can dump the newly flashed image
 
 ```bash
-cd coreboot/util/ifdtool
-make
-./ifdtool -x factory.bin
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r flashed.bin
 ```
 
-Example output:
-
-```text
-File factory.bin is 16777216 bytes
-  Flash Region 0 (Flash Descriptor): 00000000 - 00000fff 
-  Flash Region 1 (BIOS): 00500000 - 00ffffff 
-  Flash Region 2 (Intel ME): 00003000 - 004fffff
-  Flash Region 3 (GbE): 00001000 - 00002fff 
-  Flash Region 4 (Platform Data): 00fff000 - 00000fff (unused)
-```
-
-Files created:
-
-```text
-flashregion_0_flashdescriptor.bin
-flashregion_1_bios.bin
-flashregion_2_intel_me.bin
-flashregion_3_gbe.bin
-```
-
-Since we will use the neutralized Intel ME and your Coreboot BIOS, remove the original BIOS and ME files:
+Next, use sha1sum to compare the dumped BIOS image with the original libreboot_bottom.rom file
 
 ```bash
-rm -fr flashregion_1_bios.bin flashregion_2_intel_me.bin
+sha1sum factory_me_neutralized.bin flashed.bin
 ```
 
-#### Step 3 – Extract the BIOS region from your Coreboot image
-
-Use `dd` to extract the BIOS region from the built Coreboot ROM. Make sure to skip the offset noted from the factory BIOS output (0x500000 for the BIOS region):
-
-:::danger
-The offset (0x500000 in this example) must match the BIOS region start in your factory dump. This value can be different for other laptop models. Using the wrong offset will corrupt your firmware and can brick your laptop.
-:::
+If the hashes match, you should see something like this:
 
 ```bash
-dd if=coreboot.rom of=flashregion_1_bios_coreboot.bin bs=1 skip=$((0x500000))
+4b9f06ccd2ce11dad757e337829a450a05df7929  factory_me_neutralized.bin
+4b9f06ccd2ce11dad757e337829a450a05df7929  flashed.bin
 ```
 
-#### Step 4 – Reassemble the final flash image
-
-Combine the flash descriptor, Coreboot BIOS region, neutralized Intel ME, and other regions to create the final image:
+Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
 
 ```bash
-cat flashregion_0_flashdescriptor.bin \
-    flashregion_1_bios_coreboot.bin \
-    flashregion_2_intel_me_neutralized.bin \
-    flashregion_3_gbe.bin \
-    > final_coreboot_me_neutralized.rom
-
+rm -fr flashed.bin
 ```
 
-The resulting final_coreboot_me_neutralized.rom is now ready for flashing.
+## Flash the Coreboot BIOS Region
 
-
-## Flash the Coreboot BIOS
-
-Once everything looks correct:
+Before flashing the BIOS, remove the CMOS battery. Some laptops use CMOS/EC settings to protect the SPI chip, and removing the battery also adds a layer of safety.
 
 :::note
-Before flashing the BIOS, remove the CMOS battery. Some laptops use CMOS/EC settings to protect the SPI chip, and removing the battery also adds a layer of safety.
+If you’ve already flashed Coreboot internally, you can skip this section as you’re all set and ready to go.
 :::
 
 Make sure the writing protection is disabled:
@@ -630,51 +513,13 @@ You will get the below output:
 Disabled hardware protection
 ```
 
-Flash the prepared `final_coreboot_me_neutralized.rom` image:
+Now flash ONLY the BIOS region from your Coreboot image by doing:
 
 ```bash
-sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w final_coreboot_me_neutralized.rom
+sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w coreboot.rom --ifd -i bios -N
 ```
 
-You should likely get these logs:
-
-```text
-Reading ich decriptor... done.
-Erasing and writing flash chip... Erase/write done.
-Verifying flash... VERIFIED.
-```
-
-## Verify the Flashed Image
-
-After flashing, always re-read the chip and compare it against the file you wrote (`coreboot.rom`).
-This ensures the flash was successful and the chip contains exactly what you intended.
-
-To double-check, you can dump the newly flashed BIOS image
-
-```bash
-sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r flashed.bin
-```
-
-Next, use sha1sum to compare the dumped BIOS image with the original `final_coreboot_me_neutralized.rom` file
-
-```bash
-sha1sum final_coreboot_me_neutralized.rom flashed.bin
-```
-
-If the hashes match, you should see something like this:
-
-```bash
-42489cdfda9666177cd9abc1876f4dea258f7ab8  final_coreboot_me_neutralized.rom
-42489cdfda9666177cd9abc1876f4dea258f7ab8  flashed.bin
-```
-
-Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
-
-```bash
-rm -fr flashed.bin
-```
-
-Your new Coreboot firmware has been flashed correctly and is ready to boot!
+Finally, [verify](/docs/coreboot/internal-flashing#verify-the-flashed-image) the flashed bios region.
 
 
 ## Verify Intel ME Neutralization
