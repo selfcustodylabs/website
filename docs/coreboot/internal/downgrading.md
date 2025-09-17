@@ -1,7 +1,7 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 title: Downgrading BIOS
-slug: /coreboot/downgrading-bios/
+slug: /coreboot/internal/downgrading-bios/
 tags: [coreboot, downgrading, bios]
 ---
 

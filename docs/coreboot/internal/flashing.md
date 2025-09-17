@@ -1,7 +1,7 @@
 ---
-sidebar_position: 6
-title: Internal Flashing
-slug: /coreboot/internal-flashing/
+sidebar_position: 3
+title: Flashing
+slug: /coreboot/internal/flashing
 tags: [coreboot, chipsec, bios, internal, flashing]
 ---
 

@@ -89,10 +89,6 @@ const config = {
             position: 'left',
             items: [
               {
-                type: 'html',
-                value: '<b>Seed</b>',
-              },
-              {
                 to: '/docs/seed', //this is a slug
                 sidebarId: 'tutorialSeed',
                 label: 'DIY Seed 🎲',
@@ -101,10 +97,6 @@ const config = {
                 to: '/docs/passphrase', //this is a slug
                 sidebarId: 'tutorialPassphrase',
                 label: 'DIY Passphrase 🎲',
-              },
-              {
-                type: 'html',
-                value: '<b>BIOS</b>',
               },
               {
                 to: '/docs/libreboot', //this is a slug

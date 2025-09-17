@@ -1,0 +1,56 @@
+---
+sidebar_position: 2
+title: Requirements
+slug: /coreboot/requirements/
+tags: [coreboot, requirements, bios]
+---
+
+# Requirements
+
+Coreboot supports a range of Lenovo ThinkPad models. In most cases, it has to be installed externally, which means opening the laptop and using a hardware flashing tool. However, some models allow internal installation, making the process much simpler since it can be done entirely through software.
+
+Whether you’re flashing internally or externally, you’ll need the following tools:
+- A Laptop that is currently supported by Coreboot
+- Linux distribution: The operating system used to run the flashing tools and commands.
+- Coreboot: The open-source firmware you’ll be installing.
+- Flashrom: The utility used to read, write, and erase flash chips (required for flashing Coreboot).
+
+
+## Internal Flashing
+
+To flash internally, you’ll need a Lenovo ThinkPad from the Ivy Bridge series (one of the models listed below):
+
+<div class="fixed-width-table">
+
+|Model|
+|-|
+|X230|
+|X230T|
+|T430|
+|T430s|
+|T530|
+|W530|
+
+</div>
+
+You’ll also need the following tools:
+
+- CHIPSEC: a security tool for checking if your BIOS is vulnerable to internal flashing
+- USB flash drive (Optional): can be used to create a bootable image if you need to downgrade the BIOS
+
+
+## External Flashing
+
+If you’re flashing the BIOS externally, you’ll need an SPI flasher such as a Raspberry Pi Pico. Depending on the type of BIOS chip (e.g., SOIC or WSON), you’ll also need either a Pomona Clip or Pogo Pins Adapter, connected with Dupont cables to the RPi.
+
+import Grid from '@mui/material/Grid';
+
+<Grid container spacing={2}>
+  <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'center' }}>
+    <img src="/img/libreboot/connection.jpg" alt="Connection Setup" style={{ width: '100%', maxWidth: '100%' }} />
+  </Grid>
+  
+  <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'center' }}>
+    <img src="/img/coreboot/connection.jpg" alt="Connection Clip" style={{ width: '100%', maxWidth: '100%' }} />
+  </Grid>
+</Grid>
