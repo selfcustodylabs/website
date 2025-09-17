@@ -1,7 +1,7 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 title: Unlocking BIOS
-slug: /coreboot/unlocking-bios/
+slug: /coreboot/internal/unlocking-bios/
 tags: [coreboot, chipsec, bios, unlocking]
 ---
 
