@@ -23,12 +23,12 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 
 - Open `Tools → Board → Board Manager`.
 - In the search bar, type `esp32`.
-- Click on the **ESP32 platform**, then click the Install button in the bottom-right corner.
+- Click on the result named **esp32** (by Espressif Systems), then click the Install button in the bottom-right corner.
 - The installation may take some time as it downloads all necessary files.
 
 ### Select the Correct Board
 
-Once installed, go to `Tools → Board → ESP32` Arduino and select **TTGO LoRa32-OLED**.
+Once installed, go to `Tools → Board → ESP32 Arduino` and select **TTGO LoRa32-OLED**.
 
 ### Restart Arduino IDE
 

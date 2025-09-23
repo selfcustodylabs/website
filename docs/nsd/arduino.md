@@ -30,7 +30,7 @@ cd arduino-1.8.19
 Run the installation script:
 
 ```bash
-sudo sh install.sh.
+sudo sh install.sh
 ```
 
 You should see the following output:
@@ -44,7 +44,7 @@ done!
 
 ### Accessing Arduino IDE
 
-A new Arduino folder will be created.
+A new Arduino icon will be created.
 
 To add Arduino to your panel (Linux Mint):
 
