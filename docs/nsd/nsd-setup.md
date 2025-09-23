@@ -25,6 +25,10 @@ cd nostr-signing-device/libraries
 
 Copy all the files in this folder and paste them into the `Arduino/libraries` directory (which should be empty if you just installed Arduino).
 
+```bash
+cp -r . ~/Arduino/libraries
+```
+
 ### Connect Your Nostr Signing Device (NSD)
 
 Plug in your device via USB.
