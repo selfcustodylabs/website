@@ -18,7 +18,7 @@ The packages you need depend on your Linux distribution. Run the command that ma
 Debian-based distros (e.g., Ubuntu, Linux Mint):
 
 ```bash
-sudo apt install -y python-is-python3 bison build-essential curl flex git gnat libncurses-dev libssl-dev zlib1g-dev pkgconf libpci-dev flashrom coreboot-utils
+sudo apt install -y python-is-python3 bison build-essential curl flex git gnat libncurses-dev libssl-dev libcmocka-dev zlib1g-dev pkgconf libpci-dev flashrom coreboot-utils
 ```
 
 Arch-based distros (e.g., Manjaro, EndeavourOS):
