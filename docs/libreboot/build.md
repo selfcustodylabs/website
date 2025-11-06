@@ -39,10 +39,16 @@ This command will make Libreboot's build system use 4 threads, speeding up the b
 
 ## Build Libreboot
 
-Clone the Libreboot repository into the `lbmk` directory:
+Clone the Libreboot repository
 
 ```bash
-git clone https://codeberg.org/libreboot/lbmk.git lbmk
+git clone https://codeberg.org/libreboot/lbmk.git
+```
+
+Navigate to the libreboot directory
+
+```bash
+cd lbmk
 ```
 
 Download the necessary dependencies. Depending on your distribution, choose the appropriate command:
