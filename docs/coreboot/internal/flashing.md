@@ -47,7 +47,7 @@ This ensures the flash was successful and the chip contains exactly what you int
 Read back the flashed chip:
 
 ```bash
-sudo flashrom -p internal -r flashed.rom --ifd -i bios
+sudo flashrom -p internal -r flashed.bin --ifd -i bios
 ```
 
 You can now choose among 3 distinct verification methods:
@@ -60,7 +60,7 @@ Your compiled coreboot.rom contains more than just the BIOS region, so we must e
 
 ```bash
 dd if=coreboot.rom of=coreboot_bios.rom bs=1 skip=5242880 count=11534336
-dd if=flashed.rom of=flashed_bios.rom bs=1 skip=5242880 count=11534336
+dd if=flashed.bin of=flashed_bios.bin bs=1 skip=5242880 count=11534336
 ```
 
 Here:
@@ -71,7 +71,7 @@ Here:
 Now perform the check:
 
 ```bash
-cmp -l coreboot_bios.rom flashed_bios.rom | head -n 20
+cmp -l coreboot_bios.rom flashed_bios.bin | head -n 20
 ```
 
 If no differences appear, the BIOS region was flashed correctly.
@@ -84,7 +84,7 @@ Extract the `build_info` file from each full rom image:
 
 ```bash
 cbfstool coreboot.rom extract -n build_info -f build_info_expected.rom
-cbfstool flashed.rom extract -n build_info -f build_info_actual.rom
+cbfstool flashed.bin extract -n build_info -f build_info_actual.rom
 ```
 
 Compare them:
@@ -134,7 +134,7 @@ bootblock                      0xeadc0    bootblock       20480 none
 Print the CBFS layout of the Flashed BIOS:
 
 ```bash
-cbfstool flashed.rom print
+cbfstool flashed.bin print
 ```
 
 <details>
@@ -167,7 +167,7 @@ Compare it with the intended Coreboot image:
 
 ```bash
 cbfstool coreboot.rom print > cbfs_expected.txt
-cbfstool flashed.rom print > cbfs_actual.txt
+cbfstool flashed.bin print > cbfs_actual.txt
 diff -u cbfs_expected.txt cbfs_actual.txt
 ```
 
