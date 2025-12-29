@@ -13,10 +13,12 @@ Let’s get straight to the point:
 You absolutely need an Air-Gapped Computer!
 :::
 
+As explained in the [air‑gapped wallet](/docs/basics/wallets/air-gapped-wallets) section, having an air‑gapped setup is crucial because it takes security to the next level. The device that holds your private keys is physically isolated from the internet and any other network, which means it cannot be accessed or attacked remotely.
 
-## What is an AGC
+To achieve this, key components such as Wi‑Fi and Bluetooth are physically removed. Ideally, the Ethernet port should also be disabled or permanently damaged, so that even if someone steals the device, they cannot connect it to the internet.
 
-An air-gapped computer is a device that is physically isolated from the internet and other networks, ensuring it cannot be remotely accessed or compromised.
+
+This is the highest level of self custody security. althought this is not a setup recommended for the regular user.
 
 
 

@@ -85,7 +85,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialBasics',
             position: 'left',
-            label: 'Basics',
+            label: 'Core Basics',
           },
           {
             label: 'Guides',

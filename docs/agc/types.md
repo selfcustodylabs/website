@@ -12,11 +12,9 @@ When choosing an Air-Gapped Computer (AGC), there are a few options to consider:
 
 ## Laptop (Recommended)
 
-An older laptop is often the best choice for air-gapping. I recommend the Lenovo ThinkPad X230, as it's affordable and easy to modify. You can remove the Wi-Fi and Bluetooth modules to ensure no wireless connectivity.
+An older laptop is usually the best choice for an air‑gapped setup. I recommend the **Lenovo ThinkPad X230**, as it’s affordable and easy to modify. You can remove the Wi‑Fi and Bluetooth modules to make sure it cannot connect wirelessly.
 
-If you’re particularly concerned about theft, consider:
-- **Physically disabling the Ethernet** port (e.g., by damaging it or desoldering it from the motherboard)
-- **Encrypting the hard drive** with full disk encryption. Keep in mind that you're likely buying a used laptop, unless you already own one. If so, you might want to install a fresh, unused hard drive for added security.
+The full setup process is covered in the [next section](/docs/air-gapped-computer/setup).
 
 
 ## Raspberry Pi Zero 1.3
