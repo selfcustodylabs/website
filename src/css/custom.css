@@ -43,6 +43,12 @@ div.img-small img {
   --ifm-color-primary-lightest: #ff923c;
 }
 
+html[data-theme='dark'] {
+  --ifm-background-color: #0b0b0c;
+  --ifm-background-surface-color: #0f0f0f;
+}
+
+
 .footer--dark {
     --ifm-footer-background-color: #2E3032FF;
 }
