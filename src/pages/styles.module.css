@@ -1,33 +1,520 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/*
+  Landing page styles
+  Keep this file scoped to the homepage only (CSS Module).
+*/
 
-
-.shapeFill {
-    fill: var(--ifm-color-primary);
+.page {
+  background: #0b0b0c;
+  color: rgba(255, 255, 255, 0.92);
 }
 
-
-.shapeFillBlack {
-    fill: #2E3032FF;
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.topShape{
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+.accent {
+  color: #f59e0b;
 }
 
-.bottomShape{
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+/* HERO */
+.hero {
+  position: relative;
+  padding: 92px 0 72px;
+  overflow: hidden;
 }
 
-.svg{
-    width: calc(143% + 1px);
-    height: 50px;
-    transform: rotateY(180deg);
+.heroGlow {
+  position: absolute;
+  inset: -120px -120px -160px -120px;
+  background:
+    radial-gradient(closest-side at 50% 40%, rgba(245, 158, 11, 0.16), rgba(245, 158, 11, 0) 65%),
+    radial-gradient(closest-side at 20% 30%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(closest-side at 80% 20%, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 60%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.heroLogo {
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 6px rgba(245, 158, 11, 0.14);
+}
+
+.heroTitle {
+  font-size: 3.1rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  max-width: 720px;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.heroCtas {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.buttonPrimary {
+  background: #f97316;
+  color: #111827;
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.22);
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(249, 115, 22, 0.28);
+  color: #111827;
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.55);
+}
+
+.buttonSecondary:hover {
+  transform: translateY(-1px);
+  border-color: rgba(245, 158, 11, 0.75);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color: #f59e0b;
+}
+
+.heroPills {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.pillIcon {
+  font-size: 18px;
+  color: #f59e0b;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pillLabel {
+  white-space: nowrap;
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.sectionHeaderTight {
+  text-align: center;
+  margin: 38px 0 22px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  margin: 10px auto 0;
+  max-width: 820px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* CARDS */
+.cardLink {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.card {
+  height: 100%;
+  border-radius: 14px;
+  background: rgba(18, 18, 20, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.38);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
+}
+
+.cardInner {
+  padding: 22px 22px 18px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.08);
+  color: #f59e0b;
+  font-size: 22px;
+}
+
+.cardBadge {
+  background: #f97316;
+  color: #111827;
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+}
+
+.cardTitle {
+  margin: 16px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.cardDescription {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.cardFooterLeft {
+  display: flex;
+  align-items: center;
+}
+
+.cardFooterRight {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  color: rgba(245, 158, 11, 0.85);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* TAGS */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.tagBeginner {
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: rgba(34, 197, 94, 0.95);
+}
+
+.tagIntermediate {
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  color: rgba(245, 158, 11, 0.95);
+}
+
+.tagAdvanced {
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: rgba(239, 68, 68, 0.95);
+}
+
+/* PATH */
+.path {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.pathItemLink {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.pathItem {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  border-radius: 14px;
+  padding: 18px 18px;
+  background: rgba(18, 18, 20, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.pathItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.38);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
+}
+
+.pathLeft {
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pathStep {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: rgba(245, 158, 11, 0.35);
+}
+
+.pathContent {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.pathIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.08);
+  color: #f59e0b;
+  font-size: 22px;
+}
+
+.pathText {
+  flex: 1;
+  min-width: 0;
+}
+
+.pathTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.pathTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.pathArrow {
+  color: rgba(245, 158, 11, 0.85);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.pathDescription {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.pathConnector {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  color: rgba(245, 158, 11, 0.55);
+}
+
+.centerCta {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* COMMUNITY SMALL CARDS */
+.smallCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: rgba(18, 18, 20, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.smallCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.38);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
+}
+
+.smallCardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  color: #f59e0b;
+  font-size: 20px;
+}
+
+.smallCardTitle {
+  font-weight: 800;
+}
+
+.smallCardDescription {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.92rem;
+  margin-top: 2px;
+}
+
+/* CTA */
+.bigCta {
+  margin-top: 28px;
+  border-radius: 18px;
+  padding: 44px 24px;
+  text-align: center;
+  background:
+    radial-gradient(closest-side at 50% 30%, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0) 72%),
+    rgba(18, 18, 20, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.5);
+}
+
+.bigCtaTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.bigCtaSubtitle {
+  margin: 12px auto 22px;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+.spacer {
+  height: 46px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroTitle {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding: 72px 0 58px;
+  }
+
+  .heroTitle {
+    font-size: 2.1rem;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
 }
