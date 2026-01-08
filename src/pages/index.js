@@ -253,9 +253,9 @@ export default function Home() {
     },
     {
       icon: ChatBubbleOutlineRoundedIcon,
-      title: "Orange Pill App",
+      title: "Club Orange App",
       description: "Connect with Bitcoiners",
-      href: "https://www.orangepillapp.com/",
+      href: "https://www.cluborange.org/",
       external: true,
     },
     {
