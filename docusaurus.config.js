@@ -185,7 +185,7 @@ const config = {
             href: 'https://orangepill.app.link/btcselfcustody',
             position: 'right',
             className: "header--opa-link",
-            "aria-label": "Orange Pill App",
+            "aria-label": "Club Orange App",
           },
         ],
       },
@@ -238,7 +238,7 @@ const config = {
                 href: 'https://keybase.io/btcselfcustody',
               },
               {
-                label: 'Orange Pill App',
+                label: 'Club Orange App',
                 href: 'https://orangepill.app.link/btcselfcustody',
               }
             ],
