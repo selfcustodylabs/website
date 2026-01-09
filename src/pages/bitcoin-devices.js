@@ -58,7 +58,7 @@ export default function BitcoinDevicesPage() {
     {
       icon: LaptopMacRoundedIcon,
       title: "Bitcoin Node",
-      description: "Run your own Bitcoin node to verify independently and improve privacy.",
+      description: "Run your own Bitcoin node to independently verify transactions and enhance your privacy.",
       href: "/docs/bitcoin-node",
       badge: "POPULAR",
       level: "Intermediate",
@@ -66,7 +66,7 @@ export default function BitcoinDevicesPage() {
     {
       icon: ComputerRoundedIcon,
       title: "Bitcoin Computer",
-      description: "Build a dedicated Bitcoin workstation optimized for security and privacy.",
+      description: "Build a dedicated Bitcoin workstation designed for strong security and privacy.",
       href: "/docs/bitcoin-computer",
       level: "Intermediate",
     },
@@ -89,14 +89,14 @@ export default function BitcoinDevicesPage() {
   return (
     <Layout title="Bitcoin Devices" description="Browse all Bitcoin device guides.">
       <main className={styles.page}>
-        <header className={styles.hero}>
+        <header className={`${styles.hero} bitcoinDevicesHero`}>
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.container}>
             <div className={styles.heroInner}>
-              <h1 className={styles.heroTitle}>Bitcoin Devices</h1>
-              <p className={styles.heroSubtitle}>
-                Choose a device category to start learning.
-              </p>
+              <div className="bitcoin-devices-header">
+                <h1 className={styles.heroTitle}>Bitcoin Devices</h1>
+                <p className={styles.heroSubtitle}>Choose a device category to start learning.</p>
+              </div>
 
               <div className={styles.grid3}>
                 {devices.map((d) => (

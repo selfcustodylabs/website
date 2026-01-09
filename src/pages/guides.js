@@ -77,7 +77,7 @@ export default function GuidesPage() {
     {
       icon: SecurityRoundedIcon,
       title: "Libreboot",
-      description: "Install Libreboot for a fully open-source BIOS and tighter hardware trust.",
+      description: "Install Libreboot to replace your BIOS with fully open-source firmware and establish stronger hardware trust.",
       href: "/docs/libreboot",
       level: "Advanced",
     },
