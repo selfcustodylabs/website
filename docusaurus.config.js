@@ -94,30 +94,8 @@ const config = {
           },
           {
             label: 'Bitcoin Devices',
-            type: 'dropdown',
+            to: '/bitcoin-devices',
             position: 'left',
-            items: [
-              {
-                to: '/docs/bitcoin-node', //this is a slug
-                sidebarId: 'tutorialBitcoinNode',
-                label: 'Bitcoin Node',
-              },
-              {
-                to: '/docs/bitcoin-computer', //this is a slug
-                sidebarId: 'tutorialBitcoinComputer',
-                label: 'Bitcoin Computer',
-              },
-              {
-                to: '/docs/air-gapped-computer', //this is a slug
-                sidebarId: 'tutorialAirgappedComputer',
-                label: 'Air-Gapped Computer',
-              },
-              {
-                to: '/docs/nostr-signing-device', //this is a slug
-                sidebarId: 'tutorialNostrSigningDevice',
-                label: 'Nostr Signing Device',
-              },
-            ],
           },
           {
             label: 'Education',
