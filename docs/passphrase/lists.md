@@ -28,6 +28,6 @@ The final result is a 7,776-word list suitable for dice-generated passphrases. O
 
 ## Security & Passphrase Strength
 
-The security of passphrases generated with this list is the same as those made with Diceware—the difference is in usability, not security. For most cases, EFF recommend generating a **six word passphrase**, which provides 77 bits of entropy (a standard way to measure password strength). Each additional word increases security by 12.9 bits, making the passphrase exponentially harder to crack. Adding one extra bit of entropy doubles the number of guesses required to break the passphrase, making brute-force attacks significantly more difficult.
+The security of passphrases generated with this list is the same as those made with Diceware, the difference is in usability, not security. For most cases, EFF recommend generating a **six word passphrase**, which provides 77 bits of entropy (a standard way to measure password strength). Each additional word increases security by 12.9 bits, making the passphrase exponentially harder to crack. Adding one extra bit of entropy doubles the number of guesses required to break the passphrase, making brute-force attacks significantly more difficult.
 
 Now you are ready to go to next section and create your seed passphrase by rolling the dice.

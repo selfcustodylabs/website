@@ -9,10 +9,10 @@ tags: [private keys, xpub, bip39, seed]
 
 ![](/img/basics/diagram.png)
 
-The purpose of the extended public key (xpub) might not be immediately obvious. Looking at the bottom section of the diagram, you’ll see that possessing the extended public key allows wallet software to generate **all** the same Bitcoin addresses as the extended private key—**in the same order**. This means the wallet will look identical in terms of addresses and transaction history. But what’s the key difference?
+The purpose of the extended public key (xpub) might not be immediately obvious. Looking at the bottom section of the diagram, you’ll see that possessing the extended public key allows wallet software to generate **all** the same Bitcoin addresses as the extended private key, **in the same order**. This means the wallet will look identical in terms of addresses and transaction history. But what’s the key difference?
 
 - A wallet created with the **extended private key** has the power to **spend** Bitcoin.
-- A wallet created with the **extended public key** can **only view** transactions and addresses—it **cannot spend** Bitcoin.
+- A wallet created with the **extended public key** can **only view** transactions and addresses, it **cannot spend** Bitcoin.
 
 :::tip Watch only Wallet
 This type of public-key-only wallet is often called a **watch-only wallet**. You can safely use it on an insecure or internet-connected computer without risking your private keys. It allows you to monitor your balance and generate addresses to receive payments.
@@ -26,7 +26,7 @@ Even though an extended public key cannot be used to spend Bitcoin, you should s
 - See your current Bitcoin balance.
 - Track your future transactions.
 
-It’s similar to handing someone your **bank statement**—they can’t take your money, but they can see how much you have and where it moves. To maintain financial privacy, **keep your xpub secure** and only share individual addresses when necessary.
+It’s similar to handing someone your **bank statement**, they can’t take your money, but they can see how much you have and where it moves. To maintain financial privacy, **keep your xpub secure** and only share individual addresses when necessary.
 
 
 ## Identifying Extended Public Keys

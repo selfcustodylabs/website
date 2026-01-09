@@ -17,7 +17,7 @@ Think of signing as placing a digital signature on your transaction. It tells th
 
 ## Online vs. Offline Signing
 
-In **online signing**, the wallet that builds and signs the transaction is connected to the internet. This method is convenient and fast but carries more risk—if your device is compromised, your private key could be exposed.
+In **online signing**, the wallet that builds and signs the transaction is connected to the internet. This method is convenient and fast but carries more risk, if your device is compromised, your private key could be exposed.
 
 **Offline signing**, often referred to as air-gapped signing, offers stronger security. The transaction is first built on a watch-only wallet connected to the internet (which has no access to your private keys). It’s then transferred to a completely offline device for signing. This air-gapped computer holds your private key and never touches the internet, making it highly resistant to remote attacks. Once the transaction is signed, it’s transferred back online to be broadcast.
 

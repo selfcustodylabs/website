@@ -23,7 +23,7 @@ When you make a transaction, a technically skilled buyer might try to manipulate
 
 While this is unlikely, it’s still a risk. If this happens, your wallet could record a fake transaction. Later, when you connect to a legitimate Bitcoin node, your wallet will show that you never received the Bitcoin you thought you did. Your balance will be lower than expected because the fake transaction was never recorded on the real blockchain.
 
-You can avoid this by connecting your wallet to a trusted node—ideally, your own. The Bitcoin mantra is "Don’t trust, verify."
+You can avoid this by connecting your wallet to a trusted node, ideally, your own. The Bitcoin mantra is "Don’t trust, verify."
 
 Not running your own node is like accepting gold as payment, but asking a random person to check the gold with an XRF analyzer. You don’t know if they’re being honest or working in favor of the buyer.
 
@@ -32,7 +32,7 @@ You might ask, "Aren’t I trusting Bitcoin Core when I download it?" Yes, but t
 
 ## Protection Against Forks
 
-If a group of people tries to change the rules of Bitcoin—like increasing the block size—you can choose not to upgrade your node. If enough people agree with you, you’ll form a separate group that keeps using the original Bitcoin protocol. This is how Bitcoin Cash was created in 2017.
+If a group of people tries to change the rules of Bitcoin, like increasing the block size, you can choose not to upgrade your node. If enough people agree with you, you’ll form a separate group that keeps using the original Bitcoin protocol. This is how Bitcoin Cash was created in 2017.
 
 If you don’t run your own node, your wallet might connect to a Bitcoin Cash node instead of a Bitcoin node. You could end up receiving Bitcoin Cash, not Bitcoin, which doesn’t follow the same monetary policy. By running your own node, you can make sure you’re always connected to the version of Bitcoin you want.
 

@@ -12,7 +12,7 @@ Bitcoin might seem complicated at first, but once you understand a few key ideas
 
 ## Inputs and Outputs
 
-Bitcoin doesn’t work like a bank account where your balance is just a number. Instead, it uses something called UTXOs — Unspent Transaction Outputs.
+Bitcoin doesn’t work like a bank account where your balance is just a number. Instead, it uses something called UTXOs ,  Unspent Transaction Outputs.
 
 - **Input:** Where the Bitcoin is coming from (previous UTXOs you own).
 - **Output:** Where the Bitcoin is going (a new address).
@@ -38,7 +38,7 @@ Your wallet takes care of this behind the scenes, but it helps to understand wha
 
 ## Transaction Fees
 
-To get your transaction included in a block, you pay a small fee to the miners. This fee isn’t a separate line item — it’s simply the difference between the amount you’re spending and what’s being sent out.
+To get your transaction included in a block, you pay a small fee to the miners. This fee isn’t a separate line item ,  it’s simply the difference between the amount you’re spending and what’s being sent out.
 
 Going back to our example:
 
@@ -53,7 +53,7 @@ Your wallet usually calculates the fee for you, based on how busy the network is
 
 ## Miners Confirm Your Transaction
 
-Once your transaction is broadcasted, it enters the Bitcoin network and waits in the **mempool** — a sort of public waiting room for unconfirmed transactions.
+Once your transaction is broadcasted, it enters the Bitcoin network and waits in the **mempool** ,  a sort of public waiting room for unconfirmed transactions.
 
 Miners look through the mempool and choose which transactions to include in the next block. Transactions with higher fees get picked first. When your transaction is added to a block, it gets its first confirmation.
 

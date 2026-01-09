@@ -53,7 +53,7 @@ If you want to master private keys and seed phrases in depth, go to the [dedicat
 
 ## Freedom Comes With Responsibility
 
-Self-custody gives you freedom — but it also gives you responsibility.
+Self-custody gives you freedom, but it also gives you responsibility.
 - There is no customer support.
 - No account recovery.
 - No chargebacks.

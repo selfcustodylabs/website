@@ -9,7 +9,7 @@ tags: [seed, binary, checksum]
 
 The last eight missing digits need to be calculated to create what's called a "checksum."
 
-So, what exactly is a checksum? A checksum is a way for computers to verify that you haven't made a mistake when entering things like your credit card number or bank account details. It's a helpful tool that lets the computer alert you if you've made a typo—this is especially useful when dealing with your Bitcoin private key!
+So, what exactly is a checksum? A checksum is a way for computers to verify that you haven't made a mistake when entering things like your credit card number or bank account details. It's a helpful tool that lets the computer alert you if you've made a typo, this is especially useful when dealing with your Bitcoin private key!
 
 ## Generate the Hash Output
 

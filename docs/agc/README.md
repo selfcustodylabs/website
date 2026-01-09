@@ -42,4 +42,4 @@ An AGC provides several advantages over a SeedSigner, making it a more versatile
 - **Greater Discretion** – A SeedSigner is a known Bitcoin device and could attract attention if discovered. In contrast, an AGC looks like an ordinary computer, making it far less suspicious and more discreet in various environments.
 - **More Functionality** – Beyond signing transactions, an AGC can handle other Bitcoin-related tasks, such as encrypting and decrypting messages, securely storing additional sensitive information, or running advanced scripts. This makes it a more powerful tool compared to a SeedSigner, which is limited in scope.
 
-While SeedSigner is a great option for certain use cases, an AGC offers better encryption, more verification options, an easier interface, greater privacy, and expanded functionality—making it the superior choice for Bitcoin self-custody.
+While SeedSigner is a great option for certain use cases, an AGC offers better encryption, more verification options, an easier interface, greater privacy, and expanded functionalit, making it the superior choice for Bitcoin self-custody.

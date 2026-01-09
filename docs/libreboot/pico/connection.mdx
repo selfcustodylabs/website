@@ -14,7 +14,7 @@ To begin flashing the BIOS, you'll need to connect your Pico to the Pomona clip,
 
 The BIOS chip in your ThinkPad models is an SOIC-8 type with 8 pins.
 
-In these specific models, you’ll likely find two BIOS chips positioned next to each other. Both of these chips will need to be flashed. Don’t worry, though — the process is straightforward and will be explained in detail later in this guide.
+In these specific models, you’ll likely find two BIOS chips positioned next to each other. Both of these chips will need to be flashed. Don’t worry, though ,  the process is straightforward and will be explained in detail later in this guide.
 
 **IMPORTANT**: Be sure to identify `pin 1` (which is marked with a small dot) and then count the pins counterclockwise from there.
 
@@ -43,7 +43,7 @@ The below diagram shows the corresponding pins on the Pico board where the Dupon
 
 ## Models X230, T420, T430, T440p and T480s
 
-For these models, you can start wiring your Dupont cables directly from pin 1 of the BIOS chip — no extra tricks or workarounds are needed.
+For these models, you can start wiring your Dupont cables directly from pin 1 of the BIOS chip ,  no extra tricks or workarounds are needed.
 
 Once everything is connected properly, your setup should look like this:
 
@@ -58,7 +58,7 @@ Both the T530 and W530 have two SOIC-8 flash chips connected to the same SPI bus
 
 ### The Problem
 
-When the Southbridge (the part of the motherboard that controls I/O) isn't powered, the CS# line of the inactive chip is left floating—meaning it's not pulled high or low, so it can randomly activate. This can lead to:
+When the Southbridge (the part of the motherboard that controls I/O) isn't powered, the CS# line of the inactive chip is left floating, meaning it's not pulled high or low, so it can randomly activate. This can lead to:
 
 - Flash read/write errors
 - Both chips responding at the same time
@@ -114,4 +114,4 @@ import Grid from '@mui/material/Grid';
 
 ## Conclusion
 
-Now you're ready to clip onto the chip and start flashing the BIOS — with stable and consistent reads and writes!
+Now you're ready to clip onto the chip and start flashing the BIOS ,  with stable and consistent reads and writes!

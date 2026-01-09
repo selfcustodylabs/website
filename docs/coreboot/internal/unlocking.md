@@ -219,7 +219,7 @@ This will show:
 In theory, to flash the BIOS internally, you’d just clear the WP bits in `PR0–PR4.`
 But if `FLOCKDN = 1` in HSFS, the chipset won’t let you change those registers until the next hardware reset (and firmware will usually lock it again at boot).
 
-That’s why the later steps in the guide focus on modifying the S3 boot script—to stop the firmware from setting `FLOCKDN = 1` during resume, so we can remove the `WP` bits.
+That’s why the later steps in the guide focus on modifying the S3 boot script, to stop the firmware from setting `FLOCKDN = 1` during resume, so we can remove the `WP` bits.
 
 
 ## Removing Protections (Practice)
@@ -228,7 +228,7 @@ Normally, the FLOCKDN bit (which locks the SPI configuration) can only be cleare
 This reset happens not only on a full reboot, but also when waking the computer from S3 sleep (suspend to RAM).
 
 When the system wakes from S3, the chipset restores all its settings by running a set of instructions called S3 Boot Scripts.
-These scripts are stored in RAM, which means we can edit them before waking—and change what the firmware does during resume.
+These scripts are stored in RAM, which means we can edit them before waking, and change what the firmware does during resume.
 
 
 ### Step 1: Dump the S3 Boot Script

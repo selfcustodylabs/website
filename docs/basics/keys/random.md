@@ -35,7 +35,7 @@ Clearly, binary and decimal representations can be overwhelming for humans, whic
 
 A private key is mostly random, but the final portion, called the checksum, is generated mathematically. This checksum is based on the random part and is designed to help detect errors. If you enter a private key incorrectly, the checksum won’t match, and the wallet software can warn you about the mistake. However, if necessary, the user can still choose to proceed.
 
-The checksum isn’t required by Bitcoin’s core code—it’s just an extra safety measure used by wallets
+The checksum isn’t required by Bitcoin’s core code, it’s just an extra safety measure used by wallets
 
 ### How the Checksum Works
 

@@ -22,6 +22,6 @@ Your Bitcoin seed phrase is the key to your funds. If lost or compromised, your 
 - Consider splitting your seed into multiple secure locations.
 - Avoid storing it digitally or in places prone to theft or destruction.
 
-By using a high-quality metal seed storage solution, you ensure your Bitcoin remains secure, regardless of disasters or time. Your Bitcoin is only as safe as your seed backup—protect it wisely.
+By using a high-quality metal seed storage solution, you ensure your Bitcoin remains secure, regardless of disasters or time. Your Bitcoin is only as safe as your seed backup, protect it wisely.
 
 ![](/img/seed/metalseed.jpg)

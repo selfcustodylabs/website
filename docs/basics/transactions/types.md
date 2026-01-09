@@ -36,6 +36,6 @@ Partially Signed Bitcoin Transactions (PSBTs) are mostly used in multi-signature
 Here’s how it works:
 
 - You first create the transaction on your online watch-only wallet, just like with a regular unsigned transaction
-- Then, you transfer it to the first offline (air-gapped) device, which adds the first signature — this makes it a PSBT.
+- Then, you transfer it to the first offline (air-gapped) device, which adds the first signature ,  this makes it a PSBT.
 - After that, you pass the PSBT to the next offline device, and so on, until the required number of signatures has been added. Once all the necessary signatures are included, the PSBT becomes a fully signed transaction.
 - Finally, you move it back to your online computer and broadcast it to the Bitcoin network.

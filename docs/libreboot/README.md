@@ -17,7 +17,7 @@ If you're running a Bitcoin focused laptop, security and privacy should be top p
 - ✅ Improving Trust – Fully auditable, with no hidden proprietary code.
 - ✅ Boosting Performance – Faster boot times and a minimal firmware footprint.
 
-For Bitcoiners who value sovereignty and verifiable security, Libreboot ensures your laptop runs only free, transparent, and user-controlled software—perfect for self custody, running a Bitcoin full node, or signing transactions offline.
+For Bitcoiners who value sovereignty and verifiable security, Libreboot ensures your laptop runs only free, transparent, and user-controlled software, perfect for self custody, running a Bitcoin full node, or signing transactions offline.
 
 
 ## What is Libreboot?

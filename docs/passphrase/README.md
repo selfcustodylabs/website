@@ -35,4 +35,4 @@ As you might know there was an original [Diceware list](https://theworld.com/~re
 - Many words are vulgar or offensive.
 - It includes single letters and short bigrams, making it harder to distinguish words in a passphrase.
 
-These issues make Diceware passphrases harder to type, recall, and use—especially on mobile keyboards or in situations where word prediction/autocorrect is involved.
+These issues make Diceware passphrases harder to type, recall, and use, especially on mobile keyboards or in situations where word prediction/autocorrect is involved.

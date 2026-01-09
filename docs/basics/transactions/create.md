@@ -27,7 +27,7 @@ From your end, all you typically do is enter the recipient's address and the amo
 ## RBF – Replace-by-Fee
 
 
-**Replace-by-Fee (RBF)** is a feature that lets you increase a transaction’s fee after it’s been broadcast—provided it hasn’t been confirmed yet.
+**Replace-by-Fee (RBF)** is a feature that lets you increase a transaction’s fee after it’s been broadcast, provided it hasn’t been confirmed yet.
 
 This is especially useful when a transaction gets stuck in the mempool because the original fee was too low. Instead of waiting indefinitely, you can resend the transaction with a higher fee to speed things up.
 
@@ -38,6 +38,6 @@ To use RBF, you need to enable it when creating the transaction. Most wallets ha
 
 If you didn’t enable RBF and your transaction is stuck, there’s another option: **Child Pays for Parent (CPFP)**.
 
-With CPFP, you create a second transaction—the "child" that spends from the unconfirmed transaction—the "parent." You attach a high fee to the child transaction, which incentivizes miners to include both in the next block so they can claim the combined fee.
+With CPFP, you create a second transaction, the "child" that spends from the unconfirmed transaction, the "parent." You attach a high fee to the child transaction, which incentivizes miners to include both in the next block so they can claim the combined fee.
 
 This method is particularly useful in wallets that support advanced fee control or for miners optimizing which transactions to include in a block.
