@@ -255,14 +255,14 @@ export default function Home() {
       icon: ChatBubbleOutlineRoundedIcon,
       title: "Club Orange App",
       description: "Connect with Bitcoiners",
-      href: "https://www.cluborange.org/",
+      href: "https://app.cluborange.org/btcselfcustody",
       external: true,
     },
     {
       icon: VpnKeyRounded,
       title: "Keybase",
       description: "Secure messaging",
-      href: "https://keybase.io/",
+      href: "https://keybase.io/btcselfcustody",
       external: true,
     },
   ];
