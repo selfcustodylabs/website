@@ -171,7 +171,7 @@ const config = {
           {
             href: 'https://app.cluborange.org/btcselfcustody',
             position: 'right',
-            className: "header--opa-link",
+            className: "header--cluborange-link",
             "aria-label": "Club Orange App",
           },
         ],
