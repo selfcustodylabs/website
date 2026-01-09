@@ -75,21 +75,6 @@ export default function GuidesPage() {
       level: "Intermediate",
     },
     {
-      icon: LaptopMacRoundedIcon,
-      title: "Bitcoin Node",
-      description: "Run your own Bitcoin node to verify independently and improve privacy.",
-      href: "/docs/bitcoin-node",
-      badge: "POPULAR",
-      level: "Intermediate",
-    },
-    {
-      icon: FlightRoundedIcon,
-      title: "Air-Gapped Computer",
-      description: "Set up an offline computer for maximum security: seed generation, verification, and signing.",
-      href: "/docs/air-gapped-computer",
-      level: "Advanced",
-    },
-    {
       icon: SecurityRoundedIcon,
       title: "Libreboot",
       description: "Install Libreboot for a fully open-source BIOS and tighter hardware trust.",
@@ -103,33 +88,19 @@ export default function GuidesPage() {
       href: "/docs/coreboot",
       level: "Intermediate",
     },
-    {
-      icon: ComputerRoundedIcon,
-      title: "Bitcoin Computer",
-      description: "Build a dedicated Bitcoin workstation optimized for security and privacy.",
-      href: "/docs/bitcoin-computer",
-      level: "Intermediate",
-    },
-    {
-      icon: PasswordRoundedIcon,
-      title: "Nostr Signing Device",
-      description: "Use a dedicated signing device to keep your Nostr private key off your computer.",
-      href: "/docs/nostr-signing-device",
-      level: "Beginner",
-    },
   ];
 
   return (
     <Layout title="Guides" description="Browse all BTC Self Custody guides.">
       <main className={styles.page}>
-        <header className={styles.hero}>
+        <header className={`${styles.hero} guidesHero`}>
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.container}>
             <div className={styles.heroInner}>
-              <h1 className={styles.heroTitle}>Self Custody Guides</h1>
-              <p className={styles.heroSubtitle}>
-                Browse step-by-step tutorials. Pick one to get started.
-              </p>
+              <div className="guides-header">
+                <h1 className={styles.heroTitle}>Self Custody Guides</h1>
+                <p className={styles.heroSubtitle}>Browse step-by-step tutorials. Pick one to get started.</p>
+              </div>
 
               <div className={styles.grid3}>
                 {guides.map((g) => (

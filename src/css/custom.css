@@ -157,3 +157,29 @@ html[data-theme='dark'] .header--opa-link:before {
   border: 1px solid #ddd;
   width: 200px; /* Adjust width as needed */
 }
+
+/* Tighten spacing below navbar for Bitcoin Devices page */
+
+/* Optional: fine control for the title block */
+
+
+/* Tighten spacing below navbar for hub pages */
+header.bitcoinDevicesHero {
+  padding-top: 60px;
+}
+
+header.guidesHero {
+  padding-top: 60px;
+}
+
+
+/* Hub pages: tighten spacing between title and subtitle */
+.bitcoinDevicesHero h1,
+.guidesHero h1 {
+  margin-bottom: 0.85rem;
+}
+
+.bitcoinDevicesHero p,
+.guidesHero p {
+  margin-top: 0;
+}
