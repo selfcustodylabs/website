@@ -115,7 +115,7 @@ const config = {
           {
             label: 'Resources',
             type: 'dropdown',
-            position: 'right',
+            position: 'left',
             items: [
               {
                 href: 'https://timechainstats.com/',
@@ -128,6 +128,37 @@ const config = {
               {
                 href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
                 label: 'BIP39'
+              },
+            ],
+          },
+          {
+            label: 'Find Us',
+            type: 'dropdown',
+            position: 'right',
+            items: [
+              {
+                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
+                label: 'Nostr',
+              },
+              {
+                href: 'https://x.com/btcselfcustody',
+                label: 'X',
+              },
+              {
+                href: 'mailto:btcselfcustody@proton.me',
+                label: 'E-mail'
+              },
+              {
+                href: 'https://app.cluborange.org/btcselfcustody',
+                label: 'Club Orange App',
+              },
+              {
+                href: 'https://github.com/btcselfcustody',
+                label: 'GitHub',
+              },
+              {
+                href: 'https://keybase.io/btcselfcustody',
+                label: 'Keybase'
               },
             ],
           },
