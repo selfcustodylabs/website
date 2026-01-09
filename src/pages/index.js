@@ -24,6 +24,8 @@ import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import VpnKeyRounded from "@mui/icons-material/VpnKeyRounded";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import XIcon from "@mui/icons-material/X";
 
 import styles from "./styles.module.css";
 
@@ -245,10 +247,24 @@ export default function Home() {
 
   const community = [
     {
-      icon: GitHubIcon,
-      title: "GitHub",
-      description: "Contribute to our guides",
-      href: "https://github.com/btcselfcustody",
+      icon: PublicRoundedIcon,
+      title: "Nostr",
+      description: "Follow us on Nostr",
+      href: "https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5",
+      external: true,
+    },
+    {
+      icon: XIcon,
+      title: "X",
+      description: "Follow us on X",
+      href: "https://x.com/btcselfcustody",
+      external: true,
+    },
+    {
+      icon: EmailRoundedIcon,
+      title: "E-mail",
+      description: "Get in touch with us",
+      href: "mailto:btcselfcustody@proton.me",
       external: true,
     },
     {
@@ -256,6 +272,13 @@ export default function Home() {
       title: "Club Orange App",
       description: "Connect with Bitcoiners",
       href: "https://app.cluborange.org/btcselfcustody",
+      external: true,
+    },
+    {
+      icon: GitHubIcon,
+      title: "GitHub",
+      description: "Contribute to our guides",
+      href: "https://github.com/btcselfcustody",
       external: true,
     },
     {
