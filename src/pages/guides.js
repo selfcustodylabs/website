@@ -98,7 +98,7 @@ export default function GuidesPage() {
           <div className={styles.container}>
             <div className={styles.heroInner}>
               <div className="guides-header">
-                <h1 className={styles.heroTitle}>Self Custody Guides</h1>
+                <h1 className={styles.heroTitle}>Bitcoin Self Custody Guides</h1>
                 <p className={styles.heroSubtitle}>Browse step-by-step tutorials. Pick one to get started.</p>
               </div>
 
