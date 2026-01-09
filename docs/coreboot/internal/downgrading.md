@@ -33,7 +33,7 @@ If your BIOS is newer than the version shown, you’ll need to downgrade to that
 ## Why Downgrade is Possible
 
 Lenovo claims their BIOS has “security rollback prevention,” meaning once you update to a newer version, you can’t go back to an older one.
-In reality, this restriction is entirely client-side—it’s enforced by Lenovo’s flashing utilities (both the Windows version and the Bootable CD), not the BIOS itself.
+In reality, this restriction is entirely client-side, it’s enforced by Lenovo’s flashing utilities (both the Windows version and the Bootable CD), not the BIOS itself.
 
 If you run the flashing program (winflash.exe or dosflash.exe) directly, you can bypass the block. This requires slightly modifying the Bootable CD image you download from Lenovo.
 
@@ -75,7 +75,7 @@ Check what’s inside:
 ls /mnt/FLASH/G1ET93WW
 ```
 
-Look for a `.FL1` file—something like `$01D2000.FL1`.
+Look for a `.FL1` file, something like `$01D2000.FL1`.
 
 
 ### Modify the Boot Script
@@ -125,6 +125,6 @@ sudo dd if=./bios.img of=/dev/sdX bs=1M
 - Save and reboot: Press `F10`.
 - Connect AC power: Do not attempt flashing on battery power. If the system loses power during flashing, you’ll likely need an external programmer to recover.
 - Boot from USB: Press `F12` during startup, choose the USB drive, and the BIOS flashing will begin automatically.
-- The process may reboot your laptop several times—do not interrupt it.
+- The process may reboot your laptop several times, do not interrupt it.
 - After completion: Enter BIOS again and set Startup Mode back to UEFI (or Both/UEFI First). This is required for the Coreboot vulnerability to be usable.
 - Check in your OS: Boot into your operating system and verify that `/sys/firmware/efi` or `/sys/firmware/efivars` exists.

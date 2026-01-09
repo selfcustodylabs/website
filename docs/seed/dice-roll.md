@@ -22,7 +22,7 @@ Before rolling the dice, you need to determine how each roll will be converted i
 
 ### Roll and Record
 
-Roll the dice and record the results from left to right. Consistency is key—always read in the same order to maintain randomness. If it’s unclear which die is further to the left, re-roll those dice.
+Roll the dice and record the results from left to right. Consistency is key, always read in the same order to maintain randomness. If it’s unclear which die is further to the left, re-roll those dice.
 
 :::warning
 It is crucial that the data is truly random. If it lacks randomness, there is a risk that someone else could reproduce the exact same sequence. This would allow them to regenerate your private key and potentially access all of your Bitcoin.
@@ -70,7 +70,7 @@ This structured approach will help you maintain accuracy and ensure a truly rand
 
 </div>
 
-Now, let’s look at the total number of binary digits we’ll generate. In this case, we have 256 bits—which breaks down into 23 full sets of 11 bits each, with a partial 24th set containing only three bits.
+Now, let’s look at the total number of binary digits we’ll generate. In this case, we have 256 bits, which breaks down into 23 full sets of 11 bits each, with a partial 24th set containing only three bits.
 
 Later, you’ll see why this matters, but for now, just understand that every 11-bit segment will be converted into a mnemonic seed word. If we divide 256 bits by 11, we get 23.27 words, which isn’t a whole number. Since a mnemonic seed must contain whole words, we don’t yet have enough bits to complete a 24-word seed.
 

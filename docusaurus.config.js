@@ -82,37 +82,15 @@ const config = {
         },
         items: [
           {
+            label: 'Guides',
+            to: '/guides',
+            position: 'left',
+          },
+          {
             type: 'docSidebar',
             sidebarId: 'tutorialBasics',
             position: 'left',
-            label: 'Core Basics',
-          },
-          {
-            label: 'Guides',
-            type: 'dropdown',
-            position: 'left',
-            items: [
-              {
-                to: '/docs/seed', //this is a slug
-                sidebarId: 'tutorialSeed',
-                label: 'DIY Seed 🎲',
-              },
-              {
-                to: '/docs/passphrase', //this is a slug
-                sidebarId: 'tutorialPassphrase',
-                label: 'DIY Passphrase 🎲',
-              },
-              {
-                to: '/docs/libreboot', //this is a slug
-                sidebarId: 'tutorialLibreboot',
-                label: 'Libreboot',
-              },
-              {
-                to: '/docs/coreboot', //this is a slug
-                sidebarId: 'tutorialCoreboot',
-                label: 'Coreboot',
-              },
-            ],
+            label: 'Basics',
           },
           {
             label: 'Bitcoin Devices',

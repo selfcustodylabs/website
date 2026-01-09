@@ -287,7 +287,7 @@ export default function Home() {
                 <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics/what-is-self-custody">
                   Start Learning
                 </Link>
-                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/docs/seed">
+                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/guides">
                   View Guides →
                 </Link>
               </div>
@@ -305,33 +305,11 @@ export default function Home() {
         <Section
           id="why"
           title="Why Self-Custody Matters"
-          subtitle="Self-custody isn't just about security—it's about freedom, privacy, and taking back control of your financial future."
+          subtitle="Self-custody isn't just about security, it's about freedom, privacy, and taking back control of your financial future."
         >
           <div className={styles.grid3}>
             {whyCards.map((c) => (
               <Card key={c.title} icon={c.icon} title={c.title} description={c.description} />
-            ))}
-          </div>
-        </Section>
-
-        {/* GUIDES */}
-        <Section
-          id="guides"
-          title="Step-by-Step Guides"
-          subtitle="Practical, hands-on tutorials to help you master Bitcoin self-custody. From beginner to advanced."
-        >
-          <div className={styles.grid3}>
-            {guideCards.map((g) => (
-              <Card
-                key={g.title}
-                icon={g.icon}
-                title={g.title}
-                description={g.description}
-                href={g.href}
-                badge={g.badge}
-                footerLeft={<DifficultyTag level={g.level} />}
-                footerRight={<span className={styles.arrow}>→</span>}
-              />
             ))}
           </div>
         </Section>

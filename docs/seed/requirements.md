@@ -15,7 +15,7 @@ To create your own DIY seed phrase securely, you'll need the following tools:
 Casino-grade dice are essential for generating true randomness (entropy). While it's possible to use a single dice, the process would be extremely slow. To speed things up, it's recommended to use at least 5 or 10 dice, allowing you to roll fewer times while still ensuring a high level of randomness.
 But it’s also okay to just save money and just use any old dice. Even if your dice are not perfect and have some bias, as long as you use several at a time, you will achieve sufficient randomness.
 
-That said, you don’t need to spend extra money on special dice—any standard six-sided dice will work. Even if your dice have slight imperfections or biases, rolling several at once will balance out any inconsistencies and provide enough randomness for your needs
+That said, you don’t need to spend extra money on special dice, any standard six-sided dice will work. Even if your dice have slight imperfections or biases, rolling several at once will balance out any inconsistencies and provide enough randomness for your needs
 
 ![](/img/seed/dice.jpg)
 

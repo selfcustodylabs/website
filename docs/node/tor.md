@@ -21,7 +21,7 @@ Why is this important? You don’t want attackers to know that you’re running 
 
 ## Connecting Your Bitcoin Wallet
 
-The second connection to consider is between your Bitcoin node and the wallet on your computer. This connection is already private because it only involves two devices on your local home network, which aren’t accessible from the outside world. (However, ensure your router’s security is strong—use a firewall, a good password, and avoid opening unnecessary ports.)
+The second connection to consider is between your Bitcoin node and the wallet on your computer. This connection is already private because it only involves two devices on your local home network, which aren’t accessible from the outside world. (However, ensure your router’s security is strong, use a firewall, a good password, and avoid opening unnecessary ports.)
 
 Your router assigns internal IP addresses to devices connected to it, and these addresses can’t be accessed from the internet. Your wallet needs to know the internal IP address of your node to communicate with it. But what if you’re away from home with your wallet? The internal IP address won’t work anymore because you’re no longer connected to the same network. This is where Tor helps. It allows your wallet to connect to your node from anywhere in the world.
 

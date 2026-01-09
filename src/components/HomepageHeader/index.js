@@ -123,7 +123,7 @@ export default function HomepageHeader() {
               <h3>Self Custody Dude <br/> The University of Satoshi</h3>
 
               <p>
-                I specialize in simplifying complex concepts and making them easy to understand — something I realized a bit late, but better late than never, right?
+                I specialize in simplifying complex concepts and making them easy to understand ,  something I realized a bit late, but better late than never, right?
                 My mission is to create guides that help every new self-custody enthusiast become truly self-sovereign <br/><br/>
                 My research focuses on privacy, security, the Bitcoin network, mathematics, and physics
                 I'm passionate about IT, problem-solving, and crafting high-quality how-to guides that not only simplify complex topics but also bridge the gap between tech-savvy experts and everyday users.<br/><br/>

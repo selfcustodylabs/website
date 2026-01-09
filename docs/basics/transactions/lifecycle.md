@@ -12,7 +12,7 @@ When you send Bitcoin, the transaction goes through a series of steps before it'
 
 ## Step 1: Creating the Transaction
 
-It all begins in your Bitcoin wallet. You enter the recipient’s address and the amount you want to send. The wallet then selects which coins (UTXOs) to use, generates the outputs—including any change back to you—and calculates an appropriate fee based on current network conditions.
+It all begins in your Bitcoin wallet. You enter the recipient’s address and the amount you want to send. The wallet then selects which coins (UTXOs) to use, generates the outputs, including any change back to you, and calculates an appropriate fee based on current network conditions.
 
 Once everything is set, the transaction is **signed** using your private key. This signature proves that you're authorized to spend the funds and makes the transaction ready for broadcasting.
 
@@ -26,7 +26,7 @@ Next, your wallet sends the signed transaction to the Bitcoin network. It’s no
 
 Every full node on the Bitcoin network keeps a copy of the mempool. This is where your transaction waits to be included in a block. Miners review the mempool and select which transactions to include, typically favoring those that pay higher fees.
 
-If your fee is too low, your transaction might stay in the mempool for a while until a miner chooses to include it—or until you boost the fee using RBF or CPFP techniques.
+If your fee is too low, your transaction might stay in the mempool for a while until a miner chooses to include it, or until you boost the fee using RBF or CPFP techniques.
 
 
 ## Step 4: Block Inclusion

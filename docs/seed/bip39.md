@@ -9,8 +9,8 @@ tags: [seed, BIP39]
 
 BIP39 (Bitcoin Improvement Proposal 39) defines a list of 2048 words, arranged alphabetically. Each word in the list corresponds to a specific position, which is used to map a binary number to its matching word. For example, if the binary number you calculate corresponds to the number 1477, the word in that position on the list is "reward”.
 
-- The smallest possible value is 0 (binary: 00000000000), which corresponds to the word “abandon” — the first word on the list.
-- The largest possible value is 2047 (binary: 11111111111), which corresponds to the word “zoo” — the last word on the list.
+- The smallest possible value is 0 (binary: 00000000000), which corresponds to the word “abandon” ,  the first word on the list.
+- The largest possible value is 2047 (binary: 11111111111), which corresponds to the word “zoo” ,  the last word on the list.
 
 :::warning Important
 Computers count starting at 0. So, for example, the fifth item in a list is actually item number 4 (not 5). This is crucial when looking up words on the BIP39 list.
@@ -20,7 +20,7 @@ The official [BIP 39 word list](https://github.com/bitcoin/bips/blob/master/bip-
 
 For instance, the first 11-digit binary number you’ve calculated equals 1477 in decimal. When you look at the GitHub list, you’ll find the word in line 1478 (since GitHub’s line numbers start at 1). This word will be “reward.”
 
-Go ahead and look up each decimal value — remember to add 1 to your calculated result to match the line numbers on GitHub — and find the corresponding word for all 24 binary rows.
+Go ahead and look up each decimal value ,  remember to add 1 to your calculated result to match the line numbers on GitHub ,  and find the corresponding word for all 24 binary rows.
 
 If you’ve made it this far, congratulations! You’ve now created a valid 24-word Bitcoin mnemonic seed.
 
