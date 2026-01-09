@@ -138,7 +138,7 @@ const config = {
             "aria-label": "GitHub repository",
           },
           {
-            href: 'https://orangepill.app.link/btcselfcustody',
+            href: 'https://app.cluborange.org/btcselfcustody',
             position: 'right',
             className: "header--opa-link",
             "aria-label": "Club Orange App",
@@ -195,7 +195,7 @@ const config = {
               },
               {
                 label: 'Club Orange App',
-                href: 'https://orangepill.app.link/btcselfcustody',
+                href: 'https://app.cluborange.org/btcselfcustody',
               }
             ],
           },
