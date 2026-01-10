@@ -163,13 +163,13 @@ const config = {
             ],
           },
           {
-            href: 'https://github.com/btcselfcustody',
+            href: 'https://github.com/selfcustodylabs',
             position: 'right',
             className: "header--github-link",
             "aria-label": "GitHub repository",
           },
           {
-            href: 'https://app.cluborange.org/btcselfcustody',
+            href: 'https://app.cluborange.org/selfcustodylabs',
             position: 'right',
             className: "header--cluborange-link",
             "aria-label": "Club Orange App",

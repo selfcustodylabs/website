@@ -150,7 +150,7 @@ export default function HomepageHeader() {
               <Grid item>
                 <Link
                   className="button"
-                  to="https://github.com/btcselfcustody"
+                  to="https://github.com/selfcustodylabs"
                   style={{ padding: "1rem" }}
                 >
                   <GitHubIcon fontSize={"large"} />
@@ -160,7 +160,7 @@ export default function HomepageHeader() {
               <Grid item>
                 <Link
                   className="button"
-                  to="https://x.com/btcselfcustody"
+                  to="https://x.com/selfcustodylabs"
                   style={{ padding: "1rem" }}
                 >
                   <XIcon fontSize={"large"} />
