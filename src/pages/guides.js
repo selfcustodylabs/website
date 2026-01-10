@@ -91,7 +91,7 @@ export default function GuidesPage() {
   ];
 
   return (
-    <Layout title="Guides" description="Browse all BTC Self Custody guides.">
+    <Layout title="Guides" description="Browse all Self Custody guides.">
       <main className={styles.page}>
         <header className={`${styles.hero} guidesHero`}>
           <div className={styles.heroGlow} aria-hidden="true" />

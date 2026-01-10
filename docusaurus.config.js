@@ -75,9 +75,9 @@ const config = {
         disableSwitch: true,
       },
       navbar: {
-        title: 'BTC Self Custody',
+        title: 'Self Custody Labs',
         logo: {
-          alt: 'BTC Self Custody',
+          alt: 'Self Custody Labs',
           src: 'img/logo.svg',
         },
         items: [
@@ -231,7 +231,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} BTC Self Custody. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Self Custody Labs. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
