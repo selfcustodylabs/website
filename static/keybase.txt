@@ -1,75 +1,56 @@
 ==================================================================
-https://keybase.io/btcselfcustody
+https://keybase.io/selfcustodylabs
 --------------------------------------------------------------------
 
 I hereby claim:
 
-  * I am an admin of https://btcselfcustody.io
-  * I am btcselfcustody (https://keybase.io/btcselfcustody) on keybase.
-  * I have a public key with fingerprint EED0 3B57 8FB2 425D 1D61  97B7 FE3A DFC5 4EF9 7748
+  * I am an admin of https://selfcustodylabs.com
+  * I am selfcustodylabs (https://keybase.io/selfcustodylabs) on keybase.
+  * I have a public key ASDQKN1-iD9eDmCv4fvXOiNJenWhduqojk2h7E6ZZaXKWgo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "0120f8323acfe0f5375a540d77dd0e013ca69b9e011b98c75dd1fef370fe9d9eb29c0a",
-      "fingerprint": "eed03b578fb2425d1d6197b7fe3adfc54ef97748",
+      "eldest_kid": "0120d028dd7e883f5e0e60afe1fbd73a23497a75a176eaa88e4da1ec4e9965a5ca5a0a",
       "host": "keybase.io",
-      "key_id": "fe3adfc54ef97748",
-      "kid": "0101bcf75c0fc4092422b441001153c1ae90ab47ca3346a27aa682048df5207eb8ee0a",
-      "uid": "407ce69d764e461f38dff25192e94919",
-      "username": "btcselfcustody"
+      "kid": "0120d028dd7e883f5e0e60afe1fbd73a23497a75a176eaa88e4da1ec4e9965a5ca5a0a",
+      "uid": "b0c1b0cdc496b273fb93828569429b19",
+      "username": "selfcustodylabs"
+    },
+    "merkle_root": {
+      "ctime": 1768009759,
+      "hash": "cfaff55d2bd93244ee43c4ad1c4eaec197841b9ec1f182b36a7c8fd7b448ca683f7360c57e931b9864e78faa265d772be8659efdccb914c5beb9bad806937cde",
+      "hash_meta": "ecb91f083222a1f9f22ed51e777d9818b2647ad1b6fa97b3134104920a044249",
+      "seqno": 27337541
     },
     "service": {
-      "hostname": "btcselfcustody.io",
+      "entropy": "e0JDdousVX/d6Dawse96SZPv",
+      "hostname": "selfcustodylabs.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
-  "ctime": 1743133109,
-  "expire_in": 157680000,
-  "prev": "9aaf999f077d8dc54686659f42a9d848c107b36268c96919719b800660ac64a1",
-  "seqno": 8,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1768009884,
+  "expire_in": 504576000,
+  "prev": "22cad3e3ed067bd5e3bda476486d22e87c9ce76c96b1f106ad95f92601aebce4",
+  "seqno": 5,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.13
-Comment: https://keybase.io/crypto
-
-yMNvAnicbVJtUFRVGF4EXNjJRIzWzInhajIS4D33++wMZcuHmhPJRzBNyXo/zl1u
-4i7u3kWIwSgaSpkYlBS0GAdna0SZgOEjykAIyAgIVivBITFmZC0rxnIbtaDupfzn
-+XM+3ud53ud9zzu4IthgClq0zAyl392/LWik/5THYJ97rLMUE5xSCWYpxfagpQ0V
-SMit2vYoEmbBcEDgMkcSJC/KCJdpkqV5msIllpUkHOGAFHkGClA7AQFyIktLEpCR
-TLK4jKAEkUBAEeexeExWHHbkKnQpDlWTRUjCSYFmOVkgKIKWgMQAyAqsjEhekkWa
-QjJkWYrTiPlOt87QzAm8GyUqTu1Nu9iW7D0Af983DgRRZmkRl0UKh1oWQqAogGtG
-aVIEPII4L1CsyJMkxfAEy/MMR+AUJ8k0gbNI4BBa8u1ZkqNwVkQMlFiGQhQDZFLD
-yQQNIIEgBQHUgW7kcvB7kYYWVNGNCmTR41b11pbFY1qsSBGR3l69ngfi/iut0OVU
-naKzQAvnq2qh26LT1ZJCHb8fCbb/lWyC4pC0lmqMIuRyK04HZgEaUlQVXRqwFAlI
-EuAwHkPFhYoL2RQdQbMMh2tLz4OKNEnI8zKEUMa1D+UkrZEMxzA0lCmChxJHcSLA
-WYFkCIYTIaMVygIoaAoMg/MiQ/EA02vb53BiFk6zyds1Sbdid/Cqx4Wwsi/6Xwkx
-BJkMy0OX6aNmMIVH3B/AnFsrF5M8b3enpI19C5z16eFZqcOhxt9SE4/Pn1t4+gn/
-GWetOeXwvTB/p7ei8eXib55fiOu+dDvEe5o4XeZ70rQi99TidiOmRIzsOAw+iopc
-R7+02bPh0Plxih7MSOQvmtOBvcoX/9XY0WOf/rh149xAYOdQ7OqSlJtNG6//nPdG
-Xu2wrap2zejFe2HJMW0O4672kp37ZuTG0LCD09aDvgT/0e+Gpisnc9t/rc7ytIoV
-z7XOPvtD4MtdpWPXTmb7VmVPjX/y+pGWAy/GbNpxK8dgjov5Q6K2GK3m81JD4L25
-0eRxsEWNbbJW3vjgexC2RU6wrvs4pHzG3HuC7isOzuyuHfsp95+sKtf66Nn5K5c3
-pcbAhcjfa/qMve6VbfmD3dejX5udCF19w97Q2TbZMn029Mjlmt2LPf75jMft3uZw
-a4AgZh+Zroib6mi27m0W8oWn3i+Qk6tvTsYGIqfMyQ8P/NLcOPR3z1rv7uHK8fLy
-+rVxV5uLZob+3JAlbcPqus4Gm2oaypqwsvq+AXdRyFvL/WFXHLdrj30eezxTpTuS
-Puv0vFDeEpjo6bp7oWZV1JmTr/rbqpfd8V2byZlfn+S91HHi67mE2TuZaTHFfVNv
-lhZEW2L7D6DezomFNaOmCGOr4+qHWMa73qiq7LThZxLPXXh0c9z2d3wPDW79q70t
-u53tqssrqmtXD4WP/As2jcwC
-=Ljc3
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg0Cjdfog/Xg5gr+H71zojSXp1oXbqqI5NoexOmWWlyloKp3BheWxvYWTESpcCBcQgIsrT4+0Ge9XjvaR2SG0i6Hyc52yWsfEGrZX5JgGuvOTEIMclubd4eqHd4IMNDmECmxC+cfCM1mVU7uZuUjnEqoONAgHCo3NpZ8RA5IBXZbWDoGlQyUr4TFeGjhnhl14OLy74JI4K59gAn0z1sHAq0Whpb6wkM7xfO80mbjBQjDmbYJAmO5Fa9tksAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIA8JRG18YuU4GjghVgQVyit+s3maCmNbMU0nNOiNNH8o3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/btcselfcustody
+View my publicly-auditable identity here: https://keybase.io/selfcustodylabs
 
 ==================================================================
