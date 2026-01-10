@@ -104,40 +104,6 @@ html[data-theme='dark'] .header--cluborange-link::before {
     no-repeat center / contain;
 }
 
-
-/* add youtube icon in the navigation bar*/
-.navbar__youtube:before {
-  content: "";
-  display: flex;
-  height: 24px;
-  width: 24px;
-  background: url("/img/youtube.svg") no-repeat 100% 100%;
-  background-size: cover;
-}
-
-.navbar__youtube:hover {
-  background: var(--ifm-color-emphasis-200);
-  mask: url("/img/youtube.svg") no-repeat 50% 50%;
-  mask-size: 80%;
-}
-
-/* resize youtube videos */
-.youtube-video {
-  height: 550px;
-}
-
-@media screen and (max-width: 1350px) {
-  .youtube-video {
-    height: 450px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .youtube-video {
-    height: 200px;
-  }
-}
-
 /* DIY Seed Table */
 .fixed-width-table table {
   width: 100%;
@@ -161,10 +127,6 @@ html[data-theme='dark'] .header--cluborange-link::before {
   border: 1px solid #ddd;
   width: 200px; /* Adjust width as needed */
 }
-
-/* Tighten spacing below navbar for Bitcoin Devices page */
-
-/* Optional: fine control for the title block */
 
 
 /* Tighten spacing below navbar for hub pages */
