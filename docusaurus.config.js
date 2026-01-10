@@ -145,7 +145,7 @@ const config = {
                 label: 'X',
               },
               {
-                href: 'mailto:btcselfcustody@proton.me',
+                href: 'mailto:selfcustodylabs@proton.me',
                 label: 'E-mail'
               },
               {
