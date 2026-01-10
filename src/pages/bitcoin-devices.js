@@ -82,7 +82,7 @@ export default function BitcoinDevicesPage() {
       title: "Nostr Signing Device",
       description: "Use a dedicated signing device to keep your Nostr private key off your computer.",
       href: "/docs/nostr-signing-device",
-      level: "Beginner",
+      level: "Intermediate",
     },
   ];
 
