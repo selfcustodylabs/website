@@ -349,14 +349,14 @@ export default function Home() {
   ];
 
   return (
-    <Layout title="Home" description="BTC Self Custody - Learn self-custody the right way.">
+    <Layout title="Home" description="Self Custody Labs - Learn self-custody the right way.">
       <main className={styles.page}>
         {/* HERO */}
         <header className={styles.hero}>
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.container}>
             <div className={styles.heroInner}>
-              <img className={styles.heroLogo} src={logoSrc} alt="BTC Self Custody" />
+              <img className={styles.heroLogo} src={logoSrc} alt="Self Custody Labs" />
               <h1 className={styles.heroTitle}>
                 Take Control of <span className={styles.accent}>Your Bitcoin</span>
               </h1>

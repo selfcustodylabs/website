@@ -1,4 +1,4 @@
-# BTC Self Custody - Master Bitcoin Self Custody with Simple, Clear Guides
+# Self Custody Labs - Master Bitcoin Self Custody with Simple, Clear Guides
 
 Welcome to **btcselfcustody.io** - your resource for mastering Bitcoin self-custody. Whether you're a beginner or an experienced user, our guides provide simple, clear, and practical steps to help you take control of your Bitcoin securely and independently.
 
