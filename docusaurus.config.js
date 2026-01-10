@@ -141,7 +141,7 @@ const config = {
                 label: 'Nostr',
               },
               {
-                href: 'https://x.com/btcselfcustody',
+                href: 'https://x.com/selfcustodylabs',
                 label: 'X',
               },
               {
@@ -149,11 +149,11 @@ const config = {
                 label: 'E-mail'
               },
               {
-                href: 'https://app.cluborange.org/btcselfcustody',
+                href: 'https://app.cluborange.org/selfcustodylabs',
                 label: 'Club Orange App',
               },
               {
-                href: 'https://github.com/btcselfcustody',
+                href: 'https://github.com/selfcustodylabs',
                 label: 'GitHub',
               },
               {
@@ -218,7 +218,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/btcselfcustody',
+                href: 'https://github.com/selfcustodylabs',
               },
               {
                 label: 'Keybase',
@@ -226,7 +226,7 @@ const config = {
               },
               {
                 label: 'Club Orange App',
-                href: 'https://app.cluborange.org/btcselfcustody',
+                href: 'https://app.cluborange.org/selfcustodylabs',
               }
             ],
           },

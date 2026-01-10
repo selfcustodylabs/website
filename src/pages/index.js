@@ -315,7 +315,7 @@ export default function Home() {
       icon: XIcon,
       title: "X",
       description: "Follow us on X",
-      href: "https://x.com/btcselfcustody",
+      href: "https://x.com/selfcustodylabs",
       external: true,
     },
     {
@@ -329,14 +329,14 @@ export default function Home() {
       icon: ClubOrangeIcon,
       title: "Club Orange App",
       description: "Connect with Bitcoiners",
-      href: "https://app.cluborange.org/btcselfcustody",
+      href: "https://app.cluborange.org/selfcustodylabs",
       external: true,
     },
     {
       icon: GitHubIcon,
       title: "GitHub",
       description: "Contribute to our guides",
-      href: "https://github.com/btcselfcustody",
+      href: "https://github.com/selfcustodylabs",
       external: true,
     },
     {
