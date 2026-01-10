@@ -122,6 +122,10 @@ const config = {
                 label: 'TimechainStats',
               },
               {
+                href: 'https://kycnot.me/',
+                label: 'No KYC'
+              },
+              {
                 href: 'https://mempool.space.com/',
                 label: 'Mempool',
               },
