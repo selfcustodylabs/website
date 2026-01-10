@@ -1,10 +1,10 @@
 # Self Custody Labs - Master Bitcoin Self Custody with Simple, Clear Guides
 
-Welcome to **btcselfcustody.io** - your resource for mastering Bitcoin self-custody. Whether you're a beginner or an experienced user, our guides provide simple, clear, and practical steps to help you take control of your Bitcoin securely and independently.
+Welcome to **selfcustodylabs.com** - your resource for mastering Bitcoin self-custody. Whether you're a beginner or an experienced user, our guides provide simple, clear, and practical steps to help you take control of your Bitcoin securely and independently.
 
 ## Overview
 
-btcselfcustody.io is dedicated to empowering individuals with the knowledge to store and secure their Bitcoin without relying on third-party custodians. Our goal is to provide high-quality, easy-to-understand tutorials on various aspects of Bitcoin self-custody, including cold storage, hardware wallets, and securing your private keys.
+selfcustodylabs.com is dedicated to empowering individuals with the knowledge to store and secure their Bitcoin without relying on third-party custodians. Our goal is to provide high-quality, easy-to-understand tutorials on various aspects of Bitcoin self-custody, including cold storage, hardware wallets, and securing your private keys.
 
 ## Features
 
@@ -34,9 +34,9 @@ Please ensure that your code follows the style guide and that all tests pass bef
 
 To get started with the guides:
 
-1. Check out our [website](https://btcselfcustody.io) for the full set of tutorials and documentation.
+1. Check out our [website](https://selfcustodylabs.com) for the full set of tutorials and documentation.
 2. Clone this repository to your local machine to explore the code and documentation.
 
 ```bash
-git clone https://github.com/btcselfcustody/btcselfcustody.io.git
+git clone https://github.com/selfcustodylabs/website.git
 ```
