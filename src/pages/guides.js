@@ -64,7 +64,7 @@ export default function GuidesPage() {
       description: "Create your own cryptographically secure seed using dice. True randomness, fully offline.",
       href: "/docs/seed",
       badge: "POPULAR",
-      level: "Beginner",
+      level: "Intermediate",
     },
     {
       icon: KeyRoundedIcon,
@@ -72,7 +72,7 @@ export default function GuidesPage() {
       description: "Add a strong passphrase layer and learn best practices for creating and managing it.",
       href: "/docs/passphrase",
       badge: "POPULAR",
-      level: "Intermediate",
+      level: "Beginner",
     },
     {
       icon: SecurityRoundedIcon,
@@ -86,7 +86,7 @@ export default function GuidesPage() {
       title: "Coreboot",
       description: "Learn Coreboot fundamentals and why open firmware matters for security-minded setups.",
       href: "/docs/coreboot",
-      level: "Intermediate",
+      level: "Advanced",
     },
   ];
 
