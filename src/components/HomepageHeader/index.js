@@ -140,7 +140,7 @@ export default function HomepageHeader() {
               <Grid item>
                 <Link
                   className="button"
-                  href="mailto:btcselfcustody@proton.me"
+                  href="mailto:selfcustodylabs@proton.me"
                   style={{ padding: "1rem" }}
                 >
                   <EmailIcon fontSize={"large"} />

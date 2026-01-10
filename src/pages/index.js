@@ -322,7 +322,7 @@ export default function Home() {
       icon: EmailRoundedIcon,
       title: "E-mail",
       description: "Get in touch with us",
-      href: "mailto:btcselfcustody@proton.me",
+      href: "mailto:selfcustodylabs@proton.me",
       external: true,
     },
     {
