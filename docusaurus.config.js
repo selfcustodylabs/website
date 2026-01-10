@@ -157,7 +157,7 @@ const config = {
                 label: 'GitHub',
               },
               {
-                href: 'https://keybase.io/btcselfcustody',
+                href: 'https://keybase.io/selfcustodylabs',
                 label: 'Keybase'
               },
             ],
@@ -222,7 +222,7 @@ const config = {
               },
               {
                 label: 'Keybase',
-                href: 'https://keybase.io/btcselfcustody',
+                href: 'https://keybase.io/selfcustodylabs',
               },
               {
                 label: 'Club Orange App',
