@@ -8,20 +8,20 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "BTC Self Custody",
+  title: "Self Custody Labs",
   tagline: "Guide Writer| The University of Satoshi",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://btcselfcustody.io",
+  url: "https://selfcustodylabs.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "btcselfcustody", // Usually your GitHub org/user name.
-  projectName: "btcselfcustody.io", // Usually your repo name.
+  organizationName: "selfcustodylabs", // Usually your GitHub org/user name.
+  projectName: "website", // Usually your repo name.
   trailingSlash: false,
   deploymentBranch: "gh-pages",
 
