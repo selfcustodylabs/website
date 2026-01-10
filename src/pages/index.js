@@ -343,7 +343,7 @@ export default function Home() {
       icon: KeybaseIcon,
       title: "Keybase",
       description: "Secure messaging",
-      href: "https://keybase.io/btcselfcustody",
+      href: "https://keybase.io/selfcustodylabs",
       external: true,
     },
   ];
