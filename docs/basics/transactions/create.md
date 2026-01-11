@@ -3,7 +3,6 @@ sidebar_position: 4
 title: "Creation"
 description: "Practical guide: Creation. Covers Manually Building Transactions, Using Wallets to Send Transactions, RBF – Replace-by-Fee."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "creation"]
-slug: "/basics/transactions/creation"
 tags: ["bitcoin", "transactions", "creation"]
 ---
 # Creating Transactions

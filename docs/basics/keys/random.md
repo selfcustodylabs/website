@@ -3,7 +3,6 @@ sidebar_position: 3
 title: "The Random Number"
 description: "Practical guide: The Random Number. Covers The Checksum, bitcoin, self custody."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "random", "number"]
-slug: "/basics/private-keys/random-number"
 tags: ["private keys", "random number", "entropy"]
 ---
 # Private Key as Random Number

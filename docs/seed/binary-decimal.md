@@ -3,7 +3,6 @@ sidebar_position: 5
 title: "Binary to Decimal"
 description: "Practical guide: Binary to Decimal. Covers Airgapped Computer, Paper & Pen, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "binary", "decimal"]
-slug: "/seed/binary-to-decimal/"
 tags: ["seed", "binary"]
 ---
 # Binary to Decimal

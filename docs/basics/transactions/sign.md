@@ -3,7 +3,6 @@ sidebar_position: 5
 title: "Signing"
 description: "Practical guide: Signing. Covers What Is Signing?, Online vs. Offline Signing, Single-Sig vs. Multisig Signing."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "signing"]
-slug: "/basics/transactions/signing"
 tags: ["bitcoin", "transactions", "signing"]
 ---
 # Signing Transactions

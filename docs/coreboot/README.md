@@ -3,7 +3,6 @@ sidebar_position: 1
 title: "Coreboot"
 description: "Practical guide: Coreboot. Covers Why Coreboot?, What is Coreboot?, How Correboot Works."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot"]
-slug: "/coreboot/"
 tags: ["coreboot", "open source", "bios"]
 ---
 # Coreboot BIOS

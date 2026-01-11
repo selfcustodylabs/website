@@ -3,7 +3,6 @@ sidebar_position: 1
 title: "DIY Seed"
 description: "Practical guide: DIY Seed. Covers Why DIY Seed?, Risks of 3rd-Party Seed Generation, How to Generate Your Own Seed."
 keywords: ["bitcoin", "self custody", "security", "privacy", "seed"]
-slug: "/seed/"
 tags: ["seed", "self custody", "entropy"]
 ---
 # DIY Bitcoin Seed 🎲🎲

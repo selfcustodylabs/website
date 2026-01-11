@@ -3,7 +3,6 @@ sidebar_position: 3
 title: "Lifecycle"
 description: "Practical guide: Lifecycle. Covers Step 1: Creating the Transaction, Step 2: Broadcasting the Transaction, Step 3: The Mempool – Waiting Room."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "lifecycle"]
-slug: "/basics/transactions/lifecycle"
 tags: ["bitcoin", "transactions", "lifecycle"]
 ---
 # Transaction Lifecycle

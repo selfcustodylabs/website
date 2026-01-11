@@ -3,7 +3,6 @@ sidebar_position: 6
 title: "Look up BIP39 Words"
 description: "Practical guide: Look up BIP39 Words. Covers bitcoin, self custody, security."
 keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "look", "bip39", "words"]
-slug: "/seed/bip39/"
 tags: ["seed", "BIP39"]
 ---
 # Look up BIP39 Words

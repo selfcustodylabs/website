@@ -3,7 +3,6 @@ sidebar_position: 3
 title: "Build Coreboot"
 description: "Practical guide: Build Coreboot. Covers Step 1: Install tools and libraries needed for coreboot, Step 2: Download Coreboot Source Tree, Step 3: Build the."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "build"]
-slug: "/coreboot/build/"
 tags: ["coreboot", "build", "bios"]
 ---
 # Build Coreboot

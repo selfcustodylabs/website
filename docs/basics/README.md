@@ -3,7 +3,6 @@ sidebar_position: 1
 title: "What is Self Custody"
 description: "Clear explanation of Self Custody for Bitcoin self-custody. Covers Private Keys and Seed Phrases, Ways to Self Custody Bitcoin, Freedom Comes With."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "self", "custody"]
-slug: "/basics/what-is-self-custody"
 tags: ["self custody"]
 ---
 # What is Bitcoin Self Custody?
@@ -49,7 +48,7 @@ There are different levels of security, depending on your needs:
 
 You don’t need to start with the most complex option. Many people begin simple and upgrade their setup over time.
 
-If you want to master private keys and seed phrases in depth, go to the [dedicated section](/docs/basics/keys-and-seed-phrases)
+If you want to master private keys and seed phrases in depth, go to the [dedicated section](/docs/basics/keys/intro)
 
 
 ## Freedom Comes With Responsibility

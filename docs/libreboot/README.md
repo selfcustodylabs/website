@@ -3,7 +3,6 @@ sidebar_position: 1
 title: "Libreboot"
 description: "Practical guide: Libreboot. Covers Why Libreboot?, What is Libreboot?, How Libreboot Works."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot"]
-slug: "/libreboot/"
 tags: ["libreboot", "open source", "bios"]
 ---
 # Libreboot BIOS

@@ -2,7 +2,6 @@
     "label": "Transactions",
     "position": 4,
     "link": {
-    "type": "generated-index",
-    "slug": "/basics/transactions"
+    "type": "generated-index"
   }
 }

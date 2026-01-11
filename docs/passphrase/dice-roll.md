@@ -3,7 +3,6 @@ sidebar_position: 3
 title: "Roll the Dice"
 description: "Practical guide: Roll the Dice. Covers bitcoin, self custody, security."
 keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "roll", "dice"]
-slug: "/passphrase/short-list"
 tags: ["passphrase", "self custody", "entropy", "dice"]
 ---
 # Roll the Dice

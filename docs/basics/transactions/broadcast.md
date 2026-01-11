@@ -3,7 +3,6 @@ sidebar_position: 6
 title: "Broadcasting"
 description: "Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "broadcasting"]
-slug: "/basics/transactions/broadcasting"
 tags: ["bitcoin", "transactions", "broadcasting"]
 ---
 # Broadcasting Transactions
