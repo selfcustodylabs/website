@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: What is Self Custody
-slug: /basics/what-is-self-custody
-tags: [self custody]
+title: "What is Self Custody"
+description: "Clear explanation of Self Custody for Bitcoin self-custody. Covers Private Keys and Seed Phrases, Ways to Self Custody Bitcoin, Freedom Comes With."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "self", "custody"]
+slug: "/basics/what-is-self-custody"
+tags: ["self custody"]
 ---
-
 # What is Bitcoin Self Custody?
 
 Bitcoin self custody means you are in full control of your Bitcoin.

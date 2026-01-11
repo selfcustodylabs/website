@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Hardware Wallets
-slug: /basics/wallets/hardware-wallets
-tags: [bitcoin, hardware, wallets]
+title: "Hardware Wallets"
+description: "Practical guide: Hardware Wallets. Covers Why Hardware Wallets Exist, How Hardware Wallets Work, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "hardware", "wallets", "wallet", "hardware wallet"]
+slug: "/basics/wallets/hardware-wallets"
+tags: ["bitcoin", "hardware", "wallets"]
 ---
-
 # What Is a Hardware Wallet?
 
 A hardware wallet is a small physical device made specifically to protect your Bitcoin keys.

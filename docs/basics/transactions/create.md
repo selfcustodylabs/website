@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Creation
-slug: /basics/transactions/creation
-tags: [bitcoin, transactions, creation]
+title: "Creation"
+description: "Practical guide: Creation. Covers Manually Building Transactions, Using Wallets to Send Transactions, RBF – Replace-by-Fee."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "creation"]
+slug: "/basics/transactions/creation"
+tags: ["bitcoin", "transactions", "creation"]
 ---
-
 # Creating Transactions
 
 Most Bitcoin wallets make it incredibly simple to create a transaction: just enter the amount you want to send and the recipient’s address. Behind the scenes, though, there’s a lot more going on.

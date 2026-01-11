@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: DIY Passphrase
-slug: /passphrase/
-tags: [passphrase, self custody, entropy]
+title: "DIY Passphrase"
+description: "Practical guide: DIY Passphrase. Covers Why Random Passphrases Matter, Problems with the Original Diceware List, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase"]
+slug: "/passphrase/"
+tags: ["passphrase", "self custody", "entropy"]
 ---
-
 # DIY Bitcoin Passphrase 🎲🎲
 
 In our [basics](/docs/basics/private-keys/passphrase) section, we covered the fundamentals of passphrases. Now, let's dive into how to create a secure and reliable passphrase for your Bitcoin seed.

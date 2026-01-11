@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Unlocking BIOS
-slug: /coreboot/internal/unlocking-bios/
-tags: [coreboot, chipsec, bios, unlocking]
+title: "Unlocking BIOS"
+description: "Practical guide: Unlocking BIOS. Covers Security Issues, Install CHIPSEC, Examining BIOS Protections Theory."
+keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "unlocking", "bios"]
+slug: "/coreboot/internal/unlocking-bios/"
+tags: ["coreboot", "chipsec", "bios", "unlocking"]
 ---
-
 # Unlocking BIOS
 
 Before flashing Coreboot internally, it’s important to understand the security protections built into the BIOS and how older versions can be exploited to bypass them.

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: Build Coreboot
-slug: /coreboot/build/
-tags: [coreboot, build, bios]
+title: "Build Coreboot"
+description: "Practical guide: Build Coreboot. Covers Step 1: Install tools and libraries needed for coreboot, Step 2: Download Coreboot Source Tree, Step 3: Build the."
+keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "build"]
+slug: "/coreboot/build/"
+tags: ["coreboot", "build", "bios"]
 ---
-
 # Build Coreboot
 
 Now we will walk through building Coreboot from scratch. We will first install the required tools, then download Coreboot’s source code, build its toolchain, configure it for your mainboard, and finally compile it into a ROM file you can flash.

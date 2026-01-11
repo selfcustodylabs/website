@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: The Random Number
-slug: /basics/private-keys/random-number
-tags: [private keys, random number, entropy]
+title: "The Random Number"
+description: "Practical guide: The Random Number. Covers The Checksum, bitcoin, self custody."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "random", "number"]
+slug: "/basics/private-keys/random-number"
+tags: ["private keys", "random number", "entropy"]
 ---
-
 # Private Key as Random Number
 
 A private key starts as a binary number. While it can be converted into different formats, at its core, it remains a binary number because that’s what computers understand.

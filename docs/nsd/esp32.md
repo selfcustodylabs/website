@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: ESP32 Boards Support
-slug: /nostr-signing-device/arduino-esp32-support
-tags: [nostr, nsd, signing device, arduino, esp32]
+title: "ESP32 Boards Support"
+description: "Practical guide: ESP32 Boards Support. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "esp32", "boards", "support"]
+slug: "/nostr-signing-device/arduino-esp32-support"
+tags: ["nostr", "nsd", "signing device", "arduino", "esp32"]
 ---
-
 # Setting Up ESP32 Board Support 
 
 These steps are based on the [here](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing)

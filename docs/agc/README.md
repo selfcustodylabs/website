@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: AGC Basics
-slug: /air-gapped-computer
-tags: [air-gapped, computer, AGC, seedsigner, seed, wallet]
+title: "AGC Basics"
+description: "Practical guide: AGC Basics. Covers Why you Need an AGC, Why an AGC is better than a SeedSigner, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "basics", "air-gapped", "offline signing", "cold storage"]
+slug: "/air-gapped-computer"
+tags: ["air-gapped", "computer", "AGC", "seedsigner", "seed", "wallet"]
 ---
-
 # Air-Gapped Computer (AGC)
 
 Let’s get straight to the point:

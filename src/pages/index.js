@@ -349,7 +349,7 @@ export default function Home() {
   ];
 
   return (
-    <Layout title="Home" description="Self Custody Labs - Learn self-custody the right way.">
+    <Layout title="Bitcoin Self-Custody Guides" description="Step-by-step Bitcoin self-custody tutorials: cold storage, air-gapped setups, wallet security, and privacy.">
       <main className={styles.page}>
         {/* HERO */}
         <header className={styles.hero}>

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Word Lists
-slug: /passphrase/word-lists
-tags: [passphrase, self custody, entropy, word lists]
+title: "Word Lists"
+description: "Practical guide: Word Lists. Covers The List Explained, Security & Passphrase Strength, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "word", "lists"]
+slug: "/passphrase/word-lists"
+tags: ["passphrase", "self custody", "entropy", "word lists"]
 ---
-
 # EFF's New Word Lists
 
 :::tip Word List

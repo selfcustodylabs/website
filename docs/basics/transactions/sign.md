@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: Signing
-slug: /basics/transactions/signing
-tags: [bitcoin, transactions, signing]
+title: "Signing"
+description: "Practical guide: Signing. Covers What Is Signing?, Online vs. Offline Signing, Single-Sig vs. Multisig Signing."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "signing"]
+slug: "/basics/transactions/signing"
+tags: ["bitcoin", "transactions", "signing"]
 ---
-
 # Signing Transactions
 
 Before a Bitcoin transaction can be broadcast to the network, it must first be signed using a private key. This signature acts as proof that you control the coins you’re trying to spend.

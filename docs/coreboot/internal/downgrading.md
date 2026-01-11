@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Downgrading BIOS
-slug: /coreboot/internal/downgrading-bios/
-tags: [coreboot, downgrading, bios]
+title: "Downgrading BIOS"
+description: "Practical guide: Downgrading BIOS. Covers Why Downgrade is Possible, Performing Downgrade, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "downgrading", "bios"]
+slug: "/coreboot/internal/downgrading-bios/"
+tags: ["coreboot", "downgrading", "bios"]
 ---
-
 # Downgrading BIOS
 
 Before we can flash Coreboot internally on a ThinkPad, we need to make sure the BIOS version is vulnerable enough to be overwritten.

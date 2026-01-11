@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Types of AGCs
-slug: /air-gapped-computer/types/
-tags: [air-gapped, computer, laptop, raspberry, desktop, wi-fi]
+title: "Types of AGCs"
+description: "Practical guide: Types of AGCs. Covers Laptop Recommended, Raspberry Pi Zero 1.3, Desktop Computer."
+keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "types", "agcs", "air-gapped", "offline signing", "cold storage"]
+slug: "/air-gapped-computer/types/"
+tags: ["air-gapped", "computer", "laptop", "raspberry", "desktop", "wi-fi"]
 ---
-
 # Types of Air-Gapped Computers
 
 When choosing an Air-Gapped Computer (AGC), there are a few options to consider:

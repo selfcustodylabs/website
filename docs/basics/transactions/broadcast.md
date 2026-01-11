@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: Broadcasting
-slug: /basics/transactions/broadcasting
-tags: [bitcoin, transactions, broadcasting]
+title: "Broadcasting"
+description: "Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "broadcasting"]
+slug: "/basics/transactions/broadcasting"
+tags: ["bitcoin", "transactions", "broadcasting"]
 ---
-
 # Broadcasting Transactions
 
 Once your Bitcoin transaction is fully signed, it's ready to be **broadcasted**, meaning sent out to the peer-to-peer (P2P) network. Other nodes receive it and temporarily store it in their **mempool**, essentially a waiting room for transactions. From there, miners select transactions from the mempool to include in the next block.

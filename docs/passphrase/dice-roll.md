@@ -1,18 +1,18 @@
 ---
 sidebar_position: 3
-title: Roll the Dice
-slug: /passphrase/short-list
-tags: [passphrase, self custody, entropy, dice]
+title: "Roll the Dice"
+description: "Practical guide: Roll the Dice. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "roll", "dice"]
+slug: "/passphrase/short-list"
+tags: ["passphrase", "self custody", "entropy", "dice"]
 ---
-
-
 # Roll the Dice
 
 Now it's time to generate your own passphrase using real dice. As we mentioned in the Seed Phrase Guide, using casino-grade dice ensures the highest level of randomness (entropy). However, if you want to save money, any standard six-sided dice will work just fine. Even if your dice have slight imperfections, rolling multiple dice at a time will still provide sufficient randomness for a secure passphrase.
 
 For this method, five dice are enough to generate each word.
 
-![](/img/seed/dice.jpg)
+![Dice](/img/seed/dice.jpg)
 
 Before rolling the dice remember that:
 

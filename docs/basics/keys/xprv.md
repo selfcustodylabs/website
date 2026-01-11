@@ -1,13 +1,14 @@
 ---
 sidebar_position: 7
-title: Extended Private Key (XPRV)
-slug: /basics/private-keys/xprv
-tags: [private keys, xprv, bip39, seed]
+title: "Extended Private Key (XPRV)"
+description: "Practical guide: Extended Private Key (XPRV). Covers Why the Extended Private Key Matters, Security Considerations, Generating and Testing an Extended Private."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "private", "xprv"]
+slug: "/basics/private-keys/xprv"
+tags: ["private keys", "xprv", "bip39", "seed"]
 ---
-
 # Extended Private Key (XPRV)
 
-![](/img/basics/diagram.png)
+![Diagram](/img/basics/diagram.png)
 
 The extended private key is derived from the binary private key (along with an optional passphrase) using mathematical functions that most users don’t need to understand in detail.
 

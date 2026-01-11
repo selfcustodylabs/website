@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Types
-slug: /basics/transactions/types
-tags: [bitcoin, transactions]
+title: "Types"
+description: "Practical guide: Types. Covers Pre-Signed, Fully Signed, Partially Signed PSBT."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "types"]
+slug: "/basics/transactions/types"
+tags: ["bitcoin", "transactions"]
 ---
-
 # Transaction Types
 
 There are three main stages of a Bitcoin transaction:

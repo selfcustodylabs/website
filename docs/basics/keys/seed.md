@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Seed Phrase (BIP39)
-slug: /basics/private-keys/seed
-tags: [private keys, random number, entropy, bip39, seed]
+title: "Seed Phrase (BIP39)"
+description: "Practical guide: Seed Phrase (BIP39). Covers Converting Binary to Decimal, The BIP39 Solution: Using Words Instead of Numbers, A Formatting Issue in the BIP39."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "seed", "phrase", "bip39"]
+slug: "/basics/private-keys/seed"
+tags: ["private keys", "random number", "entropy", "bip39", "seed"]
 ---
-
 # Private Key Conversion
 
 Writing down a binary private key accurately is difficult for humans, and entering it correctly into a wallet is even harder. A single mistake could lead to losing Bitcoin. While a computer can detect errors using a checksum, handwritten notes cannot.
@@ -28,7 +29,7 @@ The official [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0
 For example, if the private key starts with `00000000000` (binary zero), the corresponding word should be the first word on the list, which is **"abandon."** However, on GitHub, "abandon" is labeled as word **1** instead of **0**. This means every word in the list appears **one position higher than the number it actually represents**, requiring a simple correction when looking up words.
 
 
-![](/img/basics/words.png)
+![Words](/img/basics/words.png)
 
 
 ## Step-by-Step Conversion Example

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: Update
-slug: /libreboot/update/
-tags: [libreboot, update, flashprog, bios]
+title: "Update"
+description: "Practical guide: Update. Covers Disable security protections before flashing, Flash Chip Size, Read the Current Chip Contents."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "update"]
+slug: "/libreboot/update/"
+tags: ["libreboot", "update", "flashprog", "bios"]
 ---
-
 # Update (internal)
 
 Once Libreboot is already installed, you can update to new releases through internal flashing, without needing to disassemble your laptop again.

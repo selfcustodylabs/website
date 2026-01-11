@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: How a Tx Work
-slug: /basics/transactions/how-transactions-work
-tags: [bitcoin, transactions, understanding]
+title: "How a Tx Work"
+description: "Practical guide: How a Tx Work. Covers Inputs and Outputs, You Always Spend the Whole Input, Transaction Fees."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "work"]
+slug: "/basics/transactions/how-transactions-work"
+tags: ["bitcoin", "transactions", "understanding"]
 ---
-
 # How Bitcoin Transactions Work
 
 Bitcoin might seem complicated at first, but once you understand a few key ideas, the process becomes much clearer. Here's what actually happens when you send Bitcoin.

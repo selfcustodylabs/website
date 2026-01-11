@@ -1,13 +1,14 @@
 ---
 sidebar_position: 1
-title: Libreboot
-slug: /libreboot/
-tags: [libreboot, open source, bios]
+title: "Libreboot"
+description: "Practical guide: Libreboot. Covers Why Libreboot?, What is Libreboot?, How Libreboot Works."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot"]
+slug: "/libreboot/"
+tags: ["libreboot", "open source", "bios"]
 ---
-
 # Libreboot BIOS
 
-![](/img/libreboot/libreboot.png)
+![Libreboot](/img/libreboot/libreboot.png)
 
 ## Why Libreboot?
 
@@ -36,4 +37,4 @@ Libreboot includes multiple bootloader options:
 
 All these options come bundled, letting you choose the right one when you boot.
 
-![](/img/libreboot/t480s.jpg)
+![T480s](/img/libreboot/t480s.jpg)

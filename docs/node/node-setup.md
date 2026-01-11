@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Node Setup
-slug: /bitcoin-node/setup
-tags: [bitcoin node, setup, self custody]
+title: "Node Setup"
+description: "Practical guide: Node Setup. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "node", "setup", "bitcoin node", "electrum", "tor"]
+slug: "/bitcoin-node/setup"
+tags: ["bitcoin node", "setup", "self custody"]
 ---
-
 # Setup a Bitcoin Node
 
 There are several popular tools to help you set up a Bitcoin node, each with its own features and ease of use.

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Prepare the NSD
-slug: /nostr-signing-device/nsd-setup
-tags: [nostr, nsd, signing device, github]
+title: "Prepare the NSD"
+description: "Practical guide: Prepare the NSD. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "prepare"]
+slug: "/nostr-signing-device/nsd-setup"
+tags: ["nostr", "nsd", "signing device", "github"]
 ---
-
 # Setting up the Nostr Signing Device
 
 ### Clone the GitHub repository:
@@ -45,4 +46,4 @@ Plug in your device via USB.
 
 If the upload completes without errors, your NSD is ready! You should see the LNbits welcome screen on the display.
 
-![](/img/nsd/nsd.jpg)
+![Nsd](/img/nsd/nsd.jpg)

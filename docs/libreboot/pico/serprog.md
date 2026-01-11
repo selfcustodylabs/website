@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Build Serprog
-slug: /libreboot/build-serprog/
-tags: [libreboot, raspberry, pico, serprog]
+title: "Build Serprog"
+description: "Practical guide: Build Serprog. Covers Build serprog firmware from source, Connect the Pico to PC, Copy the Firmware."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "serprog"]
+slug: "/libreboot/build-serprog/"
+tags: ["libreboot", "raspberry", "pico", "serprog"]
 ---
-
 # Build Serprog
 
 Install the required dependencies

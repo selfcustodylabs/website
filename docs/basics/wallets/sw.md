@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Software Wallets
-slug: /basics/wallets/software-wallets
-tags: [bitcoin, software, wallets]
+title: "Software Wallets"
+description: "Practical guide: Software Wallets. Covers Why People Use Software Wallets, The Trade-Off, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "software", "wallets", "wallet", "hardware wallet"]
+slug: "/basics/wallets/software-wallets"
+tags: ["bitcoin", "software", "wallets"]
 ---
-
 # What is a Software Wallet?
 
 A software wallet is an app on your phone or computer that lets you hold and use Bitcoin.
