@@ -3,7 +3,6 @@ sidebar_position: 2
 title: "How a Tx Work"
 description: "Practical guide: How a Tx Work. Covers Inputs and Outputs, You Always Spend the Whole Input, Transaction Fees."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "work"]
-slug: "/basics/transactions/how-transactions-work"
 tags: ["bitcoin", "transactions", "understanding"]
 ---
 # How Bitcoin Transactions Work

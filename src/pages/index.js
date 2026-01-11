@@ -254,7 +254,7 @@ export default function Home() {
       title: "Learn the Basics",
       description:
         "Understand the fundamentals of Bitcoin, private keys, and why self-custody matters.",
-      href: "/docs/basics/what-is-self-custody",
+      href: "/docs/basics",
     },
     {
       step: "02",
@@ -270,7 +270,7 @@ export default function Home() {
       title: "Set Up a Wallet",
       description:
         "Choose and configure a secure Bitcoin wallet. Learn about hardware and software options.",
-      href: "/docs/basics/wallets",
+      href: "/docs/category/wallets",
     },
     {
       step: "04",
@@ -299,7 +299,7 @@ export default function Home() {
       icon: PsychologyRoundedIcon,
       title: "Theory",
       description: "Understand the fundamentals behind Bitcoin",
-      href: "/docs/basics/what-is-self-custody",
+      href: "/docs/basics",
     },
   ];
 
@@ -365,7 +365,7 @@ export default function Home() {
               </p>
 
               <div className={styles.heroCtas}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics/what-is-self-custody">
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
                   Start Learning
                 </Link>
                 <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/guides">
@@ -428,7 +428,7 @@ export default function Home() {
             ))}
 
             <div className={styles.centerCta}>
-              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics/what-is-self-custody">
+              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
                 Start Your Journey
               </Link>
             </div>
@@ -485,7 +485,7 @@ export default function Home() {
             <p className={styles.bigCtaSubtitle}>
               Start your Bitcoin self-custody journey today with our comprehensive guides.
             </p>
-            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics/what-is-self-custody">
+            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
               Get Started Now
             </Link>
           </div>

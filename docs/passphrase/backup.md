@@ -3,7 +3,6 @@ sidebar_position: 4
 title: "Backup your Passphrase"
 description: "Practical guide: Backup your Passphrase. Covers bitcoin, self custody, security."
 keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "backup"]
-slug: "/passphrase/backup"
 tags: ["passphrase", "storage", "backup"]
 ---
 # Backup your Passphrase

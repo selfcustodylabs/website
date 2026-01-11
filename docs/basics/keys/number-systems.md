@@ -3,7 +3,6 @@ sidebar_position: 2
 title: "Number Systems"
 description: "Practical guide: Number Systems. Covers bitcoin, self custody, security."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "number", "systems"]
-slug: "/basics/private-keys/number-systems"
 tags: ["private keys"]
 ---
 # Number Systems

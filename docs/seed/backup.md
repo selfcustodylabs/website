@@ -3,7 +3,6 @@ sidebar_position: 7
 title: "Backup your Seed"
 description: "Practical guide: Backup your Seed. Covers Why Use Metal Seed Storage?, How to Store Your Metal Backup Safely, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "backup"]
-slug: "/seed/backup/"
 tags: ["seed", "storage", "backup"]
 ---
 # Backup your Seed

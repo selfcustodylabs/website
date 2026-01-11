@@ -3,7 +3,6 @@ sidebar_position: 4
 title: "Seed Phrase (BIP39)"
 description: "Practical guide: Seed Phrase (BIP39). Covers Converting Binary to Decimal, The BIP39 Solution: Using Words Instead of Numbers, A Formatting Issue in the BIP39."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "seed", "phrase", "bip39"]
-slug: "/basics/private-keys/seed"
 tags: ["private keys", "random number", "entropy", "bip39", "seed"]
 ---
 # Private Key Conversion

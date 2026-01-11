@@ -3,7 +3,6 @@ sidebar_position: 2
 title: "Requirements"
 description: "Practical guide: Requirements. Covers Casino Dice, Airgapped computer, Paper & Pen."
 keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "requirements"]
-slug: "/seed/requirements/"
 tags: ["seed", "airgapped", "computer"]
 ---
 # Requirements

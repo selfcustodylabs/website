@@ -3,7 +3,6 @@ sidebar_position: 8
 title: "Extended Public Key (XPUB)"
 description: "Practical guide: Extended Public Key (XPUB). Covers Security Considerations, Identifying Extended Public Keys, Final Thoughts."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "public", "xpub"]
-slug: "/basics/private-keys/xpub"
 tags: ["private keys", "xpub", "bip39", "seed"]
 ---
 # Extended Public Key (XPUB)

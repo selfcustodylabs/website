@@ -3,7 +3,6 @@ sidebar_position: 5
 title: "Passphrase"
 description: "Practical guide: Passphrase. Covers Risks of Using a Passphrase, Create your Passphrase, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "passphrase"]
-slug: "/basics/private-keys/passphrase"
 tags: ["private keys", "seed", "passphrase"]
 ---
 # Passphrase
