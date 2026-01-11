@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Nostr Signing Device (NSD)
-slug: /nostr-signing-device
-tags: [nostr, nsd, signing device, lilygo]
+title: "Nostr Signing Device (NSD)"
+description: "Practical guide: Nostr Signing Device (NSD). Covers Why a NSD, NSD Setup Requirements, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "nostr", "signing", "device"]
+slug: "/nostr-signing-device"
+tags: ["nostr", "nsd", "signing device", "lilygo"]
 ---
-
 # Nostr Signing Device (NSD)
 
 The LNbits Nostr Signing Device (NSD) serves as a secure alternative to storing private keys on a computer. Your private key is stored on the NSD and signs nostr messages on the device. The NSD works with a Chrome based browser and the Horse extension.

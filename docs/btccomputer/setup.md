@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: System Setup & Security
-slug: /Bitcoin-computer/system-setup/
-tags: [bitcoin, computer, laptop, hardware]
+title: "System Setup & Security"
+description: "Practical guide: System Setup & Security. Covers BIOS: Libreboot, OS: Linux Mint, Hard Drive: LUKS Encryption."
+keywords: ["bitcoin", "self custody", "security", "privacy", "btccomputer", "system", "setup"]
+slug: "/Bitcoin-computer/system-setup/"
+tags: ["bitcoin", "computer", "laptop", "hardware"]
 ---
-
 # System Setup & Security
 
 When setting up your Bitcoin computer, it’s essential to focus on three key areas: BIOS firmware, Operating System, and Disk Encryption.

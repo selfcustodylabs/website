@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: Binary to Decimal
-slug: /seed/binary-to-decimal/
-tags: [seed, binary]
+title: "Binary to Decimal"
+description: "Practical guide: Binary to Decimal. Covers Airgapped Computer, Paper & Pen, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "binary", "decimal"]
+slug: "/seed/binary-to-decimal/"
+tags: ["seed", "binary"]
 ---
-
 # Binary to Decimal
 
 Each of the 24 lines, consisting of 11 binary digits, must be converted to a decimal number **manually** on your airgapped computer or by using paper and pen. This is important because using online tools to convert binary to decimal could expose your seed phrase, which would compromise your security.

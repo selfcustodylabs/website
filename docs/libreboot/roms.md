@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Build Roms
-slug: /libreboot/build-roms/
-tags: [libreboot, update, rom, bios]
+title: "Build Roms"
+description: "Practical guide: Build Roms. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "roms"]
+slug: "/libreboot/build-roms/"
+tags: ["libreboot", "update", "rom", "bios"]
 ---
-
 # Build Roms
 
 Generate the roms list

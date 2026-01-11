@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: Air-Gapped Wallets
-slug: /basics/wallets/air-gapped-wallets
-tags: [bitcoin, air-happed, wallets]
+title: "Air-Gapped Wallets"
+description: "Practical guide: Air-Gapped Wallets. Covers Why Some People Use Air-Gapped Wallets, How Transactions Work, Is This for Everyone?."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "gapped", "wallets", "air-gapped", "offline signing", "cold storage"]
+slug: "/basics/wallets/air-gapped-wallets"
+tags: ["bitcoin", "air-happed", "wallets"]
 ---
-
 # What Does “Air-Gapped” Mean?
 
 An air-gapped wallet is a setup where the device holding the private keys is physically isolated from the internet and other networks, ensuring it cannot be remotely accessed or compromised. The main modules such as Wi-Fi and Bluetooth are physically removed.

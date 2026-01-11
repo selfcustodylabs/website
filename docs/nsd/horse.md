@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: Horse Extension
-slug: /nostr-signing-device/horse-extension-setup
-tags: [nostr, nsd, signing device, github, horse, extension]
+title: "Horse Extension"
+description: "Practical guide: Horse Extension. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "horse", "extension"]
+slug: "/nostr-signing-device/horse-extension-setup"
+tags: ["nostr", "nsd", "signing device", "github", "horse", "extension"]
 ---
-
 # Installing the Horse Extension (Chromium Browser Only)
 
 This works only with Chromium Browser
@@ -47,6 +48,6 @@ npm run build
 
 Once installed, the Horse extension should appear among your extensions.
 
-![](/img/nsd/horse.png)
+![Horse](/img/nsd/horse.png)
 
 You're now ready to securely sign offline transactions with your NSD and dive into the world of Nostr!

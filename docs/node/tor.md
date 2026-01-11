@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: Running over TOR
-slug: /bitcoin-node/tor
-tags: [bitcoin node, tor, self custody]
+title: "Running over TOR"
+description: "Practical guide: Running over TOR. Covers Connecting to Other Nodes, Connecting Your Bitcoin Wallet, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "node", "running", "over", "bitcoin node", "electrum", "tor"]
+slug: "/bitcoin-node/tor"
+tags: ["bitcoin node", "tor", "self custody"]
 ---
-
 # Bitcoin Node over TOR
 
 When running a Bitcoin node, there are two types of Tor connections to consider:

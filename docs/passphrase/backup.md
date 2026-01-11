@@ -1,11 +1,11 @@
 ---
 sidebar_position: 4
-title: Backup your Passphrase
-slug: /passphrase/backup
-tags: [passphrase, storage, backup]
+title: "Backup your Passphrase"
+description: "Practical guide: Backup your Passphrase. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "backup"]
+slug: "/passphrase/backup"
+tags: ["passphrase", "storage", "backup"]
 ---
-
-
 # Backup your Passphrase
 
 Just like your Bitcoin seed phrase, your passphrase is a critical key to your funds. If you lose it or it gets compromised, your Bitcoin is gone forever. That’s why proper security is essential.

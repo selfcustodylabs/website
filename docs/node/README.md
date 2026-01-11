@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: What is a Bitcoin Node
-slug: /bitcoin-node/
-tags: [bitcoin node, self custody, wallet]
+title: "What is a Bitcoin Node"
+description: "Clear explanation of a Bitcoin Node for Bitcoin self-custody. Covers What is a Bitcoin Node?, Running a Bitcoin Node, Bitcoin Wallets vs. Bitcoin Nodes."
+keywords: ["bitcoin", "self custody", "security", "privacy", "node", "bitcoin node", "electrum", "tor"]
+slug: "/bitcoin-node/"
+tags: ["bitcoin node", "self custody", "wallet"]
 ---
-
 # Bitcoin Node
 
 Before we dive into the technical details, let’s start with the basics.

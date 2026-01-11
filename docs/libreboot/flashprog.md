@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: Build Flashprog
-slug: /libreboot/build-flashprog/
-tags: [libreboot, flashprog, bios]
+title: "Build Flashprog"
+description: "Practical guide: Build Flashprog. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "flashprog"]
+slug: "/libreboot/build-flashprog/"
+tags: ["libreboot", "flashprog", "bios"]
 ---
-
 # Build Flashprog
 
 To build and install Flashprog, follow these steps

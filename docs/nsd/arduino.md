@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Arduino Setup
-slug: /nostr-signing-device/arduino-ide
-tags: [nostr, nsd, signing device, arduino]
+title: "Arduino Setup"
+description: "Practical guide: Arduino Setup. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "arduino", "setup"]
+slug: "/nostr-signing-device/arduino-ide"
+tags: ["nostr", "nsd", "signing device", "arduino"]
 ---
-
 # Arduino Setup
 
 ### Download the Arduino IDE

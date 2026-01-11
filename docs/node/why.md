@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Why a Bitcoin Node
-slug: /bitcoin-node/why
-tags: [bitcoin node, self custody]
+title: "Why a Bitcoin Node"
+description: "Understand a Bitcoin Node and when it matters for Bitcoin self-custody. Covers Privacy and Security Risks, Risk of Counterfeit Bitcoin, Protection Against."
+keywords: ["bitcoin", "self custody", "security", "privacy", "node", "bitcoin node", "electrum", "tor"]
+slug: "/bitcoin-node/why"
+tags: ["bitcoin node", "self custody"]
 ---
-
 # Why a Bitcoin Node
 
 "Below, you'll see why running your own Bitcoin node is essential for self-custody."

@@ -1,13 +1,14 @@
 ---
 sidebar_position: 8
-title: Extended Public Key (XPUB)
-slug: /basics/private-keys/xpub
-tags: [private keys, xpub, bip39, seed]
+title: "Extended Public Key (XPUB)"
+description: "Practical guide: Extended Public Key (XPUB). Covers Security Considerations, Identifying Extended Public Keys, Final Thoughts."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "public", "xpub"]
+slug: "/basics/private-keys/xpub"
+tags: ["private keys", "xpub", "bip39", "seed"]
 ---
-
 # Extended Public Key (XPUB)
 
-![](/img/basics/diagram.png)
+![Diagram](/img/basics/diagram.png)
 
 The purpose of the extended public key (xpub) might not be immediately obvious. Looking at the bottom section of the diagram, you’ll see that possessing the extended public key allows wallet software to generate **all** the same Bitcoin addresses as the extended private key, **in the same order**. This means the wallet will look identical in terms of addresses and transaction history. But what’s the key difference?
 

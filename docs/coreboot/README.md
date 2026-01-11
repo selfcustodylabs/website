@@ -1,13 +1,14 @@
 ---
 sidebar_position: 1
-title: Coreboot
-slug: /coreboot/
-tags: [coreboot, open source, bios]
+title: "Coreboot"
+description: "Practical guide: Coreboot. Covers Why Coreboot?, What is Coreboot?, How Correboot Works."
+keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot"]
+slug: "/coreboot/"
+tags: ["coreboot", "open source", "bios"]
 ---
-
 # Coreboot BIOS
 
-![](/img/coreboot/coreboot.png)
+![Coreboot](/img/coreboot/coreboot.png)
 
 
 ## Why Coreboot?
@@ -28,4 +29,4 @@ Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (
 
 
 
-![](/img/coreboot/t430s.jpg)
+![T430s](/img/coreboot/t430s.jpg)

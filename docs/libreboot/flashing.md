@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: Flashing
-slug: /libreboot/flashing/
-tags: [libreboot, flash, flashprog, bios]
+title: "Flashing"
+description: "Practical guide: Flashing. Covers Locate the chips, Splitting the Rom, Detect the Chips."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "flashing"]
+slug: "/libreboot/flashing/"
+tags: ["libreboot", "flash", "flashprog", "bios"]
 ---
-
 # Flashing
 
 Now that we have installed Libreboot, set up flashprog, and prepared our Raspberry Pi Pico as an SPI programmer, we are finally ready to flash the BIOS. Before we dive into the steps, I want to emphasize the importance of making a backup copy of your current BIOS. This way, if anything goes wrong during the flashing process, you will have a copy of the original BIOS that you can restore.
@@ -18,7 +19,7 @@ The following ThinkPad models have a 12MB BIOS, which is split between **two chi
 - T440p – The BIOS chips can be accessed from the back of the laptop.
 - T420 / T430 / T530 / W530 – Full disassembly of the laptop is required to access the BIOS chips.
 
-![](/img/libreboot/dual_chip.jpg)
+![Dual Chip](/img/libreboot/dual_chip.jpg)
 
 :::warning T480/T480s
 If you're flashing this model, you **DO NOT** need to split the ROM, as it has only one chip. It's easily accessible by simply removing the back cover of the laptop. You’ll only need to flash that single chip.
@@ -43,7 +44,7 @@ Now, you need to detect the chip models using flashprog. To ensure accurate dete
 - Clip the Pomona onto the top BIOS chip firmly
 - Plug the Raspberry Pico into the laptop using a USB cable
 
-![](/img/libreboot/plug.jpg)
+![Plug](/img/libreboot/plug.jpg)
 
 
 Execute the following command to detect the chip

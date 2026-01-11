@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: Backup your Seed
-slug: /seed/backup/
-tags: [seed, storage, backup]
+title: "Backup your Seed"
+description: "Practical guide: Backup your Seed. Covers Why Use Metal Seed Storage?, How to Store Your Metal Backup Safely, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "backup"]
+slug: "/seed/backup/"
+tags: ["seed", "storage", "backup"]
 ---
-
 # Backup your Seed
 
 Your Bitcoin seed phrase is the key to your funds. If lost or compromised, your Bitcoin is gone forever. That’s why securing it properly is critical. While paper and digital backups can degrade, get lost, or be destroyed, metal seed storage offers a durable, fireproof, and waterproof solution.
@@ -24,4 +25,4 @@ Your Bitcoin seed phrase is the key to your funds. If lost or compromised, your 
 
 By using a high-quality metal seed storage solution, you ensure your Bitcoin remains secure, regardless of disasters or time. Your Bitcoin is only as safe as your seed backup, protect it wisely.
 
-![](/img/seed/metalseed.jpg)
+![Metalseed](/img/seed/metalseed.jpg)

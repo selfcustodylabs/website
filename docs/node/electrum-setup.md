@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: Electrum Server (Electrs)
-slug: /bitcoin-node/electrum-server-setup
-tags: [bitcoin node, electrum, setup, self custody]
+title: "Electrum Server (Electrs)"
+description: "Practical guide: Electrum Server (Electrs). Covers What is Indexation?, Why is Indexation Important?, How Does Indexation Help with Security and Privacy?."
+keywords: ["bitcoin", "self custody", "security", "privacy", "node", "electrum", "server", "electrs", "bitcoin node", "tor"]
+slug: "/bitcoin-node/electrum-server-setup"
+tags: ["bitcoin node", "electrum", "setup", "self custody"]
 ---
-
 # Electrum Server (Electrs)
 
 An Electrum server, in this case `Electrs`, is a service that helps index the Bitcoin blockchain to make it easier and faster for lightweight wallets (like Sparrow wallet) to interact with the blockchain without needing to store the entire blockchain locally. The key function of indexation is what makes an Electrum server so useful, and here's why it's important:

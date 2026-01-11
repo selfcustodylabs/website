@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Choose a Bitcoin Computer
-slug: /Bitcoin-computer/choice/
-tags: [bitcoin, computer, laptop, hardware]
+title: "Choose a Bitcoin Computer"
+description: "Practical guide: Choose a Bitcoin Computer. Covers My Recommendation, Hardware Precautions, self custody."
+keywords: ["bitcoin", "self custody", "security", "privacy", "btccomputer", "choose", "computer"]
+slug: "/Bitcoin-computer/choice/"
+tags: ["bitcoin", "computer", "laptop", "hardware"]
 ---
-
 # Choosing a Bitcoin Computer
 
 I recommend getting a laptop that suits the size of your Bitcoin stack. The most basic models available today are more than capable of handling what you'll need. The processor and RAM specifications aren’t a big concern, as even entry-level setups will do the job just fine.

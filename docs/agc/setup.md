@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: System Setup & Security
-slug: /air-gapped-computer/setup/
-tags: [air-gapped, computer, OS, software, libreboot, ssd]
+title: "System Setup & Security"
+description: "Practical guide: System Setup & Security. Covers Hardware, BIOS: Libreboot, OS: Linux Mint."
+keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "system", "setup", "air-gapped", "offline signing", "cold storage"]
+slug: "/air-gapped-computer/setup/"
+tags: ["air-gapped", "computer", "OS", "software", "libreboot", "ssd"]
 ---
-
 # Air-Gapped Computer Setup & Security
 
 When setting up your Air-Gapped Computer (for this example the **Lenovo ThinkPad X230**), it’s essential to focus on four key areas: Harware, BIOS firmware, Operating System, and Disk Encryption.

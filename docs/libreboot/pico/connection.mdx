@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Pico-Pomona Clip Connection
-slug: /libreboot/pico-pomona-connection/
-tags: [libreboot, raspberry, pico]
+title: "Pico-Pomona Clip Connection"
+description: "Practical guide: Pico-Pomona Clip Connection. Covers The Bios Chip, PIN Map on Raspberry Pico, Models X230, T420, T430, T440p and T480s."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "pico", "pomona", "clip", "connection"]
+slug: "/libreboot/pico-pomona-connection/"
+tags: ["libreboot", "raspberry", "pico"]
 ---
-
 # Pico-Pomona Clip Connection
 
 To begin flashing the BIOS, you'll need to connect your Pico to the Pomona clip, which will then attach to the BIOS chip on your ThinkPad.
@@ -18,7 +19,7 @@ In these specific models, you’ll likely find two BIOS chips positioned next to
 
 **IMPORTANT**: Be sure to identify `pin 1` (which is marked with a small dot) and then count the pins counterclockwise from there.
 
-![](/img/libreboot/soic8.jpg)
+![Soic8](/img/libreboot/soic8.jpg)
 
 Here are the functions of each pin. You don't necessarily need to understand the purpose of each individual pin. Instead, you simply need to match the corresponding pin on your BIOS chip with the appropriate pin on your Raspberry Pico and connect them using Dupont cables.
 
@@ -38,7 +39,7 @@ Here are the functions of each pin. You don't necessarily need to understand the
 
 The below diagram shows the corresponding pins on the Pico board where the Dupont cables should be connected
 
-![](/img/libreboot/serprog_pins.png)
+![Serprog Pins](/img/libreboot/serprog_pins.png)
 
 
 ## Models X230, T420, T430, T440p and T480s
@@ -47,7 +48,7 @@ For these models, you can start wiring your Dupont cables directly from pin 1 of
 
 Once everything is connected properly, your setup should look like this:
 
-![](/img/libreboot/connection.jpg)
+![Connection](/img/libreboot/connection.jpg)
 
 
 ## Models T530 and W530

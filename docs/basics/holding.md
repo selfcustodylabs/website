@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: Holding Bitcoin
-slug: /basics/holding-bitcoin
-tags: [self custody, holding]
+title: "Holding Bitcoin"
+description: "Practical guide: Holding Bitcoin. Covers A Simple Analogy, What Happens When You Use an Exchange?, Why This Matters for Bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "holding"]
+slug: "/basics/holding-bitcoin"
+tags: ["self custody", "holding"]
 ---
-
 # Why Holding Your Own Bitcoin Matters
 
 :::warning
@@ -49,7 +50,7 @@ But it’s important to understand the trade off:
 
 True Bitcoin ownership begins when you withdraw your coins to a wallet you control.
 
-![](/img/basics/selfcustody.png)
+![Selfcustody](/img/basics/selfcustody.png)
 
 
 ## Why This Matters for Bitcoin

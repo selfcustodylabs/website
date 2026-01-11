@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Bitcoin Computer
-slug: /bitcoin-computer/
-tags: [bitcoin, computer, malware]
+title: "Bitcoin Computer"
+description: "Practical guide: Bitcoin Computer. Covers What is a Bitcoin Computer?, Why a Regular Computer is Dangerous, self custody."
+keywords: ["bitcoin", "self custody", "security", "privacy", "btccomputer", "computer"]
+slug: "/bitcoin-computer/"
+tags: ["bitcoin", "computer", "malware"]
 ---
-
 # Bitcoin Computer
 
 Let’s be clear:

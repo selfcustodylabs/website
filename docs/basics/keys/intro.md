@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: Introduction
-slug: /basics/private-keys/intro
-tags: [private keys]
+title: "Introduction"
+description: "Practical guide: Introduction. Covers What is a Private Key?, How Does a Private Key Work?, Storing Private Keys – A Challenge."
+keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "introduction"]
+slug: "/basics/private-keys/intro"
+tags: ["private keys"]
 ---
-
 # Private Keys
 
 :::warning
@@ -13,7 +14,7 @@ Private keys are essential because they give you full control over your funds, a
 
 Now, take a look at this image before and while you read each section.
 
-![](/img/basics/diagram.png)
+![Diagram](/img/basics/diagram.png)
 
 
 ## What is a Private Key?

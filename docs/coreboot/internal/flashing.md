@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: Flashing
-slug: /coreboot/internal/flashing
-tags: [coreboot, chipsec, bios, internal, flashing]
+title: "Flashing"
+description: "Practical guide: Flashing. Covers Verify the Flashed Image, bitcoin, self custody."
+keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "flashing"]
+slug: "/coreboot/internal/flashing"
+tags: ["coreboot", "chipsec", "bios", "internal", "flashing"]
 ---
-
 # Internal Flashing
 
 Flashing firmware always carries some risk.

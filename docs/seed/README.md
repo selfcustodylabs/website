@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: DIY Seed
-slug: /seed/
-tags: [seed, self custody, entropy]
+title: "DIY Seed"
+description: "Practical guide: DIY Seed. Covers Why DIY Seed?, Risks of 3rd-Party Seed Generation, How to Generate Your Own Seed."
+keywords: ["bitcoin", "self custody", "security", "privacy", "seed"]
+slug: "/seed/"
+tags: ["seed", "self custody", "entropy"]
 ---
-
 # DIY Bitcoin Seed 🎲🎲
 
 The Bitcoin journey starts from here, those 24 words. While most people use them, few truly understand them. Taking control of your Bitcoin means generating your own seed securely, without relying on third parties.

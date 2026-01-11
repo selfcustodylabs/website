@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: Build Libreboot
-slug: /libreboot/build-libreboot/
-tags: [libreboot, repository, lbmk, build]
+title: "Build Libreboot"
+description: "Practical guide: Build Libreboot. Covers Install Dependencies, Enable Multi-threaded Build Mode, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build"]
+slug: "/libreboot/build-libreboot/"
+tags: ["libreboot", "repository", "lbmk", "build"]
 ---
-
 # Build Libreboot
 
 Building Libreboot and the rom for your ThinkPad

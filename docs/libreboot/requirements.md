@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: HW Requirements
-slug: /libreboot/requirements/
-tags: [libreboot, raspberry, pico, bios, pomona, clip, usb, cables]
+title: "HW Requirements"
+description: "Practical guide: HW Requirements. Covers Laptop, Raspberry Pi Pico H with pre-soldered headers, Pomona 5250 SOIC8 Clip."
+keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "requirements"]
+slug: "/libreboot/requirements/"
+tags: ["libreboot", "raspberry", "pico", "bios", "pomona", "clip", "usb", "cables"]
 ---
-
 # Hardware Requirements
 
 We created this guide specifically for installing Libreboot on Lenovo ThinkPad models with an SOIC8 (8-pin) BIOS chip. To get started, you'll need the following equipment:
@@ -24,25 +25,25 @@ Here’s the complete list of supported models covered in this guide.
 
 The Raspberry Pi Pico H is an affordable microcontroller that operates at 3.3V logic levels, ensuring safe communication with your BIOS chip without the risk of damage from 5V signals.
 
-![](/img/libreboot/pico.png)
+![Pico](/img/libreboot/pico.png)
 
 
 ## Pomona 5250 SOIC8 Clip
 
 The Pomona 5250 clip is widely regarded as the best tool for flashing SOIC8 chips, providing a reliable and secure connection during the process.
 
-![](/img/libreboot/pomona.png)
+![Pomona](/img/libreboot/pomona.png)
 
 
 ## Female-to-Female Dupont Cables (10cm)
 
 You’ll need 10cm female-to-female Dupont cables to connect your Raspberry Pi Pico to the SOIC8 clip. Longer cables may introduce signal instability, increasing the risk of data errors.
 
-![](/img/libreboot/dupont.jpg)
+![Dupont](/img/libreboot/dupont.jpg)
 
 
 ## Micro USB Cable (with Data Transfer Support)
 
 A Micro USB cable is required to connect your Raspberry Pi Pico to your laptop. Make sure the cable supports data transfer, not just charging, to ensure proper communication during the flashing process.
 
-![](/img/libreboot/usb.jpg)
+![Usb](/img/libreboot/usb.jpg)

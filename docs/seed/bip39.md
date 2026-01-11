@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: Look up BIP39 Words
-slug: /seed/bip39/
-tags: [seed, BIP39]
+title: "Look up BIP39 Words"
+description: "Practical guide: Look up BIP39 Words. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "look", "bip39", "words"]
+slug: "/seed/bip39/"
+tags: ["seed", "BIP39"]
 ---
-
 # Look up BIP39 Words
 
 BIP39 (Bitcoin Improvement Proposal 39) defines a list of 2048 words, arranged alphabetically. Each word in the list corresponds to a specific position, which is used to map a binary number to its matching word. For example, if the binary number you calculate corresponds to the number 1477, the word in that position on the list is "reward”.
@@ -57,4 +58,4 @@ If you’ve made it this far, congratulations! You’ve now created a valid 24-w
 
 Now, the last step is to use your seed phrase to verify that the 24 words were correctly generated. You can install a software wallet, like Sparrow Wallet, on your airgapped computer and enter the seed words. If they’re rejected, it means there was an error during the process. Sparrow will quickly show an error if there's a mismatch, typically because the checksum doesn't match. So, take your time and carefully double-check each step!
 
-![](/img/seed/import.png)
+![Import](/img/seed/import.png)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: Connect to a Nostr Client
-slug: /nostr-signing-device/connect-to-client
-tags: [nostr, nsd, signing device, client]
+title: "Connect to a Nostr Client"
+description: "Practical guide: Connect to a Nostr Client. Covers bitcoin, self custody, security."
+keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "connect", "nostr", "client"]
+slug: "/nostr-signing-device/connect-to-client"
+tags: ["nostr", "nsd", "signing device", "client"]
 ---
-
 # Connect to a Nostr Client
 
 Now that you’ve set up your NSD (Nostr Signing Device) and the browser extension, the last step is to connect to your favorite Nostr client. Make sure to choose one that supports the browser extension we connected the NSD to.

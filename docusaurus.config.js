@@ -12,6 +12,51 @@ const config = {
   tagline: "Guide Writer| The University of Satoshi",
   favicon: "img/favicon.ico",
 
+  headTags: [
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.googletagmanager.com" } },
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.google-analytics.com" } },
+    // Global SEO + social cards
+    { tagName: "meta", attributes: { name: "description", content: "Bitcoin self-custody guides and tutorials from Self Custody Labs. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices." } },
+    { tagName: "meta", attributes: { name: "keywords", content: "bitcoin, self custody, self-custody, cold storage, hardware wallet, air gapped, air-gapped computer, privacy, bitcoin node, multisig" } },
+    { tagName: "meta", attributes: { property: "og:site_name", content: "Self Custody Labs" } },
+    { tagName: "meta", attributes: { property: "og:type", content: "website" } },
+    { tagName: "meta", attributes: { property: "og:title", content: "Self Custody Labs" } },
+    { tagName: "meta", attributes: { property: "og:description", content: "Bitcoin self-custody guides and tutorials from Self Custody Labs." } },
+    { tagName: "meta", attributes: { property: "og:image", content: "https://selfcustodylabs.com/img/selfcustody.png" } },
+    { tagName: "meta", attributes: { property: "og:url", content: "https://selfcustodylabs.com" } },
+    { tagName: "meta", attributes: { name: "twitter:card", content: "summary_large_image" } },
+    { tagName: "meta", attributes: { name: "twitter:title", content: "Self Custody Labs" } },
+    { tagName: "meta", attributes: { name: "twitter:description", content: "Bitcoin self-custody guides and tutorials from Self Custody Labs." } },
+    { tagName: "meta", attributes: { name: "twitter:image", content: "https://selfcustodylabs.com/img/selfcustody.png" } },
+    // Basic structured data for better rich results
+    {
+      tagName: "script",
+      attributes: { type: "application/ld+json" },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Self Custody Labs",
+        "url": "https://selfcustodylabs.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://selfcustodylabs.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string",
+        },
+      }),
+    },
+    {
+      tagName: "script",
+      attributes: { type: "application/ld+json" },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Self Custody Labs",
+        "url": "https://selfcustodylabs.com",
+        "logo": "https://selfcustodylabs.com/img/logo.svg",
+      }),
+    },
+  ],
+
   // Set the production url of your site here
   url: "https://selfcustodylabs.com",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -69,7 +114,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/logo.svg',
+      image: 'img/selfcustody.png',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: true,
@@ -126,7 +171,7 @@ const config = {
                 label: 'No KYC'
               },
               {
-                href: 'https://mempool.space.com/',
+                href: 'https://mempool.space/',
                 label: 'Mempool',
               },
               {

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: Calculate the Checksum
-slug: /seed/calculate-checksum/
-tags: [seed, binary, checksum]
+title: "Calculate the Checksum"
+description: "Practical guide: Calculate the Checksum. Covers Generate the Hash Output, Convert HEX to Binary, bitcoin."
+keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "calculate", "checksum"]
+slug: "/seed/calculate-checksum/"
+tags: ["seed", "binary", "checksum"]
 ---
-
 # Calculate the Checksum
 
 The last eight missing digits need to be calculated to create what's called a "checksum."
