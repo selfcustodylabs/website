@@ -13,7 +13,7 @@ Private keys are essential because they give you full control over your funds, a
 
 Now, take a look at this image before and while you read each section.
 
-![Diagram](/img/basics/diagram.png)
+![Diagram](/img/basics/diagram.webp)
 
 
 ## What is a Private Key?

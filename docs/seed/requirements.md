@@ -17,7 +17,7 @@ But it’s also okay to just save money and just use any old dice. Even if your 
 
 That said, you don’t need to spend extra money on special dice, any standard six-sided dice will work. Even if your dice have slight imperfections or biases, rolling several at once will balance out any inconsistencies and provide enough randomness for your needs
 
-![Dice](/img/seed/dice.jpg)
+![Dice](/img/seed/dice.webp)
 
 
 ## Airgapped computer
@@ -26,7 +26,7 @@ An air-gapped computer is a device that has never been connected to the internet
 
 - **Raspberry Pi Zero 1.3** – This model is highly recommended because it lacks built-in Wi-Fi and Bluetooth, reducing attack surfaces. However, it may be difficult to find.
 
-![Rpizero](/img/seed/rpizero.jpg)
+![RPi Zero](/img/seed/rpizero.webp)
 
 - **Laptop or PC** – This should be a computer where the Wi-Fi and Bluetooth modules have been physically removed, and the Ethernet port has been permanently disabled or damaged. This ensures that even if the computer is stolen, an attacker cannot extract the private key by connecting it to the internet.
 
@@ -42,4 +42,4 @@ Once your seed phrase has been created, it should be permanently stored on a fir
 
 By using these tools and following best security practices, you can ensure that your seed phrase remains secure, private, and resistant to theft or loss.
 
-![Metalseed](/img/seed/metalseed.jpg)
+![Metalseed](/img/seed/metalseed.webp)

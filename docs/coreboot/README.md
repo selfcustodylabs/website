@@ -7,7 +7,7 @@ tags: ["coreboot", "open source", "bios"]
 ---
 # Coreboot BIOS
 
-![Coreboot](/img/coreboot/coreboot.png)
+![Coreboot](/img/coreboot/coreboot.webp)
 
 
 ## Why Coreboot?
@@ -28,4 +28,4 @@ Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (
 
 
 
-![T430s](/img/coreboot/t430s.jpg)
+![T430s](/img/coreboot/t430s.webp)

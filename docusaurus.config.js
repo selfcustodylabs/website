@@ -22,12 +22,12 @@ const config = {
     { tagName: "meta", attributes: { property: "og:type", content: "website" } },
     { tagName: "meta", attributes: { property: "og:title", content: "Self Custody Labs" } },
     { tagName: "meta", attributes: { property: "og:description", content: "Bitcoin self-custody guides and tutorials from Self Custody Labs." } },
-    { tagName: "meta", attributes: { property: "og:image", content: "https://selfcustodylabs.com/img/selfcustody.png" } },
+    { tagName: "meta", attributes: { property: "og:image", content: "https://selfcustodylabs.com/img/logo.svg" } },
     { tagName: "meta", attributes: { property: "og:url", content: "https://selfcustodylabs.com" } },
     { tagName: "meta", attributes: { name: "twitter:card", content: "summary_large_image" } },
     { tagName: "meta", attributes: { name: "twitter:title", content: "Self Custody Labs" } },
     { tagName: "meta", attributes: { name: "twitter:description", content: "Bitcoin self-custody guides and tutorials from Self Custody Labs." } },
-    { tagName: "meta", attributes: { name: "twitter:image", content: "https://selfcustodylabs.com/img/selfcustody.png" } },
+    { tagName: "meta", attributes: { name: "twitter:image", content: "https://selfcustodylabs.com/img/logo.svg" } },
     // Basic structured data for better rich results
     {
       tagName: "script",
@@ -114,7 +114,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/selfcustody.png',
+      image: 'img/logo.svg',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: true,

@@ -17,4 +17,4 @@ Here’s how to do it:
 - Enable the `SSL` toggle and click Test Connection.
 -If the test passes, enable the toggle in the bottom right to connect to your node. Once the connection is established, the color will turn blue, indicating that a private connection has been successfully made to your private Electrum server.
 
-![Sparrow](/img/node/sparrow.png)
+![Sparrow](/img/node/sparrow.webp)

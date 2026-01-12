@@ -47,6 +47,6 @@ npm run build
 
 Once installed, the Horse extension should appear among your extensions.
 
-![Horse](/img/nsd/horse.png)
+![Horse](/img/nsd/horse.webp)
 
 You're now ready to securely sign offline transactions with your NSD and dive into the world of Nostr!

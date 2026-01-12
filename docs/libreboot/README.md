@@ -7,7 +7,7 @@ tags: ["libreboot", "open source", "bios"]
 ---
 # Libreboot BIOS
 
-![Libreboot](/img/libreboot/libreboot.png)
+![Libreboot](/img/libreboot/libreboot.webp)
 
 ## Why Libreboot?
 
@@ -36,4 +36,4 @@ Libreboot includes multiple bootloader options:
 
 All these options come bundled, letting you choose the right one when you boot.
 
-![T480s](/img/libreboot/t480s.jpg)
+![T480s](/img/libreboot/t480s.webp)

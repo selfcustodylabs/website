@@ -18,7 +18,7 @@ The following ThinkPad models have a 12MB BIOS, which is split between **two chi
 - T440p – The BIOS chips can be accessed from the back of the laptop.
 - T420 / T430 / T530 / W530 – Full disassembly of the laptop is required to access the BIOS chips.
 
-![Dual Chip](/img/libreboot/dual_chip.jpg)
+![Dual Chip](/img/libreboot/dual-chip.webp)
 
 :::warning T480/T480s
 If you're flashing this model, you **DO NOT** need to split the ROM, as it has only one chip. It's easily accessible by simply removing the back cover of the laptop. You’ll only need to flash that single chip.
@@ -43,7 +43,7 @@ Now, you need to detect the chip models using flashprog. To ensure accurate dete
 - Clip the Pomona onto the top BIOS chip firmly
 - Plug the Raspberry Pico into the laptop using a USB cable
 
-![Plug](/img/libreboot/plug.jpg)
+![Plug](/img/libreboot/plug.webp)
 
 
 Execute the following command to detect the chip
