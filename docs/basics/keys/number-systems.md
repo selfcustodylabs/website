@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Number Systems"
-description: "Practical guide: Number Systems. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "number", "systems"]
-tags: ["private keys"]
+title: "Number Systems: Binary, Decimal, Hex"
+description: "Understand binary, decimal, and hexadecimal number systems used in Bitcoin private keys. Essential foundation for understanding seed phrases."
+keywords: ["binary", "decimal", "hexadecimal", "number systems", "bitcoin cryptography"]
+tags: ["binary", "private keys", "basics"]
 ---
 # Number Systems
 

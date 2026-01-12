@@ -1,9 +1,9 @@
 ---
 sidebar_position: 6
-title: "Look up BIP39 Words"
-description: "Practical guide: Look up BIP39 Words. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "look", "bip39", "words"]
-tags: ["seed", "BIP39"]
+title: "Look Up BIP39 Words for Your Seed"
+description: "Convert your decimal numbers to BIP39 seed words. Complete your DIY Bitcoin seed phrase using the official 2048-word list."
+keywords: ["BIP39", "seed words", "word list", "bitcoin seed", "mnemonic", "2048 words"]
+tags: ["seed", "BIP39", "word list"]
 ---
 # Look up BIP39 Words
 

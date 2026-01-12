@@ -1,9 +1,9 @@
 ---
 sidebar_position: 7
-title: "Backup your Seed"
-description: "Practical guide: Backup your Seed. Covers Why Use Metal Seed Storage?, How to Store Your Metal Backup Safely, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "backup"]
-tags: ["seed", "storage", "backup"]
+title: "Backup Your Bitcoin Seed Phrase"
+description: "Secure your Bitcoin seed phrase with metal storage. Learn why metal backups are fireproof, waterproof, and essential for long-term security."
+keywords: ["seed backup", "metal seed storage", "bitcoin backup", "fireproof", "seed security"]
+tags: ["seed", "backup", "storage", "security"]
 ---
 # Backup your Seed
 

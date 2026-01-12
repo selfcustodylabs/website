@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Hardware Wallets"
 description: "Practical guide: Hardware Wallets. Covers Why Hardware Wallets Exist, How Hardware Wallets Work, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "hardware", "wallets", "wallet", "hardware wallet"]
-tags: ["bitcoin", "hardware", "wallets"]
+tags: ["bitcoin", "hardware", "wallet"]
 ---
 # What Is a Hardware Wallet?
 

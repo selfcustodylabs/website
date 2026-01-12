@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: "Bitcoin Computer"
-description: "Practical guide: Bitcoin Computer. Covers What is a Bitcoin Computer?, Why a Regular Computer is Dangerous, self custody."
-keywords: ["bitcoin", "self custody", "security", "privacy", "computer"]
-tags: ["bitcoin", "computer", "malware"]
+title: "Dedicated Bitcoin Computer Guide"
+description: "Build a dedicated Bitcoin computer for secure transactions. Learn why using a regular computer is dangerous and how to protect your Bitcoin."
+keywords: ["bitcoin computer", "dedicated computer", "malware protection", "secure transactions", "self custody"]
+tags: ["bitcoin", "computer", "security", "malware"]
 ---
 # Bitcoin Computer
 
@@ -31,3 +31,17 @@ If your computer becomes infected, an attacker could:
 - If you do use a hardware wallet but it's compromised, they could still alter the address of the transaction you're going to sign.
 
 Now that you understand what a Bitcoin computer is and why using a regular computer for Bitcoin transactions isn't safe, let's look at the best options for securing your setup.
+
+---
+
+## Related Guides
+
+:::tip Want Maximum Security?
+For the highest level of protection, consider building an **[Air-Gapped Computer](/docs/air-gapped-computer)** – a device that never connects to the internet and handles all signing operations offline.
+:::
+
+:::info Firmware Security
+Enhance your Bitcoin computer's security by replacing the proprietary BIOS with open-source firmware:
+- **[Libreboot Guide](/docs/libreboot)** – Maximum openness, removes Intel ME
+- **[Coreboot Guide](/docs/coreboot)** – Supports more hardware models
+:::

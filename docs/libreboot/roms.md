@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: "Build Roms"
-description: "Practical guide: Build Roms. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "roms"]
-tags: ["libreboot", "update", "rom", "bios"]
+title: "Build Libreboot ROM Images"
+description: "Generate Libreboot ROM images for your specific laptop model. Compile custom BIOS firmware using the lbmk build system."
+keywords: ["libreboot ROM", "build ROM", "lbmk", "BIOS image", "coreboot"]
+tags: ["libreboot", "ROM", "build", "firmware"]
 ---
 # Build Roms
 

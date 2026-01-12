@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "Running over TOR"
-description: "Practical guide: Running over TOR. Covers Connecting to Other Nodes, Connecting Your Bitcoin Wallet, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "node", "running", "over", "bitcoin node", "electrum", "tor"]
-tags: ["bitcoin node", "tor", "self custody"]
+title: "Running Bitcoin Node over Tor"
+description: "Configure your Bitcoin node to run over Tor for enhanced privacy. Hide your IP address and connect your wallet securely."
+keywords: ["bitcoin node", "tor", "privacy", "onion", "hidden service", "anonymous"]
+tags: ["bitcoin node", "tor", "privacy", "self custody"]
 ---
 # Bitcoin Node over TOR
 

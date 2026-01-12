@@ -1,13 +1,25 @@
 ---
 sidebar_position: 1
-title: "Libreboot"
-description: "Practical guide: Libreboot. Covers Why Libreboot?, What is Libreboot?, How Libreboot Works."
-keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot"]
-tags: ["libreboot", "open source", "bios"]
+title: "Libreboot Installation Guide"
+description: "Install Libreboot open-source firmware to replace your BIOS. Remove Intel ME backdoors and enhance security for your Bitcoin computer."
+keywords: ["libreboot", "open source firmware", "Intel ME", "BIOS replacement", "bitcoin security"]
+tags: ["libreboot", "open source", "bios", "firmware"]
 ---
 # Libreboot BIOS
 
 ![Libreboot](/img/libreboot/libreboot.webp)
+
+:::info What You'll Learn
+In this guide, you will:
+- Understand why open-source firmware matters for security
+- Set up the hardware needed for external flashing
+- Build Libreboot from source
+- Flash Libreboot to your laptop's BIOS chip
+
+**⏱️ Time required:** 3-5 hours  
+**📊 Difficulty:** Advanced  
+**🔧 Prerequisites:** Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip
+:::
 
 ## Why Libreboot?
 
@@ -37,3 +49,17 @@ Libreboot includes multiple bootloader options:
 All these options come bundled, letting you choose the right one when you boot.
 
 ![T480s](/img/libreboot/t480s.webp)
+
+---
+
+## Related Guides
+
+:::info Coreboot vs Libreboot
+Libreboot is based on Coreboot but removes more proprietary blobs. If your hardware isn't supported by Libreboot, check out our **[Coreboot Guide](/docs/coreboot)** for an alternative that supports more devices.
+:::
+
+:::tip Use Cases
+Once you have Libreboot installed, use your laptop as a:
+- **[Bitcoin Computer](/docs/bitcoin-computer)** – For secure transaction creation and broadcasting
+- **[Air-Gapped Computer](/docs/air-gapped-computer)** – For offline seed generation and signing
+:::

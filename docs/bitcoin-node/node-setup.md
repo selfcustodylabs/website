@@ -1,8 +1,8 @@
 ---
 sidebar_position: 4
-title: "Node Setup"
-description: "Practical guide: Node Setup. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "node", "setup", "bitcoin node", "electrum", "tor"]
+title: "Bitcoin Node Setup Guide"
+description: "Compare Bitcoin node software options including Umbrel, RaspiBlitz, Start9, and RoninDojo. Choose the right setup for your needs."
+keywords: ["bitcoin node setup", "umbrel", "raspiblitz", "start9", "ronindojo", "self custody"]
 tags: ["bitcoin node", "setup", "self custody"]
 ---
 # Setup a Bitcoin Node

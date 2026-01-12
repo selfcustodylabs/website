@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Holding Bitcoin"
-description: "Practical guide: Holding Bitcoin. Covers A Simple Analogy, What Happens When You Use an Exchange?, Why This Matters for Bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "holding"]
-tags: ["self custody", "holding"]
+title: "Why Holding Your Own Bitcoin Matters"
+description: "Understand the difference between holding Bitcoin yourself vs on an exchange. Learn why 'not your keys, not your coins' is essential for true ownership."
+keywords: ["hold bitcoin", "exchange risk", "not your keys", "self custody", "bitcoin ownership"]
+tags: ["self custody", "bitcoin", "exchange"]
 ---
 # Why Holding Your Own Bitcoin Matters
 

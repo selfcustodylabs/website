@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Requirements"
-description: "Practical guide: Requirements. Covers Casino Dice, Airgapped computer, Paper & Pen."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "requirements"]
-tags: ["seed", "airgapped", "computer"]
+title: "DIY Seed Requirements"
+description: "What you need to generate your own Bitcoin seed: casino dice for entropy, an air-gapped computer, and metal seed storage for backup."
+keywords: ["bitcoin seed", "dice", "air-gapped computer", "metal seed storage", "requirements"]
+tags: ["seed", "air-gapped", "dice", "backup"]
 ---
 # Requirements
 

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Why a Bitcoin Node"
-description: "Understand a Bitcoin Node and when it matters for Bitcoin self-custody. Covers Privacy and Security Risks, Risk of Counterfeit Bitcoin, Protection Against."
-keywords: ["bitcoin", "self custody", "security", "privacy", "node", "bitcoin node", "electrum", "tor"]
-tags: ["bitcoin node", "self custody"]
+title: "Why Run Your Own Bitcoin Node"
+description: "Learn why running your own Bitcoin node is essential for privacy, security, and verifying transactions without trusting third parties."
+keywords: ["bitcoin node", "self custody", "privacy", "security", "verification", "third party"]
+tags: ["bitcoin node", "self custody", "privacy"]
 ---
 # Why a Bitcoin Node
 

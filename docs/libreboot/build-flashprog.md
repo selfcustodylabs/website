@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: "Build Flashprog"
-description: "Practical guide: Build Flashprog. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "flashprog"]
-tags: ["libreboot", "flashprog", "bios"]
+title: "Build Flashprog for Libreboot"
+description: "Compile Flashprog from the Libreboot build system. Required tool for reading and writing BIOS chips during Libreboot installation."
+keywords: ["flashprog", "libreboot", "BIOS flash", "lbmk", "compile"]
+tags: ["libreboot", "flashprog", "build", "tools"]
 ---
 # Build Flashprog
 

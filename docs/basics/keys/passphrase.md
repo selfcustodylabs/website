@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: "Passphrase"
-description: "Practical guide: Passphrase. Covers Risks of Using a Passphrase, Create your Passphrase, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "passphrase"]
-tags: ["private keys", "seed", "passphrase"]
+title: "Bitcoin Passphrase (25th Word) Explained"
+description: "Add extra security to your Bitcoin seed with a passphrase. Understand how the 25th word creates hidden wallets and protects against theft."
+keywords: ["bitcoin passphrase", "25th word", "hidden wallet", "seed security", "plausible deniability"]
+tags: ["passphrase", "seed", "security"]
 ---
 # Passphrase
 
@@ -29,10 +29,10 @@ Adding a passphrase to your seed offers strong security benefits, especially if 
 - **Social Engineering Risk** – If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
 
 
-## Create your Passphrase
+## Ready to Create Your Own Passphrase?
 
-If you aim to use a passphrase for your Bitcoin seed phrase, I highly recommend to create your own one generating a true entropy
+If you decide a passphrase is right for your security setup, don't just pick random words from your head—human-generated "randomness" is predictable and weak.
 
-:::tip DIY Passphrase
-This the guide [link](/docs/passphrase)
+:::tip Next Step: DIY Passphrase Generation
+Create a cryptographically strong passphrase using dice rolls and the EFF word list in our **[DIY Passphrase Guide](/docs/passphrase)**. True randomness means true security.
 :::

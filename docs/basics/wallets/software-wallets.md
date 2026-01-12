@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "Software Wallets"
 description: "Practical guide: Software Wallets. Covers Why People Use Software Wallets, The Trade-Off, bitcoin."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "software", "wallets", "wallet", "hardware wallet"]
-tags: ["bitcoin", "software", "wallets"]
+tags: ["bitcoin", "software", "wallet"]
 ---
 # What is a Software Wallet?
 

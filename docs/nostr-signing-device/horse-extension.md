@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: "Horse Extension"
-description: "Practical guide: Horse Extension. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "horse", "extension"]
-tags: ["nostr", "nsd", "signing device", "github", "horse", "extension"]
+title: "Install Horse Browser Extension"
+description: "Install the Horse browser extension to connect your Nostr Signing Device to web clients. Chromium-based browsers only."
+keywords: ["horse extension", "nostr browser extension", "chromium extension", "NSD connection"]
+tags: ["nostr", "horse", "extension", "browser"]
 ---
 # Installing the Horse Extension (Chromium Browser Only)
 

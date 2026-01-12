@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "System Setup & Security"
-description: "Practical guide: System Setup & Security. Covers Hardware, BIOS: Libreboot, OS: Linux Mint."
-keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "system", "setup", "air-gapped", "offline signing", "cold storage"]
-tags: ["air-gapped", "computer", "OS", "software", "libreboot", "ssd"]
+title: "Air-Gapped Computer Setup"
+description: "Step-by-step guide to setting up your air-gapped computer with Libreboot BIOS and Linux Mint for secure Bitcoin operations."
+keywords: ["bitcoin", "self custody", "security", "air-gapped", "setup", "libreboot", "linux mint"]
+tags: ["air-gapped", "setup", "libreboot", "linux", "OS"]
 ---
 # Air-Gapped Computer Setup & Security
 

@@ -1,13 +1,25 @@
 ---
 sidebar_position: 1
-title: "DIY Passphrase"
-description: "Practical guide: DIY Passphrase. Covers Why Random Passphrases Matter, Problems with the Original Diceware List, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase"]
-tags: ["passphrase", "self custody", "entropy"]
+title: "DIY Bitcoin Passphrase Guide"
+description: "Create a secure Bitcoin passphrase using dice rolls and the EFF word list. Add an extra layer of protection to your seed phrase with true randomness."
+keywords: ["bitcoin passphrase", "diceware", "EFF word list", "seed security", "25th word"]
+tags: ["passphrase", "self custody", "entropy", "dice"]
 ---
 # DIY Bitcoin Passphrase 🎲🎲
 
 In our [basics](/docs/basics/keys/passphrase/) section, we covered the fundamentals of passphrases. Now, let's dive into how to create a secure and reliable passphrase for your Bitcoin seed.
+
+:::info What You'll Learn
+In this guide, you will:
+- Understand why random passphrases beat human-chosen ones
+- Use the EFF word list for better memorability
+- Generate a secure passphrase using dice rolls
+- Properly backup your passphrase
+
+**⏱️ Time required:** 30 minutes  
+**📊 Difficulty:** Beginner  
+**🔧 Prerequisites:** 5 six-sided dice, pen and paper
+:::
 
 
 ## Why Random Passphrases Matter

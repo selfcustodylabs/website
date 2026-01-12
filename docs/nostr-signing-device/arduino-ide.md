@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Arduino Setup"
-description: "Practical guide: Arduino Setup. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "arduino", "setup"]
-tags: ["nostr", "nsd", "signing device", "arduino"]
+title: "Arduino IDE Setup for NSD"
+description: "Install and configure Arduino IDE to flash your Nostr Signing Device. Download the legacy version and set up ESP32 board support."
+keywords: ["arduino IDE", "ESP32 setup", "NSD flash", "LILYGO arduino", "board manager"]
+tags: ["arduino", "setup", "ESP32", "firmware"]
 ---
 # Arduino Setup
 

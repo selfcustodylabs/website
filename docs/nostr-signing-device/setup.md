@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: "Prepare the NSD"
-description: "Practical guide: Prepare the NSD. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "prepare"]
-tags: ["nostr", "nsd", "signing device", "github"]
+title: "Prepare the NSD Firmware"
+description: "Clone the NSD repository and flash the firmware to your LILYGO device. Step-by-step instructions to prepare your Nostr Signing Device."
+keywords: ["NSD firmware", "LILYGO flash", "nostr signing device setup", "github clone"]
+tags: ["nostr", "firmware", "setup", "github"]
 ---
 # Setting up the Nostr Signing Device
 

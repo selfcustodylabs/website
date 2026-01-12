@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: "Seed Phrase (BIP39)"
-description: "Practical guide: Seed Phrase (BIP39). Covers Converting Binary to Decimal, The BIP39 Solution: Using Words Instead of Numbers, A Formatting Issue in the BIP39."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "seed", "phrase", "bip39"]
-tags: ["private keys", "random number", "entropy", "bip39", "seed"]
+title: "Bitcoin Seed Phrases Explained (BIP39)"
+description: "Understand how BIP39 seed phrases work: converting private keys to memorable words. Learn the 2048-word list and how seeds protect your Bitcoin."
+keywords: ["seed phrase", "BIP39", "mnemonic", "recovery phrase", "24 words", "bitcoin backup"]
+tags: ["seed", "BIP39", "private keys", "backup"]
 ---
 # Private Key Conversion
 
@@ -96,10 +96,10 @@ A seed phrase allows you to back up your Bitcoin wallet in a secure, easy-to-rem
 In a sense, your seed phrase becomes your wallet’s master key. It’s also far more practical to store 12 or 24 words than to store a complex, long private key.
 
 
-## Create your Seed Phrase
+## Ready to Create Your Own Seed?
 
-If you feel to go deep down the Seed Phrase rabbit hole, I highly recommend to create your own seed phrase generating a true entropy
+Now that you understand how seed phrases work, you can take full control by generating your own using true randomness from dice rolls.
 
-:::tip DIY Seed
-This the guide [link](/docs/seed)
+:::tip Next Step: DIY Seed Generation
+Learn how to create your own Bitcoin seed phrase with verifiable entropy in our **[DIY Seed Generation Guide](/docs/seed)**. This hands-on guide walks you through every step, from rolling dice to calculating checksums.
 :::

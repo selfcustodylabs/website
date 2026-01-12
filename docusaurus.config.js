@@ -127,23 +127,18 @@ const config = {
         },
         items: [
           {
+            type: 'docSidebar',
+            sidebarId: 'tutorialBasics',
+            position: 'left',
+            label: 'Learn',
+          },
+          {
             label: 'Guides',
             to: '/guides',
             position: 'left',
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialBasics',
-            position: 'left',
-            label: 'Basics',
-          },
-          {
-            label: 'Bitcoin Devices',
-            to: '/bitcoin-devices',
-            position: 'left',
-          },
-          {
-            label: 'Education',
+            label: 'Resources',
             type: 'dropdown',
             position: 'left',
             items: [
@@ -155,13 +150,10 @@ const config = {
                 to: 'podcasts',
                 label: 'Podcasts',
               },
-            ],
-          },
-          {
-            label: 'Resources',
-            type: 'dropdown',
-            position: 'left',
-            items: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
+              },
               {
                 href: 'https://timechainstats.com/',
                 label: 'TimechainStats',
@@ -176,12 +168,12 @@ const config = {
               },
               {
                 href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
-                label: 'BIP39'
+                label: 'BIP39 Word List'
               },
             ],
           },
           {
-            label: 'Find Us',
+            label: 'About',
             type: 'dropdown',
             position: 'right',
             items: [
@@ -191,7 +183,7 @@ const config = {
               },
               {
                 href: 'https://x.com/selfcustodylabs',
-                label: 'X',
+                label: 'X (Twitter)',
               },
               {
                 href: 'mailto:selfcustodylabs@proton.me',
@@ -229,6 +221,27 @@ const config = {
         //style: 'dark',
         links: [
           {
+            title: 'Learn',
+            items: [
+              {
+                label: 'What is Self-Custody',
+                to: '/docs/basics',
+              },
+              {
+                label: 'Private Keys',
+                to: '/docs/basics/keys/intro',
+              },
+              {
+                label: 'Wallets',
+                to: '/docs/basics/wallets/software-wallets',
+              },
+              {
+                label: 'Transactions',
+                to: '/docs/basics/transactions/understanding',
+              },
+            ],
+          },
+          {
             title: 'Guides',
             items: [
               {
@@ -236,35 +249,55 @@ const config = {
                 to: '/docs/seed',
               },
               {
-                label: 'Libreboot',
-                to: '/docs/libreboot',
+                label: 'DIY Passphrase',
+                to: '/docs/passphrase',
               },
               {
                 label: 'Bitcoin Node',
                 to: '/docs/bitcoin-node',
               },
+              {
+                label: 'Air-Gapped Computer',
+                to: '/docs/air-gapped-computer',
+              },
+              {
+                label: 'Libreboot',
+                to: '/docs/libreboot',
+              },
             ],
           },
           {
-            title: 'Devices',
+            title: 'Resources',
             items: [
               {
-                label: 'Bitcoin computer',
-                href: '/docs/bitcoin-computer',
+                label: 'Books',
+                to: '/books',
               },
               {
-                label: 'Air-gapped computer',
-                href: '/docs/air-gapped-computer',
+                label: 'Podcasts',
+                to: '/podcasts',
               },
               {
-                label: 'Nostr Signing Device',
-                href: '/docs/nostr-signing-device',
-              }
+                label: 'BIP39 Word List',
+                href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
+              },
+              {
+                label: 'Mempool',
+                href: 'https://mempool.space/',
+              },
             ],
           },
           {
-            title: 'Find Us',
+            title: 'Connect',
             items: [
+              {
+                label: 'Nostr',
+                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
+              },
+              {
+                label: 'X (Twitter)',
+                href: 'https://x.com/selfcustodylabs',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/selfcustodylabs',
@@ -273,10 +306,6 @@ const config = {
                 label: 'Keybase',
                 href: 'https://keybase.io/selfcustodylabs',
               },
-              {
-                label: 'Club Orange App',
-                href: 'https://app.cluborange.org/selfcustodylabs',
-              }
             ],
           },
         ],
