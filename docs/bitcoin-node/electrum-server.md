@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
-title: "Electrum Server (Electrs)"
-description: "Practical guide: Electrum Server (Electrs). Covers What is Indexation?, Why is Indexation Important?, How Does Indexation Help with Security and Privacy?."
-keywords: ["bitcoin", "self custody", "security", "privacy", "node", "electrum", "server", "electrs", "bitcoin node", "tor"]
+title: "Electrum Server (Electrs) Setup"
+description: "Set up an Electrum server (Electrs) to index your Bitcoin blockchain and connect wallets like Sparrow privately to your own node."
+keywords: ["electrum server", "electrs", "bitcoin node", "sparrow wallet", "indexing", "self custody"]
 tags: ["bitcoin node", "electrum", "setup", "self custody"]
 ---
 # Electrum Server (Electrs)

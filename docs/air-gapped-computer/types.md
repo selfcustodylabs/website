@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Types of AGCs"
-description: "Practical guide: Types of AGCs. Covers Laptop Recommended, Raspberry Pi Zero 1.3, Desktop Computer."
-keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "types", "agcs", "air-gapped", "offline signing", "cold storage"]
-tags: ["air-gapped", "computer", "laptop", "raspberry", "desktop", "wi-fi"]
+title: "Types of Air-Gapped Computers"
+description: "Compare air-gapped computer options: laptops, Raspberry Pi Zero, and desktops. Find the best offline device for Bitcoin security."
+keywords: ["bitcoin", "self custody", "security", "air-gapped computer", "laptop", "raspberry pi", "desktop", "offline"]
+tags: ["air-gapped", "computer", "laptop", "raspberry", "desktop"]
 ---
 # Types of Air-Gapped Computers
 

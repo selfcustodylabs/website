@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "System Setup & Security"
-description: "Practical guide: System Setup & Security. Covers BIOS: Libreboot, OS: Linux Mint, Hard Drive: LUKS Encryption."
-keywords: ["bitcoin", "self custody", "security", "privacy", "system", "setup"]
-tags: ["bitcoin", "computer", "laptop", "hardware"]
+title: "Bitcoin Computer Setup Guide"
+description: "Set up your dedicated Bitcoin computer with Libreboot BIOS, Linux Mint, and LUKS encryption for maximum security and privacy."
+keywords: ["bitcoin computer setup", "libreboot", "linux mint", "LUKS encryption", "secure setup"]
+tags: ["bitcoin", "computer", "setup", "libreboot", "encryption"]
 ---
 # System Setup & Security
 

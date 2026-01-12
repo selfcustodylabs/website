@@ -1,11 +1,23 @@
 ---
 sidebar_position: 1
 title: "What is a Bitcoin Node"
-description: "Clear explanation of a Bitcoin Node for Bitcoin self-custody. Covers What is a Bitcoin Node?, Running a Bitcoin Node, Bitcoin Wallets vs. Bitcoin Nodes."
-keywords: ["bitcoin", "self custody", "security", "privacy", "node", "bitcoin node", "electrum", "tor"]
+description: "Understand what a Bitcoin node does and why running your own node matters for privacy, security, and true self-custody of your Bitcoin."
+keywords: ["bitcoin node", "self custody", "bitcoin core", "full node", "blockchain", "verification"]
 tags: ["bitcoin node", "self custody", "wallet"]
 ---
 # Bitcoin Node
+
+:::info What You'll Learn
+In this guide, you will:
+- Understand what a Bitcoin node does
+- Learn why running your own node matters for privacy
+- Set up a node using popular software options
+- Connect your wallet to your own node
+
+**⏱️ Time required:** 2-4 hours (plus sync time)  
+**📊 Difficulty:** Intermediate  
+**🔧 Prerequisites:** Dedicated computer or Raspberry Pi, 1TB+ storage
+:::
 
 Before we dive into the technical details, let’s start with the basics.
 

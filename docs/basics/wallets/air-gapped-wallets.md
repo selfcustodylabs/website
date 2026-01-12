@@ -3,7 +3,7 @@ sidebar_position: 3
 title: "Air-Gapped Wallets"
 description: "Practical guide: Air-Gapped Wallets. Covers Why Some People Use Air-Gapped Wallets, How Transactions Work, Is This for Everyone?."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "gapped", "wallets", "air-gapped", "offline signing", "cold storage"]
-tags: ["bitcoin", "air-happed", "wallets"]
+tags: ["bitcoin", "air-gapped", "wallet"]
 ---
 # What Does “Air-Gapped” Mean?
 
@@ -52,18 +52,19 @@ They are not necessary for beginners, but they exist for people who want maximum
 
 Think of this as a deep cold storage, not a daily wallet.
 
+---
 
-## Build an Air‑Gapped Device
+## Ready to Build Your Own?
 
-If you want to explore air‑gapped setups in more detail, why they are useful, when you should use one, and why they can be more secure than hardware wallets, navigate to the sections dedicated to building an [Air‑gapped computer](/docs/air-gapped-computer).
+:::tip Next Step: Build an Air-Gapped Computer
+Learn how to build your own air-gapped computer for maximum security in our **[Air-Gapped Computer Guide](/docs/air-gapped-computer)**. We cover hardware selection, BIOS replacement, and secure OS setup.
+:::
 
-
-:::tip One Important Reminder
-
+:::warning One Important Reminder
 No matter which wallet you use:
 - Your seed phrase is the most important thing
 - Anyone with it controls your Bitcoin
 - Losing it means losing access forever
 
-The wallet is a tool.
-The seed phrase is the key.
+The wallet is a tool. The seed phrase is the key.
+:::

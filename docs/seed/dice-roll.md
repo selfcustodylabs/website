@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "Roll the Dice"
-description: "Practical guide: Roll the Dice. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "roll", "dice"]
-tags: ["seed", "dice", "entropy"]
+title: "Roll Dice for Bitcoin Seed Entropy"
+description: "Generate true randomness for your Bitcoin seed using dice rolls. Learn how to convert dice results into binary entropy for a secure seed phrase."
+keywords: ["dice roll", "bitcoin seed", "entropy", "randomness", "binary", "BIP39"]
+tags: ["seed", "dice", "entropy", "binary"]
 ---
 # Roll the Dice
 

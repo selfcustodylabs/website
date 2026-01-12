@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: "AGC Basics"
-description: "Practical guide: AGC Basics. Covers Why you Need an AGC, Why an AGC is better than a SeedSigner, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "agc", "basics", "air-gapped", "offline signing", "cold storage"]
-tags: ["air-gapped", "computer", "AGC", "seedsigner", "seed", "wallet"]
+title: "Air-Gapped Computer Guide"
+description: "Learn why you need an air-gapped computer for Bitcoin self-custody. Secure seed generation, offline transaction signing, and maximum security for your private keys."
+keywords: ["bitcoin", "self custody", "security", "privacy", "air-gapped computer", "offline signing", "cold storage", "AGC"]
+tags: ["air-gapped", "computer", "seed", "wallet"]
 ---
 # Air-Gapped Computer (AGC)
 
@@ -18,7 +18,7 @@ As explained in the [air‑gapped wallet](/docs/basics/wallets/air-gapped-wallet
 To achieve this, key components such as Wi‑Fi and Bluetooth are physically removed. Ideally, the Ethernet port should also be disabled or permanently damaged, so that even if someone steals the device, they cannot connect it to the internet.
 
 
-This is the highest level of self custody security. althought this is not a setup recommended for the regular user.
+This is the highest level of self custody security, although this is not a setup recommended for the regular user.
 
 
 
@@ -42,4 +42,18 @@ An AGC provides several advantages over a SeedSigner, making it a more versatile
 - **Greater Discretion** – A SeedSigner is a known Bitcoin device and could attract attention if discovered. In contrast, an AGC looks like an ordinary computer, making it far less suspicious and more discreet in various environments.
 - **More Functionality** – Beyond signing transactions, an AGC can handle other Bitcoin-related tasks, such as encrypting and decrypting messages, securely storing additional sensitive information, or running advanced scripts. This makes it a more powerful tool compared to a SeedSigner, which is limited in scope.
 
-While SeedSigner is a great option for certain use cases, an AGC offers better encryption, more verification options, an easier interface, greater privacy, and expanded functionalit, making it the superior choice for Bitcoin self-custody.
+While SeedSigner is a great option for certain use cases, an AGC offers better encryption, more verification options, an easier interface, greater privacy, and expanded functionality, making it the superior choice for Bitcoin self-custody.
+
+---
+
+## Related Guides
+
+:::tip Generate Your Own Seed
+Use your AGC to create a truly random seed phrase with our **[DIY Seed Generation Guide](/docs/seed)**. Dice rolls + air-gapped computer = maximum security.
+:::
+
+:::info Firmware Options
+For the best AGC security, replace the stock BIOS with open-source firmware:
+- **[Libreboot Guide](/docs/libreboot)** – Removes Intel ME completely
+- **[Coreboot Guide](/docs/coreboot)** – Supports more laptop models
+:::

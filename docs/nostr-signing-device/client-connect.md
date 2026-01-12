@@ -1,9 +1,9 @@
 ---
 sidebar_position: 6
-title: "Connect to a Nostr Client"
-description: "Practical guide: Connect to a Nostr Client. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "connect", "nostr", "client"]
-tags: ["nostr", "nsd", "signing device", "client"]
+title: "Connect NSD to Nostr Clients"
+description: "Connect your Nostr Signing Device to clients like Coracle and NoStrudel. Final step to start using your hardware-secured Nostr identity."
+keywords: ["nostr client", "coracle", "nostrudel", "NSD connection", "horse extension"]
+tags: ["nostr", "client", "setup"]
 ---
 # Connect to a Nostr Client
 

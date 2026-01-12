@@ -1,13 +1,25 @@
 ---
 sidebar_position: 1
-title: "DIY Seed"
-description: "Practical guide: DIY Seed. Covers Why DIY Seed?, Risks of 3rd-Party Seed Generation, How to Generate Your Own Seed."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed"]
-tags: ["seed", "self custody", "entropy"]
+title: "DIY Bitcoin Seed Generation"
+description: "Generate your own Bitcoin seed phrase using dice rolls for true randomness. Step-by-step guide to creating a secure BIP39 seed without trusting third parties."
+keywords: ["bitcoin seed", "seed phrase", "DIY seed", "dice roll", "BIP39", "entropy", "self custody"]
+tags: ["seed", "self custody", "entropy", "dice"]
 ---
 # DIY Bitcoin Seed 🎲🎲
 
 The Bitcoin journey starts from here, those 24 words. While most people use them, few truly understand them. Taking control of your Bitcoin means generating your own seed securely, without relying on third parties.
+
+:::info What You'll Learn
+In this guide, you will:
+- Generate true randomness using physical dice rolls
+- Convert binary entropy to BIP39 seed words
+- Calculate and verify your checksum
+- Securely backup your seed phrase on metal
+
+**⏱️ Time required:** 1-2 hours  
+**📊 Difficulty:** Intermediate  
+**🔧 Prerequisites:** [Air-gapped computer](/docs/air-gapped-computer) or Raspberry Pi Zero, casino dice
+:::
 
 
 ## Why DIY Seed?

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: "Word Lists"
-description: "Practical guide: Word Lists. Covers The List Explained, Security & Passphrase Strength, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "word", "lists"]
-tags: ["passphrase", "self custody", "entropy", "word lists"]
+title: "EFF Word Lists for Passphrases"
+description: "Use the EFF long word list for secure, memorable Bitcoin passphrases. Understand passphrase strength and entropy bits for maximum security."
+keywords: ["EFF word list", "diceware", "passphrase strength", "entropy bits", "secure passphrase"]
+tags: ["passphrase", "word list", "entropy", "security"]
 ---
 # EFF's New Word Lists
 

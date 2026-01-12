@@ -518,3 +518,35 @@
     padding: 0 18px;
   }
 }
+
+/* CATEGORY SECTIONS (for unified guides page) */
+.categorySection {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.categorySection:first-of-type {
+  margin-top: 32px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.categoryHeader {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.categoryTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.categoryDescription {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}

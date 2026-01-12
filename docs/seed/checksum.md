@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: "Calculate the Checksum"
-description: "Practical guide: Calculate the Checksum. Covers Generate the Hash Output, Convert HEX to Binary, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "calculate", "checksum"]
-tags: ["seed", "binary", "checksum"]
+title: "Calculate Bitcoin Seed Checksum"
+description: "Calculate the checksum for your DIY Bitcoin seed using SHA256. Verify your seed phrase is valid with this essential final step."
+keywords: ["bitcoin seed checksum", "SHA256", "BIP39", "seed verification", "hash"]
+tags: ["seed", "checksum", "BIP39"]
 ---
 # Calculate the Checksum
 

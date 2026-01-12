@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: "Binary to Decimal"
-description: "Practical guide: Binary to Decimal. Covers Airgapped Computer, Paper & Pen, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "seed", "binary", "decimal"]
-tags: ["seed", "binary"]
+title: "Convert Binary to Decimal for BIP39"
+description: "Convert your 11-bit binary chunks to decimal numbers offline. Essential step in DIY Bitcoin seed generation using the BIP39 word list."
+keywords: ["binary to decimal", "BIP39", "bitcoin seed", "conversion", "offline", "air-gapped"]
+tags: ["seed", "binary", "BIP39"]
 ---
 # Binary to Decimal
 

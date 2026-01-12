@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "Roll the Dice"
-description: "Practical guide: Roll the Dice. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "roll", "dice"]
-tags: ["passphrase", "self custody", "entropy", "dice"]
+title: "Roll Dice for Your Passphrase"
+description: "Generate a secure Bitcoin passphrase by rolling dice. Step-by-step instructions for creating true random entropy using the EFF word list."
+keywords: ["dice roll passphrase", "diceware", "random passphrase", "EFF word list", "entropy"]
+tags: ["passphrase", "dice", "entropy", "security"]
 ---
 # Roll the Dice
 

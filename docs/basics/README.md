@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: "What is Self Custody"
-description: "Clear explanation of Self Custody for Bitcoin self-custody. Covers Private Keys and Seed Phrases, Ways to Self Custody Bitcoin, Freedom Comes With."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "self", "custody"]
-tags: ["self custody"]
+title: "What is Bitcoin Self-Custody"
+description: "Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties."
+keywords: ["bitcoin self custody", "private keys", "seed phrase", "not your keys not your coins", "financial sovereignty"]
+tags: ["self custody", "bitcoin", "basics"]
 ---
 # What is Bitcoin Self Custody?
 
@@ -59,3 +59,22 @@ Self-custody gives you freedom, but it also gives you responsibility.
 - No chargebacks.
 
 This is why learning proper backups and safe storage is just as important as buying Bitcoin in the first place.
+
+---
+
+## Your Learning Path
+
+:::tip Recommended Order
+This section covers the fundamentals. Here's the suggested reading order:
+
+1. **[Holding Bitcoin](/docs/basics/holding)** – Why self-custody matters
+2. **[Private Keys](/docs/basics/keys/intro)** – The foundation of Bitcoin ownership
+3. **[Seed Phrases](/docs/basics/keys/seed)** – How keys become words
+4. **[Wallets](/docs/basics/wallets/software-wallets)** – Tools for managing your Bitcoin
+5. **[Transactions](/docs/basics/transactions/understanding)** – How Bitcoin moves
+
+After mastering the basics, explore our practical guides:
+- **[DIY Seed Generation](/docs/seed)** – Create your own seed with dice
+- **[Bitcoin Node](/docs/bitcoin-node)** – Verify transactions yourself
+- **[Air-Gapped Computer](/docs/air-gapped-computer)** – Maximum security setup
+:::

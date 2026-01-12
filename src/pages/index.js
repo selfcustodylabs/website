@@ -270,7 +270,7 @@ export default function Home() {
       title: "Set Up a Wallet",
       description:
         "Choose and configure a secure Bitcoin wallet. Learn about hardware and software options.",
-      href: "/docs/category/wallets",
+      href: "/docs/basics/wallets/software-wallets",
     },
     {
       step: "04",

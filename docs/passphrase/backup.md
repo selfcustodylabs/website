@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: "Backup your Passphrase"
-description: "Practical guide: Backup your Passphrase. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "passphrase", "backup"]
-tags: ["passphrase", "storage", "backup"]
+title: "Backup Your Bitcoin Passphrase"
+description: "Secure your Bitcoin passphrase with proper backup strategies. Learn where and how to store your passphrase separately from your seed phrase."
+keywords: ["passphrase backup", "bitcoin security", "passphrase storage", "seed separation"]
+tags: ["passphrase", "backup", "storage", "security"]
 ---
 # Backup your Passphrase
 

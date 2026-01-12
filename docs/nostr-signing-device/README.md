@@ -1,13 +1,29 @@
 ---
 sidebar_position: 1
-title: "Nostr Signing Device (NSD)"
-description: "Practical guide: Nostr Signing Device (NSD). Covers Why a NSD, NSD Setup Requirements, bitcoin."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "nostr", "signing", "device"]
-tags: ["nostr", "nsd", "signing device", "lilygo"]
+title: "Build a Nostr Signing Device (NSD)"
+description: "Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension."
+keywords: ["nostr signing device", "NSD", "LILYGO", "hardware signer", "nostr security", "Horse extension"]
+tags: ["nostr", "signing device", "hardware", "security"]
 ---
 # Nostr Signing Device (NSD)
 
+:::note Bonus Project
+This guide is a bonus project for Bitcoiners interested in Nostr. The same security principles that apply to Bitcoin private keys—keeping them offline and isolated—apply to your Nostr identity. Building an NSD teaches hardware signing concepts that transfer directly to Bitcoin security.
+:::
+
 The LNbits Nostr Signing Device (NSD) serves as a secure alternative to storing private keys on a computer. Your private key is stored on the NSD and signs nostr messages on the device. The NSD works with a Chrome based browser and the Horse extension.
+
+:::info What You'll Learn
+In this guide, you will:
+- Set up Arduino IDE for ESP32 development
+- Flash firmware to a LILYGO T-Display
+- Install the Horse browser extension
+- Connect to Nostr clients securely
+
+**⏱️ Time required:** 1-2 hours  
+**📊 Difficulty:** Intermediate  
+**🔧 Prerequisites:** LILYGO T-Display, USB cable, Chrome-based browser
+:::
 
 
 ## Why a NSD

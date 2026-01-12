@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: "Introduction"
-description: "Practical guide: Introduction. Covers What is a Private Key?, How Does a Private Key Work?, Storing Private Keys – A Challenge."
-keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "introduction"]
-tags: ["private keys"]
+title: "Understanding Bitcoin Private Keys"
+description: "Learn what Bitcoin private keys are, how they work, and why they're essential for controlling your Bitcoin. The foundation of self-custody explained."
+keywords: ["bitcoin private key", "public key", "cryptography", "bitcoin security", "key management"]
+tags: ["private keys", "bitcoin", "security"]
 ---
 # Private Keys
 

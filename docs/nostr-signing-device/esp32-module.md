@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: "ESP32 Boards Support"
-description: "Practical guide: ESP32 Boards Support. Covers bitcoin, self custody, security."
-keywords: ["bitcoin", "self custody", "security", "privacy", "nsd", "esp32", "boards", "support"]
-tags: ["nostr", "nsd", "signing device", "arduino", "esp32"]
+title: "ESP32 Board Support Setup"
+description: "Add ESP32 board support to Arduino IDE for your Nostr Signing Device. Configure the LILYGO T-Display board settings."
+keywords: ["ESP32", "arduino board manager", "LILYGO T-Display", "ESP32 URL", "board support"]
+tags: ["ESP32", "arduino", "setup", "LILYGO"]
 ---
 # Setting Up ESP32 Board Support 
 
