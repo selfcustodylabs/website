@@ -28,7 +28,7 @@ The official [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0
 For example, if the private key starts with `00000000000` (binary zero), the corresponding word should be the first word on the list, which is **"abandon."** However, on GitHub, "abandon" is labeled as word **1** instead of **0**. This means every word in the list appears **one position higher than the number it actually represents**, requiring a simple correction when looking up words.
 
 
-![Words](/img/basics/words.png)
+![Words](/img/basics/words.webp)
 
 
 ## Step-by-Step Conversion Example

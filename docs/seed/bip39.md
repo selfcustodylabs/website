@@ -57,4 +57,4 @@ If you’ve made it this far, congratulations! You’ve now created a valid 24-w
 
 Now, the last step is to use your seed phrase to verify that the 24 words were correctly generated. You can install a software wallet, like Sparrow Wallet, on your airgapped computer and enter the seed words. If they’re rejected, it means there was an error during the process. Sparrow will quickly show an error if there's a mismatch, typically because the checksum doesn't match. So, take your time and carefully double-check each step!
 
-![Import](/img/seed/import.png)
+![Import](/img/seed/import.webp)

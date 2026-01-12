@@ -45,4 +45,4 @@ Plug in your device via USB.
 
 If the upload completes without errors, your NSD is ready! You should see the LNbits welcome screen on the display.
 
-![Nsd](/img/nsd/nsd.jpg)
+![Nsd](/img/nsd/nsd.webp)

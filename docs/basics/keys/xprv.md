@@ -7,7 +7,7 @@ tags: ["private keys", "xprv", "bip39", "seed"]
 ---
 # Extended Private Key (XPRV)
 
-![Diagram](/img/basics/diagram.png)
+![Diagram](/img/basics/diagram.webp)
 
 The extended private key is derived from the binary private key (along with an optional passphrase) using mathematical functions that most users don’t need to understand in detail.
 

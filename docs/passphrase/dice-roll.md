@@ -11,7 +11,7 @@ Now it's time to generate your own passphrase using real dice. As we mentioned i
 
 For this method, five dice are enough to generate each word.
 
-![Dice](/img/seed/dice.jpg)
+![Dice](/img/seed/dice.webp)
 
 Before rolling the dice remember that:
 

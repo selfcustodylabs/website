@@ -49,7 +49,7 @@ But it’s important to understand the trade off:
 
 True Bitcoin ownership begins when you withdraw your coins to a wallet you control.
 
-![Selfcustody](/img/basics/selfcustody.png)
+![Selfcustody](/img/basics/selfcustody.webp)
 
 
 ## Why This Matters for Bitcoin
