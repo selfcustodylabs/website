@@ -5,55 +5,69 @@ description: "Generate your own Bitcoin seed phrase using dice rolls for true ra
 keywords: ["bitcoin seed", "seed phrase", "DIY seed", "dice roll", "BIP39", "entropy", "self custody"]
 tags: ["seed", "self custody", "entropy", "dice"]
 ---
-# DIY Bitcoin Seed 🎲🎲
+# DIY Bitcoin Seed
 
-The Bitcoin journey starts from here, those 24 words. While most people use them, few truly understand them. Taking control of your Bitcoin means generating your own seed securely, without relying on third parties.
-
-:::info What You'll Learn
+:::info What You'll Do
 In this guide, you will:
 - Generate true randomness using physical dice rolls
 - Convert binary entropy to BIP39 seed words
 - Calculate and verify your checksum
 - Securely backup your seed phrase on metal
 
-**⏱️ Time required:** 1-2 hours  
-**📊 Difficulty:** Intermediate  
-**🔧 Prerequisites:** [Air-gapped computer](/docs/air-gapped-computer) or Raspberry Pi Zero, casino dice
+**Time required:** 1-2 hours  
+**Difficulty:** Intermediate  
+**Requirements:** [Air-gapped computer](/docs/air-gapped-computer) or Raspberry Pi Zero, casino dice
+:::
+
+:::tip Prerequisites
+Before starting, make sure you understand:
+- [What seed phrases are](/docs/basics/keys/seed) and how they protect your Bitcoin
+- [Why randomness matters](/docs/basics/keys/random) for security
+- [Private keys](/docs/basics/keys/intro) and how they relate to seeds
 :::
 
 
-## Why DIY Seed?
+## Why Generate Your Own Seed?
 
-Bitcoin was designed to be decentralized and censorship-resistant. To fully embrace this, you must control your private keys. Your seed is the foundation of your private key, and if you don’t generate it yourself in a secure, verifiable way, you're trusting others with your funds.
+Most wallets generate seeds for you, but this requires trust:
 
-A DIY seed allows you to:
+| Risk | Description |
+|------|-------------|
+| **Weak randomness** | Software may not use proper entropy |
+| **Backdoors** | Wallets could have security flaws or intentional vulnerabilities |
+| **Supply chain attacks** | Pre-generated seeds have been found in compromised hardware wallets |
 
-- Ensure that no one else has access to your private key.
-- Avoid relying on hardware or software-generated seeds that could be compromised.
-- Gain confidence by understanding the seed creation process.
-
-
-## Risks of 3rd-Party Seed Generation
-
-Many wallets generate a seed for you, but this comes with risks:
-
-- Weak Randomness – You must trust that the software or hardware wallet is using proper randomness (entropy) and not creating predictable seeds.
-- Backdoors & Compromises – Some wallets might have security flaws or even intentional backdoors that expose your seed.
-- Supply Chain Attacks – Pre-generated seeds (as found in some compromised hardware wallets) could mean attackers already have access to your Bitcoin.
+By generating your own seed with physical dice, you:
+- **Verify the randomness yourself** — no trust required
+- **Eliminate software vulnerabilities** — dice can't be hacked
+- **Understand what you're protecting** — knowledge is security
 
 
-## How to Generate Your Own Seed
+## What You'll Create
 
-To eliminate these risks, you can create your own Bitcoin seed using secure, offline methods:
+A 24-word BIP39 seed phrase generated from 256 bits of true randomness:
 
-1. Generating true randomness – Use dice rolls to ensure strong entropy.
-2. Convert randomness into a seed phrase – Use the BIP39 standard to turn random numbers into a mnemonic seed.
-3. Verify the seed – Cross-check it with multiple tools to ensure accuracy.
-4. Store it securely – Write it on durable materials like metal to protect against loss or damage.
+```
+1.  reward    7.  camera    13. ritual    19. whisper
+2.  symptom   8.  reward    14. ocean     20. weasel
+3.  rude      9.  pride     15. rib       21. chunk
+4.  hamster   10. roof      16. wing      22. rival
+5.  wide      11. weather   17. board     23. obvious
+6.  weekend   12. keep      18. potato    24. clean
+```
+
+This seed can restore your Bitcoin wallet on any BIP39-compatible software or hardware wallet.
 
 
-## The Power of Self Custody
+## Guide Overview
 
-By generating your own seed, you eliminate unnecessary trust in third parties. This aligns with Bitcoin’s core principles: self sovereignty, security, and decentralization. While it requires learning and careful execution, it’s one of the most empowering steps you can take in Bitcoin self custody!
+| Step | What You'll Do |
+|------|----------------|
+| 1. [Requirements](/docs/seed/requirements) | Gather materials and set up air-gapped environment |
+| 2. [Dice Rolling](/docs/seed/dice-roll) | Generate 256 bits of entropy with 99 dice rolls |
+| 3. [Binary to Decimal](/docs/seed/binary-decimal) | Convert binary to numbers (0-2047) |
+| 4. [Checksum](/docs/seed/checksum) | Calculate the verification bits |
+| 5. [BIP39 Words](/docs/seed/bip39) | Look up your 24 words |
+| 6. [Backup](/docs/seed/backup) | Store your seed securely on metal |
 
-By following this detailed step-by-step guide you will take full control of your financial future!
+Let's begin!

@@ -5,28 +5,40 @@ description: "Install Coreboot open-source firmware for a fast, secure, and tran
 keywords: ["coreboot", "open source firmware", "BIOS replacement", "secure boot", "bitcoin computer"]
 tags: ["coreboot", "open source", "bios", "firmware"]
 ---
+
 # Coreboot BIOS
 
 ![Coreboot](/img/coreboot/coreboot.webp)
 
-:::info What You'll Learn
+:::info What You'll Do
 In this guide, you will:
-- Understand why open-source BIOS firmware matters
 - Choose between internal and external flashing methods
 - Build Coreboot from source for your laptop
 - Flash Coreboot to replace your stock BIOS
+- Configure your bootloader payload
 
-**⏱️ Time required:** 2-4 hours  
-**📊 Difficulty:** Advanced  
-**🔧 Prerequisites:** Supported laptop, Linux system for building
+**Time required:** 2-4 hours  
+**Difficulty:** Advanced  
+**Prerequisites:** Supported laptop, Linux system for building
+:::
+
+:::tip Background Reading
+This guide assumes you're building a [Bitcoin Computer](/docs/bitcoin-computer) or [Air-Gapped Computer](/docs/air-gapped-computer). If you're not sure why open-source firmware matters, see those guides first.
 :::
 
 
 ## Why Coreboot?
 
-Most computers use proprietary BIOS or UEFI firmware, which is closed-source, slow, and potentially insecure. These firmwares may include unnecessary features or hidden backdoors. Coreboot is a fast, minimal, and open-source alternative that gives users full control over what runs at boot.
+Most computers use proprietary BIOS/UEFI firmware that is closed-source and potentially insecure. Coreboot is a fast, minimal, open-source alternative.
 
-For Bitcoiners, this matters. Whether you're running a full node, using a hardware wallet, or signing transactions offline, Coreboot ensures your machine starts with clean, transparent code, free from vendor secrets or potential exploits.
+| Benefit | Description |
+|---------|-------------|
+| **Open source** | Fully auditable boot process |
+| **Minimal** | Does only what's necessary |
+| **Fast** | Quicker boot times |
+| **Wide support** | More hardware than Libreboot |
+
+For Bitcoiners running nodes or signing transactions, Coreboot ensures your machine starts with clean, transparent code.
 
 
 ## What is Coreboot?

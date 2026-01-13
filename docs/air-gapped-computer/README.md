@@ -1,48 +1,73 @@
 ---
 sidebar_position: 1
 title: "Air-Gapped Computer Guide"
-description: "Learn why you need an air-gapped computer for Bitcoin self-custody. Secure seed generation, offline transaction signing, and maximum security for your private keys."
+description: "Set up an air-gapped computer for Bitcoin self-custody. Secure seed generation, offline transaction signing, and maximum security for your private keys."
 keywords: ["bitcoin", "self custody", "security", "privacy", "air-gapped computer", "offline signing", "cold storage", "AGC"]
 tags: ["air-gapped", "computer", "seed", "wallet"]
 ---
+
 # Air-Gapped Computer (AGC)
 
-Let’s get straight to the point:
+:::info What You'll Do
+In this guide, you will:
+- Understand why an air-gapped computer provides maximum security
+- Choose the right hardware for your AGC
+- Set up a permanently offline computer for Bitcoin operations
 
-:::tip
-You absolutely need an Air-Gapped Computer!
+**Time required:** 2-4 hours  
+**Difficulty:** Intermediate to Advanced  
+**Prerequisites:** Old laptop (ThinkPad recommended), USB drive with Linux
 :::
 
-As explained in the [air‑gapped wallet](/docs/basics/wallets/air-gapped-wallets) section, having an air‑gapped setup is crucial because it takes security to the next level. The device that holds your private keys is physically isolated from the internet and any other network, which means it cannot be accessed or attacked remotely.
-
-To achieve this, key components such as Wi‑Fi and Bluetooth are physically removed. Ideally, the Ethernet port should also be disabled or permanently damaged, so that even if someone steals the device, they cannot connect it to the internet.
-
-
-This is the highest level of self custody security, although this is not a setup recommended for the regular user.
-
-
-
-## Why you Need an AGC
-
-- **To create your own seed** ([see my guide here](/docs/seed)) – An air-gapped computer (AGC) lets you securely generate Bitcoin seeds **from true randomness**, like dice rolls. The randomness comes from the dice rolls, not from the laptop itself. The AGC's role is to help you convert that randomness into the correct BIP39 words, ensuring your seed is created securely offline.
-- **To verify your hardware wallet** (HWW) – When your HWW generates a private key, how do you know it’s truly random? You’re trusting the device. A compromised HWW could show fake addresses, even with a real seed. To verify, you’d need to input the seed into other software, like Electrum or Ian Coleman’s BIP39 tool, and compare the generated addresses.
-- **To sign transactions** – An AGC allows you to sign Bitcoin transactions offline, keeping your private keys completely isolated from the internet.  Essentially, it acts as a hardware wallet, but with enhanced security.
-- **For Inheritance** – You may want to write an encrypted message for your heirs using GPG with a password. Store it on one or more mediums, with clear instructions not to open the file unless it’s on an AGC computer.
-
-Now that you understand what an AGC is and why you need one, let's explore the options that best suit your needs.
+:::tip Background Reading
+Before starting, make sure you understand:
+- [What air-gapped wallets are](/docs/basics/wallets/air-gapped-wallets) and why they provide superior security
+- [Private keys](/docs/basics/keys/intro) and why they must be protected
+- [Seed phrases](/docs/basics/keys/seed) and how they work
+:::
 
 
-## Why an AGC is better than a SeedSigner
+## Why You Need an Air-Gapped Computer
 
-An AGC provides several advantages over a SeedSigner, making it a more versatile and secure choice for managing Bitcoin keys. Here’s why:
+An air-gapped setup takes security to the highest level. The device holding your private keys is physically isolated from the internet—it cannot be accessed or attacked remotely.
 
-- **Better Encryption Support** – Unlike SeedSigner, which is stateless and requires storing keys on paper or metal plate (unencrypted), an AGC allows you to store wallet backups in encrypted files, adding an extra layer of security.
-- **Multiple Wallet Verification** – With an AGC you can generate wallets using multiple open-source wallets and cross-check the results. This ensures the wallet derivation is correct without having to trust a single software, reducing the need for manual code verification.
-- **Improved User Experience** – While SeedSigner relies on a small screen and a camera for QR codes, an AGC offers a full keyboard, larger display, and better input methods, making it easier to use for tasks like signing transactions, verifying addresses, or managing wallets.
-- **Greater Discretion** – A SeedSigner is a known Bitcoin device and could attract attention if discovered. In contrast, an AGC looks like an ordinary computer, making it far less suspicious and more discreet in various environments.
-- **More Functionality** – Beyond signing transactions, an AGC can handle other Bitcoin-related tasks, such as encrypting and decrypting messages, securely storing additional sensitive information, or running advanced scripts. This makes it a more powerful tool compared to a SeedSigner, which is limited in scope.
+Key security measures:
+- Wi-Fi and Bluetooth physically removed
+- Ethernet port disabled or permanently damaged
+- Never connects to any network, ever
 
-While SeedSigner is a great option for certain use cases, an AGC offers better encryption, more verification options, an easier interface, greater privacy, and expanded functionality, making it the superior choice for Bitcoin self-custody.
+This is the **highest level of self-custody security**, though it requires more technical effort than standard hardware wallets.
+
+
+## Use Cases for an AGC
+
+| Use Case | Description |
+|----------|-------------|
+| **Seed generation** | Create seeds from dice rolls with [DIY Seed Guide](/docs/seed) |
+| **Hardware wallet verification** | Verify your HWW generates correct addresses |
+| **Transaction signing** | Sign transactions completely offline |
+| **Inheritance planning** | Create encrypted messages for heirs |
+
+
+## Why AGC Over SeedSigner
+
+| Feature | AGC | SeedSigner |
+|---------|-----|------------|
+| **Encryption** | Store encrypted wallet backups | Stateless, unencrypted only |
+| **Verification** | Use multiple wallets to cross-check | Single software |
+| **User experience** | Full keyboard, large display | Small screen, camera input |
+| **Discretion** | Looks like normal laptop | Known Bitcoin device |
+| **Functionality** | GPG, scripts, advanced tasks | Signing only |
+
+While SeedSigner is great for certain use cases, an AGC offers more versatility and security options.
+
+
+## Guide Overview
+
+| Step | What You'll Do |
+|------|----------------|
+| 1. [Types of AGC](/docs/air-gapped-computer/types) | Choose your hardware approach |
+| 2. [Setup](/docs/air-gapped-computer/setup) | Configure your air-gapped system |
 
 ---
 
@@ -54,6 +79,6 @@ Use your AGC to create a truly random seed phrase with our **[DIY Seed Generatio
 
 :::info Firmware Options
 For the best AGC security, replace the stock BIOS with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)** – Removes Intel ME completely
-- **[Coreboot Guide](/docs/coreboot)** – Supports more laptop models
+- **[Libreboot Guide](/docs/libreboot)** - Removes Intel ME completely
+- **[Coreboot Guide](/docs/coreboot)** - Supports more laptop models
 :::

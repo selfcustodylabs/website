@@ -11,48 +11,20 @@ tags: ["coinjoin", "privacy", "self custody", "bitcoin"]
 :::info What You'll Learn
 **Time:** 30-45 minutes reading  
 **Difficulty:** Intermediate  
-**Prerequisites:** Understanding of [private keys](/docs/basics/keys/intro), [transactions](/docs/basics/transactions/understanding), and ideally running your own [Bitcoin node](/docs/bitcoin-node)
+**Prerequisites:** Understanding of [private keys](/docs/basics/keys/intro), [transactions](/docs/basics/transactions/understanding), [why privacy matters](/docs/basics/privacy/why-privacy-matters), and ideally running your own [Bitcoin node](/docs/bitcoin-node)
 :::
 
-Bitcoin transactions are public. Every transaction ever made is visible on the blockchain forever. While Bitcoin addresses don't contain your name, surveillance companies work hard to link addresses to real identities.
+:::tip Background Reading
+If you haven't already, read [Why Bitcoin Privacy Matters](/docs/basics/privacy/why-privacy-matters) and [Chain Analysis Explained](/docs/basics/privacy/chain-analysis) to understand the surveillance problem CoinJoin solves.
+:::
 
 **CoinJoin** is a privacy technique that breaks the link between your transaction history and your coins. After a CoinJoin, an outside observer cannot tell which coins belong to you.
 
-This guide explains:
+This guide covers:
 - What CoinJoin is and how it works
-- Why you might want to use it
-- The risks and limitations
-- How to CoinJoin your bitcoin
-
-
-## Why Bitcoin Privacy Matters
-
-When you buy Bitcoin from an exchange, you submit identification documents (KYC - Know Your Customer). The exchange knows:
-- Your name and address
-- How much Bitcoin you bought
-- Which addresses you withdrew to
-
-From that point, anyone with access to this data can follow your coins across the blockchain:
-
-```
-Exchange Withdrawal
-        ↓
-   Address A (your identity is known)
-        ↓
-   Address B (still linked to you)
-        ↓
-   Address C (still linked to you)
-        ↓
-   Payment to merchant (merchant now knows your history)
-```
-
-This means:
-- **Merchants** you pay can see your entire Bitcoin balance
-- **Surveillance companies** can build a profile of your spending
-- **Hackers** who breach exchange databases know how much you have
-- **Governments** can track every transaction you make
-
-CoinJoin breaks this chain of surveillance.
+- The different CoinJoin implementations
+- How to use CoinJoin services
+- Best practices after mixing
 
 
 ## What is CoinJoin?
@@ -102,42 +74,15 @@ In a CoinJoin:
 5. No one can tell which output belongs to which participant
 
 
-## Understanding UTXOs (Essential Background)
+## Understanding UTXOs
 
-To understand CoinJoin, you need to understand UTXOs (Unspent Transaction Outputs). If you're already familiar, skip to the next section.
+CoinJoin operates on UTXOs (Unspent Transaction Outputs). If you're not familiar with how UTXOs work, read [UTXOs Explained](/docs/basics/transactions/utxos) first—it's essential background for understanding CoinJoin.
 
-Think of UTXOs as **discrete coins in your wallet**, not a liquid balance.
-
-### Example: Paying with UTXOs
-
-You have three UTXOs in your wallet:
-- 0.3 BTC
-- 0.2 BTC  
-- 0.05 BTC
-
-**Total balance: 0.55 BTC**
-
-You want to pay someone 0.4 BTC. Here's what happens:
-
-```
-INPUTS                           OUTPUTS
-───────────────────────────────────────────────
-0.3 BTC  ─┐                 ┌→  0.4 BTC (payment)
-          ├─ Transaction ───┤
-0.2 BTC  ─┘                 └→  0.099 BTC (change back to you)
-
-(0.001 BTC goes to miners as fee)
-```
-
-After this transaction, you have:
-- 0.05 BTC (untouched UTXO)
-- 0.099 BTC (new change UTXO)
-
-**New balance: 0.149 BTC**
-
-The key point: UTXOs are consumed entirely and new ones are created. You can't "partially spend" a UTXO—you must spend it all and receive change.
-
-For a deeper understanding, see our [transactions guide](/docs/basics/transactions/understanding).
+**Quick recap for CoinJoin purposes:**
+- Your wallet contains discrete "pieces" of bitcoin (UTXOs), not a liquid balance
+- When you spend, entire UTXOs are consumed and new ones created
+- Change from a transaction becomes a new UTXO
+- UTXOs are combined as inputs when you need to spend more than one contains
 
 
 ## What CoinJoin Can (and Cannot) Do
@@ -339,3 +284,7 @@ Ready to enhance your Bitcoin privacy?
 - [Air-Gapped Computer](/docs/air-gapped-computer) — Maximum security for signing
 
 ---
+
+:::note Attribution
+This guide was inspired by and adapted from [Arman the Parman's CoinJoin Guide](https://armantheparman.com/cj/), with additional explanations and examples added for clarity.
+:::

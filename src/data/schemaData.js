@@ -115,7 +115,7 @@ export const howToSchemas = {
       {
         name: 'Understand Why You Need a Node',
         text: 'Learn why running your own node matters for privacy, security, and true Bitcoin self-custody.',
-        url: `${SITE_URL}/docs/bitcoin-node/why/`
+        url: `${SITE_URL}/docs/basics/nodes/why-run-node/`
       },
       {
         name: 'Choose and Set Up Node Software',
@@ -477,6 +477,15 @@ export const breadcrumbMappings = {
   '/docs/basics/transactions/broadcast/': ['Learn', 'Transactions', 'Broadcast'],
   '/docs/basics/transactions/lifecycle/': ['Learn', 'Transactions', 'Lifecycle'],
   '/docs/basics/transactions/types/': ['Learn', 'Transactions', 'Types'],
+  '/docs/basics/transactions/utxos/': ['Learn', 'Transactions', 'UTXOs'],
+  '/docs/basics/privacy/': ['Learn', 'Privacy'],
+  '/docs/basics/privacy/why-privacy-matters/': ['Learn', 'Privacy', 'Why Privacy Matters'],
+  '/docs/basics/privacy/chain-analysis/': ['Learn', 'Privacy', 'Chain Analysis'],
+  '/docs/basics/privacy/protecting-privacy/': ['Learn', 'Privacy', 'Protecting Privacy'],
+  '/docs/basics/nodes/': ['Learn', 'Bitcoin Nodes'],
+  '/docs/basics/nodes/what-is-node/': ['Learn', 'Bitcoin Nodes', 'What is a Node'],
+  '/docs/basics/nodes/why-run-node/': ['Learn', 'Bitcoin Nodes', 'Why Run Your Own'],
+  '/docs/basics/wallets/multisig/': ['Learn', 'Wallets', 'Multisig'],
 
   // Guide sections
   '/docs/seed/': ['Guides', 'DIY Seed'],
@@ -493,7 +502,6 @@ export const breadcrumbMappings = {
   '/docs/passphrase/backup/': ['Guides', 'DIY Passphrase', 'Backup'],
 
   '/docs/bitcoin-node/': ['Guides', 'Bitcoin Node'],
-  '/docs/bitcoin-node/why/': ['Guides', 'Bitcoin Node', 'Why Run a Node'],
   '/docs/bitcoin-node/node-setup/': ['Guides', 'Bitcoin Node', 'Node Setup'],
   '/docs/bitcoin-node/electrum-server/': ['Guides', 'Bitcoin Node', 'Electrum Server'],
   '/docs/bitcoin-node/tor/': ['Guides', 'Bitcoin Node', 'Tor Setup'],
@@ -670,6 +678,46 @@ export const articleSchemas = {
   '/docs/basics/wallets/air-gapped-wallets/': {
     headline: 'Air-Gapped Bitcoin Wallets Explained',
     description: 'Learn about air-gapped wallets and why they offer the highest level of security.',
+    articleSection: 'Wallets'
+  },
+  '/docs/basics/transactions/utxos/': {
+    headline: 'UTXOs Explained: How Bitcoin Actually Works',
+    description: 'Understand Bitcoin UTXOs (Unspent Transaction Outputs). Learn why Bitcoin uses discrete chunks instead of account balances.',
+    articleSection: 'Transactions'
+  },
+  '/docs/basics/privacy/why-privacy-matters/': {
+    headline: 'Why Bitcoin Privacy Matters',
+    description: 'Understand why financial privacy is essential for Bitcoin users and what information is exposed on the public blockchain.',
+    articleSection: 'Privacy'
+  },
+  '/docs/basics/privacy/chain-analysis/': {
+    headline: 'Chain Analysis Explained',
+    description: 'Learn how blockchain surveillance works and the heuristics used to track Bitcoin transactions.',
+    articleSection: 'Privacy'
+  },
+  '/docs/basics/privacy/protecting-privacy/': {
+    headline: 'Protecting Your Bitcoin Privacy',
+    description: 'Overview of Bitcoin privacy techniques including running your own node, UTXO management, and CoinJoin.',
+    articleSection: 'Privacy'
+  },
+  '/docs/basics/transactions/utxos/': {
+    headline: 'UTXOs Explained: How Bitcoin Actually Works',
+    description: 'Understand Bitcoin UTXO model. Learn how Unspent Transaction Outputs work and why they matter for fees and privacy.',
+    articleSection: 'Transactions'
+  },
+  '/docs/basics/nodes/what-is-node/': {
+    headline: 'What is a Bitcoin Node',
+    description: 'Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network.',
+    articleSection: 'Bitcoin Nodes'
+  },
+  '/docs/basics/nodes/why-run-node/': {
+    headline: 'Why Run Your Own Bitcoin Node',
+    description: 'Understand why running your own Bitcoin node matters for privacy, security, and true self-custody.',
+    articleSection: 'Bitcoin Nodes'
+  },
+  '/docs/basics/wallets/multisig/': {
+    headline: 'Multisig Wallets Explained',
+    description: 'Understand how Bitcoin multisig wallets work and why they eliminate single points of failure.',
     articleSection: 'Wallets'
   }
 };
