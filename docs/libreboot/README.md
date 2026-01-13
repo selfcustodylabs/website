@@ -5,31 +5,40 @@ description: "Install Libreboot open-source firmware to replace your BIOS. Remov
 keywords: ["libreboot", "open source firmware", "Intel ME", "BIOS replacement", "bitcoin security"]
 tags: ["libreboot", "open source", "bios", "firmware"]
 ---
+
 # Libreboot BIOS
 
 ![Libreboot](/img/libreboot/libreboot.webp)
 
-:::info What You'll Learn
+:::info What You'll Do
 In this guide, you will:
-- Understand why open-source firmware matters for security
-- Set up the hardware needed for external flashing
+- Set up external flashing hardware (Raspberry Pi Pico + SOIC8 clip)
 - Build Libreboot from source
 - Flash Libreboot to your laptop's BIOS chip
+- Configure bootloader options
 
-**⏱️ Time required:** 3-5 hours  
-**📊 Difficulty:** Advanced  
-**🔧 Prerequisites:** Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip
+**Time required:** 3-5 hours  
+**Difficulty:** Advanced  
+**Prerequisites:** Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip
 :::
+
+:::tip Background Reading
+This guide assumes you're building a [Bitcoin Computer](/docs/bitcoin-computer) or [Air-Gapped Computer](/docs/air-gapped-computer). If you're not sure why open-source firmware matters, see those guides first.
+:::
+
 
 ## Why Libreboot?
 
-If you're running a Bitcoin focused laptop, security and privacy should be top priorities. Libreboot helps by:
-- ✅ Eliminating Backdoors – Removes Intel ME/AMD PSP, which are potential surveillance tools.
-- ✅ Enhancing Security – Reduces attack surface by using open-source firmware.
-- ✅ Improving Trust – Fully auditable, with no hidden proprietary code.
-- ✅ Boosting Performance – Faster boot times and a minimal firmware footprint.
+For a Bitcoin-focused laptop, security and privacy are paramount. Libreboot provides:
 
-For Bitcoiners who value sovereignty and verifiable security, Libreboot ensures your laptop runs only free, transparent, and user-controlled software, perfect for self custody, running a Bitcoin full node, or signing transactions offline.
+| Benefit | Description |
+|---------|-------------|
+| **No backdoors** | Removes Intel ME/AMD PSP surveillance components |
+| **Auditable code** | Fully open-source, no hidden proprietary code |
+| **Reduced attack surface** | Minimal firmware footprint |
+| **Faster boot** | Less bloat means quicker startup |
+
+For Bitcoiners who value sovereignty, Libreboot ensures your laptop runs only transparent, user-controlled software.
 
 
 ## What is Libreboot?

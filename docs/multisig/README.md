@@ -1,129 +1,69 @@
 ---
 sidebar_position: 1
-title: "Multisig Guide"
-description: "Complete guide to Bitcoin multisig wallets. Learn how multi-signature security works, why it eliminates single points of failure, and how to set up your own multisig vault."
+title: "Multisig Setup Guide"
+description: "Step-by-step guide to setting up a Bitcoin multisig wallet. Learn how to configure hardware wallets, create your multisig in Sparrow, and properly back up everything."
 keywords: ["bitcoin", "multisig", "multi-signature", "security", "self custody", "hardware wallet", "2-of-3", "sparrow"]
 tags: ["multisig", "security", "self custody", "bitcoin", "hardware wallet"]
 ---
 
-# Bitcoin Multisig: The Ultimate Security Guide
+# Multisig Setup Guide
 
-:::info What You'll Learn
-**Time:** 45-60 minutes reading  
-**Difficulty:** Intermediate to Advanced  
-**Prerequisites:** Understanding of [private keys](/docs/basics/keys/intro), [seed phrases](/docs/basics/keys/seed), and experience with a [hardware wallet](/docs/basics/wallets/hardware-wallets)
+:::info What You'll Do
+In this guide, you will:
+- Set up 3 hardware wallets for multisig
+- Create a 2-of-3 multisig wallet in Sparrow
+- Properly back up seed phrases and wallet descriptor
+- Test your recovery procedure
+
+**⏱️ Time required:** 2-3 hours  
+**📊 Difficulty:** Intermediate to Advanced  
+**🔧 Prerequisites:** 3 hardware wallets, Sparrow Wallet installed, understanding of [multisig concepts](/docs/basics/wallets/multisig)
 :::
 
-A single-signature wallet has one fatal flaw: if someone steals your seed phrase or you lose it, your bitcoin is gone forever. There's no recovery, no second chance.
+:::tip Background Reading
+If you're new to multisig, read [Multisig Wallets Explained](/docs/basics/wallets/multisig) first to understand what you're building and why.
+:::
 
-**Multisig** (multi-signature) eliminates this single point of failure by requiring multiple keys to spend your bitcoin. Even if one key is lost or stolen, your funds remain safe.
-
-This guide covers:
-- What multisig is and how it works
-- Why you might need it (and when you don't)
-- How to set up your own multisig vault
-- Backup and recovery procedures
+This guide walks you through setting up a **2-of-3 multisig** wallet—the most popular configuration for individual self-custody. You'll need any 2 of your 3 keys to spend, providing both theft protection and loss protection.
 
 
-## What is Multisig?
-
-A multisig wallet requires **multiple private keys** to authorize a transaction. Instead of one key controlling your bitcoin, you distribute control across several keys.
-
-### The M-of-N Model
-
-Multisig uses an "M-of-N" structure:
-- **N** = Total number of keys in the setup
-- **M** = Number of keys required to sign a transaction
-
-**Common configurations:**
-
-| Setup | Keys Needed | Total Keys | Use Case |
-|-------|-------------|------------|----------|
-| 2-of-3 | 2 | 3 | Most popular for individuals |
-| 3-of-5 | 3 | 5 | High-security or organizations |
-| 2-of-2 | 2 | 2 | Shared control (no redundancy) |
-
-### How It Works
-
-In a **2-of-3 multisig**:
+## What You're Building
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     YOUR MULTISIG VAULT                 │
-│                                                         │
+│                  YOUR 2-of-3 MULTISIG                   │
+│                                                          │
 │    ┌─────────┐    ┌─────────┐    ┌─────────┐           │
-│    │  Key 1  │    │  Key 2  │    │  Key 3  │           │
-│    │ (Home)  │    │ (Office)│    │ (Safe)  │           │
+│    │ Device 1│    │ Device 2│    │ Device 3│           │
+│    │(Coldcard)│   │ (Trezor)│    │(Keystone)│          │
 │    └─────────┘    └─────────┘    └─────────┘           │
-│                                                         │
-│         Any 2 of these 3 keys can spend funds          │
+│                                                          │
+│         Any 2 devices can sign a transaction            │
+│                                                          │
+│    Coordinated by: Sparrow Wallet                       │
 └─────────────────────────────────────────────────────────┘
 ```
 
-To spend bitcoin:
-1. Create a transaction (called a PSBT - Partially Signed Bitcoin Transaction)
-2. Sign with Key 1
-3. Sign with Key 2 (or Key 3)
-4. Broadcast the fully-signed transaction
-
-**If Key 1 is stolen:** The thief can't spend your bitcoin without Key 2 or Key 3.
-
-**If Key 2 is lost:** You can still access funds using Key 1 + Key 3.
+| If This Happens | Result |
+|-----------------|--------|
+| One device stolen | Funds safe (thief needs 2 devices) |
+| One seed phrase lost | Funds safe (2 remaining devices work) |
+| House fire destroys one location | Funds safe (other locations have keys) |
 
 
-## Why Use Multisig?
+## Quick Recap: Multisig Essentials
 
-### Single-Sig vs. Multisig
+Before starting, make sure you understand these critical points:
 
-| Risk | Single-Sig | 2-of-3 Multisig |
-|------|------------|-----------------|
-| **Key stolen** | Funds lost immediately | Safe (need 2 keys) |
-| **Key lost** | Funds lost forever | Safe (2 remaining keys work) |
-| **House fire** | Backup destroyed = funds lost | Other locations have keys |
-| **$5 wrench attack** | Attacker can drain wallet | Can't access other keys |
-| **Malware on computer** | Seed exposed = funds at risk | Multiple devices needed |
+| Concept | What It Means |
+|---------|---------------|
+| **2-of-3** | Need 2 of 3 keys to spend |
+| **Wallet descriptor** | Configuration file—**must be backed up** alongside seeds |
+| **PSBT** | Partially Signed Bitcoin Transaction—how multisig transactions are created and signed |
+| **Different manufacturers** | Use hardware wallets from different brands to avoid single-vendor risk |
 
-### The Single Point of Failure Problem
-
-With a standard single-signature wallet:
-
-```
-SINGLE SIGNATURE:
-─────────────────
-One seed phrase → One private key → Full control
-
-If this ONE thing is compromised, EVERYTHING is lost.
-```
-
-With multisig:
-
-```
-MULTISIG (2-of-3):
-──────────────────
-Seed 1 → Key 1 ─┐
-Seed 2 → Key 2 ─┼─→ Need ANY 2 to spend
-Seed 3 → Key 3 ─┘
-
-One compromise ≠ loss of funds
-```
-
-### When You SHOULD Consider Multisig
-
-- **Significant holdings** — More than you'd be comfortable losing
-- **Long-term storage** — "Vault" money you won't touch frequently
-- **Business funds** — Shared control among partners
-- **Inheritance planning** — Distribute keys to family members
-- **Geographic distribution** — Keys in different locations
-
-### When Multisig Might Be Overkill
-
-- **Small amounts** — Under $10,000 in bitcoin
-- **Frequent transactions** — Daily spending money
-- **Beginner users** — Still learning basic self-custody
-- **Limited secure locations** — Can't properly distribute keys
-
-:::warning Important
-In the wrong hands, multisig can lead to **permanent loss of funds**. The complexity requires careful planning. If you're not comfortable with single-sig hardware wallets yet, master that first.
+:::danger Critical Warning
+**You must back up the wallet descriptor**, not just the seed phrases. Without the descriptor, you cannot reconstruct your wallet even with all 3 seeds.
 :::
 
 

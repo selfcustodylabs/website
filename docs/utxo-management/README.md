@@ -11,10 +11,14 @@ tags: ["utxo", "privacy", "fees", "bitcoin", "coin control"]
 :::info What You'll Learn
 **Time:** 30-40 minutes reading  
 **Difficulty:** Intermediate  
-**Prerequisites:** Understanding of [private keys](/docs/basics/keys/intro) and [transactions](/docs/basics/transactions/understanding)
+**Prerequisites:** Understanding of [UTXOs](/docs/basics/transactions/utxos), [transactions](/docs/basics/transactions/understanding), and [why privacy matters](/docs/basics/privacy/why-privacy-matters)
 :::
 
 Most Bitcoin users never think about UTXOs. They see a balance in their wallet and assume that's all there is to know. This is a costly mistake—both financially and for privacy.
+
+:::tip New to UTXOs?
+If you haven't read it yet, start with [UTXOs Explained](/docs/basics/transactions/utxos) to understand the fundamentals before diving into management strategies.
+:::
 
 **UTXO management** is the practice of being intentional about:
 - How many UTXOs you have
@@ -24,58 +28,25 @@ Most Bitcoin users never think about UTXOs. They see a balance in their wallet a
 
 Poor UTXO management leads to:
 - 💸 **Unnecessarily high transaction fees**
-- 🔍 **Privacy leaks** that expose your wealth
+- 🔍 **Privacy leaks** that expose your wealth (see [Chain Analysis](/docs/basics/privacy/chain-analysis))
 - 🚫 **Unspendable "dust"** trapped in your wallet
 - ⚠️ **Vulnerability to tracking attacks**
 
 This guide teaches you to manage UTXOs like a pro.
 
 
-## What is a UTXO?
+## Quick UTXO Recap
 
-UTXO stands for **Unspent Transaction Output**. Think of UTXOs as discrete coins in your digital wallet—not a liquid balance, but individual chunks of bitcoin.
+UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you own. Your wallet balance is the sum of all your UTXOs.
 
-### The Cash Analogy
+**Key points for UTXO management:**
 
-Imagine your physical wallet contains:
-- One $50 bill
-- Two $20 bills
-- Three $5 bills
-
-**Total: $105**
-
-Your Bitcoin wallet works similarly:
-- 0.05 BTC (one UTXO)
-- 0.02 BTC (another UTXO)
-- 0.02 BTC (another UTXO)
-- 0.005 BTC (another UTXO)
-- 0.005 BTC (another UTXO)
-
-**Total: 0.1 BTC** (five UTXOs)
-
-### Key UTXO Properties
-
-1. **UTXOs are indivisible** — You can't spend "part" of a UTXO
-2. **UTXOs are consumed entirely** — When spent, the whole UTXO is used
-3. **Change creates new UTXOs** — Leftover amounts become new UTXOs
-4. **Each UTXO has history** — Every UTXO can be traced back through the blockchain
-
-### Example: Spending a UTXO
-
-You have a 0.1 BTC UTXO and want to pay someone 0.03 BTC:
-
-```
-INPUT                              OUTPUTS
-─────                              ───────
-0.1 BTC (your UTXO)    →          0.03 BTC (payment)
-                                   0.0699 BTC (change back to you)
-                                   [0.0001 BTC fee to miners]
-```
-
-After this transaction:
-- Your original 0.1 BTC UTXO is **destroyed** (spent)
-- A new 0.0699 BTC UTXO is **created** in your wallet
-- The recipient has a new 0.03 BTC UTXO
+| Property | Management Implication |
+|----------|----------------------|
+| UTXOs are indivisible | You spend entire UTXOs, creating change |
+| Each UTXO adds transaction bytes | More UTXOs = higher fees |
+| UTXOs have traceable history | Combining UTXOs links their histories |
+| UTXOs are locked to addresses | Labels help track sources |
 
 
 ## Why UTXO Management Matters

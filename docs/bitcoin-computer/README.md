@@ -5,43 +5,76 @@ description: "Build a dedicated Bitcoin computer for secure transactions. Learn 
 keywords: ["bitcoin computer", "dedicated computer", "malware protection", "secure transactions", "self custody"]
 tags: ["bitcoin", "computer", "security", "malware"]
 ---
-# Bitcoin Computer
 
-Let’s be clear:
+# Dedicated Bitcoin Computer
 
-:::danger
-NEVER use a regular computer to create or broadcast your Bitcoin transactions! 
+:::info What You'll Do
+In this guide, you will:
+- Understand why a dedicated Bitcoin computer is important
+- Choose hardware for your Bitcoin-only machine
+- Set up a secure environment for transactions
+
+**Time required:** 1-2 hours  
+**Difficulty:** Beginner to Intermediate  
+**Prerequisites:** Spare laptop or desktop, USB drive
+:::
+
+:::tip Background Reading
+Before starting, make sure you understand:
+- [Hardware wallets](/docs/basics/wallets/hardware-wallets) and how they protect your keys
+- [Why privacy matters](/docs/basics/privacy/why-privacy-matters) when transacting
+:::
+
+:::danger Important
+**Never use your regular computer for Bitcoin transactions!** Malware on your everyday machine can compromise your security even if you use a hardware wallet.
 :::
 
 
 ## What is a Bitcoin Computer?
 
-A Bitcoin computer is a dedicated device for securely creating and broadcasting Bitcoin transactions in a protected, malware-free environment. Transaction signing is handled by a hardware wallet or, ideally, an air-gapped computer for enhanced security.
+A Bitcoin computer is a dedicated device for securely creating and broadcasting Bitcoin transactions. It runs minimal software in a clean environment, reducing attack surface.
+
+Transaction signing should still be handled by:
+- A hardware wallet, or
+- An [air-gapped computer](/docs/air-gapped-computer) for maximum security
 
 
-## Why a Regular Computer is Dangerous
+## Why Your Regular Computer is Dangerous
 
-Using your everyday computer for Bitcoin transactions is risky because it can be exposed to malware.
+Your everyday computer is exposed to:
+- Websites, downloads, and email attachments
+- Browser extensions and plugins
+- Various software with potential vulnerabilities
 
-If your computer becomes infected, an attacker could:
+If malware infects your regular computer, attackers could:
 
-- View the balances of your Bitcoin addresses, but they can't spend your funds if you use a hardware wallet or an air-gapped computer to sign transactions.
-- Physically threaten you if they believe you're a valuable target (as mentioned above).
-- If you don't use a hardware wallet, they could change the address on the transaction you're about to sign by accessing your regular computer.
-- If you do use a hardware wallet but it's compromised, they could still alter the address of the transaction you're going to sign.
+| Risk | Impact |
+|------|--------|
+| **View your balances** | Know how much you have (targeting risk) |
+| **Modify clipboard** | Change destination addresses when you paste |
+| **Monitor activity** | Track when you transact |
+| **Physical threat** | Target you if they see large holdings |
 
-Now that you understand what a Bitcoin computer is and why using a regular computer for Bitcoin transactions isn't safe, let's look at the best options for securing your setup.
+A dedicated Bitcoin computer isolates your Bitcoin activity from these risks.
+
+
+## Guide Overview
+
+| Step | What You'll Do |
+|------|----------------|
+| 1. [Choosing Hardware](/docs/bitcoin-computer/choice) | Select appropriate hardware |
+| 2. [Setup](/docs/bitcoin-computer/setup) | Install and configure your Bitcoin computer |
 
 ---
 
 ## Related Guides
 
 :::tip Want Maximum Security?
-For the highest level of protection, consider building an **[Air-Gapped Computer](/docs/air-gapped-computer)** – a device that never connects to the internet and handles all signing operations offline.
+For the highest level of protection, consider an **[Air-Gapped Computer](/docs/air-gapped-computer)** - a device that never connects to the internet and handles all signing offline.
 :::
 
 :::info Firmware Security
-Enhance your Bitcoin computer's security by replacing the proprietary BIOS with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)** – Maximum openness, removes Intel ME
-- **[Coreboot Guide](/docs/coreboot)** – Supports more hardware models
+Enhance your Bitcoin computer's security with open-source firmware:
+- **[Libreboot Guide](/docs/libreboot)** - Maximum openness, removes Intel ME
+- **[Coreboot Guide](/docs/coreboot)** - Supports more hardware models
 :::

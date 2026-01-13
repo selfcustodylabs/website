@@ -72,9 +72,14 @@ This section covers the fundamentals. Here's the suggested reading order:
 3. **[Seed Phrases](/docs/basics/keys/seed)** – How keys become words
 4. **[Wallets](/docs/basics/wallets/software-wallets)** – Tools for managing your Bitcoin
 5. **[Transactions](/docs/basics/transactions/understanding)** – How Bitcoin moves
+6. **[UTXOs](/docs/basics/transactions/utxos)** – How Bitcoin actually works under the hood
+7. **[Privacy](/docs/basics/privacy/why-privacy-matters)** – Why privacy matters and how to protect it
+8. **[Bitcoin Nodes](/docs/basics/nodes/what-is-node)** – What nodes do and why they matter
 
 After mastering the basics, explore our practical guides:
 - **[DIY Seed Generation](/docs/seed)** – Create your own seed with dice
-- **[Bitcoin Node](/docs/bitcoin-node)** – Verify transactions yourself
+- **[Bitcoin Node Setup](/docs/bitcoin-node)** – Set up your own node
+- **[UTXO Management](/docs/utxo-management)** – Control your coins for privacy
+- **[Multisig Setup](/docs/multisig)** – Eliminate single points of failure
 - **[Air-Gapped Computer](/docs/air-gapped-computer)** – Maximum security setup
 :::
