@@ -74,6 +74,24 @@ const guidesCollectionSchema = {
         "position": 8,
         "name": "Nostr Signing Device",
         "url": "https://selfcustodylabs.com/docs/nostr-signing-device/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "CoinJoin Privacy Guide",
+        "url": "https://selfcustodylabs.com/docs/coinjoin/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "UTXO Management Guide",
+        "url": "https://selfcustodylabs.com/docs/utxo-management/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "Multisig Setup Guide",
+        "url": "https://selfcustodylabs.com/docs/multisig/"
       }
     ]
   }
@@ -164,6 +182,14 @@ export default function GuidesPage() {
       badge: "POPULAR",
       level: "Beginner",
     },
+    {
+      icon: SecurityRoundedIcon,
+      title: "Multisig Setup",
+      description: "Eliminate single points of failure with multi-signature wallets. The ultimate security for significant holdings.",
+      href: "/docs/multisig",
+      badge: "NEW",
+      level: "Advanced",
+    },
   ];
 
   // Hardware & Firmware - Dedicated computers and BIOS
@@ -206,6 +232,26 @@ export default function GuidesPage() {
       description: "Run your own Bitcoin node to independently verify transactions and enhance your privacy.",
       href: "/docs/bitcoin-node",
       badge: "POPULAR",
+      level: "Intermediate",
+    },
+  ];
+
+  // Privacy
+  const privacyGuides = [
+    {
+      icon: SecurityRoundedIcon,
+      title: "CoinJoin",
+      description: "Break the link between your transaction history and your coins using CoinJoin mixing.",
+      href: "/docs/coinjoin",
+      badge: "NEW",
+      level: "Intermediate",
+    },
+    {
+      icon: KeyRoundedIcon,
+      title: "UTXO Management",
+      description: "Master coin control, consolidation, and labeling to minimize fees and protect privacy.",
+      href: "/docs/utxo-management",
+      badge: "NEW",
       level: "Intermediate",
     },
   ];
@@ -256,6 +302,12 @@ export default function GuidesPage() {
                 title="🌐 Nodes & Network"
                 description="Run your own infrastructure to verify transactions privately"
                 guides={nodeGuides}
+              />
+
+              <CategorySection
+                title="🕵️ Privacy"
+                description="Techniques to enhance your financial privacy on Bitcoin"
+                guides={privacyGuides}
               />
 
               <CategorySection

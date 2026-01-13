@@ -336,6 +336,119 @@ export const howToSchemas = {
         url: `${SITE_URL}/docs/nostr-signing-device/client-connect/`
       }
     ]
+  },
+
+  '/docs/coinjoin/': {
+    name: 'How to Use CoinJoin for Bitcoin Privacy',
+    description: 'Learn how to use CoinJoin to break the link between your transaction history and your coins. Improve your Bitcoin privacy with mixing techniques.',
+    totalTime: 'PT1H',
+    estimatedCost: {
+      currency: 'USD',
+      value: '0'
+    },
+    supply: [
+      'Bitcoin to mix',
+      'Mixing wallet (Wasabi, Sparrow, or JoinMarket)'
+    ],
+    tool: [
+      'Bitcoin node (essential for privacy)',
+      'Sparrow Wallet or Wasabi Wallet',
+      'Tor (recommended)'
+    ],
+    steps: [
+      {
+        name: 'Understand How CoinJoin Works',
+        text: 'Learn the fundamentals of CoinJoin: how equal outputs create privacy and what anonymity sets mean.',
+        url: `${SITE_URL}/docs/coinjoin/how-it-works/`
+      },
+      {
+        name: 'Choose a CoinJoin Service',
+        text: 'Compare Wasabi, Whirlpool (Sparrow), and JoinMarket to find the right mixing solution for your needs.',
+        url: `${SITE_URL}/docs/coinjoin/services/`
+      },
+      {
+        name: 'Follow Best Practices',
+        text: 'Learn how to maintain privacy after mixing: avoid merging coins, use coin control, and handle change properly.',
+        url: `${SITE_URL}/docs/coinjoin/best-practices/`
+      }
+    ]
+  },
+
+  '/docs/utxo-management/': {
+    name: 'How to Manage Bitcoin UTXOs for Lower Fees and Better Privacy',
+    description: 'Master UTXO management to reduce transaction fees and protect your privacy. Learn coin control, consolidation strategies, and labeling best practices.',
+    totalTime: 'PT45M',
+    estimatedCost: {
+      currency: 'USD',
+      value: '0'
+    },
+    supply: [
+      'Bitcoin wallet with coin control (Sparrow recommended)',
+      'Existing Bitcoin UTXOs to manage'
+    ],
+    tool: [
+      'Sparrow Wallet or Electrum',
+      'mempool.space for fee monitoring'
+    ],
+    steps: [
+      {
+        name: 'Understand UTXOs and Their Impact',
+        text: 'Learn what UTXOs are and why their management affects both fees and privacy.',
+        url: `${SITE_URL}/docs/utxo-management/`
+      },
+      {
+        name: 'Master Coin Control',
+        text: 'Learn to select specific UTXOs for transactions instead of letting your wallet choose automatically.',
+        url: `${SITE_URL}/docs/utxo-management/coin-control/`
+      },
+      {
+        name: 'Implement Consolidation Strategies',
+        text: 'Consolidate small UTXOs during low-fee periods while maintaining source separation for privacy.',
+        url: `${SITE_URL}/docs/utxo-management/consolidation/`
+      }
+    ]
+  },
+
+  '/docs/multisig/': {
+    name: 'How to Set Up a Bitcoin Multisig Wallet for Maximum Security',
+    description: 'Complete guide to creating a 2-of-3 multisig wallet. Eliminate single points of failure and protect your bitcoin with multi-signature security.',
+    totalTime: 'PT2H',
+    estimatedCost: {
+      currency: 'USD',
+      value: '300'
+    },
+    supply: [
+      'Three hardware wallets (different manufacturers recommended)',
+      'Metal seed backup plates (3)',
+      'Computer with Sparrow Wallet installed'
+    ],
+    tool: [
+      'Sparrow Wallet',
+      'Hardware wallets (Coldcard, Trezor, Keystone, etc.)',
+      'MicroSD cards for air-gapped devices'
+    ],
+    steps: [
+      {
+        name: 'Understand Multisig Fundamentals',
+        text: 'Learn what multisig is, how it eliminates single points of failure, and determine if it is right for your situation.',
+        url: `${SITE_URL}/docs/multisig/`
+      },
+      {
+        name: 'Set Up Hardware Wallets',
+        text: 'Initialize three hardware wallets with unique seed phrases. Use different manufacturers for maximum security.',
+        url: `${SITE_URL}/docs/multisig/hardware-setup/`
+      },
+      {
+        name: 'Create Multisig in Sparrow',
+        text: 'Create your 2-of-3 multisig wallet using Sparrow Wallet as the coordinator software.',
+        url: `${SITE_URL}/docs/multisig/sparrow-setup/`
+      },
+      {
+        name: 'Backup and Test Recovery',
+        text: 'Properly backup seed phrases and wallet descriptor. Test recovery procedures before depositing significant funds.',
+        url: `${SITE_URL}/docs/multisig/backup-recovery/`
+      }
+    ]
   }
 };
 
@@ -413,6 +526,20 @@ export const breadcrumbMappings = {
   '/docs/nostr-signing-device/setup/': ['Guides', 'Nostr Signing Device', 'Setup'],
   '/docs/nostr-signing-device/horse-extension/': ['Guides', 'Nostr Signing Device', 'Horse Extension'],
   '/docs/nostr-signing-device/client-connect/': ['Guides', 'Nostr Signing Device', 'Client Connect'],
+
+  '/docs/coinjoin/': ['Guides', 'CoinJoin'],
+  '/docs/coinjoin/how-it-works/': ['Guides', 'CoinJoin', 'How It Works'],
+  '/docs/coinjoin/services/': ['Guides', 'CoinJoin', 'Services'],
+  '/docs/coinjoin/best-practices/': ['Guides', 'CoinJoin', 'Best Practices'],
+
+  '/docs/utxo-management/': ['Guides', 'UTXO Management'],
+  '/docs/utxo-management/coin-control/': ['Guides', 'UTXO Management', 'Coin Control'],
+  '/docs/utxo-management/consolidation/': ['Guides', 'UTXO Management', 'Consolidation'],
+
+  '/docs/multisig/': ['Guides', 'Multisig'],
+  '/docs/multisig/hardware-setup/': ['Guides', 'Multisig', 'Hardware Setup'],
+  '/docs/multisig/sparrow-setup/': ['Guides', 'Multisig', 'Sparrow Setup'],
+  '/docs/multisig/backup-recovery/': ['Guides', 'Multisig', 'Backup & Recovery'],
 };
 
 /**
