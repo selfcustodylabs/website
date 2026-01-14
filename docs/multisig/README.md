@@ -17,6 +17,7 @@ In this guide, you will:
 
 **⏱️ Time required:** 2-3 hours  
 **📊 Difficulty:** Intermediate to Advanced  
+**💰 Estimated cost:** $200-450 (3 hardware wallets) + $30-60 (metal seed backups)  
 **🔧 Prerequisites:** 3 hardware wallets, Sparrow Wallet installed, understanding of [multisig concepts](/docs/basics/wallets/multisig)
 :::
 

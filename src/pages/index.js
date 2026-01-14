@@ -254,7 +254,7 @@ export default function Home() {
       title: "Learn the Basics",
       description:
         "Understand the fundamentals of Bitcoin, private keys, and why self-custody matters.",
-      href: "/docs/basics",
+      href: "/learn",
     },
     {
       step: "02",
@@ -267,18 +267,42 @@ export default function Home() {
     {
       step: "03",
       icon: KeyRoundedIcon,
-      title: "Set Up a Wallet",
+      title: "Set Up a Hardware Wallet",
       description:
-        "Choose and configure a secure Bitcoin wallet. Learn about hardware and software options.",
-      href: "/docs/basics/wallets/software-wallets",
+        "Configure a hardware wallet to keep your keys secure and offline.",
+      href: "/docs/hardware-wallet-setup",
     },
     {
       step: "04",
-      icon: LaptopMacRoundedIcon,
-      title: "Run a Node",
+      icon: ShieldRoundedIcon,
+      title: "Verify Your Backup",
       description:
-        "Take full sovereignty by running your own Bitcoin node to verify transactions.",
+        "Test that your seed backup actually works before depositing significant funds.",
+      href: "/docs/backup-verification",
+    },
+    {
+      step: "05",
+      icon: LaptopMacRoundedIcon,
+      title: "Run Your Own Node",
+      description:
+        "Take full sovereignty by running your own Bitcoin node to verify transactions privately.",
       href: "/docs/bitcoin-node",
+    },
+    {
+      step: "06",
+      icon: SecurityRoundedIcon,
+      title: "Enhance Privacy",
+      description:
+        "Learn UTXO management and coin control to protect your financial privacy.",
+      href: "/docs/utxo-management",
+    },
+    {
+      step: "07",
+      icon: LockRoundedIcon,
+      title: "Advanced Security (Optional)",
+      description:
+        "For significant holdings, set up multisig to eliminate single points of failure.",
+      href: "/docs/multisig",
     },
   ];
 
@@ -299,7 +323,7 @@ export default function Home() {
       icon: PsychologyRoundedIcon,
       title: "Theory",
       description: "Understand the fundamentals behind Bitcoin",
-      href: "/docs/basics",
+      href: "/learn",
     },
   ];
 
@@ -365,7 +389,7 @@ export default function Home() {
               </p>
 
               <div className={styles.heroCtas}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                   Start Learning
                 </Link>
                 <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/guides">
@@ -428,7 +452,7 @@ export default function Home() {
             ))}
 
             <div className={styles.centerCta}>
-              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
+              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                 Start Your Journey
               </Link>
             </div>
@@ -485,7 +509,7 @@ export default function Home() {
             <p className={styles.bigCtaSubtitle}>
               Start your Bitcoin self-custody journey today with our comprehensive guides.
             </p>
-            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
+            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
               Get Started Now
             </Link>
           </div>

@@ -16,6 +16,7 @@ In this guide, you will:
 
 **Time required:** 1-2 hours  
 **Difficulty:** Intermediate  
+**Estimated cost:** $10-30 (casino dice) + $20-50 (metal backup plate)  
 **Requirements:** [Air-gapped computer](/docs/air-gapped-computer) or Raspberry Pi Zero, casino dice
 :::
 

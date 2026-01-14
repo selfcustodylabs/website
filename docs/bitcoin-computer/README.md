@@ -16,6 +16,7 @@ In this guide, you will:
 
 **Time required:** 1-2 hours  
 **Difficulty:** Beginner to Intermediate  
+**Estimated cost:** $50-150 (used laptop) or $0 (repurpose old computer)  
 **Prerequisites:** Spare laptop or desktop, USB drive
 :::
 
