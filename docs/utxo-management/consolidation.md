@@ -17,12 +17,16 @@ Consolidation is combining multiple UTXOs into fewer, larger ones. Done correctl
 
 Before consolidating, check current fee rates at [mempool.space](https://mempool.space):
 
+<div class="fixed-width-table">
+
 | Fee Rate | Recommendation |
 |----------|----------------|
 | **1-10 sat/vB** | 🟢 Excellent time to consolidate |
 | **10-30 sat/vB** | 🟡 Good, proceed if needed |
 | **30-100 sat/vB** | 🟠 Wait if possible |
 | **100+ sat/vB** | 🔴 Do not consolidate |
+
+</div>
 
 ### Signs You Need Consolidation
 
@@ -151,11 +155,15 @@ If you spend these 10 UTXOs later at 100 sat/vB:
 
 After consolidation, aim for these sizes:
 
+<div class="fixed-width-table">
+
 | Purpose | Target Size | Reasoning |
 |---------|-------------|-----------|
 | Long-term holding | 0.1 - 1.0 BTC | Efficient for large future spends |
 | Regular spending | 0.01 - 0.1 BTC | Flexible without revealing full stack |
 | Minimum viable | 0.01 BTC | Stays economical in most fee environments |
+
+</div>
 
 ### Example Target Portfolio
 

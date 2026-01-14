@@ -29,6 +29,8 @@ In this guide, you will:
 
 A Nostr Signing Device (NSD) keeps your private key isolated from your computer:
 
+<div class="fixed-width-table">
+
 | Without NSD | With NSD |
 |-------------|----------|
 | Private key stored in browser/software | Private key stored on hardware device |
@@ -36,6 +38,8 @@ A Nostr Signing Device (NSD) keeps your private key isolated from your computer:
 | Key could be extracted | Key never leaves device |
 
 The NSD signs messages directly on the device - your private key never touches your computer.
+
+</div>
 
 
 ## How It Works
@@ -52,11 +56,15 @@ NSD (signs messages) --> Horse Extension --> Nostr Client
 
 ## What You'll Need
 
+<div class="fixed-width-table">
+
 | Component | Description | Source |
 |-----------|-------------|--------|
 | LILYGO T-Display 1.14 | The signing hardware | [AliExpress](https://www.aliexpress.com/item/33048962331.html) |
 | USB Cable | To connect and flash | Usually included |
 | Arduino IDE | To build and upload firmware | Free download |
 | Horse Extension | Browser bridge | Chrome Web Store |
+
+</div>
 
 Let's proceed with the setup.

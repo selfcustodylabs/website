@@ -44,11 +44,15 @@ YOUR NODE SETUP
 -------------------------------------------------
 ```
 
+<div class="fixed-width-table">
+
 | Component | Purpose |
 |-----------|---------|
 | **Bitcoin Core** | Downloads and verifies the entire blockchain |
 | **Electrum Server** | Indexes data so your wallet can query it |
 | **Your Wallet** | Connects to YOUR server, not public ones |
+
+</div>
 
 
 ## Hardware Options
@@ -71,14 +75,20 @@ Your main computer:
 
 All-in-one solutions that bundle everything:
 
+<div class="fixed-width-table">
+
 | Solution | Description |
 |----------|-------------|
 | **Umbrel** | User-friendly, app store interface |
 | **RaspiBlitz** | Feature-rich, Lightning-focused |
 | **Start9** | Privacy-focused, sovereign computing |
 
+</div>
+
 
 ## Minimum Requirements
+
+<div class="fixed-width-table">
 
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
@@ -87,12 +97,16 @@ All-in-one solutions that bundle everything:
 | **CPU** | Dual-core | Quad-core |
 | **Internet** | Stable connection | Unlimited data |
 
+</div>
+
 :::warning SSD Required
 Do NOT use a traditional hard drive (HDD). Initial sync takes weeks instead of days, and ongoing performance will be poor.
 :::
 
 
 ## Guide Steps
+
+<div class="fixed-width-table">
 
 | Step | What You'll Do |
 |------|----------------|
@@ -101,8 +115,12 @@ Do NOT use a traditional hard drive (HDD). Initial sync takes weeks instead of d
 | 3. [Tor Configuration](/docs/bitcoin-node/tor) | Add network privacy |
 | 4. [Connect Wallet](/docs/bitcoin-node/connect-sparrow-wallet) | Link Sparrow to your node |
 
+</div>
+
 
 ## Time Expectations
+
+<div class="fixed-width-table">
 
 | Phase | Duration |
 |-------|----------|
@@ -110,6 +128,8 @@ Do NOT use a traditional hard drive (HDD). Initial sync takes weeks instead of d
 | Initial blockchain sync | 1-7 days (depends on hardware) |
 | Electrum server indexing | 12-48 hours |
 | Wallet connection | 15 minutes |
+
+</div>
 
 The initial sync is slow but only happens once. After that, your node stays current automatically.
 

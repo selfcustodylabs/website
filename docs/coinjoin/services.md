@@ -13,12 +13,15 @@ Several tools make CoinJoin accessible. This page compares the main options to h
 
 ## Overview
 
+<div class="fixed-width-table">
+
 | Service | Wallet | Coordinator | Min Amount | Approximate Cost |
 |---------|--------|-------------|------------|------------------|
 | **Wasabi 2.0** | Wasabi Wallet | Centralized | 0.00005 BTC | 0.3% coordinator fee + mining |
 | **Whirlpool** | Sparrow Wallet | Centralized | Pool dependent | Fixed fee per pool + mining |
 | **JoinMarket** | Jam (Web UI) | Decentralized | Flexible | Variable (can earn as maker) |
 
+</div>
 
 ## Wasabi Wallet
 
@@ -75,12 +78,16 @@ Whirlpool is a CoinJoin implementation originally from Samourai Wallet, now avai
 
 ### Pool Sizes
 
+<div class="fixed-width-table">
+
 | Pool | Entry Amount | After Fee |
 |------|--------------|-----------|
 | 0.5 BTC | 0.5 BTC + fee | 0.5 BTC outputs |
 | 0.05 BTC | 0.05 BTC + fee | 0.05 BTC outputs |
 | 0.01 BTC | 0.01 BTC + fee | 0.01 BTC outputs |
 | 0.001 BTC | 0.001 BTC + fee | 0.001 BTC outputs |
+
+</div>
 
 ### Pros
 
@@ -179,6 +186,7 @@ JoinMarket traditionally required command-line skills, but newer interfaces like
 - You're technically skilled
 - You want to potentially earn fees as a maker
 
+<div class="fixed-width-table">
 
 ## Privacy Comparison
 
@@ -188,6 +196,8 @@ JoinMarket traditionally required command-line skills, but newer interfaces like
 | Anonymity Set | 100+ | 5+ (per round) | Variable |
 | Rounds | Continuous | Multiple | As paid |
 | Node Required | Recommended | Recommended | Required |
+
+</div>
 
 
 ## Important: Always Use Your Own Node

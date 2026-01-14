@@ -65,6 +65,8 @@ When your wallet needs to:
 
 This distinction is critical:
 
+<div class="fixed-width-table">
+
 | Node | Wallet |
 |------|--------|
 | Stores full blockchain | Stores only your keys |
@@ -72,6 +74,8 @@ This distinction is critical:
 | Serves data to wallets | Needs a node to function |
 | No private keys | Contains private keys |
 | Anyone can run one | Personal to you |
+
+</div>
 
 **Your wallet needs a node to work.** The question is: whose node?
 

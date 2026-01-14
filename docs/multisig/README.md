@@ -44,16 +44,22 @@ This guide walks you through setting up a **2-of-3 multisig** wallet—the most 
 └─────────────────────────────────────────────────────────┘
 ```
 
+<div class="fixed-width-table">
+
 | If This Happens | Result |
 |-----------------|--------|
 | One device stolen | Funds safe (thief needs 2 devices) |
 | One seed phrase lost | Funds safe (2 remaining devices work) |
 | House fire destroys one location | Funds safe (other locations have keys) |
 
+</div>
+
 
 ## Quick Recap: Multisig Essentials
 
 Before starting, make sure you understand these critical points:
+
+<div class="fixed-width-table">
 
 | Concept | What It Means |
 |---------|---------------|
@@ -61,6 +67,8 @@ Before starting, make sure you understand these critical points:
 | **Wallet descriptor** | Configuration file—**must be backed up** alongside seeds |
 | **PSBT** | Partially Signed Bitcoin Transaction—how multisig transactions are created and signed |
 | **Different manufacturers** | Use hardware wallets from different brands to avoid single-vendor risk |
+
+</div>
 
 :::danger Critical Warning
 **You must back up the wallet descriptor**, not just the seed phrases. Without the descriptor, you cannot reconstruct your wallet even with all 3 seeds.
@@ -78,6 +86,8 @@ Each key in your multisig lives on a separate hardware wallet. These devices:
 
 **Recommended devices for multisig:**
 
+<div class="fixed-width-table">
+
 | Device | Pros | Cons |
 |--------|------|------|
 | **Coldcard** | Air-gapped, Bitcoin-only, excellent multisig support | Steeper learning curve |
@@ -85,6 +95,8 @@ Each key in your multisig lives on a separate hardware wallet. These devices:
 | **Keystone** | Air-gapped, QR codes, good mobile support | Newer company |
 | **BitBox02** | Simple, secure element, Swiss quality | Limited screen size |
 | **Ledger** | Wide compatibility, secure element | Closed source firmware |
+
+</div>
 
 :::tip Best Practice
 **Use devices from different manufacturers.** If a vulnerability is found in one brand, your other keys remain secure.
@@ -100,12 +112,16 @@ Coordinator software manages your multisig wallet:
 
 **Recommended coordinators:**
 
+<div class="fixed-width-table">
+
 | Software | Best For | Platform |
 |----------|----------|----------|
 | **Sparrow Wallet** | Power users, privacy | Desktop |
 | **Nunchuk** | Beginners, mobile | Desktop + Mobile |
 | **Specter Desktop** | Node integration | Desktop |
 | **Electrum** | Technical users | Desktop |
+
+</div>
 
 ### 3. The Wallet Descriptor (Configuration File)
 
@@ -134,11 +150,15 @@ Multisig backups are more complex than single-sig. Here's what you need:
 
 ### For a 2-of-3 Multisig
 
+<div class="fixed-width-table">
+
 | Item | Quantity | Purpose |
 |------|----------|---------|
 | Seed phrases | 3 | Recover individual keys |
 | Wallet descriptor | 1 | Reconstruct the multisig structure |
 | Hardware wallets | 3 | Hold the keys for signing |
+
+</div>
 
 ### Backup Requirements by Scenario
 
@@ -239,11 +259,15 @@ Service provides: backup key, support, inheritance help
 
 ### Providers Comparison
 
+<div class="fixed-width-table">
+
 | Service | Free Tier | Paid Plans | Best For |
 |---------|-----------|------------|----------|
 | **Unchained** | Yes (2-of-3) | From $0 + per-sign fee | Financial services, loans |
 | **Casa** | Basic wallet | From $30/month | Beginners, inheritance |
 | **Nunchuk** | Yes | From $15/month | Privacy, flexibility |
+
+</div>
 
 ### Pros and Cons
 
@@ -262,6 +286,8 @@ Service provides: backup key, support, inheritance help
 
 ## DIY vs. Collaborative: Which to Choose?
 
+<div class="fixed-width-table">
+
 | Factor | DIY Multisig | Collaborative Custody |
 |--------|--------------|----------------------|
 | **Technical skill needed** | High | Low-Medium |
@@ -270,6 +296,8 @@ Service provides: backup key, support, inheritance help
 | **Ongoing cost** | One-time (hardware) | Monthly subscription |
 | **Recovery assistance** | You're on your own | Help available |
 | **Best for** | Technical users | Beginners, busy people |
+
+</div>
 
 **My recommendation:**
 - **New to multisig?** Start with collaborative custody to learn the concepts

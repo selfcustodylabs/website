@@ -15,6 +15,8 @@ Proper backup is **critical** for multisig. The complexity that provides securit
 
 For a 2-of-3 multisig, you need to secure:
 
+<div class="fixed-width-table">
+
 | Item | Copies | Purpose |
 |------|--------|---------|
 | **Seed Phrase #1** | 1 | Recover Key 1 |
@@ -22,6 +24,8 @@ For a 2-of-3 multisig, you need to secure:
 | **Seed Phrase #3** | 1 | Recover Key 3 |
 | **Wallet Descriptor** | 3+ | Reconstruct multisig structure |
 | **Device PINs** | 3 | Access hardware wallets |
+
+</div>
 
 :::danger Critical
 **The wallet descriptor is as important as your seed phrases!**

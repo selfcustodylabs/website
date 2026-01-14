@@ -19,6 +19,8 @@ When your wallet checks your balance, it asks a Bitcoin node for information. If
 
 Every time your wallet connects to a third-party node:
 
+<div class="fixed-width-table">
+
 | Information Revealed | Risk |
 |---------------------|------|
 | All your addresses | Node knows your complete wallet structure |
@@ -27,6 +29,8 @@ Every time your wallet connects to a third-party node:
 | Your IP address | Node can link addresses to your location |
 | When you're online | Node knows your activity patterns |
 | Future addresses | Wallets often query unused addresses too |
+
+</div>
 
 ### Who Might Be Watching
 

@@ -31,12 +31,16 @@ This guide assumes you're building a [Bitcoin Computer](/docs/bitcoin-computer) 
 
 Most computers use proprietary BIOS/UEFI firmware that is closed-source and potentially insecure. Coreboot is a fast, minimal, open-source alternative.
 
+<div class="fixed-width-table">
+
 | Benefit | Description |
 |---------|-------------|
 | **Open source** | Fully auditable boot process |
 | **Minimal** | Does only what's necessary |
 | **Fast** | Quicker boot times |
 | **Wide support** | More hardware than Libreboot |
+
+</div>
 
 For Bitcoiners running nodes or signing transactions, Coreboot ensures your machine starts with clean, transparent code.
 
