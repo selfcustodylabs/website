@@ -16,6 +16,7 @@ In this guide, you will:
 
 **Time required:** 2-4 hours  
 **Difficulty:** Intermediate to Advanced  
+**Estimated cost:** $50-200 (used ThinkPad) or $0 (repurpose old laptop)  
 **Prerequisites:** Old laptop (ThinkPad recommended), USB drive with Linux
 :::
 

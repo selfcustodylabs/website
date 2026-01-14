@@ -21,7 +21,8 @@ In this guide, you will:
 
 **Time required:** 1-2 hours  
 **Difficulty:** Intermediate  
-**Prerequisites:** LILYGO T-Display (~$10), USB cable, Chrome-based browser
+**Estimated cost:** $10-15 (LILYGO T-Display)  
+**Prerequisites:** LILYGO T-Display, USB cable, Chrome-based browser
 :::
 
 

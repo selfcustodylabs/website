@@ -18,6 +18,7 @@ In this guide, you will:
 
 **Time required:** 2-4 hours (plus sync time)  
 **Difficulty:** Intermediate  
+**Estimated cost:** $100-300 (Raspberry Pi + SSD) or $50-100 (repurpose old PC + SSD)  
 **Requirements:** Dedicated computer or Raspberry Pi, 1TB+ storage
 :::
 

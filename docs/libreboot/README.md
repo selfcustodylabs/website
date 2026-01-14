@@ -19,6 +19,7 @@ In this guide, you will:
 
 **Time required:** 3-5 hours  
 **Difficulty:** Advanced  
+**Estimated cost:** $15-30 (Raspberry Pi Pico + SOIC8 clip + jumper wires)  
 **Prerequisites:** Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip
 :::
 

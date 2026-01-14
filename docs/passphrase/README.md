@@ -15,6 +15,7 @@ In this guide, you will:
 
 **Time required:** 30 minutes  
 **Difficulty:** Beginner  
+**Estimated cost:** $5-10 (casino dice) or $0 (use any dice)  
 **Requirements:** 5 six-sided dice, pen and paper
 :::
 

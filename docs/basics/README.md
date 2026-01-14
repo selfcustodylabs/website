@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: "What is Bitcoin Self-Custody"
+title: "What is Bitcoin Self-Custody?"
 description: "Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties."
 keywords: ["bitcoin self custody", "private keys", "seed phrase", "not your keys not your coins", "financial sovereignty"]
 tags: ["self custody", "bitcoin", "basics"]
@@ -67,14 +67,15 @@ This is why learning proper backups and safe storage is just as important as buy
 :::tip Recommended Order
 This section covers the fundamentals. Here's the suggested reading order:
 
-1. **[Holding Bitcoin](/docs/basics/holding)** – Why self-custody matters
-2. **[Private Keys](/docs/basics/keys/intro)** – The foundation of Bitcoin ownership
-3. **[Seed Phrases](/docs/basics/keys/seed)** – How keys become words
-4. **[Wallets](/docs/basics/wallets/software-wallets)** – Tools for managing your Bitcoin
-5. **[Transactions](/docs/basics/transactions/understanding)** – How Bitcoin moves
-6. **[UTXOs](/docs/basics/transactions/utxos)** – How Bitcoin actually works under the hood
-7. **[Privacy](/docs/basics/privacy/why-privacy-matters)** – Why privacy matters and how to protect it
-8. **[Bitcoin Nodes](/docs/basics/nodes/what-is-node)** – What nodes do and why they matter
+1. **[What is Bitcoin?](/docs/basics/what-is-bitcoin)** – Understanding the basics
+2. **[Holding Bitcoin](/docs/basics/holding)** – Why self-custody matters
+3. **[Private Keys](/docs/basics/keys/intro)** – The foundation of Bitcoin ownership
+4. **[Seed Phrases](/docs/basics/keys/seed)** – How keys become words
+5. **[Wallets](/docs/basics/wallets/software-wallets)** – Tools for managing your Bitcoin
+6. **[Transactions](/docs/basics/transactions/understanding)** – How Bitcoin moves
+7. **[UTXOs](/docs/basics/transactions/utxos)** – How Bitcoin actually works under the hood
+8. **[Privacy](/docs/basics/privacy/why-privacy-matters)** – Why privacy matters and how to protect it
+9. **[Bitcoin Nodes](/docs/basics/nodes/what-is-node)** – What nodes do and why they matter
 
 After mastering the basics, explore our practical guides:
 - **[DIY Seed Generation](/docs/seed)** – Create your own seed with dice

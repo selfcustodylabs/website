@@ -127,10 +127,9 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialBasics',
-            position: 'left',
             label: 'Learn',
+            to: '/learn',
+            position: 'left',
           },
           {
             label: 'Guides',

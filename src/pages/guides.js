@@ -42,54 +42,66 @@ const guidesCollectionSchema = {
       {
         "@type": "ListItem",
         "position": 3,
+        "name": "Hardware Wallet Setup",
+        "url": "https://selfcustodylabs.com/docs/hardware-wallet-setup/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Backup Verification",
+        "url": "https://selfcustodylabs.com/docs/backup-verification/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
         "name": "Bitcoin Node",
         "url": "https://selfcustodylabs.com/docs/bitcoin-node/"
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 6,
         "name": "Bitcoin Computer",
         "url": "https://selfcustodylabs.com/docs/bitcoin-computer/"
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 7,
         "name": "Air-Gapped Computer",
         "url": "https://selfcustodylabs.com/docs/air-gapped-computer/"
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 8,
         "name": "Libreboot Installation",
         "url": "https://selfcustodylabs.com/docs/libreboot/"
       },
       {
         "@type": "ListItem",
-        "position": 7,
+        "position": 9,
         "name": "Coreboot Installation",
         "url": "https://selfcustodylabs.com/docs/coreboot/"
       },
       {
         "@type": "ListItem",
-        "position": 8,
+        "position": 10,
         "name": "Nostr Signing Device",
         "url": "https://selfcustodylabs.com/docs/nostr-signing-device/"
       },
       {
         "@type": "ListItem",
-        "position": 9,
+        "position": 11,
         "name": "CoinJoin Privacy Guide",
         "url": "https://selfcustodylabs.com/docs/coinjoin/"
       },
       {
         "@type": "ListItem",
-        "position": 10,
+        "position": 12,
         "name": "UTXO Management Guide",
         "url": "https://selfcustodylabs.com/docs/utxo-management/"
       },
       {
         "@type": "ListItem",
-        "position": 11,
+        "position": 13,
         "name": "Multisig Setup Guide",
         "url": "https://selfcustodylabs.com/docs/multisig/"
       }
@@ -97,7 +109,7 @@ const guidesCollectionSchema = {
   }
 };
 
-function Card({ icon: Icon, title, description, href, badge, footerLeft, footerRight }) {
+function Card({ icon: Icon, title, description, href, badge, footerLeft, footerRight, cost }) {
   const content = (
     <div className={styles.cardInner}>
       <div className={styles.cardTop}>
@@ -108,6 +120,7 @@ function Card({ icon: Icon, title, description, href, badge, footerLeft, footerR
       </div>
       <h3 className={styles.cardTitle}>{title}</h3>
       <p className={styles.cardDescription}>{description}</p>
+      {cost && <p className={styles.cardCost}>{cost}</p>}
       {(footerLeft || footerRight) && (
         <div className={styles.cardFooter}>
           <div className={styles.cardFooterLeft}>{footerLeft}</div>
@@ -152,6 +165,7 @@ function CategorySection({ title, description, guides }) {
             description={g.description}
             href={g.href}
             badge={g.badge}
+            cost={g.cost}
             footerLeft={<DifficultyTag level={g.level} />}
             footerRight={<span className={styles.arrow}>→</span>}
           />
@@ -173,6 +187,7 @@ export default function GuidesPage() {
       href: "/docs/seed",
       badge: "POPULAR",
       level: "Intermediate",
+      cost: "💰 $30-80 (dice + metal backup)",
     },
     {
       icon: KeyRoundedIcon,
@@ -181,14 +196,33 @@ export default function GuidesPage() {
       href: "/docs/passphrase",
       badge: "POPULAR",
       level: "Beginner",
+      cost: "💰 $0-10 (dice optional)",
+    },
+    {
+      icon: PasswordRoundedIcon,
+      title: "Hardware Wallet Setup",
+      description: "Step-by-step guide to setting up your first hardware wallet securely.",
+      href: "/docs/hardware-wallet-setup",
+      badge: "NEW",
+      level: "Beginner",
+      cost: "💰 $70-250 (hardware wallet)",
+    },
+    {
+      icon: SecurityRoundedIcon,
+      title: "Backup Verification",
+      description: "Test that your seed backup actually works before trusting it with significant funds.",
+      href: "/docs/backup-verification",
+      badge: "NEW",
+      level: "Beginner",
+      cost: "💰 Free",
     },
     {
       icon: SecurityRoundedIcon,
       title: "Multisig Setup",
       description: "Eliminate single points of failure with multi-signature wallets. The ultimate security for significant holdings.",
       href: "/docs/multisig",
-      badge: "NEW",
       level: "Advanced",
+      cost: "💰 $230-510 (3 HWWs + backups)",
     },
   ];
 
@@ -200,6 +234,7 @@ export default function GuidesPage() {
       description: "Build a dedicated Bitcoin workstation designed for strong security and privacy.",
       href: "/docs/bitcoin-computer",
       level: "Intermediate",
+      cost: "💰 $50-150 or free (repurpose)",
     },
     {
       icon: FlightRoundedIcon,
@@ -207,6 +242,7 @@ export default function GuidesPage() {
       description: "Set up an offline computer for maximum security: seed generation, verification, and signing.",
       href: "/docs/air-gapped-computer",
       level: "Advanced",
+      cost: "💰 $50-200 or free (repurpose)",
     },
     {
       icon: SecurityRoundedIcon,
@@ -214,6 +250,7 @@ export default function GuidesPage() {
       description: "Install Libreboot to replace your BIOS with fully open-source firmware and remove Intel ME.",
       href: "/docs/libreboot",
       level: "Advanced",
+      cost: "💰 $15-30 (flashing hardware)",
     },
     {
       icon: MemoryRoundedIcon,
@@ -221,6 +258,7 @@ export default function GuidesPage() {
       description: "Learn Coreboot fundamentals and why open firmware matters for security-minded setups.",
       href: "/docs/coreboot",
       level: "Advanced",
+      cost: "💰 $0-30 (depends on method)",
     },
   ];
 
@@ -233,6 +271,7 @@ export default function GuidesPage() {
       href: "/docs/bitcoin-node",
       badge: "POPULAR",
       level: "Intermediate",
+      cost: "💰 $100-300 (Pi + SSD) or $50-100 (old PC)",
     },
   ];
 
@@ -243,16 +282,25 @@ export default function GuidesPage() {
       title: "CoinJoin",
       description: "Break the link between your transaction history and your coins using CoinJoin mixing.",
       href: "/docs/coinjoin",
+      level: "Intermediate",
+      cost: "💰 Variable (mixing fees)",
+    },
+    {
+      icon: SecurityRoundedIcon,
+      title: "PayJoin",
+      description: "Stealth privacy that breaks blockchain analysis assumptions. Both sender and receiver contribute inputs.",
+      href: "/docs/payjoin",
       badge: "NEW",
       level: "Intermediate",
+      cost: "💰 Free (normal tx fees)",
     },
     {
       icon: KeyRoundedIcon,
       title: "UTXO Management",
       description: "Master coin control, consolidation, and labeling to minimize fees and protect privacy.",
       href: "/docs/utxo-management",
-      badge: "NEW",
       level: "Intermediate",
+      cost: "💰 Free (knowledge only)",
     },
   ];
 
@@ -264,6 +312,7 @@ export default function GuidesPage() {
       description: "Use a dedicated signing device to keep your Nostr private key off your computer.",
       href: "/docs/nostr-signing-device",
       level: "Intermediate",
+      cost: "💰 $10-15 (LILYGO T-Display)",
     },
   ];
 
@@ -292,6 +341,13 @@ export default function GuidesPage() {
                 guides={securityGuides}
               />
 
+
+              <CategorySection
+                title="🕵️ Privacy"
+                description="Techniques to enhance your financial privacy on Bitcoin"
+                guides={privacyGuides}
+              />
+
               <CategorySection
                 title="💻 Hardware & Firmware"
                 description="Build dedicated devices with open-source firmware for maximum security"
@@ -304,11 +360,6 @@ export default function GuidesPage() {
                 guides={nodeGuides}
               />
 
-              <CategorySection
-                title="🕵️ Privacy"
-                description="Techniques to enhance your financial privacy on Bitcoin"
-                guides={privacyGuides}
-              />
 
               <CategorySection
                 title="🎁 Bonus Projects"
@@ -317,7 +368,7 @@ export default function GuidesPage() {
               />
 
               <div className={styles.heroCtas} style={{ marginTop: 32 }}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/docs/basics">
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                   New to Bitcoin? Start with the Basics →
                 </Link>
                 <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/">

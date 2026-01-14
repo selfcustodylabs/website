@@ -19,6 +19,7 @@ In this guide, you will:
 
 **Time required:** 2-4 hours  
 **Difficulty:** Advanced  
+**Estimated cost:** $0 (internal flash) or $15-30 (external flash hardware)  
 **Prerequisites:** Supported laptop, Linux system for building
 :::
 
