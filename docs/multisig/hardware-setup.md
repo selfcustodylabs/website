@@ -187,18 +187,7 @@ Ledger devices work with most multisig coordinators.
 
 For each device, create a record card:
 
-```
-┌─────────────────────────────────────────┐
-│ DEVICE #1                               │
-├─────────────────────────────────────────┤
-│ Brand/Model: Coldcard Mk4               │
-│ Fingerprint: 7C8A9B2D                   │
-│ Seed Words:  24                         │
-│ PIN Length:  8 digits                   │
-│ Location:    Home safe                  │
-│ Seed Backup: Bank safe deposit box      │
-└─────────────────────────────────────────┘
-```
+![](/img/multisig/record-card.webp)
 
 **Important:** Store this record SEPARATELY from the seed phrases.
 
@@ -237,16 +226,7 @@ Paper can be destroyed by:
 
 ### Seed Backup Locations for 2-of-3
 
-```
-SEED #1: Home safe (fireproof)
-         Device #1 stored: Office
-
-SEED #2: Bank safe deposit box
-         Device #2 stored: Home
-
-SEED #3: Trusted family member's safe
-         Device #3 stored: Different city
-```
+![](/img/multisig/seed-backup-locations.webp)
 
 **Never store a seed phrase with its corresponding device!**
 
