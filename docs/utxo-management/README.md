@@ -41,12 +41,16 @@ UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you o
 
 **Key points for UTXO management:**
 
+<div class="fixed-width-table">
+
 | Property | Management Implication |
 |----------|----------------------|
 | UTXOs are indivisible | You spend entire UTXOs, creating change |
 | Each UTXO adds transaction bytes | More UTXOs = higher fees |
 | UTXOs have traceable history | Combining UTXOs links their histories |
 | UTXOs are locked to addresses | Labels help track sources |
+
+</div>
 
 
 ## Why UTXO Management Matters
@@ -72,11 +76,15 @@ What determines transaction size?
 
 Sending 0.1 BTC at 50 sat/vB fee rate:
 
+<div class="fixed-width-table">
+
 | Scenario | Inputs | Approx. Size | Fee |
 |----------|--------|--------------|-----|
 | 1 UTXO of 0.1 BTC | 1 | ~140 vB | ~7,000 sats ($7) |
 | 10 UTXOs of 0.01 BTC each | 10 | ~680 vB | ~34,000 sats ($34) |
 | 100 UTXOs of 0.001 BTC each | 100 | ~5,800 vB | ~290,000 sats ($290) |
+
+</div>
 
 Same amount sent. **Wildly different fees.**
 
@@ -118,12 +126,16 @@ As Bitcoin's price rises and fees fluctuate, more small UTXOs become uneconomica
 
 This ensures your UTXOs remain spendable even during high-fee periods.
 
+<div class="fixed-width-table">
+
 | Fee Environment | 0.001 BTC UTXO | 0.01 BTC UTXO | 0.1 BTC UTXO |
 |-----------------|----------------|---------------|--------------|
 | Low (10 sat/vB) | ✅ Spendable | ✅ Spendable | ✅ Spendable |
 | Medium (50 sat/vB) | ⚠️ ~3% fee | ✅ ~0.3% fee | ✅ ~0.03% fee |
 | High (200 sat/vB) | ❌ ~14% fee | ⚠️ ~1.4% fee | ✅ ~0.14% fee |
 | Extreme (500 sat/vB) | ❌ ~34% fee | ❌ ~3.4% fee | ✅ ~0.34% fee |
+
+</div>
 
 ### Rule 2: Don't Consolidate Everything Into One UTXO
 
@@ -219,12 +231,16 @@ This way you can make payments without revealing your full balance or creating e
 
 Not all wallets expose UTXO details. Use one that does:
 
+<div class="fixed-width-table">
+
 | Wallet | Coin Control | Labeling | UTXO View | Platform |
 |--------|--------------|----------|-----------|----------|
 | **Sparrow** | ✅ Excellent | ✅ Yes | ✅ Detailed | Desktop |
 | **Electrum** | ✅ Good | ✅ Yes | ✅ Yes | Desktop |
 | **Wasabi** | ✅ Good | ✅ Yes | ✅ Yes | Desktop |
 | **Blue Wallet** | ✅ Yes | ✅ Yes | ✅ Yes | Mobile |
+
+</div>
 
 Avoid wallets that hide UTXOs behind a simple "balance" view—they make UTXO management impossible.
 
@@ -323,6 +339,8 @@ Before making any transaction, ask yourself:
 
 ### Quick Reference
 
+<div class="fixed-width-table">
+
 | Situation | Action |
 |-----------|--------|
 | Fees are low (under 20 sat/vB) | Consolidate same-source small UTXOs |
@@ -331,6 +349,8 @@ Before making any transaction, ask yourself:
 | Spending from wallet | Use coin control, minimize inputs |
 | Privacy is critical | Keep sources separated, consider CoinJoin |
 | Unknown small deposits | Freeze them, don't spend |
+
+</div>
 
 
 ## Next Steps

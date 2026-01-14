@@ -24,6 +24,8 @@ Think of UTXOs as **digital coins** or **digital bills** in your wallet. You don
 
 Imagine your physical wallet contains:
 
+<div class="fixed-width-table">
+
 | Bills | Value |
 |-------|-------|
 | One $50 bill | $50 |
@@ -31,9 +33,13 @@ Imagine your physical wallet contains:
 | Three $5 bills | $15 |
 | **Total** | **$105** |
 
+</div>
+
 You don't have "$105 of balance." You have **six physical bills** that add up to $105.
 
 Your Bitcoin wallet works the same way:
+
+<div class="fixed-width-table">
 
 | UTXOs | Value |
 |-------|-------|
@@ -43,6 +49,8 @@ Your Bitcoin wallet works the same way:
 | One UTXO | 0.005 BTC |
 | One UTXO | 0.005 BTC |
 | **Total** | **0.1 BTC** |
+
+</div>
 
 You don't have "0.1 BTC of balance." You have **five UTXOs** that add up to 0.1 BTC.
 
@@ -153,11 +161,15 @@ Bitcoin fees are based on **transaction size in bytes**, not the **value** being
 
 Each UTXO input adds bytes to your transaction:
 
+<div class="fixed-width-table">
+
 | Input Type | Size |
 |------------|------|
 | Legacy (P2PKH) | ~148 bytes |
 | SegWit (P2WPKH) | ~68 vbytes |
 | Taproot (P2TR) | ~57 vbytes |
+
+</div>
 
 **More UTXOs = Larger transaction = Higher fees**
 
@@ -206,6 +218,8 @@ If a UTXO is worth less than the fee required to spend it, it becomes **economic
 
 Your wallet software handles UTXOs automatically:
 
+<div class="fixed-width-table">
+
 | Function | What Your Wallet Does |
 |----------|----------------------|
 | **Balance** | Sums all UTXOs you control |
@@ -213,11 +227,15 @@ Your wallet software handles UTXOs automatically:
 | **Sending** | Selects which UTXOs to spend (coin selection) |
 | **Change** | Creates change outputs back to addresses you control |
 
+</div>
+
 ### Coin Selection
 
 When you send bitcoin, your wallet must choose which UTXOs to spend. This is called **coin selection**.
 
 Different wallets use different strategies:
+
+<div class="fixed-width-table">
 
 | Strategy | Behavior |
 |----------|----------|
@@ -225,6 +243,8 @@ Different wallets use different strategies:
 | **Smallest first** | Uses smallest UTXOs first |
 | **Random** | Selects randomly |
 | **Branch and bound** | Tries to find exact match (no change) |
+
+</div>
 
 Advanced users use **coin control** to manually select UTXOs. This is important for privacy and fee optimization.
 

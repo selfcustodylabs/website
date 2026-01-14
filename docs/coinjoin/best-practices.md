@@ -261,6 +261,8 @@ Before making a transaction with mixed coins, ask yourself:
 
 ## Common Mistakes Summary
 
+<div class="fixed-width-table">
+
 | Mistake | Why It's Bad | How to Avoid |
 |---------|--------------|--------------|
 | Merging mixed + unmixed | Links mixed coins to your identity | Separate wallets |
@@ -269,6 +271,8 @@ Before making a transaction with mixed coins, ask yourself:
 | No coin control | Wallet makes poor choices | Use Sparrow/Electrum |
 | Spending immediately | Timing analysis possible | Wait before spending |
 | Ignoring change | Change has reduced privacy | Remix or handle carefully |
+
+</div>
 
 
 ## Summary

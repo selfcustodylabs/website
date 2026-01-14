@@ -45,6 +45,8 @@ Share only what's necessary:
 
 These require no special tools—just awareness.
 
+<div class="fixed-width-table">
+
 | Technique | What It Does | Difficulty |
 |-----------|--------------|------------|
 | **Never reuse addresses** | Prevents linking transactions | Easy |
@@ -52,9 +54,13 @@ These require no special tools—just awareness.
 | **Avoid address posting** | Prevents web scraping | Easy |
 | **Separate coin sources** | Keeps identities apart | Easy |
 
+</div>
+
 ### Level 2: Active Protection
 
 These require learning specific tools.
+
+<div class="fixed-width-table">
 
 | Technique | What It Does | Guide |
 |-----------|--------------|-------|
@@ -62,14 +68,20 @@ These require learning specific tools.
 | **Coin control** | Choose specific inputs for transactions | [Coin Control](/docs/utxo-management/coin-control) |
 | **Labeling** | Track coin sources and privacy levels | [UTXO Guide](/docs/utxo-management) |
 
+</div>
+
 ### Level 3: Breaking the Chain
 
 These actively defeat chain analysis.
+
+<div class="fixed-width-table">
 
 | Technique | What It Does | Guide |
 |-----------|--------------|-------|
 | **CoinJoin** | Mix coins with others to break history | [CoinJoin Guide](/docs/coinjoin) |
 | **PayJoin** | Hide payments in normal-looking transactions | Coming soon |
+
+</div>
 
 
 ## Run Your Own Node
@@ -141,12 +153,16 @@ If you buy bitcoin through a KYC exchange, your identity is linked from the star
 
 **More private acquisition methods:**
 
+<div class="fixed-width-table">
+
 | Method | Privacy Level | Tradeoffs |
 |--------|---------------|-----------|
 | **Peer-to-peer (P2P)** | Higher | Requires more effort, potential scams |
 | **Bitcoin ATMs** (some) | Medium | Often have cameras, some require ID |
 | **Earning bitcoin** | Higher | Employer/client knows your address |
 | **Mining** | Highest | Expensive equipment, technical knowledge |
+
+</div>
 
 → **Guide:** Coming soon
 
@@ -163,12 +179,16 @@ Even if your transactions look private on-chain, you might leak information at t
 
 **Solutions:**
 
+<div class="fixed-width-table">
+
 | Tool | What It Does |
 |------|--------------|
 | **Tor** | Hides your IP address |
 | **VPN** | Hides your IP (but VPN provider sees it) |
 | **Own node** | Broadcast transactions through your node |
 | **Own node over Tor** | Best combination |
+
+</div>
 
 → **Guide:** [Tor Setup](/docs/bitcoin-node/tor)
 
@@ -177,12 +197,16 @@ Even if your transactions look private on-chain, you might leak information at t
 
 Some privacy losses are permanent:
 
+<div class="fixed-width-table">
+
 | Situation | Why It Can't Be Undone |
 |-----------|----------------------|
 | KYC exchange withdrawal | Exchange has your identity forever |
 | Posted address online | May be archived, scraped, saved |
 | Sent to identified address | That transaction is permanent |
 | Blockchain history | The past cannot be changed |
+
+</div>
 
 **What you can do:**
 
@@ -195,12 +219,16 @@ Some privacy losses are permanent:
 
 Every technique has tradeoffs:
 
+<div class="fixed-width-table">
+
 | Technique | Privacy Benefit | Cost/Risk |
 |-----------|----------------|-----------|
 | Own node | No address leakage | Disk space, setup time |
 | CoinJoin | Breaks transaction links | Fees, time, potential exchange issues |
 | P2P buying | No KYC link | Premium price, counterparty risk |
 | Coin control | Better UTXO privacy | Manual effort, learning curve |
+
+</div>
 
 Choose based on your threat model and resources.
 

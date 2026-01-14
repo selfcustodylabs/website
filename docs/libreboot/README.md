@@ -31,12 +31,16 @@ This guide assumes you're building a [Bitcoin Computer](/docs/bitcoin-computer) 
 
 For a Bitcoin-focused laptop, security and privacy are paramount. Libreboot provides:
 
+<div class="fixed-width-table">
+
 | Benefit | Description |
 |---------|-------------|
 | **No backdoors** | Removes Intel ME/AMD PSP surveillance components |
 | **Auditable code** | Fully open-source, no hidden proprietary code |
 | **Reduced attack surface** | Minimal firmware footprint |
 | **Faster boot** | Less bloat means quicker startup |
+
+</div>
 
 For Bitcoiners who value sovereignty, Libreboot ensures your laptop runs only transparent, user-controlled software.
 

@@ -38,12 +38,16 @@ Any combination of 2 keys can authorize a transaction.
 
 ### Common Configurations
 
+<div class="fixed-width-table">
+
 | Setup | Required | Total | Use Case |
 |-------|----------|-------|----------|
 | **2-of-3** | 2 | 3 | Individual self-custody (most popular) |
 | **3-of-5** | 3 | 5 | High-value holdings, organizations |
 | **2-of-2** | 2 | 2 | Shared control (no fault tolerance) |
 | **1-of-2** | 1 | 2 | Easy access from multiple locations |
+
+</div>
 
 
 ## How It Works
@@ -87,12 +91,16 @@ SIGNING FLOW:
 
 ### Eliminates Single Points of Failure
 
+<div class="fixed-width-table">
+
 | Scenario | Single-Sig | 2-of-3 Multisig |
 |----------|------------|-----------------|
 | One key stolen | **Funds lost** | Safe (thief needs 2 keys) |
 | One key lost | **Funds lost forever** | Safe (2 remaining keys work) |
 | House fire destroys backup | **Funds lost** | Safe (other locations have keys) |
 | Coerced to hand over key | **Funds lost** | Safe (can't access other keys) |
+
+</div>
 
 ### Security Through Distribution
 
@@ -189,11 +197,15 @@ A text string containing:
 
 Some services offer "assisted" multisig where they hold one key:
 
+<div class="fixed-width-table">
+
 | Service | Model | You Hold | They Hold |
 |---------|-------|----------|-----------|
 | Unchained | 2-of-3 | 2 keys | 1 key |
 | Casa | 2-of-3 or 3-of-5 | 2+ keys | 1 key |
 | Nunchuk | Flexible | Your choice | Optional |
+
+</div>
 
 **Benefits:** Professional backup, inheritance support, recovery assistance
 

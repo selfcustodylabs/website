@@ -48,6 +48,8 @@ Your everyday computer is exposed to:
 
 If malware infects your regular computer, attackers could:
 
+<div class="fixed-width-table">
+
 | Risk | Impact |
 |------|--------|
 | **View your balances** | Know how much you have (targeting risk) |
@@ -55,15 +57,21 @@ If malware infects your regular computer, attackers could:
 | **Monitor activity** | Track when you transact |
 | **Physical threat** | Target you if they see large holdings |
 
+</div>
+
 A dedicated Bitcoin computer isolates your Bitcoin activity from these risks.
 
 
 ## Guide Overview
 
+<div class="fixed-width-table">
+
 | Step | What You'll Do |
 |------|----------------|
 | 1. [Choosing Hardware](/docs/bitcoin-computer/choice) | Select appropriate hardware |
 | 2. [Setup](/docs/bitcoin-computer/setup) | Install and configure your Bitcoin computer |
+
+</div>
 
 ---
 

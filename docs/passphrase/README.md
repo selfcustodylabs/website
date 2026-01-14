@@ -30,12 +30,16 @@ Before starting, make sure you understand:
 
 Human-chosen passwords are predictable. Even when we try to be random, we follow patterns that attackers can exploit.
 
+<div class="fixed-width-table">
+
 | Human-chosen | Dice-generated |
 |--------------|----------------|
 | `Bitcoin2024!` | `cruelty postal clammy plasma` |
 | `MyD0g$Name` | `stardust article corrode unmasked` |
 | Predictable patterns | True randomness |
 | Vulnerable to guessing | Measurable security |
+
+</div>
 
 With dice, every word is equally likely. No patterns. No bias. Just math.
 
@@ -44,22 +48,30 @@ With dice, every word is equally likely. No patterns. No bias. Just math.
 
 Each word from the EFF list (7,776 words) adds ~12.9 bits of entropy:
 
+<div class="fixed-width-table">
+
 | Words | Entropy | Attempts to Crack |
 |-------|---------|-------------------|
 | 4 words | ~51 bits | 2.3 quadrillion |
 | 5 words | ~64 bits | 18 quintillion |
 | 6 words | ~77 bits | 151 sextillion |
 
+</div>
+
 For Bitcoin passphrases, **4-6 words** provides excellent security while remaining memorable.
 
 
 ## Guide Overview
+
+<div class="fixed-width-table">
 
 | Step | What You'll Do |
 |------|----------------|
 | 1. [Word Lists](/docs/passphrase/word-lists) | Understand EFF vs original Diceware |
 | 2. [Dice Rolling](/docs/passphrase/dice-roll) | Generate your random words |
 | 3. [Backup](/docs/passphrase/backup) | Store your passphrase securely |
+
+</div>
 
 
 ## Important Warnings

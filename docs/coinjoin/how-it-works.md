@@ -121,6 +121,8 @@ Eve:     0.15 BTC  →    0.1 BTC  ← Could be anyone (20% each)
 
 ### Why Bigger Is Better
 
+<div class="fixed-width-table">
+
 | Anonymity Set | Probability of Being You |
 |---------------|-------------------------|
 | 2 | 50% |
@@ -128,6 +130,8 @@ Eve:     0.15 BTC  →    0.1 BTC  ← Could be anyone (20% each)
 | 10 | 10% |
 | 50 | 2% |
 | 100 | 1% |
+
+</div>
 
 Automated mixing services like Wasabi and Whirlpool can achieve anonymity sets of 100+ participants.
 

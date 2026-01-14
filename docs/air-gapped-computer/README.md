@@ -41,6 +41,8 @@ This is the **highest level of self-custody security**, though it requires more 
 
 ## Use Cases for an AGC
 
+<div class="fixed-width-table">
+
 | Use Case | Description |
 |----------|-------------|
 | **Seed generation** | Create seeds from dice rolls with [DIY Seed Guide](/docs/seed) |
@@ -48,8 +50,12 @@ This is the **highest level of self-custody security**, though it requires more 
 | **Transaction signing** | Sign transactions completely offline |
 | **Inheritance planning** | Create encrypted messages for heirs |
 
+</div>
+
 
 ## Why AGC Over SeedSigner
+
+<div class="fixed-width-table">
 
 | Feature | AGC | SeedSigner |
 |---------|-----|------------|
@@ -59,15 +65,21 @@ This is the **highest level of self-custody security**, though it requires more 
 | **Discretion** | Looks like normal laptop | Known Bitcoin device |
 | **Functionality** | GPG, scripts, advanced tasks | Signing only |
 
+</div>
+
 While SeedSigner is great for certain use cases, an AGC offers more versatility and security options.
 
 
 ## Guide Overview
 
+<div class="fixed-width-table">
+
 | Step | What You'll Do |
 |------|----------------|
 | 1. [Types of AGC](/docs/air-gapped-computer/types) | Choose your hardware approach |
 | 2. [Setup](/docs/air-gapped-computer/setup) | Configure your air-gapped system |
+
+</div>
 
 ---
 

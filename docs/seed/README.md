@@ -31,6 +31,8 @@ Before starting, make sure you understand:
 
 Most wallets generate seeds for you, but this requires trust:
 
+<div class="fixed-width-table">
+
 | Risk | Description |
 |------|-------------|
 | **Weak randomness** | Software may not use proper entropy |
@@ -41,6 +43,8 @@ By generating your own seed with physical dice, you:
 - **Verify the randomness yourself** — no trust required
 - **Eliminate software vulnerabilities** — dice can't be hacked
 - **Understand what you're protecting** — knowledge is security
+
+</div>
 
 
 ## What You'll Create
@@ -61,6 +65,8 @@ This seed can restore your Bitcoin wallet on any BIP39-compatible software or ha
 
 ## Guide Overview
 
+<div class="fixed-width-table">
+
 | Step | What You'll Do |
 |------|----------------|
 | 1. [Requirements](/docs/seed/requirements) | Gather materials and set up air-gapped environment |
@@ -69,5 +75,7 @@ This seed can restore your Bitcoin wallet on any BIP39-compatible software or ha
 | 4. [Checksum](/docs/seed/checksum) | Calculate the verification bits |
 | 5. [BIP39 Words](/docs/seed/bip39) | Look up your 24 words |
 | 6. [Backup](/docs/seed/backup) | Store your seed securely on metal |
+
+</div>
 
 Let's begin!

@@ -17,13 +17,19 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 
 ### Option A: Maximum Security (Air-Gapped)
 
+<div class="fixed-width-table">
+
 | Device | Role | Communication |
 |--------|------|---------------|
 | **Coldcard Mk4/Q** | Key 1 | MicroSD card (air-gapped) |
 | **Keystone 3 Pro** | Key 2 | QR codes (air-gapped) |
 | **Trezor Safe 3/5** | Key 3 | USB |
 
+</div>
+
 ### Option B: Balanced (User-Friendly)
+
+<div class="fixed-width-table">
 
 | Device | Role | Communication |
 |--------|------|---------------|
@@ -31,13 +37,19 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 | **Ledger Nano S+/X** | Key 2 | USB |
 | **BitBox02** | Key 3 | USB |
 
+</div>
+
 ### Option C: Budget-Conscious
+
+<div class="fixed-width-table">
 
 | Device | Role | Communication |
 |--------|------|---------------|
 | **Trezor Model One** | Key 1 | USB |
 | **Ledger Nano S+** | Key 2 | USB |
 | **Blockstream Jade** | Key 3 | USB or QR |
+
+</div>
 
 :::tip Cost Consideration
 A complete 3-device setup costs $200-500 depending on models chosen. This is a one-time investment to protect potentially much larger holdings.
@@ -205,12 +217,16 @@ Paper can be destroyed by:
 
 ### Recommended Metal Backup Options
 
+<div class="fixed-width-table">
+
 | Product | Type | Price Range |
 |---------|------|-------------|
 | Blockplate | Punch plates | $80-100 |
 | Cryptosteel | Letter tiles | $80-100 |
 | Seedplate | Stamp/punch | $50-80 |
 | Billfodl | Letter tiles | $80-100 |
+
+</div>
 
 ### Backup Process
 

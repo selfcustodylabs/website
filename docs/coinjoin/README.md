@@ -136,11 +136,15 @@ There are two main approaches to CoinJoin:
 
 Software that coordinates CoinJoins automatically:
 
+<div class="fixed-width-table">
+
 | Service | Type | Approximate Cost |
 |---------|------|------------------|
 | **Wasabi Wallet** | Centralized coordinator | ~0.3% + mining fees |
 | **Whirlpool** (via Sparrow) | Centralized coordinator | Fixed fee per pool + mining fees |
 | **JoinMarket** | Decentralized market | Variable (can earn fees as maker) |
+
+</div>
 
 **Pros:**
 - Easy to use

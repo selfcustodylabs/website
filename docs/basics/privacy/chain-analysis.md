@@ -74,12 +74,16 @@ Clues that C is change:
 
 **Common change detection clues:**
 
+<div class="fixed-width-table">
+
 | Indicator | Why It Suggests Change |
 |-----------|----------------------|
 | New address | Wallets generate fresh change addresses |
 | Odd decimal places | Payments tend to be round numbers |
 | Same script type | Wallet uses consistent address format |
 | Smaller amount | Change is often the remainder |
+
+</div>
 
 **Combining heuristics:** Once analysts identify change addresses, they link them to your other addresses via common input ownership.
 
@@ -210,12 +214,16 @@ Anyone with blockchain access can see:
 
 It's not perfect:
 
+<div class="fixed-width-table">
+
 | Technique | Limitation |
 |-----------|------------|
 | Common input ownership | Broken by CoinJoin |
 | Change detection | Multiple heuristics can conflict |
 | Timing analysis | Users can delay transactions |
 | Amount correlation | Equal-output transactions hide amounts |
+
+</div>
 
 **CoinJoin and similar techniques** specifically target these heuristics. When many people combine their transactions, the assumptions break down.
 

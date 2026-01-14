@@ -45,6 +45,8 @@ The moment your identity connects to any address, your privacy begins to unravel
 
 **Common ways identity gets linked:**
 
+<div class="fixed-width-table">
+
 | Action | What Gets Exposed |
 |--------|-------------------|
 | Buy from KYC exchange | Your name linked to withdrawal address |
@@ -52,6 +54,8 @@ The moment your identity connects to any address, your privacy begins to unravel
 | Post address online | Anyone can search and find it |
 | Send to a friend | Friend knows your address |
 | Receive salary in BTC | Employer knows your address |
+
+</div>
 
 Once a single address is linked to you, analysts can follow the trail:
 
@@ -112,11 +116,15 @@ A common misconception: "Bitcoin is anonymous."
 
 **Reality:**
 
+<div class="fixed-width-table">
+
 | Cash | Bitcoin |
 |------|---------|
 | No permanent record | Permanent public record |
 | Physical transfer leaves no trail | Every transfer is logged forever |
 | Difficult to trace at scale | Entire history traceable by anyone |
+
+</div>
 
 Bitcoin may actually be **less private** than traditional banking in some ways:
 - Your bank doesn't publish your transactions publicly
