@@ -72,25 +72,7 @@ This tells wallet software:
 
 ### Recommended 2-of-3 Storage Layout
 
-```
-LOCATION A — Your Home (Secure Safe)
-├── Hardware Wallet #1
-├── Wallet Descriptor (copy 1)
-└── Seed Phrase #2 (metal backup)
-
-LOCATION B — Bank Safe Deposit Box
-├── Seed Phrase #1 (metal backup)
-└── Wallet Descriptor (copy 2)
-
-LOCATION C — Trusted Person / Separate Property
-├── Hardware Wallet #3
-├── Seed Phrase #3 (metal backup)
-└── Wallet Descriptor (copy 3)
-
-LOCATION D — Your Office / Secondary Location
-├── Hardware Wallet #2
-└── (Optional) Wallet Descriptor (copy 4)
-```
+![](/img/multisig/storage-locations.webp)
 
 **Notice:**
 - Each seed is in a different location

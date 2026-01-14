@@ -29,20 +29,7 @@ This guide walks you through setting up a **2-of-3 multisig** wallet—the most 
 
 ## What You're Building
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  YOUR 2-of-3 MULTISIG                   │
-│                                                          │
-│    ┌─────────┐    ┌─────────┐    ┌─────────┐           │
-│    │ Device 1│    │ Device 2│    │ Device 3│           │
-│    │(Coldcard)│   │ (Trezor)│    │(Keystone)│          │
-│    └─────────┘    └─────────┘    └─────────┘           │
-│                                                          │
-│         Any 2 devices can sign a transaction            │
-│                                                          │
-│    Coordinated by: Sparrow Wallet                       │
-└─────────────────────────────────────────────────────────┘
-```
+![](/img/multisig/multisig.webp)
 
 <div class="fixed-width-table">
 
@@ -178,21 +165,7 @@ Multisig backups are more complex than single-sig. Here's what you need:
 
 Store each item in a **different secure location**:
 
-```
-LOCATION 1 (Home safe):
-- Seed phrase #1 (metal backup)
-- Hardware wallet #1
-- Copy of wallet descriptor
-
-LOCATION 2 (Bank safe deposit):
-- Seed phrase #2 (metal backup)
-- Copy of wallet descriptor
-
-LOCATION 3 (Trusted family member):
-- Seed phrase #3 (metal backup)
-- Hardware wallet #3
-- Copy of wallet descriptor
-```
+![](/img/multisig/backup-storage-strategy.webp)
 
 **Never store:**
 - Multiple seed phrases in the same location
@@ -246,16 +219,7 @@ Don't want to manage all keys yourself? **Collaborative custody** providers hold
 
 ### How It Works
 
-```
-2-of-3 COLLABORATIVE CUSTODY:
-─────────────────────────────
-Key 1: You hold (hardware wallet at home)
-Key 2: You hold (hardware wallet in safe deposit)
-Key 3: Service holds (they cannot spend alone)
-
-You control 2 of 3 keys = you control your bitcoin
-Service provides: backup key, support, inheritance help
-```
+![](/img/multisig/collaborative-custody.webp)
 
 ### Providers Comparison
 
