@@ -1,4 +1,46 @@
+# Self Custody Labs - Robots.txt
+# https://selfcustodylabs.com
+
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# Crawl-delay for politeness (optional, most major crawlers ignore this)
+# Crawl-delay: 1
+
+# Disallow search result pages
+Disallow: /search
+Disallow: /search/
+
+# Disallow tag pages (if any exist)
+Disallow: /tags/
+Disallow: /tags
+
+# Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Disallow: /search
+
+# Bing-specific directives  
+User-agent: Bingbot
+Allow: /
+Disallow: /search
+
+# Block AI training crawlers (optional - remove if you want AI indexing)
+# User-agent: GPTBot
+# Disallow: /
+
+# User-agent: ChatGPT-User
+# Disallow: /
+
+# User-agent: CCBot
+# Disallow: /
+
+# User-agent: anthropic-ai
+# Disallow: /
+
+# User-agent: Claude-Web
+# Disallow: /
