@@ -7,7 +7,11 @@ tags: ["backup", "verification", "seed", "security", "self custody", "wallet set
 slug: /wallet-setup/backup-verification
 ---
 
+<SectionBadge section="security" label="Wallet Setup Guide" />
+
 # Backup Verification Guide
+
+<ProgressIndicator current={3} total={3} title="Wallet Setup Journey" />
 
 :::info What You'll Do
 In this guide, you will:
@@ -336,22 +340,26 @@ The process is simple:
 
 Taking 30 minutes to verify your backup can save you from losing everything.
 
-
----
-
-## Next Steps
-
-Now that your backup is verified:
-
-1. **[Run Your Own Node](/docs/bitcoin-node)** — Maximum privacy and verification
-2. **[Learn UTXO Management](/docs/privacy/utxo-management)** — Manage your coins effectively
-3. **[Consider Multisig](/docs/advanced/multisig)** — Eliminate single points of failure
-
----
-
-## Related Guides
-
-- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet) — Initial wallet setup
-- [DIY Seed Generation](/docs/security/seed-generation) — Generate your own seed
-- [DIY Passphrase](/docs/security/passphrase) — Add a passphrase layer
-- [Seed Backup Guide](/docs/security/seed-generation/backup) — Proper backup techniques
+<NextSteps 
+  title="Complete Your Setup"
+  items={[
+    { 
+      label: "Final Step", 
+      title: "Before You Deposit", 
+      href: "/docs/learn/fundamentals/before-you-deposit/", 
+      description: "Complete checklist before moving significant funds to your wallet" 
+    },
+    { 
+      label: "Enhance Security", 
+      title: "Run Your Own Node", 
+      href: "/docs/bitcoin-node/", 
+      description: "Verify transactions yourself for maximum privacy and security" 
+    },
+    { 
+      label: "Advanced", 
+      title: "Consider Multisig", 
+      href: "/docs/advanced/multisig/", 
+      description: "Eliminate single points of failure for significant holdings" 
+    }
+  ]}
+/>

@@ -232,5 +232,5 @@ The technical security of Bitcoin is excellent. The weak point is always human b
 ## Related Guides
 
 - [Physical Security](/docs/security/physical-security/) — Real-world threat protection
-- [Threat Model Assessment](/docs/getting-started/threat-models) — What level do you need?
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
 - [Recovery Scam Warning](/docs/reference/faq/recovery-scams) — Common fraud tactics

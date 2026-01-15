@@ -1,7 +1,8 @@
 {
-    "label": "Keys & Seed Phrases",
-    "position": 3,
-    "link": {
-    "type": "generated-index"
+  "label": "Keys & Seed Phrases",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Understanding private keys, seed phrases, and how Bitcoin ownership works."
   }
 }

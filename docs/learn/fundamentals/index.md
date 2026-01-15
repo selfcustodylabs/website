@@ -1,11 +1,13 @@
 ---
-sidebar_position: 1
+sidebar_label: "Overview"
 title: "Start Here: Bitcoin Self-Custody"
 description: "New to Bitcoin self-custody? Start here. Learn what self-custody means, assess your needs, and find the right path for your situation."
 keywords: ["bitcoin self custody", "getting started", "beginner bitcoin", "start here", "bitcoin basics"]
 tags: ["getting started", "beginner", "self custody"]
-slug: /getting-started
+slug: /learn/fundamentals
 ---
+
+<SectionBadge section="fundamentals" />
 
 # Start Here: Your Bitcoin Self-Custody Journey
 
@@ -31,7 +33,7 @@ When you buy Bitcoin on an exchange, you don't actually *own* it yet. You own a 
 
 Self-custody is how Bitcoin was designed to work. It's also a responsibility—there's no customer support, no password reset, and no reversing mistakes.
 
-→ **Deep dive:** [What is Self-Custody?](/docs/getting-started/what-is-self-custody) explains this in full detail.
+→ **Deep dive:** [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) explains this in full detail.
 
 
 ## Before You Continue: A Word of Caution
@@ -57,8 +59,8 @@ Self Custody Labs is for anyone serious about Bitcoin security:
 
 | Your Situation | Where to Start |
 |----------------|----------------|
-| **Brand new to Bitcoin** | Read [What is Bitcoin?](/docs/getting-started/what-is-bitcoin) first |
-| **Own Bitcoin on an exchange** | Learn [what self-custody is](/docs/getting-started/what-is-self-custody), then [set up a hardware wallet](/docs/wallet-setup/hardware-wallet/) |
+| **Brand new to Bitcoin** | Read [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) first |
+| **Own Bitcoin on an exchange** | Learn [what self-custody is](/docs/learn/fundamentals/what-is-self-custody), then [set up a hardware wallet](/docs/wallet-setup/hardware-wallet/) |
 | **Already have a hardware wallet** | [Verify your backup](/docs/wallet-setup/backup-verification/), consider [running a node](/docs/bitcoin-node/) |
 | **Significant holdings** | Explore [multisig](/docs/advanced/multisig/) and [advanced setups](/docs/advanced/air-gapped-computer/) |
 | **Privacy-focused / high-risk** | Start with [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) |
@@ -82,7 +84,7 @@ Not everyone needs the same level of security. A good setup depends on:
    - Non-technical → Start simple, learn gradually
    - Technical → Can jump to advanced setups
 
-→ **Coming soon:** [Assess Your Threat Model](/docs/getting-started/threat-models) - A guide to help you decide what level of security you need.
+→ **Deep dive:** [Assess Your Threat Model](/docs/learn/fundamentals/threat-models) - A guide to help you decide what level of security you need.
 
 
 ## Choose Your Path
@@ -92,9 +94,9 @@ Not everyone needs the same level of security. A good setup depends on:
 You're new to Bitcoin and want to understand it before holding any.
 
 **Your journey:**
-1. [What is Bitcoin?](/docs/getting-started/what-is-bitcoin) — The fundamentals
-2. [What is Self-Custody?](/docs/getting-started/what-is-self-custody) — Why keys matter
-3. [Why Holding Your Own Bitcoin Matters](/docs/getting-started/holding-bitcoin) — Exchange risks
+1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — The fundamentals
+2. [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) — Why keys matter
+3. [Why Holding Your Own Bitcoin Matters](/docs/learn/fundamentals/holding-bitcoin) — Exchange risks
 4. [Private Keys Explained](/docs/learn/keys/intro) — The foundation
 5. [Seed Phrases](/docs/learn/keys/seed) — How keys become words
 
@@ -110,7 +112,7 @@ You understand the basics and want to set up your first secure wallet.
 1. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets) — Why they're important
 2. [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/) — Step-by-step setup
 3. [Backup Verification](/docs/wallet-setup/backup-verification/) — Test before you trust
-4. **[Before You Deposit](/docs/getting-started/before-you-deposit)** — Critical checklist
+4. **[Before You Deposit](/docs/learn/fundamentals/before-you-deposit)** — Critical checklist
 
 **Time investment:** 2-4 hours (including setup)
 
@@ -174,7 +176,7 @@ A backup you've never tested isn't a backup. Verify your seed restores correctly
 <div class="button-group">
 
 **New to Bitcoin?**
-→ [What is Bitcoin?](/docs/getting-started/what-is-bitcoin)
+→ [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin)
 
 **Ready to set up a wallet?**
 → [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/)
@@ -196,3 +198,13 @@ If something in our guides is unclear, you can:
 - Reach out via [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs)
 
 Your questions help us improve these guides for everyone.
+
+<RelatedArticles 
+  title="Explore Topics"
+  articles={[
+    { title: "What is Bitcoin?", href: "/docs/learn/fundamentals/what-is-bitcoin/", tag: "Start Here" },
+    { title: "Private Keys", href: "/docs/learn/keys/intro/", tag: "Learn" },
+    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
+    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
+  ]}
+/>

@@ -1,12 +1,116 @@
 /**
  * Schema.org structured data for Self Custody Labs guides
- * This file contains HowTo schema definitions for each guide page
+ * This file contains HowTo, Article, FAQ, and Breadcrumb schema definitions
  */
 
 const SITE_URL = 'https://selfcustodylabs.com';
 
-// HowTo schema definitions for guide pages
+// ===========================================
+// HOWTO SCHEMAS - For procedural guides
+// ===========================================
 export const howToSchemas = {
+  // =====================
+  // WALLET SETUP
+  // =====================
+  '/docs/wallet-setup/hardware-wallet/': {
+    name: 'How to Set Up a Hardware Wallet for Bitcoin',
+    description: 'Step-by-step guide to setting up your first hardware wallet for secure Bitcoin self-custody. Learn to initialize, backup, and use your device safely.',
+    totalTime: 'PT2H',
+    estimatedCost: {
+      currency: 'USD',
+      value: '150'
+    },
+    supply: [
+      'Hardware wallet (Trezor, Coldcard, BitBox02, or similar)',
+      'Metal seed backup plate',
+      'Pen and paper for initial seed recording'
+    ],
+    tool: [
+      'Computer with Sparrow Wallet installed',
+      'USB cable (for non-air-gapped devices)'
+    ],
+    steps: [
+      {
+        name: 'Choose Your Hardware Wallet',
+        text: 'Select a hardware wallet based on your security needs and budget. Popular options include Trezor, Coldcard, and BitBox02.',
+        url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`
+      },
+      {
+        name: 'Initialize the Device',
+        text: 'Unbox your device, verify authenticity, set a strong PIN, and generate a new seed phrase on the device.',
+        url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`
+      },
+      {
+        name: 'Record Your Seed Phrase',
+        text: 'Carefully write down your 12 or 24-word seed phrase on paper. Never photograph it or store it digitally.',
+        url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`
+      },
+      {
+        name: 'Connect to Sparrow Wallet',
+        text: 'Install Sparrow Wallet on your computer and connect your hardware wallet to create a watch-only wallet.',
+        url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`
+      },
+      {
+        name: 'Verify Your First Receive Address',
+        text: 'Generate a receive address and verify it matches on your hardware wallet screen before sharing it.',
+        url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`
+      },
+      {
+        name: 'Complete Backup Verification',
+        text: 'Test that your seed phrase backup works by performing a recovery test before depositing funds.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      }
+    ]
+  },
+
+  '/docs/wallet-setup/backup-verification/': {
+    name: 'How to Verify Your Bitcoin Seed Backup',
+    description: 'Test your seed phrase backup to ensure it works before trusting it with significant funds. Multiple verification methods explained.',
+    totalTime: 'PT1H',
+    estimatedCost: {
+      currency: 'USD',
+      value: '0'
+    },
+    supply: [
+      'Your written seed phrase backup',
+      'Hardware wallet (same or second device)'
+    ],
+    tool: [
+      'Sparrow Wallet',
+      'Optional: Second hardware wallet for full test'
+    ],
+    steps: [
+      {
+        name: 'Understand Why Verification Matters',
+        text: 'A backup you have never tested is not a reliable backup. Verification ensures you can actually recover your funds.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      },
+      {
+        name: 'Choose Verification Method',
+        text: 'Select from address comparison, partial recovery check, or full recovery test based on your comfort level.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      },
+      {
+        name: 'Perform the Recovery Test',
+        text: 'Reset your device (or use a second device) and restore using only your written seed phrase.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      },
+      {
+        name: 'Verify Addresses Match',
+        text: 'Compare the first few receive addresses from your restored wallet against your original wallet.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      },
+      {
+        name: 'Create Metal Backup',
+        text: 'Once verified, stamp or engrave your seed phrase onto a metal backup plate for permanent storage.',
+        url: `${SITE_URL}/docs/wallet-setup/backup-verification/`
+      }
+    ]
+  },
+
+  // =====================
+  // SECURITY GUIDES
+  // =====================
   '/docs/security/seed-generation/': {
     name: 'How to Generate Your Own Bitcoin Seed Phrase',
     description: 'Create a cryptographically secure Bitcoin seed phrase using dice rolls for true randomness. This DIY method ensures no third party has access to your private keys.',
@@ -93,6 +197,9 @@ export const howToSchemas = {
     ]
   },
 
+  // =====================
+  // BITCOIN NODE
+  // =====================
   '/docs/bitcoin-node/': {
     name: 'How to Set Up Your Own Bitcoin Node',
     description: 'Run your own Bitcoin node to independently verify transactions and enhance your privacy. Connect your wallet to your own node for true self-sovereignty.',
@@ -118,9 +225,14 @@ export const howToSchemas = {
         url: `${SITE_URL}/docs/learn/nodes/why-run-node/`
       },
       {
-        name: 'Choose and Set Up Node Software',
-        text: 'Select a node software package (Umbrel, RaspiBlitz, Start9, or RoninDojo) and install it on your hardware.',
-        url: `${SITE_URL}/docs/bitcoin-node/node-setup/`
+        name: 'Choose Node Software',
+        text: 'Select a node software package: Umbrel for beginners, RaspiBlitz for customization, Start9 or RoninDojo for advanced features.',
+        url: `${SITE_URL}/docs/bitcoin-node/node-software-options/`
+      },
+      {
+        name: 'Install and Sync',
+        text: 'Install the node software and wait for initial blockchain sync (can take several days).',
+        url: `${SITE_URL}/docs/bitcoin-node/parmanode-setup/`
       },
       {
         name: 'Install Electrum Server',
@@ -136,6 +248,60 @@ export const howToSchemas = {
         name: 'Connect Sparrow Wallet',
         text: 'Connect your Sparrow Wallet to your own node for private, self-sovereign transactions.',
         url: `${SITE_URL}/docs/bitcoin-node/connect-sparrow-wallet/`
+      }
+    ]
+  },
+
+  // =====================
+  // ADVANCED GUIDES
+  // =====================
+  '/docs/advanced/multisig/': {
+    name: 'How to Set Up a Bitcoin Multisig Wallet',
+    description: 'Create a multisignature wallet requiring multiple keys to spend. Eliminate single points of failure and protect against theft or loss.',
+    totalTime: 'PT4H',
+    estimatedCost: {
+      currency: 'USD',
+      value: '400'
+    },
+    supply: [
+      'Multiple hardware wallets (2-3 from different manufacturers)',
+      'Metal backup plates for each seed',
+      'Secure storage locations'
+    ],
+    tool: [
+      'Sparrow Wallet',
+      'Printed wallet descriptor backup'
+    ],
+    steps: [
+      {
+        name: 'Understand Multisig Concepts',
+        text: 'Learn how multisig wallets work and why they provide better security than single-signature wallets.',
+        url: `${SITE_URL}/docs/learn/wallets/multisig/`
+      },
+      {
+        name: 'Choose Your Configuration',
+        text: 'Select a multisig configuration (2-of-3 recommended for most users) based on your security needs.',
+        url: `${SITE_URL}/docs/advanced/multisig/`
+      },
+      {
+        name: 'Set Up Hardware Wallets',
+        text: 'Initialize each hardware wallet separately and securely backup each seed phrase.',
+        url: `${SITE_URL}/docs/advanced/multisig/hardware-setup/`
+      },
+      {
+        name: 'Create Multisig in Sparrow',
+        text: 'Use Sparrow Wallet to combine the public keys from each device into a multisig wallet.',
+        url: `${SITE_URL}/docs/advanced/multisig/sparrow-setup/`
+      },
+      {
+        name: 'Backup Wallet Descriptor',
+        text: 'Export and securely store the wallet descriptor—required for recovery along with seed phrases.',
+        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`
+      },
+      {
+        name: 'Test the Setup',
+        text: 'Send a small test transaction and practice the signing process with multiple devices.',
+        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`
       }
     ]
   },
@@ -203,6 +369,9 @@ export const howToSchemas = {
     ]
   },
 
+  // =====================
+  // FIRMWARE GUIDES
+  // =====================
   '/docs/libreboot/': {
     name: 'How to Install Libreboot on Your Laptop',
     description: 'Replace your proprietary BIOS with Libreboot open-source firmware. Remove Intel ME backdoors and take full control of your hardware.',
@@ -225,32 +394,32 @@ export const howToSchemas = {
     steps: [
       {
         name: 'Gather Requirements',
-        text: 'Obtain the necessary hardware including a Raspberry Pi Pico, SOIC8 clip, and jumper wires.',
+        text: 'Obtain a compatible laptop and the necessary flashing hardware (Raspberry Pi Pico, clips, wires).',
         url: `${SITE_URL}/docs/libreboot/requirements/`
       },
       {
-        name: 'Build Libreboot',
-        text: 'Clone the Libreboot repository and build the firmware for your specific laptop model.',
+        name: 'Build Libreboot ROM',
+        text: 'Use the Libreboot build system to compile a ROM image for your specific laptop model.',
         url: `${SITE_URL}/docs/libreboot/build/`
       },
       {
-        name: 'Build Flashprog',
-        text: 'Compile the flashprog utility needed to read and write BIOS chips.',
+        name: 'Build flashprog Utility',
+        text: 'Compile the flashprog utility needed to write the ROM to your laptop chip.',
         url: `${SITE_URL}/docs/libreboot/build-flashprog/`
       },
       {
-        name: 'Generate ROM Images',
-        text: 'Use lbmk to generate the correct ROM image for your laptop.',
-        url: `${SITE_URL}/docs/libreboot/roms/`
-      },
-      {
         name: 'Set Up Raspberry Pi Pico',
-        text: 'Flash serprog firmware to your Raspberry Pi Pico and connect it to the BIOS chip.',
-        url: `${SITE_URL}/docs/libreboot/raspberry-pico/`
+        text: 'Flash the serprog firmware to your Raspberry Pi Pico to use it as a programmer.',
+        url: `${SITE_URL}/docs/libreboot/raspberry-pico/build-serprog/`
       },
       {
-        name: 'Flash the BIOS',
-        text: 'Back up your original BIOS and flash Libreboot to your laptop.',
+        name: 'Connect to BIOS Chip',
+        text: 'Physically connect the Pico to your laptop BIOS chip using the SOIC clip.',
+        url: `${SITE_URL}/docs/libreboot/raspberry-pico/connection/`
+      },
+      {
+        name: 'Flash the ROM',
+        text: 'Use flashprog to backup your original BIOS and write the Libreboot ROM.',
         url: `${SITE_URL}/docs/libreboot/flashing-bios/`
       }
     ]
@@ -258,297 +427,549 @@ export const howToSchemas = {
 
   '/docs/coreboot/': {
     name: 'How to Install Coreboot on Your Laptop',
-    description: 'Replace your proprietary BIOS with Coreboot open-source firmware for faster boot times and improved security.',
+    description: 'Replace proprietary BIOS with Coreboot open-source firmware on ThinkPad T430s. Includes Intel ME neutralization.',
     totalTime: 'PT4H',
     estimatedCost: {
       currency: 'USD',
       value: '30'
     },
     supply: [
-      'Supported laptop',
-      'External programmer (for external flashing)',
-      'SOIC8 clip'
+      'ThinkPad T430s',
+      'CH341A programmer or Raspberry Pi Pico',
+      'SOIC8 test clip',
+      'Dupont wires'
     ],
     tool: [
-      'Linux computer for building',
-      'Coreboot build system'
+      'Linux computer',
+      'Coreboot build tools',
+      'flashprog or flashrom'
     ],
     steps: [
       {
         name: 'Gather Requirements',
-        text: 'Check if your laptop is supported and gather the necessary flashing hardware.',
+        text: 'Get the necessary hardware including a compatible laptop and flashing equipment.',
         url: `${SITE_URL}/docs/coreboot/requirements/`
       },
       {
         name: 'Build Coreboot',
-        text: 'Clone the Coreboot repository and configure/build the firmware for your laptop.',
+        text: 'Compile a Coreboot ROM image configured for your laptop model.',
         url: `${SITE_URL}/docs/coreboot/build/`
       },
       {
-        name: 'Flash the BIOS',
-        text: 'Use either internal or external flashing method to install Coreboot.',
+        name: 'External Flashing',
+        text: 'For first-time installation, flash externally using a programmer connected to the BIOS chip.',
         url: `${SITE_URL}/docs/coreboot/external-flashing/`
       }
     ]
   },
 
-  '/docs/nostr-signing-device/': {
-    name: 'How to Build a Nostr Signing Device',
-    description: 'Build a hardware signing device for Nostr using a LILYGO T-Display. Keep your Nostr private key secure and offline.',
+  // =====================
+  // PRIVACY GUIDES
+  // =====================
+  '/docs/privacy/coinjoin/': {
+    name: 'How to Use CoinJoin for Bitcoin Privacy',
+    description: 'Break the link between your Bitcoin transactions using CoinJoin. Learn how it works and best practices for implementation.',
     totalTime: 'PT2H',
     estimatedCost: {
       currency: 'USD',
-      value: '15'
+      value: '10'
     },
-    supply: [
-      'LILYGO TTGO T-Display 1.14',
-      'USB-C cable'
-    ],
+    supply: [],
     tool: [
-      'Arduino IDE',
-      'Horse browser extension',
-      'Chrome-based browser'
-    ],
-    steps: [
-      {
-        name: 'Set Up Arduino IDE',
-        text: 'Install Arduino IDE and configure it for ESP32 development.',
-        url: `${SITE_URL}/docs/nostr-signing-device/arduino-ide/`
-      },
-      {
-        name: 'Configure ESP32 Module',
-        text: 'Set up the LILYGO T-Display board in Arduino IDE.',
-        url: `${SITE_URL}/docs/nostr-signing-device/esp32-module/`
-      },
-      {
-        name: 'Flash the Firmware',
-        text: 'Clone the NSD repository and upload the firmware to your device.',
-        url: `${SITE_URL}/docs/nostr-signing-device/setup/`
-      },
-      {
-        name: 'Install Horse Extension',
-        text: 'Install the Horse browser extension to connect your NSD to Nostr clients.',
-        url: `${SITE_URL}/docs/nostr-signing-device/horse-extension/`
-      },
-      {
-        name: 'Connect to Nostr Client',
-        text: 'Connect your NSD to a Nostr client like Coracle or NoStrudel.',
-        url: `${SITE_URL}/docs/nostr-signing-device/client-connect/`
-      }
-    ]
-  },
-
-  '/docs/privacy/coinjoin/': {
-    name: 'How to Use CoinJoin for Bitcoin Privacy',
-    description: 'Learn how to use CoinJoin to break the link between your transaction history and your coins. Improve your Bitcoin privacy with mixing techniques.',
-    totalTime: 'PT1H',
-    estimatedCost: {
-      currency: 'USD',
-      value: '0'
-    },
-    supply: [
-      'Bitcoin to mix',
-      'Mixing wallet (Wasabi, Sparrow, or JoinMarket)'
-    ],
-    tool: [
-      'Bitcoin node (essential for privacy)',
-      'Sparrow Wallet or Wasabi Wallet',
-      'Tor (recommended)'
+      'Wasabi Wallet or JoinMarket',
+      'Bitcoin for mixing fees'
     ],
     steps: [
       {
         name: 'Understand How CoinJoin Works',
-        text: 'Learn the fundamentals of CoinJoin: how equal outputs create privacy and what anonymity sets mean.',
+        text: 'Learn the mechanics of CoinJoin transactions and why they provide privacy.',
         url: `${SITE_URL}/docs/privacy/coinjoin/how-it-works/`
       },
       {
-        name: 'Choose a CoinJoin Service',
-        text: 'Compare Wasabi, Whirlpool (Sparrow), and JoinMarket to find the right mixing solution for your needs.',
+        name: 'Choose a Service',
+        text: 'Select a CoinJoin implementation: Wasabi Wallet for ease of use or JoinMarket for more control.',
         url: `${SITE_URL}/docs/privacy/coinjoin/services/`
       },
       {
         name: 'Follow Best Practices',
-        text: 'Learn how to maintain privacy after mixing: avoid merging coins, use coin control, and handle change properly.',
+        text: 'Implement proper post-mix behavior to maintain the privacy benefits of CoinJoin.',
         url: `${SITE_URL}/docs/privacy/coinjoin/best-practices/`
       }
     ]
   },
 
   '/docs/privacy/utxo-management/': {
-    name: 'How to Manage Bitcoin UTXOs for Lower Fees and Better Privacy',
-    description: 'Master UTXO management to reduce transaction fees and protect your privacy. Learn coin control, consolidation strategies, and labeling best practices.',
-    totalTime: 'PT45M',
+    name: 'How to Manage Bitcoin UTXOs',
+    description: 'Learn to organize your Bitcoin UTXOs for better privacy and lower fees. Master coin control and consolidation strategies.',
+    totalTime: 'PT1H',
     estimatedCost: {
       currency: 'USD',
       value: '0'
     },
-    supply: [
-      'Bitcoin wallet with coin control (Sparrow recommended)',
-      'Existing Bitcoin UTXOs to manage'
-    ],
+    supply: [],
     tool: [
-      'Sparrow Wallet or Electrum',
-      'mempool.space for fee monitoring'
+      'Sparrow Wallet (with coin control features)'
     ],
     steps: [
       {
-        name: 'Understand UTXOs and Their Impact',
-        text: 'Learn what UTXOs are and why their management affects both fees and privacy.',
-        url: `${SITE_URL}/docs/privacy/utxo-management/`
+        name: 'Understand UTXOs',
+        text: 'Learn what UTXOs are and why managing them matters for privacy and fees.',
+        url: `${SITE_URL}/docs/learn/transactions/utxos/`
       },
       {
         name: 'Master Coin Control',
-        text: 'Learn to select specific UTXOs for transactions instead of letting your wallet choose automatically.',
+        text: 'Use Sparrow Wallet coin control features to select specific UTXOs for transactions.',
         url: `${SITE_URL}/docs/privacy/utxo-management/coin-control/`
       },
       {
-        name: 'Implement Consolidation Strategies',
-        text: 'Consolidate small UTXOs during low-fee periods while maintaining source separation for privacy.',
+        name: 'Consolidate Strategically',
+        text: 'Combine small UTXOs during low-fee periods to reduce future transaction costs.',
         url: `${SITE_URL}/docs/privacy/utxo-management/consolidation/`
       }
     ]
   },
 
-  '/docs/advanced/multisig/': {
-    name: 'How to Set Up a Bitcoin Multisig Wallet for Maximum Security',
-    description: 'Complete guide to creating a 2-of-3 multisig wallet. Eliminate single points of failure and protect your bitcoin with multi-signature security.',
+  // =====================
+  // PROJECTS
+  // =====================
+  '/docs/nostr-signing-device/': {
+    name: 'How to Build a Nostr Hardware Signing Device',
+    description: 'Build a hardware device for signing Nostr events securely. Uses ESP32 module to keep your private key offline.',
     totalTime: 'PT2H',
     estimatedCost: {
       currency: 'USD',
-      value: '300'
+      value: '15'
     },
     supply: [
-      'Three hardware wallets (different manufacturers recommended)',
-      'Metal seed backup plates (3)',
-      'Computer with Sparrow Wallet installed'
+      'ESP32-S3 development board',
+      'USB-C cable',
+      'Enclosure (optional)'
     ],
     tool: [
-      'Sparrow Wallet',
-      'Hardware wallets (Coldcard, Trezor, Keystone, etc.)',
-      'MicroSD cards for air-gapped devices'
+      'Arduino IDE',
+      'Horse browser extension',
+      'Computer for programming'
     ],
     steps: [
       {
-        name: 'Understand Multisig Fundamentals',
-        text: 'Learn what multisig is, how it eliminates single points of failure, and determine if it is right for your situation.',
-        url: `${SITE_URL}/docs/advanced/multisig/`
+        name: 'Get the Hardware',
+        text: 'Purchase an ESP32-S3 development board with USB support.',
+        url: `${SITE_URL}/docs/nostr-signing-device/esp32-module/`
       },
       {
-        name: 'Set Up Hardware Wallets',
-        text: 'Initialize three hardware wallets with unique seed phrases. Use different manufacturers for maximum security.',
-        url: `${SITE_URL}/docs/advanced/multisig/hardware-setup/`
+        name: 'Set Up Arduino IDE',
+        text: 'Install Arduino IDE and configure it for ESP32 development.',
+        url: `${SITE_URL}/docs/nostr-signing-device/arduino-ide/`
       },
       {
-        name: 'Create Multisig in Sparrow',
-        text: 'Create your 2-of-3 multisig wallet using Sparrow Wallet as the coordinator software.',
-        url: `${SITE_URL}/docs/advanced/multisig/sparrow-setup/`
+        name: 'Flash the Firmware',
+        text: 'Upload the Nostr signing device firmware to your ESP32.',
+        url: `${SITE_URL}/docs/nostr-signing-device/setup/`
       },
       {
-        name: 'Backup and Test Recovery',
-        text: 'Properly backup seed phrases and wallet descriptor. Test recovery procedures before depositing significant funds.',
-        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`
+        name: 'Install Browser Extension',
+        text: 'Install the Horse browser extension to connect your device to Nostr clients.',
+        url: `${SITE_URL}/docs/nostr-signing-device/horse-extension/`
+      },
+      {
+        name: 'Connect to Clients',
+        text: 'Configure your Nostr clients to use the hardware signing device.',
+        url: `${SITE_URL}/docs/nostr-signing-device/client-connect/`
       }
     ]
   }
 };
 
-// Breadcrumb definitions for all doc sections
+
+// ===========================================
+// FAQ SCHEMAS - For FAQ pages
+// ===========================================
+export const faqSchemas = {
+  '/docs/reference/faq/': {
+    questions: [
+      {
+        question: 'What happens if I lose my seed phrase?',
+        answer: 'If you lose your seed phrase and your hardware wallet breaks, your Bitcoin is lost forever. There is no recovery mechanism. This is why proper backup verification is critical before depositing funds.'
+      },
+      {
+        question: 'Can someone steal my Bitcoin if they know my public address?',
+        answer: 'No. Your public address is safe to share—it only allows people to send you Bitcoin. To spend Bitcoin, you need the private key, which is derived from your seed phrase.'
+      },
+      {
+        question: 'Do I need to run my own Bitcoin node?',
+        answer: 'Not required, but recommended for privacy. Without your own node, you must trust a third-party server to provide accurate blockchain data. Running a node lets you verify everything yourself.'
+      },
+      {
+        question: 'What is a passphrase (25th word)?',
+        answer: 'A passphrase is an optional extra word you add to your 24-word seed phrase. It creates a completely different wallet, providing plausible deniability and an extra layer of security. If you forget it, funds in the passphrase-protected wallet are unrecoverable.'
+      },
+      {
+        question: 'Which hardware wallet should I buy?',
+        answer: 'For beginners, we recommend Trezor Safe 3 or BitBox02 for their ease of use. For maximum security, Coldcard is preferred by serious Bitcoiners. All reputable hardware wallets are significantly safer than keeping Bitcoin on an exchange.'
+      },
+      {
+        question: 'Is it safe to buy a hardware wallet from Amazon?',
+        answer: 'We recommend buying directly from the manufacturer to avoid tampered devices. If you must buy elsewhere, verify the device authenticity using the manufacturer tools and check for signs of tampering before use.'
+      },
+      {
+        question: 'How much Bitcoin do I need before self-custody makes sense?',
+        answer: 'Any amount you would be upset to lose deserves proper self-custody. A hardware wallet costs around $80-150, which is worthwhile protection for holdings above $500-1000. For smaller amounts, a mobile software wallet is acceptable while learning.'
+      },
+      {
+        question: 'What is multisig and do I need it?',
+        answer: 'Multisig requires multiple keys to spend Bitcoin (e.g., 2-of-3 keys). It eliminates single points of failure but adds complexity. Recommended for holdings over $100,000 or users with elevated security concerns.'
+      }
+    ]
+  }
+};
+
+
+// ===========================================
+// BREADCRUMB MAPPINGS
+// ===========================================
 export const breadcrumbMappings = {
-  // Basics section
+  // Learn section - Fundamentals (NEW)
   '/docs/learn/': ['Learn'],
-  '/docs/learn/holding/': ['Learn', 'Holding Bitcoin'],
-  '/docs/learn/keys/': ['Learn', 'Private Keys'],
-  '/docs/learn/keys/intro/': ['Learn', 'Private Keys', 'Introduction'],
-  '/docs/learn/keys/seed/': ['Learn', 'Private Keys', 'Seed Phrases'],
-  '/docs/learn/keys/passphrase/': ['Learn', 'Private Keys', 'Passphrase'],
-  '/docs/learn/keys/random/': ['Learn', 'Private Keys', 'Randomness'],
-  '/docs/learn/keys/number-systems/': ['Learn', 'Private Keys', 'Number Systems'],
-  '/docs/learn/keys/xpub/': ['Learn', 'Private Keys', 'Extended Public Key'],
-  '/docs/learn/keys/xprv/': ['Learn', 'Private Keys', 'Extended Private Key'],
-  '/docs/learn/keys/derivation-path/': ['Learn', 'Private Keys', 'Derivation Path'],
-  '/docs/learn/wallets/': ['Learn', 'Wallets'],
+  '/docs/learn/fundamentals/': ['Learn', 'Start Here'],
+  '/docs/learn/fundamentals/what-is-bitcoin/': ['Learn', 'Start Here', 'What is Bitcoin'],
+  '/docs/learn/fundamentals/what-is-self-custody/': ['Learn', 'Start Here', 'What is Self-Custody'],
+  '/docs/learn/fundamentals/holding-bitcoin/': ['Learn', 'Start Here', 'Holding Bitcoin'],
+  '/docs/learn/fundamentals/choosing-your-path/': ['Learn', 'Start Here', 'Choose Your Setup'],
+  '/docs/learn/fundamentals/threat-models/': ['Learn', 'Start Here', 'Threat Models'],
+  '/docs/learn/fundamentals/before-you-deposit/': ['Learn', 'Start Here', 'Before You Deposit'],
+
+  // Learn section - Keys
+  '/docs/learn/keys/intro/': ['Learn', 'Keys', 'Introduction'],
+  '/docs/learn/keys/seed/': ['Learn', 'Keys', 'Seed Phrases'],
+  '/docs/learn/keys/passphrase/': ['Learn', 'Keys', 'Passphrase'],
+  '/docs/learn/keys/xpub/': ['Learn', 'Keys', 'Extended Public Keys'],
+  '/docs/learn/keys/xprv/': ['Learn', 'Keys', 'Extended Private Keys'],
+  '/docs/learn/keys/derivation-path/': ['Learn', 'Keys', 'Derivation Paths'],
+  '/docs/learn/keys/random/': ['Learn', 'Keys', 'Randomness'],
+  '/docs/learn/keys/number-systems/': ['Learn', 'Keys', 'Number Systems'],
+
+  // Learn section - Wallets
   '/docs/learn/wallets/software-wallets/': ['Learn', 'Wallets', 'Software Wallets'],
   '/docs/learn/wallets/hardware-wallets/': ['Learn', 'Wallets', 'Hardware Wallets'],
   '/docs/learn/wallets/air-gapped-wallets/': ['Learn', 'Wallets', 'Air-Gapped Wallets'],
-  '/docs/learn/transactions/': ['Learn', 'Transactions'],
+  '/docs/learn/wallets/multisig/': ['Learn', 'Wallets', 'Multisig'],
+
+  // Learn section - Transactions
   '/docs/learn/transactions/understanding/': ['Learn', 'Transactions', 'Understanding'],
-  '/docs/learn/transactions/create/': ['Learn', 'Transactions', 'Create'],
-  '/docs/learn/transactions/sign/': ['Learn', 'Transactions', 'Sign'],
-  '/docs/learn/transactions/broadcast/': ['Learn', 'Transactions', 'Broadcast'],
-  '/docs/learn/transactions/lifecycle/': ['Learn', 'Transactions', 'Lifecycle'],
-  '/docs/learn/transactions/types/': ['Learn', 'Transactions', 'Types'],
   '/docs/learn/transactions/utxos/': ['Learn', 'Transactions', 'UTXOs'],
-  '/docs/learn/privacy/': ['Learn', 'Privacy'],
+  '/docs/learn/transactions/create/': ['Learn', 'Transactions', 'Creating'],
+  '/docs/learn/transactions/sign/': ['Learn', 'Transactions', 'Signing'],
+  '/docs/learn/transactions/broadcast/': ['Learn', 'Transactions', 'Broadcasting'],
+  '/docs/learn/transactions/types/': ['Learn', 'Transactions', 'Types'],
+  '/docs/learn/transactions/lifecycle/': ['Learn', 'Transactions', 'Lifecycle'],
+
+  // Learn section - Privacy
   '/docs/learn/privacy/why-privacy-matters/': ['Learn', 'Privacy', 'Why Privacy Matters'],
   '/docs/learn/privacy/chain-analysis/': ['Learn', 'Privacy', 'Chain Analysis'],
   '/docs/learn/privacy/protecting-privacy/': ['Learn', 'Privacy', 'Protecting Privacy'],
-  '/docs/learn/nodes/': ['Learn', 'Bitcoin Nodes'],
-  '/docs/learn/nodes/what-is-node/': ['Learn', 'Bitcoin Nodes', 'What is a Node'],
-  '/docs/learn/nodes/why-run-node/': ['Learn', 'Bitcoin Nodes', 'Why Run Your Own'],
-  '/docs/learn/wallets/multisig/': ['Learn', 'Wallets', 'Multisig'],
 
-  // Guide sections
-  '/docs/security/seed-generation/': ['Guides', 'DIY Seed'],
-  '/docs/security/seed-generation/requirements/': ['Guides', 'DIY Seed', 'Requirements'],
-  '/docs/security/seed-generation/dice-roll/': ['Guides', 'DIY Seed', 'Dice Roll'],
-  '/docs/security/seed-generation/binary-decimal/': ['Guides', 'DIY Seed', 'Binary to Decimal'],
-  '/docs/security/seed-generation/checksum/': ['Guides', 'DIY Seed', 'Checksum'],
-  '/docs/security/seed-generation/bip39/': ['Guides', 'DIY Seed', 'BIP39 Words'],
-  '/docs/security/seed-generation/backup/': ['Guides', 'DIY Seed', 'Backup'],
+  // Learn section - Nodes
+  '/docs/learn/nodes/what-is-node/': ['Learn', 'Nodes', 'What is a Node'],
+  '/docs/learn/nodes/why-run-node/': ['Learn', 'Nodes', 'Why Run a Node'],
 
-  '/docs/security/passphrase/': ['Guides', 'DIY Passphrase'],
-  '/docs/security/passphrase/word-lists/': ['Guides', 'DIY Passphrase', 'Word Lists'],
-  '/docs/security/passphrase/dice-roll/': ['Guides', 'DIY Passphrase', 'Dice Roll'],
-  '/docs/security/passphrase/backup/': ['Guides', 'DIY Passphrase', 'Backup'],
+  // Wallet Setup guides
+  '/docs/wallet-setup/': ['Guides', 'Wallet Setup'],
+  '/docs/wallet-setup/hardware-wallet/': ['Guides', 'Wallet Setup', 'Hardware Wallet'],
+  '/docs/wallet-setup/backup-verification/': ['Guides', 'Wallet Setup', 'Backup Verification'],
 
+  // Security guides
+  '/docs/security/': ['Guides', 'Security'],
+  '/docs/security/seed-generation/': ['Guides', 'Security', 'Seed Generation'],
+  '/docs/security/seed-generation/requirements/': ['Guides', 'Seed Generation', 'Requirements'],
+  '/docs/security/seed-generation/dice-roll/': ['Guides', 'Seed Generation', 'Dice Rolling'],
+  '/docs/security/seed-generation/binary-decimal/': ['Guides', 'Seed Generation', 'Binary to Decimal'],
+  '/docs/security/seed-generation/checksum/': ['Guides', 'Seed Generation', 'Checksum'],
+  '/docs/security/seed-generation/bip39/': ['Guides', 'Seed Generation', 'BIP39 Words'],
+  '/docs/security/seed-generation/backup/': ['Guides', 'Seed Generation', 'Backup'],
+
+  '/docs/security/passphrase/': ['Guides', 'Security', 'Passphrase'],
+  '/docs/security/passphrase/word-lists/': ['Guides', 'Passphrase', 'Word Lists'],
+  '/docs/security/passphrase/dice-roll/': ['Guides', 'Passphrase', 'Dice Rolling'],
+  '/docs/security/passphrase/backup/': ['Guides', 'Passphrase', 'Backup'],
+
+  '/docs/security/operational-security/': ['Guides', 'Security', 'Operational Security'],
+  '/docs/security/physical-security/': ['Guides', 'Security', 'Physical Security'],
+
+  // Bitcoin Node guides
   '/docs/bitcoin-node/': ['Guides', 'Bitcoin Node'],
-  '/docs/bitcoin-node/node-setup/': ['Guides', 'Bitcoin Node', 'Node Setup'],
+  '/docs/bitcoin-node/node-software-options/': ['Guides', 'Bitcoin Node', 'Software Options'],
+  '/docs/bitcoin-node/parmanode-setup/': ['Guides', 'Bitcoin Node', 'Parmanode Setup'],
   '/docs/bitcoin-node/electrum-server/': ['Guides', 'Bitcoin Node', 'Electrum Server'],
   '/docs/bitcoin-node/tor/': ['Guides', 'Bitcoin Node', 'Tor Setup'],
-  '/docs/bitcoin-node/connect-sparrow-wallet/': ['Guides', 'Bitcoin Node', 'Connect Wallet'],
+  '/docs/bitcoin-node/connect-sparrow-wallet/': ['Guides', 'Bitcoin Node', 'Connect Sparrow'],
 
-  '/docs/advanced/air-gapped-computer/': ['Guides', 'Air-Gapped Computer'],
+  // Advanced guides
+  '/docs/advanced/': ['Guides', 'Advanced'],
+  '/docs/advanced/multisig/': ['Guides', 'Advanced', 'Multisig'],
+  '/docs/advanced/multisig/hardware-setup/': ['Guides', 'Multisig', 'Hardware Setup'],
+  '/docs/advanced/multisig/sparrow-setup/': ['Guides', 'Multisig', 'Sparrow Setup'],
+  '/docs/advanced/multisig/backup-recovery/': ['Guides', 'Multisig', 'Backup & Recovery'],
+
+  '/docs/advanced/air-gapped-computer/': ['Guides', 'Advanced', 'Air-Gapped Computer'],
   '/docs/advanced/air-gapped-computer/types/': ['Guides', 'Air-Gapped Computer', 'Types'],
   '/docs/advanced/air-gapped-computer/setup/': ['Guides', 'Air-Gapped Computer', 'Setup'],
 
-  '/docs/advanced/bitcoin-computer/': ['Guides', 'Bitcoin Computer'],
+  '/docs/advanced/bitcoin-computer/': ['Guides', 'Advanced', 'Bitcoin Computer'],
   '/docs/advanced/bitcoin-computer/choice/': ['Guides', 'Bitcoin Computer', 'Choosing Hardware'],
   '/docs/advanced/bitcoin-computer/setup/': ['Guides', 'Bitcoin Computer', 'Setup'],
 
-  '/docs/libreboot/': ['Guides', 'Libreboot'],
-  '/docs/libreboot/requirements/': ['Guides', 'Libreboot', 'Requirements'],
-  '/docs/libreboot/build/': ['Guides', 'Libreboot', 'Build'],
-  '/docs/libreboot/build-flashprog/': ['Guides', 'Libreboot', 'Build Flashprog'],
-  '/docs/libreboot/roms/': ['Guides', 'Libreboot', 'ROM Images'],
-  '/docs/libreboot/flashing-bios/': ['Guides', 'Libreboot', 'Flash BIOS'],
-  '/docs/libreboot/update-bios/': ['Guides', 'Libreboot', 'Update BIOS'],
+  '/docs/advanced/inheritance-planning/': ['Guides', 'Advanced', 'Inheritance Planning'],
 
-  '/docs/coreboot/': ['Guides', 'Coreboot'],
-  '/docs/coreboot/requirements/': ['Guides', 'Coreboot', 'Requirements'],
-  '/docs/coreboot/build/': ['Guides', 'Coreboot', 'Build'],
-  '/docs/coreboot/external-flashing/': ['Guides', 'Coreboot', 'External Flashing'],
-
-  '/docs/nostr-signing-device/': ['Guides', 'Nostr Signing Device'],
-  '/docs/nostr-signing-device/arduino-ide/': ['Guides', 'Nostr Signing Device', 'Arduino IDE'],
-  '/docs/nostr-signing-device/esp32-module/': ['Guides', 'Nostr Signing Device', 'ESP32 Module'],
-  '/docs/nostr-signing-device/setup/': ['Guides', 'Nostr Signing Device', 'Setup'],
-  '/docs/nostr-signing-device/horse-extension/': ['Guides', 'Nostr Signing Device', 'Horse Extension'],
-  '/docs/nostr-signing-device/client-connect/': ['Guides', 'Nostr Signing Device', 'Client Connect'],
-
-  '/docs/privacy/coinjoin/': ['Guides', 'CoinJoin'],
+  // Privacy guides
+  '/docs/privacy/': ['Guides', 'Privacy'],
+  '/docs/privacy/coinjoin/': ['Guides', 'Privacy', 'CoinJoin'],
   '/docs/privacy/coinjoin/how-it-works/': ['Guides', 'CoinJoin', 'How It Works'],
   '/docs/privacy/coinjoin/services/': ['Guides', 'CoinJoin', 'Services'],
   '/docs/privacy/coinjoin/best-practices/': ['Guides', 'CoinJoin', 'Best Practices'],
 
-  '/docs/privacy/utxo-management/': ['Guides', 'UTXO Management'],
+  '/docs/privacy/utxo-management/': ['Guides', 'Privacy', 'UTXO Management'],
   '/docs/privacy/utxo-management/coin-control/': ['Guides', 'UTXO Management', 'Coin Control'],
   '/docs/privacy/utxo-management/consolidation/': ['Guides', 'UTXO Management', 'Consolidation'],
 
-  '/docs/advanced/multisig/': ['Guides', 'Multisig'],
-  '/docs/advanced/multisig/hardware-setup/': ['Guides', 'Multisig', 'Hardware Setup'],
-  '/docs/advanced/multisig/sparrow-setup/': ['Guides', 'Multisig', 'Sparrow Setup'],
-  '/docs/advanced/multisig/backup-recovery/': ['Guides', 'Multisig', 'Backup & Recovery'],
+  '/docs/privacy/payjoin/': ['Guides', 'Privacy', 'PayJoin'],
+
+  // Firmware guides
+  '/docs/libreboot/': ['Guides', 'Libreboot'],
+  '/docs/libreboot/requirements/': ['Guides', 'Libreboot', 'Requirements'],
+  '/docs/libreboot/build/': ['Guides', 'Libreboot', 'Build ROM'],
+  '/docs/libreboot/build-flashprog/': ['Guides', 'Libreboot', 'Build flashprog'],
+  '/docs/libreboot/flashing-bios/': ['Guides', 'Libreboot', 'Flash BIOS'],
+  '/docs/libreboot/update-bios/': ['Guides', 'Libreboot', 'Update BIOS'],
+  '/docs/libreboot/roms/': ['Guides', 'Libreboot', 'ROM Options'],
+  '/docs/libreboot/raspberry-pico/': ['Guides', 'Libreboot', 'Raspberry Pi Pico'],
+  '/docs/libreboot/raspberry-pico/build-serprog/': ['Guides', 'Libreboot', 'Pico', 'Build Serprog'],
+  '/docs/libreboot/raspberry-pico/connection/': ['Guides', 'Libreboot', 'Pico', 'Connection'],
+
+  '/docs/coreboot/': ['Guides', 'Coreboot'],
+  '/docs/coreboot/requirements/': ['Guides', 'Coreboot', 'Requirements'],
+  '/docs/coreboot/build/': ['Guides', 'Coreboot', 'Build ROM'],
+  '/docs/coreboot/external-flashing/': ['Guides', 'Coreboot', 'External Flashing'],
+
+  // Nostr Signing Device
+  '/docs/nostr-signing-device/': ['Guides', 'Nostr Signing Device'],
+  '/docs/nostr-signing-device/esp32-module/': ['Guides', 'Nostr Signing Device', 'ESP32 Module'],
+  '/docs/nostr-signing-device/arduino-ide/': ['Guides', 'Nostr Signing Device', 'Arduino IDE'],
+  '/docs/nostr-signing-device/setup/': ['Guides', 'Nostr Signing Device', 'Setup'],
+  '/docs/nostr-signing-device/horse-extension/': ['Guides', 'Nostr Signing Device', 'Horse Extension'],
+  '/docs/nostr-signing-device/client-connect/': ['Guides', 'Nostr Signing Device', 'Client Connect'],
+
+  // Reference
+  '/docs/reference/': ['Reference'],
+  '/docs/reference/glossary/': ['Reference', 'Glossary'],
+  '/docs/reference/address-types/': ['Reference', 'Address Types'],
+  '/docs/reference/hardware-wallet-comparison/': ['Reference', 'Hardware Wallet Comparison'],
+  '/docs/reference/faq/': ['Reference', 'FAQ'],
+  '/docs/reference/faq/lost-seed/': ['Reference', 'FAQ', 'Lost Seed'],
+  '/docs/reference/faq/recovery-scams/': ['Reference', 'FAQ', 'Recovery Scams'],
+  '/docs/reference/faq/recovery-troubleshooting/': ['Reference', 'FAQ', 'Recovery Troubleshooting'],
+
+  // Transactions - fees
+  '/docs/learn/transactions/fees/': ['Learn', 'Transactions', 'Fees'],
 };
+
+
+// ===========================================
+// ARTICLE SCHEMAS - For educational content
+// ===========================================
+export const articleSchemas = {
+  // Fundamentals (NEW)
+  '/docs/learn/fundamentals/': {
+    headline: 'Start Here: Bitcoin Self-Custody Journey',
+    description: 'Begin your Bitcoin self-custody journey. Understand what self-custody means, assess your needs, and find the right path for your situation.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/what-is-bitcoin/': {
+    headline: 'What is Bitcoin?',
+    description: 'Understand what Bitcoin is, how it works, and why it matters. Digital money that no one controls.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/what-is-self-custody/': {
+    headline: 'What is Bitcoin Self-Custody?',
+    description: 'Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership without third parties.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/holding-bitcoin/': {
+    headline: 'Why Holding Your Own Bitcoin Matters',
+    description: 'Understand the difference between exchange custody and self-custody. Learn why not your keys, not your coins is essential.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/choosing-your-path/': {
+    headline: 'Choose Your Self-Custody Setup',
+    description: 'Interactive decision tree to help you choose the right Bitcoin self-custody setup based on your holdings and security needs.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/threat-models/': {
+    headline: 'Assess Your Threat Model',
+    description: 'Determine what level of Bitcoin security you actually need. Match your setup to your real risks.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+  '/docs/learn/fundamentals/before-you-deposit/': {
+    headline: 'Before You Deposit: Critical Checklist',
+    description: 'Essential verification steps before sending Bitcoin to any new wallet. This checklist can prevent catastrophic mistakes.',
+    articleSection: 'Bitcoin Fundamentals'
+  },
+
+  // Keys
+  '/docs/learn/keys/intro/': {
+    headline: 'Understanding Bitcoin Private Keys',
+    description: 'Learn how private keys work and why they are essential for Bitcoin ownership.',
+    articleSection: 'Private Keys'
+  },
+  '/docs/learn/keys/seed/': {
+    headline: 'Bitcoin Seed Phrases Explained (BIP39)',
+    description: 'Understand how seed phrases work, the BIP39 standard, and how 24 words protect your Bitcoin.',
+    articleSection: 'Private Keys'
+  },
+  '/docs/learn/keys/passphrase/': {
+    headline: 'Bitcoin Passphrase (25th Word) Explained',
+    description: 'Learn how passphrases add extra security to your seed phrase and create hidden wallets.',
+    articleSection: 'Private Keys'
+  },
+  '/docs/learn/keys/xpub/': {
+    headline: 'Extended Public Keys (xpub) Explained',
+    description: 'Understand how extended public keys enable watch-only wallets and address generation.',
+    articleSection: 'Private Keys'
+  },
+  '/docs/learn/keys/xprv/': {
+    headline: 'Extended Private Keys (xprv) Explained',
+    description: 'Learn about extended private keys and hierarchical deterministic wallet derivation.',
+    articleSection: 'Private Keys'
+  },
+  '/docs/learn/keys/derivation-path/': {
+    headline: 'Bitcoin Derivation Paths Explained',
+    description: 'Understand BIP44/49/84 derivation paths and how they determine your wallet addresses.',
+    articleSection: 'Private Keys'
+  },
+
+  // Wallets
+  '/docs/learn/wallets/software-wallets/': {
+    headline: 'Bitcoin Software Wallets Guide',
+    description: 'Learn about different types of software wallets and how to choose the right one.',
+    articleSection: 'Wallets'
+  },
+  '/docs/learn/wallets/hardware-wallets/': {
+    headline: 'Bitcoin Hardware Wallets Guide',
+    description: 'Understand how hardware wallets work and why they provide better security.',
+    articleSection: 'Wallets'
+  },
+  '/docs/learn/wallets/air-gapped-wallets/': {
+    headline: 'Air-Gapped Bitcoin Wallets Explained',
+    description: 'Learn about air-gapped wallets and why they offer the highest level of security.',
+    articleSection: 'Wallets'
+  },
+  '/docs/learn/wallets/multisig/': {
+    headline: 'Multisig Wallets Explained',
+    description: 'Understand how Bitcoin multisig wallets work and why they eliminate single points of failure.',
+    articleSection: 'Wallets'
+  },
+
+  // Transactions
+  '/docs/learn/transactions/understanding/': {
+    headline: 'Understanding Bitcoin Transactions',
+    description: 'Learn the basics of how Bitcoin transactions work and what they contain.',
+    articleSection: 'Transactions'
+  },
+  '/docs/learn/transactions/utxos/': {
+    headline: 'UTXOs Explained: How Bitcoin Actually Works',
+    description: 'Understand Bitcoin UTXO model. Learn how Unspent Transaction Outputs work and why they matter.',
+    articleSection: 'Transactions'
+  },
+
+  // Privacy
+  '/docs/learn/privacy/why-privacy-matters/': {
+    headline: 'Why Bitcoin Privacy Matters',
+    description: 'Understand why financial privacy is essential for Bitcoin users and what information is exposed on the public blockchain.',
+    articleSection: 'Privacy'
+  },
+  '/docs/learn/privacy/chain-analysis/': {
+    headline: 'Chain Analysis Explained',
+    description: 'Learn how blockchain surveillance works and the heuristics used to track Bitcoin transactions.',
+    articleSection: 'Privacy'
+  },
+  '/docs/learn/privacy/protecting-privacy/': {
+    headline: 'Protecting Your Bitcoin Privacy',
+    description: 'Overview of Bitcoin privacy techniques including running your own node, UTXO management, and CoinJoin.',
+    articleSection: 'Privacy'
+  },
+
+  // Transactions - Fees
+  '/docs/learn/transactions/fees/': {
+    headline: 'Bitcoin Transaction Fees Explained',
+    description: 'Understand how Bitcoin transaction fees work, why they vary, and strategies to minimize costs. Learn fee estimation, RBF, and CPFP.',
+    articleSection: 'Transactions'
+  },
+
+  // Nodes
+  '/docs/learn/nodes/what-is-node/': {
+    headline: 'What is a Bitcoin Node',
+    description: 'Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network.',
+    articleSection: 'Bitcoin Nodes'
+  },
+  '/docs/learn/nodes/why-run-node/': {
+    headline: 'Why Run Your Own Bitcoin Node',
+    description: 'Understand why running your own Bitcoin node matters for privacy, security, and true self-custody.',
+    articleSection: 'Bitcoin Nodes'
+  },
+
+  // Reference - Hardware Wallet Comparison
+  '/docs/reference/hardware-wallet-comparison/': {
+    headline: 'Hardware Wallet Comparison: Coldcard vs Trezor vs BitBox vs Ledger',
+    description: 'Comprehensive comparison of Bitcoin hardware wallets including Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone.',
+    articleSection: 'Reference'
+  },
+
+  // Reference - FAQ - Recovery Troubleshooting
+  '/docs/reference/faq/recovery-troubleshooting/': {
+    headline: 'Wallet Recovery Troubleshooting',
+    description: 'Common problems when recovering a Bitcoin wallet and how to solve them. Fix empty wallet issues, wrong addresses, and derivation path problems.',
+    articleSection: 'FAQ'
+  },
+
+  // Reference - Glossary
+  '/docs/reference/glossary/': {
+    headline: 'Bitcoin Glossary: 100+ Terms Explained',
+    description: 'Complete glossary of Bitcoin and self-custody terminology including UTXO, seed phrase, hardware wallet, multisig, and more.',
+    articleSection: 'Reference'
+  },
+
+  // Reference - Address Types
+  '/docs/reference/address-types/': {
+    headline: 'Bitcoin Address Types Explained',
+    description: 'Understand Legacy, SegWit, Native SegWit, and Taproot Bitcoin addresses. Learn which to use and why it matters.',
+    articleSection: 'Reference'
+  },
+
+  // Bitcoin Node Guide
+  '/docs/bitcoin-node/': {
+    headline: 'Run Your Own Bitcoin Node: Complete Setup Guide',
+    description: 'Complete guide to running your own Bitcoin node with Parmanode. Learn why nodes matter, choose your hardware, and follow step-by-step setup.',
+    articleSection: 'Guides'
+  },
+
+  // Libreboot Guide
+  '/docs/libreboot/': {
+    headline: 'Libreboot Installation Guide',
+    description: 'Step-by-step guide to installing Libreboot on compatible laptops for enhanced privacy and security.',
+    articleSection: 'Guides'
+  },
+
+  // Coreboot Guide
+  '/docs/coreboot/': {
+    headline: 'Coreboot Installation Guide',
+    description: 'Guide to building and flashing Coreboot on laptops for improved security and boot performance.',
+    articleSection: 'Guides'
+  }
+};
+
+
+// ===========================================
+// SCHEMA GENERATORS
+// ===========================================
 
 /**
  * Generate HowTo schema JSON-LD for a given path
@@ -587,6 +1008,27 @@ export function generateHowToSchema(path) {
 }
 
 /**
+ * Generate FAQPage schema JSON-LD for a given path
+ */
+export function generateFAQSchema(path) {
+  const schema = faqSchemas[path];
+  if (!schema) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': schema.questions.map(q => ({
+      '@type': 'Question',
+      'name': q.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': q.answer
+      }
+    }))
+  };
+}
+
+/**
  * Generate BreadcrumbList schema JSON-LD for a given path
  */
 export function generateBreadcrumbSchema(path) {
@@ -610,6 +1052,8 @@ export function generateBreadcrumbSchema(path) {
         currentPath = '/docs/learn/';
       } else if (name === 'Guides') {
         currentPath = '/guides/';
+      } else if (name === 'Reference') {
+        currentPath = '/docs/reference/';
       }
     } else {
       // For nested items, use the actual path
@@ -630,97 +1074,6 @@ export function generateBreadcrumbSchema(path) {
     'itemListElement': items
   };
 }
-
-export default {
-  howToSchemas,
-  breadcrumbMappings,
-  generateHowToSchema,
-  generateBreadcrumbSchema
-};
-
-// Article schema for educational/learn content
-export const articleSchemas = {
-  '/docs/learn/': {
-    headline: 'What is Bitcoin Self-Custody?',
-    description: 'Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties.',
-    articleSection: 'Bitcoin Fundamentals'
-  },
-  '/docs/learn/holding/': {
-    headline: 'Why Hold Your Own Bitcoin',
-    description: 'Understand why self-custody matters and the risks of keeping Bitcoin on exchanges.',
-    articleSection: 'Bitcoin Fundamentals'
-  },
-  '/docs/learn/keys/intro/': {
-    headline: 'Understanding Bitcoin Private Keys',
-    description: 'Learn how private keys work and why they are essential for Bitcoin ownership.',
-    articleSection: 'Private Keys'
-  },
-  '/docs/learn/keys/seed/': {
-    headline: 'Bitcoin Seed Phrases Explained (BIP39)',
-    description: 'Understand how seed phrases work, the BIP39 standard, and how 24 words protect your Bitcoin.',
-    articleSection: 'Private Keys'
-  },
-  '/docs/learn/keys/passphrase/': {
-    headline: 'Bitcoin Passphrase (25th Word) Explained',
-    description: 'Learn how passphrases add extra security to your seed phrase and create hidden wallets.',
-    articleSection: 'Private Keys'
-  },
-  '/docs/learn/wallets/software-wallets/': {
-    headline: 'Bitcoin Software Wallets Guide',
-    description: 'Learn about different types of software wallets and how to choose the right one.',
-    articleSection: 'Wallets'
-  },
-  '/docs/learn/wallets/hardware-wallets/': {
-    headline: 'Bitcoin Hardware Wallets Guide',
-    description: 'Understand how hardware wallets work and why they provide better security.',
-    articleSection: 'Wallets'
-  },
-  '/docs/learn/wallets/air-gapped-wallets/': {
-    headline: 'Air-Gapped Bitcoin Wallets Explained',
-    description: 'Learn about air-gapped wallets and why they offer the highest level of security.',
-    articleSection: 'Wallets'
-  },
-  '/docs/learn/transactions/utxos/': {
-    headline: 'UTXOs Explained: How Bitcoin Actually Works',
-    description: 'Understand Bitcoin UTXOs (Unspent Transaction Outputs). Learn why Bitcoin uses discrete chunks instead of account balances.',
-    articleSection: 'Transactions'
-  },
-  '/docs/learn/privacy/why-privacy-matters/': {
-    headline: 'Why Bitcoin Privacy Matters',
-    description: 'Understand why financial privacy is essential for Bitcoin users and what information is exposed on the public blockchain.',
-    articleSection: 'Privacy'
-  },
-  '/docs/learn/privacy/chain-analysis/': {
-    headline: 'Chain Analysis Explained',
-    description: 'Learn how blockchain surveillance works and the heuristics used to track Bitcoin transactions.',
-    articleSection: 'Privacy'
-  },
-  '/docs/learn/privacy/protecting-privacy/': {
-    headline: 'Protecting Your Bitcoin Privacy',
-    description: 'Overview of Bitcoin privacy techniques including running your own node, UTXO management, and CoinJoin.',
-    articleSection: 'Privacy'
-  },
-  '/docs/learn/transactions/utxos/': {
-    headline: 'UTXOs Explained: How Bitcoin Actually Works',
-    description: 'Understand Bitcoin UTXO model. Learn how Unspent Transaction Outputs work and why they matter for fees and privacy.',
-    articleSection: 'Transactions'
-  },
-  '/docs/learn/nodes/what-is-node/': {
-    headline: 'What is a Bitcoin Node',
-    description: 'Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network.',
-    articleSection: 'Bitcoin Nodes'
-  },
-  '/docs/learn/nodes/why-run-node/': {
-    headline: 'Why Run Your Own Bitcoin Node',
-    description: 'Understand why running your own Bitcoin node matters for privacy, security, and true self-custody.',
-    articleSection: 'Bitcoin Nodes'
-  },
-  '/docs/learn/wallets/multisig/': {
-    headline: 'Multisig Wallets Explained',
-    description: 'Understand how Bitcoin multisig wallets work and why they eliminate single points of failure.',
-    articleSection: 'Wallets'
-  }
-};
 
 /**
  * Generate Article schema JSON-LD for educational content
@@ -755,3 +1108,98 @@ export function generateArticleSchema(path) {
     }
   };
 }
+
+
+// ===========================================
+// ITEMLIST SCHEMAS - For hub/index pages
+// ===========================================
+export const itemListSchemas = {
+  '/docs/learn/': {
+    name: 'Bitcoin Self-Custody Learning Resources',
+    description: 'Comprehensive educational content for Bitcoin self-custody including keys, wallets, transactions, privacy, and nodes.',
+    items: [
+      { name: 'Start Here: Fundamentals', url: '/docs/learn/fundamentals/' },
+      { name: 'Private Keys & Seeds', url: '/docs/learn/keys/intro/' },
+      { name: 'Wallet Types', url: '/docs/learn/wallets/' },
+      { name: 'Understanding Transactions', url: '/docs/learn/transactions/' },
+      { name: 'Bitcoin Privacy', url: '/docs/learn/privacy/why-privacy-matters/' },
+      { name: 'Running a Node', url: '/docs/learn/nodes/what-is-node/' },
+    ]
+  },
+  '/docs/wallet-setup/': {
+    name: 'Bitcoin Wallet Setup Guides',
+    description: 'Step-by-step guides for setting up secure Bitcoin wallets including hardware wallet configuration and backup verification.',
+    items: [
+      { name: 'Hardware Wallet Setup', url: '/docs/wallet-setup/hardware-wallet/' },
+      { name: 'Backup Verification', url: '/docs/wallet-setup/backup-verification/' },
+    ]
+  },
+  '/docs/security/': {
+    name: 'Bitcoin Security Guides',
+    description: 'Advanced security guides for Bitcoin self-custody including DIY seed generation, passphrases, and operational security.',
+    items: [
+      { name: 'DIY Seed Generation', url: '/docs/security/seed-generation/' },
+      { name: 'Passphrase Guide', url: '/docs/security/passphrase/' },
+      { name: 'Operational Security', url: '/docs/security/operational-security/' },
+    ]
+  },
+  '/docs/advanced/': {
+    name: 'Advanced Bitcoin Self-Custody',
+    description: 'Advanced techniques for Bitcoin security including multisig setups, air-gapped computers, and inheritance planning.',
+    items: [
+      { name: 'Multisig Setup', url: '/docs/advanced/multisig/' },
+      { name: 'Air-Gapped Computer', url: '/docs/advanced/air-gapped-computer/' },
+      { name: 'Bitcoin Computer', url: '/docs/advanced/bitcoin-computer/' },
+      { name: 'Inheritance Planning', url: '/docs/advanced/inheritance-planning/' },
+    ]
+  },
+  '/docs/reference/': {
+    name: 'Bitcoin Reference Materials',
+    description: 'Quick reference materials for Bitcoin including glossary, address types, hardware wallet comparison, and FAQ.',
+    items: [
+      { name: 'Bitcoin Glossary', url: '/docs/reference/glossary/' },
+      { name: 'Address Types', url: '/docs/reference/address-types/' },
+      { name: 'Hardware Wallet Comparison', url: '/docs/reference/hardware-wallet-comparison/' },
+      { name: 'FAQ', url: '/docs/reference/faq/' },
+    ]
+  },
+};
+
+/**
+ * Generate ItemList schema JSON-LD for hub/index pages
+ */
+export function generateItemListSchema(path) {
+  const schema = itemListSchemas[path];
+  if (!schema) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': schema.name,
+    'description': schema.description,
+    'numberOfItems': schema.items.length,
+    'itemListElement': schema.items.map((item, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'name': item.name,
+      'url': `${SITE_URL}${item.url}`
+    }))
+  };
+}
+
+
+// ===========================================
+// EXPORTS
+// ===========================================
+export default {
+  howToSchemas,
+  faqSchemas,
+  breadcrumbMappings,
+  articleSchemas,
+  itemListSchemas,
+  generateHowToSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+  generateArticleSchema,
+  generateItemListSchema
+};

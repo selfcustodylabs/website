@@ -368,11 +368,11 @@ const config = {
             items: [
               {
                 label: 'Start Here',
-                to: '/docs/getting-started/',
+                to: '/docs/learn/fundamentals/',
               },
               {
                 label: 'What is Self-Custody',
-                to: '/docs/getting-started/what-is-self-custody/',
+                to: '/docs/learn/fundamentals/what-is-self-custody/',
               },
               {
                 label: 'Private Keys',
@@ -494,22 +494,52 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        // Only include redirects NOT handled by createRedirects below
         redirects: [
-          // Special cases: these go to /docs/getting-started/, not /docs/learn/
+          // =============================================
+          // GETTING-STARTED → LEARN/FUNDAMENTALS migration
+          // =============================================
+          {
+            from: '/docs/getting-started',
+            to: '/docs/learn/fundamentals',
+          },
+          {
+            from: '/docs/getting-started/what-is-bitcoin',
+            to: '/docs/learn/fundamentals/what-is-bitcoin',
+          },
+          {
+            from: '/docs/getting-started/what-is-self-custody',
+            to: '/docs/learn/fundamentals/what-is-self-custody',
+          },
+          {
+            from: '/docs/getting-started/holding-bitcoin',
+            to: '/docs/learn/fundamentals/holding-bitcoin',
+          },
+          {
+            from: '/docs/getting-started/choosing-your-path',
+            to: '/docs/learn/fundamentals/choosing-your-path',
+          },
+          {
+            from: '/docs/getting-started/threat-models',
+            to: '/docs/learn/fundamentals/threat-models',
+          },
+          {
+            from: '/docs/getting-started/before-you-deposit',
+            to: '/docs/learn/fundamentals/before-you-deposit',
+          },
+          // Legacy /docs/basics/ redirects
           {
             from: '/docs/basics/what-is-bitcoin',
-            to: '/docs/getting-started/what-is-bitcoin',
+            to: '/docs/learn/fundamentals/what-is-bitcoin',
           },
           {
             from: '/docs/basics/holding',
-            to: '/docs/getting-started/holding-bitcoin',
+            to: '/docs/learn/fundamentals/holding-bitcoin',
           },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
           // Catch-all for any /docs/learn/ path - create redirect from /docs/basics/
-          if (existingPath.includes('/docs/learn/')) {
+          if (existingPath.includes('/docs/learn/') && !existingPath.includes('/docs/learn/fundamentals/')) {
             return [existingPath.replace('/docs/learn/', '/docs/basics/')];
           }
           // Catch-all for reference paths (glossary and address-types moved from learn)

@@ -175,12 +175,13 @@ The Bitcoin privacy landscape is challenging but navigable. Keep these principle
 - A sophisticated surveillance industry **actively tracks** Bitcoin users
 - Despite all this, **privacy can be improved** with knowledge and the right tools
 
----
-
-## Continue Learning
-
-Understanding the problem is step one. Now it's time to understand the solutions.
-
-→ **Next:** [Chain Analysis Explained](/docs/learn/privacy/chain-analysis) — Learn exactly how surveillance companies track bitcoin
-
-→ **Practical:** [UTXO Management Guide](/docs/privacy/utxo-management) — Start implementing privacy techniques today
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Chain Analysis Explained", href: "/docs/learn/privacy/chain-analysis/", tag: "Learn" },
+    { title: "Protecting Your Privacy", href: "/docs/learn/privacy/protecting-privacy/", tag: "Learn" },
+    { title: "UTXO Management", href: "/docs/privacy/utxo-management/", tag: "Guide" },
+    { title: "CoinJoin", href: "/docs/privacy/coinjoin/", tag: "Guide" },
+    { title: "Run Your Own Node", href: "/docs/bitcoin-node/", tag: "Guide" },
+  ]}
+/>

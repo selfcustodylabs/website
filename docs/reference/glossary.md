@@ -7,6 +7,8 @@ tags: ["glossary", "reference", "terminology"]
 slug: /reference/glossary
 ---
 
+<SectionBadge section="reference" />
+
 # Bitcoin Glossary
 
 A comprehensive reference for Bitcoin and self-custody terminology. Click any term to jump to its definition.
@@ -445,6 +447,6 @@ If a term is missing, [let us know](mailto:selfcustodylabs@proton.me) and we'll 
 
 ## Continue Learning
 
-- [What is Bitcoin?](/docs/getting-started/what-is-bitcoin) — Start from the beginning
+- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — Start from the beginning
 - [Learn Section](/learn) — Comprehensive Bitcoin education
 - [Guides](/guides) — Hands-on tutorials

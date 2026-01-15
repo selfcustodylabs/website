@@ -35,6 +35,14 @@ Understand Legacy, SegWit, Native SegWit, and Taproot addresses. Learn which to 
 
 </div>
 
+<div class="guide-card">
+
+### [Hardware Wallet Comparison](/docs/reference/hardware-wallet-comparison)
+
+Compare Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone. Find the right hardware wallet for your needs, budget, and security requirements.
+
+</div>
+
 ### External Technical Resources
 - **[BIP39 Word List](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)** — The 2048 valid seed words (external)
 - **[BIP List](https://github.com/bitcoin/bips)** — All Bitcoin Improvement Proposals

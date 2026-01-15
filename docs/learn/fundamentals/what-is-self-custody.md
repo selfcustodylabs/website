@@ -4,6 +4,7 @@ title: "What is Bitcoin Self-Custody?"
 description: "Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties."
 keywords: ["bitcoin self custody", "private keys", "seed phrase", "not your keys not your coins", "financial sovereignty"]
 tags: ["self custody", "bitcoin", "basics", "getting started"]
+slug: /learn/fundamentals/what-is-self-custody
 ---
 
 # What is Bitcoin Self-Custody?
@@ -102,15 +103,15 @@ Now that you understand *what* self-custody is and *why* it matters, it's time t
 
 ### If You're Ready to Set Up a Wallet:
 
-→ **[Choose Your Setup](/docs/getting-started/choosing-your-path)** — Find the right approach for your situation
+→ **[Choose Your Setup](/docs/learn/fundamentals/choosing-your-path)** — Find the right approach for your situation
 
 → **[Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)** — Step-by-step guide to getting started
 
 ### If You Want to Learn More First:
 
-→ **[Assess Your Threat Model](/docs/getting-started/threat-models)** — What security level do you actually need?
+→ **[Assess Your Threat Model](/docs/learn/fundamentals/threat-models)** — What security level do you actually need?
 
-→ **[Why Holding Your Own Bitcoin Matters](/docs/getting-started/holding-bitcoin)** — Deeper dive into exchange risks
+→ **[Why Holding Your Own Bitcoin Matters](/docs/learn/fundamentals/holding-bitcoin)** — Deeper dive into exchange risks
 
 → **[Private Keys Explained](/docs/learn/keys/intro)** — The technical foundation
 

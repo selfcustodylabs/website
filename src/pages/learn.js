@@ -29,13 +29,13 @@ const learnCollectionSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "What is Bitcoin?",
-        "url": "https://selfcustodylabs.com/docs/getting-started/what-is-bitcoin"
+        "url": "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-bitcoin"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "What is Self-Custody?",
-        "url": "https://selfcustodylabs.com/docs/getting-started/what-is-self-custody"
+        "url": "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-self-custody"
       },
       {
         "@type": "ListItem",
@@ -150,7 +150,7 @@ export default function LearnPage() {
       icon: CurrencyBitcoinRoundedIcon,
       title: "What is Bitcoin?",
       description: "Understand digital money that no one controls. The basics of blockchain, mining, and why Bitcoin matters.",
-      href: "/docs/getting-started/what-is-bitcoin",
+      href: "/docs/learn/fundamentals/what-is-bitcoin",
       badge: "START HERE",
       level: "Beginner",
     },
@@ -158,21 +158,21 @@ export default function LearnPage() {
       icon: ShieldRoundedIcon,
       title: "What is Self-Custody?",
       description: "Learn what it means to truly own your Bitcoin. No banks, no exchanges—just you and your keys.",
-      href: "/docs/getting-started/what-is-self-custody",
+      href: "/docs/learn/fundamentals/what-is-self-custody",
       level: "Beginner",
     },
     {
       icon: MenuBookRoundedIcon,
       title: "Holding Bitcoin",
       description: "Why custody matters and the spectrum from exchanges to full self-sovereignty.",
-      href: "/docs/getting-started/holding-bitcoin",
+      href: "/docs/learn/fundamentals/holding-bitcoin",
       level: "Beginner",
     },
     {
       icon: MenuBookRoundedIcon,
       title: "Choose Your Setup",
       description: "Find the right self-custody approach for your situation, from beginner to advanced.",
-      href: "/docs/getting-started/choosing-your-path",
+      href: "/docs/learn/fundamentals/choosing-your-path",
       badge: "NEW",
       level: "Beginner",
     },
@@ -327,8 +327,11 @@ export default function LearnPage() {
   ];
 
   return (
-    <Layout title="Learn" description="Learn Bitcoin self-custody from the ground up. Understand keys, wallets, transactions, privacy, and nodes.">
+    <Layout title="Browse Topics" description="Browse all Bitcoin self-custody learning topics. Find guides on keys, wallets, transactions, privacy, and nodes.">
       <Head>
+        {/* Canonical URL points to docs version to consolidate SEO */}
+        <link rel="canonical" href="https://selfcustodylabs.com/docs/learn/" />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify(learnCollectionSchema)}
         </script>

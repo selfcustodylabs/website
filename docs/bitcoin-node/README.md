@@ -6,6 +6,8 @@ keywords: ["bitcoin node", "self custody", "bitcoin core", "full node", "parmano
 tags: ["bitcoin node", "self custody", "guide"]
 ---
 
+<SectionBadge section="nodes" label="Node Guide" />
+
 # Bitcoin Node Guide
 
 Running your own Bitcoin node is one of the most important steps you can take toward true self-sovereignty. It's where "don't trust, verify" becomes real—where you stop relying on others to tell you what's happening on the network and start verifying everything yourself.

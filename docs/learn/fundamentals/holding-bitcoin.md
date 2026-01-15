@@ -4,6 +4,7 @@ title: "Why Holding Your Own Bitcoin Matters"
 description: "Understand the difference between holding Bitcoin yourself vs on an exchange. Learn why 'not your keys, not your coins' is essential for true ownership."
 keywords: ["hold bitcoin", "exchange risk", "not your keys", "self custody", "bitcoin ownership"]
 tags: ["self custody", "bitcoin", "exchange", "getting started"]
+slug: /learn/fundamentals/holding-bitcoin
 ---
 
 # Why Holding Your Own Bitcoin Matters
@@ -147,15 +148,15 @@ There's no universal threshold, but consider these guidelines:
 
 Ready to take control of your Bitcoin?
 
-1. **[Assess your threat model](/docs/getting-started/threat-models)** — What level of security do you need?
+1. **[Assess your threat model](/docs/learn/fundamentals/threat-models)** — What level of security do you need?
 
-2. **[Choose your setup](/docs/getting-started/choosing-your-path)** — Find the right approach
+2. **[Choose your setup](/docs/learn/fundamentals/choosing-your-path)** — Find the right approach
 
 3. **[Set up a hardware wallet](/docs/wallet-setup/hardware-wallet/)** — The standard recommendation
 
 4. **[Verify your backup](/docs/wallet-setup/backup-verification/)** — Test before you trust
 
-5. **[Review the checklist](/docs/getting-started/before-you-deposit)** — Before moving significant funds
+5. **[Review the checklist](/docs/learn/fundamentals/before-you-deposit)** — Before moving significant funds
 
 
 ## Key Takeaways
@@ -170,7 +171,7 @@ Ready to take control of your Bitcoin?
 
 ## Continue Learning
 
-→ **Next:** [Choose Your Setup](/docs/getting-started/choosing-your-path) — Find the right self-custody approach
+→ **Next:** [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path) — Find the right self-custody approach
 
 → **Deep Dive:** [Private Keys Explained](/docs/learn/keys/intro) — Understand the technical foundation
 

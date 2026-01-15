@@ -295,12 +295,26 @@ Now that your hardware wallet is set up:
 4. **[Learn UTXO Management](/docs/privacy/utxo-management)** — Manage your coins effectively
 5. **Consider [Multisig](/docs/advanced/multisig)** — For significant holdings
 
----
-
-## Related Guides
-
-- [Backup Verification](/docs/wallet-setup/backup-verification) — Test your backup before trusting it
-- [DIY Seed Generation](/docs/security/seed-generation) — Generate your own seed with dice
-- [DIY Passphrase](/docs/security/passphrase) — Add a passphrase for extra security
-- [Bitcoin Node Setup](/docs/bitcoin-node) — Run your own node for privacy
-- [Hardware Wallets (Theory)](/docs/learn/wallets/hardware-wallets) — Understand how they work
+<NextSteps 
+  title="Continue Your Setup"
+  items={[
+    { 
+      label: "Next Step", 
+      title: "Verify Your Backup", 
+      href: "/docs/wallet-setup/backup-verification/", 
+      description: "Critical: Test that your seed backup actually works before trusting it with funds" 
+    },
+    { 
+      label: "Then", 
+      title: "Before You Deposit", 
+      href: "/docs/learn/fundamentals/before-you-deposit/", 
+      description: "Final checklist before moving significant Bitcoin to your wallet" 
+    },
+    { 
+      label: "Learn More", 
+      title: "Hardware Wallets Explained", 
+      href: "/docs/learn/wallets/hardware-wallets/", 
+      description: "Understand the theory behind how hardware wallets keep you safe" 
+    }
+  ]}
+/>

@@ -1,12 +1,17 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: "Before You Deposit: Critical Checklist"
 description: "Essential verification steps before sending Bitcoin to any new wallet. This checklist can save you from catastrophic, irreversible mistakes."
 keywords: ["bitcoin checklist", "before deposit", "verify wallet", "self custody safety", "bitcoin security"]
 tags: ["checklist", "security", "self custody", "safety"]
+slug: /learn/fundamentals/before-you-deposit
 ---
 
+<SectionBadge section="security" label="Final Checklist" />
+
 # Before You Deposit: Critical Checklist
+
+<ProgressIndicator current={3} total={3} title="Wallet Setup Journey" />
 
 :::danger Stop and Read This
 This page exists because people have lost Bitcoin by skipping these steps.
@@ -195,14 +200,36 @@ This checklist exists because self-custody is serious. The freedom and security 
 
 Then—and only then—are you ready to truly own your Bitcoin.
 
----
+:::tip 🎉 Congratulations!
+If you've completed this checklist, you've finished the core wallet setup journey. You now have a secure hardware wallet with a verified backup. Welcome to true Bitcoin ownership!
+:::
 
-## Ready to Proceed?
-
-If you've completed every item above:
-
-→ **[Run Your Own Node](/docs/bitcoin-node/)** — The next step in sovereignty
-
-→ **[UTXO Management](/docs/privacy/utxo-management/)** — Optimize your wallet
-
-→ **[Privacy Best Practices](/docs/learn/privacy/why-privacy-matters)** — Protect your financial privacy
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Recommended", 
+      title: "Run Your Own Node", 
+      href: "/docs/bitcoin-node/", 
+      description: "Verify transactions yourself—the ultimate step in sovereignty" 
+    },
+    { 
+      label: "Privacy", 
+      title: "UTXO Management", 
+      href: "/docs/privacy/utxo-management/", 
+      description: "Learn to manage your coins for better privacy and lower fees" 
+    },
+    { 
+      label: "Advanced", 
+      title: "Multisig Setup", 
+      href: "/docs/advanced/multisig/", 
+      description: "Eliminate single points of failure for significant holdings" 
+    },
+    { 
+      label: "Learn More", 
+      title: "Why Privacy Matters", 
+      href: "/docs/learn/privacy/why-privacy-matters/", 
+      description: "Understand what's exposed on the blockchain and how to protect yourself" 
+    }
+  ]}
+/>

@@ -7,6 +7,8 @@ tags: ["multisig", "security", "self custody", "bitcoin", "hardware wallet", "ad
 slug: /advanced/multisig
 ---
 
+<SectionBadge section="advanced" />
+
 # Multisig Setup Guide
 
 :::info What You'll Do
@@ -337,22 +339,26 @@ Multisig removes the single point of failure that makes single-signature wallets
 
 **Is it worth it?** For significant holdings you plan to store long-term — absolutely.
 
----
-
-## Next Steps
-
-Ready to set up your multisig?
-
-1. **[Hardware Setup](/docs/advanced/multisig/hardware-setup)** — Prepare your signing devices
-2. **[Sparrow Setup](/docs/advanced/multisig/sparrow-setup)** — Create your 2-of-3 multisig wallet
-3. **[Backup & Recovery](/docs/advanced/multisig/backup-recovery)** — Secure your wallet properly
-
----
-
-## Related Guides
-
-- [Understanding Private Keys](/docs/learn/keys/intro) — Foundation for key management
-- [Seed Phrases](/docs/learn/keys/seed) — How seed phrases work
-- [Hardware Wallets](/docs/learn/wallets/hardware-wallets) — Signing device basics
-- [UTXO Management](/docs/privacy/utxo-management) — Managing coins in your wallet
-- [Bitcoin Node](/docs/bitcoin-node) — Connect your multisig to your own node
+<NextSteps 
+  title="Set Up Your Multisig"
+  items={[
+    { 
+      label: "Step 1", 
+      title: "Hardware Setup", 
+      href: "/docs/advanced/multisig/hardware-setup/", 
+      description: "Prepare your three signing devices for multisig" 
+    },
+    { 
+      label: "Step 2", 
+      title: "Sparrow Setup", 
+      href: "/docs/advanced/multisig/sparrow-setup/", 
+      description: "Create your 2-of-3 multisig wallet in Sparrow" 
+    },
+    { 
+      label: "Step 3", 
+      title: "Backup & Recovery", 
+      href: "/docs/advanced/multisig/backup-recovery/", 
+      description: "Properly secure your seeds and wallet descriptor" 
+    }
+  ]}
+/>

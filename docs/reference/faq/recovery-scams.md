@@ -229,7 +229,7 @@ The best protection is prevention:
 5. **Understand the limits** — Know what's mathematically possible
 
 → See: [Backup Verification Guide](/docs/wallet-setup/backup-verification/)
-→ See: [Before You Deposit Checklist](/docs/getting-started/before-you-deposit)
+→ See: [Before You Deposit Checklist](/docs/learn/fundamentals/before-you-deposit)
 
 
 ## Summary

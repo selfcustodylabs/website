@@ -4,6 +4,7 @@ title: "What is Bitcoin?"
 description: "Understand what Bitcoin is, how it works, and why it matters. A beginner's introduction to digital money that no one controls."
 keywords: ["bitcoin", "what is bitcoin", "cryptocurrency", "digital money", "decentralized", "blockchain"]
 tags: ["bitcoin", "basics", "introduction", "getting started"]
+slug: /learn/fundamentals/what-is-bitcoin
 ---
 
 # What is Bitcoin?
@@ -202,6 +203,6 @@ Learning self-custody is the next step in your Bitcoin journey. It requires some
 
 You now understand what Bitcoin is. The next step is learning how to **actually own** it securely.
 
-→ **Next:** [What is Self-Custody?](/docs/getting-started/what-is-self-custody) — Why holding your own keys matters
+→ **Next:** [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) — Why holding your own keys matters
 
 → **Dive Deeper:** [Private Keys Explained](/docs/learn/keys/intro) — How ownership actually works

@@ -6,6 +6,7 @@ keywords: ["bitcoin seed", "seed phrase", "DIY seed", "dice roll", "BIP39", "ent
 tags: ["seed", "self custody", "entropy", "dice", "security"]
 slug: /security/seed-generation
 ---
+
 # DIY Bitcoin Seed
 
 :::danger Fund Loss Warning

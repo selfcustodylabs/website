@@ -312,12 +312,12 @@ Each UTXO:
 - Each UTXO has a **traceable history** on the blockchain
 - Small UTXOs can become **unspendable dust** during high fees
 
----
-
-## Continue Learning
-
-→ **Next:** [Transaction Lifecycle](/docs/learn/transactions/lifecycle) — From creation to confirmation
-
-→ **Related:** [Chain Analysis](/docs/learn/privacy/chain-analysis) — How UTXO handling affects privacy
-
-→ **Practical Guide:** [UTXO Management](/docs/privacy/utxo-management) — Strategies for handling your UTXOs
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
+    { title: "Transaction Lifecycle", href: "/docs/learn/transactions/lifecycle/", tag: "Learn" },
+    { title: "Chain Analysis", href: "/docs/learn/privacy/chain-analysis/", tag: "Privacy" },
+    { title: "UTXO Management Guide", href: "/docs/privacy/utxo-management/", tag: "Guide" },
+  ]}
+/>

@@ -17,7 +17,7 @@ These guides are for users who already have:
 - Verified backup recovery process
 - Understanding of basic Bitcoin concepts
 
-If you're new, start with [Getting Started](/docs/getting-started/) and [Wallet Setup](/docs/wallet-setup/) first.
+If you're new, start with [Learn](/docs/learn/) and [Wallet Setup](/docs/wallet-setup/) first.
 :::
 
 ## Why Go Advanced?
@@ -32,7 +32,7 @@ Standard hardware wallet setups are excellent for most users. Advanced setups ad
 | **Bitcoin Computer** | Compromised daily-use devices | Medium | Privacy-focused users |
 | **Open Firmware** | BIOS-level backdoors, Intel ME | Very High | Maximum security requirements |
 
-**Most people don't need these.** Match your security to your [threat model](/docs/getting-started/threat-models).
+**Most people don't need these.** Match your security to your [threat model](/docs/learn/fundamentals/threat-models).
 
 ---
 
@@ -229,14 +229,14 @@ For most users, no. Standard hardware wallets with good practices provide excell
 
 **"What about hardware wallets with secure elements vs. open source?"**
 
-Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. Some devices (like Coldcard) offer both. See [hardware wallet comparison](/docs/getting-started/choosing-your-path#hardware-wallet-comparison).
+Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. Some devices (like Coldcard) offer both. See [hardware wallet comparison](/docs/learn/fundamentals/choosing-your-path#hardware-wallet-comparison).
 
 ---
 
 ## Related Resources
 
 ### Prerequisites
-- [Threat Model Assessment](/docs/getting-started/threat-models) — What level do you need?
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
 - [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) — Start here if you haven't
 
 ### Supporting Guides

@@ -5,6 +5,7 @@ description: "Understand how BIP39 seed phrases work: converting private keys to
 keywords: ["seed phrase", "BIP39", "mnemonic", "recovery phrase", "24 words", "bitcoin backup"]
 tags: ["seed", "BIP39", "private keys", "backup"]
 ---
+
 # Private Key Conversion
 
 Writing down a binary private key accurately is difficult for humans, and entering it correctly into a wallet is even harder. A single mistake could lead to losing Bitcoin. While a computer can detect errors using a checksum, handwritten notes cannot.
@@ -103,3 +104,13 @@ Now that you understand how seed phrases work, you can take full control by gene
 :::tip Next Step: DIY Seed Generation
 Learn how to create your own Bitcoin seed phrase with verifiable entropy in our **[DIY Seed Generation Guide](/docs/security/seed-generation)**. This hands-on guide walks you through every step, from rolling dice to calculating checksums.
 :::
+
+<RelatedArticles 
+  title="Related Topics"
+  articles={[
+    { title: "Private Keys Explained", href: "/docs/learn/keys/intro/", tag: "Learn" },
+    { title: "Passphrases (25th Word)", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
+    { title: "DIY Seed Generation", href: "/docs/security/seed-generation/", tag: "Guide" },
+    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
+  ]}
+/>

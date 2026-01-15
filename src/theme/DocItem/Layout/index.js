@@ -2,7 +2,13 @@ import React from 'react';
 import DocItemLayout from '@theme-original/DocItem/Layout';
 import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
-import { generateHowToSchema, generateBreadcrumbSchema, generateArticleSchema } from '@site/src/data/schemaData';
+import { 
+  generateHowToSchema, 
+  generateBreadcrumbSchema, 
+  generateArticleSchema, 
+  generateFAQSchema,
+  generateItemListSchema 
+} from '@site/src/data/schemaData';
 
 export default function DocItemLayoutWrapper(props) {
   const location = useLocation();
@@ -17,6 +23,8 @@ export default function DocItemLayoutWrapper(props) {
   const howToSchema = generateHowToSchema(path);
   const breadcrumbSchema = generateBreadcrumbSchema(path);
   const articleSchema = generateArticleSchema(path);
+  const faqSchema = generateFAQSchema(path);
+  const itemListSchema = generateItemListSchema(path);
 
   return (
     <>
@@ -31,6 +39,18 @@ export default function DocItemLayoutWrapper(props) {
         {articleSchema && (
           <script type="application/ld+json">
             {JSON.stringify(articleSchema, null, 0)}
+          </script>
+        )}
+        {/* Inject FAQ schema if available (for FAQ pages) */}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema, null, 0)}
+          </script>
+        )}
+        {/* Inject ItemList schema if available (for hub/index pages) */}
+        {itemListSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(itemListSchema, null, 0)}
           </script>
         )}
         {/* Inject Breadcrumb schema if available */}

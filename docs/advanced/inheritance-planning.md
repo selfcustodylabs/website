@@ -449,5 +449,5 @@ The best plan is one that:
 
 - [Multisig Setup Guide](/docs/advanced/multisig/) — Implement 2-of-3 inheritance multisig
 - [Backup Verification](/docs/wallet-setup/backup-verification/) — Ensure your backups work
-- [Threat Model Assessment](/docs/getting-started/threat-models/) — Understand what you're protecting against
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models/) — Understand what you're protecting against
 - [Physical Security](/docs/security/physical-security/) — Secure storage locations
