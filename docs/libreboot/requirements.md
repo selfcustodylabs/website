@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: "HW Requirements"
+title: "Libreboot Hardware Requirements"
 description: "Practical guide: HW Requirements. Covers Laptop, Raspberry Pi Pico H with pre-soldered headers, Pomona 5250 SOIC8 Clip."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "requirements"]
 tags: ["libreboot", "raspberry", "pico", "bios", "pomona", "clip", "usb", "cables"]

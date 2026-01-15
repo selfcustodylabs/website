@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: "Bitcoin Node Guide"
+title: "Run Your Own Bitcoin Node: Complete Setup Guide"
 description: "Complete guide to running your own Bitcoin node. Learn why it matters, compare software options, and follow step-by-step setup instructions with Parmanode."
 keywords: ["bitcoin node", "self custody", "bitcoin core", "full node", "parmanode", "electrum server"]
 tags: ["bitcoin node", "self custody", "guide"]
@@ -39,7 +39,7 @@ With your own node:
 - **Verification** — You confirm everything yourself, trusting no one
 - **Sovereignty** — You participate directly in Bitcoin's consensus
 
-→ Read more: [Why Run Your Own Node](/docs/basics/nodes/why-run-node)
+→ Read more: [Why Run Your Own Node](/docs/learn/nodes/why-run-node)
 
 
 ## What You're Building
@@ -148,9 +148,9 @@ If you prefer a GUI-based approach, see our [comparison of node software options
 
 If you're new to nodes, start here:
 
-- [What is a Bitcoin Node](/docs/basics/nodes/what-is-node) — The conceptual foundation
-- [Why Run Your Own Node](/docs/basics/nodes/why-run-node) — Privacy and verification benefits
-- [Why Privacy Matters](/docs/basics/privacy/why-privacy-matters) — The bigger picture
+- [What is a Bitcoin Node](/docs/learn/nodes/what-is-node) — The conceptual foundation
+- [Why Run Your Own Node](/docs/learn/nodes/why-run-node) — Privacy and verification benefits
+- [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — The bigger picture
 
 ---
 

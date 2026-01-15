@@ -210,4 +210,4 @@ The important thing is running a node, period. Any of these options gets you the
 
 → **Recommended:** [Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup) — Our recommended approach
 
-→ **Background:** [Why Run Your Own Node](/docs/basics/nodes/why-run-node) — Understand the benefits
+→ **Background:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node) — Understand the benefits

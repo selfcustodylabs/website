@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: "Update"
+title: "Update Libreboot Firmware"
 description: "Practical guide: Update. Covers Disable security protections before flashing, Flash Chip Size, Read the Current Chip Contents."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "update"]
 tags: ["libreboot", "update", "flashprog", "bios"]
