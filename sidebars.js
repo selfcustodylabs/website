@@ -11,7 +11,7 @@
 
 // @ts-check
 
-/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+// @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
 const sidebars = {
   // =============================================
   // LEARN - Unified educational content
@@ -43,6 +43,7 @@ const sidebars = {
       label: '🔑 Keys & Seeds',
       link: {
         type: 'generated-index',
+        slug: '/category/keys-and-seeds',
         description: 'Understanding private keys, seed phrases, and how Bitcoin ownership works.',
       },
       items: [
@@ -54,6 +55,7 @@ const sidebars = {
       label: '👛 Wallets',
       link: {
         type: 'generated-index',
+        slug: '/category/wallets',
         description: 'Different types of Bitcoin wallets and their security models.',
       },
       items: [
@@ -65,6 +67,7 @@ const sidebars = {
       label: '💸 Transactions',
       link: {
         type: 'generated-index',
+        slug: '/category/transactions',
         description: 'How Bitcoin transactions work, from creation to confirmation.',
       },
       items: [
@@ -76,6 +79,7 @@ const sidebars = {
       label: '🕵️ Privacy',
       link: {
         type: 'generated-index',
+        slug: '/category/privacy',
         description: 'Understanding blockchain privacy and protecting yourself.',
       },
       items: [
@@ -87,6 +91,7 @@ const sidebars = {
       label: '🖥️ Nodes',
       link: {
         type: 'generated-index',
+        slug: '/category/nodes',
         description: 'What Bitcoin nodes do and why running your own matters.',
       },
       items: [
