@@ -199,37 +199,35 @@ header.guidesHero {
 /* Keys (amber) */
 .menu__link--active[href*="/keys/"],
 .menu__link--active[href$="/keys"],
-.menu__link--active[href*="/category/-keys"] {
+.menu__link--active[href*="/category/keys"] {
   border-left-color: var(--section-color-keys) !important;
 }
 
 /* Wallets in learn section (purple) */
 .menu__link--active[href*="/learn/wallets"],
 .menu__link--active[href$="/learn/wallets"],
-.menu__link--active[href*="/category/-wallets"] {
+.menu__link--active[href*="/category/wallets"] {
   border-left-color: var(--section-color-wallets) !important;
 }
 
 /* Transactions (blue) */
 .menu__link--active[href*="/transactions/"],
 .menu__link--active[href$="/transactions"],
-.menu__link--active[href*="/category/-transactions"] {
+.menu__link--active[href*="/category/transactions"] {
   border-left-color: var(--section-color-transactions) !important;
 }
 
 /* Privacy in learn section (pink) */
 .menu__link--active[href*="/learn/privacy"],
 .menu__link--active[href$="/learn/privacy"],
-.menu__link--active[href*="/category/%EF%B8%8F-privacy"],
-.menu__link--active[href*="/category/-privacy"] {
+.menu__link--active[href*="/category/privacy"] {
   border-left-color: var(--section-color-privacy) !important;
 }
 
 /* Nodes in learn section (cyan) */
 .menu__link--active[href*="/learn/nodes"],
 .menu__link--active[href$="/learn/nodes"],
-.menu__link--active[href*="/category/%EF%B8%8F-nodes"],
-.menu__link--active[href*="/category/-nodes"] {
+.menu__link--active[href*="/category/nodes"] {
   border-left-color: var(--section-color-nodes) !important;
 }
 
