@@ -1,8 +1,8 @@
 {
-  "label": "Bitcoin Nodes",
-  "position": 6,
+  "label": "Nodes",
+  "position": 7,
   "link": {
     "type": "generated-index",
-    "description": "Understand what Bitcoin nodes do and why running your own matters for privacy and security."
+    "description": "What Bitcoin nodes do and why running your own matters."
   }
 }

@@ -7,6 +7,8 @@ tags: ["faq", "questions", "help"]
 slug: /reference/faq
 ---
 
+<SectionBadge section="reference" label="FAQ" />
+
 # Frequently Asked Questions
 
 Answers to common—and critical—questions about Bitcoin self-custody.
@@ -22,6 +24,9 @@ The hard truth: if you lose your seed phrase AND your device, your Bitcoin is al
 
 ### [Are Bitcoin recovery services legitimate?](/docs/reference/faq/recovery-scams)
 Almost all "recovery services" are scams targeting desperate people. Learn how to recognize fraud and what legitimate recovery actually looks like.
+
+### [My wallet shows zero balance after recovery](/docs/reference/faq/recovery-troubleshooting)
+Recovered your wallet but funds are missing? This is usually a configuration issue, not lost Bitcoin. Troubleshoot derivation paths, passphrases, and other common problems.
 
 ---
 

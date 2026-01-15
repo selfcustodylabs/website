@@ -42,7 +42,7 @@ Layer 6: Multisig                  ← Eliminate single points of failure
          └─ Multiple keys required
 ```
 
-**You don't need all layers.** Match your security to your [threat model](/docs/getting-started/threat-models).
+**You don't need all layers.** Match your security to your [threat model](/docs/learn/fundamentals/threat-models).
 
 ---
 
@@ -199,11 +199,11 @@ After hardening your security:
 ## Security Resources
 
 ### Threat Modeling
-- [Assess Your Threat Model](/docs/getting-started/threat-models) — What level do you need?
+- [Assess Your Threat Model](/docs/learn/fundamentals/threat-models) — What level do you need?
 
 ### Recovery Planning
 - [What If You Lose Your Seed?](/docs/reference/faq/lost-seed) — Understanding the stakes
 - [Recovery Scam Warning](/docs/reference/faq/recovery-scams) — Protect yourself from fraud
 
 ### Pre-Deposit Checklist
-- [Before You Deposit](/docs/getting-started/before-you-deposit) — Final verification steps
+- [Before You Deposit](/docs/learn/fundamentals/before-you-deposit) — Final verification steps

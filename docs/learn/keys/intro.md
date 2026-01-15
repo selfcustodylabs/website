@@ -5,6 +5,7 @@ description: "Learn what Bitcoin private keys are, how they work, and why they'r
 keywords: ["bitcoin private key", "public key", "cryptography", "bitcoin security", "key management"]
 tags: ["private keys", "bitcoin", "security"]
 ---
+
 # Private Keys
 
 :::warning

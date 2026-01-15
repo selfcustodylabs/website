@@ -1,9 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: "Choose Your Self-Custody Setup"
 description: "Interactive decision tree to help you choose the right Bitcoin self-custody setup based on your holdings, technical comfort, and security needs."
 keywords: ["bitcoin wallet choice", "self custody setup", "hardware wallet comparison", "bitcoin security decision"]
 tags: ["getting started", "wallet", "decision", "setup"]
+slug: /learn/fundamentals/choosing-your-path
 ---
 
 # Choose Your Self-Custody Setup
@@ -60,7 +61,7 @@ Answer these questions in order:
 
 ## Setup Recommendations
 
-### 🌱 Starter Setup
+### 🌱 Starter Setup {#-starter-setup}
 
 **For:** Small amounts, learning phase, technical beginners
 
@@ -94,7 +95,7 @@ Answer these questions in order:
 
 ---
 
-### 🔐 Standard Setup
+### 🔐 Standard Setup {#-standard-setup}
 
 **For:** Meaningful savings, privacy-conscious users, anyone serious about self-custody
 
@@ -122,7 +123,7 @@ Answer these questions in order:
 2. Follow [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/)
 3. Create metal backup
 4. Complete [Backup Verification](/docs/wallet-setup/backup-verification/)
-5. Review [Before You Deposit Checklist](/docs/getting-started/before-you-deposit)
+5. Review [Before You Deposit Checklist](/docs/learn/fundamentals/before-you-deposit)
 
 **When to upgrade:** When holdings exceed $50,000 or you want maximum security.
 
@@ -130,7 +131,7 @@ Answer these questions in order:
 
 ---
 
-### 🛡️ Enhanced Setup
+### 🛡️ Enhanced Setup {#-enhanced-setup}
 
 **For:** Significant holdings, high security needs, privacy-focused users
 
@@ -168,7 +169,7 @@ Answer these questions in order:
 
 ---
 
-### 🏰 Maximum Setup
+### 🏰 Maximum Setup {#-maximum-setup}
 
 **For:** Large holdings, public figures, hostile jurisdiction concerns, maximum security requirements
 

@@ -149,3 +149,620 @@ header.guidesHero {
 .guidesHero p {
   margin-top: 0;
 }
+
+
+/* ===========================================
+   PHASE 3: NAVIGATION IMPROVEMENTS
+   =========================================== */
+
+/* -------------------------------------------
+   1. VISUAL SECTION INDICATORS
+   Color-coded left borders for the ACTIVE section
+   ------------------------------------------- */
+
+/* Section color variables */
+:root {
+  --section-color-learn: #10b981;      /* Emerald green */
+  --section-color-fundamentals: #22c55e; /* Green */
+  --section-color-keys: #f59e0b;       /* Amber/Orange */
+  --section-color-wallets: #8b5cf6;    /* Purple */
+  --section-color-transactions: #3b82f6; /* Blue */
+  --section-color-privacy: #ec4899;    /* Pink */
+  --section-color-nodes: #06b6d4;      /* Cyan */
+  --section-color-security: #ef4444;   /* Red */
+  --section-color-advanced: #f97316;   /* Orange */
+  --section-color-reference: #6b7280;  /* Gray */
+}
+
+/* Base sidebar link styling */
+.menu__link {
+  position: relative;
+  border-left: 3px solid transparent;
+  margin-left: -3px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Active item base styling */
+.menu__link--active {
+  border-left-width: 4px !important;
+  font-weight: 600;
+}
+
+/* Section-specific colors for ACTIVE items only */
+
+/* Fundamentals (green) */
+.menu__link--active[href*="/fundamentals"],
+.menu__link--active[href$="/fundamentals"] {
+  border-left-color: var(--section-color-fundamentals) !important;
+}
+
+/* Keys (amber) */
+.menu__link--active[href*="/keys/"],
+.menu__link--active[href$="/keys"] {
+  border-left-color: var(--section-color-keys) !important;
+}
+
+/* Wallets in learn section (purple) */
+.menu__link--active[href*="/learn/wallets"],
+.menu__link--active[href$="/learn/wallets"] {
+  border-left-color: var(--section-color-wallets) !important;
+}
+
+/* Transactions (blue) */
+.menu__link--active[href*="/transactions/"],
+.menu__link--active[href$="/transactions"] {
+  border-left-color: var(--section-color-transactions) !important;
+}
+
+/* Privacy in learn section (pink) */
+.menu__link--active[href*="/learn/privacy"],
+.menu__link--active[href$="/learn/privacy"] {
+  border-left-color: var(--section-color-privacy) !important;
+}
+
+/* Nodes in learn section (cyan) */
+.menu__link--active[href*="/learn/nodes"],
+.menu__link--active[href$="/learn/nodes"] {
+  border-left-color: var(--section-color-nodes) !important;
+}
+
+/* Wallet Setup section (red - security related) */
+.menu__link--active[href*="/wallet-setup/"] {
+  border-left-color: var(--section-color-security) !important;
+}
+
+/* Security guides (red) */
+.menu__link--active[href*="/security/"] {
+  border-left-color: var(--section-color-security) !important;
+}
+
+/* Privacy guides section (pink) */
+.menu__link--active[href^="/docs/privacy/"] {
+  border-left-color: var(--section-color-privacy) !important;
+}
+
+/* Advanced guides (orange) */
+.menu__link--active[href*="/advanced/"] {
+  border-left-color: var(--section-color-advanced) !important;
+}
+
+/* Bitcoin Node guide (cyan) */
+.menu__link--active[href*="/bitcoin-node"] {
+  border-left-color: var(--section-color-nodes) !important;
+}
+
+/* Reference (gray) */
+.menu__link--active[href*="/reference/"] {
+  border-left-color: var(--section-color-reference) !important;
+}
+
+/* Default active color if no section matches */
+.menu__link--active {
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+
+/* -------------------------------------------
+   2. SECTION BADGE IN DOC HEADER
+   Shows which section you're in
+   ------------------------------------------- */
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.section-badge--fundamentals {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.section-badge--keys {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.section-badge--wallets {
+  background: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.section-badge--transactions {
+  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.section-badge--privacy {
+  background: rgba(236, 72, 153, 0.15);
+  color: #db2777;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.section-badge--nodes {
+  background: rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.section-badge--security {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.section-badge--advanced {
+  background: rgba(249, 115, 22, 0.15);
+  color: #ea580c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+[data-theme='dark'] .section-badge--fundamentals {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+[data-theme='dark'] .section-badge--keys {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .section-badge--wallets {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+[data-theme='dark'] .section-badge--transactions {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+[data-theme='dark'] .section-badge--privacy {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+}
+
+[data-theme='dark'] .section-badge--nodes {
+  background: rgba(6, 182, 212, 0.2);
+  color: #22d3ee;
+}
+
+[data-theme='dark'] .section-badge--security {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+[data-theme='dark'] .section-badge--advanced {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+
+/* -------------------------------------------
+   3. PROGRESS INDICATOR
+   For multi-step guides
+   ------------------------------------------- */
+
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.progress-indicator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.progress-indicator__title {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.progress-indicator__count {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.progress-indicator__bar {
+  height: 8px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-indicator__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-indicator__steps {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.progress-indicator__step {
+  flex: 1;
+  height: 4px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.progress-indicator__step--complete {
+  background: var(--ifm-color-primary);
+}
+
+.progress-indicator__step--current {
+  background: var(--ifm-color-primary-light);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+
+/* -------------------------------------------
+   4. NEXT STEPS CTA BOX
+   Consistent call-to-action at page end
+   ------------------------------------------- */
+
+.next-steps {
+  margin-top: 48px;
+  padding: 24px;
+  background: linear-gradient(135deg, 
+    var(--ifm-background-surface-color) 0%, 
+    rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+}
+
+.next-steps__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ifm-heading-color);
+}
+
+.next-steps__title::before {
+  content: "→";
+  color: var(--ifm-color-primary);
+}
+
+.next-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.next-steps__card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.next-steps__card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.next-steps__card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-primary);
+  margin-bottom: 4px;
+}
+
+.next-steps__card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.next-steps__card-desc {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+[data-theme='dark'] .next-steps {
+  background: linear-gradient(135deg, 
+    var(--ifm-background-surface-color) 0%, 
+    rgba(245, 158, 11, 0.08) 100%);
+}
+
+
+/* -------------------------------------------
+   5. GUIDE CARD STYLES
+   For index pages with card layouts
+   ------------------------------------------- */
+
+.guide-card {
+  padding: 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin: 16px 0;
+  transition: border-color 0.2s ease;
+}
+
+.guide-card:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.guide-card h3 {
+  margin-top: 0;
+}
+
+.guide-card h3 a {
+  color: var(--ifm-color-primary);
+}
+
+
+/* -------------------------------------------
+   6. BREADCRUMB ENHANCEMENTS
+   Better visibility for current location
+   ------------------------------------------- */
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 16px;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: var(--ifm-color-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+
+/* -------------------------------------------
+   7. ACTIVE ITEM STYLING
+   The colored left border indicates current page
+   ------------------------------------------- */
+
+/* Additional active item emphasis */
+.menu__link--active {
+  background-color: var(--ifm-menu-color-background-active);
+}
+
+
+/* -------------------------------------------
+   8. STEP NUMBERS IN LISTS
+   For procedural content
+   ------------------------------------------- */
+
+.steps-list {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.steps-list > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 24px;
+}
+
+.steps-list > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+
+/* -------------------------------------------
+   9. MOBILE RESPONSIVENESS
+   ------------------------------------------- */
+
+@media (max-width: 768px) {
+  .next-steps__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-indicator {
+    padding: 12px 16px;
+  }
+  
+  .section-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+}
+
+
+/* -------------------------------------------
+   10. RELATED ARTICLES COMPONENT
+   Cross-linking content at page end
+   ------------------------------------------- */
+
+.related-articles {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.related-articles__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.related-articles__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.related-articles__grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.related-articles__grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.related-articles__grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.related-articles__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.related-articles__item:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-color);
+  text-decoration: none;
+}
+
+.related-articles__tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-primary);
+}
+
+.related-articles__item-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ifm-heading-color);
+}
+
+@media (max-width: 768px) {
+  .related-articles__grid--cols-2,
+  .related-articles__grid--cols-3,
+  .related-articles__grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* -------------------------------------------
+   11. COMPARISON TABLE ENHANCEMENTS
+   For hardware wallet comparison, etc.
+   ------------------------------------------- */
+
+.comparison-table {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.comparison-table table {
+  width: 100%;
+  min-width: 600px;
+}
+
+.comparison-table th {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.comparison-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  vertical-align: top;
+}
+
+.comparison-table tr:hover td {
+  background: var(--ifm-background-surface-color);
+}
+
+/* Checkmarks and X marks */
+.comparison-table td:has(.check),
+.comparison-table td:has(.cross) {
+  text-align: center;
+}
+
+.check {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.cross {
+  color: #ef4444;
+  font-weight: bold;
+}

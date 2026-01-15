@@ -254,7 +254,7 @@ export default function Home() {
       title: "Learn the Basics",
       description:
         "Understand the fundamentals of Bitcoin, private keys, and why self-custody matters.",
-      href: "/docs/getting-started",
+      href: "/docs/learn/fundamentals",
     },
     {
       step: "02",

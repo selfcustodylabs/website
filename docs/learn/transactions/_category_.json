@@ -1,7 +1,8 @@
 {
-    "label": "Transactions",
-    "position": 4,
-    "link": {
-    "type": "generated-index"
+  "label": "Transactions",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "How Bitcoin transactions work, from creation to confirmation."
   }
 }

@@ -7,12 +7,14 @@ tags: ["wallet", "setup", "hardware wallet", "backup"]
 slug: /wallet-setup
 ---
 
+<SectionBadge section="security" label="Setup Guides" />
+
 # Wallet Setup Guides
 
 Everything you need to set up secure Bitcoin self-custody.
 
 :::tip Before You Begin
-If you're new to Bitcoin, start with [Getting Started](/docs/getting-started/) to understand the fundamentals first.
+If you're new to Bitcoin, start with [Learn](/docs/learn/) to understand the fundamentals first.
 :::
 
 ## Setup Path
@@ -73,7 +75,7 @@ Verify your seed backup actually works before trusting it with significant funds
 
 <div class="guide-card">
 
-### [Before You Deposit Checklist](/docs/getting-started/before-you-deposit)
+### [Before You Deposit Checklist](/docs/learn/fundamentals/before-you-deposit)
 
 **Time:** 15-30 minutes | **Difficulty:** Beginner
 
@@ -92,7 +94,7 @@ Critical checklist to complete before moving significant Bitcoin to your wallet.
 
 ## Which Wallet Should I Use?
 
-Not sure which hardware wallet to buy? See our [Choose Your Setup](/docs/getting-started/choosing-your-path) guide for recommendations based on your situation.
+Not sure which hardware wallet to buy? See our [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path) guide for recommendations based on your situation.
 
 **Quick recommendations:**
 
@@ -144,7 +146,7 @@ For anything more than pocket change, yes. Hardware wallets are the minimum secu
 
 **"Which is better: Trezor, Ledger, or Coldcard?"**
 
-All are reputable. Trezor and Coldcard are Bitcoin-focused and fully open source. Ledger has a secure element but closed-source firmware. See [hardware wallet comparison](/docs/getting-started/choosing-your-path#hardware-wallet-comparison).
+All are reputable. Trezor and Coldcard are Bitcoin-focused and fully open source. Ledger has a secure element but closed-source firmware. See [hardware wallet comparison](/docs/learn/fundamentals/choosing-your-path#hardware-wallet-comparison).
 
 **"Can I use the same seed on multiple devices?"**
 

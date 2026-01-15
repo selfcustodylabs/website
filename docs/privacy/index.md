@@ -204,4 +204,4 @@ Most people need privacy, not perfect anonymity.
 
 ### Security Integration
 - [Operational Security](/docs/security/operational-security/) — Privacy is part of security
-- [Threat Model Assessment](/docs/getting-started/threat-models) — What level do you need?
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
