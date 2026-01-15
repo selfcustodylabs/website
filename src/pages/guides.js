@@ -31,25 +31,25 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "DIY Seed Generation",
-        "url": "https://selfcustodylabs.com/docs/seed/"
+        "url": "https://selfcustodylabs.com/docs/security/seed-generation/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "DIY Passphrase",
-        "url": "https://selfcustodylabs.com/docs/passphrase/"
+        "url": "https://selfcustodylabs.com/docs/security/passphrase/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Hardware Wallet Setup",
-        "url": "https://selfcustodylabs.com/docs/hardware-wallet-setup/"
+        "url": "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Backup Verification",
-        "url": "https://selfcustodylabs.com/docs/backup-verification/"
+        "url": "https://selfcustodylabs.com/docs/wallet-setup/backup-verification/"
       },
       {
         "@type": "ListItem",
@@ -61,13 +61,13 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         "position": 6,
         "name": "Bitcoin Computer",
-        "url": "https://selfcustodylabs.com/docs/bitcoin-computer/"
+        "url": "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/"
       },
       {
         "@type": "ListItem",
         "position": 7,
         "name": "Air-Gapped Computer",
-        "url": "https://selfcustodylabs.com/docs/air-gapped-computer/"
+        "url": "https://selfcustodylabs.com/docs/advanced/air-gapped-computer/"
       },
       {
         "@type": "ListItem",
@@ -91,19 +91,19 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         "position": 11,
         "name": "CoinJoin Privacy Guide",
-        "url": "https://selfcustodylabs.com/docs/coinjoin/"
+        "url": "https://selfcustodylabs.com/docs/privacy/coinjoin/"
       },
       {
         "@type": "ListItem",
         "position": 12,
         "name": "UTXO Management Guide",
-        "url": "https://selfcustodylabs.com/docs/utxo-management/"
+        "url": "https://selfcustodylabs.com/docs/privacy/utxo-management/"
       },
       {
         "@type": "ListItem",
         "position": 13,
         "name": "Multisig Setup Guide",
-        "url": "https://selfcustodylabs.com/docs/multisig/"
+        "url": "https://selfcustodylabs.com/docs/advanced/multisig/"
       }
     ]
   }
@@ -184,7 +184,7 @@ export default function GuidesPage() {
       icon: CasinoRoundedIcon,
       title: "DIY Seed Generation",
       description: "Create your own cryptographically secure seed using dice. True randomness, fully offline.",
-      href: "/docs/seed",
+      href: "/docs/security/seed-generation",
       badge: "POPULAR",
       level: "Intermediate",
       cost: "💰 $30-80 (dice + metal backup)",
@@ -193,7 +193,7 @@ export default function GuidesPage() {
       icon: KeyRoundedIcon,
       title: "DIY Passphrase",
       description: "Add a strong passphrase layer and learn best practices for creating and managing it.",
-      href: "/docs/passphrase",
+      href: "/docs/security/passphrase",
       badge: "POPULAR",
       level: "Beginner",
       cost: "💰 $0-10 (dice optional)",
@@ -202,7 +202,7 @@ export default function GuidesPage() {
       icon: PasswordRoundedIcon,
       title: "Hardware Wallet Setup",
       description: "Step-by-step guide to setting up your first hardware wallet securely.",
-      href: "/docs/hardware-wallet-setup",
+      href: "/docs/wallet-setup/hardware-wallet",
       badge: "NEW",
       level: "Beginner",
       cost: "💰 $70-250 (hardware wallet)",
@@ -211,7 +211,7 @@ export default function GuidesPage() {
       icon: SecurityRoundedIcon,
       title: "Backup Verification",
       description: "Test that your seed backup actually works before trusting it with significant funds.",
-      href: "/docs/backup-verification",
+      href: "/docs/wallet-setup/backup-verification",
       badge: "NEW",
       level: "Beginner",
       cost: "💰 Free",
@@ -220,7 +220,7 @@ export default function GuidesPage() {
       icon: SecurityRoundedIcon,
       title: "Multisig Setup",
       description: "Eliminate single points of failure with multi-signature wallets. The ultimate security for significant holdings.",
-      href: "/docs/multisig",
+      href: "/docs/advanced/multisig",
       level: "Advanced",
       cost: "💰 $230-510 (3 HWWs + backups)",
     },
@@ -232,7 +232,7 @@ export default function GuidesPage() {
       icon: ComputerRoundedIcon,
       title: "Bitcoin Computer",
       description: "Build a dedicated Bitcoin workstation designed for strong security and privacy.",
-      href: "/docs/bitcoin-computer",
+      href: "/docs/advanced/bitcoin-computer",
       level: "Intermediate",
       cost: "💰 $50-150 or free (repurpose)",
     },
@@ -240,7 +240,7 @@ export default function GuidesPage() {
       icon: FlightRoundedIcon,
       title: "Air-Gapped Computer",
       description: "Set up an offline computer for maximum security: seed generation, verification, and signing.",
-      href: "/docs/air-gapped-computer",
+      href: "/docs/advanced/air-gapped-computer",
       level: "Advanced",
       cost: "💰 $50-200 or free (repurpose)",
     },
@@ -281,7 +281,7 @@ export default function GuidesPage() {
       icon: SecurityRoundedIcon,
       title: "CoinJoin",
       description: "Break the link between your transaction history and your coins using CoinJoin mixing.",
-      href: "/docs/coinjoin",
+      href: "/docs/privacy/coinjoin",
       level: "Intermediate",
       cost: "💰 Variable (mixing fees)",
     },
@@ -289,7 +289,7 @@ export default function GuidesPage() {
       icon: SecurityRoundedIcon,
       title: "PayJoin",
       description: "Stealth privacy that breaks blockchain analysis assumptions. Both sender and receiver contribute inputs.",
-      href: "/docs/payjoin",
+      href: "/docs/privacy/payjoin",
       badge: "NEW",
       level: "Intermediate",
       cost: "💰 Free (normal tx fees)",
@@ -298,7 +298,7 @@ export default function GuidesPage() {
       icon: KeyRoundedIcon,
       title: "UTXO Management",
       description: "Master coin control, consolidation, and labeling to minimize fees and protect privacy.",
-      href: "/docs/utxo-management",
+      href: "/docs/privacy/utxo-management",
       level: "Intermediate",
       cost: "💰 Free (knowledge only)",
     },

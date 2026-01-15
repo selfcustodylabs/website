@@ -251,7 +251,7 @@ const config = {
       // ===========================================
       // announcementBar: {
       //   id: 'new_guide',
-      //   content: '🆕 New guide: <a href="/docs/multisig/">Multisig Setup</a> - Eliminate single points of failure',
+      //   content: '🆕 New guide: <a href="/docs/advanced/multisig/">Multisig Setup</a> - Eliminate single points of failure',
       //   backgroundColor: '#f59e0b',
       //   textColor: '#000',
       //   isCloseable: true,
@@ -367,20 +367,20 @@ const config = {
             title: 'Learn',
             items: [
               {
+                label: 'Start Here',
+                to: '/docs/getting-started/',
+              },
+              {
                 label: 'What is Self-Custody',
-                to: '/docs/basics/',
+                to: '/docs/getting-started/what-is-self-custody/',
               },
               {
                 label: 'Private Keys',
-                to: '/docs/basics/keys/intro/',
+                to: '/docs/learn/keys/intro/',
               },
               {
-                label: 'Wallets',
-                to: '/docs/basics/wallets/software-wallets/',
-              },
-              {
-                label: 'Transactions',
-                to: '/docs/basics/transactions/understanding/',
+                label: 'Glossary',
+                to: '/docs/reference/glossary/',
               },
             ],
           },
@@ -388,24 +388,24 @@ const config = {
             title: 'Guides',
             items: [
               {
-                label: 'DIY Seed',
-                to: '/docs/seed/',
+                label: 'Wallet Setup',
+                to: '/docs/wallet-setup/',
               },
               {
-                label: 'DIY Passphrase',
-                to: '/docs/passphrase/',
+                label: 'Security Hardening',
+                to: '/docs/security/',
+              },
+              {
+                label: 'Privacy Guides',
+                to: '/docs/privacy/',
+              },
+              {
+                label: 'Advanced Setups',
+                to: '/docs/advanced/',
               },
               {
                 label: 'Bitcoin Node',
                 to: '/docs/bitcoin-node/',
-              },
-              {
-                label: 'Air-Gapped Computer',
-                to: '/docs/air-gapped-computer/',
-              },
-              {
-                label: 'Libreboot',
-                to: '/docs/libreboot/',
               },
             ],
           },
@@ -484,6 +484,78 @@ const config = {
         // Highlight search terms
         highlightSearchTermsOnTargetPage: true,
       }),
+    ],
+  ],
+  
+  // ===========================================
+  // PLUGINS
+  // ===========================================
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Only include redirects NOT handled by createRedirects below
+        redirects: [
+          // Special cases: these go to /docs/getting-started/, not /docs/learn/
+          {
+            from: '/docs/basics/what-is-bitcoin',
+            to: '/docs/getting-started/what-is-bitcoin',
+          },
+          {
+            from: '/docs/basics/holding',
+            to: '/docs/getting-started/holding-bitcoin',
+          },
+        ],
+        /** @param {string} existingPath */
+        createRedirects(existingPath) {
+          // Catch-all for any /docs/learn/ path - create redirect from /docs/basics/
+          if (existingPath.includes('/docs/learn/')) {
+            return [existingPath.replace('/docs/learn/', '/docs/basics/')];
+          }
+          // Catch-all for reference paths (glossary and address-types moved from learn)
+          if (existingPath === '/docs/reference/glossary') {
+            return ['/docs/learn/glossary', '/docs/basics/glossary'];
+          }
+          if (existingPath === '/docs/reference/address-types') {
+            return ['/docs/learn/address-types', '/docs/basics/address-types'];
+          }
+          // Catch-all for wallet-setup paths
+          if (existingPath.includes('/docs/wallet-setup/hardware-wallet')) {
+            return [existingPath.replace('/docs/wallet-setup/hardware-wallet', '/docs/hardware-wallet-setup')];
+          }
+          if (existingPath.includes('/docs/wallet-setup/backup-verification')) {
+            return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
+          }
+          // Catch-all for security paths
+          if (existingPath.includes('/docs/security/seed-generation')) {
+            return [existingPath.replace('/docs/security/seed-generation', '/docs/seed')];
+          }
+          if (existingPath.includes('/docs/security/passphrase')) {
+            return [existingPath.replace('/docs/security/passphrase', '/docs/passphrase')];
+          }
+          // Catch-all for privacy paths
+          if (existingPath.includes('/docs/privacy/utxo-management')) {
+            return [existingPath.replace('/docs/privacy/utxo-management', '/docs/utxo-management')];
+          }
+          if (existingPath.includes('/docs/privacy/coinjoin')) {
+            return [existingPath.replace('/docs/privacy/coinjoin', '/docs/coinjoin')];
+          }
+          if (existingPath.includes('/docs/privacy/payjoin')) {
+            return [existingPath.replace('/docs/privacy/payjoin', '/docs/payjoin')];
+          }
+          // Catch-all for advanced paths
+          if (existingPath.includes('/docs/advanced/multisig')) {
+            return [existingPath.replace('/docs/advanced/multisig', '/docs/multisig')];
+          }
+          if (existingPath.includes('/docs/advanced/air-gapped-computer')) {
+            return [existingPath.replace('/docs/advanced/air-gapped-computer', '/docs/air-gapped-computer')];
+          }
+          if (existingPath.includes('/docs/advanced/bitcoin-computer')) {
+            return [existingPath.replace('/docs/advanced/bitcoin-computer', '/docs/bitcoin-computer')];
+          }
+          return undefined;
+        },
+      },
     ],
   ],
   

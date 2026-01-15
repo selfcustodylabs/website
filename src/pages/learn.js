@@ -29,37 +29,43 @@ const learnCollectionSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "What is Bitcoin?",
-        "url": "https://selfcustodylabs.com/docs/basics/what-is-bitcoin"
+        "url": "https://selfcustodylabs.com/docs/getting-started/what-is-bitcoin"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Private Keys",
-        "url": "https://selfcustodylabs.com/docs/basics/keys/intro"
+        "name": "What is Self-Custody?",
+        "url": "https://selfcustodylabs.com/docs/getting-started/what-is-self-custody"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Wallets",
-        "url": "https://selfcustodylabs.com/docs/basics/wallets/software-wallets"
+        "name": "Private Keys",
+        "url": "https://selfcustodylabs.com/docs/learn/keys/intro"
       },
       {
         "@type": "ListItem",
         "position": 4,
-        "name": "Transactions",
-        "url": "https://selfcustodylabs.com/docs/basics/transactions/understanding"
+        "name": "Wallets",
+        "url": "https://selfcustodylabs.com/docs/learn/wallets/software-wallets"
       },
       {
         "@type": "ListItem",
         "position": 5,
-        "name": "Privacy",
-        "url": "https://selfcustodylabs.com/docs/basics/privacy/why-privacy-matters"
+        "name": "Transactions",
+        "url": "https://selfcustodylabs.com/docs/learn/transactions/understanding"
       },
       {
         "@type": "ListItem",
         "position": 6,
+        "name": "Privacy",
+        "url": "https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
         "name": "Bitcoin Nodes",
-        "url": "https://selfcustodylabs.com/docs/basics/nodes/what-is-node"
+        "url": "https://selfcustodylabs.com/docs/learn/nodes/what-is-node"
       }
     ]
   }
@@ -144,7 +150,7 @@ export default function LearnPage() {
       icon: CurrencyBitcoinRoundedIcon,
       title: "What is Bitcoin?",
       description: "Understand digital money that no one controls. The basics of blockchain, mining, and why Bitcoin matters.",
-      href: "/docs/basics/what-is-bitcoin",
+      href: "/docs/getting-started/what-is-bitcoin",
       badge: "START HERE",
       level: "Beginner",
     },
@@ -152,14 +158,22 @@ export default function LearnPage() {
       icon: ShieldRoundedIcon,
       title: "What is Self-Custody?",
       description: "Learn what it means to truly own your Bitcoin. No banks, no exchanges—just you and your keys.",
-      href: "/docs/basics",
+      href: "/docs/getting-started/what-is-self-custody",
       level: "Beginner",
     },
     {
       icon: MenuBookRoundedIcon,
       title: "Holding Bitcoin",
       description: "Why custody matters and the spectrum from exchanges to full self-sovereignty.",
-      href: "/docs/basics/holding",
+      href: "/docs/getting-started/holding-bitcoin",
+      level: "Beginner",
+    },
+    {
+      icon: MenuBookRoundedIcon,
+      title: "Choose Your Setup",
+      description: "Find the right self-custody approach for your situation, from beginner to advanced.",
+      href: "/docs/getting-started/choosing-your-path",
+      badge: "NEW",
       level: "Beginner",
     },
   ];
@@ -170,21 +184,21 @@ export default function LearnPage() {
       icon: VpnKeyRoundedIcon,
       title: "Private Keys",
       description: "The foundation of Bitcoin ownership. Understand how cryptographic keys give you control.",
-      href: "/docs/basics/keys/intro",
+      href: "/docs/learn/keys/intro",
       level: "Beginner",
     },
     {
       icon: LockRoundedIcon,
       title: "Seed Phrases",
       description: "How complex keys become memorable words. The BIP39 standard explained step by step.",
-      href: "/docs/basics/keys/seed",
+      href: "/docs/learn/keys/seed",
       level: "Intermediate",
     },
     {
       icon: VpnKeyRoundedIcon,
       title: "Address Types",
       description: "Legacy, SegWit, Taproot — understand the different Bitcoin address formats and which to use.",
-      href: "/docs/basics/address-types",
+      href: "/docs/reference/address-types",
       badge: "NEW",
       level: "Beginner",
     },
@@ -192,7 +206,7 @@ export default function LearnPage() {
       icon: VpnKeyRoundedIcon,
       title: "Passphrases",
       description: "Add an extra layer of security to your seed. The 25th word and how it works.",
-      href: "/docs/basics/keys/passphrase",
+      href: "/docs/learn/keys/passphrase",
       level: "Intermediate",
     },
   ];
@@ -203,21 +217,21 @@ export default function LearnPage() {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Software Wallets",
       description: "Apps that manage your keys. Understand hot wallets, recommended options, and when to use them.",
-      href: "/docs/basics/wallets/software-wallets",
+      href: "/docs/learn/wallets/software-wallets",
       level: "Beginner",
     },
     {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Hardware Wallets",
       description: "Dedicated devices that keep your keys offline. Compare popular options and choose the right one.",
-      href: "/docs/basics/wallets/hardware-wallets",
+      href: "/docs/learn/wallets/hardware-wallets",
       level: "Beginner",
     },
     {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Hardware Wallet Setup",
       description: "Step-by-step guide to setting up your first hardware wallet securely.",
-      href: "/docs/hardware-wallet-setup",
+      href: "/docs/wallet-setup/hardware-wallet",
       badge: "GUIDE",
       level: "Beginner",
     },
@@ -225,7 +239,7 @@ export default function LearnPage() {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Multisig Wallets",
       description: "Multiple keys required to spend. Eliminate single points of failure.",
-      href: "/docs/basics/wallets/multisig",
+      href: "/docs/learn/wallets/multisig",
       level: "Advanced",
     },
   ];
@@ -236,14 +250,14 @@ export default function LearnPage() {
       icon: SwapHorizRoundedIcon,
       title: "Understanding Transactions",
       description: "How Bitcoin moves from one address to another. Inputs, outputs, and fees.",
-      href: "/docs/basics/transactions/understanding",
+      href: "/docs/learn/transactions/understanding",
       level: "Beginner",
     },
     {
       icon: SwapHorizRoundedIcon,
       title: "UTXOs Explained",
       description: "The building blocks of Bitcoin. Understanding unspent transaction outputs is essential.",
-      href: "/docs/basics/transactions/utxos",
+      href: "/docs/learn/transactions/utxos",
       badge: "ESSENTIAL",
       level: "Intermediate",
     },
@@ -251,7 +265,7 @@ export default function LearnPage() {
       icon: SwapHorizRoundedIcon,
       title: "Transaction Lifecycle",
       description: "From creation to confirmation. Follow a transaction through the network.",
-      href: "/docs/basics/transactions/lifecycle",
+      href: "/docs/learn/transactions/lifecycle",
       level: "Intermediate",
     },
   ];
@@ -262,7 +276,7 @@ export default function LearnPage() {
       icon: VisibilityOffRoundedIcon,
       title: "Why Privacy Matters",
       description: "Bitcoin is not anonymous. Understand what's exposed and why it matters for your security.",
-      href: "/docs/basics/privacy/why-privacy-matters",
+      href: "/docs/learn/privacy/why-privacy-matters",
       badge: "IMPORTANT",
       level: "Beginner",
     },
@@ -270,14 +284,14 @@ export default function LearnPage() {
       icon: VisibilityOffRoundedIcon,
       title: "Chain Analysis",
       description: "How surveillance companies track Bitcoin. Know your adversary to protect yourself.",
-      href: "/docs/basics/privacy/chain-analysis",
+      href: "/docs/learn/privacy/chain-analysis",
       level: "Intermediate",
     },
     {
       icon: VisibilityOffRoundedIcon,
       title: "Protecting Your Privacy",
       description: "Practical techniques to maintain financial privacy on a transparent blockchain.",
-      href: "/docs/basics/privacy/protecting-privacy",
+      href: "/docs/learn/privacy/protecting-privacy",
       level: "Intermediate",
     },
   ];
@@ -288,14 +302,14 @@ export default function LearnPage() {
       icon: StorageRoundedIcon,
       title: "What is a Bitcoin Node?",
       description: "Software that verifies every transaction. The backbone of Bitcoin's trustless nature.",
-      href: "/docs/basics/nodes/what-is-node",
+      href: "/docs/learn/nodes/what-is-node",
       level: "Beginner",
     },
     {
       icon: StorageRoundedIcon,
       title: "Why Run Your Own Node",
       description: "Privacy, verification, and sovereignty. The case for running your own infrastructure.",
-      href: "/docs/basics/nodes/why-run-node",
+      href: "/docs/learn/nodes/why-run-node",
       level: "Intermediate",
     },
   ];
@@ -306,7 +320,7 @@ export default function LearnPage() {
       icon: MenuBookRoundedIcon,
       title: "Bitcoin Glossary",
       description: "100+ terms defined. From UTXO to Taproot — every Bitcoin term you need to know.",
-      href: "/docs/basics/glossary",
+      href: "/docs/reference/glossary",
       badge: "NEW",
       level: "Beginner",
     },

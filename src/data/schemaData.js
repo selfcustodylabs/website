@@ -7,7 +7,7 @@ const SITE_URL = 'https://selfcustodylabs.com';
 
 // HowTo schema definitions for guide pages
 export const howToSchemas = {
-  '/docs/seed/': {
+  '/docs/security/seed-generation/': {
     name: 'How to Generate Your Own Bitcoin Seed Phrase',
     description: 'Create a cryptographically secure Bitcoin seed phrase using dice rolls for true randomness. This DIY method ensures no third party has access to your private keys.',
     totalTime: 'PT2H',
@@ -30,37 +30,37 @@ export const howToSchemas = {
       {
         name: 'Gather Requirements',
         text: 'Obtain casino-grade dice, an air-gapped computer, and a metal backup plate for secure seed storage.',
-        url: `${SITE_URL}/docs/seed/requirements/`
+        url: `${SITE_URL}/docs/security/seed-generation/requirements/`
       },
       {
         name: 'Roll Dice for Entropy',
         text: 'Roll dice 99 times to generate 256 bits of true random entropy. Record each roll as binary (1-3 = 0, 4-6 = 1).',
-        url: `${SITE_URL}/docs/seed/dice-roll/`
+        url: `${SITE_URL}/docs/security/seed-generation/dice-roll/`
       },
       {
         name: 'Convert Binary to Decimal',
         text: 'Split your binary string into 11-bit chunks and convert each chunk to a decimal number (0-2047).',
-        url: `${SITE_URL}/docs/seed/binary-decimal/`
+        url: `${SITE_URL}/docs/security/seed-generation/binary-decimal/`
       },
       {
         name: 'Calculate Checksum',
         text: 'Use SHA256 to calculate the checksum bits that complete your 24th word.',
-        url: `${SITE_URL}/docs/seed/checksum/`
+        url: `${SITE_URL}/docs/security/seed-generation/checksum/`
       },
       {
         name: 'Look Up BIP39 Words',
         text: 'Convert each decimal number to its corresponding BIP39 word to create your 24-word seed phrase.',
-        url: `${SITE_URL}/docs/seed/bip39/`
+        url: `${SITE_URL}/docs/security/seed-generation/bip39/`
       },
       {
         name: 'Backup Your Seed',
         text: 'Stamp or engrave your seed phrase onto a metal plate for fireproof, waterproof storage.',
-        url: `${SITE_URL}/docs/seed/backup/`
+        url: `${SITE_URL}/docs/security/seed-generation/backup/`
       }
     ]
   },
 
-  '/docs/passphrase/': {
+  '/docs/security/passphrase/': {
     name: 'How to Create a Secure Bitcoin Passphrase',
     description: 'Generate a cryptographically strong passphrase using dice rolls and the EFF word list. Add an extra layer of protection to your Bitcoin seed phrase.',
     totalTime: 'PT30M',
@@ -78,17 +78,17 @@ export const howToSchemas = {
       {
         name: 'Understand Word Lists',
         text: 'Learn why the EFF word list is preferred over the original Diceware list for better memorability and security.',
-        url: `${SITE_URL}/docs/passphrase/word-lists/`
+        url: `${SITE_URL}/docs/security/passphrase/word-lists/`
       },
       {
         name: 'Roll Dice for Each Word',
         text: 'Roll 5 dice for each word you want in your passphrase. Look up the resulting 5-digit number in the EFF word list.',
-        url: `${SITE_URL}/docs/passphrase/dice-roll/`
+        url: `${SITE_URL}/docs/security/passphrase/dice-roll/`
       },
       {
         name: 'Backup Your Passphrase',
         text: 'Store your passphrase separately from your seed phrase in a secure location.',
-        url: `${SITE_URL}/docs/passphrase/backup/`
+        url: `${SITE_URL}/docs/security/passphrase/backup/`
       }
     ]
   },
@@ -115,7 +115,7 @@ export const howToSchemas = {
       {
         name: 'Understand Why You Need a Node',
         text: 'Learn why running your own node matters for privacy, security, and true Bitcoin self-custody.',
-        url: `${SITE_URL}/docs/basics/nodes/why-run-node/`
+        url: `${SITE_URL}/docs/learn/nodes/why-run-node/`
       },
       {
         name: 'Choose and Set Up Node Software',
@@ -140,7 +140,7 @@ export const howToSchemas = {
     ]
   },
 
-  '/docs/air-gapped-computer/': {
+  '/docs/advanced/air-gapped-computer/': {
     name: 'How to Build an Air-Gapped Computer for Bitcoin',
     description: 'Set up an offline computer for maximum security. Use it for seed generation, transaction signing, and verifying hardware wallets.',
     totalTime: 'PT3H',
@@ -162,17 +162,17 @@ export const howToSchemas = {
       {
         name: 'Choose Your Hardware',
         text: 'Select an appropriate laptop or device for your air-gapped computer. ThinkPads are recommended for their Libreboot compatibility.',
-        url: `${SITE_URL}/docs/air-gapped-computer/types/`
+        url: `${SITE_URL}/docs/advanced/air-gapped-computer/types/`
       },
       {
         name: 'Set Up the System',
         text: 'Install a secure operating system, disable networking hardware, and configure encryption.',
-        url: `${SITE_URL}/docs/air-gapped-computer/setup/`
+        url: `${SITE_URL}/docs/advanced/air-gapped-computer/setup/`
       }
     ]
   },
 
-  '/docs/bitcoin-computer/': {
+  '/docs/advanced/bitcoin-computer/': {
     name: 'How to Build a Dedicated Bitcoin Computer',
     description: 'Build a dedicated computer for Bitcoin transactions, isolated from your everyday computing to protect against malware.',
     totalTime: 'PT2H',
@@ -193,12 +193,12 @@ export const howToSchemas = {
       {
         name: 'Choose Your Hardware',
         text: 'Select a laptop dedicated solely to Bitcoin transactions. Consider privacy and security features.',
-        url: `${SITE_URL}/docs/bitcoin-computer/choice/`
+        url: `${SITE_URL}/docs/advanced/bitcoin-computer/choice/`
       },
       {
         name: 'Set Up the System',
         text: 'Install Linux Mint with full disk encryption and configure it for Bitcoin use.',
-        url: `${SITE_URL}/docs/bitcoin-computer/setup/`
+        url: `${SITE_URL}/docs/advanced/bitcoin-computer/setup/`
       }
     ]
   },
@@ -338,7 +338,7 @@ export const howToSchemas = {
     ]
   },
 
-  '/docs/coinjoin/': {
+  '/docs/privacy/coinjoin/': {
     name: 'How to Use CoinJoin for Bitcoin Privacy',
     description: 'Learn how to use CoinJoin to break the link between your transaction history and your coins. Improve your Bitcoin privacy with mixing techniques.',
     totalTime: 'PT1H',
@@ -359,22 +359,22 @@ export const howToSchemas = {
       {
         name: 'Understand How CoinJoin Works',
         text: 'Learn the fundamentals of CoinJoin: how equal outputs create privacy and what anonymity sets mean.',
-        url: `${SITE_URL}/docs/coinjoin/how-it-works/`
+        url: `${SITE_URL}/docs/privacy/coinjoin/how-it-works/`
       },
       {
         name: 'Choose a CoinJoin Service',
         text: 'Compare Wasabi, Whirlpool (Sparrow), and JoinMarket to find the right mixing solution for your needs.',
-        url: `${SITE_URL}/docs/coinjoin/services/`
+        url: `${SITE_URL}/docs/privacy/coinjoin/services/`
       },
       {
         name: 'Follow Best Practices',
         text: 'Learn how to maintain privacy after mixing: avoid merging coins, use coin control, and handle change properly.',
-        url: `${SITE_URL}/docs/coinjoin/best-practices/`
+        url: `${SITE_URL}/docs/privacy/coinjoin/best-practices/`
       }
     ]
   },
 
-  '/docs/utxo-management/': {
+  '/docs/privacy/utxo-management/': {
     name: 'How to Manage Bitcoin UTXOs for Lower Fees and Better Privacy',
     description: 'Master UTXO management to reduce transaction fees and protect your privacy. Learn coin control, consolidation strategies, and labeling best practices.',
     totalTime: 'PT45M',
@@ -394,22 +394,22 @@ export const howToSchemas = {
       {
         name: 'Understand UTXOs and Their Impact',
         text: 'Learn what UTXOs are and why their management affects both fees and privacy.',
-        url: `${SITE_URL}/docs/utxo-management/`
+        url: `${SITE_URL}/docs/privacy/utxo-management/`
       },
       {
         name: 'Master Coin Control',
         text: 'Learn to select specific UTXOs for transactions instead of letting your wallet choose automatically.',
-        url: `${SITE_URL}/docs/utxo-management/coin-control/`
+        url: `${SITE_URL}/docs/privacy/utxo-management/coin-control/`
       },
       {
         name: 'Implement Consolidation Strategies',
         text: 'Consolidate small UTXOs during low-fee periods while maintaining source separation for privacy.',
-        url: `${SITE_URL}/docs/utxo-management/consolidation/`
+        url: `${SITE_URL}/docs/privacy/utxo-management/consolidation/`
       }
     ]
   },
 
-  '/docs/multisig/': {
+  '/docs/advanced/multisig/': {
     name: 'How to Set Up a Bitcoin Multisig Wallet for Maximum Security',
     description: 'Complete guide to creating a 2-of-3 multisig wallet. Eliminate single points of failure and protect your bitcoin with multi-signature security.',
     totalTime: 'PT2H',
@@ -431,22 +431,22 @@ export const howToSchemas = {
       {
         name: 'Understand Multisig Fundamentals',
         text: 'Learn what multisig is, how it eliminates single points of failure, and determine if it is right for your situation.',
-        url: `${SITE_URL}/docs/multisig/`
+        url: `${SITE_URL}/docs/advanced/multisig/`
       },
       {
         name: 'Set Up Hardware Wallets',
         text: 'Initialize three hardware wallets with unique seed phrases. Use different manufacturers for maximum security.',
-        url: `${SITE_URL}/docs/multisig/hardware-setup/`
+        url: `${SITE_URL}/docs/advanced/multisig/hardware-setup/`
       },
       {
         name: 'Create Multisig in Sparrow',
         text: 'Create your 2-of-3 multisig wallet using Sparrow Wallet as the coordinator software.',
-        url: `${SITE_URL}/docs/multisig/sparrow-setup/`
+        url: `${SITE_URL}/docs/advanced/multisig/sparrow-setup/`
       },
       {
         name: 'Backup and Test Recovery',
         text: 'Properly backup seed phrases and wallet descriptor. Test recovery procedures before depositing significant funds.',
-        url: `${SITE_URL}/docs/multisig/backup-recovery/`
+        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`
       }
     ]
   }
@@ -455,51 +455,51 @@ export const howToSchemas = {
 // Breadcrumb definitions for all doc sections
 export const breadcrumbMappings = {
   // Basics section
-  '/docs/basics/': ['Learn'],
-  '/docs/basics/holding/': ['Learn', 'Holding Bitcoin'],
-  '/docs/basics/keys/': ['Learn', 'Private Keys'],
-  '/docs/basics/keys/intro/': ['Learn', 'Private Keys', 'Introduction'],
-  '/docs/basics/keys/seed/': ['Learn', 'Private Keys', 'Seed Phrases'],
-  '/docs/basics/keys/passphrase/': ['Learn', 'Private Keys', 'Passphrase'],
-  '/docs/basics/keys/random/': ['Learn', 'Private Keys', 'Randomness'],
-  '/docs/basics/keys/number-systems/': ['Learn', 'Private Keys', 'Number Systems'],
-  '/docs/basics/keys/xpub/': ['Learn', 'Private Keys', 'Extended Public Key'],
-  '/docs/basics/keys/xprv/': ['Learn', 'Private Keys', 'Extended Private Key'],
-  '/docs/basics/keys/derivation-path/': ['Learn', 'Private Keys', 'Derivation Path'],
-  '/docs/basics/wallets/': ['Learn', 'Wallets'],
-  '/docs/basics/wallets/software-wallets/': ['Learn', 'Wallets', 'Software Wallets'],
-  '/docs/basics/wallets/hardware-wallets/': ['Learn', 'Wallets', 'Hardware Wallets'],
-  '/docs/basics/wallets/air-gapped-wallets/': ['Learn', 'Wallets', 'Air-Gapped Wallets'],
-  '/docs/basics/transactions/': ['Learn', 'Transactions'],
-  '/docs/basics/transactions/understanding/': ['Learn', 'Transactions', 'Understanding'],
-  '/docs/basics/transactions/create/': ['Learn', 'Transactions', 'Create'],
-  '/docs/basics/transactions/sign/': ['Learn', 'Transactions', 'Sign'],
-  '/docs/basics/transactions/broadcast/': ['Learn', 'Transactions', 'Broadcast'],
-  '/docs/basics/transactions/lifecycle/': ['Learn', 'Transactions', 'Lifecycle'],
-  '/docs/basics/transactions/types/': ['Learn', 'Transactions', 'Types'],
-  '/docs/basics/transactions/utxos/': ['Learn', 'Transactions', 'UTXOs'],
-  '/docs/basics/privacy/': ['Learn', 'Privacy'],
-  '/docs/basics/privacy/why-privacy-matters/': ['Learn', 'Privacy', 'Why Privacy Matters'],
-  '/docs/basics/privacy/chain-analysis/': ['Learn', 'Privacy', 'Chain Analysis'],
-  '/docs/basics/privacy/protecting-privacy/': ['Learn', 'Privacy', 'Protecting Privacy'],
-  '/docs/basics/nodes/': ['Learn', 'Bitcoin Nodes'],
-  '/docs/basics/nodes/what-is-node/': ['Learn', 'Bitcoin Nodes', 'What is a Node'],
-  '/docs/basics/nodes/why-run-node/': ['Learn', 'Bitcoin Nodes', 'Why Run Your Own'],
-  '/docs/basics/wallets/multisig/': ['Learn', 'Wallets', 'Multisig'],
+  '/docs/learn/': ['Learn'],
+  '/docs/learn/holding/': ['Learn', 'Holding Bitcoin'],
+  '/docs/learn/keys/': ['Learn', 'Private Keys'],
+  '/docs/learn/keys/intro/': ['Learn', 'Private Keys', 'Introduction'],
+  '/docs/learn/keys/seed/': ['Learn', 'Private Keys', 'Seed Phrases'],
+  '/docs/learn/keys/passphrase/': ['Learn', 'Private Keys', 'Passphrase'],
+  '/docs/learn/keys/random/': ['Learn', 'Private Keys', 'Randomness'],
+  '/docs/learn/keys/number-systems/': ['Learn', 'Private Keys', 'Number Systems'],
+  '/docs/learn/keys/xpub/': ['Learn', 'Private Keys', 'Extended Public Key'],
+  '/docs/learn/keys/xprv/': ['Learn', 'Private Keys', 'Extended Private Key'],
+  '/docs/learn/keys/derivation-path/': ['Learn', 'Private Keys', 'Derivation Path'],
+  '/docs/learn/wallets/': ['Learn', 'Wallets'],
+  '/docs/learn/wallets/software-wallets/': ['Learn', 'Wallets', 'Software Wallets'],
+  '/docs/learn/wallets/hardware-wallets/': ['Learn', 'Wallets', 'Hardware Wallets'],
+  '/docs/learn/wallets/air-gapped-wallets/': ['Learn', 'Wallets', 'Air-Gapped Wallets'],
+  '/docs/learn/transactions/': ['Learn', 'Transactions'],
+  '/docs/learn/transactions/understanding/': ['Learn', 'Transactions', 'Understanding'],
+  '/docs/learn/transactions/create/': ['Learn', 'Transactions', 'Create'],
+  '/docs/learn/transactions/sign/': ['Learn', 'Transactions', 'Sign'],
+  '/docs/learn/transactions/broadcast/': ['Learn', 'Transactions', 'Broadcast'],
+  '/docs/learn/transactions/lifecycle/': ['Learn', 'Transactions', 'Lifecycle'],
+  '/docs/learn/transactions/types/': ['Learn', 'Transactions', 'Types'],
+  '/docs/learn/transactions/utxos/': ['Learn', 'Transactions', 'UTXOs'],
+  '/docs/learn/privacy/': ['Learn', 'Privacy'],
+  '/docs/learn/privacy/why-privacy-matters/': ['Learn', 'Privacy', 'Why Privacy Matters'],
+  '/docs/learn/privacy/chain-analysis/': ['Learn', 'Privacy', 'Chain Analysis'],
+  '/docs/learn/privacy/protecting-privacy/': ['Learn', 'Privacy', 'Protecting Privacy'],
+  '/docs/learn/nodes/': ['Learn', 'Bitcoin Nodes'],
+  '/docs/learn/nodes/what-is-node/': ['Learn', 'Bitcoin Nodes', 'What is a Node'],
+  '/docs/learn/nodes/why-run-node/': ['Learn', 'Bitcoin Nodes', 'Why Run Your Own'],
+  '/docs/learn/wallets/multisig/': ['Learn', 'Wallets', 'Multisig'],
 
   // Guide sections
-  '/docs/seed/': ['Guides', 'DIY Seed'],
-  '/docs/seed/requirements/': ['Guides', 'DIY Seed', 'Requirements'],
-  '/docs/seed/dice-roll/': ['Guides', 'DIY Seed', 'Dice Roll'],
-  '/docs/seed/binary-decimal/': ['Guides', 'DIY Seed', 'Binary to Decimal'],
-  '/docs/seed/checksum/': ['Guides', 'DIY Seed', 'Checksum'],
-  '/docs/seed/bip39/': ['Guides', 'DIY Seed', 'BIP39 Words'],
-  '/docs/seed/backup/': ['Guides', 'DIY Seed', 'Backup'],
+  '/docs/security/seed-generation/': ['Guides', 'DIY Seed'],
+  '/docs/security/seed-generation/requirements/': ['Guides', 'DIY Seed', 'Requirements'],
+  '/docs/security/seed-generation/dice-roll/': ['Guides', 'DIY Seed', 'Dice Roll'],
+  '/docs/security/seed-generation/binary-decimal/': ['Guides', 'DIY Seed', 'Binary to Decimal'],
+  '/docs/security/seed-generation/checksum/': ['Guides', 'DIY Seed', 'Checksum'],
+  '/docs/security/seed-generation/bip39/': ['Guides', 'DIY Seed', 'BIP39 Words'],
+  '/docs/security/seed-generation/backup/': ['Guides', 'DIY Seed', 'Backup'],
 
-  '/docs/passphrase/': ['Guides', 'DIY Passphrase'],
-  '/docs/passphrase/word-lists/': ['Guides', 'DIY Passphrase', 'Word Lists'],
-  '/docs/passphrase/dice-roll/': ['Guides', 'DIY Passphrase', 'Dice Roll'],
-  '/docs/passphrase/backup/': ['Guides', 'DIY Passphrase', 'Backup'],
+  '/docs/security/passphrase/': ['Guides', 'DIY Passphrase'],
+  '/docs/security/passphrase/word-lists/': ['Guides', 'DIY Passphrase', 'Word Lists'],
+  '/docs/security/passphrase/dice-roll/': ['Guides', 'DIY Passphrase', 'Dice Roll'],
+  '/docs/security/passphrase/backup/': ['Guides', 'DIY Passphrase', 'Backup'],
 
   '/docs/bitcoin-node/': ['Guides', 'Bitcoin Node'],
   '/docs/bitcoin-node/node-setup/': ['Guides', 'Bitcoin Node', 'Node Setup'],
@@ -507,13 +507,13 @@ export const breadcrumbMappings = {
   '/docs/bitcoin-node/tor/': ['Guides', 'Bitcoin Node', 'Tor Setup'],
   '/docs/bitcoin-node/connect-sparrow-wallet/': ['Guides', 'Bitcoin Node', 'Connect Wallet'],
 
-  '/docs/air-gapped-computer/': ['Guides', 'Air-Gapped Computer'],
-  '/docs/air-gapped-computer/types/': ['Guides', 'Air-Gapped Computer', 'Types'],
-  '/docs/air-gapped-computer/setup/': ['Guides', 'Air-Gapped Computer', 'Setup'],
+  '/docs/advanced/air-gapped-computer/': ['Guides', 'Air-Gapped Computer'],
+  '/docs/advanced/air-gapped-computer/types/': ['Guides', 'Air-Gapped Computer', 'Types'],
+  '/docs/advanced/air-gapped-computer/setup/': ['Guides', 'Air-Gapped Computer', 'Setup'],
 
-  '/docs/bitcoin-computer/': ['Guides', 'Bitcoin Computer'],
-  '/docs/bitcoin-computer/choice/': ['Guides', 'Bitcoin Computer', 'Choosing Hardware'],
-  '/docs/bitcoin-computer/setup/': ['Guides', 'Bitcoin Computer', 'Setup'],
+  '/docs/advanced/bitcoin-computer/': ['Guides', 'Bitcoin Computer'],
+  '/docs/advanced/bitcoin-computer/choice/': ['Guides', 'Bitcoin Computer', 'Choosing Hardware'],
+  '/docs/advanced/bitcoin-computer/setup/': ['Guides', 'Bitcoin Computer', 'Setup'],
 
   '/docs/libreboot/': ['Guides', 'Libreboot'],
   '/docs/libreboot/requirements/': ['Guides', 'Libreboot', 'Requirements'],
@@ -535,19 +535,19 @@ export const breadcrumbMappings = {
   '/docs/nostr-signing-device/horse-extension/': ['Guides', 'Nostr Signing Device', 'Horse Extension'],
   '/docs/nostr-signing-device/client-connect/': ['Guides', 'Nostr Signing Device', 'Client Connect'],
 
-  '/docs/coinjoin/': ['Guides', 'CoinJoin'],
-  '/docs/coinjoin/how-it-works/': ['Guides', 'CoinJoin', 'How It Works'],
-  '/docs/coinjoin/services/': ['Guides', 'CoinJoin', 'Services'],
-  '/docs/coinjoin/best-practices/': ['Guides', 'CoinJoin', 'Best Practices'],
+  '/docs/privacy/coinjoin/': ['Guides', 'CoinJoin'],
+  '/docs/privacy/coinjoin/how-it-works/': ['Guides', 'CoinJoin', 'How It Works'],
+  '/docs/privacy/coinjoin/services/': ['Guides', 'CoinJoin', 'Services'],
+  '/docs/privacy/coinjoin/best-practices/': ['Guides', 'CoinJoin', 'Best Practices'],
 
-  '/docs/utxo-management/': ['Guides', 'UTXO Management'],
-  '/docs/utxo-management/coin-control/': ['Guides', 'UTXO Management', 'Coin Control'],
-  '/docs/utxo-management/consolidation/': ['Guides', 'UTXO Management', 'Consolidation'],
+  '/docs/privacy/utxo-management/': ['Guides', 'UTXO Management'],
+  '/docs/privacy/utxo-management/coin-control/': ['Guides', 'UTXO Management', 'Coin Control'],
+  '/docs/privacy/utxo-management/consolidation/': ['Guides', 'UTXO Management', 'Consolidation'],
 
-  '/docs/multisig/': ['Guides', 'Multisig'],
-  '/docs/multisig/hardware-setup/': ['Guides', 'Multisig', 'Hardware Setup'],
-  '/docs/multisig/sparrow-setup/': ['Guides', 'Multisig', 'Sparrow Setup'],
-  '/docs/multisig/backup-recovery/': ['Guides', 'Multisig', 'Backup & Recovery'],
+  '/docs/advanced/multisig/': ['Guides', 'Multisig'],
+  '/docs/advanced/multisig/hardware-setup/': ['Guides', 'Multisig', 'Hardware Setup'],
+  '/docs/advanced/multisig/sparrow-setup/': ['Guides', 'Multisig', 'Sparrow Setup'],
+  '/docs/advanced/multisig/backup-recovery/': ['Guides', 'Multisig', 'Backup & Recovery'],
 };
 
 /**
@@ -607,7 +607,7 @@ export function generateBreadcrumbSchema(path) {
     // Build the path based on breadcrumb position
     if (index === 0) {
       if (name === 'Learn') {
-        currentPath = '/docs/basics/';
+        currentPath = '/docs/learn/';
       } else if (name === 'Guides') {
         currentPath = '/guides/';
       }
@@ -640,82 +640,82 @@ export default {
 
 // Article schema for educational/learn content
 export const articleSchemas = {
-  '/docs/basics/': {
+  '/docs/learn/': {
     headline: 'What is Bitcoin Self-Custody?',
     description: 'Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties.',
     articleSection: 'Bitcoin Fundamentals'
   },
-  '/docs/basics/holding/': {
+  '/docs/learn/holding/': {
     headline: 'Why Hold Your Own Bitcoin',
     description: 'Understand why self-custody matters and the risks of keeping Bitcoin on exchanges.',
     articleSection: 'Bitcoin Fundamentals'
   },
-  '/docs/basics/keys/intro/': {
+  '/docs/learn/keys/intro/': {
     headline: 'Understanding Bitcoin Private Keys',
     description: 'Learn how private keys work and why they are essential for Bitcoin ownership.',
     articleSection: 'Private Keys'
   },
-  '/docs/basics/keys/seed/': {
+  '/docs/learn/keys/seed/': {
     headline: 'Bitcoin Seed Phrases Explained (BIP39)',
     description: 'Understand how seed phrases work, the BIP39 standard, and how 24 words protect your Bitcoin.',
     articleSection: 'Private Keys'
   },
-  '/docs/basics/keys/passphrase/': {
+  '/docs/learn/keys/passphrase/': {
     headline: 'Bitcoin Passphrase (25th Word) Explained',
     description: 'Learn how passphrases add extra security to your seed phrase and create hidden wallets.',
     articleSection: 'Private Keys'
   },
-  '/docs/basics/wallets/software-wallets/': {
+  '/docs/learn/wallets/software-wallets/': {
     headline: 'Bitcoin Software Wallets Guide',
     description: 'Learn about different types of software wallets and how to choose the right one.',
     articleSection: 'Wallets'
   },
-  '/docs/basics/wallets/hardware-wallets/': {
+  '/docs/learn/wallets/hardware-wallets/': {
     headline: 'Bitcoin Hardware Wallets Guide',
     description: 'Understand how hardware wallets work and why they provide better security.',
     articleSection: 'Wallets'
   },
-  '/docs/basics/wallets/air-gapped-wallets/': {
+  '/docs/learn/wallets/air-gapped-wallets/': {
     headline: 'Air-Gapped Bitcoin Wallets Explained',
     description: 'Learn about air-gapped wallets and why they offer the highest level of security.',
     articleSection: 'Wallets'
   },
-  '/docs/basics/transactions/utxos/': {
+  '/docs/learn/transactions/utxos/': {
     headline: 'UTXOs Explained: How Bitcoin Actually Works',
     description: 'Understand Bitcoin UTXOs (Unspent Transaction Outputs). Learn why Bitcoin uses discrete chunks instead of account balances.',
     articleSection: 'Transactions'
   },
-  '/docs/basics/privacy/why-privacy-matters/': {
+  '/docs/learn/privacy/why-privacy-matters/': {
     headline: 'Why Bitcoin Privacy Matters',
     description: 'Understand why financial privacy is essential for Bitcoin users and what information is exposed on the public blockchain.',
     articleSection: 'Privacy'
   },
-  '/docs/basics/privacy/chain-analysis/': {
+  '/docs/learn/privacy/chain-analysis/': {
     headline: 'Chain Analysis Explained',
     description: 'Learn how blockchain surveillance works and the heuristics used to track Bitcoin transactions.',
     articleSection: 'Privacy'
   },
-  '/docs/basics/privacy/protecting-privacy/': {
+  '/docs/learn/privacy/protecting-privacy/': {
     headline: 'Protecting Your Bitcoin Privacy',
     description: 'Overview of Bitcoin privacy techniques including running your own node, UTXO management, and CoinJoin.',
     articleSection: 'Privacy'
   },
-  '/docs/basics/transactions/utxos/': {
+  '/docs/learn/transactions/utxos/': {
     headline: 'UTXOs Explained: How Bitcoin Actually Works',
     description: 'Understand Bitcoin UTXO model. Learn how Unspent Transaction Outputs work and why they matter for fees and privacy.',
     articleSection: 'Transactions'
   },
-  '/docs/basics/nodes/what-is-node/': {
+  '/docs/learn/nodes/what-is-node/': {
     headline: 'What is a Bitcoin Node',
     description: 'Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network.',
     articleSection: 'Bitcoin Nodes'
   },
-  '/docs/basics/nodes/why-run-node/': {
+  '/docs/learn/nodes/why-run-node/': {
     headline: 'Why Run Your Own Bitcoin Node',
     description: 'Understand why running your own Bitcoin node matters for privacy, security, and true self-custody.',
     articleSection: 'Bitcoin Nodes'
   },
-  '/docs/basics/wallets/multisig/': {
+  '/docs/learn/wallets/multisig/': {
     headline: 'Multisig Wallets Explained',
     description: 'Understand how Bitcoin multisig wallets work and why they eliminate single points of failure.',
     articleSection: 'Wallets'

@@ -162,8 +162,8 @@ The same Electrum server can serve multiple wallets:
 
 You're done! Your wallet now connects privately to your own node. Every balance check, every transaction broadcast—all verified by your own infrastructure.
 
-→ **Learn more:** [Why Run Your Own Node](/docs/basics/nodes/why-run-node)
+→ **Learn more:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node)
 
-→ **Privacy:** [Why Privacy Matters](/docs/basics/privacy/why-privacy-matters)
+→ **Privacy:** [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters)
 
 → **Back:** [Bitcoin Node Guide](/docs/bitcoin-node/) — Complete guide overview

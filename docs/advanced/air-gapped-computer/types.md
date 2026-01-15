@@ -1,0 +1,27 @@
+---
+sidebar_position: 2
+title: "Types of Air-Gapped Computers"
+description: "Compare air-gapped computer options: laptops, Raspberry Pi Zero, and desktops. Find the best offline device for Bitcoin security."
+keywords: ["bitcoin", "self custody", "security", "air-gapped computer", "laptop", "raspberry pi", "desktop", "offline"]
+tags: ["air-gapped", "computer", "laptop", "raspberry", "desktop"]
+---
+# Types of Air-Gapped Computers
+
+When choosing an Air-Gapped Computer (AGC), there are a few options to consider:
+
+
+## Laptop (Recommended)
+
+An older laptop is usually the best choice for an air‑gapped setup. I recommend the **Lenovo ThinkPad X230**, as it’s affordable and easy to modify. You can remove the Wi‑Fi and Bluetooth modules to make sure it cannot connect wirelessly.
+
+The full setup process is covered in the [next section](/docs/advanced/air-gapped-computer/setup).
+
+
+## Raspberry Pi Zero 1.3
+
+This older, harder-to-find device does not have built-in Wi-Fi, Bluetooth or Ethernet port, so it cannot access the internet. One downside is that it only has 512MB of memory, making it difficult to run a full operating system with a graphical user interface (GUI). However, if you're comfortable using the command line and setting up offline devices, I recommend using [DietPi](https://dietpi.com/) for a lightweight OS.
+
+
+## Desktop Computer
+
+A desktop computer is an excellent choice for use as a dedicated "seed generator" because of its superior speed and performance compared to devices like a Laptop or a Raspberry Pi Zero. You have the option to either assemble the computer yourself, which gives you more control over the components, or have the store build it for you, depending on your preference and expertise. When selecting parts, it's crucial to ensure that the components do not include Wi-Fi or Bluetooth capabilities, as these features could introduce potential security risks. Ideally, you should also choose parts that lack Ethernet ports to maintain a completely isolated setup. This ensures that the computer remains air-gapped, offering the highest level of security when generating your Bitcoin seeds.

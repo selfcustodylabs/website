@@ -199,7 +199,7 @@ export default function Home() {
       title: "DIY Seed Generation",
       description:
         "Learn to create your own cryptographically secure seed using dice. Generate true randomness and take full control.",
-      href: "/docs/seed",
+      href: "/docs/security/seed-generation",
       badge: "POPULAR",
       level: "Beginner",
     },
@@ -208,7 +208,7 @@ export default function Home() {
       title: "DIY Passphrase",
       description:
         "Add an extra layer of security with a custom passphrase. Learn best practices for creating and managing passphrases.",
-      href: "/docs/passphrase",
+      href: "/docs/security/passphrase",
       badge: "POPULAR",
       level: "Intermediate",
     },
@@ -226,7 +226,7 @@ export default function Home() {
       title: "Air-Gapped Computer",
       description:
         "Set up an offline computer for maximum security. Perfect for cold storage and signing transactions safely.",
-      href: "/docs/air-gapped-computer",
+      href: "/docs/advanced/air-gapped-computer",
       level: "Advanced",
     },
     {
@@ -242,7 +242,7 @@ export default function Home() {
       title: "Bitcoin Computer",
       description:
         "Build a dedicated Bitcoin computer optimized for security and privacy. Your all-in-one Bitcoin workstation.",
-      href: "/docs/bitcoin-computer",
+      href: "/docs/advanced/bitcoin-computer",
       level: "Intermediate",
     },
   ];
@@ -254,7 +254,7 @@ export default function Home() {
       title: "Learn the Basics",
       description:
         "Understand the fundamentals of Bitcoin, private keys, and why self-custody matters.",
-      href: "/learn",
+      href: "/docs/getting-started",
     },
     {
       step: "02",
@@ -262,7 +262,7 @@ export default function Home() {
       title: "Create Your Seed",
       description:
         "Generate a secure 24-word seed phrase using our DIY dice method for true randomness.",
-      href: "/docs/seed",
+      href: "/docs/security/seed-generation",
     },
     {
       step: "03",
@@ -270,7 +270,7 @@ export default function Home() {
       title: "Set Up a Hardware Wallet",
       description:
         "Configure a hardware wallet to keep your keys secure and offline.",
-      href: "/docs/hardware-wallet-setup",
+      href: "/docs/wallet-setup/hardware-wallet",
     },
     {
       step: "04",
@@ -278,7 +278,7 @@ export default function Home() {
       title: "Verify Your Backup",
       description:
         "Test that your seed backup actually works before depositing significant funds.",
-      href: "/docs/backup-verification",
+      href: "/docs/wallet-setup/backup-verification",
     },
     {
       step: "05",
@@ -294,7 +294,7 @@ export default function Home() {
       title: "Enhance Privacy",
       description:
         "Learn UTXO management and coin control to protect your financial privacy.",
-      href: "/docs/utxo-management",
+      href: "/docs/privacy/utxo-management",
     },
     {
       step: "07",
@@ -302,7 +302,7 @@ export default function Home() {
       title: "Advanced Security (Optional)",
       description:
         "For significant holdings, set up multisig to eliminate single points of failure.",
-      href: "/docs/multisig",
+      href: "/docs/advanced/multisig",
     },
   ];
 

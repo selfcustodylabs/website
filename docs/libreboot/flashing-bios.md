@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: "Flashing"
+title: "Flash Libreboot to Your Laptop BIOS"
 description: "Practical guide: Flashing. Covers Locate the chips, Splitting the Rom, Detect the Chips."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "flashing"]
 tags: ["libreboot", "flash", "flashprog", "bios"]
