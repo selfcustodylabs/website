@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: "Hardware Wallet Setup: Step-by-Step Bitcoin Security Guide"
 description: "Step-by-step guide to setting up your first hardware wallet. Learn how to initialize, secure, and use a hardware wallet for Bitcoin self-custody."
 keywords: ["hardware wallet", "bitcoin", "self custody", "coldcard", "trezor", "ledger", "keystone", "setup guide"]

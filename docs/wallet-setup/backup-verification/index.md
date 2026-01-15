@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: "How to Test Your Bitcoin Seed Backup (Before You Need It)"
 description: "Learn how to properly verify your Bitcoin seed backup works before trusting it with significant funds. Step-by-step guide to testing your recovery process."
 keywords: ["bitcoin", "seed backup", "verification", "recovery test", "self custody", "hardware wallet"]
@@ -10,8 +10,6 @@ slug: /wallet-setup/backup-verification
 <SectionBadge section="security" label="Wallet Setup Guide" />
 
 # Backup Verification Guide
-
-<ProgressIndicator current={3} total={3} title="Wallet Setup Journey" />
 
 :::info What You'll Do
 In this guide, you will:
