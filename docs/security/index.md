@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-title: "Security Hardening Guides"
-description: "Advanced security techniques for Bitcoin self-custody. DIY seed generation, passphrase security, operational security, and physical security best practices."
-keywords: ["bitcoin security", "seed generation", "passphrase", "operational security", "self custody security"]
+title: "Bitcoin Security: DIY Seed Generation & Advanced Protection"
+description: "Advanced Bitcoin security techniques: generate your own seed phrase with dice, add passphrase protection, and implement operational and physical security best practices."
+keywords: ["bitcoin security", "seed generation", "diy seed", "passphrase", "operational security", "self custody security", "dice roll seed"]
 tags: ["security", "seed", "passphrase", "opsec"]
 slug: /security
 ---
@@ -206,4 +206,4 @@ After hardening your security:
 - [Recovery Scam Warning](/docs/reference/faq/recovery-scams) — Protect yourself from fraud
 
 ### Pre-Deposit Checklist
-- [Before You Deposit](/docs/learn/fundamentals/before-you-deposit) — Final verification steps
+- [Before You Deposit](/docs/wallet-setup/before-you-deposit) — Final verification steps

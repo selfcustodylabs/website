@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 title: "The Random Number"
 description: "Practical guide: The Random Number. Covers The Checksum, bitcoin, self custody."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "random", "number"]
@@ -59,3 +59,14 @@ Every different random private key will generate a different checksum. If you en
 
 Understanding this process is crucial, as it plays a key role in Bitcoin security and key management.
 
+---
+
+<RelatedArticles 
+  title="Related Topics"
+  articles={[
+    { title: "Number Systems", href: "/docs/learn/keys/number-systems/", tag: "Technical" },
+    { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
+    { title: "DIY Seed Generation", href: "/docs/security/seed-generation/", tag: "Guide" },
+    { title: "Keys Overview", href: "/docs/learn/keys/", tag: "Overview" },
+  ]}
+/>

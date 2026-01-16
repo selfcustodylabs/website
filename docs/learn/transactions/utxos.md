@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: "UTXOs Explained"
 description: "Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy."
 keywords: ["utxo", "unspent transaction output", "bitcoin transactions", "bitcoin model", "coin selection"]
@@ -316,7 +316,7 @@ Each UTXO:
   title="Continue Learning"
   articles={[
     { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
-    { title: "Transaction Lifecycle", href: "/docs/learn/transactions/lifecycle/", tag: "Learn" },
+    { title: "How Transactions Work", href: "/docs/learn/transactions/understanding/", tag: "Learn" },
     { title: "Chain Analysis", href: "/docs/learn/privacy/chain-analysis/", tag: "Privacy" },
     { title: "UTXO Management Guide", href: "/docs/privacy/utxo-management/", tag: "Guide" },
   ]}

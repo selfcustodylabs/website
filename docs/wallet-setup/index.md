@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-title: "Wallet Setup Guides"
-description: "Step-by-step guides for setting up your first Bitcoin wallet. Hardware wallet setup, backup verification, and essential security practices."
-keywords: ["bitcoin wallet setup", "hardware wallet", "bitcoin backup", "self custody setup", "wallet security"]
+title: "Bitcoin Wallet Setup: Hardware Wallet & Backup Guides"
+description: "Step-by-step Bitcoin wallet setup guides. Learn to configure hardware wallets, verify backups, and complete the pre-deposit security checklist."
+keywords: ["bitcoin wallet setup", "hardware wallet setup", "bitcoin backup", "self custody setup", "wallet security", "trezor setup", "coldcard setup"]
 tags: ["wallet", "setup", "hardware wallet", "backup"]
 slug: /wallet-setup
 ---
@@ -75,7 +75,7 @@ Verify your seed backup actually works before trusting it with significant funds
 
 <div class="guide-card">
 
-### [Before You Deposit Checklist](/docs/learn/fundamentals/before-you-deposit)
+### [Before You Deposit Checklist](/docs/wallet-setup/before-you-deposit)
 
 **Time:** 15-30 minutes | **Difficulty:** Beginner
 

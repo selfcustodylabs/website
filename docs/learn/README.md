@@ -25,7 +25,7 @@ Begin with the fundamentals. Understand what Bitcoin is, why self-custody matter
 - [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — The basics of digital money
 - [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) — Why keys matter
 - [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path) — Find the right approach for you
-- [Before You Deposit](/docs/learn/fundamentals/before-you-deposit) — Critical safety checklist
+- [Before You Deposit](/docs/wallet-setup/before-you-deposit) — Critical safety checklist
 
 **Time:** 1-2 hours of reading to build a solid foundation
 
@@ -96,7 +96,7 @@ Choose your path based on where you are:
 1. [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path)
 2. [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)
 3. [Backup Verification](/docs/wallet-setup/backup-verification/)
-4. [Before You Deposit](/docs/learn/fundamentals/before-you-deposit)
+4. [Before You Deposit](/docs/wallet-setup/before-you-deposit)
 
 ### Enhancing Security
 1. [DIY Seed Generation](/docs/security/seed-generation/)

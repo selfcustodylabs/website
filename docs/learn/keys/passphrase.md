@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: "Bitcoin Passphrase (25th Word) Explained"
 description: "Add extra security to your Bitcoin seed with a passphrase. Understand how the 25th word creates hidden wallets and protects against theft."
 keywords: ["bitcoin passphrase", "25th word", "hidden wallet", "seed security", "plausible deniability"]

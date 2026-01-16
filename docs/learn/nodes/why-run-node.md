@@ -221,10 +221,38 @@ You might not be a target today. Privacy is easier to maintain than to recover. 
 
 ---
 
-## Ready to Run Your Own Node?
+## You've Completed the Learn Section! 🎉
 
-→ **Practical Guide:** [Bitcoin Node Setup](/docs/bitcoin-node) — Step-by-step setup instructions
+Congratulations—you now understand the core concepts of Bitcoin self-custody: keys, wallets, transactions, privacy, and nodes. You have the knowledge foundation to confidently secure your Bitcoin.
 
-→ **Related:** [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — Understand the broader privacy context
+**Now it's time to put knowledge into practice.**
 
-→ **Related:** [Chain Analysis](/docs/learn/privacy/chain-analysis) — How surveillance companies track you
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Recommended", 
+      title: "Hardware Wallet Setup", 
+      href: "/docs/wallet-setup/hardware-wallet/", 
+      description: "Ready to secure your Bitcoin? Start here." 
+    },
+    { 
+      label: "Important", 
+      title: "Run Your Own Node", 
+      href: "/docs/bitcoin-node/", 
+      description: "Complete your self-custody setup with your own verification" 
+    },
+    { 
+      label: "Browse", 
+      title: "All Guides", 
+      href: "/guides/", 
+      description: "Explore security, privacy, and advanced setup guides" 
+    },
+    { 
+      label: "Reference", 
+      title: "Glossary", 
+      href: "/docs/reference/glossary/", 
+      description: "Quick definitions for any terms you need to revisit" 
+    }
+  ]}
+/>

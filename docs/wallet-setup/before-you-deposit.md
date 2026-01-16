@@ -1,13 +1,13 @@
 ---
-sidebar_position: 7
+sidebar_position: 3
 title: "Before You Deposit: Critical Checklist"
 description: "Essential verification steps before sending Bitcoin to any new wallet. This checklist can save you from catastrophic, irreversible mistakes."
 keywords: ["bitcoin checklist", "before deposit", "verify wallet", "self custody safety", "bitcoin security"]
 tags: ["checklist", "security", "self custody", "safety"]
-slug: /learn/fundamentals/before-you-deposit
+slug: /wallet-setup/before-you-deposit
 ---
 
-<SectionBadge section="security" label="Final Checklist" />
+<SectionBadge section="wallet-setup" label="Final Checklist" />
 
 # Before You Deposit: Critical Checklist
 

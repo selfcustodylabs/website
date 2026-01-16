@@ -79,7 +79,7 @@ These actively defeat chain analysis.
 | Technique | What It Does | Guide |
 |-----------|--------------|-------|
 | **CoinJoin** | Mix coins with others to break history | [CoinJoin Guide](/docs/privacy/coinjoin) |
-| **PayJoin** | Hide payments in normal-looking transactions | Coming soon |
+| **PayJoin** | Hide payments in normal-looking transactions | [PayJoin Guide](/docs/privacy/payjoin) |
 
 </div>
 
@@ -262,11 +262,36 @@ Choose based on your threat model and resources.
 
 ---
 
-## Practical Guides
+## You've Completed the Privacy Section
 
-Ready to implement these techniques?
+You now understand why privacy matters, how blockchain surveillance works, and the techniques available to protect yourself. Next, learn about running your own Bitcoin node for maximum sovereignty.
 
-- [Bitcoin Node Setup](/docs/bitcoin-node) — Stop leaking your addresses
-- [UTXO Management](/docs/privacy/utxo-management) — Control your coins
-- [Coin Control](/docs/privacy/utxo-management/coin-control) — Choose what you spend
-- [CoinJoin Guide](/docs/privacy/coinjoin) — Break the chain
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Continue", 
+      title: "What is a Bitcoin Node?", 
+      href: "/docs/learn/nodes/what-is-node/", 
+      description: "Understand the infrastructure that makes Bitcoin work" 
+    },
+    { 
+      label: "Recommended", 
+      title: "Run Your Own Node", 
+      href: "/docs/bitcoin-node/", 
+      description: "Stop leaking your addresses to third parties" 
+    },
+    { 
+      label: "Practical", 
+      title: "UTXO Management Guide", 
+      href: "/docs/privacy/utxo-management/", 
+      description: "Implement coin control and labeling today" 
+    },
+    { 
+      label: "Advanced", 
+      title: "CoinJoin Guide", 
+      href: "/docs/privacy/coinjoin/", 
+      description: "Break the chain analysis links" 
+    }
+  ]}
+/>

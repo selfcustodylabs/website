@@ -17,6 +17,17 @@ slug: /privacy/utxo-management
 
 Most Bitcoin users never think about UTXOs. They see a balance in their wallet and assume that's all there is to know. This is a costly mistake—both financially and for privacy.
 
+## On This Page
+
+1. **[Why UTXO Management Matters](#why-utxo-management-matters)** — Fees, privacy, and dust
+2. **[The Golden Rules](#the-golden-rules-of-utxo-management)** — Four principles to follow
+3. **[Practical Strategies](#practical-utxo-strategies)** — Actionable techniques
+4. **[Wallets with Good UTXO Management](#wallets-with-good-utxo-management)** — Recommended tools
+5. **[Common Mistakes](#common-utxo-mistakes)** — What to avoid
+6. **[UTXO Management for Privacy](#utxo-management-for-privacy)** — Privacy-specific considerations
+7. **[Dusting Attacks](#dusting-attacks-the-utxo-threat)** — Understanding and preventing
+8. **[Summary Checklist](#summary-utxo-management-checklist)** — Quick reference
+
 :::tip New to UTXOs?
 If you haven't read it yet, start with [UTXOs Explained](/docs/learn/transactions/utxos) to understand the fundamentals before diving into management strategies.
 :::

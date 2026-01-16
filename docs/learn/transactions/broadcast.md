@@ -38,3 +38,14 @@ Broadcasting can reveal information about you if not done carefully. To improve 
 - Use Tor: Whether you're using your own node or a third-party server, routing through Tor helps conceal your IP address.
 - Be cautious with mobile wallets: Many rely on centralized servers. Understand what you're giving up in terms of privacy.
 - Run your own node whenever possible. It's the best way to retain sovereignty and keep your broadcast private.
+---
+
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Next" },
+    { title: "Signing Transactions", href: "/docs/learn/transactions/sign/", tag: "Learn" },
+    { title: "Run Your Own Node", href: "/docs/learn/nodes/why-run-node/", tag: "Learn" },
+    { title: "Bitcoin Node Setup", href: "/docs/bitcoin-node/", tag: "Guide" },
+  ]}
+/>

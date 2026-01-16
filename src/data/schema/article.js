@@ -48,7 +48,7 @@ export const articleSchemas = {
       "Determine what level of Bitcoin security you actually need. Match your setup to your real risks.",
     articleSection: "Bitcoin Fundamentals",
   },
-  "/docs/learn/fundamentals/before-you-deposit/": {
+  "/docs/wallet-setup/before-you-deposit/": {
     headline: "Before You Deposit: Critical Checklist",
     description:
       "Essential verification steps before sending Bitcoin to any new wallet. This checklist can prevent catastrophic mistakes.",

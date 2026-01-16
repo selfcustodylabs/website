@@ -1,14 +1,14 @@
 ---
 sidebar_position: 2
-title: "How Transactions Work"
-description: "Understand how Bitcoin transactions work: inputs, outputs, change, and fees. Learn the basics of sending Bitcoin."
-keywords: ["bitcoin", "transactions", "inputs", "outputs", "fees", "basics"]
-tags: ["bitcoin", "transactions", "understanding"]
+title: "How Bitcoin Transactions Work"
+description: "Understand how Bitcoin transactions work: inputs, outputs, change, fees, and the complete lifecycle from creation to confirmation."
+keywords: ["bitcoin", "transactions", "inputs", "outputs", "fees", "mempool", "confirmations", "lifecycle"]
+tags: ["bitcoin", "transactions", "understanding", "lifecycle"]
 ---
 
 # How Bitcoin Transactions Work
 
-Bitcoin might seem complicated at first, but once you understand a few key ideas, the process becomes much clearer. Here's what actually happens when you send Bitcoin.
+Bitcoin might seem complicated at first, but once you understand a few key ideas, the process becomes much clearer. This page covers both the structure of transactions and what happens when you send one.
 
 
 ## Inputs and Outputs
@@ -42,7 +42,7 @@ Your wallet takes care of this behind the scenes, but it helps to understand wha
 
 ## Transaction Fees
 
-To get your transaction included in a block, you pay a small fee to the miners. This fee isn't a separate line item - it's simply the difference between the amount you're spending and what's being sent out.
+To get your transaction included in a block, you pay a small fee to the miners. This fee isn't a separate line item—it's simply the difference between the amount you're spending and what's being sent out.
 
 Going back to our example:
 
@@ -55,14 +55,93 @@ That means the remaining 0.0001 BTC was used as the transaction fee.
 Your wallet usually calculates the fee for you, based on how busy the network is.
 
 :::info Fee Insight
-Fees depend on transaction **size** (in bytes), not the **value** being sent. More UTXOs means a larger transaction and higher fees. See [UTXOs Explained](/docs/learn/transactions/utxos) for details.
+Fees depend on transaction **size** (in bytes), not the **value** being sent. More UTXOs means a larger transaction and higher fees. See [Transaction Fees](/docs/learn/transactions/fees) for a complete guide.
 :::
 
 
-## Miners Confirm Your Transaction
+---
 
-Once your transaction is broadcasted, it enters the Bitcoin network and waits in the **mempool** - a sort of public waiting room for unconfirmed transactions.
+## Transaction Lifecycle
 
-Miners look through the mempool and choose which transactions to include in the next block. Transactions with higher fees get picked first. When your transaction is added to a block, it gets its first confirmation.
+When you send Bitcoin, the transaction goes through a series of steps before it's fully confirmed and secure. Here's what happens behind the scenes.
 
-Each time a new block is added after that, your transaction gains another confirmation. One confirmation is usually enough for small payments, while larger ones (like several thousand dollars or more) typically wait for six confirmations to be considered fully secure.
+### Step 1: Creating the Transaction
+
+It all begins in your Bitcoin wallet. You enter the recipient's address and the amount you want to send. The wallet then:
+
+1. Selects which coins (UTXOs) to use
+2. Generates the outputs, including any change back to you
+3. Calculates an appropriate fee based on current network conditions
+
+Once everything is set, the transaction is **signed** using your private key. This signature proves that you're authorized to spend the funds and makes the transaction ready for broadcasting.
+
+### Step 2: Broadcasting
+
+Next, your wallet sends the signed transaction to the Bitcoin network. It connects to one or more Bitcoin nodes and transmits the transaction data. The nodes validate that your transaction follows the rules and then relay it to other nodes.
+
+Within seconds, your transaction is visible across the network.
+
+### Step 3: The Mempool (Waiting Room)
+
+Every full node on the Bitcoin network keeps a copy of the **mempool**—a holding area for unconfirmed transactions. This is where your transaction waits to be included in a block.
+
+Miners review the mempool and select which transactions to include, typically favoring those that pay higher fees per byte (sat/vB).
+
+If your fee is too low, your transaction might stay in the mempool for a while. You can speed things up using:
+- **RBF (Replace-By-Fee):** Rebroadcast with a higher fee
+- **CPFP (Child-Pays-For-Parent):** Spend the unconfirmed output with a high-fee transaction
+
+### Step 4: Block Inclusion
+
+Roughly every 10 minutes, a miner successfully mines a new block and includes a set of transactions from the mempool. If your transaction makes it into the block, it's now considered **confirmed**—this is the moment it officially becomes part of the blockchain.
+
+### Step 5: Confirmations
+
+Once your transaction is in a block, each additional block that gets added afterward increases its number of **confirmations**:
+
+<div class="fixed-width-table">
+
+| Confirmations | Status | Typical Use |
+|---------------|--------|-------------|
+| 0 | Unconfirmed | Transaction broadcast but not yet in a block |
+| 1 | Confirmed | In a block; suitable for small payments |
+| 3 | More secure | Reasonable for medium amounts |
+| 6 | Highly secure | Standard for large transactions |
+
+</div>
+
+The more confirmations a transaction has, the harder it becomes to reverse. That's why businesses and users often wait for multiple confirmations before considering a payment final.
+
+```
+TRANSACTION FLOW
+════════════════════════════════════════════════════════════
+
+  Create → Sign → Broadcast → Mempool → Block → Confirmed
+    │        │        │          │        │         │
+  Wallet   Private   Nodes    Waiting   Miner    Each new
+  builds    key     relay     for       adds     block adds
+  tx      proves    to       miner     to       confirmation
+          owner   network   pickup   blockchain
+
+════════════════════════════════════════════════════════════
+```
+
+
+## Key Takeaways
+
+- Transactions consume **inputs** (UTXOs you own) and create **outputs** (new UTXOs)
+- You always spend the **whole input**—excess comes back as change
+- **Fees** are the difference between inputs and outputs
+- Transactions wait in the **mempool** until a miner includes them in a block
+- More **confirmations** = more security (6 is the standard for large amounts)
+
+
+<RelatedArticles 
+  title="Related Topics"
+  articles={[
+    { title: "UTXOs Explained", href: "/docs/learn/transactions/utxos/", tag: "Learn" },
+    { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
+    { title: "Creating Transactions", href: "/docs/learn/transactions/create/", tag: "Learn" },
+    { title: "Broadcasting", href: "/docs/learn/transactions/broadcast/", tag: "Learn" },
+  ]}
+/>

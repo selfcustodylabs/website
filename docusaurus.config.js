@@ -524,7 +524,21 @@ const config = {
           },
           {
             from: '/docs/getting-started/before-you-deposit',
-            to: '/docs/learn/fundamentals/before-you-deposit',
+            to: '/docs/wallet-setup/before-you-deposit',
+          },
+          // =============================================
+          // LEARN/FUNDAMENTALS → WALLET-SETUP migration
+          // =============================================
+          {
+            from: '/docs/learn/fundamentals/before-you-deposit',
+            to: '/docs/wallet-setup/before-you-deposit',
+          },
+          // =============================================
+          // CONTENT MERGES - Phase 3
+          // =============================================
+          {
+            from: '/docs/learn/transactions/lifecycle',
+            to: '/docs/learn/transactions/understanding',
           },
           // Legacy /docs/basics/ redirects
           {

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 title: "Bitcoin Transaction Fees Explained"
 description: "Understand how Bitcoin transaction fees work, why they vary, and how to minimize costs. Learn fee estimation, RBF, CPFP, and fee optimization strategies."
 keywords: ["bitcoin fees", "transaction fees", "sat/vB", "fee estimation", "RBF", "CPFP", "mempool"]

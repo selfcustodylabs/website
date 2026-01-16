@@ -41,3 +41,14 @@ If you didn’t enable RBF and your transaction is stuck, there’s another opti
 With CPFP, you create a second transaction, the "child" that spends from the unconfirmed transaction, the "parent." You attach a high fee to the child transaction, which incentivizes miners to include both in the next block so they can claim the combined fee.
 
 This method is particularly useful in wallets that support advanced fee control or for miners optimizing which transactions to include in a block.
+---
+
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Signing Transactions", href: "/docs/learn/transactions/sign/", tag: "Next" },
+    { title: "UTXOs Explained", href: "/docs/learn/transactions/utxos/", tag: "Learn" },
+    { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
+    { title: "UTXO Management Guide", href: "/docs/privacy/utxo-management/", tag: "Guide" },
+  ]}
+/>

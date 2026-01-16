@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-title: "Reference"
-description: "Bitcoin self-custody reference materials including glossary, address types, frequently asked questions, and external resources."
-keywords: ["bitcoin reference", "bitcoin glossary", "bitcoin faq", "self custody resources"]
+title: "Bitcoin Reference Guide: Glossary, FAQs & Comparisons"
+description: "Bitcoin self-custody reference: 100+ term glossary, hardware wallet comparisons, address type explanations, and frequently asked questions answered."
+keywords: ["bitcoin reference", "bitcoin glossary", "bitcoin faq", "self custody resources", "hardware wallet comparison"]
 tags: ["reference", "glossary", "faq"]
 slug: /reference
 ---

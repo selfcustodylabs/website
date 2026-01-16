@@ -156,7 +156,7 @@ Ready to take control of your Bitcoin?
 
 4. **[Verify your backup](/docs/wallet-setup/backup-verification/)** — Test before you trust
 
-5. **[Review the checklist](/docs/learn/fundamentals/before-you-deposit)** — Before moving significant funds
+5. **[Review the checklist](/docs/wallet-setup/before-you-deposit)** — Before moving significant funds
 
 
 ## Key Takeaways

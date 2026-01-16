@@ -344,7 +344,7 @@ Taking 30 minutes to verify your backup can save you from losing everything.
     { 
       label: "Final Step", 
       title: "Before You Deposit", 
-      href: "/docs/learn/fundamentals/before-you-deposit/", 
+      href: "/docs/wallet-setup/before-you-deposit/", 
       description: "Complete checklist before moving significant funds to your wallet" 
     },
     { 

@@ -19,7 +19,7 @@ export const breadcrumbMappings = {
   "/docs/learn/fundamentals/holding-bitcoin/": ["Learn", "Start Here", "Holding Bitcoin"],
   "/docs/learn/fundamentals/choosing-your-path/": ["Learn", "Start Here", "Choose Your Setup"],
   "/docs/learn/fundamentals/threat-models/": ["Learn", "Start Here", "Threat Models"],
-  "/docs/learn/fundamentals/before-you-deposit/": ["Learn", "Start Here", "Before You Deposit"],
+  "/docs/wallet-setup/before-you-deposit/": ["Guides", "Wallet Setup", "Before You Deposit"],
 
   // Learn section - Keys
   "/docs/learn/keys/intro/": ["Learn", "Keys", "Introduction"],
@@ -38,13 +38,12 @@ export const breadcrumbMappings = {
   "/docs/learn/wallets/multisig/": ["Learn", "Wallets", "Multisig"],
 
   // Learn section - Transactions
-  "/docs/learn/transactions/understanding/": ["Learn", "Transactions", "Understanding"],
+  "/docs/learn/transactions/understanding/": ["Learn", "Transactions", "How Transactions Work"],
   "/docs/learn/transactions/utxos/": ["Learn", "Transactions", "UTXOs"],
   "/docs/learn/transactions/create/": ["Learn", "Transactions", "Creating"],
   "/docs/learn/transactions/sign/": ["Learn", "Transactions", "Signing"],
   "/docs/learn/transactions/broadcast/": ["Learn", "Transactions", "Broadcasting"],
   "/docs/learn/transactions/types/": ["Learn", "Transactions", "Types"],
-  "/docs/learn/transactions/lifecycle/": ["Learn", "Transactions", "Lifecycle"],
   "/docs/learn/transactions/fees/": ["Learn", "Transactions", "Fees"],
 
   // Learn section - Privacy
