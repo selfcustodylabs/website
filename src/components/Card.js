@@ -1,20 +1,45 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Link from "@docusaurus/Link";
-import styles from "@site/src/pages/styles.module.css";
+import styles from "@site/src/css/components/card.module.css";
 
 /**
  * Reusable Card component for landing pages
- * Used on homepage, /learn, and /guides pages
  *
- * @param {Object} props
- * @param {React.ComponentType} props.icon - Material UI icon component
- * @param {string} props.title - Card title
- * @param {string} props.description - Card description text
- * @param {string} [props.href] - Optional link destination
+ * A versatile card component used across homepage, guides, and learn pages.
+ * Supports optional linking, badges, cost display, and footer content.
+ *
+ * @param {Object} props - Component props
+ * @param {React.ComponentType} props.icon - Material UI icon component to display
+ * @param {string} props.title - Card title text
+ * @param {string} props.description - Card description/body text
+ * @param {string} [props.href] - Optional link destination (makes card clickable)
  * @param {string} [props.badge] - Optional badge text (e.g., "POPULAR", "NEW")
- * @param {string} [props.cost] - Optional cost text (used on guides page)
- * @param {React.ReactNode} [props.footerLeft] - Optional left footer content
- * @param {React.ReactNode} [props.footerRight] - Optional right footer content
+ * @param {string} [props.cost] - Optional cost text (e.g., "💰 $50-100")
+ * @param {React.ReactNode} [props.footerLeft] - Optional left footer content (e.g., DifficultyTag)
+ * @param {React.ReactNode} [props.footerRight] - Optional right footer content (e.g., arrow)
+ * @returns {React.ReactElement} Card component
+ *
+ * @example
+ * // Basic card without link
+ * <Card
+ *   icon={ShieldIcon}
+ *   title="Security"
+ *   description="Learn about security best practices"
+ * />
+ *
+ * @example
+ * // Linked card with badge and footer
+ * <Card
+ *   icon={CasinoIcon}
+ *   title="DIY Seed Generation"
+ *   description="Create your own secure seed"
+ *   href="/docs/security/seed-generation"
+ *   badge="POPULAR"
+ *   cost="💰 $30-80"
+ *   footerLeft={<DifficultyTag level="Intermediate" />}
+ *   footerRight={<span className={styles.arrow}>→</span>}
+ * />
  */
 export default function Card({
   icon: Icon,
@@ -54,3 +79,36 @@ export default function Card({
     </Link>
   );
 }
+
+Card.propTypes = {
+  /** Material UI icon component to display */
+  icon: PropTypes.elementType.isRequired,
+  /** Card title text */
+  title: PropTypes.string.isRequired,
+  /** Card description/body text */
+  description: PropTypes.string.isRequired,
+  /** Optional link destination (makes card clickable) */
+  href: PropTypes.string,
+  /** Optional badge text (e.g., "POPULAR", "NEW") */
+  badge: PropTypes.string,
+  /** Optional cost text (e.g., "💰 $50-100") */
+  cost: PropTypes.string,
+  /** Optional left footer content (e.g., DifficultyTag) */
+  footerLeft: PropTypes.node,
+  /** Optional right footer content (e.g., arrow) */
+  footerRight: PropTypes.node,
+};
+
+Card.defaultProps = {
+  href: null,
+  badge: null,
+  cost: null,
+  footerLeft: null,
+  footerRight: null,
+};
+
+/**
+ * Export arrow style for use in parent components
+ * This allows consistent arrow styling across the site
+ */
+export { styles as cardStyles };

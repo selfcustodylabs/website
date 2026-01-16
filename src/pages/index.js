@@ -24,12 +24,7 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import XIcon from "@mui/icons-material/X";
 
 // Shared components
-import {
-  Card,
-  ClubOrangeIcon,
-  KeybaseIcon,
-  NostrIcon,
-} from "@site/src/components";
+import { Card, cardStyles, ClubOrangeIcon, KeybaseIcon, NostrIcon } from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -39,9 +34,7 @@ function Section({ title, subtitle, children, id }) {
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>{title}</h2>
-          {subtitle ? (
-            <p className={styles.sectionSubtitle}>{subtitle}</p>
-          ) : null}
+          {subtitle ? <p className={styles.sectionSubtitle}>{subtitle}</p> : null}
         </div>
         {children}
       </div>
@@ -123,16 +116,14 @@ export default function Home() {
       step: "03",
       icon: KeyRoundedIcon,
       title: "Set Up a Hardware Wallet",
-      description:
-        "Configure a hardware wallet to keep your keys secure and offline.",
+      description: "Configure a hardware wallet to keep your keys secure and offline.",
       href: "/docs/wallet-setup/hardware-wallet",
     },
     {
       step: "04",
       icon: ShieldRoundedIcon,
       title: "Verify Your Backup",
-      description:
-        "Test that your seed backup actually works before depositing significant funds.",
+      description: "Test that your seed backup actually works before depositing significant funds.",
       href: "/docs/wallet-setup/backup-verification",
     },
     {
@@ -147,8 +138,7 @@ export default function Home() {
       step: "06",
       icon: SecurityRoundedIcon,
       title: "Enhance Privacy",
-      description:
-        "Learn UTXO management and coin control to protect your financial privacy.",
+      description: "Learn UTXO management and coin control to protect your financial privacy.",
       href: "/docs/privacy/utxo-management",
     },
     {
@@ -238,31 +228,20 @@ export default function Home() {
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.container}>
             <div className={styles.heroInner}>
-              <img
-                className={styles.heroLogo}
-                src={logoSrc}
-                alt="Self Custody Labs"
-              />
+              <img className={styles.heroLogo} src={logoSrc} alt="Self Custody Labs" />
               <h1 className={styles.heroTitle}>
-                Take Control of{" "}
-                <span className={styles.accent}>Your Bitcoin</span>
+                Take Control of <span className={styles.accent}>Your Bitcoin</span>
               </h1>
               <p className={styles.heroSubtitle}>
-                Learn self-custody the right way. Comprehensive guides and
-                theory to help you become truly sovereign with your Bitcoin.
+                Learn self-custody the right way. Comprehensive guides and theory to help you become
+                truly sovereign with your Bitcoin.
               </p>
 
               <div className={styles.heroCtas}>
-                <Link
-                  className={`${styles.button} ${styles.buttonPrimary}`}
-                  to="/learn"
-                >
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                   Start Learning
                 </Link>
-                <Link
-                  className={`${styles.button} ${styles.buttonSecondary}`}
-                  to="/guides"
-                >
+                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/guides">
                   View Guides →
                 </Link>
               </div>
@@ -284,13 +263,7 @@ export default function Home() {
         >
           <div className={styles.grid3}>
             {whyCards.map((c) => (
-              <Card
-                key={c.title}
-                icon={c.icon}
-                title={c.title}
-                description={c.description}
-                styles={styles}
-              />
+              <Card key={c.title} icon={c.icon} title={c.title} description={c.description} />
             ))}
           </div>
         </Section>
@@ -318,9 +291,7 @@ export default function Home() {
                           <h3 className={styles.pathTitle}>{s.title}</h3>
                           <span className={styles.pathArrow}>→</span>
                         </div>
-                        <p className={styles.pathDescription}>
-                          {s.description}
-                        </p>
+                        <p className={styles.pathDescription}>{s.description}</p>
                       </div>
                     </div>
                   </div>
@@ -332,10 +303,7 @@ export default function Home() {
             ))}
 
             <div className={styles.centerCta}>
-              <Link
-                className={`${styles.button} ${styles.buttonPrimary}`}
-                to="/learn"
-              >
+              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                 Start Your Journey
               </Link>
             </div>
@@ -352,8 +320,7 @@ export default function Home() {
                 title={r.title}
                 description={r.description}
                 href={r.href}
-                footerRight={<span className={styles.arrow}>→</span>}
-                styles={styles}
+                footerRight={<span className={cardStyles.arrow}>→</span>}
               />
             ))}
           </div>
@@ -362,9 +329,7 @@ export default function Home() {
 
           <div className={styles.sectionHeaderTight}>
             <h2 className={styles.sectionTitle}>Find Us</h2>
-            <p className={styles.sectionSubtitle}>
-              Connect with us on a variety of platforms
-            </p>
+            <p className={styles.sectionSubtitle}>Connect with us on a variety of platforms</p>
           </div>
 
           <div className={styles.grid3}>
@@ -373,9 +338,7 @@ export default function Home() {
                 key={c.title}
                 className={styles.cardLink}
                 to={c.href}
-                {...(c.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
+                {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 <div className={styles.smallCard}>
                   <div className={styles.smallCardIcon}>
@@ -383,9 +346,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className={styles.smallCardTitle}>{c.title}</div>
-                    <div className={styles.smallCardDescription}>
-                      {c.description}
-                    </div>
+                    <div className={styles.smallCardDescription}>{c.description}</div>
                   </div>
                 </div>
               </Link>
@@ -397,13 +358,9 @@ export default function Home() {
           <div className={styles.bigCta}>
             <h2 className={styles.bigCtaTitle}>Ready to Take Control?</h2>
             <p className={styles.bigCtaSubtitle}>
-              Start your Bitcoin self-custody journey today with our
-              comprehensive guides.
+              Start your Bitcoin self-custody journey today with our comprehensive guides.
             </p>
-            <Link
-              className={`${styles.button} ${styles.buttonPrimary}`}
-              to="/learn"
-            >
+            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
               Get Started Now
             </Link>
           </div>

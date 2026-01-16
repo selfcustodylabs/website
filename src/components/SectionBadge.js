@@ -1,9 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { getSectionConfig } from "@site/src/data/sectionConfig";
 
 /**
  * Section badge to show which section the current page belongs to
  *
- * Usage:
+ * @param {Object} props
+ * @param {string} props.section - Section key (e.g., "fundamentals", "keys")
+ * @param {string} [props.icon] - Override icon (optional)
+ * @param {string} [props.label] - Override label (optional)
+ *
+ * @example
  * <SectionBadge section="fundamentals" />
  * <SectionBadge section="keys" icon="🔑" />
  *
@@ -16,22 +23,10 @@ import React from "react";
  * - nodes (cyan)
  * - security (red)
  * - advanced (orange)
+ * - reference (gray)
  */
-
-const sectionLabels = {
-  fundamentals: { label: "Start Here", icon: "🌱" },
-  keys: { label: "Keys & Seeds", icon: "🔑" },
-  wallets: { label: "Wallets", icon: "👛" },
-  transactions: { label: "Transactions", icon: "💸" },
-  privacy: { label: "Privacy", icon: "🕵️" },
-  nodes: { label: "Nodes", icon: "🖥️" },
-  security: { label: "Security", icon: "🛡️" },
-  advanced: { label: "Advanced", icon: "🏰" },
-  reference: { label: "Reference", icon: "📖" },
-};
-
 export default function SectionBadge({ section, icon, label }) {
-  const sectionData = sectionLabels[section] || { label: section, icon: "📄" };
+  const sectionData = getSectionConfig(section) || { label: section, icon: "📄", color: section };
   const displayIcon = icon || sectionData.icon;
   const displayLabel = label || sectionData.label;
 
@@ -42,3 +37,27 @@ export default function SectionBadge({ section, icon, label }) {
     </span>
   );
 }
+
+SectionBadge.propTypes = {
+  /** Section key (e.g., "fundamentals", "keys") */
+  section: PropTypes.oneOf([
+    "fundamentals",
+    "keys",
+    "wallets",
+    "transactions",
+    "privacy",
+    "nodes",
+    "security",
+    "advanced",
+    "reference",
+  ]).isRequired,
+  /** Override icon (optional) */
+  icon: PropTypes.string,
+  /** Override label (optional) */
+  label: PropTypes.string,
+};
+
+SectionBadge.defaultProps = {
+  icon: null,
+  label: null,
+};

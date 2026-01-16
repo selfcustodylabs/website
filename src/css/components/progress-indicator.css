@@ -41,11 +41,7 @@
 
 .progress-indicator__fill {
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--ifm-color-primary),
-    var(--ifm-color-primary-light)
-  );
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
   border-radius: 4px;
   transition: width 0.3s ease;
 }

@@ -2,26 +2,11 @@ import React from "react";
 import DocItemContent from "@theme-original/DocItem/Content";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
-import {
-  getSectionFromPath,
-  getProgressData,
-} from "@site/src/data/progressData";
-
-// Section badge configuration
-const sectionConfig = {
-  fundamentals: { label: "Start Here", icon: "🌱", color: "fundamentals" },
-  keys: { label: "Keys & Seeds", icon: "🔑", color: "keys" },
-  wallets: { label: "Wallets", icon: "👛", color: "wallets" },
-  transactions: { label: "Transactions", icon: "💸", color: "transactions" },
-  privacy: { label: "Privacy", icon: "🕵️", color: "privacy" },
-  nodes: { label: "Nodes", icon: "🖥️", color: "nodes" },
-  security: { label: "Security", icon: "🛡️", color: "security" },
-  advanced: { label: "Advanced", icon: "🏰", color: "advanced" },
-  reference: { label: "Reference", icon: "📖", color: "reference" },
-};
+import { getSectionFromPath, getProgressData } from "@site/src/data/progressData";
+import { getSectionConfig } from "@site/src/data/sectionConfig";
 
 function SectionBadge({ section }) {
-  const config = sectionConfig[section];
+  const config = getSectionConfig(section);
   if (!config) return null;
 
   return (
@@ -47,19 +32,14 @@ function ProgressIndicator({ data }) {
         </span>
       </div>
       <div className="progress-indicator__bar">
-        <div
-          className="progress-indicator__fill"
-          style={{ width: `${percentage}%` }}
-        />
+        <div className="progress-indicator__fill" style={{ width: `${percentage}%` }} />
       </div>
       <div className="progress-indicator__steps">
         {steps.map((step, i) => {
           const stepNum = i + 1;
           let className = "progress-indicator__step";
-          if (stepNum < current)
-            className += " progress-indicator__step--complete";
-          if (stepNum === current)
-            className += " progress-indicator__step--current";
+          if (stepNum < current) className += " progress-indicator__step--complete";
+          if (stepNum === current) className += " progress-indicator__step--current";
           return (
             <Link
               key={i}

@@ -13,7 +13,7 @@ import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 
 // Shared components
-import { Card, DifficultyTag } from "@site/src/components";
+import { Card, cardStyles, DifficultyTag } from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -90,9 +90,8 @@ function CategorySection({ title, description, topics }) {
             description={t.description}
             href={t.href}
             badge={t.badge}
-            footerLeft={<DifficultyTag level={t.level} styles={styles} />}
-            footerRight={<span className={styles.arrow}>→</span>}
-            styles={styles}
+            footerLeft={<DifficultyTag level={t.level} />}
+            footerRight={<span className={cardStyles.arrow}>→</span>}
           />
         ))}
       </div>
@@ -123,8 +122,7 @@ export default function LearnPage() {
     {
       icon: MenuBookRoundedIcon,
       title: "Holding Bitcoin",
-      description:
-        "Why custody matters and the spectrum from exchanges to full self-sovereignty.",
+      description: "Why custody matters and the spectrum from exchanges to full self-sovereignty.",
       href: "/docs/learn/fundamentals/holding-bitcoin",
       level: "Beginner",
     },
@@ -169,8 +167,7 @@ export default function LearnPage() {
     {
       icon: VpnKeyRoundedIcon,
       title: "Passphrases",
-      description:
-        "Add an extra layer of security to your seed. The 25th word and how it works.",
+      description: "Add an extra layer of security to your seed. The 25th word and how it works.",
       href: "/docs/learn/keys/passphrase",
       level: "Intermediate",
     },
@@ -197,8 +194,7 @@ export default function LearnPage() {
     {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Hardware Wallet Setup",
-      description:
-        "Step-by-step guide to setting up your first hardware wallet securely.",
+      description: "Step-by-step guide to setting up your first hardware wallet securely.",
       href: "/docs/wallet-setup/hardware-wallet",
       badge: "GUIDE",
       level: "Beginner",
@@ -206,8 +202,7 @@ export default function LearnPage() {
     {
       icon: AccountBalanceWalletRoundedIcon,
       title: "Multisig Wallets",
-      description:
-        "Multiple keys required to spend. Eliminate single points of failure.",
+      description: "Multiple keys required to spend. Eliminate single points of failure.",
       href: "/docs/learn/wallets/multisig",
       level: "Advanced",
     },
@@ -218,8 +213,7 @@ export default function LearnPage() {
     {
       icon: SwapHorizRoundedIcon,
       title: "Understanding Transactions",
-      description:
-        "How Bitcoin moves from one address to another. Inputs, outputs, and fees.",
+      description: "How Bitcoin moves from one address to another. Inputs, outputs, and fees.",
       href: "/docs/learn/transactions/understanding",
       level: "Beginner",
     },
@@ -235,8 +229,7 @@ export default function LearnPage() {
     {
       icon: SwapHorizRoundedIcon,
       title: "Transaction Lifecycle",
-      description:
-        "From creation to confirmation. Follow a transaction through the network.",
+      description: "From creation to confirmation. Follow a transaction through the network.",
       href: "/docs/learn/transactions/lifecycle",
       level: "Intermediate",
     },
@@ -312,9 +305,7 @@ export default function LearnPage() {
       <Head>
         {/* Page-specific meta tags */}
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">
-          {JSON.stringify(learnCollectionSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(learnCollectionSchema)}</script>
       </Head>
       <main className={styles.page}>
         <header className={`${styles.hero} learnHero`}>
@@ -324,9 +315,8 @@ export default function LearnPage() {
               <div className="learn-header">
                 <h1 className={styles.heroTitle}>Learn Bitcoin Self-Custody</h1>
                 <p className={styles.heroSubtitle}>
-                  Master the fundamentals of Bitcoin ownership. From
-                  understanding what Bitcoin is to running your own
-                  node—everything you need to become truly sovereign.
+                  Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is
+                  to running your own node—everything you need to become truly sovereign.
                 </p>
               </div>
 
@@ -373,16 +363,10 @@ export default function LearnPage() {
               />
 
               <div className={styles.heroCtas} style={{ marginTop: 32 }}>
-                <Link
-                  className={`${styles.button} ${styles.buttonPrimary}`}
-                  to="/guides"
-                >
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/guides">
                   Ready for Hands-On? View Guides →
                 </Link>
-                <Link
-                  className={`${styles.button} ${styles.buttonSecondary}`}
-                  to="/"
-                >
+                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/">
                   ← Back to Home
                 </Link>
               </div>

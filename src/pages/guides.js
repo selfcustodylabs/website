@@ -14,7 +14,7 @@ import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import HubRoundedIcon from "@mui/icons-material/HubRounded";
 
 // Shared components
-import { Card, DifficultyTag } from "@site/src/components";
+import { Card, cardStyles, DifficultyTag } from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -128,9 +128,8 @@ function CategorySection({ title, description, guides }) {
             href={g.href}
             badge={g.badge}
             cost={g.cost}
-            footerLeft={<DifficultyTag level={g.level} styles={styles} />}
-            footerRight={<span className={styles.arrow}>→</span>}
-            styles={styles}
+            footerLeft={<DifficultyTag level={g.level} />}
+            footerRight={<span className={cardStyles.arrow}>→</span>}
           />
         ))}
       </div>
@@ -164,8 +163,7 @@ export default function GuidesPage() {
     {
       icon: PasswordRoundedIcon,
       title: "Hardware Wallet Setup",
-      description:
-        "Step-by-step guide to setting up your first hardware wallet securely.",
+      description: "Step-by-step guide to setting up your first hardware wallet securely.",
       href: "/docs/wallet-setup/hardware-wallet",
       badge: "NEW",
       level: "Beginner",
@@ -297,9 +295,7 @@ export default function GuidesPage() {
       description="Browse all Self Custody Labs guides - security, hardware, nodes, and more."
     >
       <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(guidesCollectionSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(guidesCollectionSchema)}</script>
       </Head>
       <main className={styles.page}>
         <header className={`${styles.hero} guidesHero`}>
@@ -309,8 +305,8 @@ export default function GuidesPage() {
               <div className="guides-header">
                 <h1 className={styles.heroTitle}>Self-Custody Guides</h1>
                 <p className={styles.heroSubtitle}>
-                  Step-by-step tutorials for securing your Bitcoin. From
-                  beginner seed generation to advanced air-gapped setups.
+                  Step-by-step tutorials for securing your Bitcoin. From beginner seed generation to
+                  advanced air-gapped setups.
                 </p>
               </div>
 
@@ -345,16 +341,10 @@ export default function GuidesPage() {
               />
 
               <div className={styles.heroCtas} style={{ marginTop: 32 }}>
-                <Link
-                  className={`${styles.button} ${styles.buttonPrimary}`}
-                  to="/learn"
-                >
+                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
                   New to Bitcoin? Start with the Basics →
                 </Link>
-                <Link
-                  className={`${styles.button} ${styles.buttonSecondary}`}
-                  to="/"
-                >
+                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/">
                   ← Back to Home
                 </Link>
               </div>

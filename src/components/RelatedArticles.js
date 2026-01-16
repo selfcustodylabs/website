@@ -1,11 +1,36 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Link from "@docusaurus/Link";
+
+/**
+ * @typedef {Object} Article
+ * @property {string} title - Article title
+ * @property {string} href - Article URL
+ * @property {string} [tag] - Optional tag like "Learn", "Guide", "Reference"
+ */
 
 /**
  * Related Articles component for cross-linking content
  *
- * Usage:
+ * Displays a grid of links to related documentation pages. Can use either
+ * a predefined collection (by name) or a custom array of articles.
+ *
+ * @param {Object} props - Component props
+ * @param {Article[]} [props.articles=[]] - Custom array of articles to display
+ * @param {string} [props.collection] - Name of a predefined collection from articleCollections
+ * @param {string} [props.title="Related Articles"] - Section title
+ * @param {1|2|3} [props.columns=2] - Number of columns in the grid
+ * @returns {React.ReactElement|null} Related articles component or null if no articles
+ *
+ * @example
+ * // Using a predefined collection
+ * <RelatedArticles collection="keys" />
+ *
+ * @example
+ * // Using custom articles
  * <RelatedArticles
+ *   title="See Also"
+ *   columns={3}
  *   articles={[
  *     { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
  *     { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
@@ -164,33 +189,50 @@ export default function RelatedArticles({
   columns = 2,
 }) {
   // Use predefined collection if specified
-  const displayArticles = collection
-    ? articleCollections[collection] || []
-    : articles;
+  const displayArticles = collection ? articleCollections[collection] || [] : articles;
 
   if (!displayArticles.length) return null;
 
   return (
     <div className="related-articles">
       <h3 className="related-articles__title">{title}</h3>
-      <div
-        className={`related-articles__grid related-articles__grid--cols-${columns}`}
-      >
+      <div className={`related-articles__grid related-articles__grid--cols-${columns}`}>
         {displayArticles.map((article, index) => (
-          <Link
-            key={index}
-            to={article.href}
-            className="related-articles__item"
-          >
-            {article.tag && (
-              <span className="related-articles__tag">{article.tag}</span>
-            )}
-            <span className="related-articles__item-title">
-              {article.title}
-            </span>
+          <Link key={index} to={article.href} className="related-articles__item">
+            {article.tag && <span className="related-articles__tag">{article.tag}</span>}
+            <span className="related-articles__item-title">{article.title}</span>
           </Link>
         ))}
       </div>
     </div>
   );
 }
+
+RelatedArticles.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      tag: PropTypes.string,
+    })
+  ),
+  collection: PropTypes.oneOf([
+    "walletSetup",
+    "keys",
+    "security",
+    "privacy",
+    "transactions",
+    "nodes",
+    "multisig",
+    "reference",
+  ]),
+  title: PropTypes.string,
+  columns: PropTypes.oneOf([1, 2, 3]),
+};
+
+RelatedArticles.defaultProps = {
+  articles: [],
+  collection: null,
+  title: "Related Articles",
+  columns: 2,
+};

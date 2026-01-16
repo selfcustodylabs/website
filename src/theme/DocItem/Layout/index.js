@@ -31,33 +31,23 @@ export default function DocItemLayoutWrapper(props) {
       <Head>
         {/* Inject HowTo schema if available (for guide pages) */}
         {howToSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(howToSchema, null, 0)}
-          </script>
+          <script type="application/ld+json">{JSON.stringify(howToSchema, null, 0)}</script>
         )}
         {/* Inject Article schema if available (for learn/educational pages) */}
         {articleSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(articleSchema, null, 0)}
-          </script>
+          <script type="application/ld+json">{JSON.stringify(articleSchema, null, 0)}</script>
         )}
         {/* Inject FAQ schema if available (for FAQ pages) */}
         {faqSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema, null, 0)}
-          </script>
+          <script type="application/ld+json">{JSON.stringify(faqSchema, null, 0)}</script>
         )}
         {/* Inject ItemList schema if available (for hub/index pages) */}
         {itemListSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(itemListSchema, null, 0)}
-          </script>
+          <script type="application/ld+json">{JSON.stringify(itemListSchema, null, 0)}</script>
         )}
         {/* Inject Breadcrumb schema if available */}
         {breadcrumbSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(breadcrumbSchema, null, 0)}
-          </script>
+          <script type="application/ld+json">{JSON.stringify(breadcrumbSchema, null, 0)}</script>
         )}
       </Head>
       <DocItemLayout {...props} />

@@ -1,0 +1,128 @@
+/**
+ * MDX Grid Styles
+ *
+ * Reusable CSS classes for grid layouts in MDX documentation files.
+ * Replaces inline styles like style={{ textAlign: 'center' }}
+ */
+
+/* ===========================================
+   GRID ITEM ALIGNMENT
+   =========================================== */
+
+.mdx-grid-item-center {
+  text-align: center;
+}
+
+.mdx-grid-item-left {
+  text-align: left;
+}
+
+.mdx-grid-item-right {
+  text-align: right;
+}
+
+/* ===========================================
+   RESPONSIVE IMAGES IN GRIDS
+   =========================================== */
+
+.mdx-grid-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.mdx-grid-image-rounded {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================================
+   IMAGE CONTAINERS
+   =========================================== */
+
+.mdx-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.mdx-image-container--bordered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+}
+
+/* ===========================================
+   GRID SPACING UTILITIES
+   =========================================== */
+
+.mdx-grid-gap-sm {
+  gap: 8px;
+}
+
+.mdx-grid-gap-md {
+  gap: 16px;
+}
+
+.mdx-grid-gap-lg {
+  gap: 24px;
+}
+
+/* ===========================================
+   TWO-COLUMN LAYOUT (NO MUI DEPENDENCY)
+   =========================================== */
+
+.mdx-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .mdx-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================
+   THREE-COLUMN LAYOUT
+   =========================================== */
+
+.mdx-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 992px) {
+  .mdx-three-column {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .mdx-three-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================
+   CAPTION STYLES
+   =========================================== */
+
+.mdx-image-caption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 8px;
+  font-style: italic;
+}
