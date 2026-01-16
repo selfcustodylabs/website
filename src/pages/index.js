@@ -24,7 +24,12 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import XIcon from "@mui/icons-material/X";
 
 // Shared components
-import { Card, ClubOrangeIcon, KeybaseIcon, NostrIcon } from "@site/src/components";
+import {
+  Card,
+  ClubOrangeIcon,
+  KeybaseIcon,
+  NostrIcon,
+} from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -34,7 +39,9 @@ function Section({ title, subtitle, children, id }) {
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>{title}</h2>
-          {subtitle ? <p className={styles.sectionSubtitle}>{subtitle}</p> : null}
+          {subtitle ? (
+            <p className={styles.sectionSubtitle}>{subtitle}</p>
+          ) : null}
         </div>
         {children}
       </div>
@@ -221,26 +228,41 @@ export default function Home() {
   ];
 
   return (
-    <Layout title="Bitcoin Self-Custody Guides" description="Step-by-step Bitcoin self-custody tutorials: cold storage, air-gapped setups, wallet security, and privacy.">
+    <Layout
+      title="Bitcoin Self-Custody Guides"
+      description="Step-by-step Bitcoin self-custody tutorials: cold storage, air-gapped setups, wallet security, and privacy."
+    >
       <main className={styles.page}>
         {/* HERO */}
         <header className={styles.hero}>
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.container}>
             <div className={styles.heroInner}>
-              <img className={styles.heroLogo} src={logoSrc} alt="Self Custody Labs" />
+              <img
+                className={styles.heroLogo}
+                src={logoSrc}
+                alt="Self Custody Labs"
+              />
               <h1 className={styles.heroTitle}>
-                Take Control of <span className={styles.accent}>Your Bitcoin</span>
+                Take Control of{" "}
+                <span className={styles.accent}>Your Bitcoin</span>
               </h1>
               <p className={styles.heroSubtitle}>
-                Learn self-custody the right way. Comprehensive guides and theory to help you become truly sovereign with your Bitcoin.
+                Learn self-custody the right way. Comprehensive guides and
+                theory to help you become truly sovereign with your Bitcoin.
               </p>
 
               <div className={styles.heroCtas}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
+                <Link
+                  className={`${styles.button} ${styles.buttonPrimary}`}
+                  to="/learn"
+                >
                   Start Learning
                 </Link>
-                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/guides">
+                <Link
+                  className={`${styles.button} ${styles.buttonSecondary}`}
+                  to="/guides"
+                >
                   View Guides →
                 </Link>
               </div>
@@ -262,7 +284,13 @@ export default function Home() {
         >
           <div className={styles.grid3}>
             {whyCards.map((c) => (
-              <Card key={c.title} icon={c.icon} title={c.title} description={c.description} styles={styles} />
+              <Card
+                key={c.title}
+                icon={c.icon}
+                title={c.title}
+                description={c.description}
+                styles={styles}
+              />
             ))}
           </div>
         </Section>
@@ -290,17 +318,24 @@ export default function Home() {
                           <h3 className={styles.pathTitle}>{s.title}</h3>
                           <span className={styles.pathArrow}>→</span>
                         </div>
-                        <p className={styles.pathDescription}>{s.description}</p>
+                        <p className={styles.pathDescription}>
+                          {s.description}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </Link>
-                {idx < learningPath.length - 1 ? <div className={styles.pathConnector}>↓</div> : null}
+                {idx < learningPath.length - 1 ? (
+                  <div className={styles.pathConnector}>↓</div>
+                ) : null}
               </React.Fragment>
             ))}
 
             <div className={styles.centerCta}>
-              <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
+              <Link
+                className={`${styles.button} ${styles.buttonPrimary}`}
+                to="/learn"
+              >
                 Start Your Journey
               </Link>
             </div>
@@ -327,7 +362,9 @@ export default function Home() {
 
           <div className={styles.sectionHeaderTight}>
             <h2 className={styles.sectionTitle}>Find Us</h2>
-            <p className={styles.sectionSubtitle}>Connect with us on a variety of platforms</p>
+            <p className={styles.sectionSubtitle}>
+              Connect with us on a variety of platforms
+            </p>
           </div>
 
           <div className={styles.grid3}>
@@ -336,7 +373,9 @@ export default function Home() {
                 key={c.title}
                 className={styles.cardLink}
                 to={c.href}
-                {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...(c.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
               >
                 <div className={styles.smallCard}>
                   <div className={styles.smallCardIcon}>
@@ -344,7 +383,9 @@ export default function Home() {
                   </div>
                   <div>
                     <div className={styles.smallCardTitle}>{c.title}</div>
-                    <div className={styles.smallCardDescription}>{c.description}</div>
+                    <div className={styles.smallCardDescription}>
+                      {c.description}
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -356,9 +397,13 @@ export default function Home() {
           <div className={styles.bigCta}>
             <h2 className={styles.bigCtaTitle}>Ready to Take Control?</h2>
             <p className={styles.bigCtaSubtitle}>
-              Start your Bitcoin self-custody journey today with our comprehensive guides.
+              Start your Bitcoin self-custody journey today with our
+              comprehensive guides.
             </p>
-            <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
+            <Link
+              className={`${styles.button} ${styles.buttonPrimary}`}
+              to="/learn"
+            >
               Get Started Now
             </Link>
           </div>

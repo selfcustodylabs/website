@@ -1,22 +1,22 @@
-import React from 'react';
-import DocItemLayout from '@theme-original/DocItem/Layout';
-import Head from '@docusaurus/Head';
-import { useLocation } from '@docusaurus/router';
-import { 
-  generateHowToSchema, 
-  generateBreadcrumbSchema, 
-  generateArticleSchema, 
+import React from "react";
+import DocItemLayout from "@theme-original/DocItem/Layout";
+import Head from "@docusaurus/Head";
+import { useLocation } from "@docusaurus/router";
+import {
+  generateHowToSchema,
+  generateBreadcrumbSchema,
+  generateArticleSchema,
   generateFAQSchema,
-  generateItemListSchema 
-} from '@site/src/data/schemaData';
+  generateItemListSchema,
+} from "@site/src/data/schemaData";
 
 export default function DocItemLayoutWrapper(props) {
   const location = useLocation();
-  
+
   // Normalize path to always end with /
   let path = location.pathname;
-  if (!path.endsWith('/')) {
-    path = path + '/';
+  if (!path.endsWith("/")) {
+    path = path + "/";
   }
 
   // Generate schemas for this page

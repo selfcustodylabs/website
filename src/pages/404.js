@@ -1,40 +1,40 @@
-import React from 'react';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import React from "react";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
-import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
+import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 const quickLinks = [
   {
     icon: HomeRoundedIcon,
-    title: 'Homepage',
-    description: 'Return to the main page',
-    href: '/',
+    title: "Homepage",
+    description: "Return to the main page",
+    href: "/",
   },
   {
     icon: SchoolRoundedIcon,
-    title: 'Learn',
-    description: 'Educational content about Bitcoin self-custody',
-    href: '/learn/',
+    title: "Learn",
+    description: "Educational content about Bitcoin self-custody",
+    href: "/learn/",
   },
   {
     icon: MenuBookRoundedIcon,
-    title: 'Guides',
-    description: 'Step-by-step tutorials and how-to guides',
-    href: '/guides/',
+    title: "Guides",
+    description: "Step-by-step tutorials and how-to guides",
+    href: "/guides/",
   },
   {
     icon: HelpOutlineRoundedIcon,
-    title: 'FAQ',
-    description: 'Frequently asked questions',
-    href: '/docs/reference/faq/',
+    title: "FAQ",
+    description: "Frequently asked questions",
+    href: "/docs/reference/faq/",
   },
 ];
 
@@ -53,7 +53,7 @@ function QuickLinkCard({ icon: Icon, title, description, href }) {
 }
 
 export default function NotFound() {
-  const logoSrc = useBaseUrl('/img/logo.svg');
+  const logoSrc = useBaseUrl("/img/logo.svg");
 
   return (
     <Layout
@@ -73,9 +73,10 @@ export default function NotFound() {
           <h1 className={styles.notFoundTitle}>404</h1>
           <h2 className={styles.notFoundSubtitle}>Page Not Found</h2>
           <p className={styles.notFoundMessage}>
-            The page you're looking for doesn't exist or has been moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been
+            moved.
             <br />
-            Let's get you back on track.
+            Let&apos;s get you back on track.
           </p>
 
           {/* Search suggestion */}

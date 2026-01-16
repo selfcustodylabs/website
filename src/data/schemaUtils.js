@@ -1,11 +1,11 @@
 /**
  * Schema.org utility functions for Self Custody Labs
- * 
+ *
  * Provides helpers for generating and validating structured data
  */
 
-const SITE_URL = 'https://selfcustodylabs.com';
-const SITE_NAME = 'Self Custody Labs';
+const SITE_URL = "https://selfcustodylabs.com";
+const SITE_NAME = "Self Custody Labs";
 const LOGO_URL = `${SITE_URL}/img/logo.svg`;
 
 // ===========================================
@@ -16,20 +16,21 @@ const LOGO_URL = `${SITE_URL}/img/logo.svg`;
  * Organization schema - used on homepage and about pages
  */
 export const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  'name': SITE_NAME,
-  'url': SITE_URL,
-  'logo': LOGO_URL,
-  'description': 'Educational resources for Bitcoin self-custody. Learn to secure your Bitcoin with hardware wallets, seed phrases, and advanced techniques.',
-  'sameAs': [
-    'https://x.com/selfcustodylabs',
-    'https://github.com/selfcustodylabs',
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: LOGO_URL,
+  description:
+    "Educational resources for Bitcoin self-custody. Learn to secure your Bitcoin with hardware wallets, seed phrases, and advanced techniques.",
+  sameAs: [
+    "https://x.com/selfcustodylabs",
+    "https://github.com/selfcustodylabs",
   ],
-  'contactPoint': {
-    '@type': 'ContactPoint',
-    'email': 'selfcustodylabs@proton.me',
-    'contactType': 'customer support',
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "selfcustodylabs@proton.me",
+    contactType: "customer support",
   },
 };
 
@@ -41,18 +42,18 @@ export const organizationSchema = {
  * WebSite schema - used on homepage
  */
 export const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  'name': SITE_NAME,
-  'url': SITE_URL,
-  'description': 'Master Bitcoin self-custody with simple, clear guides.',
-  'potentialAction': {
-    '@type': 'SearchAction',
-    'target': {
-      '@type': 'EntryPoint',
-      'urlTemplate': `${SITE_URL}/search?q={search_term_string}`,
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: "Master Bitcoin self-custody with simple, clear guides.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
     },
-    'query-input': 'required name=search_term_string',
+    "query-input": "required name=search_term_string",
   },
 };
 
@@ -78,8 +79,8 @@ export function createHowToSchema(config) {
   } = config;
 
   const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
+    "@context": "https://schema.org",
+    "@type": "HowTo",
     name,
     description,
   };
@@ -89,29 +90,29 @@ export function createHowToSchema(config) {
 
   if (estimatedCost) {
     schema.estimatedCost = {
-      '@type': 'MonetaryAmount',
-      currency: estimatedCost.currency || 'USD',
+      "@type": "MonetaryAmount",
+      currency: estimatedCost.currency || "USD",
       value: estimatedCost.value,
     };
   }
 
   if (supply.length > 0) {
     schema.supply = supply.map((item) => ({
-      '@type': 'HowToSupply',
-      name: typeof item === 'string' ? item : item.name,
+      "@type": "HowToSupply",
+      name: typeof item === "string" ? item : item.name,
     }));
   }
 
   if (tool.length > 0) {
     schema.tool = tool.map((item) => ({
-      '@type': 'HowToTool',
-      name: typeof item === 'string' ? item : item.name,
+      "@type": "HowToTool",
+      name: typeof item === "string" ? item : item.name,
     }));
   }
 
   if (steps.length > 0) {
     schema.step = steps.map((step, index) => ({
-      '@type': 'HowToStep',
+      "@type": "HowToStep",
       position: index + 1,
       name: step.name,
       text: step.text,
@@ -140,8 +141,8 @@ export function createArticleSchema(config) {
   } = config;
 
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+    "@context": "https://schema.org",
+    "@type": "Article",
     headline,
     description,
     articleSection,
@@ -149,22 +150,22 @@ export function createArticleSchema(config) {
     ...(dateModified && { dateModified }),
     ...(image && { image }),
     author: {
-      '@type': 'Organization',
+      "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
     },
     publisher: {
-      '@type': 'Organization',
+      "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
       logo: {
-        '@type': 'ImageObject',
+        "@type": "ImageObject",
         url: LOGO_URL,
       },
     },
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}${path}`,
+      "@type": "WebPage",
+      "@id": `${SITE_URL}${path}`,
     },
   };
 }
@@ -176,13 +177,13 @@ export function createArticleSchema(config) {
  */
 export function createFAQSchema(questions) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: questions.map((q) => ({
-      '@type': 'Question',
+      "@type": "Question",
       name: q.question,
       acceptedAnswer: {
-        '@type': 'Answer',
+        "@type": "Answer",
         text: q.answer,
       },
     })),
@@ -196,20 +197,20 @@ export function createFAQSchema(questions) {
  */
 export function createBreadcrumbSchema(items) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: [
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 1,
-        name: 'Home',
+        name: "Home",
         item: SITE_URL,
       },
       ...items.map((item, index) => ({
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: index + 2,
         name: item.name,
-        item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
+        item: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
       })),
     ],
   };
@@ -224,16 +225,16 @@ export function createItemListSchema(config) {
   const { name, description, items } = config;
 
   return {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+    "@context": "https://schema.org",
+    "@type": "ItemList",
     name,
     description,
     numberOfItems: items.length,
     itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      url: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
+      url: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
     })),
   };
 }
@@ -251,39 +252,39 @@ export function createItemListSchema(config) {
 export function validateSchema(schema, type) {
   const errors = [];
 
-  if (!schema['@context']) {
-    errors.push('Missing @context');
+  if (!schema["@context"]) {
+    errors.push("Missing @context");
   }
 
-  if (!schema['@type']) {
-    errors.push('Missing @type');
-  } else if (schema['@type'] !== type) {
-    errors.push(`Expected @type "${type}", got "${schema['@type']}"`);
+  if (!schema["@type"]) {
+    errors.push("Missing @type");
+  } else if (schema["@type"] !== type) {
+    errors.push(`Expected @type "${type}", got "${schema["@type"]}"`);
   }
 
   // Type-specific validation
   switch (type) {
-    case 'HowTo':
-      if (!schema.name) errors.push('HowTo: Missing name');
+    case "HowTo":
+      if (!schema.name) errors.push("HowTo: Missing name");
       if (!schema.step || schema.step.length === 0) {
-        errors.push('HowTo: Missing or empty steps');
+        errors.push("HowTo: Missing or empty steps");
       }
       break;
 
-    case 'Article':
-      if (!schema.headline) errors.push('Article: Missing headline');
-      if (!schema.author) errors.push('Article: Missing author');
+    case "Article":
+      if (!schema.headline) errors.push("Article: Missing headline");
+      if (!schema.author) errors.push("Article: Missing author");
       break;
 
-    case 'FAQPage':
+    case "FAQPage":
       if (!schema.mainEntity || schema.mainEntity.length === 0) {
-        errors.push('FAQPage: Missing or empty mainEntity');
+        errors.push("FAQPage: Missing or empty mainEntity");
       }
       break;
 
-    case 'BreadcrumbList':
+    case "BreadcrumbList":
       if (!schema.itemListElement || schema.itemListElement.length === 0) {
-        errors.push('BreadcrumbList: Missing or empty itemListElement');
+        errors.push("BreadcrumbList: Missing or empty itemListElement");
       }
       break;
   }

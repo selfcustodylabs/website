@@ -30,9 +30,21 @@
   position: absolute;
   inset: -120px -120px -160px -120px;
   background:
-    radial-gradient(closest-side at 50% 40%, rgba(245, 158, 11, 0.16), rgba(245, 158, 11, 0) 65%),
-    radial-gradient(closest-side at 20% 30%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 60%),
-    radial-gradient(closest-side at 80% 20%, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 60%);
+    radial-gradient(
+      closest-side at 50% 40%,
+      rgba(245, 158, 11, 0.16),
+      rgba(245, 158, 11, 0) 65%
+    ),
+    radial-gradient(
+      closest-side at 20% 30%,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0) 60%
+    ),
+    radial-gradient(
+      closest-side at 80% 20%,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0) 60%
+    );
   filter: blur(18px);
   pointer-events: none;
 }
@@ -90,7 +102,11 @@
   border-radius: 10px;
   font-weight: 700;
   text-decoration: none !important;
-  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease, border-color 140ms ease;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease;
 }
 
 .buttonPrimary {
@@ -198,7 +214,10 @@
   background: rgba(18, 18, 20, 0.85);
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .card:hover {
@@ -350,7 +369,10 @@
   background: rgba(18, 18, 20, 0.85);
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .pathItem:hover {
@@ -447,7 +469,10 @@
   background: rgba(18, 18, 20, 0.85);
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .smallCard:hover {
@@ -486,7 +511,11 @@
   padding: 44px 24px;
   text-align: center;
   background:
-    radial-gradient(closest-side at 50% 30%, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0) 72%),
+    radial-gradient(
+      closest-side at 50% 30%,
+      rgba(245, 158, 11, 0.22),
+      rgba(245, 158, 11, 0) 72%
+    ),
     rgba(18, 18, 20, 0.9);
   border: 1px solid rgba(245, 158, 11, 0.25);
   box-shadow: 0 26px 90px rgba(0, 0, 0, 0.5);
@@ -571,7 +600,6 @@
   line-height: 1.6;
 }
 
-
 /* ===========================================
    404 PAGE STYLES
    =========================================== */
@@ -582,7 +610,11 @@
   align-items: center;
   min-height: calc(100vh - 60px);
   padding: 48px 24px;
-  background: linear-gradient(180deg, var(--ifm-background-color) 0%, var(--ifm-background-surface-color) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--ifm-background-color) 0%,
+    var(--ifm-background-surface-color) 100%
+  );
 }
 
 .notFoundContent {
@@ -601,7 +633,11 @@
   font-size: 6rem;
   font-weight: 800;
   margin: 0;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -732,7 +768,7 @@
   .notFoundTitle {
     font-size: 4rem;
   }
-  
+
   .notFoundGrid {
     grid-template-columns: 1fr;
   }

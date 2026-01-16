@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Club Orange App icon
  * Used in homepage community section
  */
-export default function ClubOrangeIcon({ fontSize, ...props }) {
+export default function ClubOrangeIcon({ ...props }) {
   return (
     <svg
       viewBox="0 0 1500 1500"
