@@ -1,0 +1,86 @@
+/**
+ * Tables CSS - Custom Table Styles
+ * 
+ * Contains:
+ * - DIY Seed table (fixed width)
+ * - Comparison table (hardware wallets, etc.)
+ */
+
+/* ===========================================
+   DIY SEED TABLE
+   Fixed-width table for dice rolling exercises
+   =========================================== */
+
+.fixed-width-table table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.fixed-width-table th {
+  background-color: #ce5b00;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.fixed-width-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 200px;
+}
+
+
+/* ===========================================
+   COMPARISON TABLE
+   For hardware wallet comparisons, etc.
+   =========================================== */
+
+.comparison-table {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.comparison-table table {
+  width: 100%;
+  min-width: 600px;
+}
+
+.comparison-table th {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.comparison-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  vertical-align: top;
+}
+
+.comparison-table tr:hover td {
+  background: var(--ifm-background-surface-color);
+}
+
+/* Checkmarks and X marks */
+.comparison-table td:has(.check),
+.comparison-table td:has(.cross) {
+  text-align: center;
+}
+
+.check {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.cross {
+  color: #ef4444;
+  font-weight: bold;
+}

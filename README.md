@@ -19,24 +19,112 @@ selfcustodylabs.com is dedicated to empowering individuals with the knowledge to
 - **Air-Gapped Computer (AGC)**: How to securely set up and use an AGC for signing Bitcoin transactions offline.
 - **Backup & Recovery**: Ensuring your seed is recoverable in case of one of your backup loss.
 
-## Contributing
+## Tech Stack
 
-We welcome contributions to the project! If you have an idea for a new guide, improvement suggestions, or found a bug, please feel free to:
+- **Framework**: [Docusaurus 3.x](https://docusaurus.io/)
+- **Frontend**: React 18
+- **Deployment**: GitHub Pages
 
-1. Fork the repository.
-2. Create a new branch.
-3. Commit your changes.
-4. Submit a pull request.
+## Development
 
-Please ensure that your code follows the style guide and that all tests pass before submitting a pull request.
+### Prerequisites
 
-## Getting Started
+- Node.js >= 18.0
+- npm >= 9.0
 
-To get started with the guides:
-
-1. Check out our [website](https://selfcustodylabs.com) for the full set of tutorials and documentation.
-2. Clone this repository to your local machine to explore the code and documentation.
+### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/selfcustodylabs/website.git
+cd website
+
+# Install dependencies
+npm install
 ```
+
+### Development Server
+
+```bash
+# Start the development server
+npm run start
+
+# The site will be available at http://localhost:3000
+```
+
+### Production Build
+
+```bash
+# Build for production
+npm run build
+
+# Serve the production build locally
+npm run serve
+```
+
+### Other Commands
+
+```bash
+# Clear the build cache
+npm run clear
+
+# Check for broken links
+npm run build  # Docusaurus throws on broken links
+
+# Lint code
+npm run lint
+
+# Auto-fix lint errors
+npm run lint:fix
+
+# Format code
+npm run format
+
+# Check formatting without changing files
+npm run format:check
+```
+
+## Project Structure
+
+```
+├── docs/               # Documentation content (Markdown/MDX)
+│   ├── learn/          # Educational content
+│   ├── security/       # Security guides
+│   ├── privacy/        # Privacy guides
+│   └── ...
+├── src/
+│   ├── components/     # React components
+│   ├── css/            # Custom styles
+│   ├── data/           # Data files (schema, navigation)
+│   ├── pages/          # Custom pages
+│   └── theme/          # Docusaurus theme overrides
+├── static/             # Static assets (images, etc.)
+├── docusaurus.config.js
+└── sidebars.js
+```
+
+## Contributing
+
+We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- Development setup
+- Code style guidelines
+- Pull request process
+
+Quick start:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run `npm run lint` and `npm run format`
+5. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Contact
+
+- Website: [selfcustodylabs.com](https://selfcustodylabs.com)
+- Twitter: [@selfcustodylabs](https://x.com/selfcustodylabs)
+- Nostr: [nprofile...](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5)
+- Email: selfcustodylabs@proton.me

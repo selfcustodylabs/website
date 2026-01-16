@@ -33,7 +33,7 @@ This guide walks you through setting up a **2-of-3 multisig** wallet—the most 
 
 ## What You're Building
 
-![](/img/multisig/multisig.webp)
+![Multisig 2-of-3 wallet concept diagram showing three keys where any two can sign transactions](/img/multisig/multisig.webp)
 
 <div class="fixed-width-table">
 
@@ -169,7 +169,7 @@ Multisig backups are more complex than single-sig. Here's what you need:
 
 Store each item in a **different secure location**:
 
-![](/img/multisig/backup-storage-strategy.webp)
+![Diagram showing backup storage strategy with seed phrases stored in separate secure locations](/img/multisig/backup-storage-strategy.webp)
 
 **Never store:**
 - Multiple seed phrases in the same location
@@ -223,7 +223,7 @@ Don't want to manage all keys yourself? **Collaborative custody** providers hold
 
 ### How It Works
 
-![](/img/multisig/collaborative-custody.webp)
+![Collaborative custody diagram showing 2-of-3 setup where user holds 2 keys and provider holds 1 key](/img/multisig/collaborative-custody.webp)
 
 ### Providers Comparison
 

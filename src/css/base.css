@@ -1,0 +1,69 @@
+/**
+ * Base CSS - Variables, Theme Settings, Resets
+ * 
+ * Contains:
+ * - CSS custom properties (variables)
+ * - Infima overrides for light/dark themes
+ * - Footer styles
+ */
+
+/* ===========================================
+   LIGHT THEME VARIABLES
+   =========================================== */
+
+:root {
+  /* Primary colors */
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  
+  /* Code */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Section colors (used throughout the site) */
+  --section-color-learn: #10b981;        /* Emerald green */
+  --section-color-fundamentals: #22c55e; /* Green */
+  --section-color-keys: #f59e0b;         /* Amber/Orange */
+  --section-color-wallets: #8b5cf6;      /* Purple */
+  --section-color-transactions: #3b82f6; /* Blue */
+  --section-color-privacy: #ec4899;      /* Pink */
+  --section-color-nodes: #06b6d4;        /* Cyan */
+  --section-color-security: #ef4444;     /* Red */
+  --section-color-advanced: #f97316;     /* Orange */
+  --section-color-reference: #6b7280;    /* Gray */
+}
+
+
+/* ===========================================
+   DARK THEME VARIABLES
+   =========================================== */
+
+[data-theme='dark'] {
+  --main-bg-color: black;
+  --ifm-color-primary: #f26b00;
+  --ifm-color-primary-dark: #da6000;
+  --ifm-color-primary-darker: #ce5b00;
+  --ifm-color-primary-darkest: #a94b00;
+  --ifm-color-primary-light: #ff770b;
+  --ifm-color-primary-lighter: #ff7e17;
+  --ifm-color-primary-lightest: #ff923c;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #0b0b0c;
+  --ifm-background-surface-color: #0f0f0f;
+}
+
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+
+.footer--dark {
+  --ifm-footer-background-color: #2E3032FF;
+}

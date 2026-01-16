@@ -1,0 +1,125 @@
+/**
+ * Navigation CSS - Sidebar & Breadcrumbs
+ * 
+ * Contains:
+ * - Sidebar menu link styling
+ * - Section-specific active colors
+ * - Breadcrumb enhancements
+ */
+
+/* ===========================================
+   SIDEBAR MENU LINKS
+   =========================================== */
+
+/* Base sidebar link styling */
+.menu__link {
+  position: relative;
+  border-left: 3px solid transparent;
+  margin-left: -3px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Active item base styling */
+.menu__link--active {
+  border-left-width: 4px !important;
+  font-weight: 600;
+  background-color: var(--ifm-menu-color-background-active);
+}
+
+
+/* ===========================================
+   SECTION-SPECIFIC ACTIVE COLORS
+   Color-coded left borders indicate current section
+   =========================================== */
+
+/* Fundamentals (green) */
+.menu__link--active[href*="/fundamentals"],
+.menu__link--active[href$="/fundamentals"] {
+  border-left-color: var(--section-color-fundamentals) !important;
+}
+
+/* Keys (amber) */
+.menu__link--active[href*="/keys/"],
+.menu__link--active[href$="/keys"],
+.menu__link--active[href*="/category/keys"] {
+  border-left-color: var(--section-color-keys) !important;
+}
+
+/* Wallets in learn section (purple) */
+.menu__link--active[href*="/learn/wallets"],
+.menu__link--active[href$="/learn/wallets"],
+.menu__link--active[href*="/category/wallets"] {
+  border-left-color: var(--section-color-wallets) !important;
+}
+
+/* Transactions (blue) */
+.menu__link--active[href*="/transactions/"],
+.menu__link--active[href$="/transactions"],
+.menu__link--active[href*="/category/transactions"] {
+  border-left-color: var(--section-color-transactions) !important;
+}
+
+/* Privacy in learn section (pink) */
+.menu__link--active[href*="/learn/privacy"],
+.menu__link--active[href$="/learn/privacy"],
+.menu__link--active[href*="/category/privacy"] {
+  border-left-color: var(--section-color-privacy) !important;
+}
+
+/* Nodes in learn section (cyan) */
+.menu__link--active[href*="/learn/nodes"],
+.menu__link--active[href$="/learn/nodes"],
+.menu__link--active[href*="/category/nodes"] {
+  border-left-color: var(--section-color-nodes) !important;
+}
+
+/* Wallet Setup section (red - security related) */
+.menu__link--active[href*="/wallet-setup/"] {
+  border-left-color: var(--section-color-security) !important;
+}
+
+/* Security guides (red) */
+.menu__link--active[href*="/security/"] {
+  border-left-color: var(--section-color-security) !important;
+}
+
+/* Privacy guides section (pink) */
+.menu__link--active[href^="/docs/privacy/"] {
+  border-left-color: var(--section-color-privacy) !important;
+}
+
+/* Advanced guides (orange) */
+.menu__link--active[href*="/advanced/"] {
+  border-left-color: var(--section-color-advanced) !important;
+}
+
+/* Bitcoin Node guide (cyan) */
+.menu__link--active[href*="/bitcoin-node"] {
+  border-left-color: var(--section-color-nodes) !important;
+}
+
+/* Reference (gray) */
+.menu__link--active[href*="/reference/"] {
+  border-left-color: var(--section-color-reference) !important;
+}
+
+/* Default active color if no section matches */
+.menu__link--active {
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+
+/* ===========================================
+   BREADCRUMBS
+   =========================================== */
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 16px;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: var(--ifm-color-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}

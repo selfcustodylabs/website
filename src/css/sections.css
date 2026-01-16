@@ -1,0 +1,135 @@
+/**
+ * Sections CSS - Section Badge Styles
+ * 
+ * Contains:
+ * - Section badge base styles
+ * - Color variants for each section
+ * - Dark mode variants
+ */
+
+/* ===========================================
+   SECTION BADGE BASE
+   =========================================== */
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+
+/* ===========================================
+   LIGHT MODE VARIANTS
+   =========================================== */
+
+.section-badge--fundamentals {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.section-badge--keys {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.section-badge--wallets {
+  background: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.section-badge--transactions {
+  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.section-badge--privacy {
+  background: rgba(236, 72, 153, 0.15);
+  color: #db2777;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.section-badge--nodes {
+  background: rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.section-badge--security {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.section-badge--advanced {
+  background: rgba(249, 115, 22, 0.15);
+  color: #ea580c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+
+/* ===========================================
+   DARK MODE VARIANTS
+   =========================================== */
+
+[data-theme='dark'] .section-badge--fundamentals {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+[data-theme='dark'] .section-badge--keys {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .section-badge--wallets {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+[data-theme='dark'] .section-badge--transactions {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+[data-theme='dark'] .section-badge--privacy {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+}
+
+[data-theme='dark'] .section-badge--nodes {
+  background: rgba(6, 182, 212, 0.2);
+  color: #22d3ee;
+}
+
+[data-theme='dark'] .section-badge--security {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+[data-theme='dark'] .section-badge--advanced {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 768px) {
+  .section-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+}

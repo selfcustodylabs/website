@@ -1,0 +1,115 @@
+/**
+ * Utilities CSS - General Utility Classes
+ * 
+ * Contains:
+ * - Image utilities
+ * - Step lists
+ * - Guide cards
+ * - Hero spacing
+ */
+
+/* ===========================================
+   IMAGE UTILITIES
+   =========================================== */
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+div.img-small img {
+  height: 75px;
+  width: auto;
+  margin-bottom: -2rem;
+  margin-top: 2rem;
+}
+
+
+/* ===========================================
+   HERO SPACING
+   Tighten spacing below navbar for hub pages
+   =========================================== */
+
+header.bitcoinDevicesHero {
+  padding-top: 60px;
+}
+
+header.guidesHero {
+  padding-top: 60px;
+}
+
+/* Hub pages: tighten spacing between title and subtitle */
+.bitcoinDevicesHero h1,
+.guidesHero h1 {
+  margin-bottom: 0.85rem;
+}
+
+.bitcoinDevicesHero p,
+.guidesHero p {
+  margin-top: 0;
+}
+
+
+/* ===========================================
+   STEP LISTS
+   Numbered procedural lists
+   =========================================== */
+
+.steps-list {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.steps-list > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 24px;
+}
+
+.steps-list > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+
+/* ===========================================
+   GUIDE CARDS
+   For index pages with card layouts
+   =========================================== */
+
+.guide-card {
+  padding: 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin: 16px 0;
+  transition: border-color 0.2s ease;
+}
+
+.guide-card:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.guide-card h3 {
+  margin-top: 0;
+}
+
+.guide-card h3 a {
+  color: var(--ifm-color-primary);
+}
