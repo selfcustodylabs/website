@@ -63,18 +63,13 @@ export default function NotFound() {
       <main className={styles.notFoundContainer}>
         <div className={styles.notFoundContent}>
           {/* Logo */}
-          <img
-            src={logoSrc}
-            alt="Self Custody Labs"
-            className={styles.notFoundLogo}
-          />
+          <img src={logoSrc} alt="Self Custody Labs" className={styles.notFoundLogo} />
 
           {/* Error Message */}
           <h1 className={styles.notFoundTitle}>404</h1>
           <h2 className={styles.notFoundSubtitle}>Page Not Found</h2>
           <p className={styles.notFoundMessage}>
-            The page you&apos;re looking for doesn&apos;t exist or has been
-            moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
             <br />
             Let&apos;s get you back on track.
           </p>

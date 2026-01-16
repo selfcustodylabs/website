@@ -1,0 +1,19 @@
+# Build outputs
+build/
+.docusaurus/
+
+# Dependencies
+node_modules/
+
+# Package manager files
+package-lock.json
+
+# Generated files
+*.min.js
+*.min.css
+
+# Static assets
+static/
+
+# Cache
+.cache/

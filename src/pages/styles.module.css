@@ -30,21 +30,9 @@
   position: absolute;
   inset: -120px -120px -160px -120px;
   background:
-    radial-gradient(
-      closest-side at 50% 40%,
-      rgba(245, 158, 11, 0.16),
-      rgba(245, 158, 11, 0) 65%
-    ),
-    radial-gradient(
-      closest-side at 20% 30%,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0) 60%
-    ),
-    radial-gradient(
-      closest-side at 80% 20%,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0) 60%
-    );
+    radial-gradient(closest-side at 50% 40%, rgba(245, 158, 11, 0.16), rgba(245, 158, 11, 0) 65%),
+    radial-gradient(closest-side at 20% 30%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(closest-side at 80% 20%, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 60%);
   filter: blur(18px);
   pointer-events: none;
 }
@@ -511,11 +499,7 @@
   padding: 44px 24px;
   text-align: center;
   background:
-    radial-gradient(
-      closest-side at 50% 30%,
-      rgba(245, 158, 11, 0.22),
-      rgba(245, 158, 11, 0) 72%
-    ),
+    radial-gradient(closest-side at 50% 30%, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0) 72%),
     rgba(18, 18, 20, 0.9);
   border: 1px solid rgba(245, 158, 11, 0.25);
   box-shadow: 0 26px 90px rgba(0, 0, 0, 0.5);

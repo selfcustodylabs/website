@@ -1,0 +1,61 @@
+/**
+ * DifficultyTag Component Styles
+ *
+ * Styles for difficulty level tags used on guide cards.
+ * Beginner = Green, Intermediate = Amber, Advanced = Red
+ */
+
+/* ===========================================
+   BASE TAG STYLES
+   =========================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ===========================================
+   DIFFICULTY LEVELS
+   =========================================== */
+
+.tagBeginner {
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: rgba(34, 197, 94, 0.95);
+}
+
+.tagIntermediate {
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  color: rgba(245, 158, 11, 0.95);
+}
+
+.tagAdvanced {
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: rgba(239, 68, 68, 0.95);
+}
+
+/* ===========================================
+   TIME TAG (Optional additional tag type)
+   =========================================== */
+
+.timeTag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.65);
+}

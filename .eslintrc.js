@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -23,10 +24,27 @@ module.exports = {
     },
   },
   rules: {
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
+    // React
+    'react/prop-types': 'off', // Using JSDoc instead
+    'react/react-in-jsx-scope': 'off', // Not needed in React 18+
+    'react/no-unescaped-entities': 'off', // Allow quotes in JSX text
+    
+    // React Hooks
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    
+    // General
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'no-console': 'warn',
+    
+    // Consistency
+    'prefer-const': 'error',
+    'no-var': 'error',
   },
-  ignorePatterns: ['node_modules/', 'build/', '.docusaurus/'],
+  ignorePatterns: [
+    'node_modules/',
+    'build/',
+    '.docusaurus/',
+    '*.min.js',
+  ],
 };

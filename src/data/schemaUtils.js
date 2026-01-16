@@ -23,10 +23,7 @@ export const organizationSchema = {
   logo: LOGO_URL,
   description:
     "Educational resources for Bitcoin self-custody. Learn to secure your Bitcoin with hardware wallets, seed phrases, and advanced techniques.",
-  sameAs: [
-    "https://x.com/selfcustodylabs",
-    "https://github.com/selfcustodylabs",
-  ],
+  sameAs: ["https://x.com/selfcustodylabs", "https://github.com/selfcustodylabs"],
   contactPoint: {
     "@type": "ContactPoint",
     email: "selfcustodylabs@proton.me",
@@ -130,15 +127,8 @@ export function createHowToSchema(config) {
  * @returns {Object} JSON-LD Article schema
  */
 export function createArticleSchema(config) {
-  const {
-    headline,
-    description,
-    path,
-    articleSection,
-    datePublished,
-    dateModified,
-    image,
-  } = config;
+  const { headline, description, path, articleSection, datePublished, dateModified, image } =
+    config;
 
   return {
     "@context": "https://schema.org",
