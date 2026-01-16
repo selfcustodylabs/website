@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Head from "@docusaurus/Head";
@@ -13,7 +14,7 @@ import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 
 // Shared components
-import { Card, cardStyles, DifficultyTag } from "@site/src/components";
+import { CategorySection } from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -73,31 +74,6 @@ const learnCollectionSchema = {
     ],
   },
 };
-
-function CategorySection({ title, description, topics }) {
-  return (
-    <section className={styles.categorySection}>
-      <div className={styles.categoryHeader}>
-        <h2 className={styles.categoryTitle}>{title}</h2>
-        <p className={styles.categoryDescription}>{description}</p>
-      </div>
-      <div className={styles.grid3}>
-        {topics.map((t) => (
-          <Card
-            key={t.title}
-            icon={t.icon}
-            title={t.title}
-            description={t.description}
-            href={t.href}
-            badge={t.badge}
-            footerLeft={<DifficultyTag level={t.level} />}
-            footerRight={<span className={cardStyles.arrow}>→</span>}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function LearnPage() {
   // Foundational concepts
@@ -323,43 +299,43 @@ export default function LearnPage() {
               <CategorySection
                 title="📚 Fundamentals"
                 description="Start here if you're new. Build a solid foundation before diving deeper."
-                topics={fundamentals}
+                items={fundamentals}
               />
 
               <CategorySection
                 title="🔑 Keys & Seeds"
                 description="The core of Bitcoin ownership. Understand how private keys and seed phrases work."
-                topics={keysAndSeeds}
+                items={keysAndSeeds}
               />
 
               <CategorySection
                 title="👛 Wallets"
                 description="Tools for managing your Bitcoin. From simple apps to advanced security setups."
-                topics={wallets}
+                items={wallets}
               />
 
               <CategorySection
                 title="💸 Transactions"
                 description="How Bitcoin actually moves. Essential knowledge for using and managing your coins."
-                topics={transactions}
+                items={transactions}
               />
 
               <CategorySection
                 title="🕵️ Privacy"
                 description="Bitcoin is not anonymous. Learn what's exposed and how to protect yourself."
-                topics={privacy}
+                items={privacy}
               />
 
               <CategorySection
                 title="🖥️ Nodes"
                 description="Verify everything yourself. The ultimate step in Bitcoin sovereignty."
-                topics={nodes}
+                items={nodes}
               />
 
               <CategorySection
                 title="📖 Reference"
                 description="Quick lookup resources to help you on your journey."
-                topics={reference}
+                items={reference}
               />
 
               <div className={styles.heroCtas} style={{ marginTop: 32 }}>
