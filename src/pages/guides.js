@@ -265,8 +265,8 @@ export default function GuidesPage() {
 
   return (
     <Layout
-      title="Guides"
-      description="Browse all Self Custody Labs guides - security, hardware, nodes, and more."
+      title="Bitcoin Self-Custody Guides: Setup, Security & Privacy"
+      description="Step-by-step Bitcoin guides: hardware wallet setup, seed generation, multisig configuration, node setup, privacy tools, and security best practices."
     >
       <Head>
         <script type="application/ld+json">{JSON.stringify(guidesCollectionSchema)}</script>

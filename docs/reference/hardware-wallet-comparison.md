@@ -20,6 +20,10 @@ Choosing a hardware wallet is one of the most important decisions in your self-c
 - **Air-gapped**: Keystone 3 Pro or Coldcard
 :::
 
+**Jump to wallet:** [Coldcard Q](#coldcard-q) · [Coldcard Mk4](#coldcard-mk4) · [Trezor Safe 3](#trezor-safe-3) · [Trezor Model T](#trezor-model-t) · [BitBox02](#bitbox02-bitcoin-only-edition) · [Ledger Nano X](#ledger-nano-x) · [Jade](#blockstream-jade) · [Keystone 3 Pro](#keystone-3-pro)
+
+**Jump to section:** [Security Comparison](#security-architecture-comparison) · [Feature Comparison](#feature-comparison) · [Recommendations](#recommendations-by-use-case) · [Where to Buy](#where-to-buy)
+
 
 ## Quick Comparison Table
 

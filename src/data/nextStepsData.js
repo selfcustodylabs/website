@@ -67,7 +67,7 @@ const NEXT_STEPS = {
     {
       label: "Next",
       title: "Before You Deposit",
-      href: "/docs/learn/fundamentals/before-you-deposit/",
+      href: "/docs/wallet-setup/before-you-deposit/",
       description: "Critical checklist before funding",
     },
     {
@@ -77,7 +77,7 @@ const NEXT_STEPS = {
       description: "Get started with self-custody",
     },
   ],
-  "/docs/learn/fundamentals/before-you-deposit/": [
+  "/docs/wallet-setup/before-you-deposit/": [
     {
       label: "Next",
       title: "Run Your Own Node",
@@ -269,7 +269,7 @@ const NEXT_STEPS = {
     {
       label: "Next",
       title: "Before You Deposit",
-      href: "/docs/learn/fundamentals/before-you-deposit/",
+      href: "/docs/wallet-setup/before-you-deposit/",
       description: "Final checklist",
     },
     {
@@ -369,7 +369,7 @@ const NEXT_STEPS = {
     {
       label: "Done!",
       title: "Test Your Setup",
-      href: "/docs/learn/fundamentals/before-you-deposit/",
+      href: "/docs/wallet-setup/before-you-deposit/",
       description: "Verify everything works",
     },
     {

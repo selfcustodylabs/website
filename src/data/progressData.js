@@ -26,7 +26,7 @@ const GUIDES = {
       },
       {
         title: "Before You Deposit",
-        path: "/docs/learn/fundamentals/before-you-deposit/",
+        path: "/docs/wallet-setup/before-you-deposit/",
       },
     ],
   },

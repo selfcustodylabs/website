@@ -188,8 +188,9 @@ export default function LearnPage() {
   const transactions = [
     {
       icon: SwapHorizRoundedIcon,
-      title: "Understanding Transactions",
-      description: "How Bitcoin moves from one address to another. Inputs, outputs, and fees.",
+      title: "How Transactions Work",
+      description:
+        "How Bitcoin moves: inputs, outputs, fees, and the complete lifecycle from creation to confirmation.",
       href: "/docs/learn/transactions/understanding",
       level: "Beginner",
     },
@@ -200,13 +201,6 @@ export default function LearnPage() {
         "The building blocks of Bitcoin. Understanding unspent transaction outputs is essential.",
       href: "/docs/learn/transactions/utxos",
       badge: "ESSENTIAL",
-      level: "Intermediate",
-    },
-    {
-      icon: SwapHorizRoundedIcon,
-      title: "Transaction Lifecycle",
-      description: "From creation to confirmation. Follow a transaction through the network.",
-      href: "/docs/learn/transactions/lifecycle",
       level: "Intermediate",
     },
   ];
@@ -275,8 +269,8 @@ export default function LearnPage() {
 
   return (
     <Layout
-      title="Browse Topics"
-      description="Browse all Bitcoin self-custody learning topics. Find guides on keys, wallets, transactions, privacy, and nodes."
+      title="Learn Bitcoin Self-Custody: Keys, Wallets, Transactions & Privacy"
+      description="Free Bitcoin education: understand private keys, seed phrases, hardware wallets, transactions, UTXOs, privacy techniques, and why to run your own node."
     >
       <Head>
         {/* Page-specific meta tags */}

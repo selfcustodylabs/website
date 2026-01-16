@@ -112,7 +112,7 @@ You understand the basics and want to set up your first secure wallet.
 1. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets) — Why they're important
 2. [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/) — Step-by-step setup
 3. [Backup Verification](/docs/wallet-setup/backup-verification/) — Test before you trust
-4. **[Before You Deposit](/docs/learn/fundamentals/before-you-deposit)** — Critical checklist
+4. **[Before You Deposit](/docs/wallet-setup/before-you-deposit)** — Critical checklist
 
 **Time investment:** 2-4 hours (including setup)
 

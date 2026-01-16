@@ -14,6 +14,21 @@ How to ensure your Bitcoin passes to your loved ones—not lost forever.
 An estimated **4 million Bitcoin** (worth hundreds of billions) are permanently lost—many because owners died without sharing access. Don't let your Bitcoin become another statistic.
 :::
 
+## On This Page
+
+This comprehensive guide covers everything you need:
+
+1. **[Why Bitcoin Inheritance Is Different](#why-bitcoin-inheritance-is-different)** — Understanding the unique challenge
+2. **[Approaches by Complexity](#approaches-by-complexity)** — Five methods from simple to advanced
+3. **[Recommended Setup: Family Multisig](#recommended-setup-family-multisig)** — Step-by-step implementation
+4. **[For Single-Sig Wallets](#for-single-sig-wallets)** — Options if you don't use multisig
+5. **[Common Mistakes to Avoid](#common-mistakes-to-avoid)** — Eight pitfalls and how to prevent them
+6. **[Legal Considerations](#legal-considerations)** — Wills, trusts, and taxes
+7. **[Maintenance Schedule](#maintenance-schedule)** — Keeping your plan current
+8. **[Quick Start Checklist](#quick-start-checklist)** — Action items summary
+
+**Time to read:** ~20 minutes | **Time to implement:** 1-2 hours
+
 ---
 
 ## Why Bitcoin Inheritance Is Different

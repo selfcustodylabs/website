@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 8
 title: "Bitcoin Transaction Types Explained"
 description: "Practical guide: Types. Covers Pre-Signed, Fully Signed, Partially Signed PSBT."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "types"]
@@ -39,3 +39,33 @@ Here’s how it works:
 - Then, you transfer it to the first offline (air-gapped) device, which adds the first signature ,  this makes it a PSBT.
 - After that, you pass the PSBT to the next offline device, and so on, until the required number of signatures has been added. Once all the necessary signatures are included, the PSBT becomes a fully signed transaction.
 - Finally, you move it back to your online computer and broadcast it to the Bitcoin network.
+
+---
+
+## You've Completed the Transactions Section
+
+You now understand how Bitcoin moves: from UTXOs to transaction creation, signing, broadcasting, fees, and different transaction types. Next, explore why privacy matters on a transparent blockchain.
+
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Continue", 
+      title: "Why Privacy Matters", 
+      href: "/docs/learn/privacy/why-privacy-matters/", 
+      description: "Understand what's exposed on Bitcoin's public blockchain" 
+    },
+    { 
+      label: "Practical", 
+      title: "UTXO Management Guide", 
+      href: "/docs/privacy/utxo-management/", 
+      description: "Learn to manage your coins for privacy and lower fees" 
+    },
+    { 
+      label: "Advanced", 
+      title: "Multisig Setup", 
+      href: "/docs/advanced/multisig/", 
+      description: "PSBTs are essential for multisig—ready to set one up?" 
+    }
+  ]}
+/>

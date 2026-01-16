@@ -53,7 +53,7 @@ export const articleCollections = {
     },
     {
       title: "Before You Deposit",
-      href: "/docs/learn/fundamentals/before-you-deposit/",
+      href: "/docs/wallet-setup/before-you-deposit/",
       tag: "Checklist",
     },
   ],
@@ -131,8 +131,8 @@ export const articleCollections = {
       tag: "Learn",
     },
     {
-      title: "Transaction Lifecycle",
-      href: "/docs/learn/transactions/lifecycle/",
+      title: "How Transactions Work",
+      href: "/docs/learn/transactions/understanding/",
       tag: "Learn",
     },
   ],

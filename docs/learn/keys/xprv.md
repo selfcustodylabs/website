@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 3
 title: "Extended Private Key (XPRV)"
 description: "Practical guide: Extended Private Key (XPRV). Covers Why the Extended Private Key Matters, Security Considerations, Generating and Testing an Extended Private."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "private", "xprv"]
@@ -56,3 +56,15 @@ xprv9yVYaFXM2uUDeaj3STkiHS8svtqoASkVZ8hdTYuBdgVQGKjr76ks922e4r6826YvdQtQdu71ZA2q
 - Keys starting with uppercase “X”, “Y”, or “Z” are used for multisignature wallets.
 
 Understanding the extended private key is essential because it underpins all wallet addresses and transactions. Proper handling ensures security and smooth Bitcoin management.
+
+---
+
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Extended Public Keys (xpub)", href: "/docs/learn/keys/xpub/", tag: "Next" },
+    { title: "Derivation Paths", href: "/docs/learn/keys/derivation-path/", tag: "Learn" },
+    { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
+    { title: "Passphrases", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
+  ]}
+/>

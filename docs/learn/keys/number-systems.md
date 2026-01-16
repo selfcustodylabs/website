@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 8
 title: "Number Systems: Binary, Decimal, Hex"
 description: "Understand binary, decimal, and hexadecimal number systems used in Bitcoin private keys. Essential foundation for understanding seed phrases."
 keywords: ["binary", "decimal", "hexadecimal", "number systems", "bitcoin cryptography"]
@@ -54,3 +54,33 @@ If you’re already familiar with binary, decimal, and hexadecimal, feel free to
 |15|1111|f|
 
 </div>
+
+---
+
+## You've Completed the Keys Section
+
+You now understand the foundation of Bitcoin ownership: how private keys work, how they become seed phrases, how child keys are derived, and the number systems that underpin it all.
+
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Recommended", 
+      title: "Hardware Wallets Explained", 
+      href: "/docs/learn/wallets/hardware-wallets/", 
+      description: "Learn how hardware wallets protect your keys" 
+    },
+    { 
+      label: "Setup", 
+      title: "Hardware Wallet Setup", 
+      href: "/docs/wallet-setup/hardware-wallet/", 
+      description: "Ready to set up your first hardware wallet?" 
+    },
+    { 
+      label: "Advanced", 
+      title: "DIY Seed Generation", 
+      href: "/docs/security/seed-generation/", 
+      description: "Generate your own seed with verifiable randomness" 
+    }
+  ]}
+/>

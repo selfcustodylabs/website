@@ -123,7 +123,7 @@ Answer these questions in order:
 2. Follow [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/)
 3. Create metal backup
 4. Complete [Backup Verification](/docs/wallet-setup/backup-verification/)
-5. Review [Before You Deposit Checklist](/docs/learn/fundamentals/before-you-deposit)
+5. Review [Before You Deposit Checklist](/docs/wallet-setup/before-you-deposit)
 
 **When to upgrade:** When holdings exceed $50,000 or you want maximum security.
 

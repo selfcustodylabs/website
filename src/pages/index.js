@@ -219,8 +219,8 @@ export default function Home() {
 
   return (
     <Layout
-      title="Bitcoin Self-Custody Guides"
-      description="Step-by-step Bitcoin self-custody tutorials: cold storage, air-gapped setups, wallet security, and privacy."
+      title="Bitcoin Self-Custody Guides & Tutorials"
+      description="Learn Bitcoin self-custody: hardware wallet setup, seed phrase security, multisig configurations, privacy best practices, and running your own node. Free step-by-step guides."
     >
       <main className={styles.page}>
         {/* HERO */}

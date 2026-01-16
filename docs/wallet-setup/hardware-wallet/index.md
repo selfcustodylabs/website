@@ -307,7 +307,7 @@ Now that your hardware wallet is set up:
     { 
       label: "Then", 
       title: "Before You Deposit", 
-      href: "/docs/learn/fundamentals/before-you-deposit/", 
+      href: "/docs/wallet-setup/before-you-deposit/", 
       description: "Final checklist before moving significant Bitcoin to your wallet" 
     },
     { 

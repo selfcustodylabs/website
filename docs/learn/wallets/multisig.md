@@ -224,10 +224,30 @@ Some services offer "assisted" multisig where they hold one key:
 
 ---
 
-## Continue Learning
+## You've Completed the Wallets Section
 
-→ **Practical Guide:** [Multisig Setup Guide](/docs/advanced/multisig) — Step-by-step implementation
+You now understand the different ways to hold Bitcoin keys—from software wallets to hardware devices to multisig setups. Next, learn how Bitcoin actually moves.
 
-→ **Related:** [Hardware Wallets](/docs/learn/wallets/hardware-wallets) — Understanding signing devices
-
-→ **Related:** [Seed Phrases](/docs/learn/keys/seed) — The foundation of key management
+<NextSteps 
+  title="What's Next?"
+  items={[
+    { 
+      label: "Continue", 
+      title: "Understanding Transactions", 
+      href: "/docs/learn/transactions/utxos/", 
+      description: "Learn how Bitcoin transactions actually work" 
+    },
+    { 
+      label: "Setup", 
+      title: "Multisig Setup Guide", 
+      href: "/docs/advanced/multisig/", 
+      description: "Ready to implement multisig? Follow our step-by-step guide" 
+    },
+    { 
+      label: "Alternative", 
+      title: "Hardware Wallet Setup", 
+      href: "/docs/wallet-setup/hardware-wallet/", 
+      description: "Start simpler with a single-sig hardware wallet" 
+    }
+  ]}
+/>

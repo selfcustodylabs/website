@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-title: "Advanced Setup Guides"
-description: "Advanced Bitcoin self-custody setups for maximum security. Multisig wallets, inheritance planning, air-gapped computers, dedicated Bitcoin workstations, and open-source firmware."
-keywords: ["bitcoin multisig", "bitcoin inheritance", "air-gapped computer", "bitcoin computer", "advanced security", "self custody", "estate planning"]
+title: "Advanced Bitcoin Security: Multisig, Inheritance & Air-Gapped Setups"
+description: "Advanced Bitcoin self-custody: 2-of-3 multisig setup, inheritance planning for heirs, air-gapped signing computers, and open-source firmware guides."
+keywords: ["bitcoin multisig", "bitcoin inheritance", "air-gapped computer", "bitcoin computer", "advanced security", "self custody", "estate planning", "2-of-3 multisig"]
 tags: ["advanced", "multisig", "air-gapped", "security", "inheritance"]
 slug: /advanced
 ---

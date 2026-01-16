@@ -24,6 +24,22 @@ In this guide, you will:
 **🔧 Prerequisites:** 3 hardware wallets, Sparrow Wallet installed, understanding of [multisig concepts](/docs/learn/wallets/multisig)
 :::
 
+## On This Page
+
+1. **[What You're Building](#what-youre-building)** — Overview and security model
+2. **[Understanding the Components](#understanding-the-components)** — Hardware wallets, coordinator, descriptor
+3. **[What You Need to Back Up](#what-you-need-to-back-up)** — Critical backup requirements
+4. **[Choosing Your Configuration](#choosing-your-configuration)** — 2-of-3 vs 3-of-5 vs 2-of-2
+5. **[Collaborative Custody Services](#collaborative-custody-services)** — Assisted multisig options
+6. **[DIY vs. Collaborative](#diy-vs-collaborative-which-to-choose)** — Making the right choice
+7. **[Common Mistakes](#common-multisig-mistakes)** — Six pitfalls to avoid
+8. **[Security Checklist](#security-checklist)** — Verification steps
+
+**Next steps:** After reading this overview, follow the step-by-step guides:
+- [Hardware Setup](/docs/advanced/multisig/hardware-setup)
+- [Sparrow Configuration](/docs/advanced/multisig/sparrow-setup)
+- [Backup & Recovery](/docs/advanced/multisig/backup-recovery)
+
 :::tip Background Reading
 If you're new to multisig, read [Multisig Wallets Explained](/docs/learn/wallets/multisig) first to understand what you're building and why.
 :::

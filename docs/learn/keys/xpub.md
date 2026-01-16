@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 4
 title: "Extended Public Key (XPUB)"
 description: "Practical guide: Extended Public Key (XPUB). Covers Security Considerations, Identifying Extended Public Keys, Final Thoughts."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "public", "xpub"]
@@ -47,3 +47,14 @@ Instead of starting with **“xprv”**, extended public keys start with:
 ## Final Thoughts
 
 Guard your **financial privacy** carefully, and protect your **Bitcoin private keys** even more. While an xpub alone cannot spend funds, it still reveals sensitive information about your wallet’s activity, so treat it with care.
+---
+
+<RelatedArticles 
+  title="Continue Learning"
+  articles={[
+    { title: "Derivation Paths", href: "/docs/learn/keys/derivation-path/", tag: "Next" },
+    { title: "Extended Private Keys", href: "/docs/learn/keys/xprv/", tag: "Learn" },
+    { title: "Why Privacy Matters", href: "/docs/learn/privacy/why-privacy-matters/", tag: "Privacy" },
+    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
+  ]}
+/>
