@@ -3,15 +3,11 @@ import DocItemFooter from "@theme-original/DocItem/Footer";
 import { useLocation } from "@docusaurus/router";
 import { getNextSteps } from "@site/src/data/nextStepsData";
 import { NextSteps } from "@site/src/components";
+import { normalizePath } from "@site/src/utils/pathUtils";
 
 export default function DocItemFooterWrapper(props) {
   const location = useLocation();
-
-  // Normalize path
-  let path = location.pathname;
-  if (!path.endsWith("/")) {
-    path = path + "/";
-  }
+  const path = normalizePath(location.pathname);
 
   // Get next steps for this page
   const nextSteps = getNextSteps(path);

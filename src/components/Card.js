@@ -45,11 +45,11 @@ export default function Card({
   icon: Icon,
   title,
   description,
-  href,
-  badge,
-  cost,
-  footerLeft,
-  footerRight,
+  href = null,
+  badge = null,
+  cost = null,
+  footerLeft = null,
+  footerRight = null,
 }) {
   const content = (
     <div className={styles.cardInner}>
@@ -97,14 +97,6 @@ Card.propTypes = {
   footerLeft: PropTypes.node,
   /** Optional right footer content (e.g., arrow) */
   footerRight: PropTypes.node,
-};
-
-Card.defaultProps = {
-  href: null,
-  badge: null,
-  cost: null,
-  footerLeft: null,
-  footerRight: null,
 };
 
 /**

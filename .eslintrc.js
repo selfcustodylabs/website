@@ -35,7 +35,7 @@ module.exports = {
     
     // General
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    'no-console': 'warn',
+    'no-console': 'error',
     
     // Consistency
     'prefer-const': 'error',

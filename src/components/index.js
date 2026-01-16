@@ -7,6 +7,7 @@ export { default as RelatedArticles, articleCollections } from "./RelatedArticle
 // Shared UI components
 export { default as Card, cardStyles } from "./Card";
 export { default as DifficultyTag } from "./DifficultyTag";
+export { default as CategorySection } from "./CategorySection";
 
 // Custom icons (not available in Material UI)
 export { ClubOrangeIcon, KeybaseIcon, NostrIcon } from "./icons";

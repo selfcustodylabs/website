@@ -25,7 +25,7 @@ import { getSectionConfig } from "@site/src/data/sectionConfig";
  * - advanced (orange)
  * - reference (gray)
  */
-export default function SectionBadge({ section, icon, label }) {
+export default function SectionBadge({ section, icon = null, label = null }) {
   const sectionData = getSectionConfig(section) || { label: section, icon: "📄", color: section };
   const displayIcon = icon || sectionData.icon;
   const displayLabel = label || sectionData.label;
@@ -55,9 +55,4 @@ SectionBadge.propTypes = {
   icon: PropTypes.string,
   /** Override label (optional) */
   label: PropTypes.string,
-};
-
-SectionBadge.defaultProps = {
-  icon: null,
-  label: null,
 };

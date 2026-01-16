@@ -8,16 +8,12 @@ import {
   generateArticleSchema,
   generateFAQSchema,
   generateItemListSchema,
-} from "@site/src/data/schemaData";
+} from "@site/src/data/schema";
+import { normalizePath } from "@site/src/utils/pathUtils";
 
 export default function DocItemLayoutWrapper(props) {
   const location = useLocation();
-
-  // Normalize path to always end with /
-  let path = location.pathname;
-  if (!path.endsWith("/")) {
-    path = path + "/";
-  }
+  const path = normalizePath(location.pathname);
 
   // Generate schemas for this page
   const howToSchema = generateHowToSchema(path);

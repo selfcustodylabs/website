@@ -14,7 +14,7 @@ import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import HubRoundedIcon from "@mui/icons-material/HubRounded";
 
 // Shared components
-import { Card, cardStyles, DifficultyTag } from "@site/src/components";
+import { CategorySection } from "@site/src/components";
 
 import styles from "./styles.module.css";
 
@@ -110,32 +110,6 @@ const guidesCollectionSchema = {
     ],
   },
 };
-
-function CategorySection({ title, description, guides }) {
-  return (
-    <section className={styles.categorySection}>
-      <div className={styles.categoryHeader}>
-        <h2 className={styles.categoryTitle}>{title}</h2>
-        <p className={styles.categoryDescription}>{description}</p>
-      </div>
-      <div className={styles.grid3}>
-        {guides.map((g) => (
-          <Card
-            key={g.title}
-            icon={g.icon}
-            title={g.title}
-            description={g.description}
-            href={g.href}
-            badge={g.badge}
-            cost={g.cost}
-            footerLeft={<DifficultyTag level={g.level} />}
-            footerRight={<span className={cardStyles.arrow}>→</span>}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function GuidesPage() {
   // Security & Keys - Seed and passphrase generation
@@ -313,31 +287,31 @@ export default function GuidesPage() {
               <CategorySection
                 title="🔐 Security & Keys"
                 description="Generate and protect your Bitcoin keys with verifiable randomness"
-                guides={securityGuides}
+                items={securityGuides}
               />
 
               <CategorySection
                 title="🕵️ Privacy"
                 description="Techniques to enhance your financial privacy on Bitcoin"
-                guides={privacyGuides}
+                items={privacyGuides}
               />
 
               <CategorySection
                 title="💻 Hardware & Firmware"
                 description="Build dedicated devices with open-source firmware for maximum security"
-                guides={hardwareGuides}
+                items={hardwareGuides}
               />
 
               <CategorySection
                 title="🌐 Nodes & Network"
                 description="Run your own infrastructure to verify transactions privately"
-                guides={nodeGuides}
+                items={nodeGuides}
               />
 
               <CategorySection
                 title="🎁 Bonus Projects"
                 description="Additional projects using the same security principles"
-                guides={bonusGuides}
+                items={bonusGuides}
               />
 
               <div className={styles.heroCtas} style={{ marginTop: 32 }}>
