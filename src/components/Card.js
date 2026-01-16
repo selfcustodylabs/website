@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/styles.module.css';
+import React from "react";
+import Link from "@docusaurus/Link";
+import styles from "@site/src/pages/styles.module.css";
 
 /**
  * Reusable Card component for landing pages
  * Used on homepage, /learn, and /guides pages
- * 
+ *
  * @param {Object} props
  * @param {React.ComponentType} props.icon - Material UI icon component
  * @param {string} props.title - Card title
@@ -16,15 +16,15 @@ import styles from '@site/src/pages/styles.module.css';
  * @param {React.ReactNode} [props.footerLeft] - Optional left footer content
  * @param {React.ReactNode} [props.footerRight] - Optional right footer content
  */
-export default function Card({ 
-  icon: Icon, 
-  title, 
-  description, 
-  href, 
-  badge, 
+export default function Card({
+  icon: Icon,
+  title,
+  description,
+  href,
+  badge,
   cost,
-  footerLeft, 
-  footerRight
+  footerLeft,
+  footerRight,
 }) {
   const content = (
     <div className={styles.cardInner}>

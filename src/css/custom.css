@@ -18,18 +18,17 @@
    CORE STYLES
    =========================================== */
 
-@import './base.css';
-@import './header.css';
-@import './navigation.css';
-@import './sections.css';
-@import './tables.css';
-@import './utilities.css';
-
+@import "./base.css";
+@import "./header.css";
+@import "./navigation.css";
+@import "./sections.css";
+@import "./tables.css";
+@import "./utilities.css";
 
 /* ===========================================
    COMPONENT STYLES
    =========================================== */
 
-@import './components/progress-indicator.css';
-@import './components/next-steps.css';
-@import './components/related-articles.css';
+@import "./components/progress-indicator.css";
+@import "./components/next-steps.css";
+@import "./components/related-articles.css";

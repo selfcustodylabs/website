@@ -1,10 +1,10 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
+import React from "react";
+import Link from "@docusaurus/Link";
 
 /**
  * Next Steps CTA box for end of pages
  * Provides consistent navigation to related content
- * 
+ *
  * Usage:
  * <NextSteps
  *   title="Ready to continue?"
@@ -16,17 +16,13 @@ import Link from '@docusaurus/Link';
  */
 export default function NextSteps({ title = "Next Steps", items = [] }) {
   if (!items.length) return null;
-  
+
   return (
     <div className="next-steps">
       <div className="next-steps__title">{title}</div>
       <div className="next-steps__grid">
         {items.map((item, index) => (
-          <Link 
-            key={index} 
-            to={item.href} 
-            className="next-steps__card"
-          >
+          <Link key={index} to={item.href} className="next-steps__card">
             {item.label && (
               <span className="next-steps__card-label">{item.label}</span>
             )}

@@ -8,9 +8,11 @@
 .next-steps {
   margin-top: 48px;
   padding: 24px;
-  background: linear-gradient(135deg, 
-    var(--ifm-background-surface-color) 0%, 
-    rgba(245, 158, 11, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-background-surface-color) 0%,
+    rgba(245, 158, 11, 0.05) 100%
+  );
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
 }
@@ -76,17 +78,17 @@
   margin: 0;
 }
 
-
 /* ===========================================
    DARK MODE
    =========================================== */
 
-[data-theme='dark'] .next-steps {
-  background: linear-gradient(135deg, 
-    var(--ifm-background-surface-color) 0%, 
-    rgba(245, 158, 11, 0.08) 100%);
+[data-theme="dark"] .next-steps {
+  background: linear-gradient(
+    135deg,
+    var(--ifm-background-surface-color) 0%,
+    rgba(245, 158, 11, 0.08) 100%
+  );
 }
-
 
 /* ===========================================
    RESPONSIVE

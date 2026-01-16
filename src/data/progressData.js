@@ -1,6 +1,6 @@
 /**
  * Progress tracking data for multi-step guides
- * 
+ *
  * REFACTORED: Steps are defined once per guide, and path mappings
  * are generated automatically. This eliminates ~300 lines of repetition.
  */
@@ -13,78 +13,117 @@
  * All multi-step guides with their steps defined once
  */
 const GUIDES = {
-  'hardware-wallet': {
-    name: 'Hardware Wallet Setup',
+  "hardware-wallet": {
+    name: "Hardware Wallet Setup",
     steps: [
-      { title: 'Hardware Wallet Setup', path: '/docs/wallet-setup/hardware-wallet/' },
-      { title: 'Backup Verification', path: '/docs/wallet-setup/backup-verification/' },
-      { title: 'Before You Deposit', path: '/docs/learn/fundamentals/before-you-deposit/' },
-    ]
+      {
+        title: "Hardware Wallet Setup",
+        path: "/docs/wallet-setup/hardware-wallet/",
+      },
+      {
+        title: "Backup Verification",
+        path: "/docs/wallet-setup/backup-verification/",
+      },
+      {
+        title: "Before You Deposit",
+        path: "/docs/learn/fundamentals/before-you-deposit/",
+      },
+    ],
   },
 
-  'seed-generation': {
-    name: 'DIY Seed Generation',
+  "seed-generation": {
+    name: "DIY Seed Generation",
     steps: [
-      { title: 'Overview', path: '/docs/security/seed-generation/' },
-      { title: 'Requirements', path: '/docs/security/seed-generation/requirements/' },
-      { title: 'Dice Rolling', path: '/docs/security/seed-generation/dice-roll/' },
-      { title: 'Binary to Decimal', path: '/docs/security/seed-generation/binary-decimal/' },
-      { title: 'Checksum', path: '/docs/security/seed-generation/checksum/' },
-      { title: 'BIP39 Words', path: '/docs/security/seed-generation/bip39/' },
-    ]
+      { title: "Overview", path: "/docs/security/seed-generation/" },
+      {
+        title: "Requirements",
+        path: "/docs/security/seed-generation/requirements/",
+      },
+      {
+        title: "Dice Rolling",
+        path: "/docs/security/seed-generation/dice-roll/",
+      },
+      {
+        title: "Binary to Decimal",
+        path: "/docs/security/seed-generation/binary-decimal/",
+      },
+      { title: "Checksum", path: "/docs/security/seed-generation/checksum/" },
+      { title: "BIP39 Words", path: "/docs/security/seed-generation/bip39/" },
+    ],
   },
 
-  'passphrase': {
-    name: 'DIY Passphrase',
+  passphrase: {
+    name: "DIY Passphrase",
     steps: [
-      { title: 'Overview', path: '/docs/security/passphrase/' },
-      { title: 'Word Lists', path: '/docs/security/passphrase/word-lists/' },
-      { title: 'Dice Rolling', path: '/docs/security/passphrase/dice-roll/' },
-      { title: 'Backup', path: '/docs/security/passphrase/backup/' },
-    ]
+      { title: "Overview", path: "/docs/security/passphrase/" },
+      { title: "Word Lists", path: "/docs/security/passphrase/word-lists/" },
+      { title: "Dice Rolling", path: "/docs/security/passphrase/dice-roll/" },
+      { title: "Backup", path: "/docs/security/passphrase/backup/" },
+    ],
   },
 
-  'multisig': {
-    name: 'Multisig Setup',
+  multisig: {
+    name: "Multisig Setup",
     steps: [
-      { title: 'Overview', path: '/docs/advanced/multisig/' },
-      { title: 'Hardware Setup', path: '/docs/advanced/multisig/hardware-setup/' },
-      { title: 'Sparrow Setup', path: '/docs/advanced/multisig/sparrow-setup/' },
-      { title: 'Backup & Recovery', path: '/docs/advanced/multisig/backup-recovery/' },
-    ]
+      { title: "Overview", path: "/docs/advanced/multisig/" },
+      {
+        title: "Hardware Setup",
+        path: "/docs/advanced/multisig/hardware-setup/",
+      },
+      {
+        title: "Sparrow Setup",
+        path: "/docs/advanced/multisig/sparrow-setup/",
+      },
+      {
+        title: "Backup & Recovery",
+        path: "/docs/advanced/multisig/backup-recovery/",
+      },
+    ],
   },
 
-  'bitcoin-node': {
-    name: 'Bitcoin Node Setup',
+  "bitcoin-node": {
+    name: "Bitcoin Node Setup",
     steps: [
-      { title: 'Overview', path: '/docs/bitcoin-node/' },
-      { title: 'Software Options', path: '/docs/bitcoin-node/node-software-options/' },
-      { title: 'Electrum Server', path: '/docs/bitcoin-node/electrum-server/' },
-      { title: 'Tor Setup', path: '/docs/bitcoin-node/tor/' },
-      { title: 'Connect Sparrow', path: '/docs/bitcoin-node/connect-sparrow-wallet/' },
-    ]
+      { title: "Overview", path: "/docs/bitcoin-node/" },
+      {
+        title: "Software Options",
+        path: "/docs/bitcoin-node/node-software-options/",
+      },
+      { title: "Electrum Server", path: "/docs/bitcoin-node/electrum-server/" },
+      { title: "Tor Setup", path: "/docs/bitcoin-node/tor/" },
+      {
+        title: "Connect Sparrow",
+        path: "/docs/bitcoin-node/connect-sparrow-wallet/",
+      },
+    ],
   },
 
-  'libreboot': {
-    name: 'Libreboot Installation',
+  libreboot: {
+    name: "Libreboot Installation",
     steps: [
-      { title: 'Overview', path: '/docs/libreboot/' },
-      { title: 'Requirements', path: '/docs/libreboot/requirements/' },
-      { title: 'Build ROM', path: '/docs/libreboot/build/' },
-      { title: 'Build flashprog', path: '/docs/libreboot/build-flashprog/' },
-      { title: 'Pico Setup', path: '/docs/libreboot/raspberry-pico/build-serprog/' },
-      { title: 'Flash BIOS', path: '/docs/libreboot/flashing-bios/' },
-    ]
+      { title: "Overview", path: "/docs/libreboot/" },
+      { title: "Requirements", path: "/docs/libreboot/requirements/" },
+      { title: "Build ROM", path: "/docs/libreboot/build/" },
+      { title: "Build flashprog", path: "/docs/libreboot/build-flashprog/" },
+      {
+        title: "Pico Setup",
+        path: "/docs/libreboot/raspberry-pico/build-serprog/",
+      },
+      { title: "Flash BIOS", path: "/docs/libreboot/flashing-bios/" },
+    ],
   },
 
-  'coinjoin': {
-    name: 'CoinJoin Guide',
+  coinjoin: {
+    name: "CoinJoin Guide",
     steps: [
-      { title: 'Overview', path: '/docs/privacy/coinjoin/' },
-      { title: 'How It Works', path: '/docs/privacy/coinjoin/how-it-works/' },
-      { title: 'Services', path: '/docs/privacy/coinjoin/services/' },
-      { title: 'Best Practices', path: '/docs/privacy/coinjoin/best-practices/' },
-    ]
+      { title: "Overview", path: "/docs/privacy/coinjoin/" },
+      { title: "How It Works", path: "/docs/privacy/coinjoin/how-it-works/" },
+      { title: "Services", path: "/docs/privacy/coinjoin/services/" },
+      {
+        title: "Best Practices",
+        path: "/docs/privacy/coinjoin/best-practices/",
+      },
+    ],
   },
 };
 
@@ -128,18 +167,18 @@ export const guideProgress = buildGuideProgress();
  * Section mapping based on URL path
  */
 export function getSectionFromPath(path) {
-  if (path.includes('/learn/fundamentals')) return 'fundamentals';
-  if (path.includes('/learn/keys')) return 'keys';
-  if (path.includes('/learn/wallets')) return 'wallets';
-  if (path.includes('/learn/transactions')) return 'transactions';
-  if (path.includes('/learn/privacy')) return 'privacy';
-  if (path.includes('/learn/nodes')) return 'nodes';
-  if (path.includes('/security/')) return 'security';
-  if (path.includes('/advanced/')) return 'advanced';
-  if (path.includes('/privacy/')) return 'privacy';
-  if (path.includes('/reference/')) return 'reference';
-  if (path.includes('/wallet-setup/')) return 'wallets';
-  if (path.includes('/bitcoin-node/')) return 'nodes';
+  if (path.includes("/learn/fundamentals")) return "fundamentals";
+  if (path.includes("/learn/keys")) return "keys";
+  if (path.includes("/learn/wallets")) return "wallets";
+  if (path.includes("/learn/transactions")) return "transactions";
+  if (path.includes("/learn/privacy")) return "privacy";
+  if (path.includes("/learn/nodes")) return "nodes";
+  if (path.includes("/security/")) return "security";
+  if (path.includes("/advanced/")) return "advanced";
+  if (path.includes("/privacy/")) return "privacy";
+  if (path.includes("/reference/")) return "reference";
+  if (path.includes("/wallet-setup/")) return "wallets";
+  if (path.includes("/bitcoin-node/")) return "nodes";
   return null;
 }
 
@@ -170,7 +209,7 @@ export function getGuideBySlug(slug) {
 export function getGuidePaths(slug) {
   const guide = GUIDES[slug];
   if (!guide) return [];
-  return guide.steps.map(step => step.path);
+  return guide.steps.map((step) => step.path);
 }
 
 // ===========================================
