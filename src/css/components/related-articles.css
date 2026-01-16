@@ -1,0 +1,84 @@
+/**
+ * Related Articles Component CSS
+ * 
+ * Cross-linking section displayed at the end of doc pages
+ * Used by the RelatedArticles React component
+ */
+
+.related-articles {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.related-articles__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.related-articles__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.related-articles__grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.related-articles__grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.related-articles__grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.related-articles__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.related-articles__item:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-color);
+  text-decoration: none;
+}
+
+.related-articles__tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-primary);
+}
+
+.related-articles__item-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ifm-heading-color);
+}
+
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 768px) {
+  .related-articles__grid--cols-2,
+  .related-articles__grid--cols-3,
+  .related-articles__grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}

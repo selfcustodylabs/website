@@ -570,3 +570,170 @@
   font-size: 0.98rem;
   line-height: 1.6;
 }
+
+
+/* ===========================================
+   404 PAGE STYLES
+   =========================================== */
+
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 48px 24px;
+  background: linear-gradient(180deg, var(--ifm-background-color) 0%, var(--ifm-background-surface-color) 100%);
+}
+
+.notFoundContent {
+  text-align: center;
+  max-width: 600px;
+}
+
+.notFoundLogo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.notFoundTitle {
+  font-size: 6rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.notFoundSubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 8px 0 16px;
+  color: var(--ifm-heading-color);
+}
+
+.notFoundMessage {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.notFoundSearch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 40px;
+}
+
+.notFoundLinks {
+  margin-bottom: 32px;
+}
+
+.notFoundLinksTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 16px;
+}
+
+.notFoundGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.notFoundCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.notFoundCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.notFoundCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.notFoundCardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.notFoundCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: var(--ifm-heading-color);
+}
+
+.notFoundCardDesc {
+  font-size: 0.813rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notFoundBackButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notFoundBackButton:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 640px) {
+  .notFoundTitle {
+    font-size: 4rem;
+  }
+  
+  .notFoundGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -72,7 +72,7 @@ This tells wallet software:
 
 ### Recommended 2-of-3 Storage Layout
 
-![](/img/multisig/storage-locations.webp)
+![Recommended 2-of-3 multisig storage layout showing geographic separation of seed backups across multiple locations](/img/multisig/storage-locations.webp)
 
 **Notice:**
 - Each seed is in a different location

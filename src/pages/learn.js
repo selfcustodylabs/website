@@ -13,6 +13,9 @@ import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 
+// Shared components
+import { Card, DifficultyTag } from "@site/src/components";
+
 import styles from "./styles.module.css";
 
 // Schema for SEO
@@ -71,45 +74,6 @@ const learnCollectionSchema = {
   }
 };
 
-function Card({ icon: Icon, title, description, href, badge, footerLeft, footerRight }) {
-  const content = (
-    <div className={styles.cardInner}>
-      <div className={styles.cardTop}>
-        <div className={styles.cardIcon}>
-          <Icon fontSize="inherit" />
-        </div>
-        {badge ? <div className={styles.cardBadge}>{badge}</div> : null}
-      </div>
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardDescription}>{description}</p>
-      {(footerLeft || footerRight) && (
-        <div className={styles.cardFooter}>
-          <div className={styles.cardFooterLeft}>{footerLeft}</div>
-          <div className={styles.cardFooterRight}>{footerRight}</div>
-        </div>
-      )}
-    </div>
-  );
-
-  if (!href) return <div className={styles.card}>{content}</div>;
-
-  return (
-    <Link className={styles.cardLink} to={href}>
-      <div className={styles.card}>{content}</div>
-    </Link>
-  );
-}
-
-function DifficultyTag({ level }) {
-  const cls =
-    level === "Beginner"
-      ? styles.tagBeginner
-      : level === "Intermediate"
-        ? styles.tagIntermediate
-        : styles.tagAdvanced;
-  return <span className={`${styles.tag} ${cls}`}>{level}</span>;
-}
-
 function TimeTag({ time }) {
   return (
     <span className={styles.timeTag}>
@@ -134,8 +98,9 @@ function CategorySection({ title, description, topics }) {
             description={t.description}
             href={t.href}
             badge={t.badge}
-            footerLeft={<DifficultyTag level={t.level} />}
+            footerLeft={<DifficultyTag level={t.level} styles={styles} />}
             footerRight={<span className={styles.arrow}>→</span>}
+            styles={styles}
           />
         ))}
       </div>
@@ -329,8 +294,7 @@ export default function LearnPage() {
   return (
     <Layout title="Browse Topics" description="Browse all Bitcoin self-custody learning topics. Find guides on keys, wallets, transactions, privacy, and nodes.">
       <Head>
-        {/* Canonical URL points to docs version to consolidate SEO */}
-        <link rel="canonical" href="https://selfcustodylabs.com/docs/learn/" />
+        {/* Page-specific meta tags */}
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify(learnCollectionSchema)}

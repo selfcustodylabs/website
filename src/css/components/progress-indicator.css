@@ -1,0 +1,86 @@
+/**
+ * Progress Indicator Component CSS
+ * 
+ * Displays progress through multi-step guides
+ * Used by the ProgressIndicator React component
+ */
+
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.progress-indicator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.progress-indicator__title {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.progress-indicator__count {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.progress-indicator__bar {
+  height: 8px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-indicator__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-indicator__steps {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.progress-indicator__step {
+  flex: 1;
+  height: 4px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.progress-indicator__step--complete {
+  background: var(--ifm-color-primary);
+}
+
+.progress-indicator__step--current {
+  background: var(--ifm-color-primary-light);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 768px) {
+  .progress-indicator {
+    padding: 12px 16px;
+  }
+}

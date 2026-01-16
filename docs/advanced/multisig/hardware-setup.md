@@ -187,7 +187,7 @@ Ledger devices work with most multisig coordinators.
 
 For each device, create a record card:
 
-![](/img/multisig/record-card.webp)
+![Example record card showing device label, fingerprint, and firmware version for multisig tracking](/img/multisig/record-card.webp)
 
 **Important:** Store this record SEPARATELY from the seed phrases.
 
@@ -226,7 +226,7 @@ Paper can be destroyed by:
 
 ### Seed Backup Locations for 2-of-3
 
-![](/img/multisig/seed-backup-locations.webp)
+![Diagram showing recommended separate storage locations for each seed phrase backup in a 2-of-3 multisig setup](/img/multisig/seed-backup-locations.webp)
 
 **Never store a seed phrase with its corresponding device!**
 
