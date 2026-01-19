@@ -17,8 +17,8 @@
   border-left: 3px solid transparent;
   margin-left: -3px;
   transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 /* Active item base styling */

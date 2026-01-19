@@ -47,7 +47,22 @@ const config = {
     // Theme color for mobile browsers
     { tagName: "meta", attributes: { name: "theme-color", content: "#f59e0b" } },
     { tagName: "meta", attributes: { name: "msapplication-TileColor", content: "#f59e0b" } },
-    
+
+    // ===========================================
+    // Content Security Policy
+    // ===========================================
+    {
+      tagName: "meta",
+      attributes: {
+        "http-equiv": "Content-Security-Policy",
+        content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://cloud.umami.is https://region1.google-analytics.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+      }
+    },
+
+    // Additional security headers via meta tags
+    { tagName: "meta", attributes: { "http-equiv": "X-Content-Type-Options", content: "nosniff" } },
+    { tagName: "meta", attributes: { "http-equiv": "X-Frame-Options", content: "DENY" } },
+
     // ===========================================
     // Structured Data - Organization Schema
     // ===========================================
@@ -428,6 +443,10 @@ const config = {
                 label: 'Mempool',
                 href: 'https://mempool.space/',
               },
+              {
+                label: 'Privacy Policy',
+                to: '/privacy/',
+              },
             ],
           },
           {
@@ -606,11 +625,15 @@ const config = {
   // ===========================================
   // SCRIPTS
   // ===========================================
+  // Note: SRI (Subresource Integrity) is not used for Umami script because
+  // Umami updates their script periodically, which would break the hash.
+  // Security is maintained via CSP headers instead.
   scripts: [
     {
       src: 'https://cloud.umami.is/script.js',
       defer: true,
-      'data-website-id': '5649cb57-bc60-498c-a7ff-2d044fc85912'
+      'data-website-id': '5649cb57-bc60-498c-a7ff-2d044fc85912',
+      async: true,
     },
   ],
 };

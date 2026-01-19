@@ -25,6 +25,21 @@
 }
 
 /* ===========================================
+   ACCESSIBILITY - Section Indicators
+   Unicode symbols provide secondary identification
+   for users who cannot distinguish colors
+   =========================================== */
+
+.section-badge--fundamentals::before { content: "\25CF "; /* Filled circle */ }
+.section-badge--keys::before { content: "\25C6 "; /* Diamond */ }
+.section-badge--wallets::before { content: "\25A0 "; /* Square */ }
+.section-badge--transactions::before { content: "\25B6 "; /* Triangle right */ }
+.section-badge--privacy::before { content: "\25C8 "; /* Diamond in square */ }
+.section-badge--nodes::before { content: "\2726 "; /* Four pointed star */ }
+.section-badge--security::before { content: "\2605 "; /* Star */ }
+.section-badge--advanced::before { content: "\2756 "; /* Diamond minus */ }
+
+/* ===========================================
    LIGHT MODE VARIANTS
    =========================================== */
 
