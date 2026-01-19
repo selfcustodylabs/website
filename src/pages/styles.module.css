@@ -91,10 +91,10 @@
   font-weight: 700;
   text-decoration: none !important;
   transition:
-    transform 140ms ease,
-    box-shadow 140ms ease,
-    background 140ms ease,
-    border-color 140ms ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .buttonPrimary {
@@ -203,9 +203,9 @@
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .card:hover {
@@ -358,9 +358,9 @@
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .pathItem:hover {
@@ -458,9 +458,9 @@
   border: 1px solid rgba(245, 158, 11, 0.22);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .smallCard:hover {
@@ -684,7 +684,7 @@
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
 }
 
@@ -740,7 +740,7 @@
   font-weight: 500;
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .notFoundBackButton:hover {

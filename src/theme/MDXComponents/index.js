@@ -6,6 +6,7 @@ import ProgressIndicator from "@site/src/components/ProgressIndicator";
 import NextSteps from "@site/src/components/NextSteps";
 import SectionBadge from "@site/src/components/SectionBadge";
 import RelatedArticles from "@site/src/components/RelatedArticles";
+import FeaturedImage from "@site/src/components/FeaturedImage";
 
 export default {
   // Re-use the default mapping
@@ -16,4 +17,5 @@ export default {
   NextSteps,
   SectionBadge,
   RelatedArticles,
+  FeaturedImage,
 };

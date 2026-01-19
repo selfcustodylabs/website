@@ -103,13 +103,34 @@ const GUIDES = {
     steps: [
       { title: "Overview", path: "/docs/libreboot/" },
       { title: "Requirements", path: "/docs/libreboot/requirements/" },
-      { title: "Build ROM", path: "/docs/libreboot/build/" },
-      { title: "Build flashprog", path: "/docs/libreboot/build-flashprog/" },
+      { title: "Build Libreboot", path: "/docs/libreboot/build/" },
+      { title: "Build ROMs", path: "/docs/libreboot/roms/" },
+      { title: "Build Flashprog", path: "/docs/libreboot/build-flashprog/" },
       {
         title: "Pico Setup",
         path: "/docs/libreboot/raspberry-pico/build-serprog/",
       },
       { title: "Flash BIOS", path: "/docs/libreboot/flashing-bios/" },
+    ],
+  },
+
+  coreboot: {
+    name: "Coreboot Installation",
+    steps: [
+      { title: "Overview", path: "/docs/coreboot/" },
+      { title: "Build Coreboot", path: "/docs/coreboot/build/" },
+      {
+        title: "Downgrade BIOS",
+        path: "/docs/coreboot/internal/downgrading-bios/",
+      },
+      {
+        title: "Unlock BIOS",
+        path: "/docs/coreboot/internal/unlocking-bios/",
+      },
+      {
+        title: "Flash BIOS",
+        path: "/docs/coreboot/internal/flashing-bios/",
+      },
     ],
   },
 
@@ -179,6 +200,8 @@ export function getSectionFromPath(path) {
   if (path.includes("/reference/")) return "reference";
   if (path.includes("/wallet-setup/")) return "wallets";
   if (path.includes("/bitcoin-node/")) return "nodes";
+  if (path.includes("/libreboot/")) return "advanced";
+  if (path.includes("/coreboot/")) return "advanced";
   return null;
 }
 

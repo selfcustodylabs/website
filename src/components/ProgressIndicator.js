@@ -40,8 +40,6 @@ import Link from "@docusaurus/Link";
  * />
  */
 export default function ProgressIndicator({ current, total, title, steps = null }) {
-  const percentage = Math.round((current / total) * 100);
-
   // Render clickable steps if steps array is provided
   const renderSteps = () => {
     if (steps && steps.length > 0) {
@@ -77,11 +75,8 @@ export default function ProgressIndicator({ current, total, title, steps = null 
       <div className="progress-indicator__header">
         <span className="progress-indicator__title">{title}</span>
         <span className="progress-indicator__count">
-          Step {current} of {total} — {percentage}% complete
+          Step {current} of {total}
         </span>
-      </div>
-      <div className="progress-indicator__bar">
-        <div className="progress-indicator__fill" style={{ width: `${percentage}%` }} />
       </div>
       <div className="progress-indicator__steps">{renderSteps()}</div>
     </div>

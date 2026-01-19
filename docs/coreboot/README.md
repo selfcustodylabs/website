@@ -8,7 +8,11 @@ tags: ["coreboot", "open source", "bios", "firmware"]
 
 # Coreboot BIOS
 
-![Coreboot](/img/coreboot/coreboot.webp)
+<FeaturedImage
+  src="/img/coreboot/t430s.webp"
+  alt="ThinkPad T430s with Coreboot firmware"
+  caption="ThinkPad T430s running Coreboot open-source firmware"
+/>
 
 :::info What You'll Do
 In this guide, you will:
@@ -54,8 +58,6 @@ Coreboot is a free and open-source replacement for traditional BIOS/UEFI. It ini
 ## How Coreboot Works
 
 Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (which sets up memory), then ramstage (which initializes the rest of the hardware). Finally, it launches the chosen payload. This structure makes the boot process faster, simpler, and easier to audit, perfect for anyone who values system integrity.
-
-![T430s](/img/coreboot/t430s.webp)
 
 ---
 

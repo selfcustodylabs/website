@@ -1,14 +1,14 @@
 /**
  * Progress Indicator Component CSS
- * 
+ *
  * Displays progress through multi-step guides
- * Used by the ProgressIndicator React component
+ * Uses a single segmented bar design for clarity
  */
 
 .progress-indicator {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   padding: 16px 20px;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -30,52 +30,65 @@
 
 .progress-indicator__count {
   color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
 }
 
-.progress-indicator__bar {
-  height: 8px;
-  background: var(--ifm-color-emphasis-200);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-indicator__fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
+/* ===========================================
+   SEGMENTED PROGRESS STEPS
+   =========================================== */
 
 .progress-indicator__steps {
   display: flex;
-  gap: 4px;
-  margin-top: 4px;
+  gap: 6px;
 }
 
 .progress-indicator__step {
   flex: 1;
-  height: 4px;
+  height: 10px;
   background: var(--ifm-color-emphasis-200);
-  border-radius: 2px;
-  transition: background 0.2s ease;
+  border-radius: 5px;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
+/* Clickable steps */
+a.progress-indicator__step {
+  cursor: pointer;
+}
+
+a.progress-indicator__step:hover {
+  transform: scaleY(1.2);
+  background: var(--ifm-color-emphasis-300);
+}
+
+/* Completed steps */
 .progress-indicator__step--complete {
   background: var(--ifm-color-primary);
 }
 
-.progress-indicator__step--current {
-  background: var(--ifm-color-primary-light);
-  animation: pulse 2s infinite;
+a.progress-indicator__step--complete:hover {
+  background: var(--ifm-color-primary-dark);
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
+/* Current step */
+.progress-indicator__step--current {
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  box-shadow: 0 0 8px rgba(242, 107, 0, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+a.progress-indicator__step--current:hover {
+  transform: scaleY(1.2);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(242, 107, 0, 0.4);
   }
   50% {
-    opacity: 0.6;
+    box-shadow: 0 0 12px rgba(242, 107, 0, 0.6);
   }
 }
 
@@ -86,5 +99,10 @@
 @media (max-width: 768px) {
   .progress-indicator {
     padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .progress-indicator__step {
+    height: 8px;
   }
 }

@@ -8,7 +8,11 @@ tags: ["libreboot", "open source", "bios", "firmware"]
 
 # Libreboot BIOS
 
-![Libreboot](/img/libreboot/libreboot.webp)
+<FeaturedImage
+  src="/img/libreboot/t480s.webp"
+  alt="ThinkPad T480s with Libreboot firmware"
+  caption="ThinkPad T480s running Libreboot open-source firmware"
+/>
 
 :::info What You'll Do
 In this guide, you will:
@@ -61,8 +65,6 @@ Libreboot includes multiple bootloader options:
 - **U-Boot** – A simple UEFI bootloader for ARM and some x86/x86_64 systems.
 
 All these options come bundled, letting you choose the right one when you boot.
-
-![T480s](/img/libreboot/t480s.webp)
 
 ---
 

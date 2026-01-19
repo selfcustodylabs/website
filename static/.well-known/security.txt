@@ -1,0 +1,9 @@
+# Security Policy for Self Custody Labs
+# https://selfcustodylabs.com
+
+Contact: mailto:selfcustodylabs@proton.me
+Preferred-Languages: en
+Canonical: https://selfcustodylabs.com/.well-known/security.txt
+
+# If you discover a security vulnerability, please report it to us.
+# We appreciate responsible disclosure.
