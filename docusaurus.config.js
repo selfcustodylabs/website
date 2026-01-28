@@ -212,7 +212,13 @@ const config = {
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['/tags/**', '/404.html'],
+          ignorePatterns: [
+            '/tags/**',
+            '/docs/tags/**',
+            '/404.html',
+            '/404/',
+            '/search/',
+          ],
           filename: 'sitemap.xml',
         },
         
