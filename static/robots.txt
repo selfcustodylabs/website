@@ -12,9 +12,15 @@ Allow: /
 Disallow: /search
 Disallow: /search/
 
-# Disallow tag pages (if any exist)
+# Disallow 404 page
+Disallow: /404
+Disallow: /404/
+
+# Disallow tag pages (thin content, duplicative)
 Disallow: /tags/
 Disallow: /tags
+Disallow: /docs/tags/
+Disallow: /docs/tags
 
 # Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
