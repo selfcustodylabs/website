@@ -11,7 +11,7 @@ import autoprefixer from "autoprefixer";
 const config = {
   title: "Self Custody Labs",
   tagline: "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, and privacy best practices.",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.ico?v=2",
 
   // ===========================================
   // HEAD TAGS - Global SEO & Structured Data
