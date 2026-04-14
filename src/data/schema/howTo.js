@@ -240,7 +240,7 @@ export const howToSchemas = {
   // =====================
   // ADVANCED GUIDES
   // =====================
-  "/docs/advanced/multisig/": {
+  "/docs/learn/wallets/multisig/": {
     name: "How to Set Up a Bitcoin Multisig Wallet",
     description:
       "Create a multisignature wallet requiring multiple keys to spend. Eliminate single points of failure and protect against theft or loss.",
@@ -264,27 +264,27 @@ export const howToSchemas = {
       {
         name: "Choose Your Configuration",
         text: "Select a multisig configuration (2-of-3 recommended for most users) based on your security needs.",
-        url: `${SITE_URL}/docs/advanced/multisig/`,
+        url: `${SITE_URL}/docs/learn/wallets/multisig/#choosing-your-configuration`,
       },
       {
         name: "Set Up Hardware Wallets",
         text: "Initialize each hardware wallet separately and securely backup each seed phrase.",
-        url: `${SITE_URL}/docs/advanced/multisig/hardware-setup/`,
+        url: `${SITE_URL}/docs/learn/wallets/multisig/hardware-setup/`,
       },
       {
         name: "Create Multisig in Sparrow",
         text: "Use Sparrow Wallet to combine the public keys from each device into a multisig wallet.",
-        url: `${SITE_URL}/docs/advanced/multisig/sparrow-setup/`,
+        url: `${SITE_URL}/docs/learn/wallets/multisig/sparrow-setup/`,
       },
       {
         name: "Backup Wallet Descriptor",
         text: "Export and securely store the wallet descriptor—required for recovery along with seed phrases.",
-        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`,
+        url: `${SITE_URL}/docs/learn/wallets/multisig/backup-recovery/`,
       },
       {
         name: "Test the Setup",
         text: "Send a small test transaction and practice the signing process with multiple devices.",
-        url: `${SITE_URL}/docs/advanced/multisig/backup-recovery/`,
+        url: `${SITE_URL}/docs/learn/wallets/multisig/backup-recovery/`,
       },
     ],
   },

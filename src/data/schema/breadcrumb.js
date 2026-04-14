@@ -36,6 +36,9 @@ export const breadcrumbMappings = {
   "/docs/learn/wallets/hardware-wallets/": ["Learn", "Wallets", "Hardware Wallets"],
   "/docs/learn/wallets/air-gapped-wallets/": ["Learn", "Wallets", "Air-Gapped Wallets"],
   "/docs/learn/wallets/multisig/": ["Learn", "Wallets", "Multisig"],
+  "/docs/learn/wallets/multisig/hardware-setup/": ["Learn", "Multisig", "Hardware Setup"],
+  "/docs/learn/wallets/multisig/sparrow-setup/": ["Learn", "Multisig", "Sparrow Setup"],
+  "/docs/learn/wallets/multisig/backup-recovery/": ["Learn", "Multisig", "Backup & Recovery"],
 
   // Learn section - Transactions
   "/docs/learn/transactions/understanding/": ["Learn", "Transactions", "How Transactions Work"],
@@ -78,10 +81,6 @@ export const breadcrumbMappings = {
 
   // Advanced guides
   "/docs/advanced/": ["Guides", "Advanced"],
-  "/docs/advanced/multisig/": ["Guides", "Advanced", "Multisig"],
-  "/docs/advanced/multisig/hardware-setup/": ["Guides", "Multisig", "Hardware Setup"],
-  "/docs/advanced/multisig/sparrow-setup/": ["Guides", "Multisig", "Sparrow Setup"],
-  "/docs/advanced/multisig/backup-recovery/": ["Guides", "Multisig", "Backup & Recovery"],
 
   "/docs/advanced/air-gapped-computer/": ["Guides", "Advanced", "Air-Gapped Computer"],
   "/docs/advanced/air-gapped-computer/types/": ["Guides", "Air-Gapped Computer", "Types"],

@@ -222,7 +222,7 @@ If you've completed this checklist, you've finished the core wallet setup journe
     { 
       label: "Advanced", 
       title: "Multisig Setup", 
-      href: "/docs/advanced/multisig/", 
+      href: "/docs/learn/wallets/multisig/", 
       description: "Eliminate single points of failure for significant holdings" 
     },
     { 

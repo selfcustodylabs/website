@@ -219,7 +219,7 @@ The process of using computational power to validate transactions and create new
 The human-readable word sequence (seed phrase) used to encode a wallet's seed. See [Seed Phrases](/docs/learn/keys/seed).
 
 ### Multisig (Multisignature)
-A security setup requiring multiple private keys to authorize a transaction. Example: 2-of-3 multisig needs any 2 of 3 keys to spend. See [Multisig Setup](/docs/advanced/multisig).
+A security setup requiring multiple private keys to authorize a transaction. Example: 2-of-3 multisig needs any 2 of 3 keys to spend. See [Multisig Setup](/docs/learn/wallets/multisig).
 
 ---
 
@@ -429,7 +429,7 @@ A master public key that can derive all public keys and addresses in an HD walle
 ## Numbers & Symbols
 
 ### 2-of-3
-A common multisig configuration requiring any 2 of 3 keys to spend funds. See [Multisig](/docs/advanced/multisig).
+A common multisig configuration requiring any 2 of 3 keys to spend funds. See [Multisig](/docs/learn/wallets/multisig).
 
 ### 21 Million
 The maximum supply of Bitcoin that will ever exist, enforced by Bitcoin's consensus rules.

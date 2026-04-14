@@ -23,15 +23,6 @@ import { SITE_URL } from "./schema/constants.js";
 
 export const canonicalMap = {
   // =============================================
-  // MULTISIG
-  // Old detailed tree → learn/wallets/multisig
-  // =============================================
-  "/docs/advanced/multisig/": "/docs/learn/wallets/multisig/",
-  "/docs/advanced/multisig/backup-recovery/": "/docs/learn/wallets/multisig/",
-  "/docs/advanced/multisig/hardware-setup/": "/docs/learn/wallets/multisig/",
-  "/docs/advanced/multisig/sparrow-setup/": "/docs/learn/wallets/multisig/",
-
-  // =============================================
   // AIR-GAPPED COMPUTER
   // Old detailed tree → learn/wallets/air-gapped-wallets
   // =============================================

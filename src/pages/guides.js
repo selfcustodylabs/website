@@ -106,7 +106,7 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         position: 13,
         name: "Multisig Setup Guide",
-        url: "https://selfcustodylabs.com/docs/advanced/multisig/",
+        url: "https://selfcustodylabs.com/docs/learn/wallets/multisig/",
       },
     ],
   },
@@ -155,7 +155,7 @@ export default function GuidesPage() {
       title: "Multisig Setup",
       description:
         "Eliminate single points of failure with multi-signature wallets. The ultimate security for significant holdings.",
-      href: "/docs/advanced/multisig",
+      href: "/docs/learn/wallets/multisig",
       level: "Advanced",
     },
   ];

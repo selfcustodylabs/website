@@ -430,7 +430,7 @@ For most users, we recommend starting with a **Trezor Safe 3** or **BitBox02**, 
     { 
       label: "Advanced", 
       title: "Multisig Setup", 
-      href: "/docs/advanced/multisig/", 
+      href: "/docs/learn/wallets/multisig/", 
       description: "Use multiple hardware wallets for maximum security" 
     }
   ]}

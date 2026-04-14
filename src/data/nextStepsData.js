@@ -172,9 +172,9 @@ const NEXT_STEPS = {
   "/docs/learn/wallets/multisig/": [
     {
       label: "Action",
-      title: "Multisig Setup Guide",
-      href: "/docs/advanced/multisig/",
-      description: "Implement multisig step by step",
+      title: "Hardware Setup",
+      href: "/docs/learn/wallets/multisig/hardware-setup/",
+      description: "Start the step-by-step setup",
     },
     {
       label: "Learn",
@@ -366,17 +366,9 @@ const NEXT_STEPS = {
   ],
 
   // ===========================================
-  // ADVANCED
+  // MULTISIG SUB-PAGES
   // ===========================================
-  "/docs/advanced/multisig/": [
-    {
-      label: "Start",
-      title: "Hardware Setup",
-      href: "/docs/advanced/multisig/hardware-setup/",
-      description: "Set up your devices",
-    },
-  ],
-  "/docs/advanced/multisig/backup-recovery/": [
+  "/docs/learn/wallets/multisig/backup-recovery/": [
     {
       label: "Done!",
       title: "Test Your Setup",

@@ -40,7 +40,7 @@ Standard hardware wallet setups are excellent for most users. Advanced setups ad
 
 <div class="guide-card">
 
-### [Multisig Setup Guide](/docs/advanced/multisig/)
+### [Multisig Setup Guide](/docs/learn/wallets/multisig/)
 
 **Time:** 4-8 hours | **Difficulty:** Advanced | **Cost:** $230-510
 
@@ -189,7 +189,7 @@ Build advanced capabilities in stages:
 8. **[DIY seed generation](/docs/learn/keys/random/)** — Verify your entropy
 
 ### Stage 4: Maximum Security
-9. **[Multisig setup](/docs/advanced/multisig/)** — Eliminate single points of failure
+9. **[Multisig setup](/docs/learn/wallets/multisig/)** — Eliminate single points of failure
 10. **[Open firmware](/docs/libreboot/)** — Remove BIOS-level threats
 
 ---
@@ -197,7 +197,7 @@ Build advanced capabilities in stages:
 ## Choosing Your Path
 
 ### "I want to eliminate single points of failure"
-→ **[Multisig](/docs/advanced/multisig/)** is your answer. Start with 2-of-3.
+→ **[Multisig](/docs/learn/wallets/multisig/)** is your answer. Start with 2-of-3.
 
 ### "I want my family to inherit my Bitcoin"
 → **[Inheritance Planning](/docs/advanced/inheritance-planning)** — don't let your Bitcoin die with you.

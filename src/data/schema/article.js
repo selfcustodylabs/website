@@ -321,11 +321,11 @@ export const articleSchemas = {
       "Pair the Horse extension and your Nostr Signing Device with a Nostr client to sign events using hardware-held keys.",
     articleSection: "Guides",
   },
-  "/docs/advanced/multisig/": {
+  "/docs/learn/wallets/multisig/": {
     headline: "Bitcoin Multisig Setup Guide",
     description:
       "Set up a Bitcoin multisig wallet to eliminate single points of failure. Hardware selection, sparrow configuration, and backup strategy.",
-    articleSection: "Advanced",
+    articleSection: "Learn",
   },
   "/docs/advanced/inheritance-planning/": {
     headline: "Bitcoin Inheritance Planning",

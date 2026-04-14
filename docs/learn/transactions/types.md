@@ -64,7 +64,7 @@ You now understand how Bitcoin moves: from UTXOs to transaction creation, signin
     { 
       label: "Advanced", 
       title: "Multisig Setup", 
-      href: "/docs/advanced/multisig/", 
+      href: "/docs/learn/wallets/multisig/", 
       description: "PSBTs are essential for multisig—ready to set one up?" 
     }
   ]}

@@ -59,7 +59,7 @@ export const itemListSchemas = {
     description:
       "Advanced techniques for Bitcoin security including multisig setups, air-gapped computers, and inheritance planning.",
     items: [
-      { name: "Multisig Setup", url: "/docs/advanced/multisig/" },
+      { name: "Multisig Setup", url: "/docs/learn/wallets/multisig/" },
       {
         name: "Air-Gapped Computer",
         url: "/docs/advanced/air-gapped-computer/",

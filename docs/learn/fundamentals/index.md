@@ -62,7 +62,7 @@ Self Custody Labs is for anyone serious about Bitcoin security:
 | **Brand new to Bitcoin** | Read [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) first |
 | **Own Bitcoin on an exchange** | Learn [what self-custody is](/docs/learn/fundamentals/what-is-self-custody), then [set up a hardware wallet](/docs/wallet-setup/hardware-wallet/) |
 | **Already have a hardware wallet** | [Verify your backup](/docs/wallet-setup/backup-verification/), consider [running a node](/docs/bitcoin-node/) |
-| **Significant holdings** | Explore [multisig](/docs/advanced/multisig/) and [advanced setups](/docs/advanced/air-gapped-computer/) |
+| **Significant holdings** | Explore [multisig](/docs/learn/wallets/multisig/) and [advanced setups](/docs/advanced/air-gapped-computer/) |
 | **Privacy-focused / high-risk** | Start with [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) |
 
 
@@ -138,7 +138,7 @@ You have significant holdings or elevated threat concerns.
 
 **Your journey:**
 1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — Understand the stakes
-2. [Multisig Setup](/docs/advanced/multisig/) — Eliminate single points of failure
+2. [Multisig Setup](/docs/learn/wallets/multisig/) — Eliminate single points of failure
 3. [Air-Gapped Computing](/docs/advanced/air-gapped-computer/) — Offline signing
 4. [CoinJoin](/docs/learn/privacy/coinjoin/) — Break transaction history links
 
