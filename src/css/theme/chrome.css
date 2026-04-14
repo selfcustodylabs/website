@@ -22,7 +22,7 @@
   --ifm-background-color: #0b0b0c;
   --ifm-background-surface-color: #0f0f11;
 
-  --ifm-navbar-background-color: rgba(11, 11, 12, 0.72);
+  --ifm-navbar-background-color: rgba(11, 11, 12, 0.88);
   --ifm-navbar-link-color: rgba(255, 255, 255, 0.78);
   --ifm-navbar-link-hover-color: #fbbf24;
   --ifm-navbar-search-input-background-color: rgba(255, 255, 255, 0.04);
@@ -61,8 +61,6 @@
    =========================================== */
 
 .navbar {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
@@ -138,7 +136,11 @@
 /* Navbar search */
 .navbar .navbar__search-input,
 .navbar .DocSearch-Button {
-  background: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04);
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23fbbf24%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M8%204a4%204%200%20100%208%204%204%200%20000-8zM2%208a6%206%200%201110.89%203.476l4.817%204.817a1%201%200%2001-1.414%201.414l-4.816-4.816A6%206%200%20012%208z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.5rem center !important;
+  background-size: 1rem 1rem !important;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.75rem;
   color: rgba(255, 255, 255, 0.82);
@@ -149,12 +151,23 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Mobile drawer */
+/* Mobile drawer — cosmetic overrides only. Layout is the default
+   Docusaurus two-panel flex; do not set display / width / transform
+   / height on .navbar-sidebar__items or .navbar-sidebar__item. */
 .navbar-sidebar {
-  background: rgba(11, 11, 12, 0.98);
+  background-color: rgba(11, 11, 12, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+  bottom: auto;
+  height: auto;
+  max-height: 100dvh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-sidebar__items {
+  height: auto;
+  min-height: 0;
 }
 
 .navbar-sidebar__brand {
@@ -163,24 +176,40 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.navbar-sidebar__item {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.navbar-sidebar .menu__link {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.navbar-sidebar .menu__link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #fbbf24;
-}
-
 .navbar-sidebar__back {
-  color: rgba(255, 255, 255, 0.65);
+  background: rgba(245, 158, 11, 0.10);
+  color: #fde68a;
+  font-weight: 600;
 }
 
-/* Header icon buttons (GitHub + Club Orange) */
+/* Mobile drawer — group header icon buttons on one row */
+.navbar-sidebar .menu__list-item:has(> .header--github-link),
+.navbar-sidebar .menu__list-item:has(> .header--cluborange-link) {
+  display: inline-block;
+  width: auto;
+  margin: 0.25rem 0.25rem 0 0;
+}
+
+.navbar-sidebar .menu__link.header--github-link,
+.navbar-sidebar .menu__link.header--cluborange-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-sidebar .menu__link.header--github-link:hover,
+.navbar-sidebar .menu__link.header--cluborange-link:hover {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+/* Header icon buttons (GitHub + Club Orange) — desktop-only */
 .header--github-link,
 .header--cluborange-link {
   width: 32px;
@@ -196,11 +225,12 @@
   background: rgba(245, 158, 11, 0.14);
 }
 
-.header--github-link:before {
+.header--github-link::before {
   content: "";
-  height: 100%;
   display: block;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 .header--cluborange-link::before {
@@ -713,3 +743,4 @@ article .theme-doc-markdown strong {
   padding-top: 1.5rem;
   margin-top: 2rem;
 }
+
