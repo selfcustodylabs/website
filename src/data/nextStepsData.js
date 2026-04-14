@@ -126,9 +126,9 @@ const NEXT_STEPS = {
   "/docs/learn/keys/passphrase/": [
     {
       label: "Action",
-      title: "DIY Passphrase",
-      href: "/docs/security/passphrase/",
-      description: "Create a secure passphrase",
+      title: "Hardware Wallet Setup",
+      href: "/docs/wallet-setup/hardware-wallet/",
+      description: "Import your seed and start using your passphrase",
     },
     {
       label: "Learn",
@@ -275,7 +275,7 @@ const NEXT_STEPS = {
     {
       label: "Enhance",
       title: "Add a Passphrase",
-      href: "/docs/security/passphrase/",
+      href: "/docs/learn/keys/passphrase/",
       description: "Extra security layer",
     },
   ],
@@ -297,29 +297,6 @@ const NEXT_STEPS = {
       description: "Add an extra security layer",
     },
   ],
-  "/docs/security/passphrase/": [
-    {
-      label: "Start",
-      title: "Word Lists",
-      href: "/docs/security/passphrase/word-lists/",
-      description: "Choose the right word list",
-    },
-  ],
-  "/docs/security/passphrase/backup/": [
-    {
-      label: "Next",
-      title: "Hardware Wallet Setup",
-      href: "/docs/wallet-setup/hardware-wallet/",
-      description: "Use your passphrase",
-    },
-    {
-      label: "Learn",
-      title: "Threat Models",
-      href: "/docs/learn/fundamentals/threat-models/",
-      description: "Is passphrase right for you?",
-    },
-  ],
-
   // ===========================================
   // BITCOIN NODE
   // ===========================================

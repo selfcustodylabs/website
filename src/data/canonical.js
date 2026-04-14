@@ -23,15 +23,6 @@ import { SITE_URL } from "./schema/constants.js";
 
 export const canonicalMap = {
   // =============================================
-  // PASSPHRASES
-  // Old detailed tree → learn/keys/passphrase
-  // =============================================
-  "/docs/security/passphrase/": "/docs/learn/keys/passphrase/",
-  "/docs/security/passphrase/backup/": "/docs/learn/keys/passphrase/",
-  "/docs/security/passphrase/dice-roll/": "/docs/learn/keys/passphrase/",
-  "/docs/security/passphrase/word-lists/": "/docs/learn/keys/passphrase/",
-
-  // =============================================
   // PRIVACY
   // Old detailed trees → learn/privacy/protecting-privacy
   // =============================================

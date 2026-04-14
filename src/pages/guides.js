@@ -40,7 +40,7 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         position: 2,
         name: "DIY Passphrase",
-        url: "https://selfcustodylabs.com/docs/security/passphrase/",
+        url: "https://selfcustodylabs.com/docs/learn/keys/passphrase/",
       },
       {
         "@type": "ListItem",
@@ -129,7 +129,7 @@ export default function GuidesPage() {
       title: "DIY Passphrase",
       description:
         "Add a strong passphrase layer and learn best practices for creating and managing it.",
-      href: "/docs/security/passphrase",
+      href: "/docs/learn/keys/passphrase",
       badge: "POPULAR",
       level: "Beginner",
     },

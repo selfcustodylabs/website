@@ -31,16 +31,6 @@ const GUIDES = {
     ],
   },
 
-  passphrase: {
-    name: "DIY Passphrase",
-    steps: [
-      { title: "Overview", path: "/docs/security/passphrase/" },
-      { title: "Word Lists", path: "/docs/security/passphrase/word-lists/" },
-      { title: "Dice Rolling", path: "/docs/security/passphrase/dice-roll/" },
-      { title: "Backup", path: "/docs/security/passphrase/backup/" },
-    ],
-  },
-
   multisig: {
     name: "Multisig Setup",
     steps: [

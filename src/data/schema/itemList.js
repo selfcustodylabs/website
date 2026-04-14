@@ -47,7 +47,7 @@ export const itemListSchemas = {
     description:
       "Advanced security guides for Bitcoin self-custody including passphrases and operational security.",
     items: [
-      { name: "Passphrase Guide", url: "/docs/security/passphrase/" },
+      { name: "Passphrase Guide", url: "/docs/learn/keys/passphrase/" },
       {
         name: "Operational Security",
         url: "/docs/security/operational-security/",

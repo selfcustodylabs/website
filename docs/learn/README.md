@@ -100,7 +100,7 @@ Choose your path based on where you are:
 
 ### Enhancing Security
 1. [DIY Seed Generation](/docs/learn/keys/random/)
-2. [Passphrase Security](/docs/security/passphrase/)
+2. [Passphrase Security](/docs/learn/keys/passphrase/)
 3. [Run Your Own Node](/docs/bitcoin-node/)
 4. [UTXO Management](/docs/privacy/utxo-management/)
 
