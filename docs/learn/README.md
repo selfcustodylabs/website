@@ -106,7 +106,7 @@ Choose your path based on where you are:
 
 ### Maximum Security
 1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters)
-2. [Multisig Setup](/docs/advanced/multisig/)
+2. [Multisig Setup](/docs/learn/wallets/multisig/)
 3. [Air-Gapped Computing](/docs/advanced/air-gapped-computer/)
 4. [Operational Security](/docs/security/operational-security/)
 

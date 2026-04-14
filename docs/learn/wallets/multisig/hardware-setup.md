@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
-title: "Hardware Setup"
+title: "Multisig Hardware Setup"
 description: "Prepare your hardware wallets for multisig. Learn how to initialize signing devices from different manufacturers for maximum security."
 keywords: ["bitcoin", "multisig", "hardware wallet", "coldcard", "trezor", "keystone", "setup"]
 tags: ["multisig", "hardware wallet", "security", "bitcoin"]
+slug: /learn/wallets/multisig/hardware-setup
 ---
 
 # Hardware Setup for Multisig
@@ -258,4 +259,4 @@ This confirms your backups are correct BEFORE you deposit funds.
 
 With your hardware wallets prepared:
 
-→ Continue to [Sparrow Wallet Setup](/docs/advanced/multisig/sparrow-setup) to create your 2-of-3 multisig wallet.
+→ Continue to [Sparrow Wallet Setup](/docs/learn/wallets/multisig/sparrow-setup) to create your 2-of-3 multisig wallet.

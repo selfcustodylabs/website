@@ -356,7 +356,7 @@ Taking 30 minutes to verify your backup can save you from losing everything.
     { 
       label: "Advanced", 
       title: "Consider Multisig", 
-      href: "/docs/advanced/multisig/", 
+      href: "/docs/learn/wallets/multisig/", 
       description: "Eliminate single points of failure for significant holdings" 
     }
   ]}

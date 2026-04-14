@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
-title: "Sparrow Wallet Setup"
+title: "Multisig in Sparrow Wallet"
 description: "Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow. Learn to configure your multisig, verify addresses, and make transactions."
 keywords: ["bitcoin", "multisig", "sparrow wallet", "2-of-3", "setup", "tutorial"]
 tags: ["multisig", "sparrow", "security", "bitcoin", "tutorial"]
+slug: /learn/wallets/multisig/sparrow-setup
 ---
 
 # Creating Your Multisig in Sparrow Wallet
@@ -15,7 +16,7 @@ Sparrow Wallet is the best free option for managing multisig wallets. This guide
 
 Before starting:
 - [ ] [Sparrow Wallet](https://sparrowwallet.com/download/) installed
-- [ ] 3 hardware wallets set up with unique seeds ([Hardware Setup](/docs/advanced/multisig/hardware-setup))
+- [ ] 3 hardware wallets set up with unique seeds ([Hardware Setup](/docs/learn/wallets/multisig/hardware-setup))
 - [ ] Master fingerprint recorded for each device
 - [ ] Ideally: Your own [Bitcoin node](/docs/bitcoin-node) running
 
@@ -319,4 +320,4 @@ You now have a working 2-of-3 multisig wallet:
 
 **Next step:** Ensure your backups are properly secured.
 
-→ Continue to [Backup & Recovery](/docs/advanced/multisig/backup-recovery)
+→ Continue to [Backup & Recovery](/docs/learn/wallets/multisig/backup-recovery)

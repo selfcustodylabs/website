@@ -27,7 +27,7 @@ const stages = [
     number: '04',
     title: 'Advance',
     description: 'Graduate to multisig, air-gapped signing, and advanced privacy when you are ready.',
-    href: '/docs/advanced/multisig',
+    href: '/docs/learn/wallets/multisig',
   },
 ];
 

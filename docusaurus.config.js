@@ -274,7 +274,7 @@ const config = {
       // ===========================================
       // announcementBar: {
       //   id: 'new_guide',
-      //   content: '🆕 New guide: <a href="/docs/advanced/multisig/">Multisig Setup</a> - Eliminate single points of failure',
+      //   content: '🆕 New guide: <a href="/docs/learn/wallets/multisig/">Multisig Setup</a> - Eliminate single points of failure',
       //   backgroundColor: '#f59e0b',
       //   textColor: '#000',
       //   isCloseable: true,
@@ -773,6 +773,41 @@ const config = {
             from: '/docs/utxo-management/consolidation',
             to: '/docs/learn/privacy/utxo-management',
           },
+          // ---------------------------------------------------
+          // Topic 4: Multisig (merged into learn/wallets/multisig)
+          // ---------------------------------------------------
+          {
+            from: '/docs/advanced/multisig',
+            to: '/docs/learn/wallets/multisig',
+          },
+          {
+            from: '/docs/advanced/multisig/hardware-setup',
+            to: '/docs/learn/wallets/multisig/hardware-setup',
+          },
+          {
+            from: '/docs/advanced/multisig/sparrow-setup',
+            to: '/docs/learn/wallets/multisig/sparrow-setup',
+          },
+          {
+            from: '/docs/advanced/multisig/backup-recovery',
+            to: '/docs/learn/wallets/multisig/backup-recovery',
+          },
+          {
+            from: '/docs/multisig',
+            to: '/docs/learn/wallets/multisig',
+          },
+          {
+            from: '/docs/multisig/hardware-setup',
+            to: '/docs/learn/wallets/multisig/hardware-setup',
+          },
+          {
+            from: '/docs/multisig/sparrow-setup',
+            to: '/docs/learn/wallets/multisig/sparrow-setup',
+          },
+          {
+            from: '/docs/multisig/backup-recovery',
+            to: '/docs/learn/wallets/multisig/backup-recovery',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
@@ -795,9 +830,6 @@ const config = {
             return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
           }
           // Catch-all for advanced paths
-          if (existingPath.includes('/docs/advanced/multisig')) {
-            return [existingPath.replace('/docs/advanced/multisig', '/docs/multisig')];
-          }
           if (existingPath.includes('/docs/advanced/air-gapped-computer')) {
             return [existingPath.replace('/docs/advanced/air-gapped-computer', '/docs/air-gapped-computer')];
           }

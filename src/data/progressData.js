@@ -34,18 +34,18 @@ const GUIDES = {
   multisig: {
     name: "Multisig Setup",
     steps: [
-      { title: "Overview", path: "/docs/advanced/multisig/" },
+      { title: "Overview", path: "/docs/learn/wallets/multisig/" },
       {
         title: "Hardware Setup",
-        path: "/docs/advanced/multisig/hardware-setup/",
+        path: "/docs/learn/wallets/multisig/hardware-setup/",
       },
       {
         title: "Sparrow Setup",
-        path: "/docs/advanced/multisig/sparrow-setup/",
+        path: "/docs/learn/wallets/multisig/sparrow-setup/",
       },
       {
         title: "Backup & Recovery",
-        path: "/docs/advanced/multisig/backup-recovery/",
+        path: "/docs/learn/wallets/multisig/backup-recovery/",
       },
     ],
   },

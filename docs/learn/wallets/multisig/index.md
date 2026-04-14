@@ -1,9 +1,10 @@
 ---
-sidebar_position: 4
-title: "Multisig Wallets"
-description: "Understand how Bitcoin multisig wallets work. Learn about M-of-N configurations, why multisig eliminates single points of failure, and when to use it."
-keywords: ["multisig", "multi-signature", "bitcoin security", "2-of-3", "hardware wallet", "self custody"]
-tags: ["multisig", "security", "wallets", "bitcoin"]
+sidebar_position: 1
+title: "Bitcoin Multisig: Complete Guide"
+description: "Understand and set up a Bitcoin multisig wallet. Concepts, 2-of-3 configurations, hardware devices, and a full step-by-step setup guide."
+keywords: ["multisig", "multi-signature", "bitcoin security", "2-of-3", "hardware wallet", "self custody", "sparrow"]
+tags: ["multisig", "security", "wallets", "bitcoin", "hardware wallet", "advanced"]
+slug: /learn/wallets/multisig
 ---
 
 # Multisig: Multi-Signature Wallets
@@ -224,30 +225,165 @@ Some services offer "assisted" multisig where they hold one key:
 
 ---
 
-## You've Completed the Wallets Section
+## Ready to Build It? Step-by-Step Setup
 
-You now understand the different ways to hold Bitcoin keys—from software wallets to hardware devices to multisig setups. Next, learn how Bitcoin actually moves.
+If you understand the concepts above and want to implement a 2-of-3 multisig, the following sections walk you through the full DIY setup with Sparrow Wallet.
 
-<NextSteps 
-  title="What's Next?"
+:::info What You'll Do
+- Set up 3 hardware wallets for multisig
+- Create a 2-of-3 multisig wallet in Sparrow
+- Properly back up seed phrases and wallet descriptor
+- Test your recovery procedure
+
+**⏱️ Time required:** 2-3 hours
+**📊 Difficulty:** Intermediate to Advanced
+**💰 Estimated cost:** $200-450 (3 hardware wallets) + $30-60 (metal seed backups)
+:::
+
+
+## Choosing Your Configuration
+
+### 2-of-3: The Sweet Spot
+
+For most individuals, **2-of-3 multisig** offers the best balance:
+
+**Advantages:**
+- Lose 1 key → Still have access (fault tolerance)
+- 1 key stolen → Funds still safe (theft protection)
+- Manageable complexity (3 backups, 3 devices)
+- Lower transaction fees than 3-of-5
+
+### 3-of-5: Maximum Security
+
+For very large holdings or organizations:
+
+**Advantages:**
+- Can lose 2 keys and still access funds
+- 2 keys can be stolen without fund loss
+- Good for distributed teams/families
+
+**Disadvantages:**
+- 5 devices to purchase and manage
+- 5 seed phrases to secure (10 locations if you separate!)
+- Higher transaction fees
+- More coordination for signing
+
+### 2-of-2: Shared Control (Use Carefully)
+
+**⚠️ Not recommended for most users**
+
+- No redundancy — lose 1 key, lose everything
+- Both parties must be available to spend
+- Use only for specific shared-custody scenarios
+
+
+## DIY vs. Collaborative Custody
+
+Don't want to manage all keys yourself? **Collaborative custody** providers hold one key while you hold the majority.
+
+<div class="fixed-width-table">
+
+| Service | Free Tier | Paid Plans | Best For |
+|---------|-----------|------------|----------|
+| **Unchained** | Yes (2-of-3) | From $0 + per-sign fee | Financial services, loans |
+| **Casa** | Basic wallet | From $30/month | Beginners, inheritance |
+| **Nunchuk** | Yes | From $15/month | Privacy, flexibility |
+
+</div>
+
+<div class="fixed-width-table">
+
+| Factor | DIY Multisig | Collaborative Custody |
+|--------|--------------|----------------------|
+| **Technical skill needed** | High | Low-Medium |
+| **Privacy** | Maximum | Provider sees balances |
+| **Support available** | Community only | Professional help |
+| **Ongoing cost** | One-time (hardware) | Monthly subscription |
+| **Recovery assistance** | You're on your own | Help available |
+| **Best for** | Technical users | Beginners, busy people |
+
+</div>
+
+**Recommendation:**
+- **New to multisig?** Start with collaborative custody to learn the concepts
+- **Technical and privacy-focused?** DIY with Sparrow Wallet
+- **Significant holdings but not technical?** Collaborative custody is worth the cost
+
+
+## Common Multisig Mistakes
+
+### Mistake 1: Not Backing Up the Wallet Descriptor
+
+**Problem:** You have all 3 seed phrases but can't reconstruct the wallet.
+
+**Solution:** Store the wallet descriptor (as PDF, file, or printed) with each seed phrase backup.
+
+### Mistake 2: Storing Multiple Seeds Together
+
+**Problem:** A single theft or disaster compromises multiple keys.
+
+**Solution:** Geographic distribution — each seed in a different location.
+
+### Mistake 3: Using the Same Hardware Wallet Brand
+
+**Problem:** A firmware vulnerability affects all your signing devices.
+
+**Solution:** Mix manufacturers (e.g., Coldcard + Trezor + Keystone).
+
+### Mistake 4: Not Testing Recovery
+
+**Problem:** You think your backup works but haven't verified it.
+
+**Solution:** Practice recovery with a small amount before depositing significant funds.
+
+### Mistake 5: Overcomplicating the Setup
+
+**Problem:** 5-of-7 multisig across 3 continents with time locks...
+
+**Solution:** Start simple. 2-of-3 is sufficient for most individuals.
+
+### Mistake 6: Not Verifying Addresses on Devices
+
+**Problem:** Malware could show you a fake address on your computer.
+
+**Solution:** **Always verify receive addresses on your hardware wallet screens** before depositing.
+
+
+## Security Checklist
+
+Before depositing significant funds, verify:
+
+- [ ] Each hardware wallet is from a different manufacturer (recommended)
+- [ ] Each seed phrase is backed up on metal (fire/water resistant)
+- [ ] Seed phrases are stored in separate physical locations
+- [ ] Wallet descriptor is backed up (multiple copies in different locations)
+- [ ] You've verified a receive address matches on at least 2 hardware wallets
+- [ ] You've successfully completed a test transaction (send and receive)
+- [ ] You've practiced full wallet recovery from backups
+- [ ] You understand you need M keys to spend (not just one)
+- [ ] Hardware wallets are registered with the multisig configuration
+
+
+<NextSteps
+  title="Set Up Your Multisig"
   items={[
-    { 
-      label: "Continue", 
-      title: "Understanding Transactions", 
-      href: "/docs/learn/transactions/utxos/", 
-      description: "Learn how Bitcoin transactions actually work" 
+    {
+      label: "Step 1",
+      title: "Hardware Setup",
+      href: "/docs/learn/wallets/multisig/hardware-setup/",
+      description: "Prepare your three signing devices for multisig"
     },
-    { 
-      label: "Setup", 
-      title: "Multisig Setup Guide", 
-      href: "/docs/advanced/multisig/", 
-      description: "Ready to implement multisig? Follow our step-by-step guide" 
+    {
+      label: "Step 2",
+      title: "Sparrow Setup",
+      href: "/docs/learn/wallets/multisig/sparrow-setup/",
+      description: "Create your 2-of-3 multisig wallet in Sparrow"
     },
-    { 
-      label: "Alternative", 
-      title: "Hardware Wallet Setup", 
-      href: "/docs/wallet-setup/hardware-wallet/", 
-      description: "Start simpler with a single-sig hardware wallet" 
+    {
+      label: "Step 3",
+      title: "Backup & Recovery",
+      href: "/docs/learn/wallets/multisig/backup-recovery/",
+      description: "Properly secure your seeds and wallet descriptor"
     }
   ]}
 />

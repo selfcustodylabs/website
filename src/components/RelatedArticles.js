@@ -38,8 +38,8 @@ export const articleCollections = {
   ],
   multisig: [
     { title: "Multisig Explained", href: "/docs/learn/wallets/multisig/", tag: "Learn" },
-    { title: "Multisig Setup Guide", href: "/docs/advanced/multisig/", tag: "Guide" },
-    { title: "Hardware Setup", href: "/docs/advanced/multisig/hardware-setup/", tag: "Guide" },
+    { title: "Multisig Setup Guide", href: "/docs/learn/wallets/multisig/", tag: "Guide" },
+    { title: "Hardware Setup", href: "/docs/learn/wallets/multisig/hardware-setup/", tag: "Guide" },
   ],
   reference: [
     { title: "Glossary", href: "/docs/reference/glossary/", tag: "Reference" },

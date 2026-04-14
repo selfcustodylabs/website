@@ -1,9 +1,10 @@
 ---
 sidebar_position: 4
-title: "Backup & Recovery"
+title: "Multisig Backup & Recovery"
 description: "How to properly backup your multisig wallet and recover it if needed. Critical information for protecting your bitcoin long-term."
 keywords: ["bitcoin", "multisig", "backup", "recovery", "seed phrase", "wallet descriptor"]
 tags: ["multisig", "backup", "recovery", "security", "bitcoin"]
+slug: /learn/wallets/multisig/backup-recovery
 ---
 
 # Multisig Backup & Recovery
@@ -341,7 +342,7 @@ Your backup strategy should ensure that:
 
 ## Related Guides
 
-- [Multisig Overview](/docs/advanced/multisig) — Understanding multisig fundamentals
-- [Hardware Setup](/docs/advanced/multisig/hardware-setup) — Setting up signing devices
-- [Sparrow Setup](/docs/advanced/multisig/sparrow-setup) — Creating the wallet
+- [Multisig Overview](/docs/learn/wallets/multisig) — Understanding multisig fundamentals
+- [Hardware Setup](/docs/learn/wallets/multisig/hardware-setup) — Setting up signing devices
+- [Sparrow Setup](/docs/learn/wallets/multisig/sparrow-setup) — Creating the wallet
 - [Seed Phrase Backup](/docs/learn/keys/random/#step-5-back-up-on-metal) — Metal backup options

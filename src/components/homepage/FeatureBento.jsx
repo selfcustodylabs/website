@@ -52,7 +52,7 @@ const wide = {
   tagline: 'Eliminate single points of failure.',
   description:
     'Require multiple independent keys to spend, stored in separate places. The setup most serious Bitcoiners graduate into.',
-  href: '/docs/advanced/multisig',
+  href: '/docs/learn/wallets/multisig',
 };
 
 function CardShell({ children, href, className = '' }) {
