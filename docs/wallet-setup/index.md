@@ -132,7 +132,7 @@ Software wallets store keys on your phone or computer. They're free and convenie
 Once your wallet is set up and verified:
 
 1. **[Run Your Own Node](/docs/bitcoin-node/)** — Verify transactions yourself
-2. **[UTXO Management](/docs/privacy/utxo-management/)** — Manage privacy and fees
+2. **[UTXO Management](/docs/learn/privacy/utxo-management/)** — Manage privacy and fees
 3. **[Add a Passphrase](/docs/learn/keys/passphrase/)** — Extra security layer
 4. **[Multisig Setup](/docs/advanced/multisig/)** — Eliminate single points of failure (for larger holdings)
 

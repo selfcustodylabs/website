@@ -216,7 +216,7 @@ If you've completed this checklist, you've finished the core wallet setup journe
     { 
       label: "Privacy", 
       title: "UTXO Management", 
-      href: "/docs/privacy/utxo-management/", 
+      href: "/docs/learn/privacy/utxo-management/", 
       description: "Learn to manage your coins for better privacy and lower fees" 
     },
     { 

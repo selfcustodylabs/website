@@ -10,7 +10,6 @@ const INDEX_PAGES = [
   "/docs/learn/",
   "/docs/security/",
   "/docs/advanced/",
-  "/docs/privacy/",
   "/docs/reference/",
   "/docs/wallet-setup/",
 ];

@@ -64,9 +64,9 @@ These require learning specific tools.
 
 | Technique | What It Does | Guide |
 |-----------|--------------|-------|
-| **UTXO management** | Control which coins you spend | [UTXO Guide](/docs/privacy/utxo-management) |
-| **Coin control** | Choose specific inputs for transactions | [Coin Control](/docs/privacy/utxo-management/coin-control) |
-| **Labeling** | Track coin sources and privacy levels | [UTXO Guide](/docs/privacy/utxo-management) |
+| **UTXO management** | Control which coins you spend | [UTXO Guide](/docs/learn/privacy/utxo-management) |
+| **Coin control** | Choose specific inputs for transactions | [Coin Control](/docs/learn/privacy/utxo-management#coin-control-choosing-your-utxos) |
+| **Labeling** | Track coin sources and privacy levels | [UTXO Guide](/docs/learn/privacy/utxo-management) |
 
 </div>
 
@@ -78,8 +78,8 @@ These actively defeat chain analysis.
 
 | Technique | What It Does | Guide |
 |-----------|--------------|-------|
-| **CoinJoin** | Mix coins with others to break history | [CoinJoin Guide](/docs/privacy/coinjoin) |
-| **PayJoin** | Hide payments in normal-looking transactions | [PayJoin Guide](/docs/privacy/payjoin) |
+| **CoinJoin** | Mix coins with others to break history | [CoinJoin Guide](/docs/learn/privacy/coinjoin) |
+| **PayJoin** | Hide payments in normal-looking transactions | [PayJoin Guide](/docs/learn/privacy/payjoin) |
 
 </div>
 
@@ -120,7 +120,7 @@ UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you o
 3. **Use coin control** — Manually select which UTXOs to spend
 4. **Consolidate carefully** — Only combine same-source UTXOs
 
-→ **Guide:** [UTXO Management](/docs/privacy/utxo-management)
+→ **Guide:** [UTXO Management](/docs/learn/privacy/utxo-management)
 
 
 ## CoinJoin
@@ -142,7 +142,7 @@ CoinJoin directly breaks the chain analysis heuristics by:
 - Some exchanges flag CoinJoin transactions
 - Proper post-mix behavior is essential
 
-→ **Guide:** [CoinJoin](/docs/privacy/coinjoin)
+→ **Guide:** [CoinJoin](/docs/learn/privacy/coinjoin)
 
 
 ## Acquiring Bitcoin Privately
@@ -239,9 +239,9 @@ Choose based on your threat model and resources.
 
 1. ✅ Understand the risks (you've done this)
 2. ⬜ Run your own node → [Bitcoin Node Guide](/docs/bitcoin-node)
-3. ⬜ Learn UTXO management → [UTXO Guide](/docs/privacy/utxo-management)
-4. ⬜ Practice coin control → [Coin Control Guide](/docs/privacy/utxo-management/coin-control)
-5. ⬜ Consider CoinJoin for existing coins → [CoinJoin Guide](/docs/privacy/coinjoin)
+3. ⬜ Learn UTXO management → [UTXO Guide](/docs/learn/privacy/utxo-management)
+4. ⬜ Practice coin control → [Coin Control Guide](/docs/learn/privacy/utxo-management#coin-control-choosing-your-utxos)
+5. ⬜ Consider CoinJoin for existing coins → [CoinJoin Guide](/docs/learn/privacy/coinjoin)
 
 **Ongoing habits:**
 
@@ -284,13 +284,13 @@ You now understand why privacy matters, how blockchain surveillance works, and t
     { 
       label: "Practical", 
       title: "UTXO Management Guide", 
-      href: "/docs/privacy/utxo-management/", 
+      href: "/docs/learn/privacy/utxo-management/", 
       description: "Implement coin control and labeling today" 
     },
     { 
       label: "Advanced", 
       title: "CoinJoin Guide", 
-      href: "/docs/privacy/coinjoin/", 
+      href: "/docs/learn/privacy/coinjoin/", 
       description: "Break the chain analysis links" 
     }
   ]}

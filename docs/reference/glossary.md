@@ -80,7 +80,7 @@ The transaction output that returns excess funds to the sender's wallet after a 
 A small piece of data used to verify integrity. In seed phrases, the final word(s) include checksum data to detect errors.
 
 ### Coinjoin
-A privacy technique that combines multiple users' transactions into a single transaction, making it difficult to trace which inputs correspond to which outputs. See [CoinJoin Guide](/docs/privacy/coinjoin).
+A privacy technique that combines multiple users' transactions into a single transaction, making it difficult to trace which inputs correspond to which outputs. See [CoinJoin Guide](/docs/learn/privacy/coinjoin).
 
 ### Cold Storage
 Keeping Bitcoin private keys on a device that never connects to the internet. The most secure form of storage.

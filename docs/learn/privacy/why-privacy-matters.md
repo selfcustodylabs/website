@@ -156,7 +156,7 @@ Privacy is not hopeless. It requires effort, but it's achievable. And you've alr
 
 Start by learning how tracking actually works. The [Chain Analysis Explained](/docs/learn/privacy/chain-analysis) guide breaks down the specific techniques surveillance companies use. Understanding their methods reveals their limitations.
 
-Then, explore privacy-preserving techniques. [UTXO management](/docs/privacy/utxo-management), coin control, running your own node, using Tor, and eventually CoinJoin—these tools exist precisely because this problem exists. Each one addresses specific vulnerabilities.
+Then, explore privacy-preserving techniques. [UTXO management](/docs/learn/privacy/utxo-management), coin control, running your own node, using Tor, and eventually CoinJoin—these tools exist precisely because this problem exists. Each one addresses specific vulnerabilities.
 
 Most importantly, be thoughtful. Every Bitcoin action you take has privacy implications. Thinking twice before posting an address online, using different addresses for different purposes, keeping your holdings private in conversation—these habits matter.
 
@@ -180,8 +180,8 @@ The Bitcoin privacy landscape is challenging but navigable. Keep these principle
   articles={[
     { title: "Chain Analysis Explained", href: "/docs/learn/privacy/chain-analysis/", tag: "Learn" },
     { title: "Protecting Your Privacy", href: "/docs/learn/privacy/protecting-privacy/", tag: "Learn" },
-    { title: "UTXO Management", href: "/docs/privacy/utxo-management/", tag: "Guide" },
-    { title: "CoinJoin", href: "/docs/privacy/coinjoin/", tag: "Guide" },
+    { title: "UTXO Management", href: "/docs/learn/privacy/utxo-management/", tag: "Guide" },
+    { title: "CoinJoin", href: "/docs/learn/privacy/coinjoin/", tag: "Guide" },
     { title: "Run Your Own Node", href: "/docs/bitcoin-node/", tag: "Guide" },
   ]}
 />

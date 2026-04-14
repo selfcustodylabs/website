@@ -102,7 +102,7 @@ Choose your path based on where you are:
 1. [DIY Seed Generation](/docs/learn/keys/random/)
 2. [Passphrase Security](/docs/learn/keys/passphrase/)
 3. [Run Your Own Node](/docs/bitcoin-node/)
-4. [UTXO Management](/docs/privacy/utxo-management/)
+4. [UTXO Management](/docs/learn/privacy/utxo-management/)
 
 ### Maximum Security
 1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters)

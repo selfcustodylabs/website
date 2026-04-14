@@ -420,7 +420,7 @@ const config = {
               },
               {
                 label: 'Privacy Guides',
-                to: '/docs/privacy/',
+                to: '/docs/learn/privacy/protecting-privacy/',
               },
               {
                 label: 'Advanced Setups',
@@ -692,6 +692,87 @@ const config = {
             from: '/docs/passphrase/backup',
             to: '/docs/learn/keys/passphrase',
           },
+          // =============================================
+          // PRIVACY TRIO MERGE → /docs/learn/privacy/*
+          // The old /docs/privacy/* tree and its bare
+          // /docs/{coinjoin,payjoin,utxo-management}/*
+          // aliases were merged into three canonical pages:
+          //   /docs/learn/privacy/coinjoin
+          //   /docs/learn/privacy/payjoin
+          //   /docs/learn/privacy/utxo-management
+          // =============================================
+          // Old /docs/privacy/* hub
+          {
+            from: '/docs/privacy',
+            to: '/docs/learn/privacy/protecting-privacy',
+          },
+          // CoinJoin
+          {
+            from: '/docs/privacy/coinjoin',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/privacy/coinjoin/how-it-works',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/privacy/coinjoin/services',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/privacy/coinjoin/best-practices',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/coinjoin',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/coinjoin/how-it-works',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/coinjoin/services',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          {
+            from: '/docs/coinjoin/best-practices',
+            to: '/docs/learn/privacy/coinjoin',
+          },
+          // PayJoin
+          {
+            from: '/docs/privacy/payjoin',
+            to: '/docs/learn/privacy/payjoin',
+          },
+          {
+            from: '/docs/payjoin',
+            to: '/docs/learn/privacy/payjoin',
+          },
+          // UTXO Management
+          {
+            from: '/docs/privacy/utxo-management',
+            to: '/docs/learn/privacy/utxo-management',
+          },
+          {
+            from: '/docs/privacy/utxo-management/coin-control',
+            to: '/docs/learn/privacy/utxo-management',
+          },
+          {
+            from: '/docs/privacy/utxo-management/consolidation',
+            to: '/docs/learn/privacy/utxo-management',
+          },
+          {
+            from: '/docs/utxo-management',
+            to: '/docs/learn/privacy/utxo-management',
+          },
+          {
+            from: '/docs/utxo-management/coin-control',
+            to: '/docs/learn/privacy/utxo-management',
+          },
+          {
+            from: '/docs/utxo-management/consolidation',
+            to: '/docs/learn/privacy/utxo-management',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
@@ -712,16 +793,6 @@ const config = {
           }
           if (existingPath.includes('/docs/wallet-setup/backup-verification')) {
             return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
-          }
-          // Catch-all for privacy paths
-          if (existingPath.includes('/docs/privacy/utxo-management')) {
-            return [existingPath.replace('/docs/privacy/utxo-management', '/docs/utxo-management')];
-          }
-          if (existingPath.includes('/docs/privacy/coinjoin')) {
-            return [existingPath.replace('/docs/privacy/coinjoin', '/docs/coinjoin')];
-          }
-          if (existingPath.includes('/docs/privacy/payjoin')) {
-            return [existingPath.replace('/docs/privacy/payjoin', '/docs/payjoin')];
           }
           // Catch-all for advanced paths
           if (existingPath.includes('/docs/advanced/multisig')) {

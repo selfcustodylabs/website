@@ -87,7 +87,7 @@ const NEXT_STEPS = {
     {
       label: "Learn",
       title: "UTXO Management",
-      href: "/docs/privacy/utxo-management/",
+      href: "/docs/learn/privacy/utxo-management/",
       description: "Optimize your wallet",
     },
   ],
@@ -197,7 +197,7 @@ const NEXT_STEPS = {
     {
       label: "Action",
       title: "UTXO Management",
-      href: "/docs/privacy/utxo-management/",
+      href: "/docs/learn/privacy/utxo-management/",
       description: "Start protecting your privacy",
     },
   ],
@@ -211,8 +211,50 @@ const NEXT_STEPS = {
     {
       label: "Action",
       title: "CoinJoin Guide",
-      href: "/docs/privacy/coinjoin/",
+      href: "/docs/learn/privacy/coinjoin/",
       description: "Break transaction links",
+    },
+  ],
+  "/docs/learn/privacy/utxo-management/": [
+    {
+      label: "Next",
+      title: "CoinJoin Guide",
+      href: "/docs/learn/privacy/coinjoin/",
+      description: "Break transaction links with mixing",
+    },
+    {
+      label: "Related",
+      title: "PayJoin Guide",
+      href: "/docs/learn/privacy/payjoin/",
+      description: "Stealth privacy for payments",
+    },
+  ],
+  "/docs/learn/privacy/coinjoin/": [
+    {
+      label: "Foundation",
+      title: "UTXO Management",
+      href: "/docs/learn/privacy/utxo-management/",
+      description: "Handle mixed coins correctly",
+    },
+    {
+      label: "Related",
+      title: "PayJoin Guide",
+      href: "/docs/learn/privacy/payjoin/",
+      description: "Stealth privacy for payments",
+    },
+  ],
+  "/docs/learn/privacy/payjoin/": [
+    {
+      label: "Related",
+      title: "CoinJoin Guide",
+      href: "/docs/learn/privacy/coinjoin/",
+      description: "Break transaction history with mixing",
+    },
+    {
+      label: "Foundation",
+      title: "UTXO Management",
+      href: "/docs/learn/privacy/utxo-management/",
+      description: "Coin control and consolidation",
     },
   ],
 
@@ -312,7 +354,7 @@ const NEXT_STEPS = {
     {
       label: "Done!",
       title: "UTXO Management",
-      href: "/docs/privacy/utxo-management/",
+      href: "/docs/learn/privacy/utxo-management/",
       description: "Optimize your wallet",
     },
     {
@@ -349,45 +391,6 @@ const NEXT_STEPS = {
     },
   ],
 
-  // ===========================================
-  // PRIVACY GUIDES
-  // ===========================================
-  "/docs/privacy/coinjoin/": [
-    {
-      label: "Start",
-      title: "How It Works",
-      href: "/docs/privacy/coinjoin/how-it-works/",
-      description: "Understand CoinJoin mechanics",
-    },
-  ],
-  "/docs/privacy/coinjoin/best-practices/": [
-    {
-      label: "Done!",
-      title: "UTXO Management",
-      href: "/docs/privacy/utxo-management/",
-      description: "Manage your mixed coins",
-    },
-    {
-      label: "Learn",
-      title: "Chain Analysis",
-      href: "/docs/learn/privacy/chain-analysis/",
-      description: "Understand the threats",
-    },
-  ],
-  "/docs/privacy/utxo-management/": [
-    {
-      label: "Learn",
-      title: "Coin Control",
-      href: "/docs/privacy/utxo-management/coin-control/",
-      description: "Select specific UTXOs",
-    },
-    {
-      label: "Action",
-      title: "CoinJoin",
-      href: "/docs/privacy/coinjoin/",
-      description: "Break transaction links",
-    },
-  ],
 };
 
 /**

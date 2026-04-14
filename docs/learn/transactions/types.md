@@ -58,7 +58,7 @@ You now understand how Bitcoin moves: from UTXOs to transaction creation, signin
     { 
       label: "Practical", 
       title: "UTXO Management Guide", 
-      href: "/docs/privacy/utxo-management/", 
+      href: "/docs/learn/privacy/utxo-management/", 
       description: "Learn to manage your coins for privacy and lower fees" 
     },
     { 

@@ -190,7 +190,7 @@ The more people know you have Bitcoin, the larger your attack surface.
 After hardening your security:
 
 - **[Run Your Own Node](/docs/bitcoin-node/)** — Verify transactions yourself
-- **[UTXO Management](/docs/privacy/utxo-management/)** — Privacy through coin control
+- **[UTXO Management](/docs/learn/privacy/utxo-management/)** — Privacy through coin control
 - **[Multisig Setup](/docs/advanced/multisig/)** — Eliminate single points of failure
 - **[Air-Gapped Computer](/docs/advanced/air-gapped-computer/)** — Maximum isolation
 

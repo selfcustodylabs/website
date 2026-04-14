@@ -49,6 +49,6 @@ This method is particularly useful in wallets that support advanced fee control 
     { title: "Signing Transactions", href: "/docs/learn/transactions/sign/", tag: "Next" },
     { title: "UTXOs Explained", href: "/docs/learn/transactions/utxos/", tag: "Learn" },
     { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
-    { title: "UTXO Management Guide", href: "/docs/privacy/utxo-management/", tag: "Guide" },
+    { title: "UTXO Management Guide", href: "/docs/learn/privacy/utxo-management/", tag: "Guide" },
   ]}
 />

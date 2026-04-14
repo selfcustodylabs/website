@@ -434,7 +434,7 @@ export const howToSchemas = {
   // =====================
   // PRIVACY GUIDES
   // =====================
-  "/docs/privacy/coinjoin/": {
+  "/docs/learn/privacy/coinjoin/": {
     name: "How to Use CoinJoin for Bitcoin Privacy",
     description:
       "Break the link between your Bitcoin transactions using CoinJoin. Learn how it works and best practices for implementation.",
@@ -449,22 +449,22 @@ export const howToSchemas = {
       {
         name: "Understand How CoinJoin Works",
         text: "Learn the mechanics of CoinJoin transactions and why they provide privacy.",
-        url: `${SITE_URL}/docs/privacy/coinjoin/how-it-works/`,
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin/#how-coinjoin-works`,
       },
       {
         name: "Choose a Service",
         text: "Select a CoinJoin implementation: Wasabi Wallet for ease of use or JoinMarket for more control.",
-        url: `${SITE_URL}/docs/privacy/coinjoin/services/`,
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin/#coinjoin-services`,
       },
       {
         name: "Follow Best Practices",
         text: "Implement proper post-mix behavior to maintain the privacy benefits of CoinJoin.",
-        url: `${SITE_URL}/docs/privacy/coinjoin/best-practices/`,
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin/#best-practices-after-coinjoin`,
       },
     ],
   },
 
-  "/docs/privacy/utxo-management/": {
+  "/docs/learn/privacy/utxo-management/": {
     name: "How to Manage Bitcoin UTXOs",
     description:
       "Learn to organize your Bitcoin UTXOs for better privacy and lower fees. Master coin control and consolidation strategies.",
@@ -484,12 +484,12 @@ export const howToSchemas = {
       {
         name: "Master Coin Control",
         text: "Use Sparrow Wallet coin control features to select specific UTXOs for transactions.",
-        url: `${SITE_URL}/docs/privacy/utxo-management/coin-control/`,
+        url: `${SITE_URL}/docs/learn/privacy/utxo-management/#coin-control-choosing-your-utxos`,
       },
       {
         name: "Consolidate Strategically",
         text: "Combine small UTXOs during low-fee periods to reduce future transaction costs.",
-        url: `${SITE_URL}/docs/privacy/utxo-management/consolidation/`,
+        url: `${SITE_URL}/docs/learn/privacy/utxo-management/#consolidation-strategies`,
       },
     ],
   },

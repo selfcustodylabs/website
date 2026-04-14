@@ -318,6 +318,6 @@ Each UTXO:
     { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Learn" },
     { title: "How Transactions Work", href: "/docs/learn/transactions/understanding/", tag: "Learn" },
     { title: "Chain Analysis", href: "/docs/learn/privacy/chain-analysis/", tag: "Privacy" },
-    { title: "UTXO Management Guide", href: "/docs/privacy/utxo-management/", tag: "Guide" },
+    { title: "UTXO Management Guide", href: "/docs/learn/privacy/utxo-management/", tag: "Guide" },
   ]}
 />

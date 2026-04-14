@@ -154,7 +154,7 @@ AFTER: 1 large UTXO
   → Future transaction needs 1 input = cheap
 ```
 
-See [UTXO Consolidation](/docs/privacy/utxo-management/consolidation) for details.
+See [UTXO Consolidation](/docs/learn/privacy/utxo-management#consolidation-strategies) for details.
 
 ### 2. Batch Transactions
 
@@ -234,7 +234,7 @@ Understanding fees helps you save money and ensures your transactions confirm wh
     { 
       label: "Optimize", 
       title: "UTXO Management", 
-      href: "/docs/privacy/utxo-management/", 
+      href: "/docs/learn/privacy/utxo-management/", 
       description: "Strategies to minimize fees and improve privacy" 
     },
     { 
