@@ -31,7 +31,7 @@ Tor (The Onion Router) protects your privacy by encrypting your internet traffic
 
 Since you'll be setting up a Bitcoin node on a separate device that runs over Tor, it's not strictly necessary to route all internet traffic from your Bitcoin laptop through Tor. However, because the laptop is connected to the internet, routing all Bitcoin-related activity through Tor ensures maximum privacy.
 
-#### Why Use Tor?
+### Why Use Tor?
 
 - **Hides Your IP Address** – Prevents blockchain surveillance from linking your node or wallet activity to your location.
 - **Bypasses Censorship** – Some ISPs or governments restrict Bitcoin traffic; Tor helps bypass these blocks.

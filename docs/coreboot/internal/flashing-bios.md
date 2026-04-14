@@ -17,7 +17,7 @@ If your goal is to neutralize or disable Intel ME, the only reliable method is t
 :::
 
 
-### Back Up Your Existing BIOS Region
+## Back Up Your Existing BIOS Region
 
 Before doing anything else, make a full backup of your current BIOS.
 This is your recovery point if you need to restore the original firmware.
@@ -31,7 +31,7 @@ This does not back up the entire firmware, only the BIOS region. The Intel Manag
 :::
 
 
-### Flash the Coreboot BIOS
+## Flash the Coreboot BIOS
 
 Once everything looks correct, flash the prepared Coreboot BIOS region:
 

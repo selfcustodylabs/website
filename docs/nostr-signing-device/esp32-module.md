@@ -9,7 +9,7 @@ tags: ["ESP32", "arduino", "setup", "LILYGO"]
 
 These steps are based on the [here](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing)
 
-### Add ESP32 Board URL
+## Add ESP32 Board URL
 
 - Open Arduino IDE Application
 - Go to `File → Preferences`.
@@ -19,17 +19,17 @@ These steps are based on the [here](https://docs.espressif.com/projects/arduino-
 https://espressif.github.io/arduino-esp32/package_esp32_index.json
 ```
 
-### Install the ESP32 Platform
+## Install the ESP32 Platform
 
 - Open `Tools → Board → Board Manager`.
 - In the search bar, type `esp32`.
 - Click on the result named **esp32** (by Espressif Systems), then click the Install button in the bottom-right corner.
 - The installation may take some time as it downloads all necessary files.
 
-### Select the Correct Board
+## Select the Correct Board
 
 Once installed, go to `Tools → Board → ESP32 Arduino` and select **TTGO LoRa32-OLED**.
 
-### Restart Arduino IDE
+## Restart Arduino IDE
 
 Now your ESP32 board is ready to use

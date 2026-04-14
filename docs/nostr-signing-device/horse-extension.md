@@ -9,7 +9,7 @@ tags: ["nostr", "horse", "extension", "browser"]
 
 This works only with Chromium Browser
 
-### Clone the repository:
+## Clone the repository:
 
 Open a terminal and run:
 
@@ -17,13 +17,13 @@ Open a terminal and run:
 git clone https://github.com/lnbits/horse.git
 ```
 
-### Navigate to the project folder:
+## Navigate to the project folder:
 
 ```bash
 cd horse
 ```
 
-### Install dependencies
+## Install dependencies
 
 Run the following command (the `--force` flag is required to ensure successful installation):
 
@@ -31,13 +31,13 @@ Run the following command (the `--force` flag is required to ensure successful i
 npm install --force
 ```
 
-### Build the extension:
+## Build the extension:
 
 ```bash
 npm run build
 ```
 
-### Load the extension in your browser
+## Load the extension in your browser
 
 - Open Chromium.
 - Type `chrome://extensions/` in the address bar and press Enter.

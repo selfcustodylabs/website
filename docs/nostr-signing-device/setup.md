@@ -7,7 +7,7 @@ tags: ["nostr", "firmware", "setup", "github"]
 ---
 # Setting up the Nostr Signing Device
 
-### Clone the GitHub repository:
+## Clone the GitHub repository:
 
 Open a terminal and run:
 
@@ -15,7 +15,7 @@ Open a terminal and run:
 git clone https://github.com/lnbits/nostr-signing-device.git
 ```
 
-### Copy Required Libraries
+## Copy Required Libraries
 
 Navigate to the `libraries` folder:
 
@@ -29,19 +29,19 @@ Copy all the files in this folder and paste them into the `Arduino/libraries` di
 cp -r . ~/Arduino/libraries
 ```
 
-### Connect Your Nostr Signing Device (NSD)
+## Connect Your Nostr Signing Device (NSD)
 
 Plug in your device via USB.
 
 
-### Upload the Firmware Using Arduino IDE
+## Upload the Firmware Using Arduino IDE
 
 - Open Arduino IDE.
 - Go to `Tools → Port` and select the correct serial port (e.g., `/dev/ttyACM0`).
 - Click `File → Open`, then select `snsd.ino` from the `nostr-signing-device/snsd/` folder.
 - Click the Upload button (right-facing arrow in the toolbar).
 
-### Verify Installation
+## Verify Installation
 
 If the upload completes without errors, your NSD is ready! You should see the LNbits welcome screen on the display.
 
