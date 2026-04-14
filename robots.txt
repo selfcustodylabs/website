@@ -25,16 +25,6 @@ Disallow: /docs/tags
 # Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
 
-# Google-specific directives
-User-agent: Googlebot
-Allow: /
-Disallow: /search
-
-# Bing-specific directives  
-User-agent: Bingbot
-Allow: /
-Disallow: /search
-
 # Block AI training crawlers (optional - remove if you want AI indexing)
 # User-agent: GPTBot
 # Disallow: /
