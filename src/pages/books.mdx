@@ -1,37 +1,87 @@
 ---
 title: Bitcoin Books
+description: Must-read books about Bitcoin and the broken state of fiat money.
 tags: [bitcoin, books, self custody, money]
+hide_table_of_contents: true
 ---
 
-# Bitcoin Books
+import Layout from "@theme/Layout";
+import PageHeader from "@site/src/components/homepage/PageHeader";
 
-Below is a list of must-read books about Bitcoin and the disgrace of fiat money.
+export const books = [
+  {
+    title: "The Bitcoin Standard",
+    image: "/img/books/the-bitcoin-standard.webp",
+    href: "https://www.amazon.com/Bitcoin-Standard-Decentralized-Alternative-Central/dp/1119473861",
+    description:
+      "The Bitcoin Standard examines Bitcoin's rise as a decentralized digital currency, comparing it to historical money systems like gold. It explores its economic, political, and social implications while addressing key questions about its technology and role in challenging government-controlled money.",
+  },
+  {
+    title: "The Price of Tomorrow",
+    image: "/img/books/the-price-of-tomorrow.webp",
+    href: "https://www.amazon.com/Price-Tomorrow-Deflation-Abundant-Future/dp/B08725C857",
+    description:
+      "Jeff Booth argues that technological advances are deflationary and incompatible with outdated economic systems built on growth and inflation. He warns that relying on easy credit to drive growth creates unsustainable debt, and calls for a new economic framework that embraces deflation and abundance.",
+  },
+  {
+    title: "Broken Money",
+    image: "/img/books/broken-money.webp",
+    href: "https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR",
+    description:
+      "Broken Money explores the history of money through the lens of technology. Politics can affect things temporarily and locally, but technology is what drives things forward globally and permanently.",
+  },
+  {
+    title: "The Big Print",
+    image: "/img/books/the-big-print.webp",
+    href: "https://www.amazon.com/Big-Print-Happened-America-Sound/dp/B0DVTCVX8J",
+    description:
+      "Most Americans — and people worldwide — understand that despite our remarkable technological advances, something is deeply wrong with the direction of our country and world. Lawrence Lepard argues the underlying cause most are missing is simple: the money is broken.",
+  },
+];
 
-import Grid from '@mui/material/Grid';
+<main className="homepage relative bg-neutral-950 text-white">
+  <PageHeader
+    eyebrow="READING LIST"
+    title={
+      <>
+        Bitcoin{" "}
+        <span
+          className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
+          style={{ backgroundSize: "200% 200%" }}
+        >
+          Books
+        </span>
+      </>
+    }
+    subtitle="Must-read books about Bitcoin and the broken state of fiat money."
+  />
 
-<Grid container spacing={4}>
-  <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
-    <img src="/img/books/the-bitcoin-standard.webp" alt="The Bitcoin Standard" style={{ width: '100%', maxWidth: '200px' }} />
-    <p><strong><a href="https://www.amazon.com/Bitcoin-Standard-Decentralized-Alternative-Central/dp/1119473861" target="_blank">The Bitcoin Standard</a></strong></p>
-    <p>The Bitcoin Standard examines Bitcoin's rise as a decentralized digital currency, comparing it to historical money systems like gold. It explores its economic, political, and social implications while addressing key questions about its technology and role in challenging government-controlled money.</p>
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
-    <img src="/img/books/the-price-of-tomorrow.webp" alt="The Price of Tomorrow" style={{ width: '100%', maxWidth: '200px' }} />
-    <p><strong><a href="https://www.amazon.com/Price-Tomorrow-Deflation-Abundant-Future/dp/B08725C857?crid=1VVTRS6BCELHI&keywords=price+of+tomorrow%2C+jeff+booth&qid=1699040333&sprefix=price+of+tomor%2Caps%2C153&sr=8-1" target="_blank">The Price of Tomorrow</a></strong></p>
-    <p>Jeff Booth argues that technological advances are deflationary and incompatible with outdated economic systems built on growth and inflation. He warns that relying on easy credit to drive growth creates unsustainable debt, and calls for a new economic framework that embraces deflation and abundance.</p>
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
-    <img src="/img/books/broken-money.webp" alt="Broken Money" style={{ width: '100%', maxWidth: '200px' }} />
-    <p><strong><a href="https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR" target="_blank">Broken Money</a></strong></p>
-    <p>Broken Money explores the history of money through the lens of technology. Politics can affect things temporarily and locally, but technology is what drives things forward globally and permanently.</p>
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
-    <img src="/img/books/the-big-print.webp" alt="The Big Print" style={{ width: '100%', maxWidth: '200px' }} />
-    <p><strong><a href="https://www.amazon.com/Big-Print-Happened-America-Sound/dp/B0DVTCVX8J" target="_blank">The Big Print</a></strong></p>
-    <p>Most Americans ,  and people worldwide ,  understand that despite our remarkable technological advances, something is deeply wrong with the direction of our country and world. There are a variety of causes but Mr. Lepard believes, and wrote this book because, too many are missing the one, principal underlying cause: The Money Is Broken.</p>
-  </Grid>
-</Grid>
-
+  <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      {books.map((book) => (
+        <a
+          key={book.title}
+          href={book.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-amber-500/35 hover:bg-white/[0.04] sm:flex-row sm:items-start"
+        >
+          <div className="mx-auto flex-shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] sm:mx-0">
+            <img
+              src={book.image}
+              alt={book.title}
+              className="block h-44 w-32 object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="flex flex-col">
+            <h3 className="font-display text-lg font-bold tracking-tight text-white">
+              {book.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-white/65">{book.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</main>

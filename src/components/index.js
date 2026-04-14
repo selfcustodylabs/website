@@ -6,7 +6,7 @@ export { default as RelatedArticles, articleCollections } from "./RelatedArticle
 export { default as FeaturedImage } from "./FeaturedImage";
 
 // Shared UI components
-export { default as Card, cardStyles } from "./Card";
+export { default as Card } from "./Card";
 export { default as DifficultyTag } from "./DifficultyTag";
 export { default as CategorySection } from "./CategorySection";
 
