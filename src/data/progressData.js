@@ -103,18 +103,6 @@ const GUIDES = {
     ],
   },
 
-  coinjoin: {
-    name: "CoinJoin Guide",
-    steps: [
-      { title: "Overview", path: "/docs/privacy/coinjoin/" },
-      { title: "How It Works", path: "/docs/privacy/coinjoin/how-it-works/" },
-      { title: "Services", path: "/docs/privacy/coinjoin/services/" },
-      {
-        title: "Best Practices",
-        path: "/docs/privacy/coinjoin/best-practices/",
-      },
-    ],
-  },
 };
 
 // ===========================================
@@ -165,7 +153,6 @@ export function getSectionFromPath(path) {
   if (path.includes("/learn/nodes")) return "nodes";
   if (path.includes("/security/")) return "security";
   if (path.includes("/advanced/")) return "advanced";
-  if (path.includes("/privacy/")) return "privacy";
   if (path.includes("/reference/")) return "reference";
   if (path.includes("/wallet-setup/")) return "wallets";
   if (path.includes("/bitcoin-node/")) return "nodes";

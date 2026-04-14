@@ -23,8 +23,8 @@ export const articleCollections = {
   privacy: [
     { title: "Why Privacy Matters", href: "/docs/learn/privacy/why-privacy-matters/", tag: "Learn" },
     { title: "Chain Analysis", href: "/docs/learn/privacy/chain-analysis/", tag: "Learn" },
-    { title: "UTXO Management", href: "/docs/privacy/utxo-management/", tag: "Guide" },
-    { title: "CoinJoin", href: "/docs/privacy/coinjoin/", tag: "Guide" },
+    { title: "UTXO Management", href: "/docs/learn/privacy/utxo-management/", tag: "Guide" },
+    { title: "CoinJoin", href: "/docs/learn/privacy/coinjoin/", tag: "Guide" },
   ],
   transactions: [
     { title: "UTXOs Explained", href: "/docs/learn/transactions/utxos/", tag: "Learn" },

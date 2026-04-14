@@ -289,4 +289,4 @@ You might be on the wrong derivation path. Try:
 
 - [Private Keys Explained](/docs/learn/keys/intro) — How addresses are derived
 - [Transactions Explained](/docs/learn/transactions/understanding) — How Bitcoin moves
-- [UTXO Management](/docs/privacy/utxo-management) — Managing your coins effectively
+- [UTXO Management](/docs/learn/privacy/utxo-management) — Managing your coins effectively

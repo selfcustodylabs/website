@@ -292,7 +292,7 @@ Now that your hardware wallet is set up:
 1. **[Verify Your Backup](/docs/wallet-setup/backup-verification)** — Test that your seed backup actually works
 2. **Start small** — Receive a small amount first to test the process
 3. **[Run Your Own Node](/docs/bitcoin-node)** — Connect to your own node for privacy
-4. **[Learn UTXO Management](/docs/privacy/utxo-management)** — Manage your coins effectively
+4. **[Learn UTXO Management](/docs/learn/privacy/utxo-management)** — Manage your coins effectively
 5. **Consider [Multisig](/docs/advanced/multisig)** — For significant holdings
 
 <NextSteps 

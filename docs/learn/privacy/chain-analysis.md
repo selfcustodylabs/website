@@ -225,6 +225,6 @@ Understanding chain analysis is the first step to defeating it. The next steps a
 
 → **Next:** [Protecting Your Privacy](/docs/learn/privacy/protecting-privacy) — Practical techniques you can use today
 
-→ **Practice:** [UTXO Management Guide](/docs/privacy/utxo-management) — Coin control, labeling, and consolidation
+→ **Practice:** [UTXO Management Guide](/docs/learn/privacy/utxo-management) — Coin control, labeling, and consolidation
 
-→ **Advanced:** [CoinJoin Guide](/docs/privacy/coinjoin) — Break the chain analysis heuristics
+→ **Advanced:** [CoinJoin Guide](/docs/learn/privacy/coinjoin) — Break the chain analysis heuristics

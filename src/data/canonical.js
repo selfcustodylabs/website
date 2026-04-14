@@ -23,19 +23,6 @@ import { SITE_URL } from "./schema/constants.js";
 
 export const canonicalMap = {
   // =============================================
-  // PRIVACY
-  // Old detailed trees → learn/privacy/protecting-privacy
-  // =============================================
-  "/docs/privacy/coinjoin/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/coinjoin/how-it-works/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/coinjoin/services/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/coinjoin/best-practices/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/utxo-management/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/utxo-management/coin-control/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/utxo-management/consolidation/": "/docs/learn/privacy/protecting-privacy/",
-  "/docs/privacy/payjoin/": "/docs/learn/privacy/protecting-privacy/",
-
-  // =============================================
   // MULTISIG
   // Old detailed tree → learn/wallets/multisig
   // =============================================

@@ -94,13 +94,13 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         position: 11,
         name: "CoinJoin Privacy Guide",
-        url: "https://selfcustodylabs.com/docs/privacy/coinjoin/",
+        url: "https://selfcustodylabs.com/docs/learn/privacy/coinjoin/",
       },
       {
         "@type": "ListItem",
         position: 12,
         name: "UTXO Management Guide",
-        url: "https://selfcustodylabs.com/docs/privacy/utxo-management/",
+        url: "https://selfcustodylabs.com/docs/learn/privacy/utxo-management/",
       },
       {
         "@type": "ListItem",
@@ -216,7 +216,7 @@ export default function GuidesPage() {
       title: "CoinJoin",
       description:
         "Break the link between your transaction history and your coins using CoinJoin mixing.",
-      href: "/docs/privacy/coinjoin",
+      href: "/docs/learn/privacy/coinjoin",
       level: "Intermediate",
     },
     {
@@ -224,7 +224,7 @@ export default function GuidesPage() {
       title: "PayJoin",
       description:
         "Stealth privacy that breaks blockchain analysis assumptions. Both sender and receiver contribute inputs.",
-      href: "/docs/privacy/payjoin",
+      href: "/docs/learn/privacy/payjoin",
       badge: "NEW",
       level: "Intermediate",
     },
@@ -233,7 +233,7 @@ export default function GuidesPage() {
       title: "UTXO Management",
       description:
         "Master coin control, consolidation, and labeling to minimize fees and protect privacy.",
-      href: "/docs/privacy/utxo-management",
+      href: "/docs/learn/privacy/utxo-management",
       level: "Intermediate",
     },
   ];

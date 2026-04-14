@@ -126,7 +126,7 @@ You're already self-custodying but want stronger security.
 1. [DIY Seed Generation](/docs/learn/keys/random/) — Create verifiable randomness
 2. [Passphrase Security](/docs/learn/keys/passphrase/) — Add another layer
 3. [Run Your Own Node](/docs/bitcoin-node/) — Don't trust, verify
-4. [UTXO Management](/docs/privacy/utxo-management/) — Privacy and fee optimization
+4. [UTXO Management](/docs/learn/privacy/utxo-management/) — Privacy and fee optimization
 
 **Time investment:** 1-2 days of projects
 
@@ -140,7 +140,7 @@ You have significant holdings or elevated threat concerns.
 1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — Understand the stakes
 2. [Multisig Setup](/docs/advanced/multisig/) — Eliminate single points of failure
 3. [Air-Gapped Computing](/docs/advanced/air-gapped-computer/) — Offline signing
-4. [CoinJoin](/docs/privacy/coinjoin/) — Break transaction history links
+4. [CoinJoin](/docs/learn/privacy/coinjoin/) — Break transaction history links
 
 **Time investment:** Multiple days/weeks
 

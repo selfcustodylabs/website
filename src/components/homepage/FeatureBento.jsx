@@ -36,7 +36,7 @@ const mediums = [
     icon: ShieldRoundedIcon,
     title: 'Privacy',
     description: 'Understand UTXO management and coin control so your on-chain footprint stays yours.',
-    href: '/docs/privacy/utxo-management',
+    href: '/docs/learn/privacy/utxo-management',
   },
   {
     icon: DnsRoundedIcon,

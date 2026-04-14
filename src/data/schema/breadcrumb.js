@@ -50,6 +50,9 @@ export const breadcrumbMappings = {
   "/docs/learn/privacy/why-privacy-matters/": ["Learn", "Privacy", "Why Privacy Matters"],
   "/docs/learn/privacy/chain-analysis/": ["Learn", "Privacy", "Chain Analysis"],
   "/docs/learn/privacy/protecting-privacy/": ["Learn", "Privacy", "Protecting Privacy"],
+  "/docs/learn/privacy/utxo-management/": ["Learn", "Privacy", "UTXO Management"],
+  "/docs/learn/privacy/coinjoin/": ["Learn", "Privacy", "CoinJoin"],
+  "/docs/learn/privacy/payjoin/": ["Learn", "Privacy", "PayJoin"],
 
   // Learn section - Nodes
   "/docs/learn/nodes/what-is-node/": ["Learn", "Nodes", "What is a Node"],
@@ -89,19 +92,6 @@ export const breadcrumbMappings = {
   "/docs/advanced/bitcoin-computer/setup/": ["Guides", "Bitcoin Computer", "Setup"],
 
   "/docs/advanced/inheritance-planning/": ["Guides", "Advanced", "Inheritance Planning"],
-
-  // Privacy guides
-  "/docs/privacy/": ["Guides", "Privacy"],
-  "/docs/privacy/coinjoin/": ["Guides", "Privacy", "CoinJoin"],
-  "/docs/privacy/coinjoin/how-it-works/": ["Guides", "CoinJoin", "How It Works"],
-  "/docs/privacy/coinjoin/services/": ["Guides", "CoinJoin", "Services"],
-  "/docs/privacy/coinjoin/best-practices/": ["Guides", "CoinJoin", "Best Practices"],
-
-  "/docs/privacy/utxo-management/": ["Guides", "Privacy", "UTXO Management"],
-  "/docs/privacy/utxo-management/coin-control/": ["Guides", "UTXO Management", "Coin Control"],
-  "/docs/privacy/utxo-management/consolidation/": ["Guides", "UTXO Management", "Consolidation"],
-
-  "/docs/privacy/payjoin/": ["Guides", "Privacy", "PayJoin"],
 
   // Firmware guides
   "/docs/libreboot/": ["Guides", "Libreboot"],

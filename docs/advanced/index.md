@@ -242,4 +242,4 @@ Both approaches have merit. Secure elements provide tamper resistance. Open sour
 ### Supporting Guides
 - [Bitcoin Node Setup](/docs/bitcoin-node/) — Verify your own transactions
 - [Security Hardening](/docs/security/) — OpSec and physical security
-- [Privacy Guides](/docs/privacy/) — Protect your transaction history
+- [Privacy Guides](/docs/learn/privacy/protecting-privacy/) — Protect your transaction history
