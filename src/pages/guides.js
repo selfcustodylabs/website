@@ -70,7 +70,7 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         position: 7,
         name: "Air-Gapped Computer",
-        url: "https://selfcustodylabs.com/docs/advanced/air-gapped-computer/",
+        url: "https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/",
       },
       {
         "@type": "ListItem",
@@ -175,7 +175,7 @@ export default function GuidesPage() {
       title: "Air-Gapped Computer",
       description:
         "Set up an offline computer for maximum security: seed generation, verification, and signing.",
-      href: "/docs/advanced/air-gapped-computer",
+      href: "/docs/learn/wallets/air-gapped-wallets",
       level: "Advanced",
     },
     {

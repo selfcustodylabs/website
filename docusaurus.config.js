@@ -808,6 +808,33 @@ const config = {
             from: '/docs/multisig/backup-recovery',
             to: '/docs/learn/wallets/multisig/backup-recovery',
           },
+          // ---------------------------------------------------
+          // Topic 5: Air-gapped computer (merged into learn/wallets/air-gapped-wallets)
+          // ---------------------------------------------------
+          {
+            from: '/docs/advanced/air-gapped-computer',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
+          {
+            from: '/docs/advanced/air-gapped-computer/types',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
+          {
+            from: '/docs/advanced/air-gapped-computer/setup',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
+          {
+            from: '/docs/air-gapped-computer',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
+          {
+            from: '/docs/air-gapped-computer/types',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
+          {
+            from: '/docs/air-gapped-computer/setup',
+            to: '/docs/learn/wallets/air-gapped-wallets',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
@@ -830,9 +857,6 @@ const config = {
             return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
           }
           // Catch-all for advanced paths
-          if (existingPath.includes('/docs/advanced/air-gapped-computer')) {
-            return [existingPath.replace('/docs/advanced/air-gapped-computer', '/docs/air-gapped-computer')];
-          }
           if (existingPath.includes('/docs/advanced/bitcoin-computer')) {
             return [existingPath.replace('/docs/advanced/bitcoin-computer', '/docs/bitcoin-computer')];
           }

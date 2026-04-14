@@ -21,15 +21,7 @@
 
 import { SITE_URL } from "./schema/constants.js";
 
-export const canonicalMap = {
-  // =============================================
-  // AIR-GAPPED COMPUTER
-  // Old detailed tree → learn/wallets/air-gapped-wallets
-  // =============================================
-  "/docs/advanced/air-gapped-computer/": "/docs/learn/wallets/air-gapped-wallets/",
-  "/docs/advanced/air-gapped-computer/setup/": "/docs/learn/wallets/air-gapped-wallets/",
-  "/docs/advanced/air-gapped-computer/types/": "/docs/learn/wallets/air-gapped-wallets/",
-};
+export const canonicalMap = {};
 
 /**
  * Look up the canonical URL for a given path.

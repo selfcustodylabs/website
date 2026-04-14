@@ -28,7 +28,7 @@ In this guide, you will:
 :::
 
 :::tip Background Reading
-This guide assumes you're building a [Bitcoin Computer](/docs/advanced/bitcoin-computer) or [Air-Gapped Computer](/docs/advanced/air-gapped-computer). If you're not sure why open-source firmware matters, see those guides first.
+This guide assumes you're building a [Bitcoin Computer](/docs/advanced/bitcoin-computer) or [Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets). If you're not sure why open-source firmware matters, see those guides first.
 :::
 
 
@@ -77,5 +77,5 @@ Libreboot is based on Coreboot but removes more proprietary blobs. If your hardw
 :::tip Use Cases
 Once you have Libreboot installed, use your laptop as a:
 - **[Bitcoin Computer](/docs/advanced/bitcoin-computer)** – For secure transaction creation and broadcasting
-- **[Air-Gapped Computer](/docs/advanced/air-gapped-computer)** – For offline seed generation and signing
+- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)** – For offline seed generation and signing
 :::
