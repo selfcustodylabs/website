@@ -12,11 +12,12 @@ import MemoryRoundedIcon from "@mui/icons-material/MemoryRounded";
 import PasswordRoundedIcon from "@mui/icons-material/PasswordRounded";
 import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import HubRoundedIcon from "@mui/icons-material/HubRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
 // Shared components
 import { CategorySection } from "@site/src/components";
-
-import styles from "./styles.module.css";
+import PageHeader from "@site/src/components/homepage/PageHeader";
 
 // CollectionPage schema for the guides listing page
 const guidesCollectionSchema = {
@@ -122,7 +123,6 @@ export default function GuidesPage() {
       href: "/docs/security/seed-generation",
       badge: "POPULAR",
       level: "Intermediate",
-      cost: "💰 $30-80 (dice + metal backup)",
     },
     {
       icon: KeyRoundedIcon,
@@ -132,7 +132,6 @@ export default function GuidesPage() {
       href: "/docs/security/passphrase",
       badge: "POPULAR",
       level: "Beginner",
-      cost: "💰 $0-10 (dice optional)",
     },
     {
       icon: PasswordRoundedIcon,
@@ -141,7 +140,6 @@ export default function GuidesPage() {
       href: "/docs/wallet-setup/hardware-wallet",
       badge: "NEW",
       level: "Beginner",
-      cost: "💰 $70-250 (hardware wallet)",
     },
     {
       icon: SecurityRoundedIcon,
@@ -151,7 +149,6 @@ export default function GuidesPage() {
       href: "/docs/wallet-setup/backup-verification",
       badge: "NEW",
       level: "Beginner",
-      cost: "💰 Free",
     },
     {
       icon: SecurityRoundedIcon,
@@ -160,7 +157,6 @@ export default function GuidesPage() {
         "Eliminate single points of failure with multi-signature wallets. The ultimate security for significant holdings.",
       href: "/docs/advanced/multisig",
       level: "Advanced",
-      cost: "💰 $230-510 (3 HWWs + backups)",
     },
   ];
 
@@ -173,7 +169,6 @@ export default function GuidesPage() {
         "Build a dedicated Bitcoin workstation designed for strong security and privacy.",
       href: "/docs/advanced/bitcoin-computer",
       level: "Intermediate",
-      cost: "💰 $50-150 or free (repurpose)",
     },
     {
       icon: FlightRoundedIcon,
@@ -182,7 +177,6 @@ export default function GuidesPage() {
         "Set up an offline computer for maximum security: seed generation, verification, and signing.",
       href: "/docs/advanced/air-gapped-computer",
       level: "Advanced",
-      cost: "💰 $50-200 or free (repurpose)",
     },
     {
       icon: SecurityRoundedIcon,
@@ -191,7 +185,6 @@ export default function GuidesPage() {
         "Install Libreboot to replace your BIOS with fully open-source firmware and remove Intel ME.",
       href: "/docs/libreboot",
       level: "Advanced",
-      cost: "💰 $15-30 (flashing hardware)",
     },
     {
       icon: MemoryRoundedIcon,
@@ -200,7 +193,6 @@ export default function GuidesPage() {
         "Learn Coreboot fundamentals and why open firmware matters for security-minded setups.",
       href: "/docs/coreboot",
       level: "Advanced",
-      cost: "💰 $0-30 (depends on method)",
     },
   ];
 
@@ -214,7 +206,6 @@ export default function GuidesPage() {
       href: "/docs/bitcoin-node",
       badge: "POPULAR",
       level: "Intermediate",
-      cost: "💰 $100-300 (Pi + SSD) or $50-100 (old PC)",
     },
   ];
 
@@ -227,7 +218,6 @@ export default function GuidesPage() {
         "Break the link between your transaction history and your coins using CoinJoin mixing.",
       href: "/docs/privacy/coinjoin",
       level: "Intermediate",
-      cost: "💰 Variable (mixing fees)",
     },
     {
       icon: SecurityRoundedIcon,
@@ -237,7 +227,6 @@ export default function GuidesPage() {
       href: "/docs/privacy/payjoin",
       badge: "NEW",
       level: "Intermediate",
-      cost: "💰 Free (normal tx fees)",
     },
     {
       icon: KeyRoundedIcon,
@@ -246,7 +235,6 @@ export default function GuidesPage() {
         "Master coin control, consolidation, and labeling to minimize fees and protect privacy.",
       href: "/docs/privacy/utxo-management",
       level: "Intermediate",
-      cost: "💰 Free (knowledge only)",
     },
   ];
 
@@ -259,7 +247,6 @@ export default function GuidesPage() {
         "Use a dedicated signing device to keep your Nostr private key off your computer.",
       href: "/docs/nostr-signing-device",
       level: "Intermediate",
-      cost: "💰 $10-15 (LILYGO T-Display)",
     },
   ];
 
@@ -271,60 +258,77 @@ export default function GuidesPage() {
       <Head>
         <script type="application/ld+json">{JSON.stringify(guidesCollectionSchema)}</script>
       </Head>
-      <main className={styles.page}>
-        <header className={`${styles.hero} guidesHero`}>
-          <div className={styles.heroGlow} aria-hidden="true" />
-          <div className={styles.container}>
-            <div className={styles.heroInner}>
-              <div className="guides-header">
-                <h1 className={styles.heroTitle}>Self-Custody Guides</h1>
-                <p className={styles.heroSubtitle}>
-                  Step-by-step tutorials for securing your Bitcoin. From beginner seed generation to
-                  advanced air-gapped setups.
-                </p>
-              </div>
+      <main className="homepage relative bg-neutral-950 text-white">
+        <PageHeader
+          eyebrow="GUIDES"
+          title={
+            <>
+              Self-Custody{" "}
+              <span
+                className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
+                style={{ backgroundSize: "200% 200%" }}
+              >
+                Guides
+              </span>
+            </>
+          }
+          subtitle="Step-by-step tutorials for securing your Bitcoin. From beginner seed generation to advanced air-gapped setups."
+        />
 
-              <CategorySection
-                title="🔐 Security & Keys"
-                description="Generate and protect your Bitcoin keys with verifiable randomness"
-                items={securityGuides}
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+          <CategorySection
+            title="🔐 Security & Keys"
+            description="Generate and protect your Bitcoin keys with verifiable randomness"
+            items={securityGuides}
+          />
+
+          <CategorySection
+            title="🕵️ Privacy"
+            description="Techniques to enhance your financial privacy on Bitcoin"
+            items={privacyGuides}
+          />
+
+          <CategorySection
+            title="💻 Hardware & Firmware"
+            description="Build dedicated devices with open-source firmware for maximum security"
+            items={hardwareGuides}
+          />
+
+          <CategorySection
+            title="🌐 Nodes & Network"
+            description="Run your own infrastructure to verify transactions privately"
+            items={nodeGuides}
+          />
+
+          <CategorySection
+            title="🛠️ Bonus Projects"
+            description="Additional projects using the same security principles"
+            items={bonusGuides}
+          />
+
+          <div className="mt-20 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              to="/learn"
+              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:-translate-y-0.5 hover:shadow-glow-strong"
+            >
+              New to Bitcoin? Start with the basics
+              <ArrowForwardRoundedIcon
+                sx={{ fontSize: 18 }}
+                className="transition-transform duration-300 group-hover:translate-x-1"
               />
-
-              <CategorySection
-                title="🕵️ Privacy"
-                description="Techniques to enhance your financial privacy on Bitcoin"
-                items={privacyGuides}
+            </Link>
+            <Link
+              to="/"
+              className="group inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/5 px-7 py-3.5 text-sm font-semibold text-amber-100 transition-all duration-300 hover:border-amber-500/70 hover:bg-amber-500/15 hover:-translate-y-0.5"
+            >
+              <ArrowBackRoundedIcon
+                sx={{ fontSize: 18 }}
+                className="transition-transform duration-300 group-hover:-translate-x-1"
               />
-
-              <CategorySection
-                title="💻 Hardware & Firmware"
-                description="Build dedicated devices with open-source firmware for maximum security"
-                items={hardwareGuides}
-              />
-
-              <CategorySection
-                title="🌐 Nodes & Network"
-                description="Run your own infrastructure to verify transactions privately"
-                items={nodeGuides}
-              />
-
-              <CategorySection
-                title="🎁 Bonus Projects"
-                description="Additional projects using the same security principles"
-                items={bonusGuides}
-              />
-
-              <div className={styles.heroCtas} style={{ marginTop: 32 }}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/learn">
-                  New to Bitcoin? Start with the Basics →
-                </Link>
-                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/">
-                  ← Back to Home
-                </Link>
-              </div>
-            </div>
+              Back to home
+            </Link>
           </div>
-        </header>
+        </div>
       </main>
     </Layout>
   );

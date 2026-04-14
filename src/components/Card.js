@@ -1,45 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "@docusaurus/Link";
-import styles from "@site/src/css/components/card.module.css";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 /**
- * Reusable Card component for landing pages
+ * Reusable Card component for landing pages.
  *
- * A versatile card component used across homepage, guides, and learn pages.
+ * Tailwind-based card used by CategorySection on /learn and /guides.
  * Supports optional linking, badges, cost display, and footer content.
- *
- * @param {Object} props - Component props
- * @param {React.ComponentType} props.icon - Material UI icon component to display
- * @param {string} props.title - Card title text
- * @param {string} props.description - Card description/body text
- * @param {string} [props.href] - Optional link destination (makes card clickable)
- * @param {string} [props.badge] - Optional badge text (e.g., "POPULAR", "NEW")
- * @param {string} [props.cost] - Optional cost text (e.g., "💰 $50-100")
- * @param {React.ReactNode} [props.footerLeft] - Optional left footer content (e.g., DifficultyTag)
- * @param {React.ReactNode} [props.footerRight] - Optional right footer content (e.g., arrow)
- * @returns {React.ReactElement} Card component
- *
- * @example
- * // Basic card without link
- * <Card
- *   icon={ShieldIcon}
- *   title="Security"
- *   description="Learn about security best practices"
- * />
- *
- * @example
- * // Linked card with badge and footer
- * <Card
- *   icon={CasinoIcon}
- *   title="DIY Seed Generation"
- *   description="Create your own secure seed"
- *   href="/docs/security/seed-generation"
- *   badge="POPULAR"
- *   cost="💰 $30-80"
- *   footerLeft={<DifficultyTag level="Intermediate" />}
- *   footerRight={<span className={styles.arrow}>→</span>}
- * />
  */
 export default function Card({
   icon: Icon,
@@ -47,60 +15,60 @@ export default function Card({
   description,
   href = null,
   badge = null,
-  cost = null,
   footerLeft = null,
-  footerRight = null,
 }) {
+  const showFooter = Boolean(footerLeft || href);
+
   const content = (
-    <div className={styles.cardInner}>
-      <div className={styles.cardTop}>
-        <div className={styles.cardIcon}>
-          <Icon fontSize="inherit" />
+    <>
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-amber-500/25 bg-amber-500/[0.08] text-amber-400 transition-colors duration-500 group-hover:border-amber-500/50 group-hover:bg-amber-500/15">
+          <Icon fontSize="inherit" sx={{ fontSize: 22 }} />
         </div>
-        {badge ? <div className={styles.cardBadge}>{badge}</div> : null}
+        {badge ? (
+          <span className="inline-flex shrink-0 items-center rounded-full bg-amber-500 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-neutral-950">
+            {badge}
+          </span>
+        ) : null}
       </div>
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardDescription}>{description}</p>
-      {cost && <p className={styles.cardCost}>{cost}</p>}
-      {(footerLeft || footerRight) && (
-        <div className={styles.cardFooter}>
-          <div className={styles.cardFooterLeft}>{footerLeft}</div>
-          <div className={styles.cardFooterRight}>{footerRight}</div>
+
+      <h3 className="font-display text-lg font-bold tracking-tight text-white">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-white/65">{description}</p>
+
+      {showFooter ? (
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+          <div className="flex items-center">{footerLeft}</div>
+          {href ? (
+            <span className="inline-flex items-center text-amber-400/85 transition-colors duration-300 group-hover:text-amber-300">
+              <ArrowForwardRoundedIcon
+                sx={{ fontSize: 18 }}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </span>
+          ) : null}
         </div>
-      )}
-    </div>
+      ) : null}
+    </>
   );
 
-  if (!href) return <div className={styles.card}>{content}</div>;
+  const baseClass =
+    "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-500 hover:border-amber-500/35 hover:bg-white/[0.04] hover:-translate-y-1";
+
+  if (!href) return <div className={baseClass}>{content}</div>;
 
   return (
-    <Link className={styles.cardLink} to={href}>
-      <div className={styles.card}>{content}</div>
+    <Link className={baseClass} to={href}>
+      {content}
+      <span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/0 via-amber-500/0 to-amber-500/0 opacity-0 transition-opacity duration-500 group-hover:from-amber-500/5 group-hover:via-transparent group-hover:to-orange-500/5 group-hover:opacity-100" />
     </Link>
   );
 }
 
 Card.propTypes = {
-  /** Material UI icon component to display */
   icon: PropTypes.elementType.isRequired,
-  /** Card title text */
   title: PropTypes.string.isRequired,
-  /** Card description/body text */
   description: PropTypes.string.isRequired,
-  /** Optional link destination (makes card clickable) */
   href: PropTypes.string,
-  /** Optional badge text (e.g., "POPULAR", "NEW") */
   badge: PropTypes.string,
-  /** Optional cost text (e.g., "💰 $50-100") */
-  cost: PropTypes.string,
-  /** Optional left footer content (e.g., DifficultyTag) */
   footerLeft: PropTypes.node,
-  /** Optional right footer content (e.g., arrow) */
-  footerRight: PropTypes.node,
 };
-
-/**
- * Export arrow style for use in parent components
- * This allows consistent arrow styling across the site
- */
-export { styles as cardStyles };

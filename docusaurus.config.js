@@ -4,6 +4,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from "prism-react-renderer";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
 // @type {import('@docusaurus/types').Config}
 const config = {
@@ -236,7 +238,7 @@ const config = {
         
         // Theme
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: ["./src/css/custom.css", "./src/css/tailwind.css"],
         },
       }),
     ],
@@ -502,6 +504,7 @@ const config = {
         language: ["en"],
         indexDocs: true,
         indexPages: true,
+        indexBlog: false,
         docsRouteBasePath: "/docs",
         // Improve search result quality
         searchResultLimits: 8,
@@ -516,6 +519,16 @@ const config = {
   // PLUGINS
   // ===========================================
   plugins: [
+    function tailwindPlugin() {
+      return {
+        name: 'docusaurus-tailwind',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(tailwindcss);
+          postcssOptions.plugins.push(autoprefixer);
+          return postcssOptions;
+        },
+      };
+    },
     [
       '@docusaurus/plugin-client-redirects',
       {

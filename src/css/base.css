@@ -1,138 +1,60 @@
 /**
- * Base CSS - Variables, Theme Settings, Resets
- * 
- * Contains:
- * - CSS custom properties (variables)
- * - Infima overrides for light/dark themes
- * - Footer styles
+ * Base CSS - Infima root variables, focus rings, skip link.
+ *
+ * Theme colors and component overrides live in theme/chrome.css.
  */
 
-/* ===========================================
-   LIGHT THEME VARIABLES
-   =========================================== */
-
 :root {
-  /* Primary colors */
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #f59e0b;
+  --ifm-color-primary-dark: #ea9106;
+  --ifm-color-primary-darker: #dd8906;
+  --ifm-color-primary-darkest: #b57006;
+  --ifm-color-primary-light: #fbbf24;
+  --ifm-color-primary-lighter: #fcd34d;
+  --ifm-color-primary-lightest: #fde68a;
 
-  /* Code */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(245, 158, 11, 0.12);
 
-  /* Standardized transition timing */
   --transition-fast: 150ms ease;
-
-  /* Accent color (amber/gold) */
-  --color-accent: #f59e0b;
-  --color-accent-rgb: 245, 158, 11;
-  --color-accent-dark: #f97316;
-
-  /* Card/UI colors */
-  --color-card-bg: rgba(18, 18, 20, 0.85);
-  --color-card-border: rgba(245, 158, 11, 0.22);
-  --color-card-border-hover: rgba(245, 158, 11, 0.38);
-  --color-card-shadow: rgba(0, 0, 0, 0.35);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.45);
-
-  /* Text colors */
-  --color-text-primary: rgba(255, 255, 255, 0.92);
-  --color-text-secondary: rgba(255, 255, 255, 0.65);
-  --color-text-muted: rgba(255, 255, 255, 0.75);
-
-  /* Success color (green) */
-  --color-success: #22c55e;
-  --color-success-rgb: 34, 197, 94;
-
-  /* Section colors (used throughout the site) */
-  --section-color-learn: #10b981; /* Emerald green */
-  --section-color-fundamentals: #22c55e; /* Green */
-  --section-color-keys: #f59e0b; /* Amber/Orange */
-  --section-color-wallets: #8b5cf6; /* Purple */
-  --section-color-transactions: #3b82f6; /* Blue */
-  --section-color-privacy: #ec4899; /* Pink */
-  --section-color-nodes: #06b6d4; /* Cyan */
-  --section-color-security: #ef4444; /* Red */
-  --section-color-advanced: #f97316; /* Orange */
-  --section-color-reference: #6b7280; /* Gray */
-}
-
-/* ===========================================
-   DARK THEME VARIABLES
-   =========================================== */
-
-[data-theme="dark"] {
-  --main-bg-color: black;
-  --ifm-color-primary: #f26b00;
-  --ifm-color-primary-dark: #da6000;
-  --ifm-color-primary-darker: #ce5b00;
-  --ifm-color-primary-darkest: #a94b00;
-  --ifm-color-primary-light: #ff770b;
-  --ifm-color-primary-lighter: #ff7e17;
-  --ifm-color-primary-lightest: #ff923c;
 }
 
 html[data-theme="dark"] {
   --ifm-background-color: #0b0b0c;
-  --ifm-background-surface-color: #0f0f0f;
-}
-
-/* ===========================================
-   FOOTER
-   =========================================== */
-
-.footer--dark {
-  --ifm-footer-background-color: #2e3032ff;
+  --ifm-background-surface-color: #0f0f11;
 }
 
 /* ===========================================
    ACCESSIBILITY - Focus Indicators
    =========================================== */
 
-/* Global focus-visible styles for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid #fbbf24;
   outline-offset: 2px;
 }
 
-/* Remove default focus outline when using mouse */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Enhanced focus for buttons and links */
 a:focus-visible,
 button:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid #fbbf24;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Focus indicator for form inputs */
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid #fbbf24;
   outline-offset: 0;
 }
 
-/* Sidebar menu focus */
 .menu__link:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid #fbbf24;
   outline-offset: -2px;
-}
-
-/* Card focus indicators */
-.card:focus-visible,
-[class*="card"]:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
 }
 
 /* ===========================================
@@ -145,9 +67,9 @@ select:focus-visible {
   left: 16px;
   z-index: 1000;
   padding: 12px 24px;
-  background: var(--ifm-color-primary);
-  color: white;
-  font-weight: 600;
+  background: #f59e0b;
+  color: #0b0b0c;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 0 0 8px 8px;
   transition: top 0.2s ease;

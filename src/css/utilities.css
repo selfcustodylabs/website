@@ -1,11 +1,8 @@
 /**
- * Utilities CSS - General Utility Classes
- * 
- * Contains:
- * - Image utilities
- * - Step lists
- * - Guide cards
- * - Hero spacing
+ * Utilities CSS - Content utility classes used inside docs markdown.
+ *
+ * Image utilities, numbered step lists, and the legacy .guide-card used
+ * on a few docs index pages. All restyled for the dark amber aesthetic.
  */
 
 /* ===========================================
@@ -27,19 +24,14 @@ div.img-small img {
 }
 
 /* ===========================================
-   HERO SPACING
-   Tighten spacing below navbar for hub pages
+   HERO SPACING (docs hub pages)
    =========================================== */
 
-header.bitcoinDevicesHero {
-  padding-top: 60px;
-}
-
+header.bitcoinDevicesHero,
 header.guidesHero {
   padding-top: 60px;
 }
 
-/* Hub pages: tighten spacing between title and subtitle */
 .bitcoinDevicesHero h1,
 .guidesHero h1 {
   margin-bottom: 0.85rem;
@@ -51,8 +43,7 @@ header.guidesHero {
 }
 
 /* ===========================================
-   STEP LISTS
-   Numbered procedural lists
+   STEP LISTS — numbered procedural lists
    =========================================== */
 
 .steps-list {
@@ -65,7 +56,7 @@ header.guidesHero {
   counter-increment: step-counter;
   position: relative;
   padding-left: 48px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .steps-list > li::before {
@@ -75,8 +66,9 @@ header.guidesHero {
   top: 0;
   width: 32px;
   height: 32px;
-  background: var(--ifm-color-primary);
-  color: white;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.40);
+  color: #fde68a;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -86,27 +78,29 @@ header.guidesHero {
 }
 
 /* ===========================================
-   GUIDE CARDS
-   For index pages with card layouts
+   GUIDE CARDS — used on a few docs index pages
    =========================================== */
 
 .guide-card {
-  padding: 20px;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 8px;
-  margin: 16px 0;
-  transition: border-color 0.2s ease;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
 }
 
 .guide-card:hover {
-  border-color: var(--ifm-color-primary);
+  border-color: rgba(245, 158, 11, 0.40);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
 }
 
 .guide-card h3 {
   margin-top: 0;
+  color: white;
 }
 
 .guide-card h3 a {
-  color: var(--ifm-color-primary);
+  color: #fbbf24;
 }

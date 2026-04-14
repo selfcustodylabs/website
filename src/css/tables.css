@@ -1,71 +1,96 @@
 /**
- * Tables CSS - Custom Table Styles
- * 
- * Contains:
- * - DIY Seed table (fixed width)
- * - Comparison table (hardware wallets, etc.)
+ * Tables CSS - Content-level table utility classes used in docs markdown.
+ *
+ * Generic prose table styling lives in theme/chrome.css under
+ * `article .theme-doc-markdown table`. This file only covers the named
+ * wrappers (.fixed-width-table, .comparison-table) used across ~48 docs.
  */
 
 /* ===========================================
-   DIY SEED TABLE
-   Fixed-width table for dice rolling exercises
+   DIY SEED TABLE — fixed-width dice rolling tables
    =========================================== */
 
 .fixed-width-table table {
   width: 100%;
   table-layout: fixed;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .fixed-width-table th {
-  background-color: #ce5b00;
-  color: white;
+  background: rgba(245, 158, 11, 0.18);
+  color: #fde68a;
   text-align: center;
   vertical-align: middle;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.30);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
 }
 
 .fixed-width-table td {
   text-align: center;
   vertical-align: middle;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 0.625rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   width: 200px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.fixed-width-table tr:last-child td {
+  border-bottom: 0;
 }
 
 /* ===========================================
-   COMPARISON TABLE
-   For hardware wallet comparisons, etc.
+   COMPARISON TABLE — hardware wallet / tool comparisons
    =========================================== */
 
 .comparison-table {
   overflow-x: auto;
-  margin: 24px 0;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
 }
 
 .comparison-table table {
   width: 100%;
   min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
 }
 
 .comparison-table th {
-  background: var(--ifm-color-primary);
+  background: rgba(255, 255, 255, 0.04);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .comparison-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   vertical-align: top;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.comparison-table tr:hover td {
-  background: var(--ifm-background-surface-color);
+.comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.comparison-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 /* Checkmarks and X marks */
@@ -75,11 +100,11 @@
 }
 
 .check {
-  color: #22c55e;
-  font-weight: bold;
+  color: #34d399;
+  font-weight: 700;
 }
 
 .cross {
-  color: #ef4444;
-  font-weight: bold;
+  color: #fb7185;
+  font-weight: 700;
 }

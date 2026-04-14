@@ -229,7 +229,7 @@ For most users, no. Standard hardware wallets with good practices provide excell
 
 **"What about hardware wallets with secure elements vs. open source?"**
 
-Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. Some devices (like Coldcard) offer both. See [hardware wallet comparison](/docs/learn/fundamentals/choosing-your-path#hardware-wallet-comparison).
+Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. Some devices (like Coldcard) offer both. See [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
 
 ---
 

@@ -1,36 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "@site/src/css/components/difficulty-tag.module.css";
+
+const base =
+  "inline-flex items-center rounded-full px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em] ring-1 ring-inset";
+
+const variants = {
+  Beginner: "bg-emerald-500/15 text-emerald-300 ring-emerald-400/30",
+  Intermediate: "bg-amber-500/15 text-amber-300 ring-amber-400/30",
+  Advanced: "bg-rose-500/15 text-rose-300 ring-rose-400/30",
+};
 
 /**
- * Difficulty level tag for guide cards
- *
- * Displays a colored badge indicating the difficulty level of a guide:
- * - Beginner: Green badge
- * - Intermediate: Amber/Yellow badge
- * - Advanced: Red badge
- *
- * @param {Object} props - Component props
- * @param {"Beginner" | "Intermediate" | "Advanced"} props.level - The difficulty level to display
- * @returns {React.ReactElement} A styled span element with the difficulty level
- *
- * @example
- * <DifficultyTag level="Beginner" />
- * <DifficultyTag level="Intermediate" />
- * <DifficultyTag level="Advanced" />
+ * Difficulty level tag for guide cards.
+ * Beginner → emerald, Intermediate → amber, Advanced → rose.
  */
 export default function DifficultyTag({ level }) {
-  const levelClass =
-    level === "Beginner"
-      ? styles.tagBeginner
-      : level === "Intermediate"
-        ? styles.tagIntermediate
-        : styles.tagAdvanced;
-
-  return <span className={`${styles.tag} ${levelClass}`}>{level}</span>;
+  return <span className={`${base} ${variants[level] ?? variants.Beginner}`}>{level}</span>;
 }
 
 DifficultyTag.propTypes = {
-  /** The difficulty level to display */
   level: PropTypes.oneOf(["Beginner", "Intermediate", "Advanced"]).isRequired,
 };

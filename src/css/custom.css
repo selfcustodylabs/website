@@ -1,36 +1,17 @@
 /**
  * Self Custody Labs - Custom CSS
- * 
- * This file imports all CSS modules. The classic Docusaurus template
- * bundles Infima by default. These styles extend and customize Infima.
- * 
- * CSS Module Structure:
- * - base.css: Variables, theme settings, footer
- * - header.css: Navbar icon links
- * - navigation.css: Sidebar, breadcrumbs
- * - sections.css: Section badge colors
- * - tables.css: Table styles
- * - utilities.css: Helper classes
- * - components/: Component-specific styles
+ *
+ * Loads Infima + Tailwind + the chrome theme layer + content utilities.
+ *
+ * - base.css: Infima root variables and accessibility focus rings
+ * - theme/chrome.css: all Infima selector overrides (navbar, sidebar,
+ *   breadcrumbs, TOC, pagination, markdown prose, admonitions, footer)
+ * - tables.css + utilities.css: content-level utility classes still used
+ *   inside docs markdown (.comparison-table, .fixed-width-table, .steps-list,
+ *   .guide-card, etc.)
  */
 
-/* ===========================================
-   CORE STYLES
-   =========================================== */
-
 @import "./base.css";
-@import "./header.css";
-@import "./navigation.css";
-@import "./sections.css";
+@import "./theme/chrome.css";
 @import "./tables.css";
 @import "./utilities.css";
-
-/* ===========================================
-   COMPONENT STYLES
-   =========================================== */
-
-@import "./components/progress-indicator.css";
-@import "./components/next-steps.css";
-@import "./components/related-articles.css";
-@import "./components/mdx-grid.css";
-@import "./components/featured-image.css";

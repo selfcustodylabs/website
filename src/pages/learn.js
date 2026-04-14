@@ -12,11 +12,12 @@ import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
 // Shared components
 import { CategorySection } from "@site/src/components";
-
-import styles from "./styles.module.css";
+import PageHeader from "@site/src/components/homepage/PageHeader";
 
 // Schema for SEO
 const learnCollectionSchema = {
@@ -277,72 +278,89 @@ export default function LearnPage() {
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(learnCollectionSchema)}</script>
       </Head>
-      <main className={styles.page}>
-        <header className={`${styles.hero} learnHero`}>
-          <div className={styles.heroGlow} aria-hidden="true" />
-          <div className={styles.container}>
-            <div className={styles.heroInner}>
-              <div className="learn-header">
-                <h1 className={styles.heroTitle}>Learn Bitcoin Self-Custody</h1>
-                <p className={styles.heroSubtitle}>
-                  Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is
-                  to running your own node—everything you need to become truly sovereign.
-                </p>
-              </div>
+      <main className="homepage relative bg-neutral-950 text-white">
+        <PageHeader
+          eyebrow="LEARN"
+          title={
+            <>
+              Learn Bitcoin{" "}
+              <span
+                className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
+                style={{ backgroundSize: "200% 200%" }}
+              >
+                Self-Custody
+              </span>
+            </>
+          }
+          subtitle="Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is to running your own node — everything you need to become truly sovereign."
+        />
 
-              <CategorySection
-                title="📚 Fundamentals"
-                description="Start here if you're new. Build a solid foundation before diving deeper."
-                items={fundamentals}
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+          <CategorySection
+            title="📚 Fundamentals"
+            description="Start here if you're new. Build a solid foundation before diving deeper."
+            items={fundamentals}
+          />
+
+          <CategorySection
+            title="🔑 Keys & Seeds"
+            description="The core of Bitcoin ownership. Understand how private keys and seed phrases work."
+            items={keysAndSeeds}
+          />
+
+          <CategorySection
+            title="👛 Wallets"
+            description="Tools for managing your Bitcoin. From simple apps to advanced security setups."
+            items={wallets}
+          />
+
+          <CategorySection
+            title="💸 Transactions"
+            description="How Bitcoin actually moves. Essential knowledge for using and managing your coins."
+            items={transactions}
+          />
+
+          <CategorySection
+            title="🕵️ Privacy"
+            description="Bitcoin is not anonymous. Learn what's exposed and how to protect yourself."
+            items={privacy}
+          />
+
+          <CategorySection
+            title="🖥️ Nodes"
+            description="Verify everything yourself. The ultimate step in Bitcoin sovereignty."
+            items={nodes}
+          />
+
+          <CategorySection
+            title="📖 Reference"
+            description="Quick lookup resources to help you on your journey."
+            items={reference}
+          />
+
+          <div className="mt-20 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              to="/guides"
+              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:-translate-y-0.5 hover:shadow-glow-strong"
+            >
+              Ready for hands-on? View guides
+              <ArrowForwardRoundedIcon
+                sx={{ fontSize: 18 }}
+                className="transition-transform duration-300 group-hover:translate-x-1"
               />
-
-              <CategorySection
-                title="🔑 Keys & Seeds"
-                description="The core of Bitcoin ownership. Understand how private keys and seed phrases work."
-                items={keysAndSeeds}
+            </Link>
+            <Link
+              to="/"
+              className="group inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/5 px-7 py-3.5 text-sm font-semibold text-amber-100 transition-all duration-300 hover:border-amber-500/70 hover:bg-amber-500/15 hover:-translate-y-0.5"
+            >
+              <ArrowBackRoundedIcon
+                sx={{ fontSize: 18 }}
+                className="transition-transform duration-300 group-hover:-translate-x-1"
               />
-
-              <CategorySection
-                title="👛 Wallets"
-                description="Tools for managing your Bitcoin. From simple apps to advanced security setups."
-                items={wallets}
-              />
-
-              <CategorySection
-                title="💸 Transactions"
-                description="How Bitcoin actually moves. Essential knowledge for using and managing your coins."
-                items={transactions}
-              />
-
-              <CategorySection
-                title="🕵️ Privacy"
-                description="Bitcoin is not anonymous. Learn what's exposed and how to protect yourself."
-                items={privacy}
-              />
-
-              <CategorySection
-                title="🖥️ Nodes"
-                description="Verify everything yourself. The ultimate step in Bitcoin sovereignty."
-                items={nodes}
-              />
-
-              <CategorySection
-                title="📖 Reference"
-                description="Quick lookup resources to help you on your journey."
-                items={reference}
-              />
-
-              <div className={styles.heroCtas} style={{ marginTop: 32 }}>
-                <Link className={`${styles.button} ${styles.buttonPrimary}`} to="/guides">
-                  Ready for Hands-On? View Guides →
-                </Link>
-                <Link className={`${styles.button} ${styles.buttonSecondary}`} to="/">
-                  ← Back to Home
-                </Link>
-              </div>
-            </div>
+              Back to home
+            </Link>
           </div>
-        </header>
+        </div>
       </main>
     </Layout>
   );

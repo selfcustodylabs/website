@@ -1,60 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "@docusaurus/Link";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
-/**
- * @typedef {Object} NextStepItem
- * @property {string} [label] - Optional label like "Next" or "Learn More"
- * @property {string} title - The title of the linked page
- * @property {string} href - The URL to navigate to
- * @property {string} [description] - Optional description text
- */
-
-/**
- * Next Steps CTA component for guiding users to related content
- *
- * Displays a styled box at the end of documentation pages with
- * links to recommended next pages. Used to improve navigation flow.
- *
- * @param {Object} props - Component props
- * @param {string} [props.title="Next Steps"] - Section title
- * @param {NextStepItem[]} [props.items=[]] - Array of navigation items
- * @returns {React.ReactElement|null} Next steps component or null if no items
- *
- * @example
- * <NextSteps
- *   title="Continue Learning"
- *   items={[
- *     {
- *       label: "Next",
- *       title: "Hardware Wallet Setup",
- *       href: "/docs/wallet-setup/hardware-wallet/",
- *       description: "Set up your first hardware wallet"
- *     },
- *     {
- *       label: "Related",
- *       title: "Private Keys",
- *       href: "/docs/learn/keys/intro/"
- *     }
- *   ]}
- * />
- */
 export default function NextSteps({ title = "Next Steps", items = [] }) {
   if (!items.length) return null;
 
   return (
-    <div className="next-steps">
-      <div className="next-steps__title">{title}</div>
-      <div className="next-steps__grid">
+    <section className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
+      <h3 className="mb-5 flex items-center gap-2 font-display text-lg font-bold text-white">
+        <ArrowForwardRoundedIcon sx={{ fontSize: 20 }} className="text-amber-400" />
+        {title}
+      </h3>
+      <div className="grid gap-4 sm:grid-cols-2">
         {items.map((item, index) => (
-          <Link key={index} to={item.href} className="next-steps__card">
-            {item.label && <span className="next-steps__card-label">{item.label}</span>}
-            <span className="next-steps__card-title">{item.title}</span>
-            {item.description && <p className="next-steps__card-desc">{item.description}</p>}
+          <Link
+            key={index}
+            to={item.href}
+            className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/35 hover:bg-white/[0.04]"
+          >
+            {item.label ? (
+              <span className="mb-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-amber-400">
+                {item.label}
+              </span>
+            ) : null}
+            <span className="font-display font-semibold text-white">{item.title}</span>
+            {item.description ? (
+              <p className="mt-1 text-sm leading-relaxed text-white/65">{item.description}</p>
+            ) : null}
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -68,9 +45,4 @@ NextSteps.propTypes = {
       description: PropTypes.string,
     })
   ),
-};
-
-NextSteps.defaultProps = {
-  title: "Next Steps",
-  items: [],
 };

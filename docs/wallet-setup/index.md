@@ -146,7 +146,7 @@ For anything more than pocket change, yes. Hardware wallets are the minimum secu
 
 **"Which is better: Trezor, Ledger, or Coldcard?"**
 
-All are reputable. Trezor and Coldcard are Bitcoin-focused and fully open source. Ledger has a secure element but closed-source firmware. See [hardware wallet comparison](/docs/learn/fundamentals/choosing-your-path#hardware-wallet-comparison).
+All are reputable. Trezor and Coldcard are Bitcoin-focused and fully open source. Ledger has a secure element but closed-source firmware. See [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
 
 **"Can I use the same seed on multiple devices?"**
 

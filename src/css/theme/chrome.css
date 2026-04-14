@@ -1,0 +1,715 @@
+/**
+ * Chrome CSS - Infima selector overrides for navbar, sidebar, docs chrome,
+ * markdown prose, admonitions, and footer.
+ *
+ * Paints the dark SaaS aesthetic used by the homepage onto every Docusaurus
+ * default component without swizzling. Organized top-to-bottom by visual region.
+ */
+
+/* ===========================================
+   DARK THEME TOKEN OVERRIDES
+   =========================================== */
+
+[data-theme="dark"] {
+  --ifm-color-primary: #f59e0b;
+  --ifm-color-primary-dark: #ea9106;
+  --ifm-color-primary-darker: #dd8906;
+  --ifm-color-primary-darkest: #b57006;
+  --ifm-color-primary-light: #fbbf24;
+  --ifm-color-primary-lighter: #fcd34d;
+  --ifm-color-primary-lightest: #fde68a;
+
+  --ifm-background-color: #0b0b0c;
+  --ifm-background-surface-color: #0f0f11;
+
+  --ifm-navbar-background-color: rgba(11, 11, 12, 0.72);
+  --ifm-navbar-link-color: rgba(255, 255, 255, 0.78);
+  --ifm-navbar-link-hover-color: #fbbf24;
+  --ifm-navbar-search-input-background-color: rgba(255, 255, 255, 0.04);
+  --ifm-navbar-search-input-color: rgba(255, 255, 255, 0.92);
+  --ifm-navbar-search-input-placeholder-color: rgba(255, 255, 255, 0.45);
+
+  --ifm-dropdown-background-color: rgba(11, 11, 12, 0.96);
+  --ifm-dropdown-link-color: rgba(255, 255, 255, 0.78);
+  --ifm-dropdown-hover-background-color: rgba(245, 158, 11, 0.12);
+
+  --ifm-menu-color: rgba(255, 255, 255, 0.72);
+  --ifm-menu-color-active: #fbbf24;
+  --ifm-menu-color-background-active: rgba(245, 158, 11, 0.12);
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.08);
+  --ifm-toc-link-color: rgba(255, 255, 255, 0.55);
+
+  --ifm-breadcrumb-color-active: #fde68a;
+  --ifm-breadcrumb-item-background-active: rgba(245, 158, 11, 0.14);
+
+  --ifm-footer-background-color: #0b0b0c;
+  --ifm-footer-color: rgba(255, 255, 255, 0.55);
+  --ifm-footer-link-color: rgba(255, 255, 255, 0.70);
+  --ifm-footer-link-hover-color: #fbbf24;
+  --ifm-footer-title-color: rgba(255, 255, 255, 0.95);
+
+  --ifm-color-emphasis-200: rgba(255, 255, 255, 0.08);
+  --ifm-color-emphasis-300: rgba(255, 255, 255, 0.12);
+
+  --docusaurus-highlighted-code-line-bg: rgba(245, 158, 11, 0.12);
+}
+
+/* ===========================================
+   NAVBAR
+   =========================================== */
+
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.navbar a,
+.navbar a:hover {
+  text-decoration: none;
+}
+
+.navbar__brand:hover {
+  color: #fbbf24;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  height: 2.25rem;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.40));
+  transition: filter 400ms ease, transform 400ms ease;
+}
+
+.navbar__brand:hover .navbar__logo img {
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.65));
+  transform: scale(1.04);
+}
+
+.navbar__link {
+  font-weight: 500;
+  transition: color 200ms ease;
+}
+
+.navbar__link:hover {
+  color: #fbbf24;
+}
+
+.navbar__link--active {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* Dropdown menus */
+.dropdown__menu {
+  background: rgba(11, 11, 12, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.875rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown__link {
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+}
+
+.dropdown__link:hover {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+.dropdown__link--active {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+}
+
+/* Navbar search */
+.navbar .navbar__search-input,
+.navbar .DocSearch-Button {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.navbar .DocSearch-Button:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile drawer */
+.navbar-sidebar {
+  background: rgba(11, 11, 12, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-sidebar__brand {
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-sidebar__item {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.navbar-sidebar .menu__link {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.navbar-sidebar .menu__link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fbbf24;
+}
+
+.navbar-sidebar__back {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Header icon buttons (GitHub + Club Orange) */
+.header--github-link,
+.header--cluborange-link {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  margin-right: 4px;
+  border-radius: 10px;
+  transition: background 200ms ease;
+}
+
+.header--github-link:hover,
+.header--cluborange-link:hover {
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.header--github-link:before {
+  content: "";
+  height: 100%;
+  display: block;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
+
+.header--cluborange-link::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1500 1500'%3E%3Cpath d='M776.906 583.614C767.602 606.832 734.735 606.832 725.431 583.614L571.111 198.508C565.78 185.204 571.6 170.264 585.125 165.526C614.731 155.154 671.601 140 751.17 140C830.74 140 887.608 155.154 917.212 165.526C930.737 170.264 936.557 185.204 931.226 198.507L776.906 583.614Z' fill='%23f59e0b'/%3E%3Cpath d='M886.19 651.578C863.193 661.416 839.953 638.176 849.792 615.179L1012.98 233.747C1018.62 220.571 1033.3 214.122 1046.21 220.335C1074.48 233.935 1125.41 263.433 1181.67 319.697C1237.94 375.961 1267.44 426.888 1281.03 455.156C1287.25 468.07 1280.8 482.75 1267.62 488.387L886.19 651.578Z' fill='%23f59e0b'/%3E%3Cpath d='M915.402 776.906C892.184 767.602 892.184 734.735 915.402 725.431L1300.51 571.111C1313.81 565.78 1328.75 571.6 1333.49 585.126C1343.86 614.731 1359.02 671.601 1359.02 751.17C1359.02 830.74 1343.86 887.608 1333.49 917.212C1328.75 930.737 1313.81 936.557 1300.51 931.226L915.402 776.906Z' fill='%23f59e0b'/%3E%3Cpath d='M847.42 886.19C837.581 863.194 860.821 839.953 883.818 849.792L1265.25 1012.98C1278.43 1018.62 1284.88 1033.3 1278.66 1046.21C1265.06 1074.48 1235.56 1125.41 1179.3 1181.67C1123.04 1237.94 1072.11 1267.44 1043.84 1281.03C1030.93 1287.25 1016.25 1280.8 1010.61 1267.62L847.42 886.19Z' fill='%23f59e0b'/%3E%3Cpath d='M612.825 847.438C635.822 837.599 659.062 860.84 649.224 883.836L486.033 1265.27C480.396 1278.44 465.716 1284.89 452.801 1278.68C424.533 1265.08 373.605 1235.58 317.341 1179.32C261.077 1123.05 231.58 1072.13 217.981 1043.86C211.768 1030.95 218.217 1016.27 231.393 1010.63L612.825 847.438Z' fill='%23f59e0b'/%3E%3Cpath d='M583.614 722.11C606.832 731.414 606.832 764.281 583.614 773.585L198.508 927.905C185.204 933.235 170.264 927.416 165.526 913.89C155.154 884.285 140 827.415 140 747.845C140 668.276 155.154 611.408 165.526 581.804C170.264 568.278 185.204 562.459 198.507 567.789L583.614 722.11Z' fill='%23f59e0b'/%3E%3Cpath d='M651.596 612.825C661.435 635.822 638.194 659.062 615.198 649.224L233.766 486.033C220.589 480.396 214.14 465.716 220.354 452.801C233.954 424.533 263.451 373.605 319.715 317.341C375.98 261.077 426.907 231.58 455.174 217.981C468.089 211.768 482.768 218.217 488.405 231.393L651.596 612.825Z' fill='%23f59e0b'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* ===========================================
+   DOCS SIDEBAR
+   =========================================== */
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: transparent;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link--sublist {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.menu__link {
+  color: rgba(255, 255, 255, 0.72);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.menu__link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fbbf24;
+}
+
+.menu__link--active {
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #fbbf24 !important;
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 #f59e0b;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  color: #fbbf24 !important;
+}
+
+.menu__caret:before,
+.menu__link--sublist-caret:after {
+  filter: brightness(2);
+  opacity: 0.7;
+}
+
+.menu__list-item-collapsible--active {
+  background: transparent;
+}
+
+/* Sidebar scrollbar */
+.theme-doc-sidebar-container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+.theme-doc-sidebar-container ::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.25);
+}
+
+/* Amber horizontal rule dividers used inline in sidebars.js */
+.theme-doc-sidebar-menu hr {
+  border: 0;
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  margin: 0.75rem 0.5rem;
+}
+
+/* ===========================================
+   BREADCRUMBS
+   =========================================== */
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbs__link {
+  color: rgba(255, 255, 255, 0.60);
+  font-weight: 500;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.breadcrumbs__link:hover {
+  color: #fbbf24;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fde68a;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.breadcrumbs__item:not(:last-child):after {
+  color: rgba(255, 255, 255, 0.30);
+}
+
+/* ===========================================
+   TABLE OF CONTENTS
+   =========================================== */
+
+.table-of-contents {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding-left: 1rem;
+  font-size: 0.8rem;
+}
+
+.table-of-contents__link {
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 200ms ease;
+}
+
+.table-of-contents__link:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.table-of-contents__link--active {
+  color: #fbbf24 !important;
+  font-weight: 600;
+  position: relative;
+}
+
+.table-of-contents__link--active::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.35rem;
+  width: 2px;
+  height: 1rem;
+  background: #f59e0b;
+  border-radius: 2px;
+}
+
+/* ===========================================
+   PAGINATION (next/prev buttons)
+   =========================================== */
+
+.pagination-nav__link {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  transition: transform 300ms ease, border-color 300ms ease, background-color 300ms ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: rgba(245, 158, 11, 0.40);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.pagination-nav__sublabel {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fbbf24;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.pagination-nav__label {
+  color: white;
+  font-weight: 600;
+}
+
+/* ===========================================
+   MARKDOWN PROSE (scoped to article)
+   =========================================== */
+
+article .theme-doc-markdown h1,
+article .theme-doc-markdown h2,
+article .theme-doc-markdown h3,
+article .theme-doc-markdown h4,
+article .theme-doc-markdown h5 {
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+article .theme-doc-markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+article .theme-doc-markdown h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+}
+
+article .theme-doc-markdown h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+article .theme-doc-markdown h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+article .theme-doc-markdown p,
+article .theme-doc-markdown li {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+}
+
+article .theme-doc-markdown a:not(.card):not(.button) {
+  color: #fbbf24;
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 158, 11, 0.40);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 200ms ease;
+}
+
+article .theme-doc-markdown a:not(.card):not(.button):hover {
+  text-decoration-color: #f59e0b;
+}
+
+/* Inline code */
+article .theme-doc-markdown :not(pre) > code {
+  background: rgba(245, 158, 11, 0.10);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+}
+
+/* Code block wrapper */
+article .theme-doc-markdown pre,
+article .theme-doc-markdown .prism-code,
+article .theme-doc-markdown div[class*="codeBlockContainer"] {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+}
+
+article .theme-doc-markdown div[class*="codeBlockTitle"] {
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Blockquote */
+article .theme-doc-markdown blockquote {
+  border-left: 3px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: rgba(255, 255, 255, 0.80);
+  margin: 1.5rem 0;
+}
+
+article .theme-doc-markdown blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+article .theme-doc-markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rule */
+article .theme-doc-markdown hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  margin: 2rem 0;
+}
+
+/* Tables (generic prose tables, not the .comparison-table or .fixed-width-table utility wrappers) */
+article .theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+article .theme-doc-markdown table thead {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+article .theme-doc-markdown table th,
+article .theme-doc-markdown table td {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+article .theme-doc-markdown table th {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+}
+
+article .theme-doc-markdown table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+article .theme-doc-markdown table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Strong emphasis */
+article .theme-doc-markdown strong {
+  color: white;
+  font-weight: 700;
+}
+
+/* ===========================================
+   ADMONITIONS
+   =========================================== */
+
+.theme-admonition,
+.admonition,
+.alert {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-left-width: 3px !important;
+  border-radius: 1rem !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 2rem 0 !important;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-admonition .admonition-heading h5,
+.admonition .admonition-heading h5,
+.alert h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.admonition-heading svg,
+.admonition svg,
+.alert svg {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* Note / secondary — sky */
+.theme-admonition-note,
+.admonition-note,
+.alert--secondary {
+  border-left-color: #38bdf8 !important;
+}
+.theme-admonition-note .admonition-heading h5,
+.admonition-note .admonition-heading h5,
+.alert--secondary h5 {
+  color: #7dd3fc;
+}
+.theme-admonition-note svg,
+.admonition-note svg,
+.alert--secondary svg {
+  fill: #38bdf8;
+}
+
+/* Tip / success — emerald */
+.theme-admonition-tip,
+.admonition-tip,
+.alert--success {
+  border-left-color: #34d399 !important;
+}
+.theme-admonition-tip .admonition-heading h5,
+.admonition-tip .admonition-heading h5,
+.alert--success h5 {
+  color: #6ee7b7;
+}
+.theme-admonition-tip svg,
+.admonition-tip svg,
+.alert--success svg {
+  fill: #34d399;
+}
+
+/* Info — amber */
+.theme-admonition-info,
+.admonition-info,
+.alert--info {
+  border-left-color: #fbbf24 !important;
+}
+.theme-admonition-info .admonition-heading h5,
+.admonition-info .admonition-heading h5,
+.alert--info h5 {
+  color: #fcd34d;
+}
+.theme-admonition-info svg,
+.admonition-info svg,
+.alert--info svg {
+  fill: #fbbf24;
+}
+
+/* Caution / warning — amber-500 */
+.theme-admonition-caution,
+.theme-admonition-warning,
+.admonition-caution,
+.admonition-warning,
+.alert--warning {
+  border-left-color: #f59e0b !important;
+}
+.theme-admonition-caution .admonition-heading h5,
+.theme-admonition-warning .admonition-heading h5,
+.admonition-caution .admonition-heading h5,
+.admonition-warning .admonition-heading h5,
+.alert--warning h5 {
+  color: #fbbf24;
+}
+.theme-admonition-caution svg,
+.theme-admonition-warning svg,
+.admonition-caution svg,
+.admonition-warning svg,
+.alert--warning svg {
+  fill: #f59e0b;
+}
+
+/* Danger — rose */
+.theme-admonition-danger,
+.admonition-danger,
+.alert--danger {
+  border-left-color: #fb7185 !important;
+}
+.theme-admonition-danger .admonition-heading h5,
+.admonition-danger .admonition-heading h5,
+.alert--danger h5 {
+  color: #fda4af;
+}
+.theme-admonition-danger svg,
+.admonition-danger svg,
+.alert--danger svg {
+  fill: #fb7185;
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+
+.footer {
+  background: #0b0b0c;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #0b0b0c;
+}
+
+.footer__title {
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.68);
+  transition: color 200ms ease;
+}
+
+.footer__link-item:hover {
+  color: #fbbf24;
+  text-decoration: none;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
