@@ -50,7 +50,7 @@ Layer 6: Multisig                  ← Eliminate single points of failure
 
 <div class="guide-card">
 
-### [DIY Seed Generation Guide](/docs/security/seed-generation/)
+### [DIY Seed Generation Guide](/docs/learn/keys/random/)
 
 **Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $30-80
 

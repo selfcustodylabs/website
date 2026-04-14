@@ -176,7 +176,7 @@ If you're reading this and still have access to your Bitcoin:
 - [ ] Make multiple copies of your seed
 - [ ] Store in geographically separate locations
 - [ ] Consider metal backup (fire/water resistant)
-- [ ] See: [Seed Backup Guide](/docs/security/seed-generation/backup)
+- [ ] See: [Seed Backup Guide](/docs/learn/keys/random/#step-5-back-up-on-metal)
 
 ### 3. Document and Communicate
 - [ ] Record (securely) where backups are stored
@@ -222,6 +222,6 @@ Many early Bitcoiners lost coins to poor backup practices. It's a hard lesson, b
 ## Related Guides
 
 - [Backup Verification](/docs/wallet-setup/backup-verification/) — Test your backup before you need it
-- [DIY Seed Generation](/docs/security/seed-generation/) — Create a secure seed properly
+- [DIY Seed Generation](/docs/learn/keys/random/) — Create a secure seed properly
 - [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) — Start with good practices
 - [Recovery Scams Warning](/docs/reference/faq/recovery-scams) — Protect yourself from fraud

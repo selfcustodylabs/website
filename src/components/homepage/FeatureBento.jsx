@@ -30,7 +30,7 @@ const mediums = [
     icon: KeyRoundedIcon,
     title: 'Seed Phrases',
     description: 'Generate, back up, and verify a recovery phrase that actually works when you need it.',
-    href: '/docs/security/seed-generation',
+    href: '/docs/learn/keys/random',
   },
   {
     icon: ShieldRoundedIcon,

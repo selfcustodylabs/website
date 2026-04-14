@@ -99,7 +99,7 @@ Choose your path based on where you are:
 4. [Before You Deposit](/docs/wallet-setup/before-you-deposit)
 
 ### Enhancing Security
-1. [DIY Seed Generation](/docs/security/seed-generation/)
+1. [DIY Seed Generation](/docs/learn/keys/random/)
 2. [Passphrase Security](/docs/security/passphrase/)
 3. [Run Your Own Node](/docs/bitcoin-node/)
 4. [UTXO Management](/docs/privacy/utxo-management/)

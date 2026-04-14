@@ -62,18 +62,6 @@ export const breadcrumbMappings = {
 
   // Security guides
   "/docs/security/": ["Guides", "Security"],
-  "/docs/security/seed-generation/": ["Guides", "Security", "Seed Generation"],
-  "/docs/security/seed-generation/requirements/": ["Guides", "Seed Generation", "Requirements"],
-  "/docs/security/seed-generation/dice-roll/": ["Guides", "Seed Generation", "Dice Rolling"],
-  "/docs/security/seed-generation/binary-decimal/": [
-    "Guides",
-    "Seed Generation",
-    "Binary to Decimal",
-  ],
-  "/docs/security/seed-generation/checksum/": ["Guides", "Seed Generation", "Checksum"],
-  "/docs/security/seed-generation/bip39/": ["Guides", "Seed Generation", "BIP39 Words"],
-  "/docs/security/seed-generation/backup/": ["Guides", "Seed Generation", "Backup"],
-
   "/docs/security/passphrase/": ["Guides", "Security", "Passphrase"],
   "/docs/security/passphrase/word-lists/": ["Guides", "Passphrase", "Word Lists"],
   "/docs/security/passphrase/dice-roll/": ["Guides", "Passphrase", "Dice Rolling"],

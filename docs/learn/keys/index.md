@@ -134,7 +134,7 @@ Or if you want the practical summary:
   articles={[
     { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
     { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
-    { title: "DIY Seed Generation", href: "/docs/security/seed-generation/", tag: "Guide" },
+    { title: "DIY Seed Generation", href: "/docs/learn/keys/random/", tag: "Guide" },
     { title: "Glossary", href: "/docs/reference/glossary/", tag: "Reference" },
   ]}
 />

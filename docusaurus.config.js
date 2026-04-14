@@ -587,6 +587,73 @@ const config = {
             from: '/docs/basics/holding',
             to: '/docs/learn/fundamentals/holding-bitcoin',
           },
+          // Top-level legacy path (no docs prefix) → closest topic
+          {
+            from: '/bitcoin-devices',
+            to: '/docs/reference/hardware-wallet-comparison',
+          },
+          // =============================================
+          // SEED GENERATION MERGE → /docs/learn/keys/random
+          // The old /docs/security/seed-generation/* tree and its
+          // bare /docs/seed/* aliases were merged into a single
+          // canonical page at /docs/learn/keys/random/.
+          // =============================================
+          {
+            from: '/docs/security/seed-generation',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/requirements',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/dice-roll',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/binary-decimal',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/checksum',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/bip39',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/security/seed-generation/backup',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/requirements',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/dice-roll',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/binary-decimal',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/checksum',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/bip39',
+            to: '/docs/learn/keys/random',
+          },
+          {
+            from: '/docs/seed/backup',
+            to: '/docs/learn/keys/random',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
@@ -609,9 +676,6 @@ const config = {
             return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
           }
           // Catch-all for security paths
-          if (existingPath.includes('/docs/security/seed-generation')) {
-            return [existingPath.replace('/docs/security/seed-generation', '/docs/seed')];
-          }
           if (existingPath.includes('/docs/security/passphrase')) {
             return [existingPath.replace('/docs/security/passphrase', '/docs/passphrase')];
           }
