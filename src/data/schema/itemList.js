@@ -62,7 +62,7 @@ export const itemListSchemas = {
       { name: "Multisig Setup", url: "/docs/learn/wallets/multisig/" },
       {
         name: "Air-Gapped Computer",
-        url: "/docs/advanced/air-gapped-computer/",
+        url: "/docs/learn/wallets/air-gapped-wallets/",
       },
       { name: "Bitcoin Computer", url: "/docs/advanced/bitcoin-computer/" },
       {

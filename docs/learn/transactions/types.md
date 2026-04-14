@@ -15,7 +15,7 @@ This is the first step, where a transaction is created but not yet signed. It’
 
 Once the unsigned transaction is ready, you transfer it to an offline (air-gapped) computer for signing. This offline computer securely holds your private keys and is never connected to the internet, keeping them safe from hackers.
 
-You can learn more in the Air-Gapped Computer [section](/docs/advanced/air-gapped-computer).
+You can learn more in the Air-Gapped Computer [section](/docs/learn/wallets/air-gapped-wallets).
 
 
 ## Fully Signed

@@ -91,7 +91,7 @@ Ensure your Bitcoin passes to your loved ones—not lost forever. An estimated 4
 
 <div class="guide-card">
 
-### [Air-Gapped Computer Guide](/docs/advanced/air-gapped-computer/)
+### [Air-Gapped Computer Guide](/docs/learn/wallets/air-gapped-wallets/)
 
 **Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $50-200 (or free with old hardware)
 
@@ -185,7 +185,7 @@ Build advanced capabilities in stages:
 6. **[Inheritance planning](/docs/advanced/inheritance-planning)** — Don't let Bitcoin die with you
 
 ### Stage 3: Advanced Protection
-7. **[Air-gapped computer](/docs/advanced/air-gapped-computer/)** — For offline operations
+7. **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)** — For offline operations
 8. **[DIY seed generation](/docs/learn/keys/random/)** — Verify your entropy
 
 ### Stage 4: Maximum Security
@@ -203,7 +203,7 @@ Build advanced capabilities in stages:
 → **[Inheritance Planning](/docs/advanced/inheritance-planning)** — don't let your Bitcoin die with you.
 
 ### "I want to generate my own seed securely"
-→ **[Air-gapped computer](/docs/advanced/air-gapped-computer/)** + [DIY seed guide](/docs/learn/keys/random/)
+→ **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)** + [DIY seed guide](/docs/learn/keys/random/)
 
 ### "I want a clean environment for Bitcoin"
 → **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)**
@@ -221,7 +221,7 @@ For significant holdings (life-changing amounts), yes. The complexity cost is wo
 
 **"Can I use an old laptop as an air-gapped computer?"**
 
-Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if possible (remove the card). See the [air-gapped setup guide](/docs/advanced/air-gapped-computer/setup).
+Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if possible (remove the card). See the [air-gapped setup guide](/docs/learn/wallets/air-gapped-wallets/#building-your-air-gapped-computer).
 
 **"Do I really need open-source firmware?"**
 

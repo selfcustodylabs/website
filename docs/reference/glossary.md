@@ -27,7 +27,7 @@ A comprehensive reference for Bitcoin and self-custody terminology. Click any te
 A string of characters representing a destination for Bitcoin payments. Similar to an email address, but for receiving Bitcoin. Modern addresses typically start with `bc1q` (SegWit) or `bc1p` (Taproot). See [Address Types](/docs/reference/address-types).
 
 ### Air-Gapped
-A security measure where a device is completely isolated from the internet and other networks. Air-gapped computers communicate only through QR codes, SD cards, or manual data entry. See [Air-Gapped Computer Guide](/docs/advanced/air-gapped-computer).
+A security measure where a device is completely isolated from the internet and other networks. Air-gapped computers communicate only through QR codes, SD cards, or manual data entry. See [Air-Gapped Computer Guide](/docs/learn/wallets/air-gapped-wallets).
 
 ### Altcoin
 Any cryptocurrency other than Bitcoin. Examples include Ethereum, Litecoin, and thousands of others.

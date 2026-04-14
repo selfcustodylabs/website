@@ -36,7 +36,7 @@ In this guide you will:
 **Time required:** 2–4 hours
 **Difficulty:** Intermediate
 **Estimated cost:** $10–30 (casino dice) + $20–50 (metal backup plate)
-**Requirements:** [Air-gapped computer](/docs/advanced/air-gapped-computer) or Raspberry Pi Zero, casino dice
+**Requirements:** [Air-gapped computer](/docs/learn/wallets/air-gapped-wallets) or Raspberry Pi Zero, casino dice
 :::
 
 :::tip Prerequisites
@@ -427,7 +427,7 @@ Your Bitcoin is only as safe as your seed backup. Protect it wisely.
   articles={[
     { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
     { title: "Number Systems", href: "/docs/learn/keys/number-systems/", tag: "Technical" },
-    { title: "Air-Gapped Computer", href: "/docs/advanced/air-gapped-computer/", tag: "Guide" },
+    { title: "Air-Gapped Computer", href: "/docs/learn/wallets/air-gapped-wallets/", tag: "Guide" },
     { title: "Keys Overview", href: "/docs/learn/keys/", tag: "Overview" },
   ]}
 />

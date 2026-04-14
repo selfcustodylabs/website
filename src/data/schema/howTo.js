@@ -289,7 +289,7 @@ export const howToSchemas = {
     ],
   },
 
-  "/docs/advanced/air-gapped-computer/": {
+  "/docs/learn/wallets/air-gapped-wallets/": {
     name: "How to Build an Air-Gapped Computer for Bitcoin",
     description:
       "Set up an offline computer for maximum security. Use it for seed generation, transaction signing, and verifying hardware wallets.",
@@ -308,12 +308,12 @@ export const howToSchemas = {
       {
         name: "Choose Your Hardware",
         text: "Select an appropriate laptop or device for your air-gapped computer. ThinkPads are recommended for their Libreboot compatibility.",
-        url: `${SITE_URL}/docs/advanced/air-gapped-computer/types/`,
+        url: `${SITE_URL}/docs/learn/wallets/air-gapped-wallets/#choosing-your-hardware`,
       },
       {
         name: "Set Up the System",
         text: "Install a secure operating system, disable networking hardware, and configure encryption.",
-        url: `${SITE_URL}/docs/advanced/air-gapped-computer/setup/`,
+        url: `${SITE_URL}/docs/learn/wallets/air-gapped-wallets/#building-your-air-gapped-computer`,
       },
     ],
   },

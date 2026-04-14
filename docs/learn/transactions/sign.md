@@ -66,6 +66,6 @@ This layered approach keeps your private key isolated from internet exposure whi
     { title: "Broadcasting Transactions", href: "/docs/learn/transactions/broadcast/", tag: "Next" },
     { title: "Creating Transactions", href: "/docs/learn/transactions/create/", tag: "Learn" },
     { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Air-Gapped Computers", href: "/docs/advanced/air-gapped-computer/", tag: "Advanced" },
+    { title: "Air-Gapped Computers", href: "/docs/learn/wallets/air-gapped-wallets/", tag: "Advanced" },
   ]}
 />

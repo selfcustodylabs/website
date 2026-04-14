@@ -82,10 +82,6 @@ export const breadcrumbMappings = {
   // Advanced guides
   "/docs/advanced/": ["Guides", "Advanced"],
 
-  "/docs/advanced/air-gapped-computer/": ["Guides", "Advanced", "Air-Gapped Computer"],
-  "/docs/advanced/air-gapped-computer/types/": ["Guides", "Air-Gapped Computer", "Types"],
-  "/docs/advanced/air-gapped-computer/setup/": ["Guides", "Air-Gapped Computer", "Setup"],
-
   "/docs/advanced/bitcoin-computer/": ["Guides", "Advanced", "Bitcoin Computer"],
   "/docs/advanced/bitcoin-computer/choice/": ["Guides", "Bitcoin Computer", "Choosing Hardware"],
   "/docs/advanced/bitcoin-computer/setup/": ["Guides", "Bitcoin Computer", "Setup"],

@@ -38,7 +38,7 @@ A Bitcoin computer is a dedicated device for securely creating and broadcasting 
 
 Transaction signing should still be handled by:
 - A hardware wallet, or
-- An [air-gapped computer](/docs/advanced/air-gapped-computer) for maximum security
+- An [air-gapped computer](/docs/learn/wallets/air-gapped-wallets) for maximum security
 
 
 ## Why Your Regular Computer is Dangerous
@@ -80,7 +80,7 @@ A dedicated Bitcoin computer isolates your Bitcoin activity from these risks.
 ## Related Guides
 
 :::tip Want Maximum Security?
-For the highest level of protection, consider an **[Air-Gapped Computer](/docs/advanced/air-gapped-computer)** - a device that never connects to the internet and handles all signing offline.
+For the highest level of protection, consider an **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)** - a device that never connects to the internet and handles all signing offline.
 :::
 
 :::info Firmware Security
