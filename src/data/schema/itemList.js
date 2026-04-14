@@ -45,9 +45,8 @@ export const itemListSchemas = {
   "/docs/security/": {
     name: "Bitcoin Security Guides",
     description:
-      "Advanced security guides for Bitcoin self-custody including DIY seed generation, passphrases, and operational security.",
+      "Advanced security guides for Bitcoin self-custody including passphrases and operational security.",
     items: [
-      { name: "DIY Seed Generation", url: "/docs/security/seed-generation/" },
       { name: "Passphrase Guide", url: "/docs/security/passphrase/" },
       {
         name: "Operational Security",

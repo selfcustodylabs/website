@@ -284,4 +284,4 @@ Ready to set up your hardware wallet?
 
 → **Advanced:** [Multisig Wallets](/docs/learn/wallets/multisig) — Eliminate single points of failure
 
-→ **Generate Your Own Seed:** [DIY Seed Guide](/docs/security/seed-generation) — Don't trust the device's randomness
+→ **Generate Your Own Seed:** [DIY Seed Guide](/docs/learn/keys/random/) — Don't trust the device's randomness

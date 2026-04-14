@@ -139,7 +139,7 @@ Setting up a software wallet takes about ten minutes, but those ten minutes dese
 
 **Next, create your wallet.** Let the app generate a new seed phrase. The moment those words appear on your screen, write them down immediately—on paper, with a pen, in the exact order shown. Never screenshot your seed. Never copy and paste it. Never type it into anything except the wallet app itself. These words are the keys to your Bitcoin; treat them accordingly.
 
-**Secure the backup properly.** Your seed phrase written on paper is vulnerable to fire, water, and curious eyes. Store it somewhere safe, and consider a [metal backup](/docs/security/seed-generation/backup) for long-term durability. Whatever you do, keep the backup separate from your device. If someone steals your phone and your seed backup is in the same bag, you've lost everything.
+**Secure the backup properly.** Your seed phrase written on paper is vulnerable to fire, water, and curious eyes. Store it somewhere safe, and consider a [metal backup](/docs/learn/keys/random/#step-5-back-up-on-metal) for long-term durability. Whatever you do, keep the backup separate from your device. If someone steals your phone and your seed backup is in the same bag, you've lost everything.
 
 **Set a strong PIN or password.** Most wallets let you add an extra layer of protection. Use it. Don't reuse passwords from other services—if your email password leaks, you don't want it to also unlock your Bitcoin.
 

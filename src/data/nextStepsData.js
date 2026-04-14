@@ -105,7 +105,7 @@ const NEXT_STEPS = {
     {
       label: "Action",
       title: "DIY Seed Generation",
-      href: "/docs/security/seed-generation/",
+      href: "/docs/learn/keys/random/",
       description: "Create your own seed securely",
     },
   ],
@@ -283,26 +283,18 @@ const NEXT_STEPS = {
   // ===========================================
   // SECURITY GUIDES
   // ===========================================
-  "/docs/security/seed-generation/": [
-    {
-      label: "Start",
-      title: "Requirements",
-      href: "/docs/security/seed-generation/requirements/",
-      description: "What you'll need",
-    },
-  ],
-  "/docs/security/seed-generation/bip39/": [
+  "/docs/learn/keys/random/": [
     {
       label: "Next",
-      title: "Metal Backup",
-      href: "/docs/security/seed-generation/backup/",
-      description: "Protect your seed physically",
-    },
-    {
-      label: "Continue",
       title: "Hardware Wallet Setup",
       href: "/docs/wallet-setup/hardware-wallet/",
-      description: "Import your seed",
+      description: "Import your freshly generated seed",
+    },
+    {
+      label: "Learn",
+      title: "Passphrases (25th Word)",
+      href: "/docs/learn/keys/passphrase/",
+      description: "Add an extra security layer",
     },
   ],
   "/docs/security/passphrase/": [

@@ -186,7 +186,7 @@ Build advanced capabilities in stages:
 
 ### Stage 3: Advanced Protection
 7. **[Air-gapped computer](/docs/advanced/air-gapped-computer/)** — For offline operations
-8. **[DIY seed generation](/docs/security/seed-generation/)** — Verify your entropy
+8. **[DIY seed generation](/docs/learn/keys/random/)** — Verify your entropy
 
 ### Stage 4: Maximum Security
 9. **[Multisig setup](/docs/advanced/multisig/)** — Eliminate single points of failure
@@ -203,7 +203,7 @@ Build advanced capabilities in stages:
 → **[Inheritance Planning](/docs/advanced/inheritance-planning)** — don't let your Bitcoin die with you.
 
 ### "I want to generate my own seed securely"
-→ **[Air-gapped computer](/docs/advanced/air-gapped-computer/)** + [DIY seed guide](/docs/security/seed-generation/)
+→ **[Air-gapped computer](/docs/advanced/air-gapped-computer/)** + [DIY seed guide](/docs/learn/keys/random/)
 
 ### "I want a clean environment for Bitcoin"
 → **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)**

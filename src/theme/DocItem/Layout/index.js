@@ -9,6 +9,7 @@ import {
   generateFAQSchema,
   generateItemListSchema,
 } from "@site/src/data/schema";
+import { getCanonicalUrl } from "@site/src/data/canonical";
 import { normalizePath } from "@site/src/utils/pathUtils";
 
 export default function DocItemLayoutWrapper(props) {
@@ -22,26 +23,26 @@ export default function DocItemLayoutWrapper(props) {
   const faqSchema = generateFAQSchema(path);
   const itemListSchema = generateItemListSchema(path);
 
+  // Override the default canonical on known duplicate pages so indexing
+  // signal consolidates on the /docs/learn/* tree.
+  const canonicalUrl = getCanonicalUrl(path);
+
   return (
     <>
       <Head>
-        {/* Inject HowTo schema if available (for guide pages) */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         {howToSchema && (
           <script type="application/ld+json">{JSON.stringify(howToSchema, null, 0)}</script>
         )}
-        {/* Inject Article schema if available (for learn/educational pages) */}
         {articleSchema && (
           <script type="application/ld+json">{JSON.stringify(articleSchema, null, 0)}</script>
         )}
-        {/* Inject FAQ schema if available (for FAQ pages) */}
         {faqSchema && (
           <script type="application/ld+json">{JSON.stringify(faqSchema, null, 0)}</script>
         )}
-        {/* Inject ItemList schema if available (for hub/index pages) */}
         {itemListSchema && (
           <script type="application/ld+json">{JSON.stringify(itemListSchema, null, 0)}</script>
         )}
-        {/* Inject Breadcrumb schema if available */}
         {breadcrumbSchema && (
           <script type="application/ld+json">{JSON.stringify(breadcrumbSchema, null, 0)}</script>
         )}

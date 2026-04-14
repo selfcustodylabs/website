@@ -31,27 +31,6 @@ const GUIDES = {
     ],
   },
 
-  "seed-generation": {
-    name: "DIY Seed Generation",
-    steps: [
-      { title: "Overview", path: "/docs/security/seed-generation/" },
-      {
-        title: "Requirements",
-        path: "/docs/security/seed-generation/requirements/",
-      },
-      {
-        title: "Dice Rolling",
-        path: "/docs/security/seed-generation/dice-roll/",
-      },
-      {
-        title: "Binary to Decimal",
-        path: "/docs/security/seed-generation/binary-decimal/",
-      },
-      { title: "Checksum", path: "/docs/security/seed-generation/checksum/" },
-      { title: "BIP39 Words", path: "/docs/security/seed-generation/bip39/" },
-    ],
-  },
-
   passphrase: {
     name: "DIY Passphrase",
     steps: [

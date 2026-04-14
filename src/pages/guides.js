@@ -34,7 +34,7 @@ const guidesCollectionSchema = {
         "@type": "ListItem",
         position: 1,
         name: "DIY Seed Generation",
-        url: "https://selfcustodylabs.com/docs/security/seed-generation/",
+        url: "https://selfcustodylabs.com/docs/learn/keys/random/",
       },
       {
         "@type": "ListItem",
@@ -120,7 +120,7 @@ export default function GuidesPage() {
       title: "DIY Seed Generation",
       description:
         "Create your own cryptographically secure seed using dice. True randomness, fully offline.",
-      href: "/docs/security/seed-generation",
+      href: "/docs/learn/keys/random",
       badge: "POPULAR",
       level: "Intermediate",
     },

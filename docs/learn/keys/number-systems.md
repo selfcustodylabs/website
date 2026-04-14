@@ -79,7 +79,7 @@ You now understand the foundation of Bitcoin ownership: how private keys work, h
     { 
       label: "Advanced", 
       title: "DIY Seed Generation", 
-      href: "/docs/security/seed-generation/", 
+      href: "/docs/learn/keys/random/", 
       description: "Generate your own seed with verifiable randomness" 
     }
   ]}

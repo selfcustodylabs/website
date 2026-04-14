@@ -152,7 +152,7 @@ The device will display 12 or 24 words one at a time.
 
 **If you generated your own seed:**
 
-You can import a seed phrase you created yourself (see our [DIY Seed Guide](/docs/security/seed-generation)). This is more advanced but provides maximum trust minimization.
+You can import a seed phrase you created yourself (see our [DIY Seed Guide](/docs/learn/keys/random/)). This is more advanced but provides maximum trust minimization.
 
 ### Step 4: Verify Your Backup
 

@@ -140,7 +140,7 @@ The alphabetical ordering of the word list means words starting with 'A' represe
 Now that you understand how seed phrases work, you can take full control by generating your own using true randomness from dice rolls.
 
 :::tip Next Step: DIY Seed Generation
-Learn how to create your own Bitcoin seed phrase with verifiable entropy in our **[DIY Seed Generation Guide](/docs/security/seed-generation)**. This hands-on guide walks you through every step, from rolling dice to calculating checksums.
+Learn how to create your own Bitcoin seed phrase with verifiable entropy in our **[DIY Seed Generation Guide](/docs/learn/keys/random/)**. This hands-on guide walks you through every step, from rolling dice to calculating checksums.
 :::
 
 <RelatedArticles 
@@ -148,7 +148,7 @@ Learn how to create your own Bitcoin seed phrase with verifiable entropy in our 
   articles={[
     { title: "Private Keys Explained", href: "/docs/learn/keys/intro/", tag: "Learn" },
     { title: "Passphrases (25th Word)", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
-    { title: "DIY Seed Generation", href: "/docs/security/seed-generation/", tag: "Guide" },
+    { title: "DIY Seed Generation", href: "/docs/learn/keys/random/", tag: "Guide" },
     { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
   ]}
 />

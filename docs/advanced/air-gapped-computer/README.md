@@ -47,7 +47,7 @@ This is the **highest level of self-custody security**, though it requires more 
 
 | Use Case | Description |
 |----------|-------------|
-| **Seed generation** | Create seeds from dice rolls with [DIY Seed Guide](/docs/security/seed-generation) |
+| **Seed generation** | Create seeds from dice rolls with [DIY Seed Guide](/docs/learn/keys/random/) |
 | **Hardware wallet verification** | Verify your HWW generates correct addresses |
 | **Transaction signing** | Sign transactions completely offline |
 | **Inheritance planning** | Create encrypted messages for heirs |
@@ -88,7 +88,7 @@ While SeedSigner is great for certain use cases, an AGC offers more versatility 
 ## Related Guides
 
 :::tip Generate Your Own Seed
-Use your AGC to create a truly random seed phrase with our **[DIY Seed Generation Guide](/docs/security/seed-generation)**. Dice rolls + air-gapped computer = maximum security.
+Use your AGC to create a truly random seed phrase with our **[DIY Seed Generation Guide](/docs/learn/keys/random/)**. Dice rolls + air-gapped computer = maximum security.
 :::
 
 :::info Firmware Options

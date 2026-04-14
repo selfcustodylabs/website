@@ -12,7 +12,7 @@ export const articleCollections = {
     { title: "Private Keys Explained", href: "/docs/learn/keys/intro/", tag: "Learn" },
     { title: "Seed Phrases (BIP39)", href: "/docs/learn/keys/seed/", tag: "Learn" },
     { title: "Passphrases (25th Word)", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
-    { title: "DIY Seed Generation", href: "/docs/security/seed-generation/", tag: "Guide" },
+    { title: "DIY Seed Generation", href: "/docs/learn/keys/random/", tag: "Guide" },
   ],
   security: [
     { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },

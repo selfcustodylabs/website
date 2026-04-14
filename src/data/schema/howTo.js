@@ -106,7 +106,7 @@ export const howToSchemas = {
   // =====================
   // SECURITY GUIDES
   // =====================
-  "/docs/security/seed-generation/": {
+  "/docs/learn/keys/random/": {
     name: "How to Generate Your Own Bitcoin Seed Phrase",
     description:
       "Create a cryptographically secure Bitcoin seed phrase using dice rolls for true randomness. This DIY method ensures no third party has access to your private keys.",
@@ -123,39 +123,33 @@ export const howToSchemas = {
     ],
     tool: [
       "Air-gapped computer or Raspberry Pi Zero",
-      "Electrum wallet (offline)",
-      "Calculator (optional)",
+      "Sparrow Wallet (offline) for verification",
     ],
     steps: [
       {
-        name: "Gather Requirements",
-        text: "Obtain casino-grade dice, an air-gapped computer, and a metal backup plate for secure seed storage.",
-        url: `${SITE_URL}/docs/security/seed-generation/requirements/`,
-      },
-      {
         name: "Roll Dice for Entropy",
         text: "Roll dice 99 times to generate 256 bits of true random entropy. Record each roll as binary (1-3 = 0, 4-6 = 1).",
-        url: `${SITE_URL}/docs/security/seed-generation/dice-roll/`,
+        url: `${SITE_URL}/docs/learn/keys/random/#step-1-roll-dice-for-entropy`,
       },
       {
         name: "Convert Binary to Decimal",
         text: "Split your binary string into 11-bit chunks and convert each chunk to a decimal number (0-2047).",
-        url: `${SITE_URL}/docs/security/seed-generation/binary-decimal/`,
+        url: `${SITE_URL}/docs/learn/keys/random/#step-2-convert-binary-to-decimal`,
       },
       {
         name: "Calculate Checksum",
         text: "Use SHA256 to calculate the checksum bits that complete your 24th word.",
-        url: `${SITE_URL}/docs/security/seed-generation/checksum/`,
+        url: `${SITE_URL}/docs/learn/keys/random/#step-3-calculate-the-checksum`,
       },
       {
         name: "Look Up BIP39 Words",
         text: "Convert each decimal number to its corresponding BIP39 word to create your 24-word seed phrase.",
-        url: `${SITE_URL}/docs/security/seed-generation/bip39/`,
+        url: `${SITE_URL}/docs/learn/keys/random/#step-4-look-up-bip39-words`,
       },
       {
         name: "Backup Your Seed",
         text: "Stamp or engrave your seed phrase onto a metal plate for fireproof, waterproof storage.",
-        url: `${SITE_URL}/docs/security/seed-generation/backup/`,
+        url: `${SITE_URL}/docs/learn/keys/random/#step-5-back-up-on-metal`,
       },
     ],
   },
