@@ -77,7 +77,7 @@ Generate your own seed phrase using dice for verifiable randomness. Don't trustâ
 
 <div class="guide-card">
 
-### [DIY Passphrase Guide](/docs/security/passphrase/)
+### [DIY Passphrase Guide](/docs/learn/keys/passphrase/)
 
 **Time:** 1-2 hours | **Difficulty:** Beginner | **Cost:** Free-$10
 

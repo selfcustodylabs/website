@@ -654,6 +654,44 @@ const config = {
             from: '/docs/seed/backup',
             to: '/docs/learn/keys/random',
           },
+          // =============================================
+          // PASSPHRASE MERGE → /docs/learn/keys/passphrase
+          // The old /docs/security/passphrase/* tree and its
+          // bare /docs/passphrase/* aliases were merged into
+          // a single canonical page at /docs/learn/keys/passphrase/.
+          // =============================================
+          {
+            from: '/docs/security/passphrase',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/security/passphrase/word-lists',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/security/passphrase/dice-roll',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/security/passphrase/backup',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/passphrase',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/passphrase/word-lists',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/passphrase/dice-roll',
+            to: '/docs/learn/keys/passphrase',
+          },
+          {
+            from: '/docs/passphrase/backup',
+            to: '/docs/learn/keys/passphrase',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
@@ -674,10 +712,6 @@ const config = {
           }
           if (existingPath.includes('/docs/wallet-setup/backup-verification')) {
             return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
-          }
-          // Catch-all for security paths
-          if (existingPath.includes('/docs/security/passphrase')) {
-            return [existingPath.replace('/docs/security/passphrase', '/docs/passphrase')];
           }
           // Catch-all for privacy paths
           if (existingPath.includes('/docs/privacy/utxo-management')) {

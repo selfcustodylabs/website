@@ -154,10 +154,10 @@ export const howToSchemas = {
     ],
   },
 
-  "/docs/security/passphrase/": {
+  "/docs/learn/keys/passphrase/": {
     name: "How to Create a Secure Bitcoin Passphrase",
     description:
-      "Generate a cryptographically strong passphrase using dice rolls and the EFF word list. Add an extra layer of protection to your Bitcoin seed phrase.",
+      "Generate a cryptographically strong Bitcoin passphrase using dice rolls and the EFF word list. Add an extra layer of protection to your seed phrase.",
     totalTime: "PT30M",
     estimatedCost: {
       currency: "USD",
@@ -167,19 +167,19 @@ export const howToSchemas = {
     tool: [],
     steps: [
       {
-        name: "Understand Word Lists",
-        text: "Learn why the EFF word list is preferred over the original Diceware list for better memorability and security.",
-        url: `${SITE_URL}/docs/security/passphrase/word-lists/`,
+        name: "Choose Your Word List",
+        text: "Understand why the EFF long word list is preferred over the original Diceware list for memorability and security.",
+        url: `${SITE_URL}/docs/learn/keys/passphrase/#step-1-choose-your-word-list`,
       },
       {
-        name: "Roll Dice for Each Word",
-        text: "Roll 5 dice for each word you want in your passphrase. Look up the resulting 5-digit number in the EFF word list.",
-        url: `${SITE_URL}/docs/security/passphrase/dice-roll/`,
+        name: "Roll Dice for Your Words",
+        text: "Roll 5 dice for each word. Look up the 5-digit result in the EFF word list. Repeat for at least 6 words.",
+        url: `${SITE_URL}/docs/learn/keys/passphrase/#step-2-roll-dice-for-your-words`,
       },
       {
-        name: "Backup Your Passphrase",
-        text: "Store your passphrase separately from your seed phrase in a secure location.",
-        url: `${SITE_URL}/docs/security/passphrase/backup/`,
+        name: "Back Up Your Passphrase",
+        text: "Store your passphrase separately from your seed phrase on metal, or memorize it with a mnemonic.",
+        url: `${SITE_URL}/docs/learn/keys/passphrase/#step-3-back-up-your-passphrase`,
       },
     ],
   },

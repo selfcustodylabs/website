@@ -62,11 +62,6 @@ export const breadcrumbMappings = {
 
   // Security guides
   "/docs/security/": ["Guides", "Security"],
-  "/docs/security/passphrase/": ["Guides", "Security", "Passphrase"],
-  "/docs/security/passphrase/word-lists/": ["Guides", "Passphrase", "Word Lists"],
-  "/docs/security/passphrase/dice-roll/": ["Guides", "Passphrase", "Dice Rolling"],
-  "/docs/security/passphrase/backup/": ["Guides", "Passphrase", "Backup"],
-
   "/docs/security/operational-security/": ["Guides", "Security", "Operational Security"],
   "/docs/security/physical-security/": ["Guides", "Security", "Physical Security"],
 

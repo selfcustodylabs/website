@@ -281,5 +281,5 @@ The goal is making yourself a harder target than alternatives, not achieving per
 
 - [Operational Security](/docs/security/operational-security/) — Behavioral security
 - [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
-- [Passphrase Guide](/docs/security/passphrase/) — Enable decoy wallets
+- [Passphrase Guide](/docs/learn/keys/passphrase/) — Enable decoy wallets
 - [Multisig Setup](/docs/advanced/multisig/) — Distributed key security

@@ -124,7 +124,7 @@ You're already self-custodying but want stronger security.
 
 **Your journey:**
 1. [DIY Seed Generation](/docs/learn/keys/random/) — Create verifiable randomness
-2. [Passphrase Security](/docs/security/passphrase/) — Add another layer
+2. [Passphrase Security](/docs/learn/keys/passphrase/) — Add another layer
 3. [Run Your Own Node](/docs/bitcoin-node/) — Don't trust, verify
 4. [UTXO Management](/docs/privacy/utxo-management/) — Privacy and fee optimization
 

@@ -281,7 +281,7 @@ A passphrase (sometimes called the "25th word") adds extra security:
 - Even a single character difference creates a different wallet
 - You must back up your passphrase separately from your seed
 
-Only use a passphrase if you fully understand the risks. See [DIY Passphrase Guide](/docs/security/passphrase) for details.
+Only use a passphrase if you fully understand the risks. See [DIY Passphrase Guide](/docs/learn/keys/passphrase) for details.
 :::
 
 

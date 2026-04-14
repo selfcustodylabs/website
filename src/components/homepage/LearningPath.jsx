@@ -21,7 +21,7 @@ const stages = [
     number: '03',
     title: 'Secure',
     description: 'Add a passphrase, verify your backup, run your own node, and learn UTXO control.',
-    href: '/docs/security/passphrase',
+    href: '/docs/learn/keys/passphrase',
   },
   {
     number: '04',
