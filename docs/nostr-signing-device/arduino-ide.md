@@ -7,11 +7,11 @@ tags: ["arduino", "setup", "ESP32", "firmware"]
 ---
 # Arduino Setup
 
-### Download the Arduino IDE
+## Download the Arduino IDE
 
 Visit the [Arduino Website](https://www.arduino.cc/en/software/) and download the [Legacy Arduino IDE 1.8.19](https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz)
 
-### Extract the downloaded file
+## Extract the downloaded file
 
 Open a terminal and run:
 
@@ -19,13 +19,13 @@ Open a terminal and run:
 tar -xvf arduino-1.8.19-linux64.tar.xz
 ```
 
-### Navigate to the extracted folder
+## Navigate to the extracted folder
 
 ```bash
 cd arduino-1.8.19
 ```
 
-### Install Arduino IDE
+## Install Arduino IDE
 
 Run the installation script:
 
@@ -42,7 +42,7 @@ Adding desktop shortcut, menu item and file associations for Arduino IDE...
 done!
 ```
 
-### Accessing Arduino IDE
+## Accessing Arduino IDE
 
 A new Arduino icon will be created.
 
