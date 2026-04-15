@@ -1,8 +1,4 @@
 {
   "label": "Wallets",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Different types of Bitcoin wallets and their security models."
-  }
+  "position": 4
 }

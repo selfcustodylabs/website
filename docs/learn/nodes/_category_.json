@@ -1,8 +1,4 @@
 {
   "label": "Nodes",
-  "position": 7,
-  "link": {
-    "type": "generated-index",
-    "description": "What Bitcoin nodes do and why running your own matters."
-  }
+  "position": 7
 }
