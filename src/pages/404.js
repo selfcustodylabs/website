@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import Head from "@docusaurus/Head";
 
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
@@ -45,6 +46,9 @@ export default function NotFound() {
       title="Page Not Found"
       description="The page you're looking for doesn't exist or has been moved."
     >
+      <Head>
+        <meta name="robots" content="noindex, follow" />
+      </Head>
       <main className="homepage relative bg-neutral-950 text-white">
         <PageHeader
           eyebrow="404"
