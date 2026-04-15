@@ -16,6 +16,7 @@ import {
   DEFAULT_PUBLISHER,
 } from "@site/src/data/schema/constants";
 import { normalizePath } from "@site/src/utils/pathUtils";
+import ogManifest from "@site/src/data/ogManifest.json";
 
 function deriveBreadcrumbSchema(sidebarBreadcrumbs) {
   if (!sidebarBreadcrumbs || sidebarBreadcrumbs.length === 0) return null;
@@ -78,10 +79,14 @@ export default function DocItemLayoutWrapper(props) {
     generateArticleSchema(path) ?? deriveArticleSchema(metadata, path);
   const faqSchema = generateFAQSchema(path);
   const itemListSchema = generateItemListSchema(path);
+  const ogImagePath = ogManifest[path];
+  const ogImageUrl = ogImagePath ? `${SITE_URL}${ogImagePath}` : null;
 
   return (
     <>
       <Head>
+        {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+        {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
         {howToSchema && (
           <script type="application/ld+json">{JSON.stringify(howToSchema, null, 0)}</script>
         )}
