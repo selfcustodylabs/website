@@ -536,6 +536,64 @@ export const howToSchemas = {
       },
     ],
   },
+
+  // =====================
+  // INHERITANCE PLANNING
+  // =====================
+  "/docs/advanced/inheritance-planning/": {
+    name: "How to Plan Bitcoin Inheritance for Your Heirs",
+    description:
+      "Ensure your Bitcoin passes to your loved ones without compromising your security while you are alive. Step-by-step inheritance planning guide.",
+    totalTime: "PT8H",
+    estimatedCost: {
+      currency: "USD",
+      value: "500",
+    },
+    supply: [
+      "Hardware wallets for multisig setup",
+      "Metal seed backup plates",
+      "Sealed inheritance instructions document",
+      "Secure off-site storage locations",
+    ],
+    tool: ["Sparrow Wallet", "Estate attorney (recommended)"],
+    steps: [
+      {
+        name: "Understand the Inheritance Dilemma",
+        text: "Recognize the trade-off between security while alive and accessibility after death. Plan for both ends of this spectrum.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#the-inheritance-dilemma`,
+      },
+      {
+        name: "Choose an Approach by Complexity",
+        text: "Select an inheritance method that matches your holdings and your heirs' technical ability, from simple sealed letters to family multisig.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#approaches-by-complexity`,
+      },
+      {
+        name: "Set Up Family Multisig",
+        text: "Configure a 2-of-3 multisig where you, a trusted family member, and a third-party collaborative custodian each hold one key.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#recommended-setup-family-multisig`,
+      },
+      {
+        name: "Write Inheritance Instructions",
+        text: "Document recovery steps in plain language an heir can follow without prior Bitcoin knowledge. Avoid leaking key material.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#bitcoin-inheritance-instructions`,
+      },
+      {
+        name: "Avoid Common Mistakes",
+        text: "Review the eight most common inheritance mistakes and verify your plan does not fall into any of them.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#common-mistakes-to-avoid`,
+      },
+      {
+        name: "Address Legal Considerations",
+        text: "Coordinate with an estate attorney so your Bitcoin transfer aligns with your will and probate process in your jurisdiction.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#legal-considerations`,
+      },
+      {
+        name: "Schedule Maintenance",
+        text: "Review the inheritance plan annually. Verify all keys still work, contacts are reachable, and instructions remain accurate.",
+        url: `${SITE_URL}/docs/advanced/inheritance-planning/#maintenance-schedule`,
+      },
+    ],
+  },
 };
 
 /**
