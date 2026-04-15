@@ -2,7 +2,7 @@ import React from "react";
 import DocItemLayout from "@theme-original/DocItem/Layout";
 import Head from "@docusaurus/Head";
 import { useLocation } from "@docusaurus/router";
-import { useDoc } from "@docusaurus/plugin-content-docs/client";
+import { useDoc, useSidebarBreadcrumbs } from "@docusaurus/plugin-content-docs/client";
 import {
   generateHowToSchema,
   generateBreadcrumbSchema,
@@ -16,6 +16,38 @@ import {
   DEFAULT_PUBLISHER,
 } from "@site/src/data/schema/constants";
 import { normalizePath } from "@site/src/utils/pathUtils";
+
+function deriveBreadcrumbSchema(sidebarBreadcrumbs) {
+  if (!sidebarBreadcrumbs || sidebarBreadcrumbs.length === 0) return null;
+
+  const items = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+  ];
+
+  sidebarBreadcrumbs.forEach((crumb, index) => {
+    if (!crumb.label) return;
+    const item = {
+      "@type": "ListItem",
+      position: index + 2,
+      name: crumb.label,
+    };
+    if (crumb.href) {
+      item.item = `${SITE_URL}${crumb.href}`;
+    }
+    items.push(item);
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items,
+  };
+}
 
 function deriveArticleSchema(metadata, path) {
   if (!metadata?.title || !metadata?.description) return null;
@@ -37,9 +69,11 @@ export default function DocItemLayoutWrapper(props) {
   const location = useLocation();
   const path = normalizePath(location.pathname);
   const { metadata } = useDoc();
+  const sidebarBreadcrumbs = useSidebarBreadcrumbs();
 
   const howToSchema = generateHowToSchema(path);
-  const breadcrumbSchema = generateBreadcrumbSchema(path);
+  const breadcrumbSchema =
+    generateBreadcrumbSchema(path) ?? deriveBreadcrumbSchema(sidebarBreadcrumbs);
   const articleSchema =
     generateArticleSchema(path) ?? deriveArticleSchema(metadata, path);
   const faqSchema = generateFAQSchema(path);
