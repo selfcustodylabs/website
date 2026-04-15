@@ -4,6 +4,7 @@ export { default as NextSteps } from "./NextSteps";
 export { default as SectionBadge } from "./SectionBadge";
 export { default as RelatedArticles, articleCollections } from "./RelatedArticles";
 export { default as FeaturedImage } from "./FeaturedImage";
+export { default as AuthorByline } from "./AuthorByline";
 
 // Shared UI components
 export { default as Card } from "./Card";
