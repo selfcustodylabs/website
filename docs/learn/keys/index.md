@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
 sidebar_label: "Overview"
-title: "Bitcoin Keys Explained: Private Keys, Seeds & Derivation Paths"
+title: "Bitcoin Keys: Private Keys, Seeds, Derivation Paths"
 description: "Learn how Bitcoin keys work: private keys, seed phrases (BIP39), extended keys (xpub/xprv), and derivation paths. The foundation of Bitcoin ownership."
 keywords: ["bitcoin keys", "private key", "seed phrase", "BIP39", "xpub", "xprv", "derivation path", "bitcoin ownership", "self custody"]
 tags: ["keys", "seed", "bitcoin", "fundamentals"]

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: "Bitcoin UTXO Management — Coin Control & Consolidation Guide"
-description: "Master Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow and Electrum, consolidation strategies, dusting attacks, and the golden rules for keeping sources separate."
+description: "Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow, consolidation strategies, dusting attacks, and source separation rules."
 keywords: ["bitcoin utxo management", "coin control", "sparrow coin control", "electrum coin control", "utxo consolidation", "dusting attack", "bitcoin privacy", "bitcoin fees"]
 tags: ["utxo", "coin control", "privacy", "fees", "consolidation"]
 slug: /learn/privacy/utxo-management

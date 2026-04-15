@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: "Build Serprog"
-description: "Practical guide: Build Serprog. Covers Build serprog firmware from source, Connect the Pico to PC, Copy the Firmware."
+description: "Build serprog firmware for the Raspberry Pi Pico H so it can act as an SPI programmer for flashing Libreboot to a laptop chip."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "serprog"]
 tags: ["libreboot", "raspberry", "pico", "serprog"]
 ---

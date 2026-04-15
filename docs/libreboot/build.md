@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "Build Libreboot"
-description: "Practical guide: Build Libreboot. Covers Install Dependencies, Enable Multi-threaded Build Mode, bitcoin."
+description: "Build a Libreboot ROM from source on Linux: install dependencies, clone the lbmk repository, and run a multi-threaded compile."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build"]
 tags: ["libreboot", "repository", "lbmk", "build"]
 ---

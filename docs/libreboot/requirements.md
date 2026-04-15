@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: "Libreboot Hardware Requirements"
-description: "Practical guide: HW Requirements. Covers Laptop, Raspberry Pi Pico H with pre-soldered headers, Pomona 5250 SOIC8 Clip."
+description: "Hardware list for flashing Libreboot: supported laptops, Raspberry Pi Pico H programmer, Pomona SOIC8 clip, and required cables."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "requirements"]
 tags: ["libreboot", "raspberry", "pico", "bios", "pomona", "clip", "usb", "cables"]
 ---

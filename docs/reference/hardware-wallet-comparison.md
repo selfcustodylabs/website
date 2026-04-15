@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: "Hardware Wallet Comparison: Coldcard vs Trezor vs BitBox vs Ledger"
+title: "Coldcard vs Trezor vs BitBox vs Ledger: Compared"
 description: "Comprehensive comparison of Bitcoin hardware wallets. Compare Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone on security, features, and price."
 keywords: ["hardware wallet comparison", "coldcard", "trezor", "bitbox02", "ledger", "jade", "keystone", "bitcoin wallet"]
 tags: ["hardware wallet", "comparison", "coldcard", "trezor", "security"]

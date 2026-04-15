@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: "Bitcoin Security: DIY Seed Generation & Advanced Protection"
-description: "Advanced Bitcoin security techniques: generate your own seed phrase with dice, add passphrase protection, and implement operational and physical security best practices."
+description: "Advanced Bitcoin security: generate seeds with dice, add passphrase protection, and apply operational and physical security best practices."
 keywords: ["bitcoin security", "seed generation", "diy seed", "passphrase", "operational security", "self custody security", "dice roll seed"]
 tags: ["security", "seed", "passphrase", "opsec"]
 slug: /security

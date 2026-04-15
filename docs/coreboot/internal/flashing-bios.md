@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "Flash Coreboot to Your Laptop BIOS"
-description: "Practical guide: Flashing. Covers Verify the Flashed Image, bitcoin, self custody."
+description: "Flash Coreboot from inside a running system after the BIOS region is unlocked. Includes safety checks and verification of the flashed image."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "flashing"]
 tags: ["coreboot", "chipsec", "bios", "internal", "flashing"]
 ---
