@@ -108,12 +108,6 @@ export const articleSchemas = {
     description: "Learn about air-gapped wallets and why they offer the highest level of security.",
     articleSection: "Wallets",
   },
-  "/docs/learn/wallets/multisig/": {
-    headline: "Multisig Wallets Explained",
-    description:
-      "Understand how Bitcoin multisig wallets work and why they eliminate single points of failure.",
-    articleSection: "Wallets",
-  },
 
   // Transactions
   "/docs/learn/transactions/understanding/": {
