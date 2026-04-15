@@ -231,6 +231,8 @@ const config = {
           showLastUpdateTime: true,
           // Breadcrumbs help with SEO and navigation
           breadcrumbs: true,
+          // Internal planning docs live here but are not published
+          exclude: ["superpowers/**"],
         },
         
         // Blog disabled
