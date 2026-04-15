@@ -33,7 +33,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 text-center">
         <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-medium text-white/70 backdrop-blur-sm animate-fade-in-up">
-          <img src={logoSrc} alt="" className="h-5 w-5" />
+          <img src={logoSrc} alt="" width="20" height="20" className="h-5 w-5" />
           <span className="tracking-wide uppercase">Self Custody Labs</span>
           <span className="hidden h-1 w-1 rounded-full bg-amber-400 sm:inline-block" />
           <span className="hidden text-white/50 sm:inline">Free, open-source guides</span>
