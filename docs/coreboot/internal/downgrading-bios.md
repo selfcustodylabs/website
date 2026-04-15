@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: "Downgrading BIOS"
-description: "Practical guide: Downgrading BIOS. Covers Why Downgrade is Possible, Performing Downgrade, bitcoin."
+description: "Downgrade your laptop's stock BIOS to a version with an unlocked Intel ME region, a prerequisite for internal Coreboot flashing."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "downgrading", "bios"]
 tags: ["coreboot", "downgrading", "bios"]
 ---

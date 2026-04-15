@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-title: "Bitcoin CoinJoin — How It Works, Services, and Best Practices"
-description: "Complete Bitcoin CoinJoin guide: how it works, equal outputs and anonymity sets, comparison of Wasabi / Whirlpool / JoinMarket, and how to preserve privacy after mixing."
+title: "Bitcoin CoinJoin: How It Works & Best Practices"
+description: "How Bitcoin CoinJoin works: equal outputs, anonymity sets, Wasabi vs JoinMarket, and how to preserve privacy after mixing."
 keywords: ["bitcoin coinjoin", "wasabi", "whirlpool", "joinmarket", "sparrow coinjoin", "bitcoin privacy", "chain analysis", "anonymity set", "post-mix best practices"]
 tags: ["coinjoin", "privacy", "wasabi", "whirlpool", "joinmarket"]
 slug: /learn/privacy/coinjoin

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-title: "Bitcoin Inheritance Planning: How to Pass Your Bitcoin to Heirs"
-description: "Complete guide to Bitcoin inheritance planning. Learn how to ensure your Bitcoin passes to loved ones securely, from simple methods to advanced multisig solutions."
+title: "Bitcoin Inheritance Planning: Pass Bitcoin to Heirs"
+description: "Plan Bitcoin inheritance for your heirs. Approaches from sealed instructions to family multisig, plus how to write recovery instructions."
 keywords: ["bitcoin inheritance", "bitcoin estate planning", "pass bitcoin to heirs", "bitcoin death planning", "crypto inheritance", "bitcoin will", "bitcoin trust"]
 tags: ["inheritance", "estate planning", "security", "advanced", "multisig"]
 ---

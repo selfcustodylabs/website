@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "ESP32 Board Support Setup"
-description: "Add ESP32 board support to Arduino IDE for your Nostr Signing Device. Configure the LILYGO T-Display board settings."
+description: "Add ESP32 board support to Arduino IDE so you can compile and flash firmware for the LILYGO T-Display module used by the Nostr Signing Device."
 keywords: ["ESP32", "arduino board manager", "LILYGO T-Display", "ESP32 URL", "board support"]
 tags: ["ESP32", "arduino", "setup", "LILYGO"]
 ---

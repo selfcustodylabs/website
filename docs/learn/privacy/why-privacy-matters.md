@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: "Why Bitcoin Privacy Matters"
-description: "Understand why financial privacy is essential for Bitcoin users. Learn what information is exposed on the public blockchain and why it matters for your security."
+description: "Why financial privacy matters for Bitcoin users. What information is exposed on the public blockchain and how it affects your security."
 keywords: ["bitcoin privacy", "financial privacy", "blockchain transparency", "self custody", "surveillance"]
 tags: ["privacy", "bitcoin", "security", "basics"]
 ---

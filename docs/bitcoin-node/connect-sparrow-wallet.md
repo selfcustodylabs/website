@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: "Connect Sparrow Wallet to Your Node"
-description: "Connect Sparrow Wallet to your own Bitcoin node and Electrum server for private, self-sovereign Bitcoin transactions."
+description: "Connect Sparrow Wallet to your own Bitcoin node and Electrum server so transactions stay private and verified by your own infrastructure."
 keywords: ["sparrow wallet", "bitcoin node", "electrum server", "self custody", "private transactions"]
 tags: ["bitcoin node", "sparrow wallet", "self custody"]
 ---
