@@ -1,0 +1,22 @@
+---
+sidebar_position: 0
+sidebar_label: "Overview"
+title: "Bitcoin Nodes: What They Are and Why They Matter"
+description: "What Bitcoin nodes do, why running your own matters for self-custody, and how a personal node verifies every transaction without trusting third parties."
+keywords: ["bitcoin node", "full node", "self custody", "verify transactions", "trustless"]
+tags: ["nodes", "bitcoin", "self custody"]
+slug: /learn/nodes
+---
+
+# Bitcoin Nodes
+
+A Bitcoin node is software that downloads the blockchain, validates every transaction and block against consensus rules, and serves data to wallets. When you run your own node, you stop trusting somebody else's view of the chain — you verify it yourself.
+
+For self-custody, this matters more than most people realize. Without your own node, your wallet asks a stranger's server about your balance and transactions, leaking your addresses and trusting their answers.
+
+## In this section
+
+- **[What Is a Bitcoin Node](./what-is-node)** — the technical role nodes play in the network
+- **[Why Run Your Own Node](./why-run-node)** — privacy, sovereignty, and the verification you gain
+
+Ready to actually run one? See the [Bitcoin Node setup guide](/docs/bitcoin-node/) for a full walkthrough.

@@ -587,6 +587,35 @@ const config = {
             to: '/docs/reference/hardware-wallet-comparison',
           },
           // =============================================
+          // CATEGORY ROUTES → DOC-BACKED INDEX PAGES (Phase 4b)
+          // Generated-index category pages were replaced with
+          // real index.md files so the sitemap can carry lastmod.
+          // =============================================
+          {
+            from: '/docs/category/internal-flashing',
+            to: '/docs/coreboot/internal',
+          },
+          {
+            from: '/docs/category/nodes',
+            to: '/docs/learn/nodes',
+          },
+          {
+            from: '/docs/category/privacy',
+            to: '/docs/learn/privacy',
+          },
+          {
+            from: '/docs/category/transactions',
+            to: '/docs/learn/transactions',
+          },
+          {
+            from: '/docs/category/wallets',
+            to: '/docs/learn/wallets',
+          },
+          {
+            from: '/docs/category/raspberry-pico',
+            to: '/docs/libreboot/raspberry-pico',
+          },
+          // =============================================
           // SEED GENERATION MERGE → /docs/learn/keys/random
           // The old /docs/security/seed-generation/* tree and its
           // bare /docs/seed/* aliases were merged into a single
