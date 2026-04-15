@@ -1,7 +1,15 @@
 # Phase 3 — Structured-Data Backfill + Phase 1 Cleanup
 
 **Date:** 2026-04-15
-**Status:** Approved design, ready for implementation plan
+**Status:** Approved design, implementation plan locked
+
+## Pre-implementation corrections
+
+A validation pass against the Docusaurus type definitions and Google's Search Central docs found three inaccuracies in the original architecture. They are corrected below and the relevant component sections have been updated:
+
+1. **`breadcrumbs` is NOT on `props.content.metadata`.** Docusaurus exposes the breadcrumb chain via the `useSidebarBreadcrumbs()` hook from `@docusaurus/plugin-content-docs/client`, not via metadata. The `breadcrumbs: true` config flag is already enabled at [docusaurus.config.js:233](../../../docusaurus.config.js#L233).
+2. **Google deprecated the sitelinks search box on 2024-10-21** (effective 2024-11-21). `SearchAction` in WebSite schema is dead code. The WebSite schema itself still ships for general site-identity signal, but without `potentialAction`.
+3. **Auto-deriving `articleSection` from `frontMatter.tags[0]` won't match manual labels.** Sampled tags (e.g., `"getting started"`, `"bitcoin"`, `"glossary"`) don't correspond to the manual semantic labels (e.g., `"Bitcoin Fundamentals"`, `"Wallets"`, `"Reference"`). Auto-derived Article schemas omit `articleSection` entirely (Schema.org optional). Manual overrides keep theirs.
 
 ## Context
 
@@ -50,10 +58,10 @@ Homepage renders
 
 ---
 
-### C2 — Add Organization + WebSite/SearchAction generators, wire homepage
+### C2 — Add Organization + WebSite generators, wire homepage
 
 **Files created:**
-- [src/data/schema/organization.js](../../../src/data/schema/organization.js): exports `generateOrganizationSchema()` and `generateWebSiteSchema()`. The WebSite schema includes `potentialAction` of type `SearchAction` so Google can render the sitelinks search box.
+- [src/data/schema/organization.js](../../../src/data/schema/organization.js): exports `generateOrganizationSchema()` and `generateWebSiteSchema()`. The WebSite schema includes `name`, `url`, `description`, and `publisher` — but **no** `potentialAction` (Google deprecated the sitelinks search box on 2024-11-21).
 
 **Files modified:**
 - [src/data/schema/index.js](../../../src/data/schema/index.js): re-export the two new generators
@@ -66,7 +74,7 @@ Homepage renders
 ### C3 — Auto-derive Article schema, fix duplicate
 
 **Files modified:**
-- [src/theme/DocItem/Layout/index.js](../../../src/theme/DocItem/Layout/index.js): build a `deriveArticleSchema(metadata)` helper that returns an Article schema using `metadata.title`, `metadata.description`, `metadata.frontMatter.tags?.[0]` (capitalized) for `articleSection`, and `metadata.frontMatter.last_update?.date` (or git-derived `lastUpdatedAt`) for `dateModified`. The wrapper calls `articleSchemas[path] ?? deriveArticleSchema(metadata)`.
+- [src/theme/DocItem/Layout/index.js](../../../src/theme/DocItem/Layout/index.js): build a `deriveArticleSchema(metadata, path)` helper that returns an Article schema using `metadata.title` for `headline` and `metadata.description` for `description`. **`articleSection` is omitted from auto-derived schemas** (Schema.org optional, manual overrides keep theirs). Always sets `author`, `publisher`, and `mainEntityOfPage` from the existing `DEFAULT_ORGANIZATION`/`DEFAULT_PUBLISHER`/`SITE_URL` constants. The wrapper calls `generateArticleSchema(path) ?? deriveArticleSchema(props.content.metadata, path)`.
 - [src/data/schema/article.js](../../../src/data/schema/article.js): keep `generateArticleSchema(path)` for compatibility but treat it as override-only. Remove the duplicate `/docs/learn/wallets/multisig/` entry — keep the second one ("Bitcoin Multisig Setup Guide", articleSection "Learn") since it's the more accurate label for the canonical URL post-Phase-2.
 
 **Verification:** Pick 3 docs that previously had no Article schema (e.g., `/docs/reference/faq/lost-seed/`, `/docs/learn/keys/random/`, `/docs/wallet-setup/hardware-wallet/`). Grep their built HTML for `"@type":"Article"` — present. Spot-check the derived `headline`, `description`, and `articleSection` look reasonable.
@@ -76,8 +84,9 @@ Homepage renders
 ### C4 — Auto-derive BreadcrumbList
 
 **Files modified:**
-- [src/theme/DocItem/Layout/index.js](../../../src/theme/DocItem/Layout/index.js): build a `deriveBreadcrumbSchema(metadata)` helper that uses `props.content.metadata.breadcrumbs` (Docusaurus computes this natively from sidebar position) and emits a `BreadcrumbList` JSON-LD with one `ListItem` per parent. Falls back to the existing `breadcrumbMappings` lookup if the manual entry exists.
-- [src/data/schema/breadcrumb.js](../../../src/data/schema/breadcrumb.js): no schema-shape changes needed; the existing map continues to work as override storage.
+- [src/theme/DocItem/Layout/index.js](../../../src/theme/DocItem/Layout/index.js): import `useSidebarBreadcrumbs` from `@docusaurus/plugin-content-docs/client` and call it inside the wrapper component body. Build a `deriveBreadcrumbSchema(breadcrumbsFromHook, path)` helper that converts the chain into a `BreadcrumbList` JSON-LD with one `ListItem` per parent (using `breadcrumb.href` for `item` and `breadcrumb.label` for `name`). The wrapper calls `generateBreadcrumbSchema(path) ?? deriveBreadcrumbSchema(sidebarBreadcrumbs, path)`. Falls back to `null` if the hook returns null (no sidebar).
+- [src/data/schema/breadcrumb.js](../../../src/data/schema/breadcrumb.js): no shape changes; the existing map continues to work as override storage.
+- [docusaurus.config.js](../../../docusaurus.config.js): `breadcrumbs: true` already enabled at line 233 — no change needed.
 
 **Verification:** Pick 3 index pages that previously had no Breadcrumb (any of the 12 from the audit). Grep their built HTML for `"@type":"BreadcrumbList"` — present. Validate one via the Rich Results Test.
 
