@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-learn/wallets/multisig/backup-recovery" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.0">
+<title data-rh="true">Multisig Backup &amp; Recovery | Self Custody Labs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" property="og:image" content="https://selfcustodylabs.com/img/social-card.png"><meta data-rh="true" name="twitter:image" content="https://selfcustodylabs.com/img/social-card.png"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Multisig Backup &amp; Recovery | Self Custody Labs"><meta data-rh="true" name="description" content="How to properly backup your multisig wallet and recover it if needed. Critical information for protecting your bitcoin long-term."><meta data-rh="true" property="og:description" content="How to properly backup your multisig wallet and recover it if needed. Critical information for protecting your bitcoin long-term."><meta data-rh="true" name="keywords" content="bitcoin,multisig,backup,recovery,seed phrase,wallet descriptor"><link data-rh="true" rel="icon" href="/img/favicon.ico?v=2"><link data-rh="true" rel="canonical" href="https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/"><link data-rh="true" rel="alternate" href="https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/" hreflang="en"><link data-rh="true" rel="alternate" href="https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://selfcustodylabs.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://selfcustodylabs.com/docs/learn/"},{"@type":"ListItem","position":3,"name":"Multisig","item":"https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/"},{"@type":"ListItem","position":4,"name":"Backup & Recovery","item":"https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"👛 Wallets","item":"https://selfcustodylabs.com/docs/category/wallets"},{"@type":"ListItem","position":2,"name":"Multisig","item":"https://selfcustodylabs.com/docs/learn/wallets/multisig"},{"@type":"ListItem","position":3,"name":"Multisig Backup & Recovery","item":"https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DB4LHSKK4J"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-DB4LHSKK4J",{anonymize_ip:!0})</script>
+
+
+
+
+
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="dns-prefetch" href="https://cloud.umami.is">
+<meta property="og:site_name" content="Self Custody Labs">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@selfcustodylabs">
+<meta name="twitter:creator" content="@selfcustodylabs">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="author" content="Self Custody Labs">
+<meta name="publisher" content="Self Custody Labs">
+<meta name="theme-color" content="#f59e0b">
+<meta name="msapplication-TileColor" content="#f59e0b">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; https://www.googletagmanager.com https://cloud.umami.is; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; data: https:; connect-src &#39;self&#39; https://www.google-analytics.com https://cloud.umami.is https://region1.google-analytics.com; font-src &#39;self&#39; data:; frame-ancestors &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39;;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://selfcustodylabs.com/#organization","name":"Self Custody Labs","url":"https://selfcustodylabs.com","logo":{"@type":"ImageObject","url":"https://selfcustodylabs.com/img/logo.svg","width":512,"height":512},"sameAs":["https://x.com/selfcustodylabs","https://github.com/selfcustodylabs","https://keybase.io/selfcustodylabs"],"contactPoint":{"@type":"ContactPoint","email":"selfcustodylabs@proton.me","contactType":"customer support"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://selfcustodylabs.com/#website","name":"Self Custody Labs","url":"https://selfcustodylabs.com","description":"Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, and privacy best practices.","publisher":{"@id":"https://selfcustodylabs.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://selfcustodylabs.com/search?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","@id":"https://selfcustodylabs.com/#educationalorg","name":"Self Custody Labs","description":"Free educational resources for Bitcoin self-custody","url":"https://selfcustodylabs.com","sameAs":["https://x.com/selfcustodylabs","https://github.com/selfcustodylabs"],"areaServed":"Worldwide","knowsAbout":["Bitcoin","Self-custody","Hardware wallets","Cold storage","Cryptocurrency security","Private keys","Seed phrases","Multisig wallets"]}</script>
+<script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="5649cb57-bc60-498c-a7ff-2d044fc85912" async></script><link rel="stylesheet" href="/assets/css/styles.2c6e7af0.css">
+<script src="/assets/js/runtime~main.660de64f.js" defer="defer"></script>
+<script src="/assets/js/main.1ee0010a.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","dark"),document.documentElement.setAttribute("data-theme-choice","dark"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><a href="#__docusaurus_skipToContent_fallback" class="skip-to-content">Skip to main content</a><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Self Custody Labs - Bitcoin Self-Custody Guides" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Self Custody Labs - Bitcoin Self-Custody Guides" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Self Custody Labs</b></a><a class="navbar__item navbar__link" href="/learn/">Learn</a><a class="navbar__item navbar__link" href="/guides/">Guides</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Resources</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/books/">Books</a></li><li><a class="dropdown__link" href="/podcasts/">Podcasts</a></li><li class=""><hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);"></li><li><a href="https://timechainstats.com/" target="_blank" rel="noopener noreferrer" class="dropdown__link">TimechainStats<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://kycnot.me/" target="_blank" rel="noopener noreferrer" class="dropdown__link">No KYC<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://mempool.space/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Mempool<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt" target="_blank" rel="noopener noreferrer" class="dropdown__link">BIP39 Word List<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">About</a><ul class="dropdown__menu"><li><a href="https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5" target="_blank" rel="noopener noreferrer" class="dropdown__link">Nostr<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://x.com/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="dropdown__link">X (Twitter)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="mailto:selfcustodylabs@proton.me" target="_blank" rel="noopener noreferrer" class="dropdown__link">E-mail<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://app.cluborange.org/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="dropdown__link">Club Orange App<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="dropdown__link">GitHub<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://keybase.io/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="dropdown__link">Keybase<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://github.com/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header--github-link" aria-label="GitHub repository"></a><a href="https://app.cluborange.org/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header--cluborange-link" aria-label="Club Orange App"></a><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/learn/"><span title="📚 Learn Overview" class="linkLabel_WmDU">📚 Learn Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/learn/fundamentals/"><span title="🌱 Start Here" class="categoryLinkLabel_W154">🌱 Start Here</span></a><button aria-label="Expand sidebar category &#x27;🌱 Start Here&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/learn/keys/"><span title="🔑 Keys &amp; Seeds" class="categoryLinkLabel_W154">🔑 Keys &amp; Seeds</span></a><button aria-label="Expand sidebar category &#x27;🔑 Keys &amp; Seeds&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/category/wallets/"><span title="👛 Wallets" class="categoryLinkLabel_W154">👛 Wallets</span></a><button aria-label="Collapse sidebar category &#x27;👛 Wallets&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/learn/wallets/software-wallets/"><span title="Software Wallets Explained" class="linkLabel_WmDU">Software Wallets Explained</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/learn/wallets/hardware-wallets/"><span title="Hardware Wallets Explained" class="linkLabel_WmDU">Hardware Wallets Explained</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/learn/wallets/air-gapped-wallets/"><span title="Air-Gapped Wallets: Complete Guide" class="linkLabel_WmDU">Air-Gapped Wallets: Complete Guide</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/docs/learn/wallets/multisig/"><span title="Multisig" class="categoryLinkLabel_W154">Multisig</span></a><button aria-label="Collapse sidebar category &#x27;Multisig&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/learn/wallets/multisig/hardware-setup/"><span title="Multisig Hardware Setup" class="linkLabel_WmDU">Multisig Hardware Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/learn/wallets/multisig/sparrow-setup/"><span title="Multisig in Sparrow Wallet" class="linkLabel_WmDU">Multisig in Sparrow Wallet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/learn/wallets/multisig/backup-recovery/"><span title="Multisig Backup &amp; Recovery" class="linkLabel_WmDU">Multisig Backup &amp; Recovery</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/transactions/"><span title="💸 Transactions" class="categoryLinkLabel_W154">💸 Transactions</span></a><button aria-label="Expand sidebar category &#x27;💸 Transactions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/privacy/"><span title="🕵️ Privacy" class="categoryLinkLabel_W154">🕵️ Privacy</span></a><button aria-label="Expand sidebar category &#x27;🕵️ Privacy&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/nodes/"><span title="🖥️ Nodes" class="categoryLinkLabel_W154">🖥️ Nodes</span></a><button aria-label="Expand sidebar category &#x27;🖥️ Nodes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1"><hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);"></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/guides/"><span title="🛠️ View All Guides" class="linkLabel_WmDU">🛠️ View All Guides</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/reference/glossary/"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/wallets/"><span>👛 Wallets</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/learn/wallets/multisig/"><span>Multisig</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Multisig Backup &amp; Recovery</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div style="margin-bottom:16px"><span class="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-500/35 bg-amber-500/10 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-amber-300"><span aria-hidden="true">👛</span><span>Wallets</span></span><div class="mb-6 flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4"><div class="flex items-center justify-between text-sm"><span class="font-display font-semibold text-amber-400">Multisig Setup</span><span class="font-medium text-white/55">Step <!-- -->4<!-- --> of <!-- -->4</span></div><div class="flex gap-1.5"><a class="h-2 flex-1 rounded-full transition-all duration-200 bg-amber-500 hover:scale-y-125" title="Overview" aria-label="Step 1: Overview" href="/docs/learn/wallets/multisig/"></a><a class="h-2 flex-1 rounded-full transition-all duration-200 bg-amber-500 hover:scale-y-125" title="Hardware Setup" aria-label="Step 2: Hardware Setup" href="/docs/learn/wallets/multisig/hardware-setup/"></a><a class="h-2 flex-1 rounded-full transition-all duration-200 bg-amber-500 hover:scale-y-125" title="Sparrow Setup" aria-label="Step 3: Sparrow Setup" href="/docs/learn/wallets/multisig/sparrow-setup/"></a><a class="h-2 flex-1 rounded-full transition-all duration-200 bg-gradient-to-r from-amber-500 to-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.55)] hover:scale-y-125" title="Backup &amp; Recovery" aria-label="Step 4: Backup &amp; Recovery" href="/docs/learn/wallets/multisig/backup-recovery/"></a></div></div></div><div class="theme-doc-markdown markdown"><header><h1>Multisig Backup &amp; Recovery</h1></header>
+<p>Proper backup is <strong>critical</strong> for multisig. The complexity that provides security can also lead to permanent loss if backups aren&#x27;t done correctly.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-you-must-back-up">What You Must Back Up<a href="#what-you-must-back-up" class="hash-link" aria-label="Direct link to What You Must Back Up" title="Direct link to What You Must Back Up" translate="no">​</a></h2>
+<p>For a 2-of-3 multisig, you need to secure:</p>
+<div class="fixed-width-table"><table><thead><tr><th>Item</th><th>Copies</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Seed Phrase #1</strong></td><td>1</td><td>Recover Key 1</td></tr><tr><td><strong>Seed Phrase #2</strong></td><td>1</td><td>Recover Key 2</td></tr><tr><td><strong>Seed Phrase #3</strong></td><td>1</td><td>Recover Key 3</td></tr><tr><td><strong>Wallet Descriptor</strong></td><td>3+</td><td>Reconstruct multisig structure</td></tr><tr><td><strong>Device PINs</strong></td><td>3</td><td>Access hardware wallets</td></tr></tbody></table></div>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>Critical</div><div class="admonitionContent_BuS1"><p><strong>The wallet descriptor is as important as your seed phrases!</strong></p><p>Without it, having all three seeds won&#x27;t help you — you won&#x27;t know how to combine them into the multisig.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-the-wallet-descriptor">Understanding the Wallet Descriptor<a href="#understanding-the-wallet-descriptor" class="hash-link" aria-label="Direct link to Understanding the Wallet Descriptor" title="Direct link to Understanding the Wallet Descriptor" translate="no">​</a></h2>
+<p>The wallet descriptor contains:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">Example (simplified):</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">wsh(sortedmulti(2,</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  [73c5da0a/48h/0h/0h/2h]xpub6...ABC,</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  [8f3a2b1c/48h/0h/0h/2h]xpub6...DEF,</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  [a2c4e6f8/48h/0h/0h/2h]xpub6...GHI</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">))#checksum</span><br></div></code></pre></div></div>
+<p>This tells wallet software:</p>
+<ul>
+<li class=""><strong>wsh</strong> — Native SegWit script type</li>
+<li class=""><strong>sortedmulti(2,...)</strong> — 2-of-3 multisig with sorted keys</li>
+<li class=""><strong>[fingerprint/path]</strong> — Which device and derivation for each key</li>
+<li class=""><strong>xpub...</strong> — The extended public key for each signer</li>
+<li class=""><strong>#checksum</strong> — Verification that descriptor is correct</li>
+</ul>
+<p><strong>From seed phrases alone, you get xpubs, but you don&#x27;t know:</strong></p>
+<ul>
+<li class="">Which xpubs belong together</li>
+<li class="">What the M-of-N requirement is</li>
+<li class="">The correct derivation paths</li>
+<li class="">The script type used</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="backup-storage-strategy">Backup Storage Strategy<a href="#backup-storage-strategy" class="hash-link" aria-label="Direct link to Backup Storage Strategy" title="Direct link to Backup Storage Strategy" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-cardinal-rules">The Cardinal Rules<a href="#the-cardinal-rules" class="hash-link" aria-label="Direct link to The Cardinal Rules" title="Direct link to The Cardinal Rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Never store multiple seed phrases together</strong></li>
+<li class=""><strong>Never store a seed with its corresponding device</strong></li>
+<li class=""><strong>Store wallet descriptor copies with seed backups</strong></li>
+<li class=""><strong>Geographic separation</strong> — Different buildings, ideally different cities</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-2-of-3-storage-layout">Recommended 2-of-3 Storage Layout<a href="#recommended-2-of-3-storage-layout" class="hash-link" aria-label="Direct link to Recommended 2-of-3 Storage Layout" title="Direct link to Recommended 2-of-3 Storage Layout" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Recommended 2-of-3 multisig storage layout showing geographic separation of seed backups across multiple locations" src="/assets/images/storage-locations-3a1164e52defb9859b95d8b3a2fed1e6.webp" width="1536" height="1024" class="img_ev3q"></p>
+<p><strong>Notice:</strong></p>
+<ul>
+<li class="">Each seed is in a different location</li>
+<li class="">No seed is stored with its own device</li>
+<li class="">Wallet descriptor has multiple copies</li>
+<li class="">Any two locations provide enough to recover</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-your-backups">Creating Your Backups<a href="#creating-your-backups" class="hash-link" aria-label="Direct link to Creating Your Backups" title="Direct link to Creating Your Backups" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seed-phrase-backups-metal">Seed Phrase Backups (Metal)<a href="#seed-phrase-backups-metal" class="hash-link" aria-label="Direct link to Seed Phrase Backups (Metal)" title="Direct link to Seed Phrase Backups (Metal)" translate="no">​</a></h3>
+<p><strong>Why metal:</strong></p>
+<ul>
+<li class="">Survives house fires (paper burns)</li>
+<li class="">Survives flooding (paper disintegrates)</li>
+<li class="">Doesn&#x27;t fade over time (ink fades)</li>
+<li class="">Resistant to physical damage</li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li class="">Purchase 3 metal backup devices</li>
+<li class="">After verifying each seed works, stamp/engrave onto metal</li>
+<li class="">Double-check every word is correct</li>
+<li class="">Store in separate locations</li>
+</ol>
+<p><strong>Verification:</strong></p>
+<ul>
+<li class="">Read back what you stamped</li>
+<li class="">Compare letter-by-letter with the seed</li>
+<li class="">One wrong letter = wrong seed = lost funds</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wallet-descriptor-backup">Wallet Descriptor Backup<a href="#wallet-descriptor-backup" class="hash-link" aria-label="Direct link to Wallet Descriptor Backup" title="Direct link to Wallet Descriptor Backup" translate="no">​</a></h3>
+<p><strong>Export from Sparrow:</strong></p>
+<ol>
+<li class="">Go to <code>Settings</code> tab</li>
+<li class="">Click QR code icon (top right)</li>
+<li class="">Click <strong>&quot;Save PDF...&quot;</strong></li>
+<li class="">Print multiple copies</li>
+</ol>
+<p><strong>The PDF includes:</strong></p>
+<ul>
+<li class="">QR code (scannable for recovery)</li>
+<li class="">All xpubs in text form</li>
+<li class="">Fingerprints and derivation paths</li>
+<li class="">Human-readable format</li>
+</ul>
+<p><strong>Storage:</strong></p>
+<ul>
+<li class="">Print on acid-free paper</li>
+<li class="">Laminate if possible</li>
+<li class="">Store one copy with each seed backup</li>
+<li class="">Consider an encrypted digital backup (USB drive in safe)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recovery-scenarios">Recovery Scenarios<a href="#recovery-scenarios" class="hash-link" aria-label="Direct link to Recovery Scenarios" title="Direct link to Recovery Scenarios" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-1-lost-one-hardware-wallet">Scenario 1: Lost One Hardware Wallet<a href="#scenario-1-lost-one-hardware-wallet" class="hash-link" aria-label="Direct link to Scenario 1: Lost One Hardware Wallet" title="Direct link to Scenario 1: Lost One Hardware Wallet" translate="no">​</a></h3>
+<p><strong>Situation:</strong> Device #2 is lost or broken, but you have its seed backup.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li class="">Purchase new hardware wallet</li>
+<li class="">Restore seed #2 onto new device</li>
+<li class="">Re-register the multisig on the new device</li>
+<li class="">Verify addresses match the other devices</li>
+<li class="">Move funds to a fresh multisig (recommended, not required)</li>
+</ol>
+<p><strong>Why it works:</strong> You still have 3 working keys (2 devices + 1 restored).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-2-lost-one-seed-phrase">Scenario 2: Lost One Seed Phrase<a href="#scenario-2-lost-one-seed-phrase" class="hash-link" aria-label="Direct link to Scenario 2: Lost One Seed Phrase" title="Direct link to Scenario 2: Lost One Seed Phrase" translate="no">​</a></h3>
+<p><strong>Situation:</strong> Seed backup #1 was destroyed, but Device #1 still works.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li class="">Device #1 still holds Key #1 — you can still sign</li>
+<li class="">Use Device #1 + one other device to move funds</li>
+<li class="">Create a NEW multisig wallet with 3 fresh seeds</li>
+<li class="">Transfer all funds to the new wallet</li>
+<li class="">Properly backup all 3 new seeds</li>
+</ol>
+<p><strong>Why immediate action:</strong> If Device #1 breaks now, you&#x27;ve lost Key #1 forever.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-3-one-device-stolen">Scenario 3: One Device Stolen<a href="#scenario-3-one-device-stolen" class="hash-link" aria-label="Direct link to Scenario 3: One Device Stolen" title="Direct link to Scenario 3: One Device Stolen" translate="no">​</a></h3>
+<p><strong>Situation:</strong> Thief took Hardware Wallet #3.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li class=""><strong>Don&#x27;t panic</strong> — Thief needs 2 keys, they only have 1</li>
+<li class="">Use Device #1 + Device #2 to move funds immediately</li>
+<li class="">Create a NEW multisig wallet with fresh seeds</li>
+<li class="">Transfer all funds to the new wallet</li>
+<li class="">The stolen device is now worthless</li>
+</ol>
+<p><strong>Time sensitivity:</strong> Move funds before thief can potentially compromise another key.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-4-complete-recovery-worst-case">Scenario 4: Complete Recovery (Worst Case)<a href="#scenario-4-complete-recovery-worst-case" class="hash-link" aria-label="Direct link to Scenario 4: Complete Recovery (Worst Case)" title="Direct link to Scenario 4: Complete Recovery (Worst Case)" translate="no">​</a></h3>
+<p><strong>Situation:</strong> All three hardware wallets are destroyed. You have 2 seed backups and the wallet descriptor.</p>
+<p><strong>Recovery Steps:</strong></p>
+<ol>
+<li class="">
+<p><strong>Obtain new hardware wallets</strong> (2 minimum)</p>
+</li>
+<li class="">
+<p><strong>Restore seeds onto new devices:</strong></p>
+<ul>
+<li class="">Device A: Restore Seed #1</li>
+<li class="">Device B: Restore Seed #2</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Import wallet descriptor into Sparrow:</strong></p>
+<ul>
+<li class="">Open Sparrow Wallet</li>
+<li class=""><code>File</code> → <code>New Wallet</code></li>
+<li class="">Click the scan icon next to wallet name</li>
+<li class="">Scan the QR code from your descriptor PDF</li>
+<li class="">Or: <code>File</code> → <code>Import Wallet</code> → Select Sparrow format</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Verify recovery:</strong></p>
+<ul>
+<li class="">Check that addresses match what you expected</li>
+<li class="">Confirm fingerprints match your records</li>
+<li class="">Verify balance appears correctly</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Sign a test transaction:</strong></p>
+<ul>
+<li class="">Send a small amount to confirm signing works</li>
+<li class="">Use both restored devices</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Create fresh multisig (recommended):</strong></p>
+<ul>
+<li class="">Generate 3 new seeds on 3 new devices</li>
+<li class="">Create new multisig wallet</li>
+<li class="">Transfer all funds from recovered wallet</li>
+<li class="">Properly backup everything</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-your-recovery">Testing Your Recovery<a href="#testing-your-recovery" class="hash-link" aria-label="Direct link to Testing Your Recovery" title="Direct link to Testing Your Recovery" translate="no">​</a></h2>
+<p><strong>Before depositing significant funds, test recovery:</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-1-single-device-recovery">Test 1: Single Device Recovery<a href="#test-1-single-device-recovery" class="hash-link" aria-label="Direct link to Test 1: Single Device Recovery" title="Direct link to Test 1: Single Device Recovery" translate="no">​</a></h3>
+<ol>
+<li class="">Wipe Device #1 to factory settings</li>
+<li class="">Restore Seed #1 onto it</li>
+<li class="">Re-register the multisig</li>
+<li class="">Verify the fingerprint matches</li>
+<li class="">Verify addresses match other devices</li>
+<li class="">Sign a small test transaction</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-2-full-wallet-recovery">Test 2: Full Wallet Recovery<a href="#test-2-full-wallet-recovery" class="hash-link" aria-label="Direct link to Test 2: Full Wallet Recovery" title="Direct link to Test 2: Full Wallet Recovery" translate="no">​</a></h3>
+<ol>
+<li class="">Delete the wallet from Sparrow</li>
+<li class="">Re-import using only the wallet descriptor</li>
+<li class="">Verify balances and addresses appear</li>
+<li class="">Connect restored devices</li>
+<li class="">Sign a transaction successfully</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-3-simulate-disaster">Test 3: Simulate Disaster<a href="#test-3-simulate-disaster" class="hash-link" aria-label="Direct link to Test 3: Simulate Disaster" title="Direct link to Test 3: Simulate Disaster" translate="no">​</a></h3>
+<ol>
+<li class="">Pretend you lost all hardware wallets</li>
+<li class="">Using only 2 seed backups + descriptor:<!-- -->
+<ul>
+<li class="">Restore seeds to new/different devices</li>
+<li class="">Import descriptor into Sparrow</li>
+<li class="">Verify you can see your balance</li>
+<li class="">Sign and broadcast a transaction</li>
+</ul>
+</li>
+</ol>
+<p>If all tests pass, your backup strategy works.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recovery-checklist">Recovery Checklist<a href="#recovery-checklist" class="hash-link" aria-label="Direct link to Recovery Checklist" title="Direct link to Recovery Checklist" translate="no">​</a></h2>
+<p>Use this checklist to verify your backup status:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seed-phrases">Seed Phrases<a href="#seed-phrases" class="hash-link" aria-label="Direct link to Seed Phrases" title="Direct link to Seed Phrases" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Seed #1 backed up on metal</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Seed #2 backed up on metal</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Seed #3 backed up on metal</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Each seed stored in separate location</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->No seed stored with its device</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->All seeds verified (restore test passed)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wallet-descriptor">Wallet Descriptor<a href="#wallet-descriptor" class="hash-link" aria-label="Direct link to Wallet Descriptor" title="Direct link to Wallet Descriptor" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Exported as PDF with QR code</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Printed multiple copies</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Copy stored with each seed backup</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Digital backup on encrypted USB (optional)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Import test successful</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-wallets">Hardware Wallets<a href="#hardware-wallets" class="hash-link" aria-label="Direct link to Hardware Wallets" title="Direct link to Hardware Wallets" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->All devices have unique PINs</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->PINs recorded separately from seeds</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Multisig registered on all devices</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Addresses verified on all devices</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Stored in different locations from seeds</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentation">Documentation<a href="#documentation" class="hash-link" aria-label="Direct link to Documentation" title="Direct link to Documentation" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Fingerprint recorded for each device</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Locations documented (where is what)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Trusted person knows where to find info (if needed)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="inheritance-considerations">Inheritance Considerations<a href="#inheritance-considerations" class="hash-link" aria-label="Direct link to Inheritance Considerations" title="Direct link to Inheritance Considerations" translate="no">​</a></h2>
+<p>Multisig adds complexity for inheritance. Your heirs need:</p>
+<ol>
+<li class=""><strong>Knowledge that the multisig exists</strong></li>
+<li class=""><strong>Access to 2 of 3 seed backups</strong></li>
+<li class=""><strong>The wallet descriptor</strong></li>
+<li class=""><strong>Instructions on how to recover</strong></li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="options">Options:<a href="#options" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:" translate="no">​</a></h3>
+<p><strong>DIY Inheritance:</strong></p>
+<ul>
+<li class="">Write clear instructions</li>
+<li class="">Store with a lawyer or in a safe place</li>
+<li class="">Consider a time-locked letter service</li>
+</ul>
+<p><strong>Collaborative Custody:</strong></p>
+<ul>
+<li class="">Services like Unchained, Casa, Nunchuk offer inheritance features</li>
+<li class="">They can help heirs recover funds</li>
+<li class="">Removes technical burden from family</li>
+</ul>
+<p><strong>Trusted Third Party:</strong></p>
+<ul>
+<li class="">Give one key to a trusted person/lawyer</li>
+<li class="">They can assist heirs but can&#x27;t steal funds alone</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-backup-mistakes">Common Backup Mistakes<a href="#common-backup-mistakes" class="hash-link" aria-label="Direct link to Common Backup Mistakes" title="Direct link to Common Backup Mistakes" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-storing-seeds-digitally">Mistake: Storing Seeds Digitally<a href="#mistake-storing-seeds-digitally" class="hash-link" aria-label="Direct link to Mistake: Storing Seeds Digitally" title="Direct link to Mistake: Storing Seeds Digitally" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Screenshots, cloud storage, email = hackable</p>
+<p><strong>Solution:</strong> Metal backups only, never digital for seeds</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-all-backups-in-one-location">Mistake: All Backups in One Location<a href="#mistake-all-backups-in-one-location" class="hash-link" aria-label="Direct link to Mistake: All Backups in One Location" title="Direct link to Mistake: All Backups in One Location" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Single fire/flood/theft destroys everything</p>
+<p><strong>Solution:</strong> Geographic distribution across multiple locations</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-no-wallet-descriptor-backup">Mistake: No Wallet Descriptor Backup<a href="#mistake-no-wallet-descriptor-backup" class="hash-link" aria-label="Direct link to Mistake: No Wallet Descriptor Backup" title="Direct link to Mistake: No Wallet Descriptor Backup" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Can&#x27;t reconstruct multisig even with all seeds</p>
+<p><strong>Solution:</strong> Multiple printed copies stored with seeds</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-never-testing-recovery">Mistake: Never Testing Recovery<a href="#mistake-never-testing-recovery" class="hash-link" aria-label="Direct link to Mistake: Never Testing Recovery" title="Direct link to Mistake: Never Testing Recovery" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Discover backup doesn&#x27;t work when you need it</p>
+<p><strong>Solution:</strong> Test recovery before depositing significant funds</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-forgetting-pin-codes">Mistake: Forgetting PIN Codes<a href="#mistake-forgetting-pin-codes" class="hash-link" aria-label="Direct link to Mistake: Forgetting PIN Codes" title="Direct link to Mistake: Forgetting PIN Codes" translate="no">​</a></h3>
+<p><strong>Problem:</strong> Can&#x27;t access device, need to restore (delays)</p>
+<p><strong>Solution:</strong> Write PINs down, store separately from seeds</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
+<p>Multisig backup is more complex but follows clear rules:</p>
+<ol>
+<li class=""><strong>Separate everything</strong> — Seeds, devices, locations</li>
+<li class=""><strong>Back up the descriptor</strong> — As critical as seeds</li>
+<li class=""><strong>Test your recovery</strong> — Before you need it</li>
+<li class=""><strong>Plan for inheritance</strong> — Others may need access someday</li>
+</ol>
+<p>Your backup strategy should ensure that:</p>
+<ul>
+<li class="">Any single loss (fire, theft, failure) doesn&#x27;t compromise funds</li>
+<li class="">You can recover with 2 seeds + descriptor</li>
+<li class="">Someone you trust can help your family if needed</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-guides">Related Guides<a href="#related-guides" class="hash-link" aria-label="Direct link to Related Guides" title="Direct link to Related Guides" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/learn/wallets/multisig/">Multisig Overview</a> — Understanding multisig fundamentals</li>
+<li class=""><a class="" href="/docs/learn/wallets/multisig/hardware-setup/">Hardware Setup</a> — Setting up signing devices</li>
+<li class=""><a class="" href="/docs/learn/wallets/multisig/sparrow-setup/">Sparrow Setup</a> — Creating the wallet</li>
+<li class=""><a class="" href="/docs/learn/keys/random/#step-5-back-up-on-metal">Seed Phrase Backup</a> — Metal backup options</li>
+</ul></div><section class="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8"><h3 class="mb-5 flex items-center gap-2 font-display text-lg font-bold text-white"><style data-emotion="css 1t8mnmp">.css-1t8mnmp{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;font-size:20px;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-amber-400 css-1t8mnmp" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowForwardRoundedIcon"><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1"></path></svg>Next Steps</h3><div class="grid gap-4 sm:grid-cols-2"><a class="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/35 hover:bg-white/[0.04]" href="/docs/wallet-setup/before-you-deposit/"><span class="mb-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-amber-400">Done!</span><span class="font-display font-semibold text-white">Test Your Setup</span><p class="mt-1 text-sm leading-relaxed text-white/65">Verify everything works</p></a><a class="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/35 hover:bg-white/[0.04]" href="/docs/advanced/inheritance-planning/"><span class="mb-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-amber-400">Learn</span><span class="font-display font-semibold text-white">Inheritance Planning</span><p class="mt-1 text-sm leading-relaxed text-white/65">Plan for the future</p></a></div></section><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/multisig/">multisig</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/backup/">backup</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/recovery/">recovery</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/security/">security</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/bitcoin/">bitcoin</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-04-14T23:42:18.000Z" itemprop="dateModified">Apr 14, 2026</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/learn/wallets/multisig/sparrow-setup/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Multisig in Sparrow Wallet</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/transactions/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">💸 Transactions</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-you-must-back-up" class="table-of-contents__link toc-highlight">What You Must Back Up</a></li><li><a href="#understanding-the-wallet-descriptor" class="table-of-contents__link toc-highlight">Understanding the Wallet Descriptor</a></li><li><a href="#backup-storage-strategy" class="table-of-contents__link toc-highlight">Backup Storage Strategy</a><ul><li><a href="#the-cardinal-rules" class="table-of-contents__link toc-highlight">The Cardinal Rules</a></li><li><a href="#recommended-2-of-3-storage-layout" class="table-of-contents__link toc-highlight">Recommended 2-of-3 Storage Layout</a></li></ul></li><li><a href="#creating-your-backups" class="table-of-contents__link toc-highlight">Creating Your Backups</a><ul><li><a href="#seed-phrase-backups-metal" class="table-of-contents__link toc-highlight">Seed Phrase Backups (Metal)</a></li><li><a href="#wallet-descriptor-backup" class="table-of-contents__link toc-highlight">Wallet Descriptor Backup</a></li></ul></li><li><a href="#recovery-scenarios" class="table-of-contents__link toc-highlight">Recovery Scenarios</a><ul><li><a href="#scenario-1-lost-one-hardware-wallet" class="table-of-contents__link toc-highlight">Scenario 1: Lost One Hardware Wallet</a></li><li><a href="#scenario-2-lost-one-seed-phrase" class="table-of-contents__link toc-highlight">Scenario 2: Lost One Seed Phrase</a></li><li><a href="#scenario-3-one-device-stolen" class="table-of-contents__link toc-highlight">Scenario 3: One Device Stolen</a></li><li><a href="#scenario-4-complete-recovery-worst-case" class="table-of-contents__link toc-highlight">Scenario 4: Complete Recovery (Worst Case)</a></li></ul></li><li><a href="#testing-your-recovery" class="table-of-contents__link toc-highlight">Testing Your Recovery</a><ul><li><a href="#test-1-single-device-recovery" class="table-of-contents__link toc-highlight">Test 1: Single Device Recovery</a></li><li><a href="#test-2-full-wallet-recovery" class="table-of-contents__link toc-highlight">Test 2: Full Wallet Recovery</a></li><li><a href="#test-3-simulate-disaster" class="table-of-contents__link toc-highlight">Test 3: Simulate Disaster</a></li></ul></li><li><a href="#recovery-checklist" class="table-of-contents__link toc-highlight">Recovery Checklist</a><ul><li><a href="#seed-phrases" class="table-of-contents__link toc-highlight">Seed Phrases</a></li><li><a href="#wallet-descriptor" class="table-of-contents__link toc-highlight">Wallet Descriptor</a></li><li><a href="#hardware-wallets" class="table-of-contents__link toc-highlight">Hardware Wallets</a></li><li><a href="#documentation" class="table-of-contents__link toc-highlight">Documentation</a></li></ul></li><li><a href="#inheritance-considerations" class="table-of-contents__link toc-highlight">Inheritance Considerations</a><ul><li><a href="#options" class="table-of-contents__link toc-highlight">Options:</a></li></ul></li><li><a href="#common-backup-mistakes" class="table-of-contents__link toc-highlight">Common Backup Mistakes</a><ul><li><a href="#mistake-storing-seeds-digitally" class="table-of-contents__link toc-highlight">Mistake: Storing Seeds Digitally</a></li><li><a href="#mistake-all-backups-in-one-location" class="table-of-contents__link toc-highlight">Mistake: All Backups in One Location</a></li><li><a href="#mistake-no-wallet-descriptor-backup" class="table-of-contents__link toc-highlight">Mistake: No Wallet Descriptor Backup</a></li><li><a href="#mistake-never-testing-recovery" class="table-of-contents__link toc-highlight">Mistake: Never Testing Recovery</a></li><li><a href="#mistake-forgetting-pin-codes" class="table-of-contents__link toc-highlight">Mistake: Forgetting PIN Codes</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#related-guides" class="table-of-contents__link toc-highlight">Related Guides</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Learn</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/learn/fundamentals/">Start Here</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/learn/fundamentals/what-is-self-custody/">What is Self-Custody</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/learn/keys/intro/">Private Keys</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/reference/glossary/">Glossary</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Guides</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/wallet-setup/">Wallet Setup</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/security/">Security Hardening</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/learn/privacy/protecting-privacy/">Privacy Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/advanced/">Advanced Setups</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/bitcoin-node/">Bitcoin Node</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/books/">Books</a></li><li class="footer__item"><a class="footer__link-item" href="/podcasts/">Podcasts</a></li><li class="footer__item"><a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt" target="_blank" rel="noopener noreferrer" class="footer__link-item">BIP39 Word List<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://mempool.space/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mempool<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/privacy/">Privacy Policy</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Connect</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="footer__link-item">X (Twitter)<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://keybase.io/selfcustodylabs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Keybase<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Self Custody Labs. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
