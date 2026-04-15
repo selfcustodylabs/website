@@ -97,7 +97,7 @@ const config = {
     },
     
     // ===========================================
-    // Structured Data - WebSite Schema with SearchAction
+    // Structured Data - WebSite Schema
     // ===========================================
     {
       tagName: "script",
@@ -112,15 +112,7 @@ const config = {
         "publisher": {
           "@id": "https://selfcustodylabs.com/#organization"
         },
-        "inLanguage": "en-US",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://selfcustodylabs.com/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": "en-US"
       }),
     },
     
