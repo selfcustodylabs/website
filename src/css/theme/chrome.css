@@ -153,23 +153,19 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Mobile drawer — cosmetic overrides only. Layout is the default
-   Docusaurus two-panel flex; do not set display / width / transform
-   / height on .navbar-sidebar__items or .navbar-sidebar__item. */
+/* Mobile drawer. Layout is the default Docusaurus two-panel flex; do
+   not set display / width / transform on .navbar-sidebar__items or
+   .navbar-sidebar__item. Height is forced to the full viewport here
+   because Safari iOS and some Android browsers do not compute height
+   correctly from top:0 + bottom:0 alone on position:fixed elements. */
 .navbar-sidebar {
   background-color: rgba(11, 11, 12, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  bottom: auto;
-  height: auto;
-  max-height: 100dvh;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.navbar-sidebar__items {
-  height: auto;
-  min-height: 0;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .navbar-sidebar__brand {
