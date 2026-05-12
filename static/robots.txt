@@ -16,11 +16,12 @@ Disallow: /search/
 Disallow: /404
 Disallow: /404/
 
-# Disallow tag pages (thin content, duplicative)
-Disallow: /tags/
-Disallow: /tags
-Disallow: /docs/tags/
-Disallow: /docs/tags
+# Tag pages are intentionally NOT Disallowed here.
+# They emit <meta name="robots" content="noindex, follow"> via swizzled
+# src/theme/DocTagsListPage and src/theme/DocTagDocListPage components.
+# This lets Google crawl, see the noindex, and cleanly drop them — avoiding
+# the "Blocked by robots.txt" GSC warning that Disallow generates while still
+# keeping tag pages out of the index.
 
 # Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
