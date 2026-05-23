@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Bitcoin Glossary: 100+ Terms Explained"
 description: "Complete glossary of Bitcoin and self-custody terminology. Definitions for UTXO, seed phrase, hardware wallet, multisig, and 100+ other terms."
 keywords: ["bitcoin glossary", "bitcoin terms", "bitcoin definitions", "cryptocurrency terminology", "utxo", "seed phrase", "self custody"]
-tags: ["glossary", "reference", "terminology"]
+tags: ["glossary", "reference"]
 slug: /reference/glossary
 ---
 

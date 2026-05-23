@@ -3,7 +3,7 @@ sidebar_position: 3
 title: "Protecting Your Privacy"
 description: "Overview of Bitcoin privacy techniques. Learn the principles and methods for protecting your financial privacy when using Bitcoin."
 keywords: ["bitcoin privacy", "privacy techniques", "coinjoin", "utxo management", "tor", "own node"]
-tags: ["privacy", "bitcoin", "security", "techniques"]
+tags: ["privacy", "bitcoin", "security"]
 ---
 
 # Protecting Your Privacy

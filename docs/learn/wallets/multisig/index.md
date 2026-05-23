@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "Bitcoin Multisig: Complete Guide"
 description: "Understand and set up a Bitcoin multisig wallet. Concepts, 2-of-3 configurations, hardware devices, and a full step-by-step setup guide."
 keywords: ["multisig", "multi-signature", "bitcoin security", "2-of-3", "hardware wallet", "self custody", "sparrow"]
-tags: ["multisig", "security", "wallets", "bitcoin", "hardware wallet", "advanced"]
+tags: ["multisig", "security", "wallet", "bitcoin", "hardware wallet", "advanced"]
 slug: /learn/wallets/multisig
 ---
 
