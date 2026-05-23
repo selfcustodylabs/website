@@ -3,7 +3,7 @@ sidebar_position: 7
 title: "Flash Libreboot to Your Laptop BIOS"
 description: "Flash a Libreboot ROM onto your laptop with an external SPI programmer: locate the chips, split the ROM, detect, and write the new firmware."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "flashing"]
-tags: ["libreboot", "flash", "flashprog", "bios"]
+tags: ["libreboot", "flashprog", "bios"]
 ---
 # Flashing
 

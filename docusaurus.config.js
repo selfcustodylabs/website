@@ -727,7 +727,7 @@ const config = {
           // Old /docs/privacy/* hub
           {
             from: '/docs/privacy',
-            to: '/docs/learn/privacy/protecting-privacy',
+            to: '/docs/learn/privacy',
           },
           // CoinJoin
           {

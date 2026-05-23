@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "Learn Bitcoin Self-Custody"
 description: "Comprehensive educational content about Bitcoin self-custody. From fundamentals to advanced concepts—everything you need to truly own your Bitcoin."
 keywords: ["bitcoin education", "learn bitcoin", "bitcoin fundamentals", "cryptocurrency basics", "bitcoin concepts", "self custody"]
-tags: ["learn", "education", "fundamentals"]
+tags: ["learn", "fundamentals"]
 slug: /learn
 ---
 

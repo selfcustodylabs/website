@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Choose Your Bitcoin Computer"
 description: "How to choose the right laptop for Bitcoin self-custody. Hardware recommendations and security precautions for your dedicated Bitcoin machine."
 keywords: ["bitcoin laptop", "hardware choice", "thinkpad", "bitcoin computer", "dedicated device"]
-tags: ["bitcoin", "computer", "laptop", "hardware"]
+tags: ["bitcoin", "computer", "hardware"]
 ---
 # Choosing a Bitcoin Computer
 

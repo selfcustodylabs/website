@@ -4,7 +4,7 @@ sidebar_label: "Overview"
 title: "Bitcoin Wallets: Hardware, Software, Air-Gapped, Multisig"
 description: "Bitcoin wallet types compared: hardware wallets, software wallets, air-gapped setups, and multisig vaults. Pick the right security model for your needs."
 keywords: ["bitcoin wallet", "hardware wallet", "software wallet", "air gapped", "multisig", "self custody"]
-tags: ["wallets", "bitcoin", "self custody"]
+tags: ["wallet", "bitcoin", "self custody"]
 slug: /learn/wallets
 ---
 
