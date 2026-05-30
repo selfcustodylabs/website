@@ -41,8 +41,14 @@ const config = {
     // ===========================================
     // Additional SEO Meta Tags
     // ===========================================
-    { tagName: "meta", attributes: { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" } },
-    { tagName: "meta", attributes: { name: "googlebot", content: "index, follow" } },
+    // NOTE: Do NOT add "index, follow" or a "googlebot" directive here.
+    // This headTag is emitted on EVERY page, including the tag listing pages
+    // that swizzle in <meta name="robots" content="noindex, follow">. A global
+    // "index" — and especially a Googlebot-specific "index" — overrode that
+    // per-page noindex, leaving tag pages stuck in GSC "Crawled - currently not
+    // indexed" instead of cleanly dropping out via "Excluded by noindex".
+    // index/follow are the defaults anyway; keep only the preview directives.
+    { tagName: "meta", attributes: { name: "robots", content: "max-image-preview:large, max-snippet:-1, max-video-preview:-1" } },
     { tagName: "meta", attributes: { name: "author", content: "Self Custody Labs" } },
     { tagName: "meta", attributes: { name: "publisher", content: "Self Custody Labs" } },
     
