@@ -31,7 +31,7 @@ git config --global user.email "your.email@example.com"
 Libreboot’s build system uses a single thread by default, but you can change this to use multiple threads. For example, you can run:
 
 ```bash
-export XBMK_THREADS=4
+export XBMK_THREADS=$(nproc)
 ```
 
 This command will make Libreboot's build system use 4 threads, speeding up the build process.
