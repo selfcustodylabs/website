@@ -864,30 +864,56 @@ const config = {
             from: '/docs/air-gapped-computer/setup',
             to: '/docs/learn/wallets/air-gapped-wallets',
           },
+          // =============================================
+          // RENAMED PAGES → current slugs (GSC "Not found (404)")
+          // Old URLs Google still remembers that were renamed,
+          // not merged. Redirect to preserve their link equity.
+          // =============================================
+          {
+            from: '/docs/libreboot/build-libreboot',
+            to: '/docs/libreboot/build',
+          },
+          {
+            from: '/docs/libreboot/update',
+            to: '/docs/libreboot/update-bios',
+          },
+          {
+            from: '/docs/bitcoin-node/node-setup',
+            to: '/docs/bitcoin-node',
+          },
+          {
+            from: '/docs/category/keys-and-seeds',
+            to: '/docs/learn/keys',
+          },
         ],
         /** @param {string} existingPath */
         createRedirects(existingPath) {
+          // trailingSlash: true means existingPath arrives WITH a trailing slash
+          // (e.g. '/docs/reference/glossary/'). Normalize it away so the exact
+          // '===' matches below fire — without this, those redirects are silently
+          // never generated and the old URLs 404.
+          const path = existingPath.replace(/\/$/, '');
           // Catch-all for any /docs/learn/ path - create redirect from /docs/basics/
-          if (existingPath.includes('/docs/learn/') && !existingPath.includes('/docs/learn/fundamentals/')) {
-            return [existingPath.replace('/docs/learn/', '/docs/basics/')];
+          if (path.includes('/docs/learn/') && !path.includes('/docs/learn/fundamentals/')) {
+            return [path.replace('/docs/learn/', '/docs/basics/')];
           }
           // Catch-all for reference paths (glossary and address-types moved from learn)
-          if (existingPath === '/docs/reference/glossary') {
+          if (path === '/docs/reference/glossary') {
             return ['/docs/learn/glossary', '/docs/basics/glossary'];
           }
-          if (existingPath === '/docs/reference/address-types') {
+          if (path === '/docs/reference/address-types') {
             return ['/docs/learn/address-types', '/docs/basics/address-types'];
           }
           // Catch-all for wallet-setup paths
-          if (existingPath.includes('/docs/wallet-setup/hardware-wallet')) {
-            return [existingPath.replace('/docs/wallet-setup/hardware-wallet', '/docs/hardware-wallet-setup')];
+          if (path.includes('/docs/wallet-setup/hardware-wallet')) {
+            return [path.replace('/docs/wallet-setup/hardware-wallet', '/docs/hardware-wallet-setup')];
           }
-          if (existingPath.includes('/docs/wallet-setup/backup-verification')) {
-            return [existingPath.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
+          if (path.includes('/docs/wallet-setup/backup-verification')) {
+            return [path.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
           }
           // Catch-all for advanced paths
-          if (existingPath.includes('/docs/advanced/bitcoin-computer')) {
-            return [existingPath.replace('/docs/advanced/bitcoin-computer', '/docs/bitcoin-computer')];
+          if (path.includes('/docs/advanced/bitcoin-computer')) {
+            return [path.replace('/docs/advanced/bitcoin-computer', '/docs/bitcoin-computer')];
           }
           return undefined;
         },
