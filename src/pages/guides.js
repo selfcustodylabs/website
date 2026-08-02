@@ -138,7 +138,6 @@ export default function GuidesPage() {
       title: "Hardware Wallet Setup",
       description: "Step-by-step guide to setting up your first hardware wallet securely.",
       href: "/docs/wallet-setup/hardware-wallet",
-      badge: "NEW",
       level: "Beginner",
     },
     {
@@ -147,7 +146,6 @@ export default function GuidesPage() {
       description:
         "Test that your seed backup actually works before trusting it with significant funds.",
       href: "/docs/wallet-setup/backup-verification",
-      badge: "NEW",
       level: "Beginner",
     },
     {
@@ -225,7 +223,6 @@ export default function GuidesPage() {
       description:
         "Stealth privacy that breaks blockchain analysis assumptions. Both sender and receiver contribute inputs.",
       href: "/docs/learn/privacy/payjoin",
-      badge: "NEW",
       level: "Intermediate",
     },
     {
