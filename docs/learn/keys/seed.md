@@ -8,7 +8,7 @@ tags: ["seed", "BIP39", "private keys", "backup"]
 
 # Seed Phrases
 
-Your seed phrase is arguably the most important thing in Bitcoin self-custody. These 12 or 24 words *are* your Bitcoin—whoever has them controls your funds. Understanding what they are and how they work is essential before you entrust real money to them.
+Your seed phrase is arguably the most important thing in Bitcoin self-custody. These 12 or 24 words *are* your Bitcoin. Whoever has them controls your funds. Understanding what they are and how they work is essential before you entrust real money to them.
 
 ## What is a Seed Phrase?
 
@@ -20,7 +20,7 @@ pride roof weather keep ritual ocean rib wing
 board potato whisper weasel chunk rival obvious clean
 ```
 
-These words aren't random—they're drawn from a specific list of **2048 carefully chosen words** defined by the [BIP39 standard](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki). Each word maps to a number, and together they encode your private key in a format that humans can reliably write down and read back.
+These words aren't random: they're drawn from a specific list of **2048 carefully chosen words** defined by the [BIP39 standard](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki). Each word maps to a number, and together they encode your private key in a format that humans can reliably write down and read back.
 
 :::warning Critical Understanding
 Your seed phrase **is** your Bitcoin. Anyone who sees these words can take everything. Never photograph them, type them into a computer (except your hardware wallet), or store them digitally.
@@ -29,7 +29,7 @@ Your seed phrase **is** your Bitcoin. Anyone who sees these words can take every
 
 ## Why Words Instead of Numbers?
 
-Bitcoin private keys are enormous numbers—so large that writing them down accurately is nearly impossible for humans. A single digit wrong means your Bitcoin is gone forever.
+Bitcoin private keys are enormous numbers, so large that writing them down accurately is nearly impossible for humans. A single digit wrong means your Bitcoin is gone forever.
 
 Consider what a private key actually looks like in its raw form:
 
@@ -38,7 +38,7 @@ Consider what a private key actually looks like in its raw form:
 (264 bits total)
 ```
 
-No human can reliably copy that. Even converting to decimal doesn't help much—you'd have 24 groups of numbers between 0-2047 to transcribe perfectly.
+No human can reliably copy that. Even converting to decimal doesn't help much: you'd have 24 groups of numbers between 0-2047 to transcribe perfectly.
 
 **Words solve this problem.** Instead of writing "1477, 1764, 1511..." you write "reward, symptom, rude..." Words are:
 
@@ -51,10 +51,10 @@ No human can reliably copy that. Even converting to decimal doesn't help much—
 
 When your wallet generates a seed phrase, here's what happens under the hood:
 
-1. **Generate randomness** — The wallet creates a large random number (128 bits for 12 words, 256 bits for 24 words)
-2. **Add checksum** — A small verification code is appended (4-8 bits)
-3. **Split into chunks** — The binary is divided into 11-bit segments
-4. **Map to words** — Each 11-bit number (0-2047) maps to a word from the BIP39 list
+1. **Generate randomness**: The wallet creates a large random number (128 bits for 12 words, 256 bits for 24 words)
+2. **Add checksum**: A small verification code is appended (4-8 bits)
+3. **Split into chunks**: The binary is divided into 11-bit segments
+4. **Map to words**: Each 11-bit number (0-2047) maps to a word from the BIP39 list
 
 When you restore a wallet:
 
@@ -63,25 +63,25 @@ When you restore a wallet:
 3. The checksum is verified (this catches typos!)
 4. Your private key is reconstructed
 
-This is why **word order matters**—the words encode a specific number, and scrambling them creates a completely different (and likely invalid) key.
+This is why **word order matters**: the words encode a specific number, and scrambling them creates a completely different (and likely invalid) key.
 
 ![Words](/img/basics/words.webp)
 
 
 ## Why This Matters for You
 
-Understanding seed phrases isn't just academic—it has practical implications:
+Understanding seed phrases isn't just academic; it has practical implications:
 
-**Your seed phrase IS your Bitcoin.** The hardware wallet, the app, the computer—these are all replaceable. Your seed phrase is what matters. If your house burns down but you have your seed phrase stored elsewhere, you've lost nothing.
+**Your seed phrase IS your Bitcoin.** The hardware wallet, the app, the computer: these are all replaceable. Your seed phrase is what matters. If your house burns down but you have your seed phrase stored elsewhere, you've lost nothing.
 
 **Your seed phrase is NOT a password.** There's no "forgot my seed phrase" button. No company can help you recover it. This is the trade-off for true ownership: complete control, but also complete responsibility.
 
-**Different wallets, same seed.** Because BIP39 is a standard, you can restore your seed phrase in almost any Bitcoin wallet—Trezor, Ledger, Coldcard, Sparrow, or dozens of others. You're not locked into any vendor.
+**Different wallets, same seed.** Because BIP39 is a standard, you can restore your seed phrase in almost any Bitcoin wallet: Trezor, Ledger, Coldcard, Sparrow, or dozens of others. You're not locked into any vendor.
 
 
 ## The Checksum: Built-in Error Detection
 
-The last word of your seed phrase isn't fully random—it contains checksum bits that verify the rest of the phrase is valid. This means if you make a typo when restoring, most wallets will immediately tell you the phrase is invalid rather than creating a different (empty) wallet.
+The last word of your seed phrase isn't fully random. It contains checksum bits that verify the rest of the phrase is valid. This means if you make a typo when restoring, most wallets will immediately tell you the phrase is invalid rather than creating a different (empty) wallet.
 
 However, the checksum only catches most errors, not all. Always verify your backup by testing recovery before depositing significant funds.
 
@@ -90,7 +90,7 @@ However, the checksum only catches most errors, not all. Always verify your back
 
 ## Technical Deep Dive: The Conversion Process
 
-*This section explains exactly how words become keys. It's educational but not required for using Bitcoin safely—skip it if you prefer.*
+*This section explains exactly how words become keys. It's educational but not required for using Bitcoin safely; skip it if you prefer.*
 
 ### Step 1: Binary to 11-Bit Chunks
 

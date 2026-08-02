@@ -92,7 +92,7 @@ export default function LearnPage() {
       icon: ShieldRoundedIcon,
       title: "What is Self-Custody?",
       description:
-        "Learn what it means to truly own your Bitcoin. No banks, no exchanges—just you and your keys.",
+        "Learn what it means to truly own your Bitcoin. No banks, no exchanges, just you and your keys.",
       href: "/docs/learn/fundamentals/what-is-self-custody",
       level: "Beginner",
     },
@@ -136,7 +136,7 @@ export default function LearnPage() {
       icon: VpnKeyRoundedIcon,
       title: "Address Types",
       description:
-        "Legacy, SegWit, Taproot — understand the different Bitcoin address formats and which to use.",
+        "Legacy, SegWit, Taproot: understand the different Bitcoin address formats and which to use.",
       href: "/docs/reference/address-types",
       badge: "NEW",
       level: "Beginner",
@@ -261,7 +261,7 @@ export default function LearnPage() {
       icon: MenuBookRoundedIcon,
       title: "Bitcoin Glossary",
       description:
-        "100+ terms defined. From UTXO to Taproot — every Bitcoin term you need to know.",
+        "100+ terms defined. From UTXO to Taproot: every Bitcoin term you need to know.",
       href: "/docs/reference/glossary",
       badge: "NEW",
       level: "Beginner",
@@ -292,7 +292,7 @@ export default function LearnPage() {
               </span>
             </>
           }
-          subtitle="Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is to running your own node — everything you need to become truly sovereign."
+          subtitle="Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is to running your own node, everything you need to become truly sovereign."
         />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">

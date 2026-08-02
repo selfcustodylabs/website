@@ -7,17 +7,17 @@ import useReveal from '@site/src/hooks/useReveal';
 const collapses = [
   {
     figure: '$8B',
-    label: 'FTX — 2022',
+    label: 'FTX (2022)',
     description: 'Customer funds misappropriated in one of the largest financial frauds in crypto history.',
   },
   {
     figure: '~850,000 BTC',
-    label: 'Mt. Gox — 2014',
+    label: 'Mt. Gox (2014)',
     description: 'The largest Bitcoin exchange in the world, hacked and mismanaged over years.',
   },
   {
     figure: '$4.7B',
-    label: 'Celsius — 2022',
+    label: 'Celsius (2022)',
     description: 'Froze customer withdrawals, then filed for bankruptcy. Customers became unsecured creditors.',
   },
 ];

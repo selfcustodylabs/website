@@ -44,7 +44,7 @@ Set up a hardware wallet from scratch. Covers:
 - Installing and connecting wallet software (Sparrow)
 - Receiving your first transaction
 
-**Prerequisites:** None — this is where most people should start.
+**Prerequisites:** None (this is where most people should start).
 
 </div>
 
@@ -131,10 +131,10 @@ Software wallets store keys on your phone or computer. They're free and convenie
 
 Once your wallet is set up and verified:
 
-1. **[Run Your Own Node](/docs/bitcoin-node/)** — Verify transactions yourself
-2. **[UTXO Management](/docs/learn/privacy/utxo-management/)** — Manage privacy and fees
-3. **[Add a Passphrase](/docs/learn/keys/passphrase/)** — Extra security layer
-4. **[Multisig Setup](/docs/learn/wallets/multisig/)** — Eliminate single points of failure (for larger holdings)
+1. **[Run Your Own Node](/docs/bitcoin-node/)**: Verify transactions yourself
+2. **[UTXO Management](/docs/learn/privacy/utxo-management/)**: Manage privacy and fees
+3. **[Add a Passphrase](/docs/learn/keys/passphrase/)**: Extra security layer
+4. **[Multisig Setup](/docs/learn/wallets/multisig/)**: Eliminate single points of failure (for larger holdings)
 
 ---
 

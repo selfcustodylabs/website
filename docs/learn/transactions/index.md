@@ -14,10 +14,10 @@ A Bitcoin transaction is not a debit from an account. It is a chain of cryptogra
 
 ## In this section
 
-- **[Understanding Transactions](./understanding)** — the mental model you need before anything else
-- **[UTXOs](./utxos)** — the building blocks every transaction consumes and produces
-- **[Creating Transactions](./create)** — how a wallet actually assembles a transaction
-- **[Signing Transactions](./sign)** — what signing means and how online vs offline signing differ
-- **[Broadcasting Transactions](./broadcast)** — getting your signed transaction onto the network
-- **[Fees](./fees)** — how miners pick which transactions to include
-- **[Transaction Types](./types)** — pre-signed, fully signed, and partially signed (PSBT)
+- **[Understanding Transactions](./understanding)**: the mental model you need before anything else
+- **[UTXOs](./utxos)**: the building blocks every transaction consumes and produces
+- **[Creating Transactions](./create)**: how a wallet actually assembles a transaction
+- **[Signing Transactions](./sign)**: what signing means and how online vs offline signing differ
+- **[Broadcasting Transactions](./broadcast)**: getting your signed transaction onto the network
+- **[Fees](./fees)**: how miners pick which transactions to include
+- **[Transaction Types](./types)**: pre-signed, fully signed, and partially signed (PSBT)

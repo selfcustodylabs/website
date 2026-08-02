@@ -8,14 +8,14 @@ tags: ["utxo", "transactions", "bitcoin", "basics"]
 
 # UTXOs: How Bitcoin Actually Works
 
-Most people think of their Bitcoin wallet like a bank account—a single balance that goes up and down. This mental model is wrong, and misunderstanding it leads to costly mistakes.
+Most people think of their Bitcoin wallet like a bank account, a single balance that goes up and down. This mental model is wrong, and misunderstanding it leads to costly mistakes.
 
 Bitcoin uses the **UTXO model**: Unspent Transaction Outputs. Understanding UTXOs is fundamental to understanding Bitcoin.
 
 
 ## What is a UTXO?
 
-A UTXO is an **Unspent Transaction Output**—a discrete chunk of bitcoin that you can spend.
+A UTXO is an **Unspent Transaction Output**, a discrete chunk of bitcoin that you can spend.
 
 Think of UTXOs as **digital coins** or **digital bills** in your wallet. You don't have a "balance" in the traditional sense. You have a collection of individual UTXOs, and your wallet displays their sum.
 
@@ -62,7 +62,7 @@ UTXOs follow a simple lifecycle:
 ```
 CREATION:
   When someone sends you bitcoin, a new UTXO is created.
-  This UTXO is "locked" to your address—only you can spend it.
+  This UTXO is "locked" to your address; only you can spend it.
 
 DESTRUCTION:
   When you spend a UTXO, it is completely consumed.
@@ -73,8 +73,8 @@ DESTRUCTION:
 
 When you send bitcoin:
 
-1. **Inputs** — Existing UTXOs you own are consumed (destroyed)
-2. **Outputs** — New UTXOs are created for recipients (and change for you)
+1. **Inputs**: Existing UTXOs you own are consumed (destroyed)
+2. **Outputs**: New UTXOs are created for recipients (and change for you)
 
 ```
 BEFORE TRANSACTION:
@@ -206,7 +206,7 @@ This is called the **common-input-ownership heuristic**. See [Chain Analysis Exp
 
 ### Small UTXOs Can Become Unspendable
 
-If a UTXO is worth less than the fee required to spend it, it becomes **economic dust**—trapped forever.
+If a UTXO is worth less than the fee required to spend it, it becomes **economic dust**, trapped forever.
 
 **Example during high fees (100 sat/vB):**
 - Spending one SegWit input costs ~6,800 sats in fees
@@ -306,7 +306,7 @@ Each UTXO:
 
 - Bitcoin uses **UTXOs** (Unspent Transaction Outputs), not account balances
 - Your wallet balance is the **sum of individual UTXOs** you control
-- UTXOs are **indivisible**—you spend them entirely or not at all
+- UTXOs are **indivisible**: you spend them entirely or not at all
 - **More UTXOs = higher fees** because each adds bytes to transactions
 - **Combining UTXOs reveals common ownership** (privacy implication)
 - Each UTXO has a **traceable history** on the blockchain

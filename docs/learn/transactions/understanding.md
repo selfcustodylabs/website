@@ -42,7 +42,7 @@ Your wallet takes care of this behind the scenes, but it helps to understand wha
 
 ## Transaction Fees
 
-To get your transaction included in a block, you pay a small fee to the miners. This fee isn't a separate line item—it's simply the difference between the amount you're spending and what's being sent out.
+To get your transaction included in a block, you pay a small fee to the miners. This fee isn't a separate line item: it's simply the difference between the amount you're spending and what's being sent out.
 
 Going back to our example:
 
@@ -83,7 +83,7 @@ Within seconds, your transaction is visible across the network.
 
 ### Step 3: The Mempool (Waiting Room)
 
-Every full node on the Bitcoin network keeps a copy of the **mempool**—a holding area for unconfirmed transactions. This is where your transaction waits to be included in a block.
+Every full node on the Bitcoin network keeps a copy of the **mempool**, a holding area for unconfirmed transactions. This is where your transaction waits to be included in a block.
 
 Miners review the mempool and select which transactions to include, typically favoring those that pay higher fees per byte (sat/vB).
 
@@ -93,7 +93,7 @@ If your fee is too low, your transaction might stay in the mempool for a while. 
 
 ### Step 4: Block Inclusion
 
-Roughly every 10 minutes, a miner successfully mines a new block and includes a set of transactions from the mempool. If your transaction makes it into the block, it's now considered **confirmed**—this is the moment it officially becomes part of the blockchain.
+Roughly every 10 minutes, a miner successfully mines a new block and includes a set of transactions from the mempool. If your transaction makes it into the block, it's now considered **confirmed**; this is the moment it officially becomes part of the blockchain.
 
 ### Step 5: Confirmations
 
@@ -130,7 +130,7 @@ TRANSACTION FLOW
 ## Key Takeaways
 
 - Transactions consume **inputs** (UTXOs you own) and create **outputs** (new UTXOs)
-- You always spend the **whole input**—excess comes back as change
+- You always spend the **whole input**: excess comes back as change
 - **Fees** are the difference between inputs and outputs
 - Transactions wait in the **mempool** until a miner includes them in a block
 - More **confirmations** = more security (6 is the standard for large amounts)

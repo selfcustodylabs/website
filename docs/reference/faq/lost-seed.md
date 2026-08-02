@@ -23,8 +23,8 @@ Your seed phrase isn't like a password that unlocks an account somewhere. It **i
 **How it works:**
 - Your seed phrase generates your private keys through mathematical derivation
 - Your private keys are the only thing that can sign transactions moving your Bitcoin
-- No one else has these keys—not Trezor, not Ledger, not Coinbase, not anyone
-- The Bitcoin network doesn't know or care who you are—only valid signatures matter
+- No one else has these keys: not Trezor, not Ledger, not Coinbase, not anyone
+- The Bitcoin network doesn't know or care who you are; only valid signatures matter
 
 **This is a feature, not a bug.** The same property that prevents anyone from taking your Bitcoin (without your keys) also prevents anyone from recovering it (without your keys).
 
@@ -39,7 +39,7 @@ Your seed phrase isn't like a password that unlocks an account somewhere. It **i
 1. **Immediately create a new wallet** with a new seed phrase
 2. **Properly back up the new seed** (write it down, test the backup)
 3. **Transfer all Bitcoin** from the old wallet to the new one
-4. **Never use the old seed again** (even if you find it later—it's been "compromised" by the loss)
+4. **Never use the old seed again** (even if you find it later, it's been "compromised" by the loss)
 
 **Time is critical.** Your device could break at any moment. Don't delay.
 
@@ -107,7 +107,7 @@ Your seed phrase isn't like a password that unlocks an account somewhere. It **i
 **Options:**
 - If you remember roughly what it might be, brute-forcing variations is possible
 - If you have no idea, recovery is essentially impossible
-- The math is the same as losing seed words—astronomical combinations
+- The math is the same as losing seed words (astronomical combinations)
 
 ---
 
@@ -180,7 +180,7 @@ If you're reading this and still have access to your Bitcoin:
 
 ### 3. Document and Communicate
 - [ ] Record (securely) where backups are stored
-- [ ] Consider inheritance planning—what happens if you die?
+- [ ] Consider inheritance planning: what happens if you die?
 - [ ] Don't make backup so secret that you forget about them
 
 ### 4. Don't Over-Complicate
@@ -195,7 +195,7 @@ Losing Bitcoin is painful. If you're in this situation:
 
 1. **Don't chase losses** by falling for scam "recovery" services
 2. **Learn from the experience** for any future holdings
-3. **Don't beat yourself up**—this has happened to many people
+3. **Don't beat yourself up.** This has happened to many people
 4. **Consider it a lesson** in the importance of proper backups
 
 Many early Bitcoiners lost coins to poor backup practices. It's a hard lesson, but you can do better going forward.
@@ -221,7 +221,7 @@ Many early Bitcoiners lost coins to poor backup practices. It's a hard lesson, b
 
 ## Related Guides
 
-- [Backup Verification](/docs/wallet-setup/backup-verification/) — Test your backup before you need it
-- [DIY Seed Generation](/docs/learn/keys/random/) — Create a secure seed properly
-- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) — Start with good practices
-- [Recovery Scams Warning](/docs/reference/faq/recovery-scams) — Protect yourself from fraud
+- [Backup Verification](/docs/wallet-setup/backup-verification/): Test your backup before you need it
+- [DIY Seed Generation](/docs/learn/keys/random/): Create a secure seed properly
+- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/): Start with good practices
+- [Recovery Scams Warning](/docs/reference/faq/recovery-scams): Protect yourself from fraud

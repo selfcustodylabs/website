@@ -16,5 +16,5 @@ This section walks through getting the Pico ready: building and flashing the ser
 
 ## In this section
 
-- **[Build Serprog](./build-serprog)** — compile and flash serprog onto the Pico
-- **[Wire the Connection](./connection)** — connect the Pico to your laptop's BIOS chip with a SOIC8 clip
+- **[Build Serprog](./build-serprog)**: compile and flash serprog onto the Pico
+- **[Wire the Connection](./connection)**: connect the Pico to your laptop's BIOS chip with a SOIC8 clip

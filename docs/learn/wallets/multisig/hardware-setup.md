@@ -131,7 +131,7 @@ Trezor offers excellent software integration with Sparrow.
 
 **For Multisig:**
 - Trezor works via USB connection with Sparrow
-- No export file needed—Sparrow reads directly from device
+- No export file needed; Sparrow reads directly from device
 
 ### Keystone Setup
 

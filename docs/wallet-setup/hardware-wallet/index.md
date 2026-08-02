@@ -33,10 +33,10 @@ A hardware wallet is the foundation of secure Bitcoin self-custody. Unlike softw
 
 A hardware wallet is a dedicated physical device designed to store your Bitcoin private keys securely. Think of it as a personal vault that:
 
-- **Generates keys offline** — Your seed phrase is created inside the device
-- **Stores keys in isolation** — Keys never leave the secure chip
-- **Signs transactions internally** — Your computer never sees your private key
-- **Verifies on its own screen** — Confirm addresses without trusting your computer
+- **Generates keys offline**: Your seed phrase is created inside the device
+- **Stores keys in isolation**: Keys never leave the secure chip
+- **Signs transactions internally** (your computer never sees your private key)
+- **Verifies on its own screen**: Confirm addresses without trusting your computer
 
 ```
 HOW A HARDWARE WALLET WORKS:
@@ -93,12 +93,12 @@ Ledger devices use closed-source firmware, meaning the code cannot be independen
 
 Before setting up your hardware wallet:
 
-- [ ] **Buy from official sources only** — Never buy used or from third-party sellers
-- [ ] **Check the packaging** — Look for signs of tampering
-- [ ] **Verify the device** — Most wallets have authenticity checks
-- [ ] **Prepare a secure environment** — Private location, no cameras
-- [ ] **Have backup materials ready** — Metal plate or paper for seed phrase
-- [ ] **Clear your schedule** — Don't rush this process
+- [ ] **Buy from official sources only**: Never buy used or from third-party sellers
+- [ ] **Check the packaging** (look for signs of tampering)
+- [ ] **Verify the device**: Most wallets have authenticity checks
+- [ ] **Prepare a secure environment**: Private location, no cameras
+- [ ] **Have backup materials ready** (metal plate or paper for seed phrase)
+- [ ] **Clear your schedule**: Don't rush this process
 
 ### What You'll Need
 
@@ -124,9 +124,9 @@ While each device has specific steps, the general process is similar:
 
 Before powering on, check that your device is genuine:
 
-- **Packaging intact** — No signs of opening or resealing
-- **Holographic seals** — If present, should be unbroken
-- **Device verification** — Run manufacturer's authenticity check
+- **Packaging intact**: No signs of opening or resealing
+- **Holographic seals**: If present, should be unbroken
+- **Device verification** (run manufacturer's authenticity check)
 
 ### Step 2: Initialize the Device
 
@@ -144,10 +144,10 @@ Power on and follow the device prompts:
 The device will display 12 or 24 words one at a time.
 
 :::danger Critical Steps
-1. **Write down every word** — In exact order, spelled correctly
-2. **Verify you wrote them correctly** — Device will quiz you
-3. **Never photograph your seed** — Digital copies are vulnerable
-4. **Never type your seed into a computer** — Except the hardware wallet itself
+1. **Write down every word**: In exact order, spelled correctly
+2. **Verify you wrote them correctly**: Device will quiz you
+3. **Never photograph your seed** (digital copies are vulnerable)
+4. **Never type your seed into a computer**: Except the hardware wallet itself
 :::
 
 **If you generated your own seed:**
@@ -186,7 +186,7 @@ Your hardware wallet needs companion software to:
 
 </div>
 
-**We recommend Sparrow Wallet** for most users — it works with all major hardware wallets and offers advanced features like coin control.
+**We recommend Sparrow Wallet** for most users. It works with all major hardware wallets and offers advanced features like coin control.
 
 ### Step 6: Connect and Verify
 
@@ -289,11 +289,11 @@ Only use a passphrase if you fully understand the risks. See [DIY Passphrase Gui
 
 Now that your hardware wallet is set up:
 
-1. **[Verify Your Backup](/docs/wallet-setup/backup-verification)** — Test that your seed backup actually works
-2. **Start small** — Receive a small amount first to test the process
-3. **[Run Your Own Node](/docs/bitcoin-node)** — Connect to your own node for privacy
-4. **[Learn UTXO Management](/docs/learn/privacy/utxo-management)** — Manage your coins effectively
-5. **Consider [Multisig](/docs/learn/wallets/multisig)** — For significant holdings
+1. **[Verify Your Backup](/docs/wallet-setup/backup-verification)**: Test that your seed backup actually works
+2. **Start small**: Receive a small amount first to test the process
+3. **[Run Your Own Node](/docs/bitcoin-node)** (connect to your own node for privacy)
+4. **[Learn UTXO Management](/docs/learn/privacy/utxo-management)**: Manage your coins effectively
+5. **Consider [Multisig](/docs/learn/wallets/multisig)**: For significant holdings
 
 <NextSteps 
   title="Continue Your Setup"

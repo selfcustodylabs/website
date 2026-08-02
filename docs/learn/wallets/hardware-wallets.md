@@ -10,7 +10,7 @@ tags: ["bitcoin", "hardware wallet", "cold storage", "security"]
 
 There's a moment in every Bitcoiner's journey when the stakes get real. Maybe your holdings crossed a threshold that makes you nervous. Maybe you read about another exchange hack or software wallet exploit. Whatever the trigger, you've arrived at the same conclusion millions have reached before you: it's time for a hardware wallet.
 
-A hardware wallet is a dedicated physical device designed specifically to protect your Bitcoin private keys. Unlike the phone in your pocket or the laptop on your desk, it does exactly one thing—and it does that thing extraordinarily well. Your keys are generated inside the device, stored inside the device, and never leave the device. Even when you connect it to a compromised computer crawling with malware, your keys remain safe.
+A hardware wallet is a dedicated physical device designed specifically to protect your Bitcoin private keys. Unlike the phone in your pocket or the laptop on your desk, it does exactly one thing, and it does that thing extraordinarily well. Your keys are generated inside the device, stored inside the device, and never leave the device. Even when you connect it to a compromised computer crawling with malware, your keys remain safe.
 
 This isn't security theater. It's a fundamental architectural difference that eliminates entire categories of attacks. Let's understand why hardware wallets exist, how they work, and how to choose the right one for your situation.
 
@@ -19,7 +19,7 @@ This isn't security theater. It's a fundamental architectural difference that el
 
 Think about your computer or phone for a moment. How many apps are installed? How many websites have you visited? How many email attachments have you opened? Each of those interactions is a potential entry point for malicious software.
 
-General-purpose devices are designed to do everything, which means they're optimized for nothing in particular—certainly not for protecting secrets worth potentially life-changing amounts of money.
+General-purpose devices are designed to do everything, which means they're optimized for nothing in particular, certainly not for protecting secrets worth potentially life-changing amounts of money.
 
 A hardware wallet takes the opposite approach. It does **one job only**: protect your keys and sign transactions securely. No web browser. No email client. No app store. No attack surface.
 
@@ -39,9 +39,9 @@ Signs on same device            Signs in secure enclave
 
 The magic of a hardware wallet lies in a simple but profound principle: **your private key never leaves the device**.
 
-When you want to send Bitcoin, here's what actually happens. Your computer (running wallet software like Sparrow) creates an unsigned transaction—essentially a request that says "move X bitcoin from address A to address B." This unsigned transaction is sent to your hardware wallet, which displays the details on its own screen.
+When you want to send Bitcoin, here's what actually happens. Your computer (running wallet software like Sparrow) creates an unsigned transaction, essentially a request that says "move X bitcoin from address A to address B." This unsigned transaction is sent to your hardware wallet, which displays the details on its own screen.
 
-This is the critical moment. You look at the hardware wallet's screen—not your computer's screen—and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature—never the key itself.
+This is the critical moment. You look at the hardware wallet's screen (not your computer's screen) and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature, never the key itself.
 
 ```
 TRANSACTION SIGNING FLOW:
@@ -60,7 +60,7 @@ Your Computer                    Hardware Wallet
 Result: Your key was used but never exposed.
 ```
 
-Here's why this matters: even if your computer is completely compromised—keyloggers recording everything, malware watching your screen, attackers with full access—they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
+Here's why this matters: even if your computer is completely compromised (keyloggers recording everything, malware watching your screen, attackers with full access), they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
 
 The hardware wallet is your last line of defense, and it's a strong one.
 
@@ -75,7 +75,7 @@ These devices connect directly to your computer or phone via USB or Bluetooth. Y
 
 **Examples:** Trezor, Ledger, BitBox02
 
-The user experience is smooth—almost as convenient as a software wallet. The tradeoff? Your hardware wallet is physically connected to a device that could potentially be compromised. While the security architecture still protects your keys, purists argue that any physical connection is a potential attack vector.
+The user experience is smooth, almost as convenient as a software wallet. The tradeoff? Your hardware wallet is physically connected to a device that could potentially be compromised. While the security architecture still protects your keys, purists argue that any physical connection is a potential attack vector.
 
 ### Air-Gapped Hardware Wallets
 
@@ -83,7 +83,7 @@ These devices never directly connect to anything. Instead, they communicate thro
 
 **Examples:** Coldcard (via SD), Keystone (via QR), SeedSigner (DIY)
 
-The workflow is slightly slower—you're literally sneaker-netting data between devices. But the security model is compelling: there's no cable, no Bluetooth radio, no USB port that malware could potentially exploit. The device is truly isolated.
+The workflow is slightly slower. You're literally sneaker-netting data between devices. But the security model is compelling: there's no cable, no Bluetooth radio, no USB port that malware could potentially exploit. The device is truly isolated.
 
 For most people, standard hardware wallets provide excellent security. Air-gapped devices are for those who want to eliminate every possible attack vector, even theoretical ones.
 
@@ -107,21 +107,21 @@ The hardware wallet market has matured significantly. Several excellent options 
 
 </div>
 
-*Jade uses a "virtual secure element" approach—a clever software solution rather than dedicated hardware.
+*Jade uses a "virtual secure element" approach, a clever software solution rather than dedicated hardware.
 
 
 ## Key Features Explained
 
-Reading hardware wallet specifications can feel like comparing cars by their engine displacement—technically accurate but not particularly helpful for making decisions. Here's what actually matters:
+Reading hardware wallet specifications can feel like comparing cars by their engine displacement, technically accurate but not particularly helpful for making decisions. Here's what actually matters:
 
 ### Secure Element
 
-A secure element is a tamper-resistant chip specifically designed to protect secrets. Think of it as a tiny vault inside your hardware wallet. If someone physically steals your device, a secure element makes it dramatically harder to extract your keys—they can't just desolder a memory chip and read it.
+A secure element is a tamper-resistant chip specifically designed to protect secrets. Think of it as a tiny vault inside your hardware wallet. If someone physically steals your device, a secure element makes it dramatically harder to extract your keys; they can't just desolder a memory chip and read it.
 
 **Has secure element:** Coldcard, Ledger, BitBox02, Trezor Safe 3, Keystone  
 **No secure element:** Trezor Model T, SeedSigner
 
-Does this matter? For most threat models, yes. If you're worried about sophisticated physical attacks—the kind involving labs and electron microscopes—a secure element adds meaningful protection.
+Does this matter? For most threat models, yes. If you're worried about sophisticated physical attacks (the kind involving labs and electron microscopes), a secure element adds meaningful protection.
 
 ### Open Source
 
@@ -131,11 +131,11 @@ Can independent security researchers examine the code running on your device? Op
 **Partially open source:** Coldcard, Keystone  
 **Closed source:** Ledger
 
-The Bitcoin community generally prefers open source. It's not that closed-source devices are necessarily insecure—it's that you can't verify their security independently.
+The Bitcoin community generally prefers open source. It's not that closed-source devices are necessarily insecure; it's that you can't verify their security independently.
 
 ### Bitcoin-Only Option
 
-Some devices offer firmware that only supports Bitcoin—no Ethereum, no altcoins, no tokens. Why does this matter? Less code means fewer potential bugs. Every feature is a potential attack surface, and many Bitcoiners prefer devices that do one thing exceptionally well rather than many things adequately.
+Some devices offer firmware that only supports Bitcoin: no Ethereum, no altcoins, no tokens. Why does this matter? Less code means fewer potential bugs. Every feature is a potential attack surface, and many Bitcoiners prefer devices that do one thing exceptionally well rather than many things adequately.
 
 **Bitcoin-only available:** Coldcard, BitBox02, Jade, Trezor (firmware option)
 
@@ -158,7 +158,7 @@ The learning curve is gentle. You'll be up and running in under an hour, and you
 
 If you lie awake at night thinking about attack vectors, Coldcard is your device. Air-gapped operation via SD card means it never connects to your computer. Advanced features like duress PINs, brick PINs, and countdown to wipe give you options for truly hostile scenarios. It's Bitcoin-only by design, and the security architecture has been battle-tested by some of the most paranoid people in the ecosystem.
 
-The tradeoff? The learning curve is steeper, and the workflow is slower. But for those who prioritize security above convenience, that's not a tradeoff—that's the point.
+The tradeoff? The learning curve is steeper, and the workflow is slower. But for those who prioritize security above convenience, that's not a tradeoff: that's the point.
 
 ### For Open Source Purists
 
@@ -172,7 +172,7 @@ The Model T lacks a secure element, which theoretically makes it more vulnerable
 
 **Recommendation: Keystone Pro or Ledger Nano X**
 
-If you primarily use your phone for Bitcoin, you need a wallet that plays nice with mobile apps. Keystone's QR code approach works beautifully with mobile wallets—no cables, no adapters, just point and scan. Ledger's Bluetooth connection is convenient, though security purists will note that Bluetooth is another radio that could theoretically be exploited.
+If you primarily use your phone for Bitcoin, you need a wallet that plays nice with mobile apps. Keystone's QR code approach works beautifully with mobile wallets: no cables, no adapters, just point and scan. Ledger's Bluetooth connection is convenient, though security purists will note that Bluetooth is another radio that could theoretically be exploited.
 
 
 ## Security Best Practices
@@ -185,7 +185,7 @@ A hardware wallet is only as secure as how you use it. These practices separate 
 
 **Always verify addresses on the device screen.** This is the single most important habit. Malware can display fake addresses on your computer screen, but it can't change what your hardware wallet displays. Before you send Bitcoin anywhere, verify the address on your hardware wallet matches what you intended.
 
-**Use a strong PIN.** Not 1234. Not your birthday. Not your anniversary. A random PIN that you memorize—or better yet, write down and store separately from both the device and your seed backup.
+**Use a strong PIN.** Not 1234. Not your birthday. Not your anniversary. A random PIN that you memorize, or better yet, write down and store separately from both the device and your seed backup.
 
 **Keep your seed backup in a different location than your device.** If someone steals your hardware wallet and finds your seed backup in the same drawer, your security model has failed completely.
 
@@ -195,7 +195,7 @@ The things to avoid are equally important:
 
 **Never enter your seed phrase on a computer.** The only place your seed phrase should ever be entered is directly into your hardware wallet during recovery. Not in a web form. Not in an app. Not in a "verification tool."
 
-**Never store your device with your seed backup.** Redundancy is the point. If fire destroys your home, you want either the device or the backup to survive—ideally in different locations.
+**Never store your device with your seed backup.** Redundancy is the point. If fire destroys your home, you want either the device or the backup to survive, ideally in different locations.
 
 
 ## Hardware Wallet vs. Other Methods
@@ -225,7 +225,7 @@ Even experienced Bitcoiners sometimes misunderstand hardware wallets. Let's clea
 
 This is the most common misconception, and it's completely wrong. Your Bitcoin exists on the blockchain, not inside any physical device. The hardware wallet is just a secure container for the keys that control that Bitcoin.
 
-If you have your seed phrase backup, you can recover your wallet on a new device—same brand, different brand, even a software wallet in an emergency. The device is replaceable. The seed phrase is what matters.
+If you have your seed phrase backup, you can recover your wallet on a new device: same brand, different brand, even a software wallet in an emergency. The device is replaceable. The seed phrase is what matters.
 
 ### "Hardware wallets are hackproof"
 
@@ -235,7 +235,7 @@ This is why defense in depth matters: strong PINs, verified firmware, addresses 
 
 ### "I don't need to verify addresses on the device"
 
-This misconception has cost people their Bitcoin. Your computer could be compromised by malware that displays one address on screen while your wallet software actually sends to a different address—controlled by the attacker.
+This misconception has cost people their Bitcoin. Your computer could be compromised by malware that displays one address on screen while your wallet software actually sends to a different address, controlled by the attacker.
 
 The hardware wallet's screen is your source of truth. **Always verify the recipient address on your hardware wallet before confirming any transaction.** This takes five seconds and eliminates an entire category of attacks.
 
@@ -252,10 +252,10 @@ A single hardware wallet, properly used, is excellent security. But it's still a
 
 **Consider [multisig](/docs/learn/wallets/multisig) if:**
 
-- **You're storing significant wealth**—think six months of expenses or more
-- **You want protection against physical theft**—no single location contains enough keys to spend
-- **You want protection against device compromise**—even if one hardware wallet is hacked, attackers still need more keys
-- **You're planning for inheritance**—multisig makes it possible for heirs to access funds without giving any single person full control
+- **You're storing significant wealth**: think six months of expenses or more
+- **You want protection against physical theft**: no single location contains enough keys to spend
+- **You want protection against device compromise**: even if one hardware wallet is hacked, attackers still need more keys
+- **You're planning for inheritance**: multisig makes it possible for heirs to access funds without giving any single person full control
 
 Multisig is more complex to set up and use, but for substantial holdings you plan to keep long-term, that complexity buys meaningful peace of mind.
 
@@ -268,9 +268,9 @@ Hardware wallets represent the single biggest security upgrade most Bitcoiners c
 
 Remember:
 
-- Your private key **never leaves the device**—only signatures do
-- **Verify everything on the device screen**—never trust your computer alone
-- **Buy from official sources only**—the few dollars saved aren't worth the risk
+- Your private key **never leaves the device**: only signatures do
+- **Verify everything on the device screen**: never trust your computer alone
+- **Buy from official sources only**: the few dollars saved aren't worth the risk
 - Consider **air-gapped options** if you want maximum isolation
 - For significant holdings, **multisig eliminates single points of failure**
 
@@ -280,8 +280,8 @@ Remember:
 
 Ready to set up your hardware wallet?
 
-→ **Practical Guide:** [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet) — Step-by-step instructions
+→ **Practical Guide:** [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet) (step-by-step instructions)
 
-→ **Advanced:** [Multisig Wallets](/docs/learn/wallets/multisig) — Eliminate single points of failure
+→ **Advanced:** [Multisig Wallets](/docs/learn/wallets/multisig) (eliminate single points of failure)
 
-→ **Generate Your Own Seed:** [DIY Seed Guide](/docs/learn/keys/random/) — Don't trust the device's randomness
+→ **Generate Your Own Seed:** [DIY Seed Guide](/docs/learn/keys/random/) (don't trust the device's randomness)

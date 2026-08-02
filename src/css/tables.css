@@ -10,39 +10,48 @@
    DIY SEED TABLE — fixed-width dice rolling tables
    =========================================== */
 
-.fixed-width-table table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0;
+.fixed-width-table {
+  overflow-x: auto;
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 1rem;
-  overflow: hidden;
 }
 
-.fixed-width-table th {
+.fixed-width-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/*
+ * These qualify with `article .theme-doc-markdown` (the real ancestry, see
+ * chrome.css) to out-specificity the generic prose-table th/td rule there
+ * ((0,1,3): article + table + th/td, 1 class). A bare `.fixed-width-table
+ * th` is only (0,1,1) and silently loses padding/font-size/text-align to
+ * that generic rule.
+ */
+article .theme-doc-markdown .fixed-width-table th {
   background: rgba(245, 158, 11, 0.18);
   color: #fde68a;
   text-align: center;
   vertical-align: middle;
-  padding: 0.75rem;
+  padding: 0.5rem 0.2rem;
   border-bottom: 1px solid rgba(245, 158, 11, 0.30);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  font-size: 0.68rem;
 }
 
-.fixed-width-table td {
+article .theme-doc-markdown .fixed-width-table td {
   text-align: center;
   vertical-align: middle;
-  padding: 0.625rem;
+  padding: 0.4rem 0.2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  width: 200px;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.82);
 }
 
-.fixed-width-table tr:last-child td {
+article .theme-doc-markdown .fixed-width-table tr:last-child td {
   border-bottom: 0;
 }
 

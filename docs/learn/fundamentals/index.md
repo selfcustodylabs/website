@@ -12,14 +12,14 @@ slug: /learn/fundamentals
 # Start Here: Your Bitcoin Self-Custody Journey
 
 :::tip Welcome
-You're about to learn how to truly own your Bitcoin. Not a balance on someone else's computer—actual, sovereign ownership that no one can take from you.
+You're about to learn how to truly own your Bitcoin. Not a balance on someone else's computer, actual, sovereign ownership that no one can take from you.
 
 This is both powerful and serious. Take your time.
 :::
 
 ## What is Self-Custody?
 
-When you buy Bitcoin on an exchange, you don't actually *own* it yet. You own a promise—an IOU from a company that says they'll give you Bitcoin when you ask.
+When you buy Bitcoin on an exchange, you don't actually *own* it yet. You own a promise, an IOU from a company that says they'll give you Bitcoin when you ask.
 
 **Self-custody** means taking possession of your Bitcoin by controlling your own private keys. It's the difference between:
 
@@ -31,7 +31,7 @@ When you buy Bitcoin on an exchange, you don't actually *own* it yet. You own a 
 | If they get hacked, you lose funds | Your security is in your hands |
 | "Not your keys, not your coins" | Your keys, your coins |
 
-Self-custody is how Bitcoin was designed to work. It's also a responsibility—there's no customer support, no password reset, and no reversing mistakes.
+Self-custody is how Bitcoin was designed to work. It's also a responsibility: there's no customer support, no password reset, and no reversing mistakes.
 
 → **Deep dive:** [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) explains this in full detail.
 
@@ -47,7 +47,7 @@ Self-custody means **you are responsible** for your Bitcoin. If you:
 
 There is no "forgot password" button. No customer support. No second chances.
 
-**This isn't meant to scare you away—it's meant to make you take this seriously.**
+**This isn't meant to scare you away; it's meant to make you take this seriously.**
 :::
 
 The good news: millions of people successfully self-custody their Bitcoin. With the right knowledge and care, you can too.
@@ -94,11 +94,11 @@ Not everyone needs the same level of security. A good setup depends on:
 You're new to Bitcoin and want to understand it before holding any.
 
 **Your journey:**
-1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — The fundamentals
-2. [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) — Why keys matter
-3. [Why Holding Your Own Bitcoin Matters](/docs/learn/fundamentals/holding-bitcoin) — Exchange risks
-4. [Private Keys Explained](/docs/learn/keys/intro) — The foundation
-5. [Seed Phrases](/docs/learn/keys/seed) — How keys become words
+1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): The fundamentals
+2. [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody): Why keys matter
+3. [Why Holding Your Own Bitcoin Matters](/docs/learn/fundamentals/holding-bitcoin): Exchange risks
+4. [Private Keys Explained](/docs/learn/keys/intro): The foundation
+5. [Seed Phrases](/docs/learn/keys/seed): How keys become words
 
 **Time investment:** 2-3 hours of reading
 
@@ -109,10 +109,10 @@ You're new to Bitcoin and want to understand it before holding any.
 You understand the basics and want to set up your first secure wallet.
 
 **Your journey:**
-1. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets) — Why they're important
-2. [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/) — Step-by-step setup
-3. [Backup Verification](/docs/wallet-setup/backup-verification/) — Test before you trust
-4. **[Before You Deposit](/docs/wallet-setup/before-you-deposit)** — Critical checklist
+1. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets): Why they're important
+2. [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/): Step-by-step setup
+3. [Backup Verification](/docs/wallet-setup/backup-verification/): Test before you trust
+4. **[Before You Deposit](/docs/wallet-setup/before-you-deposit)**: Critical checklist
 
 **Time investment:** 2-4 hours (including setup)
 
@@ -123,10 +123,10 @@ You understand the basics and want to set up your first secure wallet.
 You're already self-custodying but want stronger security.
 
 **Your journey:**
-1. [DIY Seed Generation](/docs/learn/keys/random/) — Create verifiable randomness
-2. [Passphrase Security](/docs/learn/keys/passphrase/) — Add another layer
-3. [Run Your Own Node](/docs/bitcoin-node/) — Don't trust, verify
-4. [UTXO Management](/docs/learn/privacy/utxo-management/) — Privacy and fee optimization
+1. [DIY Seed Generation](/docs/learn/keys/random/): Create verifiable randomness
+2. [Passphrase Security](/docs/learn/keys/passphrase/): Add another layer
+3. [Run Your Own Node](/docs/bitcoin-node/): Don't trust, verify
+4. [UTXO Management](/docs/learn/privacy/utxo-management/): Privacy and fee optimization
 
 **Time investment:** 1-2 days of projects
 
@@ -137,10 +137,10 @@ You're already self-custodying but want stronger security.
 You have significant holdings or elevated threat concerns.
 
 **Your journey:**
-1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — Understand the stakes
-2. [Multisig Setup](/docs/learn/wallets/multisig/) — Eliminate single points of failure
-3. [Air-Gapped Computing](/docs/learn/wallets/air-gapped-wallets/) — Offline signing
-4. [CoinJoin](/docs/learn/privacy/coinjoin/) — Break transaction history links
+1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters): Understand the stakes
+2. [Multisig Setup](/docs/learn/wallets/multisig/): Eliminate single points of failure
+3. [Air-Gapped Computing](/docs/learn/wallets/air-gapped-wallets/): Offline signing
+4. [CoinJoin](/docs/learn/privacy/coinjoin/): Break transaction history links
 
 **Time investment:** Multiple days/weeks
 
@@ -152,7 +152,7 @@ Before you dive into guides, internalize these principles:
 
 ### 1. Verify, Don't Trust
 
-Don't take anyone's word for it—including this site. Verify addresses on your hardware wallet screen. Run your own node. Check multiple sources.
+Don't take anyone's word for it (including this site). Verify addresses on your hardware wallet screen. Run your own node. Check multiple sources.
 
 ### 2. Move Slowly
 

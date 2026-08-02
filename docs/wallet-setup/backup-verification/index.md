@@ -58,7 +58,7 @@ The only way to **know** your backup works is to actually use it to recover your
 
 ## Method 1: Recovery Test on the Same Device
 
-The simplest method — reset your device and recover using your backup.
+The simplest method: reset your device and recover using your backup.
 
 ### When to Use This Method
 
@@ -112,7 +112,7 @@ Before resetting, write down your first receive address. After recovery, verify 
 
 ## Method 2: Recovery Test on a Different Device
 
-More thorough — verify your backup works on independent hardware.
+More thorough: verify your backup works on independent hardware.
 
 ### When to Use This Method
 
@@ -224,9 +224,9 @@ A passphrase creates a **completely different wallet**. Even a tiny difference (
 ### Verification Process
 
 1. Recover with seed phrase ONLY (no passphrase)
-2. Note the first address — this is the "decoy" wallet
+2. Note the first address (this is the "decoy" wallet)
 3. Now add your passphrase
-4. Note the first address — this is your real wallet
+4. Note the first address (this is your real wallet)
 5. Verify this matches your actual wallet
 
 ```
@@ -287,9 +287,9 @@ Perform a full recovery test if:
 
 **2. Check derivation path**
 Different wallet software may use different paths:
-- BIP84 (bc1q...): `m/84'/0'/0'` — Most common for SegWit
-- BIP49 (3...): `m/49'/0'/0'` — Older SegWit
-- BIP44 (1...): `m/44'/0'/0'` — Legacy
+- BIP84 (bc1q...): `m/84'/0'/0'` (most common for SegWit)
+- BIP49 (3...): `m/49'/0'/0'` (older SegWit)
+- BIP44 (1...): `m/44'/0'/0'` (legacy)
 
 **3. Check word list**
 Make sure you're using the English BIP39 word list. Other languages have different words.
@@ -328,7 +328,7 @@ Before trusting your backup with significant funds:
 
 ## Summary
 
-**Verification is not optional** — it's a critical part of self-custody.
+**Verification is not optional.** It's a critical part of self-custody.
 
 The process is simple:
 1. Reset or use a second device

@@ -8,7 +8,7 @@ tags: ["bitcoin node", "sparrow wallet", "self custody"]
 
 # Connect Sparrow Wallet to Your Node
 
-This is the moment everything comes together. You've set up Bitcoin Core. You've indexed the blockchain with an Electrum server. Now you'll connect your wallet—and from this point forward, your Bitcoin activity stays between you and your own infrastructure.
+This is the moment everything comes together. You've set up Bitcoin Core. You've indexed the blockchain with an Electrum server. Now you'll connect your wallet, and from this point forward, your Bitcoin activity stays between you and your own infrastructure.
 
 
 ## If You Used Parmanode
@@ -49,7 +49,7 @@ You need three pieces of information:
 
 ### Finding Your Server Address
 
-**If using Parmanode:** Check the Electrum server menu—connection details are displayed there.
+**If using Parmanode:** Check the Electrum server menu; connection details are displayed there.
 
 **If on the same computer as your node:** Use `127.0.0.1` (localhost).
 
@@ -97,9 +97,9 @@ If you have a VPN configured to your home network, connect to the VPN first, the
 
 Once connected, you can verify you're using your own node:
 
-1. **Check the server indicator** — Should show your IP or onion address, not a public server
-2. **Look at the block height** — Should match your node's sync status
-3. **Create a new wallet** — Address queries should complete quickly (your server is local)
+1. **Check the server indicator:** Should show your IP or onion address, not a public server
+2. **Look at the block height:** Should match your node's sync status
+3. **Create a new wallet:** Address queries should complete quickly (your server is local)
 
 You're no longer leaking your addresses to random public servers. Every query goes to your own infrastructure.
 
@@ -151,7 +151,7 @@ The same Electrum server can serve multiple wallets:
 
 ## Key Takeaways
 
-- **Parmanode users:** Sparrow auto-connects—no manual setup needed
+- **Parmanode users:** Sparrow auto-connects; no manual setup needed
 - **Manual setup:** Server IP + port 50002 + SSL enabled
 - **Remote access:** Use Tor onion address with proxy configured
 - **Blue indicator:** Confirms private connection to your own server
@@ -160,10 +160,10 @@ The same Electrum server can serve multiple wallets:
 
 ## Next Steps
 
-You're done! Your wallet now connects privately to your own node. Every balance check, every transaction broadcast—all verified by your own infrastructure.
+You're done! Your wallet now connects privately to your own node. Every balance check, every transaction broadcast: all verified by your own infrastructure.
 
 → **Learn more:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node)
 
 → **Privacy:** [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters)
 
-→ **Back:** [Bitcoin Node Guide](/docs/bitcoin-node/) — Complete guide overview
+→ **Back:** [Bitcoin Node Guide](/docs/bitcoin-node/) (complete guide overview)

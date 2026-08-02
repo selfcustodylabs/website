@@ -15,10 +15,10 @@ Most wallets generate seed phrases for you, but that requires trust: you are tru
 
 Common fatal errors:
 
-- **Using a compromised computer** — If your "air-gapped" machine was ever connected to the internet, it may have malware that captures your seed.
-- **Insufficient randomness** — Using weak entropy (like mental "random" numbers) makes your seed guessable.
-- **Transcription errors** — A single wrong word means a completely different (empty) wallet.
-- **Improper backup storage** — Paper burns, fades, and water-damages easily.
+- **Using a compromised computer**: If your "air-gapped" machine was ever connected to the internet, it may have malware that captures your seed.
+- **Insufficient randomness**: Using weak entropy (like mental "random" numbers) makes your seed guessable.
+- **Transcription errors**: A single wrong word means a completely different (empty) wallet.
+- **Improper backup storage**: Paper burns, fades, and water-damages easily.
 
 **There is no recovery.** No customer support. No password reset. If you lose access to your seed or generate it insecurely, your Bitcoin is gone forever.
 
@@ -44,7 +44,7 @@ Before starting, make sure you understand:
 
 - [What seed phrases are](/docs/learn/keys/seed) and how they protect your Bitcoin
 - [Private keys](/docs/learn/keys/intro) and how they relate to seeds
-- [Number systems](/docs/learn/keys/number-systems) — binary, decimal, and hex
+- [Number systems](/docs/learn/keys/number-systems): binary, decimal, and hex
 :::
 
 
@@ -64,20 +64,20 @@ When a wallet generates a seed phrase for you, you are trusting three things at 
 
 By generating your own seed with physical dice, you:
 
-- **Verify the randomness yourself** — no trust required
-- **Eliminate software vulnerabilities** — dice can't be hacked
-- **Understand what you're protecting** — knowledge is security
+- **Verify the randomness yourself**: no trust required
+- **Eliminate software vulnerabilities**: dice can't be hacked
+- **Understand what you're protecting**: knowledge is security
 
 
 ## Who Is This Guide For?
 
 | Situation | Recommendation |
 |-----------|----------------|
-| Learning with small amounts | **Not recommended** — Use a hardware wallet's built-in seed generation |
-| Moderate holdings, want to learn | **Maybe** — Practice on testnet first and understand the risks |
-| Significant holdings, high security needs | **Yes** — Verifiable entropy is worth the effort |
-| Don't trust hardware wallet RNG | **Yes** — This eliminates that trust requirement |
-| Not comfortable with technical processes | **No** — A mistake here loses everything |
+| Learning with small amounts | **Not recommended**: Use a hardware wallet's built-in seed generation |
+| Moderate holdings, want to learn | **Maybe**: Practice on testnet first and understand the risks |
+| Significant holdings, high security needs | **Yes**: Verifiable entropy is worth the effort |
+| Don't trust hardware wallet RNG | **Yes**: This eliminates that trust requirement |
+| Not comfortable with technical processes | **No**: A mistake here loses everything |
 
 **Most people should use their hardware wallet's seed generation.** This guide is for users who want verifiable randomness and understand the additional risks of a manual process.
 
@@ -87,12 +87,12 @@ By generating your own seed with physical dice, you:
 :::warning Before You Begin
 Your seed generation environment **must** meet ALL of these requirements:
 
-- [ ] **Air-gapped computer** — A machine that has NEVER connected to the internet and NEVER will
-- [ ] **Fresh operating system** — Booted from a verified, read-only medium (like a Tails USB)
-- [ ] **No wireless hardware** — Wi-Fi and Bluetooth physically removed or disabled in BIOS
-- [ ] **No cameras or microphones** — Cover or disconnect them
-- [ ] **Private location** — No one can see your screen or your seed words
-- [ ] **No electronic devices nearby** — Phones, smartwatches, etc. can capture keystrokes or screens
+- [ ] **Air-gapped computer**: A machine that has NEVER connected to the internet and NEVER will
+- [ ] **Fresh operating system**: Booted from a verified, read-only medium (like a Tails USB)
+- [ ] **No wireless hardware**: Wi-Fi and Bluetooth physically removed or disabled in BIOS
+- [ ] **No cameras or microphones**: Cover or disconnect them
+- [ ] **Private location**: No one can see your screen or your seed words
+- [ ] **No electronic devices nearby**: Phones, smartwatches, etc. can capture keystrokes or screens
 
 **If any of these are not met, your seed may be compromised before you even finish generating it.**
 :::
@@ -102,7 +102,7 @@ Your seed generation environment **must** meet ALL of these requirements:
 
 ### Casino dice
 
-Casino-grade dice are ideal for generating true randomness. You don't strictly need expensive dice — any standard six-sided dice will work, even with small biases, as long as you use several at a time. Using 5–10 dice per roll speeds the process up dramatically.
+Casino-grade dice are ideal for generating true randomness. You don't strictly need expensive dice. Any standard six-sided dice will work, even with small biases, as long as you use several at a time. Using 5–10 dice per roll speeds the process up dramatically.
 
 ![Dice](/img/seed/dice.webp)
 
@@ -110,8 +110,8 @@ Casino-grade dice are ideal for generating true randomness. You don't strictly n
 
 An air-gapped computer is a device that has never been connected to the internet and is physically incapable of doing so. This is crucial for securely generating and handling your private key. Suitable options:
 
-- **Raspberry Pi Zero 1.3** — Highly recommended because it lacks built-in Wi-Fi and Bluetooth, reducing attack surfaces. Harder to find these days, but worth the hunt.
-- **Laptop or PC** — A machine with the Wi-Fi and Bluetooth modules physically removed and the Ethernet port permanently disabled. Even if stolen, an attacker cannot put it back online to extract the private key.
+- **Raspberry Pi Zero 1.3**: Highly recommended because it lacks built-in Wi-Fi and Bluetooth, reducing attack surfaces. Harder to find these days, but worth the hunt.
+- **Laptop or PC**: A machine with the Wi-Fi and Bluetooth modules physically removed and the Ethernet port permanently disabled. Even if stolen, an attacker cannot put it back online to extract the private key.
 
 ![Raspberry Pi Zero](/img/seed/rpizero.webp)
 
@@ -139,7 +139,7 @@ Before rolling, decide how each roll is converted into a binary value. This mapp
 
 ### Roll and record
 
-Roll the dice and record the results from left to right. Consistency is key — always read in the same order. If it is unclear which die is further to the left, re-roll those dice.
+Roll the dice and record the results from left to right. Consistency is key: always read in the same order. If it is unclear which die is further to the left, re-roll those dice.
 
 :::warning
 It is crucial that the data is truly random. If it lacks randomness, there is a risk that someone else could reproduce the exact same sequence. This would allow them to regenerate your private key and potentially access all of your Bitcoin.
@@ -185,18 +185,18 @@ Create 23 rows of 11 binary digits each, plus a final 24th row containing only 3
 
 You have now generated 256 bits of entropy (23 full rows of 11 bits + 3 bits on the 24th row). Each 11-bit segment will be converted into one BIP39 seed word later.
 
-Dividing 256 bits by 11 gives 23.27 words, which is not a whole number. To get a clean 24-word seed, we need eight more bits — bringing the total to 264 bits (24 × 11). Those final 8 bits come from the checksum calculated in Step 3.
+Dividing 256 bits by 11 gives 23.27 words, which is not a whole number. To get a clean 24-word seed, we need eight more bits, bringing the total to 264 bits (24 × 11). Those final 8 bits come from the checksum calculated in Step 3.
 
 
 ## Step 2: Convert Binary to Decimal
 
-Each of the 24 rows of 11 binary digits must be converted to a decimal number **manually** on your air-gapped computer or by using paper and pen. Never use an online tool — copying your binary string into a web calculator could expose your seed.
+Each of the 24 rows of 11 binary digits must be converted to a decimal number **manually** on your air-gapped computer or by using paper and pen. Never use an online tool. Copying your binary string into a web calculator could expose your seed.
 
 With 11 binary digits, the smallest number is 0 (`00000000000`) and the largest is 2047 (`11111111111`). Each decimal result will therefore fall in the range 0–2047.
 
 You can convert in either of two ways.
 
-### Method A — air-gapped shell
+### Method A: air-gapped shell
 
 For example, to convert the first line, `10111000101`, type:
 
@@ -206,7 +206,7 @@ echo $((2#10111000101))
 
 This will output **1477**. Replace the binary digits in the command with each 11-digit row and run the calculation.
 
-### Method B — paper and pen
+### Method B: paper and pen
 
 At the top-left of your page, write the powers of two from left to right, aligned with the binary digits below: `1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1`.
 
@@ -263,7 +263,7 @@ The last eight missing digits are calculated from the 256 bits you have so far, 
 
 ### Generate the hash output
 
-On your air-gapped Linux machine, open a terminal and feed your 256-bit binary string into SHA-256. Replace the example digits with your own binary string — it must be one continuous line:
+On your air-gapped Linux machine, open a terminal and feed your 256-bit binary string into SHA-256. Replace the example digits with your own binary string; it must be one continuous line:
 
 ```bash
 echo 1011100010111011100100101111001110110100010111111010101111110010000010000010110111000101101010101001011101110111111000101011110011101011101010010011000111101110001111111101110100011000101101010001101111101010011111000100001010001011011101010110011000101001 | shasum -a 256 -0
@@ -342,21 +342,21 @@ Concatenated, the checksum is **`01010010`** (8 bits). Append it to the 24th row
 
 </div>
 
-Now convert row 24 from binary to decimal using the same method as Step 2. That gives the final decimal value of row 24 — in our example, **338**.
+Now convert row 24 from binary to decimal using the same method as Step 2. That gives the final decimal value of row 24 (in our example, **338**).
 
 
 ## Step 4: Look Up BIP39 Words
 
 BIP39 (Bitcoin Improvement Proposal 39) defines a list of **2048 words**, arranged alphabetically. Each word corresponds to a specific position. Your 24 decimal numbers (from Step 2 and the checksum row in Step 3) are used to look up your 24 seed words.
 
-- The smallest possible value is 0 (binary `00000000000`), which corresponds to the word **"abandon"** — the first word on the list.
-- The largest possible value is 2047 (binary `11111111111`), which corresponds to the word **"zoo"** — the last word on the list.
+- The smallest possible value is 0 (binary `00000000000`), which corresponds to the word **"abandon"**, the first word on the list.
+- The largest possible value is 2047 (binary `11111111111`), which corresponds to the word **"zoo"**, the last word on the list.
 
 :::info Zero-indexed list, one-indexed GitHub
 Computers count from 0. The BIP39 position of "abandon" is 0, not 1. However, the [official BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) on GitHub displays line numbers starting from 1. So a BIP39 position of 1477 maps to **GitHub line 1478**. Always add 1 to your decimal when searching the GitHub file.
 :::
 
-For example, the first 11-bit binary number we calculated equals 1477 in decimal. On GitHub you will find it on line 1478 — the word is **"reward"**.
+For example, the first 11-bit binary number we calculated equals 1477 in decimal. On GitHub you will find it on line 1478: the word is **"reward"**.
 
 Look up each decimal value below (remembering to add 1 when searching GitHub) and record the corresponding word for all 24 rows.
 
@@ -391,11 +391,11 @@ Look up each decimal value below (remembering to add 1 when searching GitHub) an
 
 </div>
 
-Congratulations — you have now created a valid 24-word Bitcoin mnemonic seed.
+Congratulations, you have now created a valid 24-word Bitcoin mnemonic seed.
 
 ### Verify the seed in Sparrow Wallet
 
-As a final sanity check, install a software wallet such as Sparrow on your air-gapped computer and enter the 24 words. If Sparrow accepts the seed, your checksum matched and the whole chain of calculations is correct. If it rejects the seed, the checksum is wrong — double-check every step, especially the SHA-256 output and the final row of binary.
+As a final sanity check, install a software wallet such as Sparrow on your air-gapped computer and enter the 24 words. If Sparrow accepts the seed, your checksum matched and the whole chain of calculations is correct. If it rejects the seed, the checksum is wrong: double-check every step, especially the SHA-256 output and the final row of binary.
 
 ![Importing the seed into Sparrow Wallet for verification](/img/seed/import.webp)
 
@@ -406,14 +406,14 @@ Your Bitcoin seed phrase is the key to your funds. If it is lost or compromised,
 
 ### Why metal
 
-- **Fire and water resistance** — Unlike paper, metal plates withstand extreme temperatures and flooding.
-- **Durability** — Metal does not degrade over time the way paper and electronic storage do.
-- **Tamper resistance** — A sealed metal backup makes unauthorized access visible.
-- **Longevity** — A well-engraved or stamped metal seed plate can last a lifetime, keeping your Bitcoin recoverable for decades.
+- **Fire and water resistance**: Unlike paper, metal plates withstand extreme temperatures and flooding.
+- **Durability**: Metal does not degrade over time the way paper and electronic storage do.
+- **Tamper resistance**: A sealed metal backup makes unauthorized access visible.
+- **Longevity**: A well-engraved or stamped metal seed plate can last a lifetime, keeping your Bitcoin recoverable for decades.
 
 ### How to store your metal backup safely
 
-- Keep it in a secure location — a safe, hidden vault, or safety deposit box.
+- Keep it in a secure location: a safe, hidden vault, or safety deposit box.
 - Consider splitting your seed into multiple secure locations.
 - Avoid storing it digitally or in places prone to theft or destruction.
 - Once the seed is stamped into metal, **destroy the paper copy** (burn it).

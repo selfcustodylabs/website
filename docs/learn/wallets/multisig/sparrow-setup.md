@@ -28,9 +28,9 @@ For maximum privacy, connect Sparrow to your own Bitcoin node. If you don't have
 1. Open Sparrow Wallet
 2. Go to `File` → `Preferences` → `Server`
 3. Choose your connection type:
-   - **Bitcoin Core** — If running your own node
-   - **Private Electrum** — Your own Electrum server
-   - **Public Server** — Acceptable for testing (less private)
+   - **Bitcoin Core**: if running your own node
+   - **Private Electrum**: your own Electrum server
+   - **Public Server**: acceptable for testing (less private)
 4. Click `Test Connection` then `Close`
 
 
@@ -56,7 +56,7 @@ You'll see the **Settings** screen with configuration options.
 This creates a **2-of-3 multisig**.
 
 ### Script Type
-3. Leave as **Native Segwit (P2WSH)** — Most efficient and recommended
+3. Leave as **Native Segwit (P2WSH)**: most efficient and recommended
 
 Your settings should show: `2 of 3 Multi Signature (Sorted Multi, Native Segwit)`
 
@@ -71,7 +71,7 @@ Below the settings, you'll see tabs for `Keystore 1`, `Keystore 2`, and `Keystor
 2. Click **"Connected Hardware Wallet"**
 3. Connect your first hardware wallet via USB
 4. Click **"Scan..."** in the dialog
-5. Your device should appear—click on it
+5. Your device should appear. Click on it
 6. Unlock the device with your PIN
 7. Click **"Import Keystore"**
 
@@ -165,7 +165,7 @@ These devices register automatically when you verify an address:
 4. Each device should display the **exact same address**
 5. Confirm on each device
 
-If addresses don't match on all devices, **STOP** — something is wrong.
+If addresses don't match on all devices, **STOP**: something is wrong.
 
 ```
 ADDRESS VERIFICATION:
@@ -201,7 +201,7 @@ The PDF contains:
 - Derivation paths
 - Script type
 
-**Store this with your seed backups** — you'll need it for recovery.
+**Store this with your seed backups.** You'll need it for recovery.
 
 
 ## Making Your First Transaction

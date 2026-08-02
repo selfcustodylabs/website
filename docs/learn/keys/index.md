@@ -57,7 +57,7 @@ This section covers the key concepts in order, building from simple to complex:
 The foundation. A private key is just a very large random number that gives you control over Bitcoin at a specific address. Understand this, and everything else makes sense.
 
 ### 2. [Seed Phrases](/docs/learn/keys/seed)
-How that random number becomes 24 memorable words. The BIP39 standard that makes backups human-friendly—and why word order matters.
+How that random number becomes 24 memorable words. The BIP39 standard that makes backups human-friendly, and why word order matters.
 
 ### 3. [Extended Private Keys (xprv)](/docs/learn/keys/xprv)
 How one seed generates unlimited keys. The "master key" concept that lets you create as many addresses as you need from a single backup.
@@ -66,7 +66,7 @@ How one seed generates unlimited keys. The "master key" concept that lets you cr
 The "watch-only" side of your wallet. How you can share the ability to *see* your Bitcoin without sharing the ability to *spend* it.
 
 ### 5. [Derivation Paths](/docs/learn/keys/derivation-path)
-The roadmap your wallet follows to generate specific keys. Why `m/84'/0'/0'/0/0` matters—and when it doesn't.
+The roadmap your wallet follows to generate specific keys. Why `m/84'/0'/0'/0/0` matters, and when it doesn't.
 
 ### 6. [Passphrases](/docs/learn/keys/passphrase)
 An optional 25th word that creates hidden wallets. Extra security, but with serious trade-offs to understand.
@@ -75,7 +75,7 @@ An optional 25th word that creates hidden wallets. Extra security, but with seri
 Why the quality of your random number matters enormously. The difference between "random enough" and actually random.
 
 ### 8. [Number Systems](/docs/learn/keys/number-systems) *(Technical)*
-Binary, decimal, hexadecimal—the number formats you'll encounter. Reference material for when you need it.
+Binary, decimal, hexadecimal: the number formats you'll encounter. Reference material for when you need it.
 
 
 ## Key Concepts to Remember
@@ -87,15 +87,15 @@ Your Bitcoin exists on the blockchain. Your private key is the only proof that y
 :::
 
 :::tip Principle 2: Seeds Are Keys
-Your seed phrase isn't a "backup" of your key—it *is* your key in a different format. Anyone with your seed phrase controls your Bitcoin completely.
+Your seed phrase isn't a "backup" of your key. It *is* your key in a different format. Anyone with your seed phrase controls your Bitcoin completely.
 :::
 
 :::tip Principle 3: One Seed, Many Keys
-A single seed phrase can generate billions of addresses. You don't need a new seed for each transaction—your wallet handles this automatically.
+A single seed phrase can generate billions of addresses. You don't need a new seed for each transaction; your wallet handles this automatically.
 :::
 
 :::tip Principle 4: Public ≠ Private
-Extended public keys (xpubs) let others see your balances without being able to spend. Useful, but still sensitive—they reveal your entire transaction history.
+Extended public keys (xpubs) let others see your balances without being able to spend. Useful, but still sensitive: they reveal your entire transaction history.
 :::
 
 
@@ -123,11 +123,11 @@ Extended public keys (xpubs) let others see your balances without being able to 
 
 Start with the foundation:
 
-→ **[Private Keys Explained](/docs/learn/keys/intro)** — What keys are and why they matter
+→ **[Private Keys Explained](/docs/learn/keys/intro)**: What keys are and why they matter
 
 Or if you want the practical summary:
 
-→ **[Seed Phrases](/docs/learn/keys/seed)** — The 24 words that control your Bitcoin
+→ **[Seed Phrases](/docs/learn/keys/seed)**: The 24 words that control your Bitcoin
 
 <RelatedArticles 
   title="Related Sections"

@@ -15,7 +15,7 @@ slug: /learn/privacy/coinjoin
 **Prerequisites:** Understanding of [UTXOs](/docs/learn/transactions/utxos), [chain analysis](/docs/learn/privacy/chain-analysis), and [UTXO management](/docs/learn/privacy/utxo-management).
 :::
 
-CoinJoin is one of Bitcoin's most important privacy tools. It lets multiple users combine their transactions so that blockchain analysts cannot determine who owns which output. This page covers the full picture: how CoinJoin works, which services exist, and — most importantly — how to handle your coins afterward so you don't undo the privacy you just paid for.
+CoinJoin is one of Bitcoin's most important privacy tools. It lets multiple users combine their transactions so that blockchain analysts cannot determine who owns which output. This page covers the full picture: how CoinJoin works, which services exist, and (most importantly) how to handle your coins afterward so you don't undo the privacy you just paid for.
 
 
 ## What is CoinJoin?
@@ -56,7 +56,7 @@ CoinJoin directly defeats the [chain analysis](/docs/learn/privacy/chain-analysi
 - Creating equal outputs (hides which output belongs to whom)
 - Adding ambiguity to the transaction graph
 
-After a good CoinJoin, analysts cannot determine which output is yours and your previous transaction history is broken — your coins gain **forward privacy**.
+After a good CoinJoin, analysts cannot determine which output is yours and your previous transaction history is broken; your coins gain **forward privacy**.
 
 
 ## How CoinJoin Works
@@ -117,7 +117,7 @@ Each additional round dilutes the information available to an analyst.
 
 4. SIGNING
    Each participant verifies the transaction and signs their inputs.
-   No one can steal — each person only signs their own inputs.
+   No one can steal; each person only signs their own inputs.
 
 5. BROADCAST
    Once everyone signs, the transaction is broadcast to the network.
@@ -131,9 +131,9 @@ Each additional round dilutes the information available to an analyst.
 
 Three people want more privacy:
 
-- **Alice** — received 1 BTC from her employer (identity linked)
-- **Bob** — bought 1 BTC on an exchange with KYC
-- **Carol** — has 1 BTC with a known history
+- **Alice:** received 1 BTC from her employer (identity linked)
+- **Bob:** bought 1 BTC on an exchange with KYC
+- **Carol:** has 1 BTC with a known history
 
 Without CoinJoin, each transaction is clearly traceable. They coordinate a CoinJoin:
 
@@ -161,18 +161,18 @@ After the CoinJoin:
 
 ### ✅ What CoinJoin Accomplishes
 
-- **Breaks transaction history** — Previous links are obscured
-- **Creates uncertainty** — Analysts can't be sure who owns what
-- **Increases anonymity** — Your coins mix with many others
-- **Forward privacy** — Mixed coins gain a fresh history
+- **Breaks transaction history:** Previous links are obscured
+- **Creates uncertainty:** Analysts can't be sure who owns what
+- **Increases anonymity:** Your coins mix with many others
+- **Forward privacy:** Mixed coins gain a fresh history
 
 ### ❌ What CoinJoin Cannot Do
 
-- **Hide the fact you used CoinJoin** — The transaction is visible on-chain and identifiable as a CoinJoin
-- **Make you anonymous** — You are still behind a pseudonym
-- **Fix poor operational security** — If you reveal identity later, privacy is broken
-- **Work with all amounts** — Equal outputs constrain sizes
-- **Protect against all analysis** — Some heuristics still apply
+- **Hide the fact you used CoinJoin:** The transaction is visible on-chain and identifiable as a CoinJoin
+- **Make you anonymous:** You are still behind a pseudonym
+- **Fix poor operational security:** If you reveal identity later, privacy is broken
+- **Work with all amounts:** Equal outputs constrain sizes
+- **Protect against all analysis:** Some heuristics still apply
 
 
 ## CoinJoin Services
@@ -198,7 +198,7 @@ Several tools make CoinJoin accessible. Each has a clear audience.
 1. Download and install Wasabi Wallet
 2. Create or import a wallet
 3. Receive Bitcoin into the wallet
-4. Enable CoinJoin — coins mix automatically
+4. Enable CoinJoin: coins mix automatically
 5. Wait for mixing rounds to complete
 
 **Pros**
@@ -270,8 +270,8 @@ Whirlpool is a CoinJoin implementation originally from Samourai Wallet, now avai
 
 **Two roles**
 
-- **Taker** — pays for mixes. You pay makers a small fee to use their liquidity. Your mix happens immediately. You control timing.
-- **Maker** — earns fees by providing liquidity. You offer your coins for others to mix with. You earn fees when selected, and your coins get mixed in the process.
+- **Taker:** pays for mixes. You pay makers a small fee to use their liquidity. Your mix happens immediately. You control timing.
+- **Maker:** earns fees by providing liquidity. You offer your coins for others to mix with. You earn fees when selected, and your coins get mixed in the process.
 
 **Pros**
 
@@ -324,7 +324,7 @@ See the [Bitcoin Node guide](/docs/bitcoin-node) to set up your own.
 
 Mixing your coins is only half the battle. How you **handle and spend** mixed coins determines whether you maintain privacy or accidentally undo all your work.
 
-:::danger Critical Rules — Never Break These
+:::danger Critical Rules: Never Break These
 1. Never merge mixed coins with KYC or unmixed coins
 2. Never send multiple mixed UTXOs to the same address
 3. Always use your own node
@@ -353,7 +353,7 @@ When you combine a mixed UTXO with an unmixed one:
 - The mixed coin is now also linked to your identity.
 - All mixing effort is wasted.
 
-**How to avoid this** — use **separate wallets** (a "KYC wallet" and a "private wallet") or use **careful labeling** and never let the two categories touch each other.
+**How to avoid this:** use **separate wallets** (a "KYC wallet" and a "private wallet") or use **careful labeling** and never let the two categories touch each other.
 
 ### Rule 2: Don't Consolidate Mixed Coins
 
@@ -375,16 +375,16 @@ Before this transaction, each 0.1 BTC could have belonged to anyone. After conso
 
 ### Rule 3: Handle Change Carefully
 
-When you spend a mixed coin you may receive change. That change has reduced privacy — it is obviously linked to whoever made the payment and should be considered "semi-tainted". Options:
+When you spend a mixed coin you may receive change. That change has reduced privacy: it is obviously linked to whoever made the payment and should be considered "semi-tainted". Options:
 
-1. **Remix it** — send it through CoinJoin again
-2. **Use it for non-private spending** — since it is already somewhat exposed
-3. **Combine it only with other change** — never with fresh mixed coins
-4. **Avoid change entirely** — when possible, select UTXOs that match your payment amount closely
+1. **Remix it:** send it through CoinJoin again
+2. **Use it for non-private spending:** since it is already somewhat exposed
+3. **Combine it only with other change:** never with fresh mixed coins
+4. **Avoid change entirely:** when possible, select UTXOs that match your payment amount closely
 
 ### Rule 4: Always Use Your Own Node
 
-This applies to all Bitcoin usage, but is critical for mixed coins. If you use someone else's node, the operator learns which addresses belong to you — including your mixed addresses. See the [Bitcoin Node guide](/docs/bitcoin-node).
+This applies to all Bitcoin usage, but is critical for mixed coins. If you use someone else's node, the operator learns which addresses belong to you, including your mixed addresses. See the [Bitcoin Node guide](/docs/bitcoin-node).
 
 ### Rule 5: Use Coin Control
 
@@ -397,7 +397,7 @@ Opening Lightning channels with mixed coins adds another privacy layer. The chan
 1. Mix your coins (CoinJoin)
 2. Open Lightning channels with mixed UTXOs
 3. Spend via Lightning for everyday purchases
-4. Close channels eventually — the resulting coins have a fresh history
+4. Close channels eventually, and the resulting coins have a fresh history
 
 ### Rule 7: Be Patient
 
@@ -434,10 +434,10 @@ Don't spend mixed coins immediately after mixing. If you CoinJoin at 2:00 PM and
 
 CoinJoin itself is legal in most jurisdictions. It is a privacy tool, not a crime. However, be aware:
 
-- **Know your local laws** — regulations vary
-- **Some exchanges flag CoinJoin outputs** — they may freeze deposits or require additional verification
-- **Regulatory landscape is evolving** — what's legal today may change
-- **Privacy is a human right** — UN declarations support financial privacy
+- **Know your local laws:** regulations vary
+- **Some exchanges flag CoinJoin outputs:** they may freeze deposits or require additional verification
+- **Regulatory landscape is evolving:** what's legal today may change
+- **Privacy is a human right:** UN declarations support financial privacy
 
 Using CoinJoin is not an admission of wrongdoing. It is equivalent to keeping your bank statements private.
 
@@ -458,11 +458,11 @@ CoinJoin may be overkill if you only use small amounts, acquired Bitcoin anonymo
 ## Summary
 
 - CoinJoin gives you privacy, but only if you maintain it afterward.
-- Separate mixed from unmixed — never let them touch.
-- Spend mixed coins individually — don't consolidate.
-- Use your own node — essential for real privacy.
-- Use coin control — be deliberate about what you spend.
-- Be patient — don't rush to spend after mixing.
+- Separate mixed from unmixed; never let them touch.
+- Spend mixed coins individually; don't consolidate.
+- Use your own node: essential for real privacy.
+- Use coin control: be deliberate about what you spend.
+- Be patient; don't rush to spend after mixing.
 
 Privacy is a practice, not a one-time action. Every transaction is an opportunity to preserve or destroy your privacy.
 

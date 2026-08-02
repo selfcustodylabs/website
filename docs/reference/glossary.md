@@ -447,6 +447,6 @@ If a term is missing, [let us know](mailto:selfcustodylabs@proton.me) and we'll 
 
 ## Continue Learning
 
-- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — Start from the beginning
-- [Learn Section](/learn) — Comprehensive Bitcoin education
-- [Guides](/guides) — Hands-on tutorials
+- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): Start from the beginning
+- [Learn Section](/learn): Comprehensive Bitcoin education
+- [Guides](/guides): Hands-on tutorials

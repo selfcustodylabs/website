@@ -8,24 +8,24 @@ tags: ["inheritance", "estate planning", "security", "advanced", "multisig"]
 
 # Bitcoin Inheritance Planning
 
-How to ensure your Bitcoin passes to your loved ones—not lost forever.
+How to ensure your Bitcoin passes to your loved ones, not lost forever.
 
 :::danger The Stakes Are High
-An estimated **4 million Bitcoin** (worth hundreds of billions) are permanently lost—many because owners died without sharing access. Don't let your Bitcoin become another statistic.
+An estimated **4 million Bitcoin** (worth hundreds of billions) are permanently lost, many because owners died without sharing access. Don't let your Bitcoin become another statistic.
 :::
 
 ## On This Page
 
 This comprehensive guide covers everything you need:
 
-1. **[Why Bitcoin Inheritance Is Different](#why-bitcoin-inheritance-is-different)** — Understanding the unique challenge
-2. **[Approaches by Complexity](#approaches-by-complexity)** — Five methods from simple to advanced
-3. **[Recommended Setup: Family Multisig](#recommended-setup-family-multisig)** — Step-by-step implementation
-4. **[For Single-Sig Wallets](#for-single-sig-wallets)** — Options if you don't use multisig
-5. **[Common Mistakes to Avoid](#common-mistakes-to-avoid)** — Eight pitfalls and how to prevent them
-6. **[Legal Considerations](#legal-considerations)** — Wills, trusts, and taxes
-7. **[Maintenance Schedule](#maintenance-schedule)** — Keeping your plan current
-8. **[Quick Start Checklist](#quick-start-checklist)** — Action items summary
+1. **[Why Bitcoin Inheritance Is Different](#why-bitcoin-inheritance-is-different)**: Understanding the unique challenge
+2. **[Approaches by Complexity](#approaches-by-complexity)**: Five methods from simple to advanced
+3. **[Recommended Setup: Family Multisig](#recommended-setup-family-multisig)**: Step-by-step implementation
+4. **[For Single-Sig Wallets](#for-single-sig-wallets)**: Options if you don't use multisig
+5. **[Common Mistakes to Avoid](#common-mistakes-to-avoid)**: Eight pitfalls and how to prevent them
+6. **[Legal Considerations](#legal-considerations)**: Wills, trusts, and taxes
+7. **[Maintenance Schedule](#maintenance-schedule)**: Keeping your plan current
+8. **[Quick Start Checklist](#quick-start-checklist)**: Action items summary
 
 **Time to read:** ~20 minutes | **Time to implement:** 1-2 hours
 
@@ -52,9 +52,9 @@ If you die without a plan, your Bitcoin dies with you. There is no appeals proce
 
 Bitcoin inheritance creates a fundamental tension:
 
-**Security requires secrecy** — The fewer people who know your seed phrase, the safer your Bitcoin from theft.
+**Security requires secrecy:** The fewer people who know your seed phrase, the safer your Bitcoin from theft.
 
-**Inheritance requires sharing** — Someone must eventually access your keys after you're gone.
+**Inheritance requires sharing:** Someone must eventually access your keys after you're gone.
 
 Every inheritance solution is a balance between these competing needs. The right choice depends on your situation.
 
@@ -188,8 +188,8 @@ Follow the [Multisig Setup Guide](/docs/learn/wallets/multisig/) to create a 2-o
 
 Assign keys with inheritance in mind:
 - **Key 1:** Your primary device (e.g., Coldcard)
-- **Key 2:** Heir's device (e.g., Trezor) — they keep it
-- **Key 3:** Backup device (e.g., Ledger) — secure storage
+- **Key 2:** Heir's device (e.g., Trezor), they keep it
+- **Key 3:** Backup device (e.g., Ledger), secure storage
 
 #### Step 2: Distribute the Seeds
 
@@ -250,9 +250,9 @@ Write clear instructions for your heirs. Include:
 - Key 3 location: [details]
 
 ### If Something Goes Wrong
-- DO NOT share seed phrases with "recovery services" — they are scams
+- DO NOT share seed phrases with "recovery services": they are scams
 - Contact [trusted technical person] before taking any action
-- The Bitcoin cannot be "hacked" — if seeds are secure, funds are secure
+- The Bitcoin cannot be "hacked": if seeds are secure, funds are secure
 ```
 
 #### Step 5: Test the Setup
@@ -343,7 +343,7 @@ Seed phrases alone do NOT restore a multisig wallet. The descriptor is required.
 An untested inheritance plan is no plan at all. Walk through the entire process with your heirs before you need it.
 
 ### 6. Single Point of Failure
-If everything depends on one document, one location, or one person—that's a vulnerability. Build in redundancy.
+If everything depends on one document, one location, or one person, that's a vulnerability. Build in redundancy.
 
 ### 7. Over-Engineering
 A complex plan that heirs can't execute is worse than a simple plan they can. Match complexity to your heirs' technical ability.
@@ -405,7 +405,7 @@ Inheritance planning isn't "set and forget." Review annually:
 - [ ] **Check contacts:** Are attorney, heir, trustee contacts still valid?
 - [ ] **Test backups:** Do seed backups still work?
 - [ ] **Review instructions:** Are they still accurate and clear?
-- [ ] **Life changes:** Marriage, divorce, births, deaths—update beneficiaries?
+- [ ] **Life changes:** Marriage, divorce, births, deaths: update beneficiaries?
 - [ ] **Software updates:** Has wallet software changed significantly?
 
 ### When to Update Your Plan
@@ -453,16 +453,16 @@ The best plan is one that:
 
 ## Next Steps
 
-1. **Assess your situation** — How much Bitcoin? Who are your heirs? What's their technical level?
-2. **Choose an approach** — Match complexity to your needs and heirs' abilities
-3. **Implement the basics** — Even a simple letter is better than nothing
-4. **Test the plan** — Walk through it before you need it
-5. **Document and store** — Multiple copies, multiple locations
-6. **Schedule reviews** — Annual check-up at minimum
+1. **Assess your situation:** How much Bitcoin? Who are your heirs? What's their technical level?
+2. **Choose an approach:** Match complexity to your needs and heirs' abilities
+3. **Implement the basics:** Even a simple letter is better than nothing
+4. **Test the plan:** Walk through it before you need it
+5. **Document and store:** Multiple copies, multiple locations
+6. **Schedule reviews:** Annual check-up at minimum
 
 ### Related Guides
 
-- [Multisig Setup Guide](/docs/learn/wallets/multisig/) — Implement 2-of-3 inheritance multisig
-- [Backup Verification](/docs/wallet-setup/backup-verification/) — Ensure your backups work
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models/) — Understand what you're protecting against
-- [Physical Security](/docs/security/physical-security/) — Secure storage locations
+- [Multisig Setup Guide](/docs/learn/wallets/multisig/): Implement 2-of-3 inheritance multisig
+- [Backup Verification](/docs/wallet-setup/backup-verification/): Ensure your backups work
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models/): Understand what you're protecting against
+- [Physical Security](/docs/security/physical-security/): Secure storage locations

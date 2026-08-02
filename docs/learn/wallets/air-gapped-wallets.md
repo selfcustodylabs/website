@@ -120,7 +120,7 @@ Once you have your laptop, make it impossible to connect to the internet:
 - **Remove wireless modules:** Take out the Wi-Fi, Bluetooth, and mobile network (WWAN) modules. This prevents the laptop from connecting wirelessly.
 - **Disable the Ethernet port:** Either remove the Ethernet port from the motherboard or physically disable it so the laptop cannot connect, even if stolen.
 
-### Step 2: BIOS — Libreboot
+### Step 2: BIOS (Libreboot)
 
 [Libreboot](/docs/libreboot) is an open-source BIOS/firmware replacement with significant security advantages for an air-gapped computer. It removes proprietary firmware like Intel Management Engine (ME) and AMD Platform Security Processor (PSP), eliminating backdoors that could compromise the device.
 
@@ -128,13 +128,13 @@ For an air-gapped setup, where the whole point is maintaining an isolated, tampe
 
 If your hardware isn't supported by Libreboot, [Coreboot](/docs/coreboot) supports a wider range of laptops and provides most of the same benefits.
 
-### Step 3: Operating System — Linux Mint
+### Step 3: Operating System (Linux Mint)
 
 Linux Mint is a good choice for an air-gapped computer because it balances ease of use and stability. It is lightweight and user-friendly, ideal for minimizing unnecessary services in an offline setup. Built on Ubuntu, it benefits from broad hardware compatibility and a reliable release cadence.
 
 Its default desktop environment is straightforward to navigate, even for users who aren't deeply familiar with Linux.
 
-### Step 4: Disk Encryption — LUKS
+### Step 4: Disk Encryption (LUKS)
 
 Linux Mint offers full-disk encryption through LUKS (Linux Unified Key Setup), which keeps all data on the device encrypted at rest. During installation, select LUKS to encrypt the entire drive. This protects sensitive data even if the device is physically stolen.
 
@@ -158,8 +158,8 @@ Use your air-gapped computer to create a truly random seed phrase with the **[DI
 
 :::info Firmware Options
 For the best air-gapped security, replace the stock BIOS with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)** — Removes Intel ME completely
-- **[Coreboot Guide](/docs/coreboot)** — Supports more laptop models
+- **[Libreboot Guide](/docs/libreboot)**: removes Intel ME completely
+- **[Coreboot Guide](/docs/coreboot)**: supports more laptop models
 :::
 
 :::danger Critical Reminder

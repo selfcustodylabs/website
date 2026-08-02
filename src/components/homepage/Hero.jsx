@@ -52,7 +52,7 @@ export default function Hero() {
 
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg md:text-xl animate-fade-in-up">
           Learn self-custody the right way. Practical guides that teach you to hold your own keys
-          with confidence — from your first hardware wallet to multisig vaults.
+          with confidence, from your first hardware wallet to multisig vaults.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 animate-fade-in-up">

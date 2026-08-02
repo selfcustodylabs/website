@@ -8,20 +8,20 @@ tags: ["bitcoin node", "tor", "privacy", "self custody"]
 
 # Tor Configuration
 
-Your Bitcoin node talks to the world in two ways: it connects to other Bitcoin nodes to stay synchronized, and it serves your wallet's queries. Both of these connections have privacy implications—and Tor can help with both.
+Your Bitcoin node talks to the world in two ways: it connects to other Bitcoin nodes to stay synchronized, and it serves your wallet's queries. Both of these connections have privacy implications, and Tor can help with both.
 
 
 ## Why Tor Matters for Nodes
 
 ### Your IP Address is Your Identity
 
-When your node connects to other Bitcoin nodes, those nodes see your IP address. Your IP address isn't anonymous—it's tied to your identity through your Internet Service Provider's records. With minimal effort, someone can:
+When your node connects to other Bitcoin nodes, those nodes see your IP address. Your IP address isn't anonymous: it's tied to your identity through your Internet Service Provider's records. With minimal effort, someone can:
 
 - Determine your approximate geographic location
 - Identify that you're running a Bitcoin node
 - Potentially correlate your node with other online activity
 
-Why does this matter? If attackers know you're running a Bitcoin node, they might assume you hold significant Bitcoin. If you're running a Lightning node, your channel capacity is publicly visible—giving observers a floor estimate of your holdings. This makes you a potential target for physical attacks.
+Why does this matter? If attackers know you're running a Bitcoin node, they might assume you hold significant Bitcoin. If you're running a Lightning node, your channel capacity is publicly visible, giving observers a floor estimate of your holdings. This makes you a potential target for physical attacks.
 
 Running your node over Tor hides your IP address from the Bitcoin network. Other nodes see a Tor exit address, not your home connection.
 
@@ -64,7 +64,7 @@ This is about **privacy**. By routing your node's connections through Tor, you p
 
 ### Configuration
 
-Most node software can be configured to connect to peers exclusively over Tor. In Parmanode, Tor support is built into the menus—enable it from the appropriate option.
+Most node software can be configured to connect to peers exclusively over Tor. In Parmanode, Tor support is built into the menus: enable it from the appropriate option.
 
 Bitcoin Core's relevant settings:
 ```
@@ -79,9 +79,9 @@ These settings tell Bitcoin Core to route all connections through Tor and only c
 
 ## Connection 2: Your Wallet to Your Node
 
-This is about **remote access**. When you're home, your wallet connects to your node over your local network—completely private, no Tor needed. But what happens when you're away from home?
+This is about **remote access**. When you're home, your wallet connects to your node over your local network (completely private, no Tor needed). But what happens when you're away from home?
 
-Your node has an internal IP address (like `192.168.1.100`) that only exists on your home network. When you're at a coffee shop or traveling, that address doesn't work—you're on a different network.
+Your node has an internal IP address (like `192.168.1.100`) that only exists on your home network. When you're at a coffee shop or traveling, that address doesn't work; you're on a different network.
 
 ### The Problem with Traditional Solutions
 
@@ -93,7 +93,7 @@ Your node has an internal IP address (like `192.168.1.100`) that only exists on 
 
 ### How It Works
 
-Your node creates a Tor hidden service—an `.onion` address that routes through the Tor network to reach your node. Your wallet connects to this onion address from anywhere:
+Your node creates a Tor hidden service, an `.onion` address that routes through the Tor network to reach your node. Your wallet connects to this onion address from anywhere:
 
 ```
 Remote Access via Tor
@@ -148,7 +148,7 @@ One benefit of Tor access: you can share your node with friends and family. Give
 
 Running over Tor adds latency. Connections are slower because traffic routes through multiple relays. For most node operations, this is acceptable. For time-sensitive applications (like running a routing Lightning node), the latency might matter.
 
-You can also run in "hybrid" mode—connecting to both Tor and clearnet peers. This improves connectivity but reduces privacy, as clearnet connections expose your IP.
+You can also run in "hybrid" mode, connecting to both Tor and clearnet peers. This improves connectivity but reduces privacy, as clearnet connections expose your IP.
 
 
 ## Key Takeaways
@@ -157,14 +157,14 @@ You can also run in "hybrid" mode—connecting to both Tor and clearnet peers. T
 - **Wallet-to-node Tor** enables remote access without port forwarding (convenience)
 - Your node's **onion address** lets you connect from anywhere in the world
 - **Parmanode** can install and configure Tor for you
-- **Share with caution**—too many connections can overload small hardware
+- **Share with caution:** too many connections can overload small hardware
 
 ---
 
 ## Next Steps
 
-→ **Next:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) — Link your wallet
+→ **Next:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) (link your wallet)
 
-→ **Back:** [Electrum Server](/docs/bitcoin-node/electrum-server) — Understanding the indexer
+→ **Back:** [Electrum Server](/docs/bitcoin-node/electrum-server) (understanding the indexer)
 
-→ **Start:** [Parmanode Setup](/docs/bitcoin-node/parmanode-setup) — Full installation guide
+→ **Start:** [Parmanode Setup](/docs/bitcoin-node/parmanode-setup) (full installation guide)

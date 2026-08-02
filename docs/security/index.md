@@ -54,7 +54,7 @@ Layer 6: Multisig                  ← Eliminate single points of failure
 
 **Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $30-80
 
-Generate your own seed phrase using dice for verifiable randomness. Don't trust—verify.
+Generate your own seed phrase using dice for verifiable randomness. Don't trust, verify.
 
 **Why do this?**
 - Hardware wallet RNG could be compromised
@@ -97,7 +97,7 @@ Add a passphrase (25th word) to create a hidden wallet that requires both seed A
 **Prerequisites:** Working hardware wallet with seed backup.
 
 :::danger Critical Understanding
-A passphrase creates a **completely different wallet**. If you forget your passphrase, funds in that wallet are **unrecoverable**. This is not like a password—there's no reset.
+A passphrase creates a **completely different wallet**. If you forget your passphrase, funds in that wallet are **unrecoverable**. This is not like a password: there's no reset.
 :::
 
 </div>
@@ -169,10 +169,10 @@ Here's a recommended order for implementing security layers:
 ## Common Security Mistakes
 
 ### 1. Security Theater
-Focusing on exotic threats while ignoring basics. Your threat isn't the NSA—it's phishing, malware, and social engineering.
+Focusing on exotic threats while ignoring basics. Your threat isn't the NSA; it's phishing, malware, and social engineering.
 
 ### 2. Complexity Beyond Competence
-Implementing security you don't understand. If you can't recover your own setup, it's not secure—it's a trap.
+Implementing security you don't understand. If you can't recover your own setup, it's not secure. It's a trap.
 
 ### 3. Single Points of Failure
 One seed, one location, one device. Redundancy matters.
@@ -189,21 +189,21 @@ The more people know you have Bitcoin, the larger your attack surface.
 
 After hardening your security:
 
-- **[Run Your Own Node](/docs/bitcoin-node/)** — Verify transactions yourself
-- **[UTXO Management](/docs/learn/privacy/utxo-management/)** — Privacy through coin control
-- **[Multisig Setup](/docs/learn/wallets/multisig/)** — Eliminate single points of failure
-- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets/)** — Maximum isolation
+- **[Run Your Own Node](/docs/bitcoin-node/)**: Verify transactions yourself
+- **[UTXO Management](/docs/learn/privacy/utxo-management/)** (privacy through coin control)
+- **[Multisig Setup](/docs/learn/wallets/multisig/)**: Eliminate single points of failure
+- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets/)** (maximum isolation)
 
 ---
 
 ## Security Resources
 
 ### Threat Modeling
-- [Assess Your Threat Model](/docs/learn/fundamentals/threat-models) — What level do you need?
+- [Assess Your Threat Model](/docs/learn/fundamentals/threat-models): What level do you need?
 
 ### Recovery Planning
-- [What If You Lose Your Seed?](/docs/reference/faq/lost-seed) — Understanding the stakes
-- [Recovery Scam Warning](/docs/reference/faq/recovery-scams) — Protect yourself from fraud
+- [What If You Lose Your Seed?](/docs/reference/faq/lost-seed) (understanding the stakes)
+- [Recovery Scam Warning](/docs/reference/faq/recovery-scams): Protect yourself from fraud
 
 ### Pre-Deposit Checklist
-- [Before You Deposit](/docs/wallet-setup/before-you-deposit) — Final verification steps
+- [Before You Deposit](/docs/wallet-setup/before-you-deposit): Final verification steps

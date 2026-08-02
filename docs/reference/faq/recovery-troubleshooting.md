@@ -14,7 +14,7 @@ slug: /reference/faq/recovery-troubleshooting
 Recovering a Bitcoin wallet should be straightforward, but things can go wrong. This guide covers the most common problems and their solutions.
 
 :::danger Before You Panic
-Most "missing" Bitcoin isn't actually lost—it's usually a configuration issue. Work through this guide systematically before assuming the worst.
+Most "missing" Bitcoin isn't actually lost: it's usually a configuration issue. Work through this guide systematically before assuming the worst.
 :::
 
 
@@ -29,10 +29,10 @@ Different wallet software uses different derivation paths. If you recover with t
 **Solution:**
 
 1. **Check your original wallet's derivation path**
-   - BIP44 (Legacy): `m/44'/0'/0'` — Addresses start with `1`
-   - BIP49 (Nested SegWit): `m/49'/0'/0'` — Addresses start with `3`
-   - BIP84 (Native SegWit): `m/84'/0'/0'` — Addresses start with `bc1q`
-   - BIP86 (Taproot): `m/86'/0'/0'` — Addresses start with `bc1p`
+   - BIP44 (Legacy): `m/44'/0'/0'`, addresses start with `1`
+   - BIP49 (Nested SegWit): `m/49'/0'/0'`, addresses start with `3`
+   - BIP84 (Native SegWit): `m/84'/0'/0'`, addresses start with `bc1q`
+   - BIP86 (Taproot): `m/86'/0'/0'`, addresses start with `bc1p`
 
 2. **In Sparrow Wallet:**
    - File → New Wallet

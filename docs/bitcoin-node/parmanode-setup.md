@@ -8,9 +8,9 @@ tags: ["bitcoin node", "parmanode", "setup", "self custody"]
 
 # Parmanode Setup Guide
 
-If the idea of setting up a Bitcoin node sounds intimidating, Parmanode is about to change your mind. It's an open-source Bitcoin node installer that takes the complexity out of running your own node—without taking away your control.
+If the idea of setting up a Bitcoin node sounds intimidating, Parmanode is about to change your mind. It's an open-source Bitcoin node installer that takes the complexity out of running your own node, without taking away your control.
 
-Created by Arman the Parman (a well-known Bitcoin educator), Parmanode is a terminal-based wizard that guides you through installing Bitcoin Core and related software. It handles the tedious parts automatically—downloading, verifying signatures, configuring settings—while giving you full access to everything under the hood.
+Created by Arman the Parman (a well-known Bitcoin educator), Parmanode is a terminal-based wizard that guides you through installing Bitcoin Core and related software. It handles the tedious parts automatically (downloading, verifying signatures, configuring settings) while giving you full access to everything under the hood.
 
 :::tip Why Parmanode?
 Unlike GUI-based solutions like Umbrel or Start9, Parmanode doesn't hide anything from you. You're running real software on a real Linux (or Mac) system. When something goes wrong, you can actually troubleshoot it. When you want to customize something, you can. It's training wheels that come off gracefully.
@@ -21,12 +21,12 @@ Unlike GUI-based solutions like Umbrel or Start9, Parmanode doesn't hide anythin
 
 Parmanode is a package installer wizard that makes it easy to:
 
-- **Download software securely** — Automatic PGP signature and SHA256 verification
-- **Install Bitcoin Core** — The reference Bitcoin implementation
-- **Set up Electrum servers** — Fulcrum, Electrs, or Electrum X
-- **Install wallet software** — Sparrow, Electrum, Specter, and more
-- **Configure everything automatically** — Wallets connect to your node without manual setup
-- **Add privacy tools** — Tor, Whirlpool, JoinMarket
+- **Download software securely:** Automatic PGP signature and SHA256 verification
+- **Install Bitcoin Core:** The reference Bitcoin implementation
+- **Set up Electrum servers:** Fulcrum, Electrs, or Electrum X
+- **Install wallet software:** Sparrow, Electrum, Specter, and more
+- **Configure everything automatically:** Wallets connect to your node without manual setup
+- **Add privacy tools:** Tor, Whirlpool, JoinMarket
 
 The key feature that sets Parmanode apart: **it connects your wallet to your node automatically**. Install Sparrow or Electrum through Parmanode, and they'll be pre-configured to use your local Electrum server. No copying connection strings or fumbling with settings.
 
@@ -37,7 +37,7 @@ The key feature that sets Parmanode apart: **it connects your wallet to your nod
 
 | Platform | Support Level |
 |----------|---------------|
-| **Linux (Debian/Ubuntu)** | Full support — recommended |
+| **Linux (Debian/Ubuntu)** | Full support (recommended) |
 | **Mac (Intel & Apple Silicon)** | Most features work |
 | **Raspberry Pi** | Full support with ParmanodL OS |
 | **Windows** | Not supported (use Linux VM) |
@@ -76,7 +76,7 @@ Parmanode organizes software into categories. You pick what you need:
 - Nostr Relay
 - And more...
 
-You don't have to install everything—tailor it to your needs.
+You don't have to install everything. Tailor it to your needs.
 
 ---
 
@@ -107,10 +107,10 @@ Copy and paste this single command:
 curl https://parmanode.com/install.sh | sh
 ```
 
-This downloads and runs the Parmanode installer. The script is short and simple—if you want to inspect it first, run the command without `| sh` to print it to your screen.
+This downloads and runs the Parmanode installer. The script is short and simple: if you want to inspect it first, run the command without `| sh` to print it to your screen.
 
 :::note Mac Users
-You may be prompted to install Command Line Developer Tools. A popup window will appear—click "Install" and wait a few minutes. This is required for git to work.
+You may be prompted to install Command Line Developer Tools. A popup window will appear: click "Install" and wait a few minutes. This is required for git to work.
 :::
 
 ### Step 3: Run Parmanode
@@ -121,7 +121,7 @@ After installation completes, start Parmanode by typing:
 rp
 ```
 
-That's it—just two characters. The Parmanode menu will appear.
+That's it, just two characters. The Parmanode menu will appear.
 
 ### Step 4: Navigate the Menus
 
@@ -169,7 +169,7 @@ Parmanode will:
 - Start the initial blockchain sync
 
 :::info Sync Time
-The initial blockchain download takes **1-7 days** depending on your hardware and internet speed. This only happens once—after that, your node stays current automatically.
+The initial blockchain download takes **1-7 days** depending on your hardware and internet speed. This only happens once; after that, your node stays current automatically.
 :::
 
 ### Checking Sync Progress
@@ -212,7 +212,7 @@ Here's where Parmanode shines. From the main menu:
 
 When installation completes, **Sparrow will automatically be configured to connect to your local Electrum server**. No manual configuration needed.
 
-Launch Sparrow and it will already be talking to your node. Your transactions, your addresses, your balance queries—all private, all verified by your own infrastructure.
+Launch Sparrow and it will already be talking to your node. Your transactions, your addresses, your balance queries: all private, all verified by your own infrastructure.
 
 ---
 
@@ -258,7 +258,7 @@ curl https://parmanode.com/refresh_parmanode | sh
 
 ## Running on a Raspberry Pi
 
-Parmanode offers **ParmanodL OS**—a complete operating system image for Raspberry Pi 4 or 5. This is the easiest way to set up a dedicated Bitcoin node.
+Parmanode offers **ParmanodL OS**, a complete operating system image for Raspberry Pi 4 or 5. This is the easiest way to set up a dedicated Bitcoin node.
 
 ### Getting ParmanodL
 
@@ -324,11 +324,11 @@ This is a great way to learn Linux and Bitcoin infrastructure.
 
 Parmanode makes running a Bitcoin node accessible without dumbing it down:
 
-- **One-line installation** — `curl https://parmanode.com/install.sh | sh`
-- **Automatic verification** — PGP and SHA256 checks happen automatically
-- **Automatic wallet configuration** — Sparrow and Electrum connect to your node without manual setup
-- **Full control** — You're running real software on a real system, nothing hidden
-- **Educational** — The code is commented and readable
+- **One-line installation:** `curl https://parmanode.com/install.sh | sh`
+- **Automatic verification:** PGP and SHA256 checks happen automatically
+- **Automatic wallet configuration:** Sparrow and Electrum connect to your node without manual setup
+- **Full control:** You're running real software on a real system, nothing hidden
+- **Educational:** The code is commented and readable
 
 Whether you're setting up your first node or your fifth, Parmanode removes friction without removing understanding.
 
@@ -338,16 +338,16 @@ Whether you're setting up your first node or your fifth, Parmanode removes frict
 
 Once your node is running:
 
-→ **Next:** [Electrum Server Details](/docs/bitcoin-node/electrum-server) — Understand your indexing options
+→ **Next:** [Electrum Server Details](/docs/bitcoin-node/electrum-server) (understand your indexing options)
 
-→ **Privacy:** [Tor Configuration](/docs/bitcoin-node/tor) — Add network-level privacy
+→ **Privacy:** [Tor Configuration](/docs/bitcoin-node/tor) (add network-level privacy)
 
-→ **Connect:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) — Link your wallet to your node
+→ **Connect:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) (link your wallet to your node)
 
 ---
 
 ## Resources
 
-- [Parmanode Website](https://parmanode.com) — Official site and downloads
-- [Parmanode GitHub](https://github.com/ArmanTheParman/parmanode) — Source code
-- [Arman the Parman's Website](https://armantheparman.com) — Educational articles on Bitcoin
+- [Parmanode Website](https://parmanode.com): Official site and downloads
+- [Parmanode GitHub](https://github.com/ArmanTheParman/parmanode): Source code
+- [Arman the Parman's Website](https://armantheparman.com): Educational articles on Bitcoin

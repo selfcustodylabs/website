@@ -83,14 +83,14 @@ To create this list, EFF:
 - Eliminated hard-to-spell words and homophones (words that sound the same but have different meanings).
 - Made sure no word is a prefix of another, reducing typing errors.
 
-The final result is a 7,776-word list suitable for dice-generated passphrases. On average, words in the list are 7.0 characters long, compared to 4.3 characters in Reinhold's original Diceware list — EFF prioritized familiar, meaningful words over very short ones.
+The final result is a 7,776-word list suitable for dice-generated passphrases. On average, words in the list are 7.0 characters long, compared to 4.3 characters in Reinhold's original Diceware list. EFF prioritized familiar, meaningful words over very short ones.
 
-The security of passphrases generated with this list is identical to those made with Diceware; the difference is in usability, not security. For most cases, EFF recommends generating a **six word passphrase**, which provides 77 bits of entropy. Each additional word increases security by 12.9 bits — one extra bit doubles the number of guesses required to brute-force the passphrase.
+The security of passphrases generated with this list is identical to those made with Diceware; the difference is in usability, not security. For most cases, EFF recommends generating a **six word passphrase**, which provides 77 bits of entropy. Each additional word increases security by 12.9 bits; one extra bit doubles the number of guesses required to brute-force the passphrase.
 
 
 ## Step 2: Roll Dice for Your Words
 
-Now it's time to generate your own passphrase using real dice. Using casino-grade dice ensures the highest level of randomness (entropy). If you want to save money, any standard six-sided dice will work — even slight imperfections wash out when you roll multiple times.
+Now it's time to generate your own passphrase using real dice. Using casino-grade dice ensures the highest level of randomness (entropy). If you want to save money, any standard six-sided dice will work. Even slight imperfections wash out when you roll multiple times.
 
 For this method, **five dice** are enough to generate each word.
 
@@ -146,7 +146,7 @@ You can also memorize your passphrase. Try writing your passphrase down several 
 ## Important Warnings
 
 :::danger Critical
-- **Never lose your passphrase** — Without it, your Bitcoin is gone forever.
-- **A passphrase creates a completely different wallet** — Even a typo generates different addresses.
-- **Store separately from your seed** — Different locations for defense in depth.
+- **Never lose your passphrase**: Without it, your Bitcoin is gone forever.
+- **A passphrase creates a completely different wallet**: Even a typo generates different addresses.
+- **Store separately from your seed**: Different locations for defense in depth.
 :::

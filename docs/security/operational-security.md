@@ -16,7 +16,7 @@ Your behavior matters as much as your technical setup.
 
 ## The Human Element
 
-Most Bitcoin losses aren't from sophisticated hacks—they're from human error:
+Most Bitcoin losses aren't from sophisticated hacks; they're from human error:
 
 - Clicking phishing links
 - Sharing too much information
@@ -74,11 +74,11 @@ Every person who knows is a potential:
 
 Operate as if every device could be compromised:
 
-- **Your computer** — Could have malware showing fake addresses
-- **Your phone** — Could be SIM-swapped or have spyware
-- **Your email** — Could be accessed by attackers
-- **Public WiFi** — Could be monitored
-- **Cloud storage** — Could be breached
+- **Your computer**: Could have malware showing fake addresses
+- **Your phone** (could be SIM-swapped or have spyware)
+- **Your email**: Could be accessed by attackers
+- **Public WiFi**: Could be monitored
+- **Cloud storage** (could be breached)
 
 **Mitigations:**
 - Verify addresses on hardware wallet, not computer
@@ -95,7 +95,7 @@ Don't put all your eggs in one basket:
 - **Separate email** for Bitcoin-related accounts
 - **Different identities** for Bitcoin vs. personal life
 - **Geographic distribution** of backups
-- **Multiple devices** — dedicated Bitcoin computer if possible
+- **Multiple devices** (dedicated Bitcoin computer if possible)
 
 ### 5. Minimize Your Attack Surface
 
@@ -113,7 +113,7 @@ Every connection is a potential vulnerability:
 
 - [ ] Never discuss specific holdings
 - [ ] Verify addresses on hardware device before sending
-- [ ] Don't click links in emails—navigate directly to sites
+- [ ] Don't click links in emails; navigate directly to sites
 - [ ] Use unique passwords for every account
 - [ ] Be suspicious of unsolicited contact
 
@@ -169,11 +169,11 @@ Every connection is a potential vulnerability:
 
 ### Defense
 
-- **Slow down** — Urgency is a red flag
-- **Verify independently** — Don't use links provided; navigate directly
-- **Question everything** — Why would they contact you?
-- **Never share seeds** — No legitimate entity ever needs this
-- **Confirm through other channels** — Call the company directly
+- **Slow down**: Urgency is a red flag
+- **Verify independently**: Don't use links provided; navigate directly
+- **Question everything** (why would they contact you?)
+- **Never share seeds** (no legitimate entity ever needs this)
+- **Confirm through other channels**: Call the company directly
 
 
 ## OpSec for Different Threat Levels
@@ -218,12 +218,12 @@ Every connection is a potential vulnerability:
 
 Good OpSec is about:
 
-1. **Silence** — Don't reveal you own Bitcoin
-2. **Verification** — Confirm everything independently
-3. **Assumption** — Treat all devices as potentially compromised
-4. **Compartmentalization** — Separate concerns and identities
-5. **Minimization** — Reduce your attack surface
-6. **Skepticism** — Question unsolicited contact
+1. **Silence**: Don't reveal you own Bitcoin
+2. **Verification** (confirm everything independently)
+3. **Assumption**: Treat all devices as potentially compromised
+4. **Compartmentalization**: Separate concerns and identities
+5. **Minimization**: Reduce your attack surface
+6. **Skepticism** (question unsolicited contact)
 
 The technical security of Bitcoin is excellent. The weak point is always human behavior.
 
@@ -231,6 +231,6 @@ The technical security of Bitcoin is excellent. The weak point is always human b
 
 ## Related Guides
 
-- [Physical Security](/docs/security/physical-security/) — Real-world threat protection
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
-- [Recovery Scam Warning](/docs/reference/faq/recovery-scams) — Common fraud tactics
+- [Physical Security](/docs/security/physical-security/): Real-world threat protection
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) (what level do you need?)
+- [Recovery Scam Warning](/docs/reference/faq/recovery-scams): Common fraud tactics

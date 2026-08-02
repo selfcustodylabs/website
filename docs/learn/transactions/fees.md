@@ -93,21 +93,21 @@ Different address types have different sizes:
 
 The **mempool** is the waiting room for unconfirmed transactions. Analyzing it helps estimate appropriate fees:
 
-- [mempool.space](https://mempool.space) — Visual fee estimation
+- [mempool.space](https://mempool.space): Visual fee estimation
 - Sparrow Wallet's built-in fee estimation
 - Your node's mempool data
 
 ### Fee Estimation Strategy
 
-1. **Check current mempool** — What fee rate is clearing?
-2. **Consider urgency** — Do you need next block or can you wait?
-3. **Account for volatility** — Fees can spike suddenly
+1. **Check current mempool.** What fee rate is clearing?
+2. **Consider urgency.** Do you need next block or can you wait?
+3. **Account for volatility.** Fees can spike suddenly
 
 ### Common Mistakes
 
-❌ **Overpaying during low demand** — Checking fees saves money  
-❌ **Underpaying during high demand** — Transaction gets stuck  
-❌ **Using wallet defaults blindly** — Often set too high
+❌ **Overpaying during low demand**: checking fees saves money  
+❌ **Underpaying during high demand**: transaction gets stuck  
+❌ **Using wallet defaults blindly**: often set too high
 
 
 ## Stuck Transactions

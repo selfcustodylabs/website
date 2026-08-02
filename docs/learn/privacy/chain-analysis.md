@@ -8,31 +8,31 @@ tags: ["privacy", "chain analysis", "bitcoin", "surveillance"]
 
 # Chain Analysis Explained
 
-Imagine a detective with unlimited time, a complete record of every financial transaction you've ever made, and sophisticated software to find patterns in that data. That's essentially what chain analysis companies do—and they're doing it to millions of Bitcoin users right now.
+Imagine a detective with unlimited time, a complete record of every financial transaction you've ever made, and sophisticated software to find patterns in that data. That's essentially what chain analysis companies do, and they're doing it to millions of Bitcoin users right now.
 
-Chain analysis is the practice of examining the Bitcoin blockchain to track the flow of funds and identify users. It's a multi-billion dollar industry that serves governments, exchanges, and anyone willing to pay for intelligence about Bitcoin movements. Understanding how it works isn't just academic—it's essential knowledge for protecting your privacy.
+Chain analysis is the practice of examining the Bitcoin blockchain to track the flow of funds and identify users. It's a multi-billion dollar industry that serves governments, exchanges, and anyone willing to pay for intelligence about Bitcoin movements. Understanding how it works isn't just academic; it's essential knowledge for protecting your privacy.
 
-The good news: chain analysis isn't magic. It relies on heuristics (educated guesses) and external data sources, both of which have limitations. By understanding the techniques, you can understand their weaknesses—and protect yourself accordingly.
+The good news: chain analysis isn't magic. It relies on heuristics (educated guesses) and external data sources, both of which have limitations. By understanding the techniques, you can understand their weaknesses, and protect yourself accordingly.
 
 
 ## What Is Chain Analysis?
 
 At its core, chain analysis is pattern recognition on a massive scale. Analysts study blockchain data to achieve several goals:
 
-**Clustering addresses** — Determining which addresses belong to the same person or entity. If they can prove that addresses A, B, and C all belong to you, they've dramatically expanded what they know about your activity.
+**Clustering addresses:** Determining which addresses belong to the same person or entity. If they can prove that addresses A, B, and C all belong to you, they've dramatically expanded what they know about your activity.
 
-**Tracking fund flows** — Following bitcoin as it moves through the network. Where did your coins come from? Where did they go? Who else handled them along the way?
+**Tracking fund flows:** Following bitcoin as it moves through the network. Where did your coins come from? Where did they go? Who else handled them along the way?
 
-**Identifying entities** — Linking address clusters to real-world identities. This is where the blockchain's pseudonymity breaks down entirely.
+**Identifying entities:** Linking address clusters to real-world identities. This is where the blockchain's pseudonymity breaks down entirely.
 
-**Flagging transactions** — Marking certain coins as "tainted" or suspicious based on their history. Yes, your coins can be flagged for something a previous owner did.
+**Flagging transactions:** Marking certain coins as "tainted" or suspicious based on their history. Yes, your coins can be flagged for something a previous owner did.
 
 This intelligence is valuable. Law enforcement uses it to track criminals. Exchanges use it to comply with regulations. Tax authorities use it to ensure compliance. And increasingly, ordinary financial institutions use it to make decisions about which customers to serve.
 
 
 ## The Core Techniques
 
-Chain analysis isn't black magic—it's a set of logical inferences applied at scale. The industry relies on **heuristics**: rules of thumb that are usually (but not always) true. Understanding these heuristics reveals both their power and their limitations.
+Chain analysis isn't black magic. It's a set of logical inferences applied at scale. The industry relies on **heuristics**: rules of thumb that are usually (but not always) true. Understanding these heuristics reveals both their power and their limitations.
 
 ### 1. Common Input Ownership Heuristic
 
@@ -60,7 +60,7 @@ Analyst concludes:
 
 ### 2. Change Address Detection
 
-When you spend bitcoin, you rarely have the exact amount needed. If you have a 1 BTC UTXO and want to pay someone 0.7 BTC, the remaining 0.3 BTC comes back to you as change—sent to a new address your wallet controls.
+When you spend bitcoin, you rarely have the exact amount needed. If you have a 1 BTC UTXO and want to pay someone 0.7 BTC, the remaining 0.3 BTC comes back to you as change, sent to a new address your wallet controls.
 
 Analysts exploit this pattern. In any transaction with two outputs, they ask: which one is the payment, and which one is change returning to the sender?
 
@@ -107,7 +107,7 @@ All three transactions are now linked.
 Anyone who knows one transaction knows all of them.
 ```
 
-Modern wallets generate new addresses automatically for this reason, but address reuse still happens—especially when people share a single "donation" address publicly or when merchants use static payment addresses.
+Modern wallets generate new addresses automatically for this reason, but address reuse still happens, especially when people share a single "donation" address publicly or when merchants use static payment addresses.
 
 ### 4. Timing Analysis
 
@@ -117,7 +117,7 @@ If you deposit to an exchange and withdraw minutes later, those transactions are
 
 ### 5. Amount Correlation
 
-Numbers tell stories. Payments are often round numbers (0.1 BTC, 0.01 BTC), while change addresses tend to have irregular amounts. If 0.5 BTC enters a mixer and 0.5 BTC exits somewhere else, they might be connected—though sophisticated mixers work hard to break this correlation.
+Numbers tell stories. Payments are often round numbers (0.1 BTC, 0.01 BTC), while change addresses tend to have irregular amounts. If 0.5 BTC enters a mixer and 0.5 BTC exits somewhere else, they might be connected, though sophisticated mixers work hard to break this correlation.
 
 
 ## Clustering: Building Your Profile
@@ -150,13 +150,13 @@ Blockchain analysis is powerful, but it becomes devastating when combined with o
 
 ### Exchange Data
 
-Here's the uncomfortable truth: when you use a KYC (Know Your Customer) exchange, you're creating a permanent link between your legal identity and your Bitcoin addresses. The exchange knows who you are. They know which addresses you've deposited to and withdrawn from. And they share this information with chain analysis companies—sometimes directly, sometimes through regulatory requirements.
+Here's the uncomfortable truth: when you use a KYC (Know Your Customer) exchange, you're creating a permanent link between your legal identity and your Bitcoin addresses. The exchange knows who you are. They know which addresses you've deposited to and withdrawn from. And they share this information with chain analysis companies, sometimes directly, sometimes through regulatory requirements.
 
 This is often the starting point for tracing. An analyst might not know who controls a random address on the blockchain, but once that address receives funds from a known exchange withdrawal, the connection is made.
 
 ### Web Scraping
 
-Chain analysis companies don't just watch the blockchain—they scour the internet. They search for Bitcoin addresses posted in forums, donation addresses on websites, addresses in leaked databases, and social media posts where people mention their addresses. Every public mention of a Bitcoin address is potential data.
+Chain analysis companies don't just watch the blockchain; they scour the internet. They search for Bitcoin addresses posted in forums, donation addresses on websites, addresses in leaked databases, and social media posts where people mention their addresses. Every public mention of a Bitcoin address is potential data.
 
 That donation address on your blog? It's been catalogued. That transaction ID you shared to prove a payment? It's been noted. The internet never forgets, and neither do surveillance companies.
 
@@ -173,18 +173,18 @@ There's an important distinction between clustering and attribution. Clustering 
 
 **Weak attribution** comes from inference: the address transacted with someone identified, the behavioral pattern matches expectations, or statistical analysis suggests a likely owner.
 
-Chain analysis companies often have high confidence in their clusters but varying confidence in attribution. They know addresses belong together; they're less certain about who controls them. This matters because weak attribution can be challenged—and because it creates false positive risk.
+Chain analysis companies often have high confidence in their clusters but varying confidence in attribution. They know addresses belong together; they're less certain about who controls them. This matters because weak attribution can be challenged, and because it creates false positive risk.
 
 
 ## What This Means for You
 
 Let's make this concrete. If an analyst has identified even one address you control, here's what they can potentially learn:
 
-**Your transaction history is visible.** Every transaction from identified addresses is recorded permanently. Where you sent coins, when you sent them, how much you sent—all of it.
+**Your transaction history is visible.** Every transaction from identified addresses is recorded permanently. Where you sent coins, when you sent them, how much you sent: all of it.
 
 **Past actions affect future privacy.** Those coins you bought years ago still carry their history. Address reuse from the past still creates links. Your entire financial history can be reconstructed retroactively if the starting point is identified.
 
-**Exchanges are key vulnerability points.** KYC exchanges create the identity links that make everything else possible. Even using an exchange once—years ago—creates a permanent record that can anchor future analysis.
+**Exchanges are key vulnerability points.** KYC exchanges create the identity links that make everything else possible. Even using an exchange once, years ago, creates a permanent record that can anchor future analysis.
 
 
 ## Limitations of Chain Analysis
@@ -204,7 +204,7 @@ Chain analysis is powerful, but it's not omniscient. Every technique has limitat
 
 **CoinJoin and similar techniques** specifically target these heuristics. When multiple people combine their transactions, the common input ownership assumption breaks down completely. When outputs are all equal amounts, change detection becomes impossible. When timing is randomized, temporal analysis loses power.
 
-This is the key insight: chain analysis relies on assumptions about how people typically use Bitcoin. Use Bitcoin atypically—intentionally—and those assumptions fail.
+This is the key insight: chain analysis relies on assumptions about how people typically use Bitcoin. Use Bitcoin atypically, intentionally, and those assumptions fail.
 
 
 ## Key Takeaways
@@ -223,8 +223,8 @@ Chain analysis is sophisticated but not invincible. Keep these points in mind:
 
 Understanding chain analysis is the first step to defeating it. The next steps are practical.
 
-→ **Next:** [Protecting Your Privacy](/docs/learn/privacy/protecting-privacy) — Practical techniques you can use today
+→ **Next:** [Protecting Your Privacy](/docs/learn/privacy/protecting-privacy): Practical techniques you can use today
 
-→ **Practice:** [UTXO Management Guide](/docs/learn/privacy/utxo-management) — Coin control, labeling, and consolidation
+→ **Practice:** [UTXO Management Guide](/docs/learn/privacy/utxo-management): Coin control, labeling, and consolidation
 
-→ **Advanced:** [CoinJoin Guide](/docs/learn/privacy/coinjoin) — Break the chain analysis heuristics
+→ **Advanced:** [CoinJoin Guide](/docs/learn/privacy/coinjoin): Break the chain analysis heuristics
