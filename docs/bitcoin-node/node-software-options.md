@@ -8,7 +8,7 @@ tags: ["bitcoin node", "setup", "comparison"]
 
 # Choosing Node Software
 
-There's no single "best" way to run a Bitcoin node. Different solutions optimize for different things—ease of use, learning opportunity, feature richness, or maximum control. Here's how to think about your options.
+There's no single "best" way to run a Bitcoin node. Different solutions optimize for different things: ease of use, learning opportunity, feature richness, or maximum control. Here's how to think about your options.
 
 
 ## The Spectrum of Control
@@ -49,7 +49,7 @@ MORE GUIDED                                    MORE CONTROL
 
 **Best for:** Users who want to learn without suffering
 
-Parmanode is our recommended approach because it strikes the ideal balance. You're working in a real terminal on a real Linux system, but the wizard handles the tedious parts—downloading, signature verification, configuration. When you install Sparrow through Parmanode, it automatically connects to your node. Magic that you can understand.
+Parmanode is our recommended approach because it strikes the ideal balance. You're working in a real terminal on a real Linux system, but the wizard handles the tedious parts: downloading, signature verification, configuration. When you install Sparrow through Parmanode, it automatically connects to your node. Magic that you can understand.
 
 **Highlights:**
 - One-line installation
@@ -89,7 +89,7 @@ Umbrel provides a beautiful web interface and an "app store" for installing Bitc
 
 **Best for:** Privacy-focused users who want a sovereign server
 
-Start9 goes beyond Bitcoin—it's trying to build a "personal server" for all your self-hosted needs. Their focus on privacy and sovereignty aligns well with Bitcoin values. The Embassy OS provides a polished experience with thoughtful design.
+Start9 goes beyond Bitcoin: it's trying to build a "personal server" for all your self-hosted needs. Their focus on privacy and sovereignty aligns well with Bitcoin values. The Embassy OS provides a polished experience with thoughtful design.
 
 **Highlights:**
 - Strong privacy focus
@@ -109,7 +109,7 @@ Start9 goes beyond Bitcoin—it's trying to build a "personal server" for all yo
 
 **Best for:** Lightning Network enthusiasts
 
-RaspiBlitz started as a Lightning-focused node and has grown from there. It's feature-rich, well-maintained, and has an active community. The interface is terminal-based with ASCII menus—functional rather than pretty.
+RaspiBlitz started as a Lightning-focused node and has grown from there. It's feature-rich, well-maintained, and has an active community. The interface is terminal-based with ASCII menus, functional rather than pretty.
 
 **Highlights:**
 - Excellent Lightning support
@@ -129,7 +129,7 @@ RaspiBlitz started as a Lightning-focused node and has grown from there. It's fe
 
 **Best for:** Deep learners who want maximum understanding
 
-Raspibolt and Minibolt are step-by-step guides to building a node from scratch. No wizard, no automation—you type every command, create every configuration file, understand every component. It's the slow path, but you emerge with genuine knowledge.
+Raspibolt and Minibolt are step-by-step guides to building a node from scratch. No wizard, no automation: you type every command, create every configuration file, understand every component. It's the slow path, but you emerge with genuine knowledge.
 
 **Highlights:**
 - Maximum learning opportunity
@@ -192,7 +192,7 @@ Most node software works on similar hardware:
 </div>
 
 :::warning SSD Required
-All node software requires an SSD. Traditional hard drives are too slow for the Bitcoin blockchain. Don't try to save money here—you'll waste days of sync time and have ongoing performance issues.
+All node software requires an SSD. Traditional hard drives are too slow for the Bitcoin blockchain. Don't try to save money here: you'll waste days of sync time and have ongoing performance issues.
 :::
 
 
@@ -200,7 +200,7 @@ All node software requires an SSD. Traditional hard drives are too slow for the 
 
 For most users reading this site, **[Parmanode](/docs/bitcoin-node/parmanode-setup)** is the right choice. It teaches you real skills while removing unnecessary friction. You'll understand your node because you built it with real tools, but you won't waste hours on tasks a script can do in seconds.
 
-If Parmanode feels too technical, start with Umbrel—you can always migrate later. If Parmanode feels too guided, try Raspibolt—you'll learn even more.
+If Parmanode feels too technical, start with Umbrel; you can always migrate later. If Parmanode feels too guided, try Raspibolt; you'll learn even more.
 
 The important thing is running a node, period. Any of these options gets you there.
 
@@ -208,6 +208,6 @@ The important thing is running a node, period. Any of these options gets you the
 
 ## Next Steps
 
-→ **Recommended:** [Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup) — Our recommended approach
+→ **Recommended:** [Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup) (our recommended approach)
 
-→ **Background:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node) — Understand the benefits
+→ **Background:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node) (understand the benefits)

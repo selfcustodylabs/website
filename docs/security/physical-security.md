@@ -68,25 +68,25 @@ If you hold significant Bitcoin, basic home security matters:
 
 - **Quality locks** on all entry points
 - **Reinforced door frames** (kicks break frames, not locks)
-- **Window security** — locks, film, or bars where appropriate
-- **Lighting** — motion-activated exterior lights
-- **Visibility** — trim bushes near windows/doors
+- **Window security**: locks, film, or bars where appropriate
+- **Lighting** (motion-activated exterior lights)
+- **Visibility**: trim bushes near windows/doors
 
 ### Monitoring
 
-- **Cameras** — Visible deterrent + evidence
-- **Alarm system** — Monitored service recommended
-- **Smart locks** — Know when doors open
-- **Neighbors** — Community awareness helps
+- **Cameras** (visible deterrent + evidence)
+- **Alarm system**: Monitored service recommended
+- **Smart locks**: Know when doors open
+- **Neighbors** (community awareness helps)
 
 ### Safe Storage
 
 For hardware wallets and backup materials:
 
-- **Home safe** — Fire-rated, bolted down
-- **Hidden location** — Not the master bedroom (first place checked)
-- **Decoy valuables** — Give burglars something to take
-- **Off-site backup** — Don't keep everything in one location
+- **Home safe**: Fire-rated, bolted down
+- **Hidden location**: Not the master bedroom (first place checked)
+- **Decoy valuables** (give burglars something to take)
+- **Off-site backup**: Don't keep everything in one location
 
 
 ## Seed Backup Storage
@@ -105,11 +105,11 @@ Your seed backup is the most sensitive physical item.
 
 ### Best Practices
 
-- **Metal backup** — Paper burns; metal survives fires
-- **Multiple copies** — At least 2-3 in different locations
-- **Geographic distribution** — Different cities if possible
-- **Tamper evidence** — Know if backup has been accessed
-- **Documentation** — Record where backups are (securely)
+- **Metal backup**: Paper burns; metal survives fires
+- **Multiple copies**: At least 2-3 in different locations
+- **Geographic distribution** (different cities if possible)
+- **Tamper evidence**: Know if backup has been accessed
+- **Documentation**: Record where backups are (securely)
 
 ### What NOT to Do
 
@@ -151,7 +151,7 @@ With multisig, you genuinely cannot access funds alone:
 
 - "I need my partners to sign"
 - "The other keys are in different locations"
-- This isn't a bluff—it's true
+- This isn't a bluff; it's true
 
 This makes you a less attractive target.
 
@@ -170,17 +170,17 @@ Traveling with Bitcoin requires additional consideration.
 
 ### General Principles
 
-- **Minimize what you carry** — Only what you need
-- **Don't advertise** — No Bitcoin merchandise or visible hardware
-- **Separate wallets** — Travel wallet vs. main holdings
-- **Know local laws** — Cryptocurrency regulations vary
+- **Minimize what you carry**: Only what you need
+- **Don't advertise** (no Bitcoin merchandise or visible hardware)
+- **Separate wallets**: Travel wallet vs. main holdings
+- **Know local laws**: Cryptocurrency regulations vary
 
 ### Hardware Wallet Travel
 
 **Options:**
-1. **Don't bring it** — Access via secure remote method if needed
-2. **Bring empty device** — Create new wallet at destination if needed
-3. **Bring loaded device** — Necessary for spending, increases risk
+1. **Don't bring it**: Access via secure remote method if needed
+2. **Bring empty device** (create new wallet at destination if needed)
+3. **Bring loaded device**: Necessary for spending, increases risk
 
 **If bringing a device:**
 - Keep in carry-on (never checked luggage)
@@ -190,16 +190,16 @@ Traveling with Bitcoin requires additional consideration.
 
 ### Border Crossings
 
-- **Legal requirements vary** — Some countries require declaring crypto
-- **Device searches** — Can you be compelled to unlock?
-- **Plausible deniability** — Empty device, passphrase wallet
-- **Know your rights** — Research before traveling
+- **Legal requirements vary**: Some countries require declaring crypto
+- **Device searches**: Can you be compelled to unlock?
+- **Plausible deniability** (empty device, passphrase wallet)
+- **Know your rights**: Research before traveling
 
 ### Accommodation
 
-- **Hotel safes** — Better than nothing, not truly secure
-- **Don't leave devices unattended** — Maid service access
-- **Be aware of surroundings** — Who sees you with device?
+- **Hotel safes**: Better than nothing, not truly secure
+- **Don't leave devices unattended**: Maid service access
+- **Be aware of surroundings** (who sees you with device?)
 
 
 ## Emergency Planning
@@ -215,7 +215,7 @@ Have a plan for various scenarios:
 
 ### If You're Physically Threatened
 
-1. **Comply if necessary** — Bitcoin isn't worth injury or death
+1. **Comply if necessary**: Bitcoin isn't worth injury or death
 2. Give access to decoy wallet if you have one
 3. Report to police when safe
 4. Move any remaining funds to new setup
@@ -229,7 +229,7 @@ Have a plan for various scenarios:
 
 ### If Hardware Wallet is Stolen
 
-1. Don't panic — PIN + limited attempts provides time
+1. Don't panic. PIN + limited attempts provides time
 2. Use backup to restore to new device
 3. Move funds to new wallet (new seed)
 4. Old seed should be considered compromised
@@ -267,11 +267,11 @@ Few people need:
 
 Physical security for Bitcoin:
 
-1. **Prevention** — Don't let attackers know you're a target
-2. **Barriers** — Basic home security, secure storage
-3. **Distribution** — Don't keep everything in one place
-4. **Contingency** — Decoy wallets, duress planning
-5. **Balance** — Match security to actual threat level
+1. **Prevention**: Don't let attackers know you're a target
+2. **Barriers** (basic home security, secure storage)
+3. **Distribution**: Don't keep everything in one place
+4. **Contingency**: Decoy wallets, duress planning
+5. **Balance**: Match security to actual threat level
 
 The goal is making yourself a harder target than alternatives, not achieving perfect security.
 
@@ -279,7 +279,7 @@ The goal is making yourself a harder target than alternatives, not achieving per
 
 ## Related Guides
 
-- [Operational Security](/docs/security/operational-security/) — Behavioral security
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
-- [Passphrase Guide](/docs/learn/keys/passphrase/) — Enable decoy wallets
-- [Multisig Setup](/docs/learn/wallets/multisig/) — Distributed key security
+- [Operational Security](/docs/security/operational-security/): Behavioral security
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) (what level do you need?)
+- [Passphrase Guide](/docs/learn/keys/passphrase/): Enable decoy wallets
+- [Multisig Setup](/docs/learn/wallets/multisig/): Distributed key security

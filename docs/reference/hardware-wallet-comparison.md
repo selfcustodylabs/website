@@ -399,7 +399,7 @@ Amazon, eBay, and other resellers have been sources of tampered devices. Only bu
 
 ## Summary
 
-There's no single "best" hardware wallet—it depends on your priorities:
+There's no single "best" hardware wallet; it depends on your priorities:
 
 | Priority | Best Choice |
 |----------|-------------|

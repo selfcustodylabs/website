@@ -8,7 +8,7 @@ tags: ["bitcoin node", "electrum", "setup", "self custody"]
 
 # Electrum Server Explained
 
-You've got Bitcoin Core running, syncing hundreds of gigabytes of blockchain data. But here's the problem: when Sparrow Wallet asks "what's my balance?", Bitcoin Core can't answer quickly. It would need to scan the entire blockchain looking for transactions involving your addresses—a process that could take hours.
+You've got Bitcoin Core running, syncing hundreds of gigabytes of blockchain data. But here's the problem: when Sparrow Wallet asks "what's my balance?", Bitcoin Core can't answer quickly. It would need to scan the entire blockchain looking for transactions involving your addresses, a process that could take hours.
 
 This is where an Electrum server comes in. It creates an index of the blockchain data, organizing everything by address. When your wallet asks about a specific address, the Electrum server can answer in milliseconds instead of hours.
 
@@ -42,7 +42,7 @@ Sparrow Wallet                     Bitcoin Core
 ─────────────────────────────────────────────────────────────
 ```
 
-The server indexes all addresses and transactions, building a database that can answer wallet queries efficiently. Your wallet never talks directly to Bitcoin Core—it talks to the Electrum server, which has already organized all the data for fast retrieval.
+The server indexes all addresses and transactions, building a database that can answer wallet queries efficiently. Your wallet never talks directly to Bitcoin Core. It talks to the Electrum server, which has already organized all the data for fast retrieval.
 
 
 ## Why You Need One
@@ -75,7 +75,7 @@ Several implementations exist, each with tradeoffs:
 
 ### Fulcrum (Recommended)
 
-Fulcrum is written in C++ and is the fastest option. Once indexed, queries are lightning fast. The tradeoff is higher RAM usage—you'll want at least 4 GB available, ideally 8 GB.
+Fulcrum is written in C++ and is the fastest option. Once indexed, queries are lightning fast. The tradeoff is higher RAM usage: you'll want at least 4 GB available, ideally 8 GB.
 
 If you're running Parmanode, install Fulcrum by typing `f` in the Node Install menu.
 
@@ -87,7 +87,7 @@ In Parmanode, type `ersd` for the Docker version of electrs.
 
 ### ElectrumX
 
-The original Python implementation. Still works but generally not recommended for new setups—the alternatives are faster and more efficient.
+The original Python implementation. Still works but generally not recommended for new setups; the alternatives are faster and more efficient.
 
 
 ## The Indexing Process
@@ -128,11 +128,11 @@ CONNECT:    127.0.0.1:50001   [From this computer only]
 TOR:        [onion address for remote access]
 ```
 
-**Port 50001** — Standard Electrum protocol (unencrypted, fine for local network)  
-**Port 50002** — SSL-encrypted connection  
-**Tor address** — For connecting from outside your home network privately
+**Port 50001:** Standard Electrum protocol (unencrypted, fine for local network)  
+**Port 50002:** SSL-encrypted connection  
+**Tor address:** For connecting from outside your home network privately
 
-If you installed your wallet through Parmanode, it will already be configured—no manual setup needed.
+If you installed your wallet through Parmanode, it will already be configured: no manual setup needed.
 
 
 ## Storage Requirements
@@ -164,7 +164,7 @@ The Electrum server might still be indexing, or it might not be running.
 
 ### Indexing seems stuck
 
-Initial indexing takes 12-48 hours. It's not stuck—it's just slow. Check:
+Initial indexing takes 12-48 hours. It's not stuck; it's just slow. Check:
 
 - Is there disk activity? (indicates the server is working)
 - How much RAM is available? (low RAM slows indexing significantly)
@@ -188,8 +188,8 @@ This is normal. Once the initial index is complete, CPU usage drops dramatically
 
 ## Next Steps
 
-→ **Next:** [Tor Configuration](/docs/bitcoin-node/tor) — Add network privacy
+→ **Next:** [Tor Configuration](/docs/bitcoin-node/tor) (add network privacy)
 
-→ **Connect:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) — Manual wallet connection
+→ **Connect:** [Connect Sparrow Wallet](/docs/bitcoin-node/connect-sparrow-wallet) (manual wallet connection)
 
-→ **Back:** [Parmanode Setup](/docs/bitcoin-node/parmanode-setup) — Installation guide
+→ **Back:** [Parmanode Setup](/docs/bitcoin-node/parmanode-setup) (installation guide)

@@ -43,7 +43,7 @@ Share only what's necessary:
 
 ### Level 1: Basic Hygiene
 
-These require no special tools—just awareness.
+These require no special tools, just awareness.
 
 <div class="fixed-width-table">
 
@@ -115,10 +115,10 @@ UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you o
 
 **Key practices:**
 
-1. **Label everything** — Know where each UTXO came from
-2. **Keep sources separate** — Never combine KYC and non-KYC coins
-3. **Use coin control** — Manually select which UTXOs to spend
-4. **Consolidate carefully** — Only combine same-source UTXOs
+1. **Label everything:** Know where each UTXO came from
+2. **Keep sources separate:** Never combine KYC and non-KYC coins
+3. **Use coin control:** Manually select which UTXOs to spend
+4. **Consolidate carefully:** Only combine same-source UTXOs
 
 → **Guide:** [UTXO Management](/docs/learn/privacy/utxo-management)
 
@@ -173,9 +173,9 @@ If you buy bitcoin through a KYC exchange, your identity is linked from the star
 
 Even if your transactions look private on-chain, you might leak information at the network level:
 
-- **IP address** — When you broadcast a transaction
-- **Timing** — When you come online
-- **Connections** — Who you connect to
+- **IP address:** When you broadcast a transaction
+- **Timing:** When you come online
+- **Connections:** Who you connect to
 
 **Solutions:**
 
@@ -257,8 +257,8 @@ Choose based on your threat model and resources.
 - **Manage UTXOs carefully** to prevent linking
 - **CoinJoin** breaks chain analysis heuristics
 - **Acquisition method** determines starting privacy
-- **Some losses are permanent** — prevention is best
-- **Build habits** — privacy is ongoing, not one-time
+- **Some losses are permanent:** prevention is best
+- **Build habits:** privacy is ongoing, not one-time
 
 ---
 

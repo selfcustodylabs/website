@@ -16,7 +16,7 @@ If you've used Bitcoin, you've noticed addresses can look very different:
 - `bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq` (starts with bc1q)
 - `bc1p5d7rjq7g6rdk2yhzks9smlaqtedr4dekq08ge8ztwac72sfr9rusxg3297` (starts with bc1p)
 
-These aren't random — each format represents a different **address type** with different properties. Understanding them helps you save on fees and avoid compatibility issues.
+These aren't random: each format represents a different **address type** with different properties. Understanding them helps you save on fees and avoid compatibility issues.
 
 ---
 
@@ -45,11 +45,11 @@ These aren't random — each format represents a different **address type** with
 The original Bitcoin address format from 2009. "P2PKH" stands for "Pay to Public Key Hash."
 
 ### Pros
-- Universal compatibility — every wallet and exchange supports it
+- Universal compatibility: every wallet and exchange supports it
 - Battle-tested since Bitcoin's beginning
 
 ### Cons
-- **Highest fees** — transactions are larger in bytes
+- **Highest fees**: transactions are larger in bytes
 - No SegWit benefits
 - Considered outdated
 
@@ -65,7 +65,7 @@ Only if you're sending to an old wallet or service that doesn't support newer fo
 
 ### What It Is
 
-Introduced in 2012 for advanced scripts (like multisig). Later repurposed as "wrapped" or "nested" SegWit — a way to get SegWit benefits while maintaining compatibility with older systems.
+Introduced in 2012 for advanced scripts (like multisig). Later repurposed as "wrapped" or "nested" SegWit, a way to get SegWit benefits while maintaining compatibility with older systems.
 
 ### Pros
 - Good compatibility with older exchanges
@@ -115,7 +115,7 @@ The "native" SegWit format introduced in 2017. Uses Bech32 encoding (lowercase, 
 The newest address type, activated in November 2021. Uses Schnorr signatures and enables advanced smart contracts while improving privacy.
 
 ### Pros
-- **Best privacy** — multisig and single-sig look identical on-chain
+- **Best privacy**: multisig and single-sig look identical on-chain
 - Advanced scripting capabilities
 - Slightly smaller signatures than SegWit
 - Future-proof for Bitcoin development
@@ -213,11 +213,11 @@ Most modern wallets support all address types. Here's what they typically defaul
 
 | Wallet | Default Address Type |
 |--------|---------------------|
-| Sparrow | Native SegWit (bc1q) — configurable |
-| Electrum | Native SegWit (bc1q) — configurable |
+| Sparrow | Native SegWit (bc1q), configurable |
+| Electrum | Native SegWit (bc1q), configurable |
 | Trezor Suite | Native SegWit (bc1q) |
 | Ledger Live | Native SegWit (bc1q) |
-| Coldcard | Native SegWit (bc1q) — configurable |
+| Coldcard | Native SegWit (bc1q), configurable |
 | BlueWallet | Native SegWit (bc1q) |
 
 </div>
@@ -228,7 +228,7 @@ You can usually change the address type in wallet settings if needed.
 
 ## Derivation Paths
 
-Each address type uses a different **derivation path** — the recipe for generating addresses from your seed phrase.
+Each address type uses a different **derivation path**, the recipe for generating addresses from your seed phrase.
 
 <div class="fixed-width-table">
 
@@ -249,7 +249,7 @@ Each address type uses a different **derivation path** — the recipe for genera
 
 ### Can I send between different address types?
 
-**Yes.** You can send from any address type to any other. The network doesn't care — it's all Bitcoin.
+**Yes.** You can send from any address type to any other. The network doesn't care. It's all Bitcoin.
 
 ### Why do I see different addresses in my wallet?
 
@@ -260,7 +260,7 @@ Wallets generate new addresses for privacy. Each receive address is unique, but 
 Some older exchanges don't support Bech32 (bc1) addresses. Options:
 1. Use a different exchange
 2. Withdraw to a Legacy (1...) or Script (3...) address temporarily
-3. Contact their support — they should upgrade
+3. Contact their support; they should upgrade
 
 ### Does address type affect security?
 
@@ -271,22 +271,22 @@ Not directly. All types are secure. The differences are in fees, features, and c
 You might be on the wrong derivation path. Try:
 1. Check if your wallet is set to the correct address type
 2. In Sparrow/Electrum, try different script types
-3. Your funds are safe — you just need to find the right path
+3. Your funds are safe: you just need to find the right path
 
 ---
 
 ## Key Takeaways
 
-1. **Use Native SegWit (bc1q...)** as your default — best fees and compatibility
+1. **Use Native SegWit (bc1q...)** as your default (best fees and compatibility)
 2. **Consider Taproot (bc1p...)** for enhanced privacy and future-proofing
-3. **Avoid Legacy (1...)** unless required — you're overpaying for fees
-4. **All types are secure** — differences are mainly about efficiency
-5. **You can send between any address types** — they're all Bitcoin
+3. **Avoid Legacy (1...)** unless required (you're overpaying for fees)
+4. **All types are secure**: differences are mainly about efficiency
+5. **You can send between any address types**: they're all Bitcoin
 
 ---
 
 ## Continue Learning
 
-- [Private Keys Explained](/docs/learn/keys/intro) — How addresses are derived
-- [Transactions Explained](/docs/learn/transactions/understanding) — How Bitcoin moves
-- [UTXO Management](/docs/learn/privacy/utxo-management) — Managing your coins effectively
+- [Private Keys Explained](/docs/learn/keys/intro): How addresses are derived
+- [Transactions Explained](/docs/learn/transactions/understanding): How Bitcoin moves
+- [UTXO Management](/docs/learn/privacy/utxo-management): Managing your coins effectively

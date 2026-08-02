@@ -11,7 +11,7 @@ slug: /reference/faq
 
 # Frequently Asked Questions
 
-Answers to common—and critical—questions about Bitcoin self-custody.
+Answers to common (and critical) questions about Bitcoin self-custody.
 
 :::tip Can't Find Your Answer?
 Check the [Glossary](/docs/reference/glossary) for term definitions, or use the search function.

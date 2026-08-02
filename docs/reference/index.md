@@ -44,8 +44,8 @@ Compare Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone. Find the right h
 </div>
 
 ### External Technical Resources
-- **[BIP39 Word List](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)** — The 2048 valid seed words (external)
-- **[BIP List](https://github.com/bitcoin/bips)** — All Bitcoin Improvement Proposals
+- **[BIP39 Word List](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)**: The 2048 valid seed words (external)
+- **[BIP List](https://github.com/bitcoin/bips)**: All Bitcoin Improvement Proposals
 
 ---
 
@@ -58,7 +58,7 @@ Common questions about Bitcoin self-custody:
 | Question | Answer |
 |----------|--------|
 | [What if I lose my seed phrase?](/docs/reference/faq/lost-seed) | The hard truth about seed loss and what (little) you can do |
-| [Are recovery services legitimate?](/docs/reference/faq/recovery-scams) | Almost all are scams—learn to protect yourself |
+| [Are recovery services legitimate?](/docs/reference/faq/recovery-scams) | Almost all are scams: learn to protect yourself |
 
 ### More FAQs
 Browse all FAQ topics: **[FAQ Index](/docs/reference/faq/)**
@@ -70,16 +70,16 @@ Browse all FAQ topics: **[FAQ Index](/docs/reference/faq/)**
 Trusted external resources for Bitcoin education:
 
 ### Block Explorers
-- [Mempool.space](https://mempool.space/) — Transaction explorer and fee estimator
-- [Blockstream.info](https://blockstream.info/) — Clean, privacy-respecting explorer
+- [Mempool.space](https://mempool.space/): Transaction explorer and fee estimator
+- [Blockstream.info](https://blockstream.info/): Clean, privacy-respecting explorer
 
 ### Tools
-- [TimechainStats](https://timechainstats.com/) — Bitcoin network statistics
-- [KYCnot.me](https://kycnot.me/) — Find non-KYC Bitcoin sources
+- [TimechainStats](https://timechainstats.com/): Bitcoin network statistics
+- [KYCnot.me](https://kycnot.me/): Find non-KYC Bitcoin sources
 
 ### Further Learning
-- [Bitcoin.org](https://bitcoin.org/) — Official Bitcoin resources
-- [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf) — Satoshi's original paper
+- [Bitcoin.org](https://bitcoin.org/): Official Bitcoin resources
+- [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf): Satoshi's original paper
 
 ---
 

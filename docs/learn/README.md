@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: "Learn Bitcoin Self-Custody"
-description: "Comprehensive educational content about Bitcoin self-custody. From fundamentals to advanced concepts—everything you need to truly own your Bitcoin."
+description: "Comprehensive educational content about Bitcoin self-custody. From fundamentals to advanced concepts. Everything you need to truly own your Bitcoin."
 keywords: ["bitcoin education", "learn bitcoin", "bitcoin fundamentals", "cryptocurrency basics", "bitcoin concepts", "self custody"]
 tags: ["learn", "fundamentals"]
 slug: /learn
@@ -22,10 +22,10 @@ Welcome to the complete learning resource for Bitcoin self-custody. Whether you'
 Begin with the fundamentals. Understand what Bitcoin is, why self-custody matters, and find the right path for your situation.
 
 **What you'll learn:**
-- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) — The basics of digital money
-- [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) — Why keys matter
-- [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path) — Find the right approach for you
-- [Before You Deposit](/docs/wallet-setup/before-you-deposit) — Critical safety checklist
+- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): The basics of digital money
+- [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody): Why keys matter
+- [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path): Find the right approach for you
+- [Before You Deposit](/docs/wallet-setup/before-you-deposit): Critical safety checklist
 
 **Time:** 1-2 hours of reading to build a solid foundation
 
@@ -48,7 +48,7 @@ The foundation of Bitcoin ownership. Learn how private keys, seed phrases, and d
 
 ### 👛 [Wallets](/docs/learn/wallets/hardware-wallets)
 
-Wallets don't hold Bitcoin—they hold keys. Understand the different types and their trade-offs.
+Wallets don't hold Bitcoin; they hold keys. Understand the different types and their trade-offs.
 
 - Hardware wallets and their security model
 - Software wallets: hot vs. cold
@@ -66,7 +66,7 @@ How Bitcoin actually moves. From UTXOs to broadcast, understand the transaction 
 
 ### 🕵️ [Privacy](/docs/learn/privacy/why-privacy-matters)
 
-Privacy isn't optional—it's essential security. Learn how Bitcoin transactions can be traced and how to protect yourself.
+Privacy isn't optional. It's essential security. Learn how Bitcoin transactions can be traced and how to protect yourself.
 
 - Why privacy matters for security
 - How chain analysis works
@@ -126,6 +126,6 @@ Choose your path based on where you are:
 
 Once you've built your knowledge foundation:
 
-→ **[View All Guides](/guides/)** — Step-by-step tutorials for wallet setup, security, privacy, and more
+→ **[View All Guides](/guides/)**: Step-by-step tutorials for wallet setup, security, privacy, and more
 
-→ **[Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)** — Get started with self-custody today
+→ **[Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)**: Get started with self-custody today

@@ -18,7 +18,7 @@ A standard Bitcoin wallet has a single point of failure: one seed phrase control
 
 A multisig wallet requires **multiple private keys** to authorize a transaction. Instead of one key having complete control, you distribute control across several keys.
 
-Think of it like a bank vault that requires two managers to turn their keys simultaneously—neither can open it alone.
+Think of it like a bank vault that requires two managers to turn their keys simultaneously; neither can open it alone.
 
 
 ## The M-of-N Model
@@ -126,17 +126,17 @@ One key compromised ≠ funds lost
 
 ### Advantages
 
-- **Theft protection** — Attacker needs multiple keys
-- **Loss protection** — Can lose one key and still recover
-- **Inheritance** — Can distribute keys to family
-- **Shared control** — Multiple parties must agree to spend
+- **Theft protection**: attacker needs multiple keys
+- **Loss protection**: can lose one key and still recover
+- **Inheritance**: can distribute keys to family
+- **Shared control**: multiple parties must agree to spend
 
 ### Disadvantages
 
-- **More complexity** — More things to back up and manage
-- **Higher fees** — Multisig transactions are larger
-- **More points of failure** — Must back up descriptor AND seeds
-- **Slower transactions** — Need multiple devices to sign
+- **More complexity**: more things to back up and manage
+- **Higher fees**: multisig transactions are larger
+- **More points of failure**: must back up descriptor AND seeds
+- **Slower transactions**: need multiple devices to sign
 
 ### The Complexity Warning
 
@@ -190,7 +190,7 @@ A text string containing:
 - Script type and derivation paths
 
 :::danger Critical
-**The wallet descriptor is as important as your seed phrases.** Without it, you cannot reconstruct your multisig wallet—even with all seeds.
+**The wallet descriptor is as important as your seed phrases.** Without it, you cannot reconstruct your multisig wallet, even with all seeds.
 :::
 
 
@@ -218,7 +218,7 @@ Some services offer "assisted" multisig where they hold one key:
 - Multisig requires **multiple keys** to spend bitcoin
 - **2-of-3** is the most popular individual setup
 - Eliminates **single points of failure** for both theft and loss
-- Adds **complexity**—more things can go wrong
+- Adds **complexity**: more things can go wrong
 - **Wallet descriptor** backup is critical (not just seeds)
 - Best for **significant, long-term holdings**
 - Master single-sig first before attempting multisig
@@ -272,7 +272,7 @@ For very large holdings or organizations:
 
 **⚠️ Not recommended for most users**
 
-- No redundancy — lose 1 key, lose everything
+- No redundancy: lose 1 key, lose everything
 - Both parties must be available to spend
 - Use only for specific shared-custody scenarios
 
@@ -322,7 +322,7 @@ Don't want to manage all keys yourself? **Collaborative custody** providers hold
 
 **Problem:** A single theft or disaster compromises multiple keys.
 
-**Solution:** Geographic distribution — each seed in a different location.
+**Solution:** Geographic distribution, each seed in a different location.
 
 ### Mistake 3: Using the Same Hardware Wallet Brand
 

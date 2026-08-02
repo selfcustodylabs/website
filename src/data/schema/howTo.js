@@ -278,7 +278,7 @@ export const howToSchemas = {
       },
       {
         name: "Backup Wallet Descriptor",
-        text: "Export and securely store the wallet descriptor—required for recovery along with seed phrases.",
+        text: "Export and securely store the wallet descriptor, required for recovery along with seed phrases.",
         url: `${SITE_URL}/docs/learn/wallets/multisig/backup-recovery/`,
       },
       {

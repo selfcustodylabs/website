@@ -36,7 +36,7 @@ The private key signs transactions, confirming your ownership of the Bitcoin you
 
 Storing private keys securely is tricky. If stored online, they can be stolen. If kept offline, they could be lost or damaged. This is why managing private keys can be difficult for many users.
 
-This is where the [seed phrase](/docs/learn/keys/seed) comes in—a human-readable way to store and recover your private key. We'll explore this in the next section.
+This is where the [seed phrase](/docs/learn/keys/seed) comes in (a human-readable way to store and recover your private key). We'll explore this in the next section.
 
 
 ## Key Takeaways

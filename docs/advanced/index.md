@@ -72,7 +72,7 @@ Eliminate single points of failure by requiring multiple keys to spend. In a 2-o
 
 **Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** Varies
 
-Ensure your Bitcoin passes to your loved ones—not lost forever. An estimated 4 million Bitcoin are permanently lost, many because owners died without sharing access.
+Ensure your Bitcoin passes to your loved ones, not lost forever. An estimated 4 million Bitcoin are permanently lost, many because owners died without sharing access.
 
 **What you'll learn:**
 - Why Bitcoin inheritance is different from traditional assets
@@ -81,7 +81,7 @@ Ensure your Bitcoin passes to your loved ones—not lost forever. An estimated 4
 - Common mistakes that lose family fortunes
 - Legal considerations and documentation
 
-**Best approach:** Family multisig where heirs hold keys from the start—no reconstruction needed after death.
+**Best approach:** Family multisig where heirs hold keys from the start. No reconstruction needed after death.
 
 </div>
 
@@ -120,7 +120,7 @@ A computer that has never and will never connect to any network. Used for:
 
 **Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $50-150 (or free with repurposed hardware)
 
-A computer used exclusively for Bitcoin operations—separate from your daily-use devices.
+A computer used exclusively for Bitcoin operations, separate from your daily-use devices.
 
 **Benefits:**
 - Reduced attack surface
@@ -175,22 +175,22 @@ Open-source firmware foundation. More hardware support than Libreboot but may re
 Build advanced capabilities in stages:
 
 ### Stage 1: Foundation (Do First)
-1. **[Hardware wallet](/docs/wallet-setup/hardware-wallet/)** — Basic self-custody
-2. **[Backup verification](/docs/wallet-setup/backup-verification/)** — Confirm recovery works
-3. **[Run your own node](/docs/bitcoin-node/)** — Verify transactions yourself
+1. **[Hardware wallet](/docs/wallet-setup/hardware-wallet/)**: Basic self-custody
+2. **[Backup verification](/docs/wallet-setup/backup-verification/)**: Confirm recovery works
+3. **[Run your own node](/docs/bitcoin-node/)**: Verify transactions yourself
 
 ### Stage 2: Enhanced Security
-4. **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)** — Separate from daily use
-5. **[Security hardening](/docs/security/)** — OpSec and physical security
-6. **[Inheritance planning](/docs/advanced/inheritance-planning)** — Don't let Bitcoin die with you
+4. **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)**: Separate from daily use
+5. **[Security hardening](/docs/security/)**: OpSec and physical security
+6. **[Inheritance planning](/docs/advanced/inheritance-planning)**: Don't let Bitcoin die with you
 
 ### Stage 3: Advanced Protection
-7. **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)** — For offline operations
-8. **[DIY seed generation](/docs/learn/keys/random/)** — Verify your entropy
+7. **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)**: For offline operations
+8. **[DIY seed generation](/docs/learn/keys/random/)**: Verify your entropy
 
 ### Stage 4: Maximum Security
-9. **[Multisig setup](/docs/learn/wallets/multisig/)** — Eliminate single points of failure
-10. **[Open firmware](/docs/libreboot/)** — Remove BIOS-level threats
+9. **[Multisig setup](/docs/learn/wallets/multisig/)**: Eliminate single points of failure
+10. **[Open firmware](/docs/libreboot/)**: Remove BIOS-level threats
 
 ---
 
@@ -200,7 +200,7 @@ Build advanced capabilities in stages:
 → **[Multisig](/docs/learn/wallets/multisig/)** is your answer. Start with 2-of-3.
 
 ### "I want my family to inherit my Bitcoin"
-→ **[Inheritance Planning](/docs/advanced/inheritance-planning)** — don't let your Bitcoin die with you.
+→ **[Inheritance Planning](/docs/advanced/inheritance-planning)**: don't let your Bitcoin die with you.
 
 ### "I want to generate my own seed securely"
 → **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)** + [DIY seed guide](/docs/learn/keys/random/)
@@ -236,10 +236,10 @@ Both approaches have merit. Secure elements provide tamper resistance. Open sour
 ## Related Resources
 
 ### Prerequisites
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) — What level do you need?
-- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) — Start here if you haven't
+- [Threat Model Assessment](/docs/learn/fundamentals/threat-models): What level do you need?
+- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/): Start here if you haven't
 
 ### Supporting Guides
-- [Bitcoin Node Setup](/docs/bitcoin-node/) — Verify your own transactions
-- [Security Hardening](/docs/security/) — OpSec and physical security
-- [Privacy Guides](/docs/learn/privacy/protecting-privacy/) — Protect your transaction history
+- [Bitcoin Node Setup](/docs/bitcoin-node/): Verify your own transactions
+- [Security Hardening](/docs/security/): OpSec and physical security
+- [Privacy Guides](/docs/learn/privacy/protecting-privacy/): Protect your transaction history

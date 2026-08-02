@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: "Assess Your Threat Model"
-description: "Determine what level of Bitcoin security you actually need. Match your setup to your real risks—not everyone needs maximum security, but some people do."
+description: "Determine what level of Bitcoin security you actually need. Match your setup to your real risks. Not everyone needs maximum security, but some people do."
 keywords: ["bitcoin threat model", "security assessment", "bitcoin security", "self custody", "risk assessment"]
 tags: ["threat model", "security", "self custody", "getting started"]
 slug: /learn/fundamentals/threat-models

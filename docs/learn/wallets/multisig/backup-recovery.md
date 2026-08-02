@@ -31,7 +31,7 @@ For a 2-of-3 multisig, you need to secure:
 :::danger Critical
 **The wallet descriptor is as important as your seed phrases!**
 
-Without it, having all three seeds won't help you — you won't know how to combine them into the multisig.
+Without it, having all three seeds won't help you; you won't know how to combine them into the multisig.
 :::
 
 
@@ -49,11 +49,11 @@ wsh(sortedmulti(2,
 ```
 
 This tells wallet software:
-- **wsh** — Native SegWit script type
-- **sortedmulti(2,...)** — 2-of-3 multisig with sorted keys
-- **[fingerprint/path]** — Which device and derivation for each key
-- **xpub...** — The extended public key for each signer
-- **#checksum** — Verification that descriptor is correct
+- **wsh**: native SegWit script type
+- **sortedmulti(2,...)**: 2-of-3 multisig with sorted keys
+- **[fingerprint/path]**: which device and derivation for each key
+- **xpub...**: the extended public key for each signer
+- **#checksum**: verification that descriptor is correct
 
 **From seed phrases alone, you get xpubs, but you don't know:**
 - Which xpubs belong together
@@ -69,7 +69,7 @@ This tells wallet software:
 1. **Never store multiple seed phrases together**
 2. **Never store a seed with its corresponding device**
 3. **Store wallet descriptor copies with seed backups**
-4. **Geographic separation** — Different buildings, ideally different cities
+4. **Geographic separation**: different buildings, ideally different cities
 
 ### Recommended 2-of-3 Storage Layout
 
@@ -144,7 +144,7 @@ This tells wallet software:
 **Situation:** Seed backup #1 was destroyed, but Device #1 still works.
 
 **Solution:**
-1. Device #1 still holds Key #1 — you can still sign
+1. Device #1 still holds Key #1; you can still sign
 2. Use Device #1 + one other device to move funds
 3. Create a NEW multisig wallet with 3 fresh seeds
 4. Transfer all funds to the new wallet
@@ -157,7 +157,7 @@ This tells wallet software:
 **Situation:** Thief took Hardware Wallet #3.
 
 **Solution:**
-1. **Don't panic** — Thief needs 2 keys, they only have 1
+1. **Don't panic**: the thief needs 2 keys, they only have 1
 2. Use Device #1 + Device #2 to move funds immediately
 3. Create a NEW multisig wallet with fresh seeds
 4. Transfer all funds to the new wallet
@@ -328,10 +328,10 @@ Multisig adds complexity for inheritance. Your heirs need:
 
 Multisig backup is more complex but follows clear rules:
 
-1. **Separate everything** — Seeds, devices, locations
-2. **Back up the descriptor** — As critical as seeds
-3. **Test your recovery** — Before you need it
-4. **Plan for inheritance** — Others may need access someday
+1. **Separate everything**: seeds, devices, locations
+2. **Back up the descriptor**: as critical as seeds
+3. **Test your recovery**: before you need it
+4. **Plan for inheritance**: others may need access someday
 
 Your backup strategy should ensure that:
 - Any single loss (fire, theft, failure) doesn't compromise funds
@@ -342,7 +342,7 @@ Your backup strategy should ensure that:
 
 ## Related Guides
 
-- [Multisig Overview](/docs/learn/wallets/multisig) — Understanding multisig fundamentals
-- [Hardware Setup](/docs/learn/wallets/multisig/hardware-setup) — Setting up signing devices
-- [Sparrow Setup](/docs/learn/wallets/multisig/sparrow-setup) — Creating the wallet
-- [Seed Phrase Backup](/docs/learn/keys/random/#step-5-back-up-on-metal) — Metal backup options
+- [Multisig Overview](/docs/learn/wallets/multisig) (understanding multisig fundamentals)
+- [Hardware Setup](/docs/learn/wallets/multisig/hardware-setup) (setting up signing devices)
+- [Sparrow Setup](/docs/learn/wallets/multisig/sparrow-setup) (creating the wallet)
+- [Seed Phrase Backup](/docs/learn/keys/random/#step-5-back-up-on-metal) (metal backup options)

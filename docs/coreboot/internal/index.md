@@ -16,8 +16,8 @@ This path is faster than external flashing, but the prerequisites are strict: yo
 
 ## In this section
 
-- **[Downgrade Stock BIOS](./downgrading-bios)** — install the BIOS version with an unlocked Intel ME region
-- **[Unlock the BIOS Region](./unlocking-bios)** — use CHIPSEC to clear the Flash Descriptor write protection
-- **[Flash Coreboot](./flashing-bios)** — write the new firmware and verify the result
+- **[Downgrade Stock BIOS](./downgrading-bios)**: install the BIOS version with an unlocked Intel ME region
+- **[Unlock the BIOS Region](./unlocking-bios)**: use CHIPSEC to clear the Flash Descriptor write protection
+- **[Flash Coreboot](./flashing-bios)**: write the new firmware and verify the result
 
 If your laptop does not support internal flashing, see the [external flashing guide](/docs/coreboot/external-flashing) instead.

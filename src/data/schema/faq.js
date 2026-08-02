@@ -19,7 +19,7 @@ export const faqSchemas = {
       {
         question: "Can someone steal my Bitcoin if they know my public address?",
         answer:
-          "No. Your public address is safe to share—it only allows people to send you Bitcoin. To spend Bitcoin, you need the private key, which is derived from your seed phrase.",
+          "No. Your public address is safe to share: it only allows people to send you Bitcoin. To spend Bitcoin, you need the private key, which is derived from your seed phrase.",
       },
       {
         question: "Do I need to run my own Bitcoin node?",
@@ -64,7 +64,7 @@ export const faqSchemas = {
       {
         question: "Why is seed phrase recovery mathematically impossible?",
         answer:
-          "A 24-word BIP39 seed represents 256 bits of entropy. Brute-forcing it would require trying 2^256 combinations — more than the number of atoms in the observable universe. No amount of computing power, including quantum computers, can guess a properly generated seed phrase in any practical timeframe.",
+          "A 24-word BIP39 seed represents 256 bits of entropy. Brute-forcing it would require trying 2^256 combinations, more than the number of atoms in the observable universe. No amount of computing power, including quantum computers, can guess a properly generated seed phrase in any practical timeframe.",
       },
       {
         question: "Are seed phrase recovery services legitimate?",
@@ -99,7 +99,7 @@ export const faqSchemas = {
       {
         question: "What should I do if I have been scammed by a recovery service?",
         answer:
-          "Stop all communication with the scammer immediately, do not pay additional fees, document everything, and report the incident to your local cybercrime authority and the platform where you found the scammer. Do not engage a second 'recovery' service to recover funds lost to the first — these are also scams.",
+          "Stop all communication with the scammer immediately, do not pay additional fees, document everything, and report the incident to your local cybercrime authority and the platform where you found the scammer. Do not engage a second 'recovery' service to recover funds lost to the first: these are also scams.",
       },
     ],
   },

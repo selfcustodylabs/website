@@ -15,7 +15,7 @@ export default function AuthorByline() {
         <Link to="/" className="font-semibold text-white hover:text-amber-300" itemProp="url">
           <span itemProp="name">Self Custody Labs</span>
         </Link>
-        {" "}— independent, open-source Bitcoin self-custody guides.
+        {", "}independent, open-source Bitcoin self-custody guides.
       </span>
     </aside>
   );

@@ -105,7 +105,7 @@ Scammers rely on you not understanding why recovery is impossible:
 
 **Even with the fastest supercomputers:**
 - Brute-forcing a full 24-word seed would take longer than the age of the universe
-- This is not an exaggeration—it's mathematics
+- This is not an exaggeration: it's mathematics
 
 **What IS possible:**
 - Recovering 1-2 missing words (2,048 to ~4 million combinations)
@@ -176,7 +176,7 @@ Scammers rely on you not understanding why recovery is impossible:
 1. **Document what you know** (words you remember, possible variations)
 2. **Download BTCRecover** from the official GitHub
 3. **Run it on an air-gapped computer** if possible
-4. **Be patient**—recovery takes time
+4. **Be patient**: recovery takes time
 5. **Do not share your partial seed** with "helpers"
 
 ### If Someone Has Contacted You:
@@ -198,7 +198,7 @@ These are real patterns reported by scam victims:
 
 > "I got an email that looked exactly like it was from Ledger saying my wallet was compromised. I entered my seed to 'protect' it."
 
-> "They kept asking for more money—first $500, then $1000, then $5000 for 'mining fees.' I lost everything."
+> "They kept asking for more money: first $500, then $1000, then $5000 for 'mining fees.' I lost everything."
 
 
 ## If You've Been Scammed
@@ -222,11 +222,11 @@ If you've already fallen victim:
 
 The best protection is prevention:
 
-1. **Proper backups** — Multiple copies, tested recovery
-2. **Never share your seed** — For any reason, with anyone
-3. **Healthy skepticism** — If it sounds too good to be true, it is
-4. **Verify everything** — Check official sources, not Google ads
-5. **Understand the limits** — Know what's mathematically possible
+1. **Proper backups**: Multiple copies, tested recovery
+2. **Never share your seed**: For any reason, with anyone
+3. **Healthy skepticism**: If it sounds too good to be true, it is
+4. **Verify everything**: Check official sources, not Google ads
+5. **Understand the limits**: Know what's mathematically possible
 
 → See: [Backup Verification Guide](/docs/wallet-setup/backup-verification/)
 → See: [Before You Deposit Checklist](/docs/wallet-setup/before-you-deposit)
@@ -251,6 +251,6 @@ The best protection is prevention:
 
 ## Related Guides
 
-- [What Happens If You Lose Your Seed?](/docs/reference/faq/lost-seed) — Understanding seed loss
-- [Backup Verification](/docs/wallet-setup/backup-verification/) — Prevent loss in the first place
-- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) — Start with good practices
+- [What Happens If You Lose Your Seed?](/docs/reference/faq/lost-seed): Understanding seed loss
+- [Backup Verification](/docs/wallet-setup/backup-verification/): Prevent loss in the first place
+- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/): Start with good practices

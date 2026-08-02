@@ -10,7 +10,7 @@ tags: ["bitcoin node", "self custody", "guide"]
 
 # Bitcoin Node Guide
 
-Running your own Bitcoin node is one of the most important steps you can take toward true self-sovereignty. It's where "don't trust, verify" becomes real—where you stop relying on others to tell you what's happening on the network and start verifying everything yourself.
+Running your own Bitcoin node is one of the most important steps you can take toward true self-sovereignty. It's where "don't trust, verify" becomes real, where you stop relying on others to tell you what's happening on the network and start verifying everything yourself.
 
 This guide will take you from understanding why nodes matter to running your own fully-configured setup.
 
@@ -37,9 +37,9 @@ When you use Bitcoin without your own node, you're trusting someone else's compu
 That third party learns your addresses, your transaction history, when you're online. You're trading privacy for convenience.
 
 With your own node:
-- **Privacy** — Your queries stay between you and your own infrastructure
-- **Verification** — You confirm everything yourself, trusting no one
-- **Sovereignty** — You participate directly in Bitcoin's consensus
+- **Privacy:** Your queries stay between you and your own infrastructure
+- **Verification:** You confirm everything yourself, trusting no one
+- **Sovereignty:** You participate directly in Bitcoin's consensus
 
 → Read more: [Why Run Your Own Node](/docs/learn/nodes/why-run-node)
 
@@ -88,7 +88,7 @@ YOUR NODE SETUP
 </div>
 
 :::warning SSD Required
-Do NOT use a traditional hard drive (HDD). Initial sync takes weeks instead of days, and ongoing performance will be frustrating. An SSD is essential—this is not the place to save money.
+Do NOT use a traditional hard drive (HDD). Initial sync takes weeks instead of days, and ongoing performance will be frustrating. An SSD is essential: this is not the place to save money.
 :::
 
 ### Hardware Options
@@ -131,14 +131,14 @@ Be realistic about timing:
 
 </div>
 
-The initial sync is slow but only happens once. After that, your node stays current automatically. Don't wait by the computer—start the sync and go live your life.
+The initial sync is slow but only happens once. After that, your node stays current automatically. Don't wait by the computer; start the sync and go live your life.
 
 
 ## Our Recommended Approach: Parmanode
 
 We recommend **[Parmanode](/docs/bitcoin-node/parmanode-setup)** for most users. It's a terminal-based wizard that handles the complex parts (downloading, signature verification, configuration) while keeping you in control of a real Linux system.
 
-The killer feature: **Parmanode automatically configures your wallet to connect to your node.** Install Sparrow through Parmanode and it just works—no copying connection strings or fumbling with settings.
+The killer feature: **Parmanode automatically configures your wallet to connect to your node.** Install Sparrow through Parmanode and it just works: no copying connection strings or fumbling with settings.
 
 → **[Start with Parmanode](/docs/bitcoin-node/parmanode-setup)**
 
@@ -150,14 +150,14 @@ If you prefer a GUI-based approach, see our [comparison of node software options
 
 If you're new to nodes, start here:
 
-- [What is a Bitcoin Node](/docs/learn/nodes/what-is-node) — The conceptual foundation
-- [Why Run Your Own Node](/docs/learn/nodes/why-run-node) — Privacy and verification benefits
-- [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) — The bigger picture
+- [What is a Bitcoin Node](/docs/learn/nodes/what-is-node): The conceptual foundation
+- [Why Run Your Own Node](/docs/learn/nodes/why-run-node): Privacy and verification benefits
+- [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters): The bigger picture
 
 ---
 
 ## Ready to Begin?
 
-→ **[Node Software Options](/docs/bitcoin-node/node-software-options)** — Compare your choices
+→ **[Node Software Options](/docs/bitcoin-node/node-software-options)**: Compare your choices
 
-→ **[Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup)** — Jump straight in (recommended)
+→ **[Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup)**: Jump straight in (recommended)

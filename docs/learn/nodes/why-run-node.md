@@ -8,7 +8,7 @@ tags: ["node", "privacy", "security", "bitcoin"]
 
 # Why Run Your Own Node
 
-Running your own Bitcoin node isn't required—but it's strongly recommended for anyone serious about self-custody. Here's why.
+Running your own Bitcoin node isn't required, but it's strongly recommended for anyone serious about self-custody. Here's why.
 
 
 ## The Privacy Problem
@@ -35,10 +35,10 @@ Every time your wallet connects to a third-party node:
 ### Who Might Be Watching
 
 Random public nodes could be run by:
-- **Surveillance companies** — Building databases of address ownership
-- **Exchanges** — Tracking customer activity post-withdrawal
-- **Governments** — Monitoring financial activity
-- **Hackers** — Identifying targets for theft
+- **Surveillance companies**: Building databases of address ownership
+- **Exchanges**: Tracking customer activity post-withdrawal
+- **Governments**: Monitoring financial activity
+- **Hackers**: Identifying targets for theft
 
 You have no way of knowing who operates the nodes your wallet connects to.
 
@@ -48,7 +48,7 @@ YOUR WALLET THINKS:
 
 REALITY:
   "Thanks for telling me all your addresses. 
-   I've added them to my database." — Surveillance node
+   I've added them to my database." (Surveillance node)
 ```
 
 
@@ -76,7 +76,7 @@ LATER:
   Your balance is suddenly 10 BTC less than expected
 ```
 
-This is difficult to pull off but not impossible—especially in targeted attacks.
+This is difficult to pull off but not impossible, especially in targeted attacks.
 
 ### The Wrong Chain Problem
 
@@ -99,7 +99,7 @@ Your node independently verifies:
 - That no one is cheating
 - That your balance is real
 
-You don't ask anyone—you check yourself.
+You don't ask anyone; you check yourself.
 
 ### No Single Point of Trust
 
@@ -223,7 +223,7 @@ You might not be a target today. Privacy is easier to maintain than to recover. 
 
 ## You've Completed the Learn Section! 🎉
 
-Congratulations—you now understand the core concepts of Bitcoin self-custody: keys, wallets, transactions, privacy, and nodes. You have the knowledge foundation to confidently secure your Bitcoin.
+Congratulations, you now understand the core concepts of Bitcoin self-custody: keys, wallets, transactions, privacy, and nodes. You have the knowledge foundation to confidently secure your Bitcoin.
 
 **Now it's time to put knowledge into practice.**
 

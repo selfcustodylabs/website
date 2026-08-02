@@ -18,14 +18,14 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,css,md}\""
   },
   "dependencies": {
-    "@docusaurus/core": "^3.10.0",
-    "@docusaurus/plugin-client-redirects": "^3.10.0",
-    "@docusaurus/plugin-google-gtag": "^3.10.0",
-    "@docusaurus/plugin-sitemap": "^3.10.0",
-    "@docusaurus/preset-classic": "^3.10.0",
-    "@docusaurus/remark-plugin-npm2yarn": "^3.10.0",
-    "@docusaurus/theme-classic": "^3.10.0",
-    "@docusaurus/theme-live-codeblock": "^3.10.0",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/plugin-client-redirects": "^3.10.2",
+    "@docusaurus/plugin-google-gtag": "^3.10.2",
+    "@docusaurus/plugin-sitemap": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.10.2",
+    "@docusaurus/theme-classic": "^3.10.2",
+    "@docusaurus/theme-live-codeblock": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "^0.37.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -39,8 +39,8 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.10.0",
-    "@docusaurus/types": "^3.10.0",
+    "@docusaurus/module-type-aliases": "^3.10.2",
+    "@docusaurus/types": "^3.10.2",
     "autoprefixer": "^10.5.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",

@@ -198,7 +198,7 @@ This checklist exists because self-custody is serious. The freedom and security 
 
 **Complete the checklist. Test your backup. Verify everything.**
 
-Then—and only then—are you ready to truly own your Bitcoin.
+Then, and only then, are you ready to truly own your Bitcoin.
 
 :::tip 🎉 Congratulations!
 If you've completed this checklist, you've finished the core wallet setup journey. You now have a secure hardware wallet with a verified backup. Welcome to true Bitcoin ownership!
@@ -211,7 +211,7 @@ If you've completed this checklist, you've finished the core wallet setup journe
       label: "Recommended", 
       title: "Run Your Own Node", 
       href: "/docs/bitcoin-node/", 
-      description: "Verify transactions yourself—the ultimate step in sovereignty" 
+      description: "Verify transactions yourself: the ultimate step in sovereignty" 
     },
     { 
       label: "Privacy", 
