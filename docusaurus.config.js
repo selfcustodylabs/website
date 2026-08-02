@@ -373,6 +373,12 @@ const config = {
             "aria-label": "GitHub repository",
           },
           {
+            href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
+            position: 'right',
+            className: "header--nostr-link",
+            "aria-label": "Nostr profile",
+          },
+          {
             href: 'https://app.cluborange.org/selfcustodylabs',
             position: 'right',
             className: "header--cluborange-link",
