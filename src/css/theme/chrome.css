@@ -764,3 +764,35 @@ article .theme-doc-markdown strong {
   margin-top: 2rem;
 }
 
+/* ===========================================
+   ANNOUNCEMENT BAR
+   =========================================== */
+
+/* Docusaurus pins the bar to a fixed 30px at >=997px, which clips any content
+   that wraps to a second line — the overflow renders outside the amber box.
+   Let the bar grow to fit instead. */
+@media (min-width: 997px) {
+  :root {
+    --docusaurus-announcement-bar-height: auto;
+  }
+}
+
+/* Class names are hashed by CSS modules, hence the attribute selector. */
+div[class^='announcementBar_'] {
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Bold + underlined so the two guide links read as clickable on the amber bar. */
+div[class^='announcementBar_'] a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+div[class^='announcementBar_'] a:hover {
+  color: #000;
+  text-decoration-thickness: 2px;
+}
+

@@ -96,6 +96,14 @@ off the real routes.
   classes in `tables.css` / `utilities.css`.
 - Functional components with hooks, JSDoc on props, ES6 imports grouped React → Docusaurus → MUI
   → local. See [CONTRIBUTING.md](CONTRIBUTING.md).
+- **Raw HTML in `themeConfig` escapes the link checker.** `onBrokenLinks: "throw"` only walks
+  Markdown/MDX, so hrefs inside `announcementBar.content`, `navbar`, and `footer` strings can 404
+  on a green build. Verify those routes by hand (`curl -o /dev/null -w "%{http_code}"`).
+- **The announcement bar is single-line by default.** Docusaurus pins
+  `--docusaurus-announcement-bar-height` to `30px` at ≥997px; anything that wraps overflows the
+  colored box and renders over the page. `theme/chrome.css` overrides it to `auto` — keep that if
+  you edit `announcementBar.content`. Bumping its `id` re-shows the bar to everyone who dismissed
+  it (dismissal is persisted in localStorage per `id`).
 
 ## Deploy & hosting boundaries
 
