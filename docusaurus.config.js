@@ -272,13 +272,20 @@ const config = {
       // ===========================================
       // Announcement Bar (optional - for important updates)
       // ===========================================
-      // announcementBar: {
-      //   id: 'new_guide',
-      //   content: '🆕 New guide: <a href="/docs/learn/wallets/multisig/">Multisig Setup</a> - Eliminate single points of failure',
-      //   backgroundColor: '#f59e0b',
-      //   textColor: '#000',
-      //   isCloseable: true,
-      // },
+      // NOTE: hrefs below are NOT covered by onBrokenLinks — the link checker only
+      // walks Markdown/MDX. Verify these routes by hand after any edit.
+      // Bump `id` to re-show the bar to visitors who already dismissed it.
+      announcementBar: {
+        id: 'coldcard_rng_2026',
+        content:
+          '⚠️ <strong>Coldcard RNG flaw:</strong> some seeds came from a predictable software ' +
+          'RNG, and new firmware does <strong>not</strong> fix an existing seed. ' +
+          'Generate your own: <a href="/docs/learn/keys/random/">dice seed</a> + ' +
+          '<a href="/docs/learn/keys/passphrase/">passphrase</a>.',
+        backgroundColor: '#f59e0b',
+        textColor: '#000',
+        isCloseable: true,
+      },
       
       // ===========================================
       // Navigation
