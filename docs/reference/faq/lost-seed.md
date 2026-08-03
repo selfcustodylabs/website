@@ -176,7 +176,7 @@ If you're reading this and still have access to your Bitcoin:
 - [ ] Make multiple copies of your seed
 - [ ] Store in geographically separate locations
 - [ ] Consider metal backup (fire/water resistant)
-- [ ] See: [Seed Backup Guide](/docs/learn/keys/random/#step-5-back-up-on-metal)
+- [ ] See: [Seed Backup Guide](/docs/learn/keys/random/#step-6-back-up-on-metal)
 
 ### 3. Document and Communicate
 - [ ] Record (securely) where backups are stored

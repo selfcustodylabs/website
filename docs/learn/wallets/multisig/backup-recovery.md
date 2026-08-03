@@ -345,4 +345,4 @@ Your backup strategy should ensure that:
 - [Multisig Overview](/docs/learn/wallets/multisig) (understanding multisig fundamentals)
 - [Hardware Setup](/docs/learn/wallets/multisig/hardware-setup) (setting up signing devices)
 - [Sparrow Setup](/docs/learn/wallets/multisig/sparrow-setup) (creating the wallet)
-- [Seed Phrase Backup](/docs/learn/keys/random/#step-5-back-up-on-metal) (metal backup options)
+- [Seed Phrase Backup](/docs/learn/keys/random/#step-6-back-up-on-metal) (metal backup options)
