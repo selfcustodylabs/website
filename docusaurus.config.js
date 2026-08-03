@@ -20,10 +20,7 @@ const config = {
     // Preconnect for performance
     { tagName: "link", attributes: { rel: "preconnect", href: "https://www.googletagmanager.com" } },
     { tagName: "link", attributes: { rel: "preconnect", href: "https://www.google-analytics.com" } },
-    
-    // DNS Prefetch for external resources
-    { tagName: "link", attributes: { rel: "dns-prefetch", href: "https://cloud.umami.is" } },
-    
+
     // ===========================================
     // Open Graph Meta Tags (Facebook, LinkedIn, etc.)
     // ===========================================
@@ -63,7 +60,7 @@ const config = {
       tagName: "meta",
       attributes: {
         "http-equiv": "Content-Security-Policy",
-        content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://cloud.umami.is https://region1.google-analytics.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+        content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
       }
     },
 
@@ -934,20 +931,6 @@ const config = {
     ],
   ],
   
-  // ===========================================
-  // SCRIPTS
-  // ===========================================
-  // Note: SRI (Subresource Integrity) is not used for Umami script because
-  // Umami updates their script periodically, which would break the hash.
-  // Security is maintained via CSP headers instead.
-  scripts: [
-    {
-      src: 'https://cloud.umami.is/script.js',
-      defer: true,
-      'data-website-id': '5649cb57-bc60-498c-a7ff-2d044fc85912',
-      async: true,
-    },
-  ],
 };
 
 export default config;
