@@ -128,28 +128,33 @@ export const howToSchemas = {
     steps: [
       {
         name: "Roll Dice for Entropy",
-        text: "Roll dice 99 times to generate 256 bits of true random entropy. Record each roll as binary (1-3 = 0, 4-6 = 1).",
+        text: "Collect 256 individual die results to generate 256 bits of true random entropy. Record each die as binary (1-3 = 0, 4-6 = 1) in 23 rows of 11 bits plus 3 bits on row 24.",
         url: `${SITE_URL}/docs/learn/keys/random/#step-1-roll-dice-for-entropy`,
       },
       {
         name: "Convert Binary to Decimal",
-        text: "Split your binary string into 11-bit chunks and convert each chunk to a decimal number (0-2047).",
+        text: "Convert each of the first 23 eleven-bit rows to a decimal number (0-2047). Row 24 is incomplete until the checksum is calculated.",
         url: `${SITE_URL}/docs/learn/keys/random/#step-2-convert-binary-to-decimal`,
       },
       {
         name: "Calculate Checksum",
-        text: "Use SHA256 to calculate the checksum bits that complete your 24th word.",
+        text: "Hash your 256 bits with SHA-256 in bits mode to get the 8 checksum bits that complete row 24, then convert row 24 to decimal.",
         url: `${SITE_URL}/docs/learn/keys/random/#step-3-calculate-the-checksum`,
       },
       {
         name: "Look Up BIP39 Words",
-        text: "Convert each decimal number to its corresponding BIP39 word to create your 24-word seed phrase.",
+        text: "Convert each of the 24 decimal numbers to its corresponding BIP39 word to create your 24-word seed phrase.",
         url: `${SITE_URL}/docs/learn/keys/random/#step-4-look-up-bip39-words`,
       },
       {
+        name: "Verify Your Seed Phrase",
+        text: "Enter the 24 words into an offline wallet such as Sparrow. Acceptance confirms the checksum and the whole chain of calculations.",
+        url: `${SITE_URL}/docs/learn/keys/random/#step-5-verify-your-seed-phrase`,
+      },
+      {
         name: "Backup Your Seed",
-        text: "Stamp or engrave your seed phrase onto a metal plate for fireproof, waterproof storage.",
-        url: `${SITE_URL}/docs/learn/keys/random/#step-5-back-up-on-metal`,
+        text: "Stamp or engrave your seed phrase onto a metal plate for fireproof, waterproof storage, then destroy the paper records.",
+        url: `${SITE_URL}/docs/learn/keys/random/#step-6-back-up-on-metal`,
       },
     ],
   },
