@@ -257,9 +257,13 @@ Add up all the numbers you wrote down. **The sum is the decimal equivalent of th
 
 For example, to convert the first row, `10111000101`:
 
+<div class="wrap-code">
+
 ```text
 1024 + 0 + 256 + 128 + 64 + 0 + 0 + 0 + 4 + 0 + 1 = 1477
 ```
+
+</div>
 
 Repeat this for rows 1 through 23. You will have 23 decimal numbers, each in the range 0–2047.
 
@@ -305,9 +309,13 @@ Read your grid from Step 1 straight through, row 1 to row 24, left to right, wit
 
 For our example:
 
+<div class="wrap-code">
+
 ```text
 1011100010111011100100101111001110110100010111111010101111110010000010000010110111000101101010101001011101110111111000101011110011101011101010010011000111101110001111111101110100011000101101010001101111101010011111000100001010001011011101010110011000101001
 ```
+
+</div>
 
 Count the characters before continuing. If you don't have exactly 256, the hash will be wrong and so will your seed.
 
@@ -315,15 +323,23 @@ Count the characters before continuing. If you don't have exactly 256, the hash 
 
 On your air-gapped Linux machine, feed that 256-bit string into SHA-256:
 
+<div class="wrap-code">
+
 ```bash
 echo 1011100010111011100100101111001110110100010111111010101111110010000010000010110111000101101010101001011101110111111000101011110011101011101010010011000111101110001111111101110100011000101101010001101111101010011111000100001010001011011101010110011000101001 | shasum -a 256 -0
 ```
 
+</div>
+
 Our example output:
+
+<div class="wrap-code">
 
 ```text
 52831c8346d7423d26648b51490f2d7ae0ddf172956f241a6bb8bdc0d887c292 ^-
 ```
+
+</div>
 
 :::danger The `-0` flag is not optional
 `-0` (also written `--01`) puts `shasum` into **BITS mode**, where each `0` and `1` character is treated as an actual bit. BIP39 requires hashing the 256 raw bits, not the text `"1011…"`.
@@ -332,9 +348,13 @@ Drop the `-0` and the command still runs and still prints a perfectly normal-loo
 
 If `shasum` is unavailable, this gives the same result:
 
+<div class="wrap-code">
+
 ```bash
 python3 -c "import hashlib; b='YOUR_256_BITS'; print(hashlib.sha256(int(b,2).to_bytes(32,'big')).hexdigest())"
 ```
+
+</div>
 
 Running both and comparing is a good way to catch a mistyped bit string.
 :::
@@ -412,9 +432,13 @@ Append those 8 bits to the 3 bits already in row 24. It now holds 11 bits and yo
 
 Now convert row 24 to decimal using the same method as Step 2. In our example, `00101010010` gives:
 
+<div class="wrap-code">
+
 ```text
 0 + 0 + 256 + 0 + 64 + 0 + 16 + 0 + 0 + 2 + 0 = 338
 ```
+
+</div>
 
 You now have all **24 decimal numbers**: 23 from Step 2, plus 338 from row 24.
 

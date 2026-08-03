@@ -104,3 +104,14 @@ header.guidesHero {
 .guide-card h3 a {
   color: #fbbf24;
 }
+
+/* ===========================================
+   CODE WRAPPING — enable word-wrap on long code
+   =========================================== */
+
+.wrap-code pre,
+.wrap-code .prism-code {
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-x: visible;
+}
