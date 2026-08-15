@@ -33,7 +33,7 @@ export default function FinalCTA() {
           <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
             <Link
               to="/learn"
-              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-base font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:shadow-glow-strong hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-base font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:text-neutral-950 hover:shadow-glow-strong hover:-translate-y-0.5"
             >
               Start your journey
               <ArrowForwardRoundedIcon

@@ -341,7 +341,7 @@ export default function LearnPage() {
           <div className="mt-20 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               to="/guides"
-              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:-translate-y-0.5 hover:shadow-glow-strong"
+              className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:text-neutral-950 hover:-translate-y-0.5 hover:shadow-glow-strong"
             >
               Ready for hands-on? View guides
               <ArrowForwardRoundedIcon
