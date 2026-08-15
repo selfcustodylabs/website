@@ -58,7 +58,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 animate-fade-in-up">
           <Link
             to="/learn"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:shadow-glow-strong hover:-translate-y-0.5 sm:text-base"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-amber-500 px-7 py-3.5 text-sm font-semibold text-neutral-950 shadow-glow transition-all duration-300 hover:bg-amber-400 hover:text-neutral-950 hover:shadow-glow-strong hover:-translate-y-0.5 sm:text-base"
           >
             <span className="relative z-10">Start Learning</span>
             <ArrowForwardRoundedIcon

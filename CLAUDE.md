@@ -89,6 +89,10 @@ off the real routes.
 ## Front-end conventions
 
 - **Dark mode only** — `colorMode.disableSwitch: true`. Don't add light-theme variants.
+- **Infima's `a:hover` beats Tailwind text utilities.** `a:hover { color: var(--ifm-link-hover-color) }`
+  resolves to `--ifm-color-primary` (`#f59e0b`) at specificity `(0,1,1)`, outranking `.text-*`
+  at `(0,1,0)`. Any anchor styled as a filled amber button needs an explicit `hover:text-*`
+  (`(0,2,0)`) or its label turns amber-on-amber and vanishes on hover.
 - **Tailwind with `preflight: false`** (Infima owns the reset). Brand tokens live in
   [tailwind.config.js](tailwind.config.js): amber `#f59e0b`, `bg.*`, `ink.*`, `line.*`.
 - **CSS load order** is `custom.css` → `base.css` → `theme/chrome.css` → `tables.css` →
