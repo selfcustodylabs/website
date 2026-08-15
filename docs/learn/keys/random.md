@@ -303,6 +303,14 @@ Repeat this for rows 1 through 23. You will have 23 decimal numbers, each in the
 
 The 8 missing digits in row 24 are calculated from the 256 bits you rolled in Step 1. Together they form a **checksum**: a short verification code that lets your wallet detect if you have made a typo when entering the seed. If the checksum doesn't match, the wallet warns you that something is wrong.
 
+:::info Two ways to do this
+The method below is **manual**: you hash your bits, then convert two hexadecimal characters by hand. It is the one that shows you what a checksum actually is, and it is worth doing at least once.
+
+If you would rather not do the arithmetic, [a single command](#or-do-it-in-one-command) at the end of this step produces the same result on the same air-gapped machine.
+
+**The safest option is both.** Work it out by hand, then run the command and confirm the two agree. If they disagree, you made a mistake somewhere, stop and find it before going any further.
+:::
+
 ### Write out your 256 bits as one line
 
 Read your grid from Step 1 straight through, row 1 to row 24, left to right, with no spaces and no line breaks. Rows 1–23 contribute 11 bits each and row 24 contributes its 3 bits, for 256 characters total.
@@ -442,6 +450,116 @@ Now convert row 24 to decimal using the same method as Step 2. In our example, `
 
 You now have all **24 decimal numbers**: 23 from Step 2, plus 338 from row 24.
 
+### Or do it in one command
+
+Everything above, the hash, the hex conversion, and row 24, can also be produced by one command on the same air-gapped machine. `python3` ships with Raspberry Pi OS, Tails, and every mainstream Linux install, and neither command below needs an internet connection or a single package you have to install.
+
+Start by putting your 256 bits into a variable. You can paste them with the 4-4-3 spacing from your grid, because both commands ignore whitespace:
+
+<div class="wrap-code">
+
+```bash
+BITS=1011100010111011100100101111001110110100010111111010101111110010000010000010110111000101101010101001011101110111111000101011110011101011101010010011000111101110001111111101110100011000101101010001101111101010011111000100001010001011011101010110011000101001
+```
+
+</div>
+
+**Option 1: just the checksum.** This finishes row 24 and leaves the word lookups in Step 4 to you:
+
+<details>
+<summary>Just the Checksum</summary>
+<p>
+
+```bash
+python3 -c "
+import hashlib,sys
+b=''.join(sys.argv[1].split())
+if len(b)!=256 or set(b)-{'0','1'}:
+    sys.exit('ERROR: need exactly 256 binary digits, got %d' % len(b))
+cs=format(hashlib.sha256(int(b,2).to_bytes(32,'big')).digest()[0],'08b')
+print('checksum bits :',cs)
+print('row 24 binary :',b[253:]+cs)
+print('row 24 decimal:',int(b[253:]+cs,2))
+" "$BITS"
+```
+
+</p>
+</details>
+
+For our example this prints:
+
+```text
+checksum bits : 01010010
+row 24 binary : 00101010010
+row 24 decimal: 338
+```
+
+**Option 2: all 24 numbers.** This prints every row's decimal value, which lets you check all of Step 2 as well as Step 3:
+
+<details>
+<summary>All 24 Numbers</summary>
+<p>
+
+```bash
+python3 -c "
+import hashlib,sys,os
+b=''.join(sys.argv[1].split())
+if len(b)!=256 or set(b)-{'0','1'}:
+    sys.exit('ERROR: need exactly 256 binary digits, got %d' % len(b))
+f=b+format(hashlib.sha256(int(b,2).to_bytes(32,'big')).digest()[0],'08b')
+w=open('english.txt').read().split() if os.path.exists('english.txt') else []
+for n in range(24):
+    i=int(f[n*11:n*11+11],2)
+    print('%2d. %4d  %s' % (n+1,i,w[i] if w else ''))
+" "$BITS"
+```
+
+</p>
+</details>
+
+If you have saved the [official BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) as `english.txt` in the same folder, this also prints the words, giving you an independent check on the lookups you do in Step 4. Without that file it prints the numbers only, which is all you need.
+
+:::tip Both commands refuse to guess
+If your string is not exactly 256 binary digits, the command stops with an error instead of printing a plausible-looking wrong answer. Miscounting your bits is the most common mistake in this whole process, so let the machine catch it.
+:::
+
+### Why several last words can look "valid"
+
+You may have read that a 24-word seed has more than one possible last word. That is true, and it is the most confusing part of this process, so it is worth being exact about it.
+
+Rows 1–23 fix 253 of your 264 bits. The 24th word supplies the remaining 11: the **3 bits you rolled** in row 24, plus the **8 checksum bits**. Because those 3 rolled bits can take 8 different values, exactly **8 of the 2048 BIP39 words** produce a valid checksum. For the example used throughout this guide, they are:
+
+<div class="fixed-width-table">
+
+|Row 24's 3 rolled bits|24th word|
+|-|-|
+|000|believe|
+|<span style={{ color: "#da6000" }}>**001**</span>|<span style={{ color: "#da6000" }}>**clean**</span> ← what our dice rolled|
+|010|gap|
+|011|hover|
+|100|message|
+|101|rule|
+|110|soul|
+|111|visual|
+
+</div>
+
+**You do not choose between them. Your dice already chose.**
+
+The checksum never picks a word off that list. It completes the word your own 3 bits already started. We rolled `001`, so our word is "clean". Had we rolled `110`, the checksum bits would have come out differently too, and the word would have been "soul".
+
+:::danger The other seven are valid, and no wallet will warn you
+Each of those 8 words produces a perfectly valid BIP39 seed phrase. Pick the wrong one and nothing rejects it: you get a real, valid, completely different wallet that has nothing to do with the dice you rolled. There is no error message, because from the wallet's point of view nothing is wrong.
+
+**Never pick a last word from a list of candidates.** If you rolled all 256 bits, exactly one word is yours, the one your own checksum produced.
+:::
+
+:::note Where the confusion comes from
+Tools that offer you a menu of "valid last words" are built for a different starting point: someone who has 23 words and no entropy committed to row 24 yet. For them any of the 8 really is equally fine, because making that choice *is* how they supply the last 3 bits of entropy. You supplied those bits with dice in Step 1, so the choice is already spent.
+
+The effect is far more visible with 12-word seeds. There the last word carries 7 entropy bits and only 4 checksum bits, so **128 of the 2048 words** are valid last words. That is where most people first run into this idea, and it does not carry over to a dice-rolled seed where every bit of entropy is already fixed.
+:::
+
 
 ## Step 4: Look Up BIP39 Words
 
@@ -500,10 +618,22 @@ You have now created a 24-word Bitcoin mnemonic seed. The next step confirms it 
 
 Install a software wallet such as Sparrow on your air-gapped computer and enter the 24 words in order.
 
-- **If the wallet accepts the seed**, your checksum matched, which means the whole chain of calculations is consistent. Continue to Step 6.
-- **If the wallet rejects the seed**, the checksum is wrong. Do not adjust words at random. Go back and re-check, in this order: the 256-bit string you hashed in Step 3 (exactly 256 characters, no typos), that you used the `-0` flag, the two hex characters you converted, row 24's binary, and finally the word lookups.
+- **If the wallet accepts the seed**, the checksum inside the phrase is consistent. That is necessary but not sufficient, so continue to the re-derivation check below before you move on.
+- **If the wallet rejects the seed**, the checksum is wrong. Do not adjust words at random, and do not swap the last word for another one that happens to be accepted. Go back and re-check, in this order: the 256-bit string you hashed in Step 3 (exactly 256 characters, no typos), that you used the `-0` flag, the two hex characters you converted, row 24's binary, and finally the word lookups.
 
 Keep this wallet offline. It is being used to check the arithmetic, not to hold funds.
+
+### Acceptance alone does not prove the seed is yours
+
+A wallet accepting your phrase proves the 24 words are consistent **with each other**. It does not prove they match the dice you rolled.
+
+As Step 3 explained, 8 different last words all pass that check, and 7 of them open a different wallet. If you picked the wrong one, or mistyped a word into another one that keeps the checksum valid, Sparrow opens a valid wallet without a single warning. The only thing that catches this is comparing the result against your dice grid:
+
+1. Take the 256-bit string from your grid again.
+2. Run [Option 2 from Step 3](#or-do-it-in-one-command), or redo the lookups by hand on a clean sheet of paper.
+3. Compare all 24 words against what you entered into the wallet, in order, one at a time.
+
+If every word matches, the seed really is the one your dice produced. If any word differs, trust the dice grid and find the mistake before you send any funds to it.
 
 ![Importing the seed into Sparrow Wallet for verification](/img/seed/import.webp)
 

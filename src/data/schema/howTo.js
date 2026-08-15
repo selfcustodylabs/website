@@ -148,7 +148,7 @@ export const howToSchemas = {
       },
       {
         name: "Verify Your Seed Phrase",
-        text: "Enter the 24 words into an offline wallet such as Sparrow. Acceptance confirms the checksum and the whole chain of calculations.",
+        text: "Enter the 24 words into an offline wallet such as Sparrow. Acceptance only confirms the checksum is internally consistent, so re-derive the words from your dice grid to confirm they match what you rolled.",
         url: `${SITE_URL}/docs/learn/keys/random/#step-5-verify-your-seed-phrase`,
       },
       {
