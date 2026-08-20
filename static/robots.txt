@@ -8,20 +8,25 @@ Allow: /
 # Crawl-delay for politeness (optional, most major crawlers ignore this)
 # Crawl-delay: 1
 
-# Disallow search result pages
-Disallow: /search
-Disallow: /search/
-
-# Disallow 404 page
-Disallow: /404
-Disallow: /404/
-
-# Tag pages are intentionally NOT Disallowed here.
-# They emit <meta name="robots" content="noindex, follow"> via swizzled
-# src/theme/DocTagsListPage and src/theme/DocTagDocListPage components.
-# This lets Google crawl, see the noindex, and cleanly drop them — avoiding
-# the "Blocked by robots.txt" GSC warning that Disallow generates while still
-# keeping tag pages out of the index.
+# NOTHING is Disallowed here, deliberately.
+#
+# Every page we want kept out of the index instead emits
+# <meta name="robots" content="noindex, follow"> so Google can crawl it, read
+# the directive, and drop it cleanly under "Excluded by noindex".
+#
+# A Disallow does the opposite: it stops the crawl, so Google never sees the
+# noindex and the URL sits in "Blocked by robots.txt" indefinitely. That is
+# exactly what happened to /docs/tags/* before commit f4329fc9.
+#
+# The noindex is emitted by:
+#   src/theme/DocTagsListPage    -> /docs/tags/
+#   src/theme/DocTagDocListPage  -> /docs/tags/*
+#   src/theme/SearchPage         -> /search/  (wrapper; upstream emits an
+#                                  invalid property="robots" that Google ignores)
+#   src/pages/404.js             -> /404/
+#
+# These paths are also excluded from the sitemap via sitemap.ignorePatterns
+# in docusaurus.config.js. Keep the two lists in sync.
 
 # Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
