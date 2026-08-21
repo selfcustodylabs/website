@@ -180,7 +180,7 @@
   font-weight: 600;
 }
 
-/* Mobile drawer — group header icon buttons on one row */
+/* Mobile drawer: group header icon buttons on one row */
 .navbar-sidebar .menu__list-item:has(> .header--github-link),
 .navbar-sidebar .menu__list-item:has(> .header--nostr-link),
 .navbar-sidebar .menu__list-item:has(> .header--cluborange-link) {
@@ -210,7 +210,7 @@
   border-color: rgba(245, 158, 11, 0.35);
 }
 
-/* Header icon buttons (GitHub + Nostr + Club Orange) — desktop-only */
+/* Header icon buttons (GitHub + Nostr + Club Orange): desktop-only */
 .header--github-link,
 .header--nostr-link,
 .header--cluborange-link {
@@ -630,7 +630,7 @@ article .theme-doc-markdown strong {
   vertical-align: middle;
 }
 
-/* Note / secondary — sky */
+/* Note / secondary: sky */
 .theme-admonition-note,
 .admonition-note,
 .alert--secondary {
@@ -647,7 +647,7 @@ article .theme-doc-markdown strong {
   fill: #38bdf8;
 }
 
-/* Tip / success — emerald */
+/* Tip / success: emerald */
 .theme-admonition-tip,
 .admonition-tip,
 .alert--success {
@@ -664,7 +664,7 @@ article .theme-doc-markdown strong {
   fill: #34d399;
 }
 
-/* Info — amber */
+/* Info: amber */
 .theme-admonition-info,
 .admonition-info,
 .alert--info {
@@ -681,7 +681,7 @@ article .theme-doc-markdown strong {
   fill: #fbbf24;
 }
 
-/* Caution / warning — amber-500 */
+/* Caution / warning: amber-500 */
 .theme-admonition-caution,
 .theme-admonition-warning,
 .admonition-caution,
@@ -704,7 +704,7 @@ article .theme-doc-markdown strong {
   fill: #f59e0b;
 }
 
-/* Danger — rose */
+/* Danger: rose */
 .theme-admonition-danger,
 .admonition-danger,
 .alert--danger {
@@ -769,7 +769,7 @@ article .theme-doc-markdown strong {
    =========================================== */
 
 /* Docusaurus pins the bar to a fixed 30px at >=997px, which clips any content
-   that wraps to a second line — the overflow renders outside the amber box.
+   that wraps to a second line; the overflow renders outside the amber box.
    Let the bar grow to fit instead. */
 @media (min-width: 997px) {
   :root {

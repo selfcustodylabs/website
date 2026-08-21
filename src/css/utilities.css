@@ -43,7 +43,7 @@ header.guidesHero {
 }
 
 /* ===========================================
-   STEP LISTS — numbered procedural lists
+   STEP LISTS: numbered procedural lists
    =========================================== */
 
 .steps-list {
@@ -78,7 +78,7 @@ header.guidesHero {
 }
 
 /* ===========================================
-   GUIDE CARDS — used on a few docs index pages
+   GUIDE CARDS: used on a few docs index pages
    =========================================== */
 
 .guide-card {
@@ -106,7 +106,7 @@ header.guidesHero {
 }
 
 /* ===========================================
-   CODE WRAPPING — enable word-wrap on long code
+   CODE WRAPPING: enable word-wrap on long code
    =========================================== */
 
 .wrap-code pre,

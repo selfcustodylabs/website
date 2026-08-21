@@ -5,7 +5,7 @@ Audit and refactor the homepage of this Docusaurus site to make it visually stun
 ## Context
 
 - This is a Docusaurus project. Explore the full repo structure first.
-- The goal is a complete homepage redesign — not incremental tweaks.
+- The goal is a complete homepage redesign, not incremental tweaks.
 
 ## Step 1: Audit
 
@@ -30,7 +30,7 @@ Implement the approved plan with these priorities:
 ### Hero Section
 
 - Large, bold, attention-grabbing layout with clear headline hierarchy
-- Subtle animated elements (CSS-only or lightweight JS — no heavy libraries)
+- Subtle animated elements (CSS-only or lightweight JS, no heavy libraries)
 - Strong primary CTA with visual weight, optional secondary CTA
 - Consider a gradient, mesh background, or abstract geometric motif
 
@@ -45,28 +45,28 @@ Implement the approved plan with these priorities:
 
 - Maximize Tailwind utility classes for all styling
 - Extend the Tailwind config with a custom color palette, font stack, and any needed keyframes
-- Check if Docusaurus supports Tailwind natively or needs a plugin/swizzle — set it up correctly either way
+- Check if Docusaurus supports Tailwind natively or needs a plugin/swizzle; set it up correctly either way
 - Avoid arbitrary inline styles; use Tailwind's `@apply` only when necessary for Docusaurus overrides
 
 ### Sections to Include (adapt as appropriate)
 
 1. Hero with headline, subheadline, CTA(s)
 2. Social proof / logos / trust badges (if applicable)
-3. Feature highlights — use cards or a bento grid layout
+3. Feature highlights: use cards or a bento grid layout
 4. How-it-works or workflow section
 5. Testimonials or community callout (if applicable)
 6. Final CTA / footer lead-in
 
 ### Quality Bar
 
-- Every section should feel intentional — no filler, no generic placeholder energy
+- Every section should feel intentional, with no filler, no generic placeholder energy
 - Transitions and hover states should feel tactile and responsive
-- The page should load fast — no unnecessary dependencies
+- The page should load fast, with no unnecessary dependencies
 - Responsive down to 320px; test at mobile, tablet, and desktop breakpoints
 
 ## Constraints
 
 - Do NOT add React component libraries (no Chakra, MUI, etc.)
 - Do NOT use heavy animation libraries (no Framer Motion, GSAP). CSS animations and Tailwind `animate-*` utilities only.
-- Preserve all existing routing and docs functionality — only the homepage is being redesigned
+- Preserve all existing routing and docs functionality; only the homepage is being redesigned
 - Keep all content in components (no hardcoded HTML walls in a single file)
