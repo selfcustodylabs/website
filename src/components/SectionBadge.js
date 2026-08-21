@@ -26,6 +26,7 @@ SectionBadge.propTypes = {
     "security",
     "advanced",
     "reference",
+    "seedsigner",
   ]).isRequired,
   icon: PropTypes.string,
   label: PropTypes.string,

@@ -48,7 +48,7 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 |--------|------|---------------|
 | **Blockstream Jade** | Key 1 | USB or QR |
 | **Trezor Safe 3** | Key 2 | USB |
-| **SeedSigner (DIY)** | Key 3 | QR codes (stateless) |
+| **[SeedSigner](/docs/seedsigner/) (DIY)** | Key 3 | QR codes (stateless) |
 
 </div>
 

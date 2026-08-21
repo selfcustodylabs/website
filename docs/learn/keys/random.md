@@ -90,7 +90,7 @@ Before July 2026 we said most people should just use their hardware wallet's see
 Most current devices (BitBox02, Trezor Safe, Jade, Keystone, Coldcard) can mix dice rolls into seed generation. Two rules make it trustworthy:
 
 1. **Roll enough.** 50 rolls contribute ~128 bits, enough to protect you even if the device's generator is completely broken. For a 24-word seed, use 99 rolls (~256 bits). This is exactly why dice-rolled Coldcard seeds survived the incident untouched.
-2. **Cross-check the result.** A buggy or malicious device could silently ignore your rolls. Catch it by re-deriving the seed from the same rolls on an independent device (a [SeedSigner or Krux](/docs/reference/hardware-wallet-comparison/#seedsigner--krux-diy), or this guide's manual process on an air-gapped computer) and comparing all 24 words. If they match, the device honored your entropy.
+2. **Cross-check the result.** A buggy or malicious device could silently ignore your rolls. Catch it by re-deriving the seed from the same rolls on an independent device (a [SeedSigner](/docs/seedsigner/) or [Krux](/docs/reference/hardware-wallet-comparison/#seedsigner--krux-diy), or this guide's manual process on an air-gapped computer) and comparing all 24 words. If they match, the device honored your entropy.
 
 
 ## Critical Environment Requirements

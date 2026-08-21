@@ -97,7 +97,7 @@ The user experience is smooth, almost as convenient as a software wallet. The tr
 
 These devices never directly connect to anything. Instead, they communicate through alternative channels: QR codes displayed on screen and scanned by cameras, MicroSD cards physically carried between devices, or occasionally NFC.
 
-**Examples:** Jade Plus (QR), Passport Prime (QR), Keystone 3 Pro (QR), Coldcard (SD/QR), SeedSigner and Krux (DIY)
+**Examples:** Jade Plus (QR), Passport Prime (QR), Keystone 3 Pro (QR), Coldcard (SD/QR), [SeedSigner](/docs/seedsigner/) and Krux (DIY)
 
 The workflow is slightly slower. You're literally sneaker-netting data between devices. But the security model is compelling: there's no cable, no Bluetooth radio, no USB port that malware could potentially exploit. The device is truly isolated.
 
@@ -120,7 +120,7 @@ The hardware wallet market has matured significantly and been stress-tested. Her
 | **Jade / Jade Plus** | $79 / $149 | Full | Yes (QR) | No* | Budget air-gap |
 | **Passport Prime** | $556 | Full | Yes (QR) | Yes | Premium air-gap |
 | **Keystone 3 Pro** | $149 | Full | Yes (QR) | Yes (3 chips) | QR workflow |
-| **SeedSigner / Krux** | ~$50–80 | Full | Yes (stateless) | No | DIY verification |
+| **[SeedSigner](/docs/seedsigner/) / Krux** | ~$50–80 | Full | Yes (stateless) | No | DIY verification (our favourite) |
 | **Coldcard Mk5 / Q** | $189 / $289 | Source-visible | Yes (SD/QR) | Dual | ⚠️ [See incident](/docs/learn/wallets/coldcard-entropy-incident/) |
 | **Ledger Nano/Flex/Stax** | $79–399 | SE firmware closed | No | Yes | Not recommended |
 
@@ -190,7 +190,7 @@ Whichever you pick, generate the seed with [your own dice entropy](/docs/learn/k
 
 **Recommendation: Trezor Safe 7, or build a SeedSigner/Krux**
 
-If verifiability matters more to you than any single feature, the Safe 7 is the first device where even the secure element (TROPIC01) has an auditable design, with no NDA between you and the chip. The DIY route goes further still: SeedSigner and Krux are stateless signers you assemble from commodity parts, running firmware you can build yourself, holding your seed only while you use it. If you enjoyed our [coreboot](/docs/coreboot/) and [libreboot](/docs/libreboot/) guides, this is your category.
+If verifiability matters more to you than any single feature, the Safe 7 is the first device where even the secure element (TROPIC01) has an auditable design, with no NDA between you and the chip. The DIY route goes further still: SeedSigner and Krux are stateless signers you assemble from commodity parts, running firmware you can build yourself, holding your seed only while you use it. SeedSigner is our favourite signing solution overall, enough that it has its [own section](/docs/seedsigner/) with a full [build guide](/docs/seedsigner/build-guide/). If you enjoyed our [coreboot](/docs/coreboot/) and [libreboot](/docs/libreboot/) guides, this is your category.
 
 ### For Mobile Users
 

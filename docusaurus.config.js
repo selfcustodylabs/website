@@ -416,6 +416,10 @@ const config = {
                 label: 'Glossary',
                 to: '/docs/reference/glossary/',
               },
+              {
+                label: 'Hardware Wallet Comparison',
+                to: '/docs/reference/hardware-wallet-comparison/',
+              },
             ],
           },
           {
@@ -440,6 +444,10 @@ const config = {
               {
                 label: 'Bitcoin Node',
                 to: '/docs/bitcoin-node/',
+              },
+              {
+                label: 'SeedSigner',
+                to: '/docs/seedsigner/',
               },
             ],
           },
