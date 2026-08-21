@@ -161,6 +161,15 @@ export default function GuidesPage() {
   // Hardware & Firmware - Dedicated computers and BIOS
   const hardwareGuides = [
     {
+      icon: CasinoRoundedIcon,
+      title: "SeedSigner",
+      description:
+        "Build our favourite signing device: stateless, air-gapped, and assembled by you from about $50 of parts.",
+      href: "/docs/seedsigner",
+      badge: "NEW",
+      level: "Advanced",
+    },
+    {
       icon: ComputerRoundedIcon,
       title: "Bitcoin Computer",
       description:

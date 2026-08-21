@@ -68,7 +68,7 @@ Your Computer                    Hardware Wallet
 | **Jade Plus** | $149 | Verifiable security | QR air-gap, anti-exfil signing, multi-source entropy |
 | **Passport Prime** | $556 | Premium air-gap | QR air-gap, entropy-testing app, Bitcoin-only |
 | **Keystone 3 Pro** | $149 | QR workflow, mobile | Air-gapped via QR, large screen, 3 secure elements |
-| **SeedSigner / Krux** | ~$50–80 | DIY builders | Stateless, you supply all entropy |
+| **[SeedSigner](/docs/seedsigner/) / Krux** | ~$50–80 | DIY builders | Stateless, you supply all entropy |
 
 </div>
 
@@ -82,7 +82,7 @@ See the full [hardware wallet comparison](/docs/reference/hardware-wallet-compar
 **For verifiable security:** Jade Plus or Passport Prime
 - Air-gapped workflows from vendors with strong entropy practices and crisis track records
 
-**For DIY builders:** SeedSigner or Krux
+**For DIY builders:** [SeedSigner](/docs/seedsigner/) (our favourite; see the [build guide](/docs/seedsigner/build-guide/)) or Krux
 - Stateless devices where every bit of entropy is yours by construction
 
 :::warning About Coldcard and Ledger

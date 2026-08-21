@@ -60,6 +60,11 @@ export const sectionConfig = {
     icon: "📖",
     color: "reference",
   },
+  seedsigner: {
+    label: "SeedSigner",
+    icon: "🎲",
+    color: "seedsigner",
+  },
 };
 
 /**

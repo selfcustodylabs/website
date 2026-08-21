@@ -83,6 +83,15 @@ const GUIDES = {
     ],
   },
 
+  seedsigner: {
+    name: "SeedSigner Guide",
+    steps: [
+      { title: "Why SeedSigner", path: "/docs/seedsigner/" },
+      { title: "Build Guide", path: "/docs/seedsigner/build-guide/" },
+      { title: "Using SeedSigner", path: "/docs/seedsigner/using-seedsigner/" },
+    ],
+  },
+
   coreboot: {
     name: "Coreboot Installation",
     steps: [
@@ -158,6 +167,7 @@ export function getSectionFromPath(path) {
   if (path.includes("/bitcoin-node/")) return "nodes";
   if (path.includes("/libreboot/")) return "advanced";
   if (path.includes("/coreboot/")) return "advanced";
+  if (path.includes("/seedsigner/")) return "seedsigner";
   return null;
 }
 

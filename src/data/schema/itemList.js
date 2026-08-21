@@ -71,6 +71,16 @@ export const itemListSchemas = {
       },
     ],
   },
+  "/docs/seedsigner/": {
+    name: "SeedSigner Guide",
+    description:
+      "Build and use a SeedSigner, the Self Custody Labs favourite Bitcoin signing device: stateless, air-gapped, and fully verifiable.",
+    items: [
+      { name: "Why SeedSigner", url: "/docs/seedsigner/" },
+      { name: "Build Your Own SeedSigner", url: "/docs/seedsigner/build-guide/" },
+      { name: "Using SeedSigner", url: "/docs/seedsigner/using-seedsigner/" },
+    ],
+  },
   "/docs/reference/": {
     name: "Bitcoin Reference Materials",
     description:

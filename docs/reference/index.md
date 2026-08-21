@@ -39,7 +39,15 @@ Understand Legacy, SegWit, Native SegWit, and Taproot addresses. Learn which to 
 
 ### [Hardware Wallet Comparison](/docs/reference/hardware-wallet-comparison)
 
-Compare Trezor, BitBox02 Nova, Jade Plus, Passport Prime, Keystone, Coldcard, and Ledger, updated for the post-2026 landscape. Find the right hardware wallet for your needs, budget, and security requirements.
+Compare Trezor, BitBox02 Nova, Jade Plus, Passport Prime, Keystone, SeedSigner, Coldcard, Ledger, and Bitkey, updated for the post-2026 landscape. Find the right hardware wallet for your needs, budget, and security requirements.
+
+</div>
+
+<div class="guide-card">
+
+### [SeedSigner Guide](/docs/seedsigner/)
+
+Our favourite signing solution: stateless, air-gapped, and built by you from commodity parts. Why we recommend it, who it's not for, and how to build and use one.
 
 </div>
 

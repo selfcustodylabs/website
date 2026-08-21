@@ -122,6 +122,11 @@ export const breadcrumbMappings = {
     "Client Connect",
   ],
 
+  // SeedSigner
+  "/docs/seedsigner/": ["Guides", "SeedSigner"],
+  "/docs/seedsigner/build-guide/": ["Guides", "SeedSigner", "Build Guide"],
+  "/docs/seedsigner/using-seedsigner/": ["Guides", "SeedSigner", "Using SeedSigner"],
+
   // Reference
   "/docs/reference/": ["Reference"],
   "/docs/reference/glossary/": ["Reference", "Glossary"],

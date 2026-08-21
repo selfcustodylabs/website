@@ -57,7 +57,7 @@ Think of this as deep cold storage, not a daily wallet.
 
 ## Why an Air-Gapped Computer Over a SeedSigner?
 
-Both approaches give you an offline signing device, but they trade off along very different axes.
+[SeedSigner](/docs/seedsigner/) is our favourite purpose-built signing device, so why does this page exist? Because the two solve different problems. Both give you an offline signing device, but they trade off along very different axes.
 
 <div class="fixed-width-table">
 
@@ -71,7 +71,7 @@ Both approaches give you an offline signing device, but they trade off along ver
 
 </div>
 
-SeedSigner is purpose-built and excellent at signing. An air-gapped computer is more versatile: you can use it for seed generation from dice rolls, encrypted backups, and cross-verification across multiple wallets.
+SeedSigner is purpose-built and excellent at signing; our [SeedSigner section](/docs/seedsigner/) covers building and using one. An air-gapped computer is more versatile: you can use it for seed generation from dice rolls, encrypted backups, and cross-verification across multiple wallets. The two are complements, not rivals: many advanced setups use an air-gapped computer to generate and verify seeds, and a SeedSigner for routine signing.
 
 
 ## Use Cases for an Air-Gapped Computer

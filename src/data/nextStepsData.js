@@ -155,10 +155,16 @@ const NEXT_STEPS = {
       description: "What 2026's biggest wallet exploit teaches",
     },
     {
-      label: "Learn",
-      title: "Air-Gapped Wallets",
-      href: "/docs/learn/wallets/air-gapped-wallets/",
-      description: "Maximum security setups",
+      label: "Compare",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Every device we cover, ranked by verifiability",
+    },
+    {
+      label: "Favourite",
+      title: "Build a SeedSigner",
+      href: "/docs/seedsigner/",
+      description: "Our favourite signing solution, for DIY-minded users",
     },
   ],
   "/docs/learn/wallets/software-wallets/": [
@@ -173,6 +179,26 @@ const NEXT_STEPS = {
       title: "Hardware Wallet Setup",
       href: "/docs/wallet-setup/hardware-wallet/",
       description: "Get proper security",
+    },
+  ],
+  "/docs/learn/wallets/air-gapped-wallets/": [
+    {
+      label: "Favourite",
+      title: "Build a SeedSigner",
+      href: "/docs/seedsigner/",
+      description: "Our favourite purpose-built signing device",
+    },
+    {
+      label: "Compare",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Air-gapped and conventional devices side by side",
+    },
+    {
+      label: "Action",
+      title: "DIY Seed Generation",
+      href: "/docs/learn/keys/random/",
+      description: "Put the air-gapped computer to work",
     },
   ],
   "/docs/learn/wallets/multisig/": [
@@ -311,6 +337,18 @@ const NEXT_STEPS = {
       title: "Private Keys",
       href: "/docs/learn/keys/intro/",
       description: "Understand what you're protecting",
+    },
+    {
+      label: "Compare",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Still choosing a device? Start here",
+    },
+    {
+      label: "Favourite",
+      title: "Build a SeedSigner",
+      href: "/docs/seedsigner/",
+      description: "Our favourite signing solution, for DIY-minded users",
     },
   ],
   "/docs/wallet-setup/backup-verification/": [

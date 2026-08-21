@@ -170,9 +170,9 @@ export const articleSchemas = {
 
   // Reference
   "/docs/reference/hardware-wallet-comparison/": {
-    headline: "Hardware Wallet Comparison: Coldcard vs Trezor vs BitBox vs Ledger",
+    headline: "Coldcard vs Trezor vs Jade vs Passport: 2026 Compared",
     description:
-      "Comprehensive comparison of Bitcoin hardware wallets including Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone.",
+      "Compare Bitcoin hardware wallets after the 2026 Coldcard incident: Trezor Safe 7, BitBox02 Nova, Jade Plus, Passport, SeedSigner, Bitkey, and more.",
     articleSection: "Reference",
   },
   "/docs/reference/faq/recovery-troubleshooting/": {
@@ -283,6 +283,24 @@ export const articleSchemas = {
     headline: "Downgrading the Stock BIOS Before Coreboot",
     description:
       "Downgrade the vendor BIOS to a version with an unlocked Intel ME region as a prerequisite for internal Coreboot flashing.",
+    articleSection: "Guides",
+  },
+  "/docs/seedsigner/": {
+    headline: "SeedSigner: Our Favourite Bitcoin Signing Device",
+    description:
+      "Why SeedSigner is the Self Custody Labs favourite signing solution: stateless, air-gapped, fully verifiable, and built by you from commodity parts.",
+    articleSection: "Guides",
+  },
+  "/docs/seedsigner/build-guide/": {
+    headline: "Build Your Own SeedSigner",
+    description:
+      "Source the Raspberry Pi parts, verify and flash SeedSigner OS, and assemble an air-gapped Bitcoin signing device for about $50.",
+    articleSection: "Guides",
+  },
+  "/docs/seedsigner/using-seedsigner/": {
+    headline: "Using SeedSigner: Seeds, SeedQR, and Signing",
+    description:
+      "Generate a seed with dice, back it up as a SeedQR, and sign transactions with Sparrow Wallet over an air-gapped QR workflow.",
     articleSection: "Guides",
   },
   "/docs/nostr-signing-device/": {

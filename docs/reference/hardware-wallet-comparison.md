@@ -1,13 +1,11 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: "Coldcard vs Trezor vs Jade vs Passport: 2026 Compared"
-description: "Compare Bitcoin hardware wallets after the 2026 Coldcard incident: Trezor Safe 7, BitBox02 Nova, Jade Plus, Passport Prime, Keystone, and more."
-keywords: ["hardware wallet comparison", "coldcard", "trezor safe 7", "bitbox02 nova", "jade plus", "passport prime", "keystone", "bitcoin wallet 2026"]
+description: "Compare Bitcoin hardware wallets after the 2026 Coldcard incident: Trezor Safe 7, BitBox02 Nova, Jade Plus, Passport, SeedSigner, Bitkey, and more."
+keywords: ["hardware wallet comparison", "coldcard", "trezor safe 7", "bitbox02 nova", "jade plus", "passport prime", "keystone", "seedsigner", "bitkey", "bitcoin wallet 2026"]
 tags: ["hardware wallet", "comparison", "coldcard", "trezor", "security"]
 slug: /reference/hardware-wallet-comparison
 ---
-
-<SectionBadge section="reference" />
 
 # Hardware Wallet Comparison
 
@@ -22,6 +20,7 @@ In July 2026, attackers drained ~$116M from wallets whose seeds were generated o
 - **Verifiable security**: Blockstream Jade Plus or Passport Prime, with [dice-roll entropy](/docs/learn/keys/random/)
 - **Budget**: Blockstream Jade
 - **DIY / stateless**: SeedSigner or Krux
+- **Our favourite**: [SeedSigner](/docs/seedsigner/), if you can handle the assembly and the workflow; it's the only option here with no vendor to trust at all
 - **Significant holdings**: [multisig](/docs/learn/wallets/multisig/) across vendors beats any single device
 :::
 
@@ -48,6 +47,7 @@ Prices are manufacturer list prices as of August 2026; check official stores for
 | **SeedSigner / Krux** | ~$50–80 (DIY) | ✅ Stateless QR | ✅ Yes | ❌ No (stateless) | ✅ Required | DIY verifiers |
 | **Coldcard Mk5 / Q** | $189 / $289 | ✅ SD/QR (Q) | ⚠️ Source-visible | ✅ Dual | ✅ Yes | ⚠️ See incident |
 | **Ledger (Flex/Stax/Nano)** | $79–399 | ❌ No | ❌ SE firmware closed | ✅ Yes | ❌ No | Not recommended |
+| **Bitkey** | $250 | ❌ No | ⚠️ Not reproducible | ✅ Secure enclave | ❌ No | Not recommended |
 
 </div>
 
@@ -209,11 +209,25 @@ Foundation responded to the 2026 incident faster than almost anyone, confirming 
 
 **Stateless signers you assemble yourself**
 
-SeedSigner (Raspberry Pi Zero based, ~$50–80 in parts) and Krux (runs on ~$30–80 K210 devices) take the most radical position on the 2026 lesson: **the device never stores a seed at all**. You bring the seed to each signing session (typically as a QR code or by re-entering it), and the device forgets everything at power-off.
+:::tip Our favourite
+SeedSigner is the Self Custody Labs favourite signing solution, and we now have a [dedicated SeedSigner section](/docs/seedsigner/) covering why, how to build one, and how to use it. It is not the right pick for most beginners (see the caveats there); for everyone else it's the most verifiable device on this page.
+:::
+
+| Aspect | Details |
+|--------|---------|
+| Price | SeedSigner ~$50–80 in parts · Krux ~$30–80 (K210 devices) |
+| Screen | Small LCD (SeedSigner: 1.3" + camera for QR) |
+| Connectivity | ✅ QR codes only, fully air-gapped |
+| Open Source | ✅ Fully, community-built, reproducible |
+| Secure Element | ❌ None: stateless, nothing stored to protect |
+| Dice entropy | ✅ Required: you bring the entropy |
+| Bitcoin-only | ✅ By design |
+
+SeedSigner (Raspberry Pi Zero based) and Krux take the most radical position on the 2026 lesson: **the device never stores a seed at all**. You bring the seed to each signing session (typically as a [SeedQR](/docs/seedsigner/using-seedsigner/) or by re-entering it), and the device forgets everything at power-off.
 
 Because you generate the seed yourself ([dice + verification](/docs/learn/keys/random/)), there is no vendor RNG to trust. Because you assemble it from commodity parts, there's no wallet-specific supply chain to intercept. The price is convenience: every signing session takes longer, and safe seed storage is entirely on you.
 
-**Best for:** technical users, multisig quorums, and anyone who reads this site's [DIY sections](/docs/learn/wallets/air-gapped-wallets/) with enthusiasm. If you built a coreboot laptop, you'll feel at home.
+**Best for:** technical users, multisig quorums, and anyone who reads this site's [DIY sections](/docs/learn/wallets/air-gapped-wallets/) with enthusiasm. If you built a coreboot laptop, you'll feel at home. Start with the [build guide](/docs/seedsigner/build-guide/).
 
 ---
 
@@ -241,9 +255,25 @@ Ledger's devices (Nano S Plus/X, Flex, Stax; $79–399) have strong secure eleme
 
 ### Bitkey
 
-**A different trust model entirely**
+**A different trust model entirely, and one you cannot verify**
 
-Block's Bitkey ships as a 2-of-3 multisig by default (your phone + the device + a recovery server), with no user-visible seed phrase. It was untouched by the 2026 incident (by architecture, no single RNG failure can spend funds), and its incident-night communication was among the best. The trade-off is philosophical: you're inside Block's coordination model rather than holding a portable BIP39 seed. We prefer setups you can [reconstruct from standards](/docs/learn/keys/seed/), but Bitkey is a defensible pick for someone who will never roll dice or verify anything.
+| Aspect | Details |
+|--------|---------|
+| Price | $250 (2026 model with touchscreen; original was $150) |
+| Screen | Secure touchscreen for on-device verification (2026 model) |
+| Connectivity | Bluetooth + companion phone app; no air-gap |
+| Open Source | ⚠️ Source published, but not buildable: fingerprint library is closed |
+| Secure Element | ✅ Secure enclave, fingerprint unlock |
+| Dice entropy | ❌ No; no user-visible seed phrase at all |
+| Bitcoin-only | ✅ Yes |
+
+Block's Bitkey ships as a 2-of-3 multisig by default (your phone + the device + a recovery server), with no user-visible seed phrase and a fingerprint instead of a PIN. It was untouched by the 2026 incident (by architecture, no single RNG failure can spend funds), and its incident-night communication was among the best.
+
+:::warning Why we don't recommend Bitkey
+Bitkey fails the standard this page was rebuilt around: **you cannot verify it**. The published firmware cannot be reproduced by outsiders because the proprietary fingerprint-matching library is missing from the repository (WalletScrutiny rates it "nosource"). There is no seed phrase to check, no dice entropy to supply, and most recovery paths run through Block's servers. That is precisely the "trust the vendor" posture that cost Coldcard users nine figures; Block has a clean record, but so did Coinkite until July 2026.
+
+Bitkey's honest niche is someone leaving an exchange who would otherwise never self-custody at all: its 2-of-3 design with an Emergency Exit Kit is far better than custodial. But if you can follow a setup guide, a [BitBox02 Nova or Trezor Safe 5](#recommendations-by-use-case) gives you a portable, [standards-based seed](/docs/learn/keys/seed/) you can verify and recover anywhere.
+:::
 
 
 ## Security Architecture Comparison
@@ -261,6 +291,7 @@ Block's Bitkey ships as a 2-of-3 multisig by default (your phone + the device + 
 | Jade / Jade Plus | Virtual (blind oracle) | Server rate-limits PIN guesses; self-hostable |
 | SeedSigner / Krux | None | Stateless: nothing stored to protect |
 | Ledger | 1× ST33 | Certified but closed firmware |
+| Bitkey | Secure enclave | Firmware not reproducible: closed fingerprint library |
 
 ### Entropy: Who Lets You Verify?
 
@@ -276,6 +307,7 @@ The lesson of 2026 in one table. "Dice support" means the device can mix user-su
 | Keystone 3 Pro | ✅ | Cross-check words against manual derivation |
 | Coldcard Mk5/Q | ✅ (dice path was never affected) | Cross-check words against manual derivation |
 | Ledger | ❌ | Trust the certification |
+| Bitkey | ❌ (no seed phrase shown) | Cannot verify; trust Block's 2-of-3 architecture |
 
 **Whatever you buy:** a device could theoretically ignore your dice. The check that catches everything is re-deriving the seed from the same rolls independently; our [dice guide](/docs/learn/keys/random/) shows how.
 
@@ -310,8 +342,8 @@ Air-gapped workflows from vendors that treat verification, including of their ow
 Nothing else at this price is open source, air-gap capable, and backed by this response record.
 
 ### 🛠️ DIY / Maximum Verification
-**SeedSigner** or **Krux**
-Stateless, assembled from commodity parts, entropy fully in your hands.
+**[SeedSigner](/docs/seedsigner/)** (our favourite) or **Krux**
+Stateless, assembled from commodity parts, entropy fully in your hands. See the [SeedSigner build guide](/docs/seedsigner/build-guide/).
 
 ### 🏆 Significant Holdings
 **Multisig across vendors**, e.g. Jade Plus + Keystone 3 Pro + Trezor Safe 5
@@ -333,6 +365,7 @@ Always buy directly from manufacturers:
 | Krux (build guide) | [selfcustody.github.io/krux](https://selfcustody.github.io/krux/) |
 | Coldcard | [coldcard.com](https://coldcard.com) |
 | Ledger | [ledger.com](https://ledger.com) |
+| Bitkey | [bitkey.world](https://bitkey.world) |
 
 :::danger Never Buy from Third Parties
 Amazon, eBay, and other resellers have been sources of tampered devices. Only buy directly from manufacturers or authorized resellers listed on their official websites. And regardless of vendor: initialize the device yourself; a "pre-configured" wallet or included seed card is always a scam.
@@ -352,7 +385,7 @@ There's no single "best" hardware wallet, but after 2026 there is a best *approa
 | Air-gap + UX | Keystone 3 Pro |
 | Significant holdings | Multi-vendor multisig |
 
-For most users: start with a **BitBox02 Nova** or **Trezor Safe 5**, generate the seed with **your own dice entropy**, and graduate to **multisig** as your holdings grow.
+For most users: start with a **BitBox02 Nova** or **Trezor Safe 5**, generate the seed with **your own dice entropy**, and graduate to **multisig** as your holdings grow. And if you're comfortable building your own hardware, our favourite solution on this whole page is the [SeedSigner](/docs/seedsigner/).
 
 <NextSteps 
   title="Ready to Set Up?"

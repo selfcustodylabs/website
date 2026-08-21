@@ -266,6 +266,14 @@ export default function LearnPage() {
       badge: "NEW",
       level: "Beginner",
     },
+    {
+      icon: MenuBookRoundedIcon,
+      title: "Hardware Wallet Comparison",
+      description:
+        "Every device we cover, compared on price, air gap, open source, and verifiable entropy.",
+      href: "/docs/reference/hardware-wallet-comparison",
+      level: "Beginner",
+    },
   ];
 
   return (
