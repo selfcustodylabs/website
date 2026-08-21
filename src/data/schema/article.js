@@ -108,6 +108,12 @@ export const articleSchemas = {
     description: "Learn about air-gapped wallets and why they offer the highest level of security.",
     articleSection: "Wallets",
   },
+  "/docs/learn/wallets/coldcard-entropy-incident/": {
+    headline: "The Coldcard Entropy Incident Explained",
+    description:
+      "What the 2026 Coldcard seed-generation flaw was, who is affected, and how to migrate funds safely.",
+    articleSection: "Wallets",
+  },
 
   // Transactions
   "/docs/learn/transactions/understanding/": {

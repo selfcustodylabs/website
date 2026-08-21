@@ -64,6 +64,8 @@ When a wallet generates a seed phrase for you, you are trusting three things at 
 
 </div>
 
+This stopped being theoretical in July 2026. A five-year-old Coldcard firmware bug had been silently generating seeds from a predictable software generator instead of the hardware one, and attackers brute-forced roughly **$116 million** out of 5,200+ wallets: air-gapped devices, never hacked, never touched. Seeds generated from **dice rolls were completely unaffected**, because the dice bits bypassed the broken generator. The full story: [the Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/).
+
 By generating your own seed with physical dice, you:
 
 - **Verify the randomness yourself**: no trust required
@@ -75,13 +77,20 @@ By generating your own seed with physical dice, you:
 
 | Situation | Recommendation |
 |-----------|----------------|
-| Learning with small amounts | **Not recommended**: Use a hardware wallet's built-in seed generation |
-| Moderate holdings, want to learn | **Maybe**: Practice on testnet first and understand the risks |
+| Learning with small amounts | **Use your device's dice-roll feature** instead of the full manual process |
+| Moderate holdings, want to learn | **Yes**: Practice on testnet first and understand the risks |
 | Significant holdings, high security needs | **Yes**: Verifiable entropy is worth the effort |
-| Don't trust hardware wallet RNG | **Yes**: This eliminates that trust requirement |
-| Not comfortable with technical processes | **No**: A mistake here loses everything |
+| Don't trust hardware wallet RNG | **Yes**: 2026 proved this instinct right |
+| Not comfortable with technical processes | **Careful**: A mistake here loses everything; use the device's dice feature with the cross-check below instead |
 
-**Most people should use their hardware wallet's seed generation.** This guide is for users who want verifiable randomness and understand the additional risks of a manual process.
+Before July 2026 we said most people should just use their hardware wallet's seed generation. The [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) retired that advice: device randomness is now a fallback, not a default. If the full manual process below is more than you want, the middle path (your device's dice-roll feature plus an independent cross-check) captures most of the benefit.
+
+### Using your hardware wallet's dice feature
+
+Most current devices (BitBox02, Trezor Safe, Jade, Keystone, Coldcard) can mix dice rolls into seed generation. Two rules make it trustworthy:
+
+1. **Roll enough.** 50 rolls contribute ~128 bits, enough to protect you even if the device's generator is completely broken. For a 24-word seed, use 99 rolls (~256 bits). This is exactly why dice-rolled Coldcard seeds survived the incident untouched.
+2. **Cross-check the result.** A buggy or malicious device could silently ignore your rolls. Catch it by re-deriving the seed from the same rolls on an independent device (a [SeedSigner or Krux](/docs/reference/hardware-wallet-comparison/#seedsigner--krux-diy), or this guide's manual process on an air-gapped computer) and comparing all 24 words. If they match, the device honored your entropy.
 
 
 ## Critical Environment Requirements

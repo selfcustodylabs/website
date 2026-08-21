@@ -55,35 +55,40 @@ Your Computer                    Hardware Wallet
 
 ## Choosing Your Hardware Wallet
 
-### Comparison of Popular Options
+### Comparison of Popular Options (August 2026)
 
 <div class="fixed-width-table">
 
 | Device | Price | Best For | Key Features |
 |--------|-------|----------|--------------|
-| **Coldcard Mk4** | ~$150 | Security maximalists | Air-gapped, Bitcoin-only, advanced features |
-| **Trezor Model T** | ~$180 | Open-source advocates | Touchscreen, multi-coin, fully open source |
-| **Trezor Safe 3** | ~$80 | Budget + open source | Secure element, open source, affordable |
-| **Ledger Nano S Plus** | ~$80 | Budget option | Secure element, wide compatibility |
-| **Ledger Nano X** | ~$150 | Mobile users | Bluetooth, large storage |
-| **Keystone Pro** | ~$170 | QR code fans | Air-gapped via QR, large screen |
-| **BitBox02** | ~$150 | Simplicity seekers | Minimalist, Swiss quality, Bitcoin-only option |
+| **BitBox02 Nova** | ~$185 | Beginners, simplicity | Secure element, Bitcoin-only edition, dice entropy |
+| **Trezor Safe 5** | $169 | Beginners | Secure element, open source, dice entropy |
+| **Trezor Safe 7** | $249 | Transparency + UX | Auditable secure element, touchscreen |
+| **Blockstream Jade** | $79 | Budget | Open source, QR air-gap capable, dice entropy |
+| **Jade Plus** | $149 | Verifiable security | QR air-gap, anti-exfil signing, multi-source entropy |
+| **Passport Prime** | $556 | Premium air-gap | QR air-gap, entropy-testing app, Bitcoin-only |
+| **Keystone 3 Pro** | $149 | QR workflow, mobile | Air-gapped via QR, large screen, 3 secure elements |
+| **SeedSigner / Krux** | ~$50–80 | DIY builders | Stateless, you supply all entropy |
 
 </div>
 
+See the full [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/) for detailed trade-offs, including why two familiar names are missing from this table.
+
 ### My Recommendations
 
-**For beginners:** Trezor Safe 3 or BitBox02 Bitcoin-only
-- Easy to use, good security, reasonable price
+**For beginners:** BitBox02 Nova (Bitcoin-only) or Trezor Safe 5
+- Easy to use, good security, dice-roll support for later
 
-**For security-focused users:** Coldcard Mk4
-- Maximum security features, Bitcoin-only, air-gapped operation
+**For verifiable security:** Jade Plus or Passport Prime
+- Air-gapped workflows from vendors with strong entropy practices and crisis track records
 
-**For open-source purists:** Trezor Model T
-- Fully open source firmware and hardware designs
+**For DIY builders:** SeedSigner or Krux
+- Stateless devices where every bit of entropy is yours by construction
 
-:::warning About Ledger
-Ledger devices use closed-source firmware, meaning the code cannot be independently audited. While widely used, some Bitcoiners prefer fully open-source alternatives for maximum trust minimization.
+:::warning About Coldcard and Ledger
+**Coldcard** was our security pick for years, until the [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/): a five-year firmware flaw made device-generated seeds guessable and ~$116M was stolen. The flaw is patched and dice-generated seeds were never affected, but a warning about this exact code was dismissed in 2025, so we're not recommending new purchases until trust is rebuilt. Existing owners: [check if you're affected](/docs/learn/wallets/coldcard-entropy-incident/#am-i-affected).
+
+**Ledger** devices use closed-source secure-element firmware that cannot be independently audited. After 2026, unverifiable randomness is a bigger ask than ever.
 :::
 
 
@@ -134,25 +139,32 @@ Power on and follow the device prompts:
 
 1. Select language and region
 2. Accept terms (read them!)
-3. Set a PIN code
-4. Choose whether to create new wallet or restore existing
+3. **Update to the latest firmware** and skim the vendor's security advisories page: the 2026 Coldcard incident hit seeds generated on outdated, flawed firmware
+4. Set a PIN code
+5. Choose whether to create new wallet or restore existing
 
 ### Step 3: Generate Your Seed Phrase
 
-**If creating a new wallet:**
+This is the moment that decides how much you're trusting the manufacturer. When the device generates a seed by itself, you're trusting its random number generator completely, and in 2026 [that trust failed publicly](/docs/learn/wallets/coldcard-entropy-incident/) for the first time at nine-figure scale. Pick your path deliberately:
 
-The device will display 12 or 24 words one at a time.
+**Path A: device-generated (acceptable for starter amounts)**
 
-:::danger Critical Steps
+The device will display 12 or 24 words one at a time. If you take this path, plan to add a [passphrase](/docs/learn/keys/passphrase/) so your funds never rest on the device's randomness alone.
+
+**Path B: with your own entropy (recommended)**
+
+Use the device's **dice-roll option** during setup: 99 rolls of a casino die fully covers a 24-word seed even if the device's generator is broken. Or go further and [generate the seed entirely yourself](/docs/learn/keys/random/), then import it: maximum trust minimization, and every step checkable.
+
+:::danger Critical Steps (both paths)
 1. **Write down every word**: In exact order, spelled correctly
 2. **Verify you wrote them correctly**: Device will quiz you
 3. **Never photograph your seed** (digital copies are vulnerable)
 4. **Never type your seed into a computer**: Except the hardware wallet itself
 :::
 
-**If you generated your own seed:**
-
-You can import a seed phrase you created yourself (see our [DIY Seed Guide](/docs/learn/keys/random/)). This is more advanced but provides maximum trust minimization.
+:::warning Firmware updates can't fix a weak seed
+If a seed was generated by flawed firmware, updating the firmware later does nothing for it; the seed is already weak. That's why affected Coldcard users had to migrate to new wallets entirely. Generate your seed on current firmware, ideally with your own entropy, and you'll never face that migration.
+:::
 
 ### Step 4: Verify Your Backup
 

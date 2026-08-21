@@ -24,7 +24,7 @@ export const howToSchemas = {
       value: "150",
     },
     supply: [
-      "Hardware wallet (Trezor, Coldcard, BitBox02, or similar)",
+      "Hardware wallet (BitBox02 Nova, Trezor Safe 5, Jade Plus, or similar)",
       "Metal seed backup plate",
       "Pen and paper for initial seed recording",
     ],
@@ -32,12 +32,12 @@ export const howToSchemas = {
     steps: [
       {
         name: "Choose Your Hardware Wallet",
-        text: "Select a hardware wallet based on your security needs and budget. Popular options include Trezor, Coldcard, and BitBox02.",
+        text: "Select a hardware wallet based on your security needs and budget. Popular options include BitBox02 Nova, Trezor Safe 5, and Blockstream Jade Plus.",
         url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`,
       },
       {
         name: "Initialize the Device",
-        text: "Unbox your device, verify authenticity, set a strong PIN, and generate a new seed phrase on the device.",
+        text: "Unbox your device, verify authenticity, update the firmware, set a strong PIN, and generate a new seed phrase, ideally mixing in your own dice-roll entropy.",
         url: `${SITE_URL}/docs/wallet-setup/hardware-wallet/`,
       },
       {

@@ -124,7 +124,7 @@ A privacy attack where tiny amounts of Bitcoin are sent to many addresses to tra
 Software that indexes the Bitcoin blockchain to allow lightweight wallets to query transaction data efficiently. Examples: Electrs, Fulcrum.
 
 ### Entropy
-Randomness used to generate private keys and seed phrases. High-quality entropy is essential for security. See [Why Randomness Matters](/docs/learn/keys/random).
+Randomness used to generate private keys and seed phrases. High-quality entropy is essential for security: the [2026 Coldcard incident](/docs/learn/wallets/coldcard-entropy-incident/), where weak entropy let attackers brute-force seeds and steal ~$116M, is the canonical example of what happens without it. See [Why Randomness Matters](/docs/learn/keys/random).
 
 ---
 
@@ -154,7 +154,7 @@ The first block in the Bitcoin blockchain, mined by Satoshi Nakamoto on January 
 The event where the block reward is cut in half, occurring approximately every 4 years (210,000 blocks). Reduces Bitcoin's inflation rate.
 
 ### Hardware Wallet
-A dedicated physical device designed to securely store Bitcoin private keys offline. Examples: Coldcard, Trezor, Ledger. See [Hardware Wallets](/docs/learn/wallets/hardware-wallets).
+A dedicated physical device designed to securely store Bitcoin private keys offline. Examples: Trezor, BitBox02, Jade, Passport, Keystone. See [Hardware Wallets](/docs/learn/wallets/hardware-wallets).
 
 ### Hash
 A fixed-length output produced by running data through a cryptographic hash function. Used extensively in Bitcoin for security and verification.

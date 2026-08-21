@@ -328,7 +328,9 @@ Don't want to manage all keys yourself? **Collaborative custody** providers hold
 
 **Problem:** A firmware vulnerability affects all your signing devices.
 
-**Solution:** Mix manufacturers (e.g., Coldcard + Trezor + Keystone).
+**Solution:** Mix manufacturers (e.g., Jade + Trezor + Keystone).
+
+This stopped being hypothetical in July 2026. The [Coldcard entropy flaw](/docs/learn/wallets/coldcard-entropy-incident/) made single-sig Coldcard wallets brute-forceable and ~$116M was drained, while multisig quorums containing one weak Coldcard key lost nothing, because the other vendors' keys held. One silent firmware failure, two completely different outcomes.
 
 ### Mistake 4: Not Testing Recovery
 

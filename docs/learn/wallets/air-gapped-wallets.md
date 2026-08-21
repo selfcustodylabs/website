@@ -81,11 +81,15 @@ SeedSigner is purpose-built and excellent at signing. An air-gapped computer is 
 | Use Case | Description |
 |----------|-------------|
 | **Seed generation** | Create seeds from dice rolls with the [DIY Seed Guide](/docs/learn/keys/random/) |
-| **Hardware wallet verification** | Verify that your hardware wallet generates the correct addresses |
+| **Hardware wallet verification** | Verify that your hardware wallet honored your dice rolls and generates the correct addresses |
 | **Transaction signing** | Sign transactions completely offline |
 | **Inheritance planning** | Create encrypted messages for heirs |
 
 </div>
+
+:::info An air gap says nothing about entropy
+Air-gapping protects against malware and key exfiltration; it cannot detect a device that generated a *weak* key. In the [2026 Coldcard incident](/docs/learn/wallets/coldcard-entropy-incident/), fully air-gapped wallets were drained remotely because their seeds were predictable from birth. The "hardware wallet verification" use case above, independently re-deriving what a device produced, is exactly the check that catches this class of failure, and it's the reason an air-gapped computer earns its place next to any hardware wallet.
+:::
 
 
 ## Choosing Your Hardware

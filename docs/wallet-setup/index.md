@@ -100,10 +100,10 @@ Not sure which hardware wallet to buy? See our [Choose Your Setup](/docs/learn/f
 
 | Situation | Recommendation |
 |-----------|----------------|
-| Budget-conscious | Trezor Safe 3 (~$80) |
-| Simplicity priority | BitBox02 Bitcoin-only (~$150) |
-| Maximum security | Coldcard Mk4 (~$150) |
-| Open-source priority | Trezor Model T (~$180) |
+| Budget-conscious | Blockstream Jade ($79) |
+| Simplicity priority | BitBox02 Nova Bitcoin-only (~$185) |
+| Verifiable security | Jade Plus ($149) + [dice-generated seed](/docs/learn/keys/random/) |
+| Full transparency | Trezor Safe 7 ($249, auditable secure element) |
 
 ---
 
@@ -146,7 +146,7 @@ For anything more than pocket change, yes. Hardware wallets are the minimum secu
 
 **"Which is better: Trezor, Ledger, or Coldcard?"**
 
-All are reputable. Trezor and Coldcard are Bitcoin-focused and fully open source. Ledger has a secure element but closed-source firmware. See [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
+As of 2026, Trezor is the safe mainstream pick of the three: open source with a long security track record. Coldcard is not currently recommended: its [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) cost users ~$116M after a warning was dismissed. Ledger's secure-element firmware is closed source, which means trusting what you can't verify. Also consider Jade, BitBox02 Nova, and Passport; see the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
 
 **"Can I use the same seed on multiple devices?"**
 

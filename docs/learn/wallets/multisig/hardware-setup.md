@@ -22,9 +22,9 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 
 | Device | Role | Communication |
 |--------|------|---------------|
-| **Coldcard Mk4/Q** | Key 1 | MicroSD card (air-gapped) |
+| **Jade Plus** | Key 1 | QR codes (air-gapped) |
 | **Keystone 3 Pro** | Key 2 | QR codes (air-gapped) |
-| **Trezor Safe 3/5** | Key 3 | USB |
+| **Trezor Safe 5/7** | Key 3 | USB |
 
 </div>
 
@@ -34,9 +34,9 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 
 | Device | Role | Communication |
 |--------|------|---------------|
-| **Trezor Safe 3** | Key 1 | USB |
-| **Ledger Nano S+/X** | Key 2 | USB |
-| **BitBox02** | Key 3 | USB |
+| **Trezor Safe 5** | Key 1 | USB |
+| **BitBox02 Nova** | Key 2 | USB |
+| **Blockstream Jade** | Key 3 | USB or QR |
 
 </div>
 
@@ -46,27 +46,31 @@ For a **2-of-3 multisig**, using different manufacturers eliminates single-vendo
 
 | Device | Role | Communication |
 |--------|------|---------------|
-| **Trezor Model One** | Key 1 | USB |
-| **Ledger Nano S+** | Key 2 | USB |
-| **Blockstream Jade** | Key 3 | USB or QR |
+| **Blockstream Jade** | Key 1 | USB or QR |
+| **Trezor Safe 3** | Key 2 | USB |
+| **SeedSigner (DIY)** | Key 3 | QR codes (stateless) |
 
 </div>
 
 :::tip Cost Consideration
-A complete 3-device setup costs $200-500 depending on models chosen. This is a one-time investment to protect potentially much larger holdings.
+A complete 3-device setup costs $200–500 depending on models chosen. This is a one-time investment to protect potentially much larger holdings.
+
+If you already own a Coldcard, it can still serve as a quorum member, after you [check whether its seed needs migration](/docs/learn/wallets/coldcard-entropy-incident/#am-i-affected) and regenerate with dice on fixed firmware. We just don't recommend buying one new right now.
 :::
 
 
 ## General Setup Principles
 
-### 1. Generate Seeds on the Devices
+### 1. Give Each Device Its Own Independent Seed
 
-**Always generate new seed phrases directly on the hardware wallets.** Never:
-- Import a seed you generated elsewhere
-- Use a seed from a software wallet
+**Each device gets a fresh seed that has never existed anywhere else.** Never:
+- Reuse a seed from a software wallet or another device
 - Share seeds between devices
+- Let one backup location hold more than one seed
 
 Each device = Unique seed = Independent key
+
+Generate each seed on its device **using the dice-roll option** where available, or import a seed you [generated yourself with dice](/docs/learn/keys/random/). The 2026 Coldcard incident was caused by trusting on-device RNG blindly. In a multisig, independent entropy per key is exactly what keeps one vendor's silent failure from mattering.
 
 ### 2. Verify Device Authenticity
 
@@ -80,7 +84,9 @@ Before setup:
 Before generating seeds:
 - Connect to manufacturer's official software
 - Update to latest firmware
-- This ensures you have latest security patches
+- Skim the vendor's security advisories page while you're there
+
+Seeds generated on flawed firmware stay weak forever, and [updating later doesn't repair them](/docs/learn/wallets/coldcard-entropy-incident/), so patch *before* you generate, not after.
 
 ### 4. Create Strong PINs
 
@@ -95,14 +101,14 @@ Each device needs a PIN:
 
 ### Coldcard Setup
 
-Coldcard is Bitcoin-only and supports excellent air-gapped operation.
+Coldcard is Bitcoin-only and supports excellent air-gapped operation. (These steps remain here for existing owners; for new purchases, see [why Coldcard currently isn't recommended](/docs/learn/wallets/coldcard-entropy-incident/). Make sure the firmware is fixed (Mk4/Mk5: 5.6.0+, Q: 1.5.0Q+) before generating anything.)
 
 **Initial Setup:**
 1. Power on with battery pack or USB power adapter (not computer)
 2. Accept terms and create a PIN
    - Prefix PIN (shown before words)
    - Main PIN (required to access)
-3. Select "New Seed Words"
+3. Select "New Seed Words", and use the **dice roll option** (99 rolls) rather than plain device RNG
 4. Choose 24 words
 5. **Write down all 24 words on paper/metal**
 6. Verify by re-entering selected words

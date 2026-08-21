@@ -57,7 +57,7 @@ Layer 6: Multisig                  ← Eliminate single points of failure
 Generate your own seed phrase using dice for verifiable randomness. Don't trust, verify.
 
 **Why do this?**
-- Hardware wallet RNG could be compromised
+- Hardware wallet RNG could be compromised, and [it happened in 2026](/docs/learn/wallets/coldcard-entropy-incident/): a Coldcard firmware flaw made seeds guessable and ~$116M was stolen; dice-generated seeds were untouched
 - Verify your entropy source
 - Educational: understand how seeds work
 
