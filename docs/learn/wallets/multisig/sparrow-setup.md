@@ -81,7 +81,7 @@ The keystore details will populate:
 - **Derivation:** `m/48'/0'/0'/2'` (standard for multisig)
 - **xpub:** Extended public key
 
-### For Air-Gapped Devices (Coldcard, Keystone)
+### For Air-Gapped Devices (Jade, Keystone, Coldcard)
 
 1. Click on `Keystore 1` tab
 2. Click **"Airgapped Hardware Wallet"**
@@ -108,7 +108,7 @@ The keystore details will populate:
 
 1. Click the `Keystore 3` tab
 2. Repeat the process for your third hardware wallet
-3. Label appropriately (e.g., "Ledger - Key #3")
+3. Label appropriately (e.g., "BitBox02 - Key #3")
 4. **Verify the fingerprint matches your records**
 
 

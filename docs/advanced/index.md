@@ -225,11 +225,11 @@ Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if poss
 
 **"Do I really need open-source firmware?"**
 
-For most users, no. Standard hardware wallets with good practices provide excellent security. Open firmware is for users with extreme threat models or those who want complete transparency.
+For most users, no. Standard hardware wallets with good practices provide excellent security. Open firmware is for users with extreme threat models or those who want complete transparency. One honest caveat from 2026: open source alone caught nothing in the [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/): the bug sat in public code for five years. Openness enables verification; someone still has to do it.
 
 **"What about hardware wallets with secure elements vs. open source?"**
 
-Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. Some devices (like Coldcard) offer both. See [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
+Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. It's no longer a strict trade-off: the Trezor Safe 7 pairs open firmware with an auditable secure element, and BitBox02 Nova and Passport Prime combine certified chips with fully open code. See the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
 
 ---
 

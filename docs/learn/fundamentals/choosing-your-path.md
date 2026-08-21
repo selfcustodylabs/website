@@ -48,7 +48,7 @@ Your action items, in order, are to install BlueWallet from the official source,
 
 This is the tier most serious self-custody users actually live in, and it's the default recommendation for anyone holding meaningful savings. The defining feature of this tier is a hardware wallet, which is a small dedicated device that holds your private keys offline and signs transactions internally, so your keys never touch an internet-connected computer even when that computer is infected with malware.
 
-Reasonable hardware wallets in this range include the Trezor Safe 3, the BitBox02, and the Coldcard, which cost somewhere between about eighty and a hundred and fifty dollars depending on the model. You'll pair that with a metal seed backup plate (usually twenty to fifty dollars) so your recovery phrase can survive a fire or a flood, and you'll drive the whole thing from a free desktop application such as Sparrow Wallet. You can start out using Sparrow's default public nodes and add your own node later when you're ready, because the hardware wallet itself is doing the heavy security lifting regardless.
+Reasonable hardware wallets in this range include the Trezor Safe 5, the BitBox02 Nova, and the Blockstream Jade or Jade Plus, which cost somewhere between about eighty and a hundred ninety dollars depending on the model. You'll pair that with a metal seed backup plate (usually twenty to fifty dollars) so your recovery phrase can survive a fire or a flood, and you'll drive the whole thing from a free desktop application such as Sparrow Wallet. You can start out using Sparrow's default public nodes and add your own node later when you're ready, because the hardware wallet itself is doing the heavy security lifting regardless.
 
 The strengths of this tier are significant. Your keys never leave the device, every transaction is verified on a screen you physically control, malware on your computer cannot silently sign anything, and the whole setup is the industry standard that most experienced users land on. The trade-offs are the upfront cost of the device and the plate, a short learning curve while you get used to the workflow, and the fact that a single device plus a single seed is still a single point of failure, which is the thing the next tier starts to address.
 
@@ -59,11 +59,11 @@ Your action items here are to buy the hardware wallet from the manufacturer's of
 
 At this point the amount of bitcoin you're protecting justifies a real investment in privacy, verification, and a second layer of security on top of the seed phrase itself. The enhanced setup builds on everything in the standard tier and adds three things: a passphrase, your own node, and a habit of managing the coins you're holding rather than accepting whatever the wallet defaults to.
 
-A premium hardware wallet such as a Coldcard or a Trezor Model T (roughly a hundred and fifty to two hundred dollars) sits at the center of the setup, paired with a metal seed backup and a passphrase you generate yourself and store separately. The passphrase is sometimes called the "25th word" and it turns your seed phrase into a two-factor secret: anyone who finds the seed alone still can't spend your coins without the passphrase. You'll run your own Bitcoin full node on dedicated hardware (roughly a hundred to three hundred dollars for a small device and a disk), connect Sparrow Wallet to that node so every balance check and transaction broadcast stays private, and start learning UTXO management and coin control so you can shape your transactions rather than having them shaped for you.
+A premium hardware wallet such as a Jade Plus, a Trezor Safe 7, or a Passport Prime (roughly a hundred and fifty to two hundred and fifty dollars, more for the Passport) sits at the center of the setup, paired with a metal seed backup and a passphrase you generate yourself and store separately. At this tier you should also generate the seed itself from your own dice rolls rather than trusting the device's random number generator; the [2026 Coldcard incident](/docs/learn/wallets/coldcard-entropy-incident/) showed exactly what that trust can cost. The passphrase is sometimes called the "25th word" and it turns your seed phrase into a two-factor secret: anyone who finds the seed alone still can't spend your coins without the passphrase. You'll run your own Bitcoin full node on dedicated hardware (roughly a hundred to three hundred dollars for a small device and a disk), connect Sparrow Wallet to that node so every balance check and transaction broadcast stays private, and start learning UTXO management and coin control so you can shape your transactions rather than having them shaped for you.
 
 The benefits add up to a setup with no third-party dependencies in any meaningful sense. Your keys are protected by two separate secrets. Your wallet queries go to your own node over your own internet connection instead of to a public server that could log them. You can verify every rule of the Bitcoin network yourself without trusting anyone else's summary. The cost of all this is real complexity: the passphrase creates a second thing you can lose, the node is a piece of hardware you need to keep running, and coin control takes time to learn. These are all worth it at this tier, but they wouldn't be worth it at a smaller scale.
 
-Your action items, in order, are to follow the [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) guide if you haven't already, add a passphrase using the [DIY Passphrase Guide](/docs/learn/keys/passphrase/), set up your own node using the [Bitcoin Node Guide](/docs/bitcoin-node/), learn [UTXO Management](/docs/learn/privacy/utxo-management/) so you can control how your coins move, and read [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) to understand the threats this setup is designed to defend against. Once your holdings exceed roughly half a million dollars, or once your threat model requires that no single key can ever lose you everything, it's time to look at multisig.
+Your action items, in order, are to follow the [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/) guide if you haven't already, generate your seed with verifiable entropy using the [DIY Seed Guide](/docs/learn/keys/random/), add a passphrase using the [DIY Passphrase Guide](/docs/learn/keys/passphrase/), set up your own node using the [Bitcoin Node Guide](/docs/bitcoin-node/), learn [UTXO Management](/docs/learn/privacy/utxo-management/) so you can control how your coins move, and read [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) to understand the threats this setup is designed to defend against. Once your holdings exceed roughly half a million dollars, or once your threat model requires that no single key can ever lose you everything, it's time to look at multisig.
 
 
 ## Maximum setup: large holdings and serious threat models
@@ -79,22 +79,22 @@ Your path, in order, is to make sure you're completely comfortable with the stan
 
 ## Choosing a hardware wallet
 
-If you've decided the standard or enhanced tier is where you want to be, the next question is which device to actually buy. Six models come up repeatedly and each has a clear audience.
+If you've decided the standard or enhanced tier is where you want to be, the next question is which device to actually buy. Six options come up repeatedly as of August 2026, and each has a clear audience.
 
 <div class="fixed-width-table">
 
 | Device | Price | Best for | Key features |
 |--------|-------|----------|--------------|
-| **Trezor Safe 3** | ~$80 | Budget plus open source | Secure element, open-source firmware, approachable setup |
-| **BitBox02** | ~$150 | Simplicity | Swiss build, clean backup and restore flow, Bitcoin-only edition available |
-| **Coldcard Mk4** | ~$150 | Security maximalists | Bitcoin-only, fully air-gapped, advanced features |
-| **Trezor Model T** | ~$180 | Open-source advocates | Color touchscreen, fully open source, strong auditability |
-| **Keystone Pro** | ~$170 | Air-gap preference | QR-code based, large screen for transaction verification |
-| **Ledger Nano S+** | ~$80 | Budget multi-coin | Secure element, wide coin support |
+| **Blockstream Jade** | $79 | Budget | Open source, QR air-gap capable, dice entropy support |
+| **Trezor Safe 5** | $169 | Beginners | Secure element, open-source firmware, approachable setup |
+| **BitBox02 Nova** | ~$185 | Simplicity | Swiss build, clean backup flow, Bitcoin-only edition available |
+| **Jade Plus** | $149 | Verifiable security | QR air-gap, anti-exfil signing, multi-source entropy |
+| **Keystone 3 Pro** | $149 | Air-gap preference | QR-code based, large screen for transaction verification |
+| **Trezor Safe 7** | $249 | Transparency | Auditable secure element, touchscreen, open source |
 
 </div>
 
-If you'd rather have a short recommendation instead of a full menu, most beginners are well served by the Trezor Safe 3 or the BitBox02 Bitcoin-only. If your priority is the strongest practical security, the Coldcard Mk4 is the standard answer. And if your priority is verifying everything yourself from open-source firmware, the Trezor Model T is the one to pick. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets) goes deeper on how the category works if you want to understand the trade-offs in more detail before you choose.
+If you'd rather have a short recommendation instead of a full menu, most beginners are well served by the BitBox02 Nova Bitcoin-only or the Trezor Safe 5. If your priority is the strongest practical security, a Jade Plus with a [dice-generated seed](/docs/learn/keys/random/) is the current answer. And if your priority is verifying everything yourself, the Trezor Safe 7's fully auditable stack (or building your own SeedSigner) is the one to pick. Notice that the Coldcard, the long-time default answer for security, is missing: after the [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) we no longer recommend it for new purchases. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets) goes deeper on how the category works if you want to understand the trade-offs in more detail before you choose.
 
 
 ## Still not sure

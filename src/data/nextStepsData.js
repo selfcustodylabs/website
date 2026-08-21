@@ -149,6 +149,12 @@ const NEXT_STEPS = {
       description: "Set up your device",
     },
     {
+      label: "Security",
+      title: "The Coldcard Entropy Incident",
+      href: "/docs/learn/wallets/coldcard-entropy-incident/",
+      description: "What 2026's biggest wallet exploit teaches",
+    },
+    {
       label: "Learn",
       title: "Air-Gapped Wallets",
       href: "/docs/learn/wallets/air-gapped-wallets/",

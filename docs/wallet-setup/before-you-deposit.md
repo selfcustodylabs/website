@@ -39,6 +39,7 @@ Complete every item before depositing significant funds.
 
 ### ✅ Seed Phrase Verification
 
+- [ ] **I know how my seed was generated**: with my own dice entropy, or by the device's RNG on current, unaffected firmware (if it came from a [Coldcard on 2021–2026 firmware](/docs/learn/wallets/coldcard-entropy-incident/), migrate before depositing anything)
 - [ ] **I have written down my seed phrase physically** (paper or metal)
 - [ ] **I have verified every word is spelled correctly** (check against [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt))
 - [ ] **I have verified the words are in the correct order**

@@ -51,7 +51,7 @@ No human can reliably copy that. Even converting to decimal doesn't help much: y
 
 When your wallet generates a seed phrase, here's what happens under the hood:
 
-1. **Generate randomness**: The wallet creates a large random number (128 bits for 12 words, 256 bits for 24 words)
+1. **Generate randomness**: The wallet creates a large random number (128 bits for 12 words, 256 bits for 24 words). This step is the one you can't watch happen, and when a Coldcard firmware bug quietly weakened it, [attackers brute-forced $116M worth of seeds in 2026](/docs/learn/wallets/coldcard-entropy-incident/). It's why generating this number yourself [with dice](/docs/learn/keys/random/) matters.
 2. **Add checksum**: A small verification code is appended (4-8 bits)
 3. **Split into chunks**: The binary is divided into 11-bit segments
 4. **Map to words**: Each 11-bit number (0-2047) maps to a word from the BIP39 list

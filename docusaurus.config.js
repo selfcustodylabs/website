@@ -41,7 +41,7 @@ const config = {
     // NOTE: Do NOT add "index, follow" or a "googlebot" directive here.
     // This headTag is emitted on EVERY page, including the tag listing pages
     // that swizzle in <meta name="robots" content="noindex, follow">. A global
-    // "index" — and especially a Googlebot-specific "index" — overrode that
+    // "index", and especially a Googlebot-specific "index", overrode that
     // per-page noindex, leaving tag pages stuck in GSC "Crawled - currently not
     // indexed" instead of cleanly dropping out via "Excluded by noindex".
     // index/follow are the defaults anyway; keep only the preview directives.
@@ -269,14 +269,15 @@ const config = {
       // ===========================================
       // Announcement Bar (optional - for important updates)
       // ===========================================
-      // NOTE: hrefs below are NOT covered by onBrokenLinks — the link checker only
+      // NOTE: hrefs below are NOT covered by onBrokenLinks. The link checker only
       // walks Markdown/MDX. Verify these routes by hand after any edit.
       // Bump `id` to re-show the bar to visitors who already dismissed it.
       announcementBar: {
         id: 'coldcard_rng_2026',
         content:
-          '⚠️ <strong>Coldcard RNG flaw:</strong> some seeds came from a predictable software ' +
-          'RNG, and new firmware does <strong>not</strong> fix an existing seed. ' +
+          '⚠️ <strong>Coldcard RNG flaw:</strong> seeds generated 2021–2026 may be ' +
+          'brute-forceable, and new firmware does <strong>not</strong> fix an existing seed. ' +
+          '<a href="/docs/learn/wallets/coldcard-entropy-incident/">Am I affected?</a> · ' +
           'Generate your own: <a href="/docs/learn/keys/random/">dice seed</a> + ' +
           '<a href="/docs/learn/keys/passphrase/">passphrase</a>.',
         backgroundColor: '#f59e0b',
@@ -900,7 +901,7 @@ const config = {
         createRedirects(existingPath) {
           // trailingSlash: true means existingPath arrives WITH a trailing slash
           // (e.g. '/docs/reference/glossary/'). Normalize it away so the exact
-          // '===' matches below fire — without this, those redirects are silently
+          // '===' matches below fire. Without this, those redirects are silently
           // never generated and the old URLs 404.
           const path = existingPath.replace(/\/$/, '');
           // Catch-all for any /docs/learn/ path - create redirect from /docs/basics/

@@ -39,7 +39,7 @@ Understand Legacy, SegWit, Native SegWit, and Taproot addresses. Learn which to 
 
 ### [Hardware Wallet Comparison](/docs/reference/hardware-wallet-comparison)
 
-Compare Coldcard, Trezor, BitBox02, Ledger, Jade, and Keystone. Find the right hardware wallet for your needs, budget, and security requirements.
+Compare Trezor, BitBox02 Nova, Jade Plus, Passport Prime, Keystone, Coldcard, and Ledger, updated for the post-2026 landscape. Find the right hardware wallet for your needs, budget, and security requirements.
 
 </div>
 

@@ -34,7 +34,7 @@ export const faqSchemas = {
       {
         question: "Which hardware wallet should I buy?",
         answer:
-          "For beginners, we recommend Trezor Safe 3 or BitBox02 for their ease of use. For maximum security, Coldcard is preferred by serious Bitcoiners. All reputable hardware wallets are significantly safer than keeping Bitcoin on an exchange.",
+          "For beginners, we recommend the BitBox02 Nova or Trezor Safe 5 for their ease of use. For verifiable security, the Blockstream Jade Plus or Passport Prime paired with dice-roll entropy. Coldcard is not currently recommended following the 2026 entropy incident. Any of these is significantly safer than keeping Bitcoin on an exchange.",
       },
       {
         question: "Is it safe to buy a hardware wallet from Amazon?",

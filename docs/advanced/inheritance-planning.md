@@ -187,9 +187,9 @@ For most people with significant Bitcoin holdings, a family multisig provides th
 Follow the [Multisig Setup Guide](/docs/learn/wallets/multisig/) to create a 2-of-3 multisig wallet.
 
 Assign keys with inheritance in mind:
-- **Key 1:** Your primary device (e.g., Coldcard)
-- **Key 2:** Heir's device (e.g., Trezor), they keep it
-- **Key 3:** Backup device (e.g., Ledger), secure storage
+- **Key 1:** Your primary device (e.g., Jade Plus)
+- **Key 2:** Heir's device (e.g., Trezor Safe 5), they keep it
+- **Key 3:** Backup device (e.g., Keystone 3 Pro), secure storage
 
 #### Step 2: Distribute the Seeds
 

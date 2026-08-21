@@ -19,6 +19,9 @@ Check the [Glossary](/docs/reference/glossary) for term definitions, or use the 
 
 ## 🔑 Seed Phrases & Recovery
 
+### [Is my Coldcard seed affected by the 2026 entropy flaw?](/docs/learn/wallets/coldcard-entropy-incident/)
+If you generated a seed on a Coldcard between March 2021 and July 2026, treat it as compromised and migrate; firmware updates don't fix an existing weak seed. Dice-roll and imported seeds were never affected. Full affected-firmware table and migration steps at the link.
+
 ### [What happens if I lose my seed phrase?](/docs/reference/faq/lost-seed)
 The hard truth: if you lose your seed phrase AND your device, your Bitcoin is almost certainly gone forever. This page explains what's possible and what isn't.
 
