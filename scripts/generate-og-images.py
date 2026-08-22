@@ -21,7 +21,7 @@ import re
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageStat
+from PIL import Image, ImageDraw, ImageFilter, ImageStat
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from og_theme import (  # noqa: E402
@@ -36,6 +36,8 @@ IMG_DIR = ROOT / "static" / "img"
 OG_DIR = IMG_DIR / "og"
 MANIFEST = ROOT / "src" / "data" / "ogManifest.json"
 BRAND_CARD = IMG_DIR / "social-card.png"
+LOGO_MARK = Path(__file__).resolve().parent / "assets" / "logo-mark.png"
+BRAND_PHOTO = IMG_DIR / "seed" / "dice.webp"
 
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 TITLE_RE = re.compile(r'^title:\s*"?(.*?)"?\s*$', re.MULTILINE)
@@ -337,42 +339,70 @@ def render_card(title, url, out_path):
 
 
 def render_brand_card(out_path):
-    """The site-wide fallback card used for non-doc routes."""
-    img = Image.new("RGB", (WIDTH * SCALE, HEIGHT * SCALE), BG)
+    """The site-wide card: the logo over the dice, for every non-doc route.
+
+    This one deliberately breaks the left-words/right-evidence split the doc
+    cards use. It is the cover of the set, not a member of it, so the mark leads
+    and the dice run full bleed behind it: rolling your own entropy is the thing
+    the whole site is about.
+    """
+    w, h = WIDTH * SCALE, HEIGHT * SCALE
+
+    src = Image.open(BRAND_PHOTO).convert("RGB")
+    k = max(w / src.width, h / src.height)
+    src = src.resize((max(w, int(src.width * k)), max(h, int(src.height * k))), Image.LANCZOS)
+    photo = src.crop(((src.width - w) // 2, (src.height - h) // 2,
+                      (src.width - w) // 2 + w, (src.height - h) // 2 + h))
+
+    mean = ImageStat.Stat(photo.convert("L")).mean[0]
+    gain = min(2.8, max(0.70, PHOTO_TARGET_LUMA / max(mean, 1.0)))
+    photo = photo.point(lambda v: min(255, int(v * gain)))
+    grey = photo.convert("L")
+    photo = Image.blend(photo, Image.merge("RGB", [
+        grey.point(lambda p: min(255, int(p * 1.02 + 6))),
+        grey.point(lambda p: int(p * 0.86)),
+        grey.point(lambda p: int(p * 0.62))]), 0.90)
+
+    # Throw the dice out of focus. They stay recognisable as dice while the mark
+    # and the headline become the only sharp things on the card.
+    photo = photo.filter(ImageFilter.GaussianBlur(5 * SCALE))
+    photo = Image.blend(Image.new("RGB", photo.size, BG), photo, 0.42)
+
+    # Vignette, weighted to the centre where the type sits.
+    vig = Image.new("L", photo.size, 0)
+    ImageDraw.Draw(vig).ellipse(
+        [(w // 2 - 700 * SCALE, h // 2 - 430 * SCALE),
+         (w // 2 + 700 * SCALE, h // 2 + 430 * SCALE)], fill=205)
+    vig = vig.filter(ImageFilter.GaussianBlur(130 * SCALE))
+    img = Image.composite(photo, Image.new("RGB", photo.size, BG), vig)
+
     draw = ImageDraw.Draw(img)
-    draw.rectangle([(BAND_X * SCALE, 0), (WIDTH * SCALE, HEIGHT * SCALE)], fill=BAND_BG)
-    dice_field(Pen(draw), "https://selfcustodylabs.com/")
-    draw.line(
-        [(BAND_X * SCALE, 0), (BAND_X * SCALE, HEIGHT * SCALE)], fill=HAIRLINE, width=SCALE
-    )
+    pen = Pen(draw)
 
-    brand_f = font(MONO_BOLD, 20)
-    by = PAD * SCALE
-    draw.rectangle(
-        [(PAD * SCALE, by), (PAD * SCALE + 4 * SCALE, by + 24 * SCALE)], fill=AMBER
-    )
-    tracked_text(
-        draw, (PAD * SCALE + 18 * SCALE, by + 1 * SCALE),
-        "SELF CUSTODY LABS", brand_f, WHITE, tracking=2.6,
-    )
+    # Amber halo so the mark separates from whatever pip falls behind it.
+    halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(halo).ellipse(
+        [((WIDTH // 2 - 168) * SCALE, 22 * SCALE), ((WIDTH // 2 + 168) * SCALE, 358 * SCALE)],
+        fill=(245, 158, 11, 46))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), halo.filter(
+        ImageFilter.GaussianBlur(70 * SCALE))).convert("RGB"), (0, 0))
+    draw = ImageDraw.Draw(img)
+    pen = Pen(draw)
 
-    title_f = font(DISPLAY_BOLD, 68)
-    for i, line in enumerate(["Hold your own", "Bitcoin keys."]):
-        draw.text((PAD * SCALE, (244 + i * 74) * SCALE), line, font=title_f, fill=WHITE)
+    mark_px = 180
+    mark = Image.open(LOGO_MARK).convert("RGBA").resize(
+        (mark_px * SCALE, mark_px * SCALE), Image.LANCZOS)
+    img.paste(mark, ((WIDTH // 2 - mark_px // 2) * SCALE, 68 * SCALE), mark)
 
-    sub_f = font(MONO_MED, 19)
-    tracked_text(
-        draw, (PAD * SCALE, 434 * SCALE),
-        "Self-custody guides, start to signed.", sub_f, MUTED_BRIGHT, tracking=0.8,
-    )
-
-    fy = (HEIGHT - PAD - 26) * SCALE
-    draw.line(
-        [(PAD * SCALE, fy - 26 * SCALE), (PAD * SCALE + 56 * SCALE, fy - 26 * SCALE)],
-        fill=AMBER, width=2 * SCALE,
-    )
-    foot_f = font(MONO_MED, 19)
-    tracked_text(draw, (PAD * SCALE, fy), "selfcustodylabs.com", foot_f, MUTED_BRIGHT, tracking=0.8)
+    pen.text(WIDTH // 2, 282, "SELF CUSTODY LABS", font(MONO_BOLD, 23), WHITE,
+             tracking=5.2, anchor="ma")
+    draw.text((WIDTH // 2 * SCALE, 340 * SCALE), "Hold your own Bitcoin keys.",
+              font=font(DISPLAY_BOLD, 60), fill=WHITE, anchor="ma")
+    pen.line([(WIDTH // 2 - 34, 434), (WIDTH // 2 + 34, 434)], AMBER, 2)
+    pen.text(WIDTH // 2, 458, "Dice-rolled seeds, air-gapped signing, your own node.",
+             font(MONO_MED, 17), MUTED_BRIGHT, tracking=0.6, anchor="ma")
+    pen.text(WIDTH // 2, 538, "selfcustodylabs.com", font(MONO_BOLD, 19), AMBER,
+             tracking=2.4, anchor="ma")
 
     img.resize((WIDTH, HEIGHT), Image.LANCZOS).save(out_path, "PNG", optimize=True)
 
