@@ -303,7 +303,7 @@ export default function LearnPage() {
           subtitle="Master the fundamentals of Bitcoin ownership. From understanding what Bitcoin is to running your own node, everything you need to become truly sovereign."
         />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-14 md:pb-32 md:pt-16">
           <CategorySection
             title="📚 Fundamentals"
             description="Start here if you're new. Build a solid foundation before diving deeper."
