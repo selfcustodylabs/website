@@ -94,6 +94,15 @@ Motifs are drawn at any convenient size, then auto-fitted and centred in the ban
 variation, photo crop framing, the plate mark) is keyed on `SHA-256(url)`, so regeneration is
 byte-identical and git stays quiet unless a title actually changed.
 
+**The site-wide `social-card.png`** (used for `/`, `/learn`, `/books` and every other non-doc
+route) deliberately breaks that split: it is the cover of the set, not a member of it, so the
+logo runs large over a defocused full-bleed `seed/dice.webp`. It reads the mark from
+[scripts/assets/logo-mark.png](scripts/assets/logo-mark.png), a 618px trim of
+[static/img/logo.svg](static/img/logo.svg). That PNG is a committed build input so the generator
+needs no SVG rasteriser; if the logo ever changes, re-render it with
+`cairosvg logo.svg -o logo-mark.png -W 640 -H 640` (strip the stray Illustrator `<image>` tags
+first, they point at a missing local file) and re-trim to the alpha bbox.
+
 ## SEO invariants: don't break these
 
 - **Never add `index, follow` or a `googlebot` directive to `headTags`.** A global `index`
