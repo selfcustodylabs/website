@@ -9,9 +9,11 @@ export default function PageHeader({ eyebrow, title, subtitle }) {
   return (
     <header
       ref={ref}
-      className="reveal relative isolate overflow-hidden px-6 pb-16 pt-24 md:pb-20 md:pt-32"
+      className="reveal relative isolate overflow-hidden px-6 pb-10 pt-14 md:pb-12 md:pt-20"
     >
-      <BackgroundMotif />
+      {/* Fade the motif out at the bottom: the header clips its glow with
+          overflow-hidden, which otherwise leaves a visible horizontal seam. */}
+      <BackgroundMotif className="[-webkit-mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <div className="mb-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">

@@ -281,7 +281,7 @@ export default function GuidesPage() {
           subtitle="Step-by-step tutorials for securing your Bitcoin. From beginner seed generation to advanced air-gapped setups."
         />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-14 md:pb-32 md:pt-16">
           <CategorySection
             title="🔐 Security & Keys"
             description="Generate and protect your Bitcoin keys with verifiable randomness"

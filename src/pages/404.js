@@ -66,7 +66,7 @@ export default function NotFound() {
           subtitle="The page you're looking for doesn't exist or has been moved. Let's get you back on track."
         />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 md:pb-32">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-14 md:pb-32 md:pt-16">
           <div className="mx-auto mb-12 flex max-w-xl items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.02] px-5 py-3 text-sm text-white/65">
             <SearchRoundedIcon sx={{ fontSize: 18 }} className="text-amber-400" />
             <span>Try the search bar in the navigation to find what you need</span>
