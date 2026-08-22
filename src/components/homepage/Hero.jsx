@@ -25,7 +25,7 @@ function Pill({ icon: Icon, label }) {
 
 export default function Hero() {
   return (
-    <header className="relative isolate flex min-h-[88vh] items-center justify-center overflow-hidden pb-24 pt-20 md:min-h-screen md:pb-32 md:pt-28">
+    <header className="relative isolate flex min-h-[88vh] items-center justify-center overflow-hidden pb-24 pt-20 md:min-h-[78vh] md:pb-32 md:pt-28">
       <BackgroundMotif />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 text-center">
@@ -36,7 +36,7 @@ export default function Hero() {
           Free, open-source guides
         </div>
 
-        <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tightest text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] animate-fade-in-up">
+        <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tightest text-white sm:text-6xl md:text-7xl lg:text-[5rem] animate-fade-in-up">
           Take Control of
           <br />
           <span
