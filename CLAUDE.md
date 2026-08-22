@@ -40,7 +40,8 @@ MDX, and swizzled components all resolve. Run it before claiming a content chang
 | [src/components/](src/components/) | Shared React; barrel-exported from [src/components/index.js](src/components/index.js) |
 | [src/pages/](src/pages/) | Standalone routes (`/`, `/learn`, `/guides`, `/books`, `/podcasts`, `/privacy`, 404) |
 | [scripts/generate-og-images.py](scripts/generate-og-images.py) | Renders per-doc OG cards + rewrites `ogManifest.json` |
-| [static/](static/) | Images, `robots.txt`, `CNAME`, `keybase.txt` |
+| [scripts/generate-favicons.py](scripts/generate-favicons.py) | Renders the root favicon set from `assets/logo-mark.png` |
+| [static/](static/) | Images, `robots.txt`, `CNAME`, `keybase.txt`, root favicon set |
 
 ## Adding or editing a doc
 
@@ -125,6 +126,17 @@ first, they point at a missing local file) and re-trim to the alpha bbox.
   attribute, so that directive does nothing. [src/theme/SearchPage/](src/theme/SearchPage/) wraps it
   to add a real `name="robots"` one; don't delete the wrapper as redundant, and re-check it after
   upgrading the search plugin.
+- **The favicon URL must never gain a version query string or move.** Google requires a
+  *stable* favicon URL and drops the icon when it changes; `4bd0b7a9` (Apr 2026) switched
+  `favicon` to `img/favicon.ico?v=2` and the site showed a generic globe in search results by
+  Aug 2026. The set now lives at the **domain root** (`/favicon.ico`, `/favicon-96x96.png`,
+  `/favicon-192x192.png`, `/apple-touch-icon.png`) and is regenerated **in place** by
+  `python3 scripts/generate-favicons.py`, so the URLs never move. Never re-add a `?v=` bump to
+  bust a cache; overwrite the bytes instead. `/favicon.ico` at the root also has to keep
+  existing because that is the path browsers and crawlers probe by default; it 404'd before.
+  Keep `static/img/favicon.ico` around too so the previously declared URL stays 200.
+  Google recommends an icon **larger than 48x48**, so the `.ico` carries up to 256 and the
+  PNG alternates go to 192; don't trim it back to a 48px-only file.
 - **`trailingSlash: true`**, so `existingPath` inside `createRedirects()` arrives *with* a
   trailing slash. Any new `===` comparison must use the normalized `path` variable at the top of
   that function, or the redirect is silently never generated and the old URL 404s.
