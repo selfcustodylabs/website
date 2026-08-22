@@ -26,7 +26,7 @@ Parmanode is a package installer wizard that makes it easy to:
 - **Set up Electrum servers:** Fulcrum, Electrs, or Electrum X
 - **Install wallet software:** Sparrow, Electrum, Specter, and more
 - **Configure everything automatically:** Wallets connect to your node without manual setup
-- **Add privacy tools:** Tor, Whirlpool, JoinMarket
+- **Add privacy tools:** Tor, JoinMarket
 
 The key feature that sets Parmanode apart: **it connects your wallet to your node automatically**. Install Sparrow or Electrum through Parmanode, and they'll be pre-configured to use your local Electrum server. No copying connection strings or fumbling with settings.
 
@@ -71,8 +71,7 @@ Parmanode organizes software into categories. You pick what you need:
 ### Other Tools
 - Tor
 - Tor Browser
-- Whirlpool (CoinJoin)
-- JoinMarket
+- JoinMarket (CoinJoin)
 - Nostr Relay
 - And more...
 

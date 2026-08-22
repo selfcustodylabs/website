@@ -20,5 +20,6 @@ This section covers what the chain reveals, how surveillance firms link addresse
 - **[Chain Analysis](./chain-analysis)**: how surveillance firms cluster addresses and trace flows
 - **[Protecting Privacy](./protecting-privacy)**: practical habits that limit what the chain reveals
 - **[CoinJoin](./coinjoin)**: collaborative transactions that break heuristics
+- **[CoinJoin Tutorial](./coinjoin-tutorial)**: hands-on mixing with JoinMarket NG and Jam
 - **[PayJoin](./payjoin)**: cooperative payments that hide the true sender
 - **[UTXO Management](./utxo-management)**: coin control, consolidation, and source separation

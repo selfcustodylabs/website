@@ -263,6 +263,12 @@ const NEXT_STEPS = {
   ],
   "/docs/learn/privacy/coinjoin/": [
     {
+      label: "Action",
+      title: "CoinJoin Tutorial",
+      href: "/docs/learn/privacy/coinjoin-tutorial/",
+      description: "Run real coinjoins with JoinMarket NG and Jam",
+    },
+    {
       label: "Foundation",
       title: "UTXO Management",
       href: "/docs/learn/privacy/utxo-management/",
@@ -273,6 +279,26 @@ const NEXT_STEPS = {
       title: "PayJoin Guide",
       href: "/docs/learn/privacy/payjoin/",
       description: "Stealth privacy for payments",
+    },
+  ],
+  "/docs/learn/privacy/coinjoin-tutorial/": [
+    {
+      label: "Foundation",
+      title: "CoinJoin Theory",
+      href: "/docs/learn/privacy/coinjoin/",
+      description: "How mixing works and the post-mix rules",
+    },
+    {
+      label: "Post-Mix",
+      title: "UTXO Management",
+      href: "/docs/learn/privacy/utxo-management/",
+      description: "Coin control for your mixed coins",
+    },
+    {
+      label: "Infrastructure",
+      title: "Run Your Own Bitcoin Node",
+      href: "/docs/bitcoin-node/",
+      description: "The backend your privacy depends on",
     },
   ],
   "/docs/learn/privacy/payjoin/": [
@@ -426,7 +452,6 @@ const NEXT_STEPS = {
       description: "Plan for the future",
     },
   ],
-
 };
 
 /**

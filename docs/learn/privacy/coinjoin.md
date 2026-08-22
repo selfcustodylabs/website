@@ -1,26 +1,31 @@
 ---
 sidebar_position: 5
 title: "Bitcoin CoinJoin: How It Works & Best Practices"
-description: "How Bitcoin CoinJoin works: equal outputs, anonymity sets, Wasabi vs JoinMarket, and how to preserve privacy after mixing."
-keywords: ["bitcoin coinjoin", "wasabi", "whirlpool", "joinmarket", "sparrow coinjoin", "bitcoin privacy", "chain analysis", "anonymity set", "post-mix best practices"]
-tags: ["coinjoin", "privacy", "wasabi", "whirlpool", "joinmarket"]
+description: "How Bitcoin CoinJoin works: equal outputs, anonymity sets, the 2026 tools (JoinMarket NG, Jam, Ashigaru Whirlpool, Wasabi), and post-mix rules."
+keywords: ["bitcoin coinjoin", "joinmarket ng", "jam joinmarket", "whirlpool", "ashigaru", "wasabi", "bitcoin privacy", "chain analysis", "anonymity set", "post-mix best practices"]
+tags: ["coinjoin", "privacy", "joinmarket"]
 slug: /learn/privacy/coinjoin
 ---
 
-# CoinJoin: Complete Bitcoin Privacy Guide
+# CoinJoin: How It Works and When to Use It
 
 :::info What You'll Learn
-**Time:** 45 minutes  
+**Time:** 30 minutes  
 **Difficulty:** Intermediate  
 **Prerequisites:** Understanding of [UTXOs](/docs/learn/transactions/utxos), [chain analysis](/docs/learn/privacy/chain-analysis), and [UTXO management](/docs/learn/privacy/utxo-management).
 :::
 
-CoinJoin is one of Bitcoin's most important privacy tools. It lets multiple users combine their transactions so that blockchain analysts cannot determine who owns which output. This page covers the full picture: how CoinJoin works, which services exist, and (most importantly) how to handle your coins afterward so you don't undo the privacy you just paid for.
+CoinJoin is Bitcoin's most important on-chain privacy tool. It lets strangers combine their transactions into one, so that blockchain analysts can no longer tell who owns which coin. This page explains the concept: how it works, what it can and cannot do, which tools still work in 2026, and the post-mix rules that decide whether your privacy survives.
 
+:::tip Want to actually do it?
+This page is the theory. When you are ready to run real coinjoins, follow the hands-on guide: [CoinJoin Tutorial: JoinMarket NG and Jam](/docs/learn/privacy/coinjoin-tutorial/).
+:::
 
 ## What is CoinJoin?
 
-CoinJoin is a **collaborative Bitcoin transaction** where multiple users combine their inputs and outputs into a single transaction. The result: outside observers cannot determine which input belongs to which output.
+Picture ten people around a table. Each drops an identical 50 euro note into a hat. The hat is shaken and everyone takes one note back out. Every person walks away with exactly what they put in, but nobody watching can say which note ended up with whom.
+
+CoinJoin is that hat, built as a single Bitcoin transaction. Multiple users combine their inputs and receive **equal-sized outputs**, so an outside observer cannot match inputs to outputs.
 
 ```
 NORMAL TRANSACTION:
@@ -34,306 +39,201 @@ Alice (1 BTC) ──┐
 Bob   (1 BTC) ──┼──► 1 BTC ──► ??? (Alice? Bob? Carol?)
 Carol (1 BTC) ──┘    1 BTC ──► ??? (Alice? Bob? Carol?)
                      1 BTC ──► ??? (Alice? Bob? Carol?)
-Hard to trace: Each participant got 1 BTC, but who got which?
+Hard to trace: each participant got 1 BTC back, but who got which?
 ```
 
-The math is simple, but the privacy gain is huge. When three people CoinJoin 1 BTC each, an external observer sees three inputs and three equal 1 BTC outputs. There is no way to tell which output belongs to which input. With more participants, the ambiguity compounds.
+Two properties make this safe:
 
+- **Non-custodial:** nobody ever holds your coins. You sign only your own input, and only after checking the transaction pays you back.
+- **Nothing to confiscate:** the privacy comes from the transaction structure itself, not from trusting a company.
 
-## Why Do CoinJoin?
+## Why CoinJoin Exists
 
-Bitcoin is **pseudonymous, not anonymous**. The blockchain is a permanent public ledger. Without privacy tools:
+Bitcoin is **pseudonymous, not anonymous**. Every transaction is public forever, and [chain analysis](/docs/learn/privacy/chain-analysis) firms are good at attaching names to addresses. Without countermeasures:
 
-- Your employer sees your purchases
-- Your recipients see your balance
-- Analytics companies build profiles
-- Criminals can target wealthy holders
-- Governments can trace and seize funds
+- The exchange you bought from can follow your coins for years
+- Anyone you pay can look up your balance and income
+- Analytics companies sell profiles of your financial life
+- Thieves can identify wealthy targets
 
-CoinJoin directly defeats the [chain analysis](/docs/learn/privacy/chain-analysis) heuristics by:
+CoinJoin attacks the tracing directly. It breaks the **common-input-ownership heuristic** (the assumption that all inputs of a transaction belong to one person) and the output linking that chain analysis depends on. After a good coinjoin, your coins have **forward privacy**: their future movements can no longer be confidently tied to their past.
 
-- Combining inputs from multiple people (breaks common-input-ownership)
-- Creating equal outputs (hides which output belongs to whom)
-- Adding ambiguity to the transaction graph
+## How CoinJoin Works {#how-coinjoin-works}
 
-After a good CoinJoin, analysts cannot determine which output is yours and your previous transaction history is broken; your coins gain **forward privacy**.
+### Equal Outputs Make Coins Interchangeable
 
-
-## How CoinJoin Works
-
-### The Equal-Outputs Trick
-
-The key innovation of CoinJoin is **equal-value outputs**. If outputs had different amounts, you could still trace them by following the numbers. With equal outputs, the outputs become interchangeable.
+If outputs had different sizes, you could trace them by following the amounts. Equal outputs remove that signal.
 
 ```
 Without equal outputs (traceable):
-  Inputs: 0.5 + 0.8 + 0.3 = 1.6 BTC
-  Outputs: 0.3 + 0.5 + 0.8 = 1.6 BTC
-  Analyst: "That 0.8 output must be the same person who sent 0.8."
+  Inputs:  0.5 + 0.8 + 0.3 BTC
+  Outputs: 0.3 + 0.5 + 0.8 BTC
+  Analyst: "The 0.8 output belongs to whoever sent 0.8."
 
 With equal outputs (not traceable):
-  Inputs: 0.5 + 0.8 + 0.3
-  Outputs: 0.5 + 0.5 + 0.5 + change
-  Analyst: "Three identical 0.5 BTC outputs... I can't tell them apart."
+  Inputs:  0.5 + 0.8 + 0.3 BTC
+  Outputs: 0.5 + 0.5 + 0.5 BTC + change
+  Analyst: "Three identical outputs. I cannot tell them apart."
 ```
 
 ### The Anonymity Set
 
-The **anonymity set** is the number of possible owners for each output after a CoinJoin. Bigger is better.
+The **anonymity set** is the number of equally plausible owners each output has. Bigger is better.
 
 ```
-2-person CoinJoin: Each output has 2 possible owners
-5-person CoinJoin: Each output has 5 possible owners  
-100-person CoinJoin: Each output has 100 possible owners
+ 3-person coinjoin:  each output has  3 possible owners
+10-person coinjoin:  each output has 10 possible owners
+100-person coinjoin: each output has 100 possible owners
 ```
 
-After a 100-person CoinJoin, each 0.1 BTC output could belong to any of 100 people. An analyst has a 1% chance of guessing correctly. That is why services like Wasabi Wallet target large anonymity sets.
+After one 100-person round, an analyst picking an output has a 1% chance of naming the right owner.
 
-### Multiple Rounds Compound Privacy
+### Rounds Compound
 
-Doing multiple rounds of CoinJoin increases privacy exponentially:
+One coinjoin is good; several chained coinjoins are far better. Each extra round multiplies the possibilities an analyst must consider, and remixing with new participants each time compounds the ambiguity. This is why every serious tool supports **remixing**, and why doing a single round and stopping is a half-measure.
 
-```
-Round 1: 100-person CoinJoin → 1% chance of identifying each output
-Round 2: 100-person CoinJoin → 0.01% chance
-Round 3: 100-person CoinJoin → 0.0001% chance
-```
+### Why Nobody Can Steal
 
-Each additional round dilutes the information available to an analyst.
+A coinjoin is one transaction that everyone must sign. Each participant:
 
-### The Full Flow
+1. Contributes an input they control
+2. Checks the draft transaction pays them back in full
+3. Signs **only their own input**, and only if step 2 checks out
 
-```
-1. REGISTRATION
-   You and other users express interest in joining a CoinJoin.
+If anyone (including a coordinator) tampers with the outputs, the signatures simply never arrive and the transaction dies. The worst a malicious party can do is waste your time, never take your coins.
 
-2. COORDINATION
-   A coordinator (or decentralized protocol) matches participants
-   with compatible amounts.
+## A Concrete Example
 
-3. TRANSACTION CONSTRUCTION
-   The coordinator builds a transaction that combines everyone's
-   inputs and creates equal outputs.
+Three people each hold 0.1 BTC with a history they would rather not carry around:
 
-4. SIGNING
-   Each participant verifies the transaction and signs their inputs.
-   No one can steal; each person only signs their own inputs.
+- **Alice** was paid by her employer, who knows her address
+- **Bob** withdrew from an exchange that keeps records under his name
+- **Carol** received coins whose past is publicly known
 
-5. BROADCAST
-   Once everyone signs, the transaction is broadcast to the network.
-   Privacy is preserved for all participants.
-```
-
-**Why the coordinator can't steal:** Each participant only signs their own inputs, and they only sign if the outputs include a valid return to themselves. If a coordinator tries to redirect funds, signatures won't be provided.
-
-
-## A Simple Example
-
-Three people want more privacy:
-
-- **Alice:** received 1 BTC from her employer (identity linked)
-- **Bob:** bought 1 BTC on an exchange with KYC
-- **Carol:** has 1 BTC with a known history
-
-Without CoinJoin, each transaction is clearly traceable. They coordinate a CoinJoin:
+They coinjoin:
 
 ```
 INPUTS                      OUTPUTS
 ──────                      ───────
-Alice's 1 BTC  ─┐
-Bob's 1 BTC    ─┼──→      ──→ 1 BTC to ???
-Carol's 1 BTC  ─┘          ──→ 1 BTC to ???
-                           ──→ 1 BTC to ???
-
-Each person provided 1 BTC and received 1 BTC, but the
-connections between inputs and outputs are ambiguous.
+Alice's 0.1 BTC  ─┐         ──► 0.1 BTC to ???
+Bob's   0.1 BTC  ─┼──►      ──► 0.1 BTC to ???
+Carol's 0.1 BTC  ─┘         ──► 0.1 BTC to ???
 ```
 
-After the CoinJoin:
-
-- Alice's employer cannot trace her spending
-- Bob's exchange history is broken
-- Carol's known coins are mixed with others
-- An observer sees three people got 1 BTC each, but cannot link specific inputs to specific outputs
-
+Afterward, Alice's employer sees her 0.1 BTC entered a coinjoin and then becomes one of three identical outputs. It cannot tell which one is hers, and neither can Bob's exchange or anyone watching Carol's coins. Each history now dead-ends into ambiguity, and with bigger rounds and more remixes the ambiguity grows from "one in three" to "one in hundreds".
 
 ## What CoinJoin Can and Cannot Do
 
-### ✅ What CoinJoin Accomplishes
+### ✅ What it accomplishes
 
-- **Breaks transaction history:** Previous links are obscured
-- **Creates uncertainty:** Analysts can't be sure who owns what
-- **Increases anonymity:** Your coins mix with many others
-- **Forward privacy:** Mixed coins gain a fresh history
+- **Breaks history:** the link between your coins' past and future is cut
+- **Creates doubt:** analysts get probabilities, not proof
+- **Forward privacy:** mixed coins start fresh
 
-### ❌ What CoinJoin Cannot Do
+### ❌ What it does not do
 
-- **Hide the fact you used CoinJoin:** The transaction is visible on-chain and identifiable as a CoinJoin
-- **Make you anonymous:** You are still behind a pseudonym
-- **Fix poor operational security:** If you reveal identity later, privacy is broken
-- **Work with all amounts:** Equal outputs constrain sizes
-- **Protect against all analysis:** Some heuristics still apply
+- **Hide that you coinjoined:** the transaction is recognizable as a coinjoin on-chain, and the funding transaction into it is visible to whoever knew your coins
+- **Make you anonymous:** amounts, timing, and your own later behavior still leak information
+- **Survive bad habits:** one careless transaction afterward can undo everything (see the rules below)
+- **Work at arbitrary size:** equal outputs constrain the amounts you can mix at once
 
+## CoinJoin Tools in 2026 {#coinjoin-services}
 
-## CoinJoin Services
+The coinjoin landscape was reshaped by law enforcement and burnout between 2024 and 2026. Older guides recommend setups that no longer exist, so here is the honest current state.
 
-Several tools make CoinJoin accessible. Each has a clear audience.
+:::note The 2024-2026 shakeout
+- **April 2024:** US federal authorities seize Samourai Wallet's infrastructure; the original Whirlpool coordinator goes dark. The founders plead guilty and, in November 2025, are sentenced to five and four years in prison.
+- **June 2024:** zkSNACKs shuts down the original Wasabi coordinator; Sparrow Wallet removes its Whirlpool integration.
+- **June 2025:** Ashigaru, a community fork of Samourai, launches a new Whirlpool coordinator, reachable only over Tor.
+- **April 2026:** the original JoinMarket repository is archived after a long quiet period; development continues in JoinMarket NG.
+:::
 
-<div class="fixed-width-table">
+### JoinMarket NG + Jam (our recommendation)
 
-| Service | Wallet | Coordinator | Min Amount | Approximate Cost |
-|---------|--------|-------------|------------|------------------|
-| **Wasabi 2.0** | Wasabi Wallet | Centralized | 0.00005 BTC | 0.3% coordinator fee + mining |
-| **Whirlpool** | Sparrow Wallet | Centralized | Pool dependent | Fixed fee per pool + mining |
-| **JoinMarket** | Jam (web UI) | Decentralized | Flexible | Variable (can earn as maker) |
+[JoinMarket NG](https://github.com/joinmarket-ng/joinmarket-ng) is the actively developed implementation of the JoinMarket protocol, wire-compatible with the original client whose repository was archived in April 2026. There is **no coordinator at all**: it is a peer-to-peer market with two roles.
 
-</div>
+- **Takers** pay a small fee to mix on demand, whenever they want, at any amount
+- **Makers** provide liquidity and earn those fees; their coins get mixed as a side effect
+
+Because no company sits in the middle, there is nothing to seize and nobody to subpoena; the Samourai story cannot repeat here. The historical downside was usability: JoinMarket lived on the command line. **[Jam](https://github.com/joinmarket-webui/jam)** fixed that: it is a web interface for JoinMarket NG that turns wallet creation, single coinjoins, scheduled mixing rounds, and maker mode into a point-and-click experience. It ships as an app on most node-in-a-box platforms.
+
+- ✅ Decentralized: no coordinator to trust, seize, or fee-gouge
+- ✅ Flexible amounts, mix immediately as a taker
+- ✅ Can earn fees as a maker instead of paying them
+- ✅ Cheap: market-set maker fees, typically fractions of a percent
+- ❌ Needs your own Bitcoin node and a little setup
+- ❌ Smaller per-round anonymity sets (typically 4-20 participants), so plan multiple rounds
+
+**Best for:** self-custody users who run their own node, which, if you are reading this site, likely means you. The [practical tutorial](/docs/learn/privacy/coinjoin-tutorial/) walks through the full setup.
+
+### Whirlpool: Gone, Then Back (Ashigaru)
+
+Short answer to "does Whirlpool still work?": **the original is dead; a revival exists under new management.**
+
+The original Whirlpool depended on Samourai Wallet's central coordinator. When the servers were seized in April 2024 every Whirlpool client stopped mixing the same day, which is the textbook demonstration of coordinator risk. Sparrow Wallet removed its integration shortly after; old guides pointing at "Whirlpool via Sparrow" are obsolete.
+
+In June 2025, [Ashigaru](https://ashigaru.rs/), an open-source fork of Samourai run by anonymous maintainers, launched a **new, independent Whirlpool coordinator**:
+
+- Tor-only, no clearnet access, using the Zerolink fixed-pool model
+- Two pools: **0.025 BTC** and **0.25 BTC**
+- Flat **5% entry fee** per pool entry (0.00125 and 0.0125 BTC respectively), then free remixing indefinitely
+- Requires Ashigaru's own software (Ashigaru Terminal on desktop, Ashigaru Mobile); it does not work with Sparrow or the old Samourai apps
+
+- ✅ Zerolink pools with free remixes, a proven privacy design
+- ✅ Strict Tor-only posture
+- ❌ Still a centralized coordinator: the same structural weakness that killed the original
+- ❌ 5% entry fee is steep (JoinMarket costs a fraction of a percent)
+- ❌ Fixed pool sizes only
+
+**Best for:** users who specifically want the Zerolink model and accept the fee and the coordinator risk.
 
 ### Wasabi Wallet
 
-[Wasabi Wallet](https://wasabiwallet.io/) is a desktop Bitcoin wallet with built-in CoinJoin.
+[Wasabi](https://wasabiwallet.io/) survived its own coordinator shutdown. zkSNACKs (the company) exited in June 2024, but the wallet is community-maintained and, since version 2.2, ships with **no built-in coordinator fee**: you choose an independent, third-party coordinator, several of which coordinate for free, so costs can be just mining fees.
 
-**How it works**
+- ✅ Easiest experience: install, pick a coordinator, enable coinjoin
+- ✅ Large rounds (often 100+ participants) and variable amounts that reduce toxic change
+- ✅ Free or near-free depending on coordinator
+- ❌ You must trust your chosen coordinator to be honest about round composition
+- ❌ Coordinators are centralized parties and can disappear or be pressured, as history shows
 
-1. Download and install Wasabi Wallet
-2. Create or import a wallet
-3. Receive Bitcoin into the wallet
-4. Enable CoinJoin: coins mix automatically
-5. Wait for mixing rounds to complete
+**Best for:** desktop users who want set-and-forget mixing and accept picking a coordinator.
 
-**Pros**
-
-- ✅ Simple user interface, set-and-forget
-- ✅ Large anonymity sets (100+)
-- ✅ Continuous remixing included
-- ✅ Runs on Windows, macOS, Linux
-
-**Cons**
-
-- ❌ Coordinator fee (0.3%)
-- ❌ Centralized coordinator (a privacy trade-off in itself)
-- ❌ Must keep the wallet running to remix
-- ❌ Wallet is specific to Wasabi (not portable)
-
-**Best for** beginners who want simple privacy and prefer "set and forget".
-
-**Fees:** 0.3% coordinator fee + mining fees. Remixing is free (no additional coordinator fee).
-
-### Whirlpool (via Sparrow Wallet)
-
-Whirlpool is a CoinJoin implementation originally from Samourai Wallet, now available in [Sparrow Wallet](https://sparrowwallet.com/).
-
-**How it works**
-
-1. Download and install Sparrow Wallet
-2. Connect to your own Bitcoin node (recommended) or a public server
-3. Create or import a wallet
-4. Go to **UTXOs → Select coins → Mix Selected**
-5. Choose a pool size
-6. Coins enter the mixing cycle
-
-**Pool sizes**
+### Comparison
 
 <div class="fixed-width-table">
 
-| Pool | Entry Amount |
-|------|--------------|
-| 0.5 BTC | 0.5 BTC + fee |
-| 0.05 BTC | 0.05 BTC + fee |
-| 0.01 BTC | 0.01 BTC + fee |
-| 0.001 BTC | 0.001 BTC + fee |
+| Aspect | JoinMarket NG + Jam | Ashigaru Whirlpool | Wasabi |
+|--------|--------------------|--------------------|--------|
+| Coordinator | None (peer-to-peer) | Centralized (Ashigaru) | Centralized (third-party) |
+| Amounts | Flexible | Fixed pools (0.025 / 0.25 BTC) | Variable |
+| Cost | Maker fees, well under 1% | 5% pool entry, free remix | Often free + mining fees |
+| Anonymity set per round | 4-20 | Pool-based, grows with remixes | 100+ |
+| Own node | Required | Recommended | Recommended |
+| Can earn fees | Yes (maker) | No | No |
 
 </div>
 
-**Pros**
+**Our pick is JoinMarket NG with Jam.** It is the only option with no central point of failure, it aligns with everything else this site teaches (your node, your keys, your rules), and 2024 proved that coordinator-based services can vanish overnight. Wasabi is a reasonable simpler alternative; Ashigaru Whirlpool is for committed Zerolink fans.
 
-- ✅ Fixed, predictable fee
-- ✅ Sparrow is an excellent wallet for other uses too
-- ✅ Good anonymity sets
-- ✅ Free remixes after the initial mix
-- ✅ Connects to your own node
+## Use Your Own Node
 
-**Cons**
+Whichever tool you pick, connect it to **your own Bitcoin node**. If your wallet talks to someone else's server, that server learns all your addresses, including the freshly mixed ones, and your coinjoin becomes theater. JoinMarket NG makes this mandatory; treat it as mandatory everywhere. See the [Bitcoin Node guide](/docs/bitcoin-node/).
 
-- ❌ Fixed pool sizes (less flexible)
-- ❌ Centralized coordinator
-- ❌ Need to leave Sparrow running for remixes
-- ❌ "Toxic change" problem (the change from pool entry isn't private)
+## Best Practices After CoinJoin {#best-practices-after-coinjoin}
 
-**Best for** users already comfortable with Sparrow, those who want a full-featured wallet with mixing, and users running their own Bitcoin node.
+Mixing is half the work. What you do **afterward** decides whether the privacy holds.
 
-**Toxic change:** When you enter a Whirlpool pool, you pay a fee plus your contribution. The "change" from the entry transaction is called **toxic change** because it is clearly linked to your identity, reveals you participated in CoinJoin, and should be kept separate from your mixed coins.
-
-### JoinMarket
-
-[JoinMarket](https://github.com/JoinMarket-Org/joinmarket-clientserver) is a decentralized CoinJoin marketplace with no central coordinator.
-
-**Two roles**
-
-- **Taker:** pays for mixes. You pay makers a small fee to use their liquidity. Your mix happens immediately. You control timing.
-- **Maker:** earns fees by providing liquidity. You offer your coins for others to mix with. You earn fees when selected, and your coins get mixed in the process.
-
-**Pros**
-
-- ✅ No central coordinator (truly decentralized)
-- ✅ Can earn fees as a maker
-- ✅ Flexible amounts (no fixed pools)
-- ✅ More resistant to censorship
-- ✅ Open source and transparent
-
-**Cons**
-
-- ❌ Steeper learning curve
-- ❌ Traditionally requires command-line skills
-- ❌ Smaller user base = smaller anonymity sets
-- ❌ As a maker, coins are in a hot wallet
-
-**Best for** technical users who value decentralization over convenience and have time to learn.
-
-**Getting started:** JoinMarket traditionally required the command line, but newer interfaces like **[Jam](https://jamapp.org/)** (a web UI) make it significantly more accessible.
-
-
-## Which Should You Choose?
-
-- **Wasabi** if you are new to CoinJoin, want the simplest experience, and accept a centralized coordinator.
-- **Whirlpool (Sparrow)** if you already use or want to use Sparrow, run your own node, or want a full-featured wallet beyond just mixing.
-- **JoinMarket** if you value decentralization above convenience, are technically skilled, and might want to earn fees as a maker.
-
-### Privacy Comparison
-
-<div class="fixed-width-table">
-
-| Aspect | Wasabi | Whirlpool | JoinMarket |
-|--------|--------|-----------|------------|
-| Coordinator | Centralized | Centralized | Decentralized |
-| Anonymity set | 100+ | 5+ (per round) | Variable |
-| Rounds | Continuous | Multiple | As paid |
-| Node required | Recommended | Recommended | Required |
-
-</div>
-
-
-## Always Use Your Own Node
-
-Regardless of which service you choose, **connect to your own Bitcoin node.** If you use a public node, the node learns your addresses, your mixing activity is exposed to whoever runs it, and you lose much of the privacy you are trying to gain.
-
-See the [Bitcoin Node guide](/docs/bitcoin-node) to set up your own.
-
-
-## Best Practices After CoinJoin
-
-Mixing your coins is only half the battle. How you **handle and spend** mixed coins determines whether you maintain privacy or accidentally undo all your work.
-
-:::danger Critical Rules: Never Break These
-1. Never merge mixed coins with KYC or unmixed coins
-2. Never send multiple mixed UTXOs to the same address
+:::danger Critical rules
+1. Never combine mixed coins with KYC or unmixed coins
+2. Never consolidate multiple mixed UTXOs into one address
 3. Always use your own node
-4. Use coin control for every transaction
+4. Use coin control for every post-mix transaction
 :::
 
 ### Rule 1: Never Merge Mixed and Unmixed Coins
 
-This is the most common mistake that destroys CoinJoin privacy.
+The most common way people destroy their own coinjoin:
 
 ```
 BAD TRANSACTION:
@@ -343,21 +243,12 @@ INPUTS                          OUTPUT
 0.1 BTC (mixed, private)   ─┬─→ 0.25 BTC (payment)
 0.15 BTC (KYC, not mixed)  ─┘
 
-Result: The mixed coin is now linked to your identity.
+Result: the mixed coin is now linked to your identity again.
 ```
 
-When you combine a mixed UTXO with an unmixed one:
-
-- The unmixed coin is linked to your identity from the exchange.
-- Both coins are now in the same transaction.
-- The mixed coin is now also linked to your identity.
-- All mixing effort is wasted.
-
-**How to avoid this:** use **separate wallets** (a "KYC wallet" and a "private wallet") or use **careful labeling** and never let the two categories touch each other.
+The KYC coin carries your name. Spending both in one transaction signs your name onto the mixed coin too, and the mixing fee bought you nothing. Keep mixed and unmixed funds in **separate wallets** so your software cannot combine them by accident.
 
 ### Rule 2: Don't Consolidate Mixed Coins
-
-Sending multiple mixed UTXOs to the same address reveals they belong to the same person.
 
 ```
 BAD TRANSACTION:
@@ -368,124 +259,83 @@ INPUTS                          OUTPUT
 0.1 BTC (mixed, round 2)   ─┤
 0.1 BTC (mixed, round 3)   ─┘
 
-Observer: "These three mixed coins belong to the same person."
+Observer: "these three mixed coins belong to one person."
 ```
 
-Before this transaction, each 0.1 BTC could have belonged to anyone. After consolidating, it is clear they all belong to you. Spend mixed coins **individually** when possible. If you must combine for a larger payment, understand you are trading privacy for utility.
+Before this transaction each output could have belonged to anyone in its round. After it, all three provably share an owner, which collapses their anonymity sets at once. Spend mixed UTXOs individually. If a payment truly requires combining, understand you are spending privacy to make it.
 
 ### Rule 3: Handle Change Carefully
 
-When you spend a mixed coin you may receive change. That change has reduced privacy: it is obviously linked to whoever made the payment and should be considered "semi-tainted". Options:
+Spending a mixed coin usually produces change, and that change is linked to the payment you just made. Treat it as semi-exposed:
 
-1. **Remix it:** send it through CoinJoin again
-2. **Use it for non-private spending:** since it is already somewhat exposed
-3. **Combine it only with other change:** never with fresh mixed coins
-4. **Avoid change entirely:** when possible, select UTXOs that match your payment amount closely
+1. **Remix it** through another coinjoin round, or
+2. **Spend it somewhere non-private**, since it is already exposed, or
+3. **Combine it only with other change**, never with fresh mixed coins
 
-### Rule 4: Always Use Your Own Node
+### Rule 4: Use Coin Control
 
-This applies to all Bitcoin usage, but is critical for mixed coins. If you use someone else's node, the operator learns which addresses belong to you, including your mixed addresses. See the [Bitcoin Node guide](/docs/bitcoin-node).
+Without [coin control](/docs/learn/privacy/utxo-management), your wallet picks UTXOs automatically and will eventually pair a mixed coin with a labeled one. Choose inputs by hand for every transaction that touches mixed funds.
 
-### Rule 5: Use Coin Control
+### Rule 5: Let Coins Age
 
-Without coin control, your wallet might grab a mixed coin and an unmixed coin together, or consolidate multiple UTXOs unnecessarily. With coin control you explicitly choose the UTXOs you want to spend. See the [UTXO Management guide](/docs/learn/privacy/utxo-management) for detailed techniques in Sparrow and Electrum.
+If you mix at 14:00 and spend at 14:15, timing alone links the two events. Let mixed outputs sit for days or weeks, and avoid being the first or last participant to move funds after a round.
 
-### Rule 6: Consider Lightning Network
+### Rule 6: Consider Lightning
 
-Opening Lightning channels with mixed coins adds another privacy layer. The channel opening is on-chain (visible), but the actual payments are not. When you close the channel, the link back to the original mix is further obscured.
-
-1. Mix your coins (CoinJoin)
-2. Open Lightning channels with mixed UTXOs
-3. Spend via Lightning for everyday purchases
-4. Close channels eventually, and the resulting coins have a fresh history
-
-### Rule 7: Be Patient
-
-Don't spend mixed coins immediately after mixing. If you CoinJoin at 2:00 PM and spend from a mixed output at 2:15 PM, an observer can correlate the timing. Let mixed coins "age" for hours, days, or weeks, and try not to be the first or last to move after a mix.
-
+Opening a [Lightning](https://lightning.network/) channel with a mixed UTXO adds another layer: the channel open is visible, the payments inside it are not, and the eventual channel close produces coins with yet more distance from their origin.
 
 ## Checklist: Before Spending Mixed Coins
 
-- [ ] Am I using my own node?
-- [ ] Am I using coin control to select specific UTXOs?
-- [ ] Are ALL inputs in this transaction from my mixed pool?
-- [ ] Am I not combining multiple mixed UTXOs unnecessarily?
-- [ ] Is the change amount acceptable, or can I adjust to minimize it?
+- [ ] Am I connected to my own node?
+- [ ] Did I hand-pick the UTXOs for this transaction?
+- [ ] Are ALL inputs from my mixed pool, and no KYC coins?
+- [ ] Am I spending one mixed UTXO, not consolidating several?
 - [ ] Has enough time passed since the mix?
-
 
 ## Common Mistakes Summary
 
 <div class="fixed-width-table">
 
-| Mistake | Why It's Bad | How to Avoid |
+| Mistake | Why it's bad | How to avoid |
 |---------|--------------|--------------|
-| Merging mixed + unmixed | Links mixed coins to your identity | Separate wallets |
-| Consolidating mixed UTXOs | Reveals common ownership | Spend individually |
-| Using a public node | Node learns your addresses | Run your own node |
-| No coin control | Wallet makes poor choices | Use Sparrow or Electrum |
-| Spending immediately | Timing analysis possible | Wait before spending |
-| Ignoring change | Change has reduced privacy | Remix or handle carefully |
+| Merging mixed + unmixed | Re-links coins to your identity | Separate wallets |
+| Consolidating mixed UTXOs | Proves common ownership | Spend individually |
+| Using a public server | Operator learns your addresses | Run your own node |
+| Auto coin selection | Wallet pairs the wrong UTXOs | Coin control |
+| Spending immediately | Timing correlation | Be patient |
+| Ignoring change | Change is semi-exposed | Remix or quarantine it |
 
 </div>
 
-
 ## Is CoinJoin Legal?
 
-CoinJoin itself is legal in most jurisdictions. It is a privacy tool, not a crime. However, be aware:
+In most jurisdictions, using CoinJoin is legal. It is a privacy technique, comparable to keeping your bank statements out of public view.
 
-- **Know your local laws:** regulations vary
-- **Some exchanges flag CoinJoin outputs:** they may freeze deposits or require additional verification
-- **Regulatory landscape is evolving:** what's legal today may change
-- **Privacy is a human right:** UN declarations support financial privacy
+The 2024-2025 Samourai prosecutions targeted the **operators**, not users: the founders ran a centralized coordinator business, collected fees on it, and were convicted of operating an unlicensed money-transmitting business. No CoinJoin *user* was charged. Non-custodial coinjoins, where nobody else ever controls your coins, are a different activity from running a mixing service, and decentralized designs like JoinMarket have no operator in the first place.
 
-Using CoinJoin is not an admission of wrongdoing. It is equivalent to keeping your bank statements private.
+Practical realities to keep in mind:
 
+- **Some exchanges flag coinjoin history** and may freeze deposits or ask questions; avoid sending freshly mixed coins straight to a KYC exchange
+- **Rules differ by country and change**; know your local situation
+- None of this is legal advice
 
 ## Do You Need CoinJoin?
 
 CoinJoin is most valuable if you:
 
-- Have KYC coins and want forward privacy
-- Received Bitcoin from an identified source
-- Want to spend privately in the future
-- Are a journalist, activist, or targeted individual
-- Hold significant amounts that may attract attention
+- Hold KYC coins and want forward privacy
+- Plan to spend Bitcoin without broadcasting your net worth to every counterparty
+- Are a journalist, activist, or otherwise a target
+- Hold enough that being identifiable is a physical-security risk
 
-CoinJoin may be overkill if you only use small amounts, acquired Bitcoin anonymously from the start, or only use Bitcoin for specific identified purposes.
-
+It may be unnecessary if your coins were acquired without identity attached, or you only ever move small amounts. Privacy is a spectrum; match the effort to your [threat model](/docs/learn/fundamentals/threat-models).
 
 ## Summary
 
-- CoinJoin gives you privacy, but only if you maintain it afterward.
-- Separate mixed from unmixed; never let them touch.
-- Spend mixed coins individually; don't consolidate.
-- Use your own node: essential for real privacy.
-- Use coin control: be deliberate about what you spend.
-- Be patient; don't rush to spend after mixing.
+- CoinJoin makes equal outputs interchangeable, cutting the link between your coins' past and future.
+- It is non-custodial: nobody can steal during a round.
+- In 2026 the working options are **JoinMarket NG + Jam** (decentralized, our pick), **Ashigaru Whirlpool** (revived, centralized, 5% entry), and **Wasabi** (third-party coordinators).
+- The original Samourai Whirlpool is gone, and its shutdown is the argument for decentralized mixing.
+- Privacy survives only if you follow the post-mix rules: separate wallets, no consolidation, coin control, patience, your own node.
 
-Privacy is a practice, not a one-time action. Every transaction is an opportunity to preserve or destroy your privacy.
-
-<NextSteps
-  title="Continue Building Privacy"
-  items={[
-    {
-      label: "Foundation",
-      title: "UTXO Management",
-      href: "/docs/learn/privacy/utxo-management/",
-      description: "Master coin control, consolidation, and dust handling"
-    },
-    {
-      label: "Related",
-      title: "PayJoin Privacy Guide",
-      href: "/docs/learn/privacy/payjoin/",
-      description: "Stealth privacy that looks like a normal payment"
-    },
-    {
-      label: "Infrastructure",
-      title: "Run Your Own Bitcoin Node",
-      href: "/docs/bitcoin-node/",
-      description: "Essential for any serious privacy setup"
-    }
-  ]}
-/>
+Ready for practice? Continue with the [CoinJoin Tutorial: JoinMarket NG and Jam](/docs/learn/privacy/coinjoin-tutorial/).

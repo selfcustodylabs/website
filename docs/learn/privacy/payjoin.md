@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: "Bitcoin PayJoin (BIP78): Stealth Privacy for Payments"
 description: "Learn how PayJoin (BIP78) enhances Bitcoin privacy by breaking the common-input-ownership assumption. Set up PayJoin with Sparrow Wallet and BTCPay Server."
 keywords: ["bitcoin payjoin", "BIP78", "P2EP", "pay to endpoint", "bitcoin privacy", "sparrow payjoin", "btcpay server payjoin", "blockchain analysis"]
