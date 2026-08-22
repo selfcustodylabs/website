@@ -11,12 +11,26 @@ import autoprefixer from "autoprefixer";
 const config = {
   title: "Self Custody Labs",
   tagline: "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, and privacy best practices.",
-  favicon: "img/favicon.ico?v=2",
+  // Root path, no cache-busting query string: Google requires the favicon URL to
+  // be stable, and a ?v= bump (commit 4bd0b7a9, Apr 2026) is a URL change. Icons
+  // regenerate in place via scripts/generate-favicons.py so this never moves again.
+  favicon: "favicon.ico",
 
   // ===========================================
   // HEAD TAGS - Global SEO & Structured Data
   // ===========================================
   headTags: [
+    // ===========================================
+    // Favicon set (see scripts/generate-favicons.py)
+    // ===========================================
+    // Docusaurus emits <link rel="icon" href="/favicon.ico"> from `favicon` above.
+    // These are the larger alternates: Google recommends an icon "larger than
+    // 48x48px so that it looks good on various surfaces", and the .ico alone used
+    // to top out at exactly 48. Serve them from the root and never version the URLs.
+    { tagName: "link", attributes: { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" } },
+    { tagName: "link", attributes: { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192x192.png" } },
+    { tagName: "link", attributes: { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" } },
+
     // Preconnect for performance
     { tagName: "link", attributes: { rel: "preconnect", href: "https://www.googletagmanager.com" } },
     { tagName: "link", attributes: { rel: "preconnect", href: "https://www.google-analytics.com" } },
