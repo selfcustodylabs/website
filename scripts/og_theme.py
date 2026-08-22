@@ -841,6 +841,7 @@ MOTIF_BY_URL = {
     "/docs/learn/privacy/why-privacy-matters/": "redact",
     "/docs/learn/privacy/protecting-privacy/": "shield",
     "/docs/learn/privacy/coinjoin/": "mix",
+    "/docs/learn/privacy/coinjoin-tutorial/": "mix",
     "/docs/learn/privacy/payjoin/": "mix",
     "/docs/learn/privacy/utxo-management/": "utxo",
     "/docs/learn/transactions/": "chain",

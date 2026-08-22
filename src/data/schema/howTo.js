@@ -121,10 +121,7 @@ export const howToSchemas = {
       "Metal seed storage plate",
       "BIP39 word list",
     ],
-    tool: [
-      "Air-gapped computer or Raspberry Pi Zero",
-      "Sparrow Wallet (offline) for verification",
-    ],
+    tool: ["Air-gapped computer or Raspberry Pi Zero", "Sparrow Wallet (offline) for verification"],
     steps: [
       {
         name: "Roll Dice for Entropy",
@@ -449,7 +446,7 @@ export const howToSchemas = {
       value: "10",
     },
     supply: [],
-    tool: ["Wasabi Wallet or JoinMarket", "Bitcoin for mixing fees"],
+    tool: ["JoinMarket NG with Jam, Wasabi, or Ashigaru Whirlpool", "Bitcoin for mixing fees"],
     steps: [
       {
         name: "Understand How CoinJoin Works",
@@ -457,14 +454,59 @@ export const howToSchemas = {
         url: `${SITE_URL}/docs/learn/privacy/coinjoin/#how-coinjoin-works`,
       },
       {
-        name: "Choose a Service",
-        text: "Select a CoinJoin implementation: Wasabi Wallet for ease of use or JoinMarket for more control.",
+        name: "Choose a Tool",
+        text: "Select a CoinJoin implementation: JoinMarket NG with Jam for decentralized mixing, Wasabi for simplicity, or Ashigaru Whirlpool for Zerolink pools.",
         url: `${SITE_URL}/docs/learn/privacy/coinjoin/#coinjoin-services`,
       },
       {
         name: "Follow Best Practices",
         text: "Implement proper post-mix behavior to maintain the privacy benefits of CoinJoin.",
         url: `${SITE_URL}/docs/learn/privacy/coinjoin/#best-practices-after-coinjoin`,
+      },
+    ],
+  },
+
+  "/docs/learn/privacy/coinjoin-tutorial/": {
+    name: "How to CoinJoin with JoinMarket NG and Jam",
+    description:
+      "Run real Bitcoin coinjoins through your own node with JoinMarket NG and the Jam web UI, using a dedicated temporary hot wallet.",
+    totalTime: "PT2H",
+    estimatedCost: {
+      currency: "USD",
+      value: "10",
+    },
+    supply: ["Bitcoin to mix"],
+    tool: ["Bitcoin Core node", "JoinMarket NG", "Jam web UI"],
+    steps: [
+      {
+        name: "Run Your Own Bitcoin Node",
+        text: "Set up the node that JoinMarket NG uses to verify balances and broadcast privately.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-1-run-your-own-bitcoin-node`,
+      },
+      {
+        name: "Install JoinMarket NG and Jam",
+        text: "Install Jam from a node-in-a-box app store, or install JoinMarket NG manually and connect Jam to it.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-2-install-joinmarket-ng-and-jam`,
+      },
+      {
+        name: "Create the Mixing Wallet",
+        text: "Create a dedicated temporary hot wallet with a fresh seed and a strong passphrase.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-3-create-the-mixing-wallet`,
+      },
+      {
+        name: "Fund the Wallet",
+        text: "Send a small amount to the mixing wallet and wait for confirmation.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-4-fund-the-wallet`,
+      },
+      {
+        name: "Mix",
+        text: "Run a single collaborative transaction or the Jam scheduler for multiple rounds.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-5-mix`,
+      },
+      {
+        name: "Sweep Out",
+        text: "Send mixed coins to fresh cold storage addresses and follow the post-mix rules.",
+        url: `${SITE_URL}/docs/learn/privacy/coinjoin-tutorial/#step-6-sweep-out-and-wind-down`,
       },
     ],
   },

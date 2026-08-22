@@ -154,7 +154,7 @@ Without labels you will forget where each UTXO came from, which are KYC vs. non-
 
 - "Coinbase withdrawal 2024-01"
 - "Friend repayment (no KYC)"
-- "Whirlpool mixed, round 3"
+- "CoinJoined via Jam, round 3"
 - "Strike DCA, weekly buy"
 
 
