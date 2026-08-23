@@ -27,20 +27,11 @@ Picture ten people around a table. Each drops an identical 50 euro note into a h
 
 CoinJoin is that hat, built as a single Bitcoin transaction. Multiple users combine their inputs and receive **equal-sized outputs**, so an outside observer cannot match inputs to outputs.
 
-```
-NORMAL TRANSACTION:
-────────────────────────────────
-Alice (1 BTC) ─────► Bob (1 BTC)
-Easy to trace: Alice paid Bob.
+<div class="doc-diagram">
 
-COINJOIN TRANSACTION:
-────────────────────────────────
-Alice (1 BTC) ──┐
-Bob   (1 BTC) ──┼──► 1 BTC ──► ??? (Alice? Bob? Carol?)
-Carol (1 BTC) ──┘    1 BTC ──► ??? (Alice? Bob? Carol?)
-                     1 BTC ──► ??? (Alice? Bob? Carol?)
-Hard to trace: each participant got 1 BTC back, but who got which?
-```
+![A normal payment of 1.00 BTC from Alice to Bob leaves one traceable link, while a CoinJoin where Alice, Bob and Carol each contribute 1.00 BTC and each receive 1.00 BTC back gives every output three equally likely owners](/img/diagrams/privacy/coinjoin-vs-normal.svg)
+
+</div>
 
 Two properties make this safe:
 
@@ -60,31 +51,31 @@ CoinJoin attacks the tracing directly. It breaks the **common-input-ownership he
 
 ## How CoinJoin Works {#how-coinjoin-works}
 
+<div class="doc-diagram">
+
+![Five unequal inputs of 0.82, 0.31, 0.55, 0.24 and 0.47 BTC each produce one identical 0.20 BTC mixed output plus their own change of 0.62, 0.11, 0.35, 0.04 and 0.27 BTC; the mixed outputs cannot be told apart, but change stays linkable by amount](/img/diagrams/privacy/coinjoin-equal-outputs.svg)
+
+</div>
+
 ### Equal Outputs Make Coins Interchangeable
 
 If outputs had different sizes, you could trace them by following the amounts. Equal outputs remove that signal.
 
-```
-Without equal outputs (traceable):
-  Inputs:  0.5 + 0.8 + 0.3 BTC
-  Outputs: 0.3 + 0.5 + 0.8 BTC
-  Analyst: "The 0.8 output belongs to whoever sent 0.8."
+<div class="doc-diagram">
 
-With equal outputs (not traceable):
-  Inputs:  0.5 + 0.8 + 0.3 BTC
-  Outputs: 0.5 + 0.5 + 0.5 BTC + change
-  Analyst: "Three identical outputs. I cannot tell them apart."
-```
+![With unequal outputs an analyst matches the 0.5, 0.8 and 0.3 BTC inputs to their outputs by amount; with three equal 0.30 BTC outputs plus change of 0.20 and 0.50, the amounts carry no signal](/img/diagrams/privacy/coinjoin-equal-vs-unequal.svg)
+
+</div>
 
 ### The Anonymity Set
 
 The **anonymity set** is the number of equally plausible owners each output has. Bigger is better.
 
-```
- 3-person coinjoin:  each output has  3 possible owners
-10-person coinjoin:  each output has 10 possible owners
-100-person coinjoin: each output has 100 possible owners
-```
+<div class="doc-diagram">
+
+![One coin entering three successive CoinJoin rounds of five participants each: candidate owners grow from 5 after one round to 25 after two and up to 125 after three, multiplying with every remix](/img/diagrams/privacy/coinjoin-anonymity-rounds.svg)
+
+</div>
 
 After one 100-person round, an analyst picking an output has a 1% chance of naming the right owner.
 
@@ -112,13 +103,11 @@ Three people each hold 0.1 BTC with a history they would rather not carry around
 
 They coinjoin:
 
-```
-INPUTS                      OUTPUTS
-──────                      ───────
-Alice's 0.1 BTC  ─┐         ──► 0.1 BTC to ???
-Bob's   0.1 BTC  ─┼──►      ──► 0.1 BTC to ???
-Carol's 0.1 BTC  ─┘         ──► 0.1 BTC to ???
-```
+<div class="doc-diagram">
+
+![Alice's employer, Bob's exchange and anyone watching Carol each follow a 0.1 BTC coin into the same CoinJoin and out to three identical 0.1 BTC outputs; every watcher's trail dead-ends into a one-in-three guess](/img/diagrams/privacy/coinjoin-dead-ends.svg)
+
+</div>
 
 Afterward, Alice's employer sees her 0.1 BTC entered a coinjoin and then becomes one of three identical outputs. It cannot tell which one is hers, and neither can Bob's exchange or anyone watching Carol's coins. Each history now dead-ends into ambiguity, and with bigger rounds and more remixes the ambiguity grows from "one in three" to "one in hundreds".
 
@@ -235,34 +224,17 @@ Mixing is half the work. What you do **afterward** decides whether the privacy h
 
 The most common way people destroy their own coinjoin:
 
-```
-BAD TRANSACTION:
-─────────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.1 BTC (mixed, private)   ─┬─→ 0.25 BTC (payment)
-0.15 BTC (KYC, not mixed)  ─┘
+<div class="doc-diagram">
 
-Result: the mixed coin is now linked to your identity again.
-```
+![Two transactions that undo a mix: merging a 0.10 BTC mixed coin with a 0.15 BTC KYC coin into one 0.25 BTC payment re-attaches your identity, and consolidating three 0.10 BTC mixed coins from different rounds into a single 0.30 BTC output proves one owner ran all three rounds](/img/diagrams/privacy/coinjoin-postmix-rules.svg)
+
+</div>
 
 The KYC coin carries your name. Spending both in one transaction signs your name onto the mixed coin too, and the mixing fee bought you nothing. Keep mixed and unmixed funds in **separate wallets** so your software cannot combine them by accident.
 
 ### Rule 2: Don't Consolidate Mixed Coins
 
-```
-BAD TRANSACTION:
-─────────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.1 BTC (mixed, round 1)   ─┬─→ 0.3 BTC (your address)
-0.1 BTC (mixed, round 2)   ─┤
-0.1 BTC (mixed, round 3)   ─┘
-
-Observer: "these three mixed coins belong to one person."
-```
-
-Before this transaction each output could have belonged to anyone in its round. After it, all three provably share an owner, which collapses their anonymity sets at once. Spend mixed UTXOs individually. If a payment truly requires combining, understand you are spending privacy to make it.
+Before such a consolidation, each mixed output could have belonged to anyone in its round. After it, all three provably share an owner, which collapses their anonymity sets at once. Spend mixed UTXOs individually. If a payment truly requires combining, understand you are spending privacy to make it.
 
 ### Rule 3: Handle Change Carefully
 

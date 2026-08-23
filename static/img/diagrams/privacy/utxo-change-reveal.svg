@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="Paying 0.01 BTC from a single 1.00 BTC UTXO creates a 0.99 BTC change output, so the recipient can see the sender held at least 1.00 BTC.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; fill: #767C8A; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .view    { font-size: 10px; font-weight: 500; letter-spacing: 1.2px; fill: #767C8A; }
+    .view-b  { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; fill: #A8AEBB; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .leakw   { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dash    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 5 5; }
+    .stack   { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .pay     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .leak    { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="399" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">PAYING 0.01 FROM A 1.00 UTXO</text>
+
+  <text class="mono head" x="60" y="80">ONE INPUT</text>
+  <text class="mono head" x="520" y="80">TWO OUTPUTS</text>
+
+  <path class="wire"  d="M250,188 C385,188 385,116 520,116"/>
+  <path class="leakw" d="M250,188 C385,188 385,256 520,256"/>
+
+  <rect class="stack" x="60" y="168" width="190" height="40" rx="8"/>
+  <text class="mono amt-lit" x="155" y="193" text-anchor="middle">1.00 &#183; WHOLE STACK</text>
+
+  <rect class="pay" x="520" y="100" width="140" height="32" rx="6"/>
+  <text class="mono amt" x="590" y="121" text-anchor="middle">0.01 PAYMENT</text>
+
+  <rect class="leak" x="520" y="240" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="595" y="261" text-anchor="middle">0.99 CHANGE</text>
+
+  <path class="dashe" d="M598,272 L618,304"/>
+  <rect class="dash" x="520" y="304" width="260" height="52" rx="8" fill="none"/>
+  <text class="mono view"   x="536" y="326">RECIPIENT SEES THE 0.99 CHANGE:</text>
+  <text class="mono view-b" x="536" y="344">SENDER HELD AT LEAST 1.00 BTC</text>
+
+  <text class="mono note" x="40" y="386">1.00 IN = 0.01 + 0.99 OUT &#183; MINING FEE OMITTED &#183; PAY FROM A SMALL UTXO INSTEAD</text>
+</svg>

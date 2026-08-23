@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350" role="img" aria-label="Remote access over Tor: a wallet on a traveling phone connects through the Tor network to the hidden service onion address of your node at home; no open ports, no exposed IP and no VPN needed.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="349" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">REMOTE ACCESS &#183; THE ONION IS THE DOOR</text>
+  <rect class="box" x="40" y="140" width="170" height="56" rx="6"/>
+  <text class="mono amt" x="125" y="163" text-anchor="middle">YOUR WALLET</text>
+  <text class="mono tag" x="125" y="183" text-anchor="middle">PHONE, TRAVELING</text>
+  <rect class="dashd" x="300" y="140" width="170" height="56" rx="6"/>
+  <text class="mono tag" x="385" y="163" text-anchor="middle">TOR NETWORK</text>
+  <text class="mono tag" x="385" y="183" text-anchor="middle">THREE HOPS, ENCRYPTED</text>
+  <rect class="dashd" x="540" y="88" width="220" height="180" rx="10" fill="none"/>
+  <text class="mono tag" x="556" y="112">HOME NETWORK</text>
+  <rect class="box-lit" x="560" y="130" width="180" height="48" rx="6"/>
+  <text class="mono amt-lit" x="650" y="151" text-anchor="middle">YOUR NODE</text>
+  <text class="mono tag" x="650" y="169" text-anchor="middle">ELECTRUM SERVER</text>
+  <rect class="box" x="560" y="198" width="180" height="40" rx="6"/>
+  <text class="mono tag" x="650" y="218" text-anchor="middle">HIDDEN SERVICE</text>
+  <text class="mono tag-a" x="650" y="232" text-anchor="middle">ABC123...XYZ.ONION</text>
+  <path class="flow" d="M214,168 L296,168"/>
+  <path d="M296,168 L289,163.9 M296,168 L289,172.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <path class="flow" d="M474,168 L556,168"/>
+  <path d="M556,168 L549,163.9 M556,168 L549,172.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono note" x="40" y="320">NO OPEN PORTS, NO EXPOSED IP, NO VPN SUBSCRIPTION &#183; THE ONION ADDRESS IS THE ONLY DOOR</text>
+</svg>

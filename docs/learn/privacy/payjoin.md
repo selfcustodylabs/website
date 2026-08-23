@@ -20,30 +20,11 @@ PayJoin (also called P2EP: Pay-to-EndPoint, specified as BIP78) is a privacy tec
 
 In a normal Bitcoin transaction the sender provides the inputs, the receiver gets an output, and the sender gets change. PayJoin adds a twist: the receiver also adds one of their own inputs. The on-chain result looks like a normal transaction, but the assumptions that blockchain analysts make about it are wrong.
 
-```
-NORMAL TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender)              →       Bob (receiver)
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│        ───────►   │ Output: 0.7 │ Bob
-└─────────────┘                    │ Output: 0.3 │ Alice (change)
-                                   └─────────────┘
+<div class="doc-diagram">
 
-Analyst assumes: All inputs belong to sender (Alice).
+![In a normal payment Alice's 1.0 BTC input pays Bob 0.7 with 0.3 change; in a PayJoin Bob adds his own 0.5 BTC input and receives 1.2, so the analyst reads the payment as 1.2 and wrongly assumes every input is Alice's](/img/diagrams/privacy/payjoin-vs-normal.svg)
 
-
-PAYJOIN TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender) + Bob (receiver)  →  Both
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│ (Alice)           │ Output: 1.2 │ Bob
-│ Input: 0.5  │ (Bob)    ───────► │ Output: 0.3 │ Alice (change)
-└─────────────┘                    └─────────────┘
-
-Analyst assumes: All inputs belong to sender. Wrong.
-The common-input-ownership heuristic fails.
-```
-
+</div>
 
 ## Why PayJoin Matters
 
@@ -64,7 +45,6 @@ Even if you never use PayJoin yourself, widespread PayJoin adoption helps you:
 - Adds uncertainty to every chain-analysis inference
 - Makes the common-input-ownership assumption unreliable
 - Benefits the entire network, not just participants
-
 
 ## How PayJoin Works
 
@@ -108,7 +88,6 @@ No one knows Bob contributed an input.
 
 The analyst's model of the transaction is completely wrong.
 
-
 ## PayJoin vs. CoinJoin
 
 Both are privacy techniques, but they work differently:
@@ -127,7 +106,6 @@ Both are privacy techniques, but they work differently:
 </div>
 
 **PayJoin is stealth privacy.** It doesn't look like a privacy transaction. **CoinJoin is explicit privacy.** Anyone can see it is a mixing transaction (though they can't trace through it). The two are complementary.
-
 
 ## Wallets Supporting PayJoin
 
@@ -149,7 +127,6 @@ Both are privacy techniques, but they work differently:
 
 To receive PayJoin you need a wallet with PayJoin receiver support **and** a way to expose a PayJoin endpoint (URL). **BTCPay Server** is the easiest option for merchants; it handles PayJoin automatically for customers whose wallets support it.
 
-
 ## Using PayJoin with Sparrow Wallet
 
 ### Sending a PayJoin Payment
@@ -161,7 +138,6 @@ To receive PayJoin you need a wallet with PayJoin receiver support **and** a way
 ### Receiving PayJoin Payments
 
 For individuals, receiving PayJoin typically requires running BTCPay Server or similar infrastructure. For merchants, BTCPay Server makes it automatic: just enable PayJoin in settings.
-
 
 ## Using PayJoin with BTCPay Server
 
@@ -180,7 +156,6 @@ When a customer pays an invoice:
 
 No action is required from the customer. It just works.
 
-
 ## PayJoin Best Practices
 
 ### Do ✅
@@ -195,7 +170,6 @@ No action is required from the customer. It just works.
 - **Don't use with KYC UTXOs expecting full privacy:** your exchange still knows your inputs
 - **Don't rely on the receiver's privacy:** a receiver using bad infrastructure can leak information you can't control
 
-
 ## Limitations of PayJoin
 
 1. **Doesn't hide amounts:** transaction amounts are still visible on-chain.
@@ -208,7 +182,6 @@ No action is required from the customer. It just works.
 Use [CoinJoin](/docs/learn/privacy/coinjoin) when you need to break links to past transaction history, get a stronger anonymity set, or gain privacy without the receiver's cooperation.
 
 Use PayJoin when you are making a payment to a supporting merchant, you want stealth privacy that doesn't look like a privacy transaction, or you want to help network privacy broadly.
-
 
 ## The Bigger Picture
 
@@ -228,7 +201,6 @@ PayJoin is one tool in the privacy toolbox:
 
 Maximum privacy uses multiple layers together.
 
-
 ## Summary
 
 - PayJoin is a **stealth privacy technique** where sender and receiver both contribute inputs.
@@ -236,7 +208,6 @@ Maximum privacy uses multiple layers together.
 - PayJoin transactions **look like normal payments**; they aren't identifiable as privacy transactions.
 - **Widespread adoption benefits everyone**, even non-users, by adding uncertainty to analysis.
 - Use PayJoin whenever you pay a merchant or service that supports it.
-
 
 ## Resources
 

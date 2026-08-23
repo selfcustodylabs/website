@@ -13,7 +13,6 @@ An air-gapped wallet is a setup where the device holding the private keys is phy
 
 This is the highest level of self custody security.
 
-
 ## Why Some People Use Air-Gapped Wallets
 
 By keeping the signing device completely offline, air-gapped setups remove entire categories of risk.
@@ -24,7 +23,6 @@ They are commonly used by:
 - People protecting significant amounts of Bitcoin
 
 This approach prioritizes security over convenience.
-
 
 ## How Transactions Work
 
@@ -40,6 +38,11 @@ The signed transaction is then sent to the network.
 
 The private keys never leave the offline device.
 
+<div class="doc-diagram">
+
+![The air gap: a watch-only wallet on the online computer exchanges only PSBTs with the air-gapped signer via QR codes or SD cards; the seed and private keys never cross, and neither does any cable, wifi or bluetooth](/img/diagrams/wallets/airgap-transfer.svg)
+
+</div>
 
 ## Is This for Everyone?
 
@@ -53,7 +56,6 @@ Air-gapped setups:
 They are not necessary for beginners, but they exist for people who want maximum control and minimal risk.
 
 Think of this as deep cold storage, not a daily wallet.
-
 
 ## Why an Air-Gapped Computer Over a SeedSigner?
 
@@ -73,7 +75,6 @@ Think of this as deep cold storage, not a daily wallet.
 
 SeedSigner is purpose-built and excellent at signing; our [SeedSigner section](/docs/seedsigner/) covers building and using one. An air-gapped computer is more versatile: you can use it for seed generation from dice rolls, encrypted backups, and cross-verification across multiple wallets. The two are complements, not rivals: many advanced setups use an air-gapped computer to generate and verify seeds, and a SeedSigner for routine signing.
 
-
 ## Use Cases for an Air-Gapped Computer
 
 <div class="fixed-width-table">
@@ -90,7 +91,6 @@ SeedSigner is purpose-built and excellent at signing; our [SeedSigner section](/
 :::info An air gap says nothing about entropy
 Air-gapping protects against malware and key exfiltration; it cannot detect a device that generated a *weak* key. In the [2026 Coldcard incident](/docs/learn/wallets/coldcard-entropy-incident/), fully air-gapped wallets were drained remotely because their seeds were predictable from birth. The "hardware wallet verification" use case above, independently re-deriving what a device produced, is exactly the check that catches this class of failure, and it's the reason an air-gapped computer earns its place next to any hardware wallet.
 :::
-
 
 ## Choosing Your Hardware
 
@@ -111,7 +111,6 @@ This is a harder-to-find device and is better suited to users who already know t
 ### Desktop Computer
 
 A desktop can be an excellent dedicated "seed generator" because of its superior speed. You can assemble it yourself or have a shop build it, but in either case you must make sure the components do not include Wi-Fi, Bluetooth, or Ethernet. Avoiding these features at the hardware level keeps the machine truly isolated.
-
 
 ## Building Your Air-Gapped Computer
 
@@ -152,7 +151,6 @@ With the base system in place, install the tools you will actually use offline:
 - An offline wallet such as [Sparrow](https://www.sparrowwallet.com/) or [Electrum](https://electrum.org/) for managing keys and signing transactions.
 
 Once these are installed, you can generate seeds and create PSBTs (Partially Signed Bitcoin Transactions) on a completely isolated Bitcoin computer.
-
 
 ## Related Guides
 

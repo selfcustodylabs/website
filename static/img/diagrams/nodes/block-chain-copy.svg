@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800" height="290" role="img" aria-label="A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="289" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">YOUR NODE'S COPY OF THE CHAIN</text>
+  <rect class="box" x="40" y="110" width="110" height="44" rx="6"/>
+  <text class="mono amt" x="95" y="137" text-anchor="middle">BLOCK 1</text>
+  <path class="flow" d="M154,132 L180,132"/>
+  <path d="M180,132 L173,127.9 M180,132 L173,136.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="186" y="110" width="110" height="44" rx="6"/>
+  <text class="mono amt" x="241" y="137" text-anchor="middle">BLOCK 2</text>
+  <path class="flow" d="M300,132 L326,132"/>
+  <path d="M326,132 L319,127.9 M326,132 L319,136.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="332" y="110" width="110" height="44" rx="6"/>
+  <text class="mono amt" x="387" y="137" text-anchor="middle">BLOCK 3</text>
+  <path class="flow" d="M446,132 L472,132"/>
+  <path d="M472,132 L465,127.9 M472,132 L465,136.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="dashd" x="478" y="110" width="110" height="44" rx="6"/>
+  <text class="mono amt" x="533" y="137" text-anchor="middle">...</text>
+  <path class="flow" d="M592,132 L618,132"/>
+  <path d="M618,132 L611,127.9 M618,132 L611,136.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="624" y="110" width="150" height="44" rx="6"/>
+  <text class="mono amt" x="699" y="137" text-anchor="middle">BLOCK 850,000+</text>
+  <text class="mono cap" x="40" y="200" fill="#767C8A">EVERY TRANSACTION SINCE JANUARY 2009, STORED AND VERIFIED LOCALLY</text>
+  <text class="mono note" x="40" y="250">~600 GB TODAY, GROWING 50-100 GB PER YEAR &#183; NO CLAIM GOES UNCHECKED</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Anatomy of the derivation path m/44'/0'/0'/0/0: master seed, purpose, coin type where 0 means Bitcoin, account number, change flag where 0 is external and 1 is change, and the address index.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ANATOMY OF A DERIVATION PATH</text>
+  <rect class="box-lit" x="60" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt-lit" x="103" y="117" text-anchor="middle">m</text>
+  <text class="mono amt" x="164" y="117" text-anchor="middle">/</text>
+  <rect class="box" x="182" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt" x="225" y="117" text-anchor="middle">44'</text>
+  <text class="mono amt" x="286" y="117" text-anchor="middle">/</text>
+  <rect class="box" x="304" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt" x="347" y="117" text-anchor="middle">0'</text>
+  <text class="mono amt" x="408" y="117" text-anchor="middle">/</text>
+  <rect class="box" x="426" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt" x="469" y="117" text-anchor="middle">0'</text>
+  <text class="mono amt" x="530" y="117" text-anchor="middle">/</text>
+  <rect class="box" x="548" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt" x="591" y="117" text-anchor="middle">0</text>
+  <text class="mono amt" x="652" y="117" text-anchor="middle">/</text>
+  <rect class="box" x="670" y="90" width="86" height="44" rx="6"/>
+  <text class="mono amt" x="713" y="117" text-anchor="middle">0</text>
+  <text class="mono amt-lit" x="60" y="190">m</text>
+  <text class="mono tag" x="130" y="190">MASTER &#183; THE SEED ITSELF</text>
+  <text class="mono amt-lit" x="60" y="222">44'</text>
+  <text class="mono tag" x="130" y="222">PURPOSE &#183; THE WALLET STANDARD</text>
+  <text class="mono amt-lit" x="60" y="254">0'</text>
+  <text class="mono tag" x="130" y="254">COIN TYPE &#183; 0 = BITCOIN</text>
+  <text class="mono amt-lit" x="60" y="286">0'</text>
+  <text class="mono tag" x="130" y="286">ACCOUNT &#183; FIRST ACCOUNT</text>
+  <text class="mono amt-lit" x="60" y="318">0</text>
+  <text class="mono tag" x="130" y="318">CHANGE &#183; 0 EXTERNAL, 1 CHANGE</text>
+  <text class="mono amt-lit" x="60" y="350">0</text>
+  <text class="mono tag" x="130" y="350">INDEX &#183; ADDRESS NUMBER</text>
+  <text class="mono note" x="40" y="396">THE APOSTROPHE MARKS HARDENED DERIVATION &#183; A CHILD CANNOT EXPOSE ITS PARENT</text>
+</svg>

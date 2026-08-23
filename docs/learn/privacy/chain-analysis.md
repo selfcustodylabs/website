@@ -14,7 +14,6 @@ Chain analysis is the practice of examining the Bitcoin blockchain to track the 
 
 The good news: chain analysis isn't magic. It relies on heuristics (educated guesses) and external data sources, both of which have limitations. By understanding the techniques, you can understand their weaknesses, and protect yourself accordingly.
 
-
 ## What Is Chain Analysis?
 
 At its core, chain analysis is pattern recognition on a massive scale. Analysts study blockchain data to achieve several goals:
@@ -29,7 +28,6 @@ At its core, chain analysis is pattern recognition on a massive scale. Analysts 
 
 This intelligence is valuable. Law enforcement uses it to track criminals. Exchanges use it to comply with regulations. Tax authorities use it to ensure compliance. And increasingly, ordinary financial institutions use it to make decisions about which customers to serve.
 
-
 ## The Core Techniques
 
 Chain analysis isn't black magic. It's a set of logical inferences applied at scale. The industry relies on **heuristics**: rules of thumb that are usually (but not always) true. Understanding these heuristics reveals both their power and their limitations.
@@ -42,17 +40,11 @@ This is the most powerful tool in the analyst's arsenal, and it's deceptively si
 
 **Why it usually works:** To spend bitcoin from multiple addresses in one transaction, you need the private keys for all of them. Typically, only one person has those keys.
 
-```
-TRANSACTION EXAMPLE:
-──────────────────────────────────────────────────────────
-Inputs:                      Outputs:
-  Address A (0.5 BTC)  ─┐
-  Address B (0.3 BTC)  ─┼──→  Address X (0.7 BTC)
-  Address C (0.4 BTC)  ─┘     Address Y (0.5 BTC)
+<div class="doc-diagram">
 
-Analyst concludes:
-  "A, B, and C are controlled by the same entity"
-```
+![The common input ownership heuristic: addresses A, B and C worth 0.5, 0.3 and 0.4 BTC are spent together into outputs of 0.7 and 0.5 BTC, so an analyst concludes one entity controls all three inputs](/img/diagrams/privacy/chain-common-input.svg)
+
+</div>
 
 **When it breaks down:**
 - CoinJoin transactions intentionally combine inputs from multiple people
@@ -64,18 +56,11 @@ When you spend bitcoin, you rarely have the exact amount needed. If you have a 1
 
 Analysts exploit this pattern. In any transaction with two outputs, they ask: which one is the payment, and which one is change returning to the sender?
 
-```
-CHANGE DETECTION:
-──────────────────────────────────────────────────────────
-Input:                       Outputs:
-  Address A (1.0 BTC)  ──→   Address B (0.7 BTC)  ← Payment
-                              Address C (0.29 BTC) ← Change?
+<div class="doc-diagram">
 
-Clues that C is change:
-• C is a new address (never seen before)
-• C has an odd amount (0.29 vs round 0.7)
-• C uses same address type as input
-```
+![Change detection: a 1.00 BTC input pays 0.70 BTC to a round-number payment output and 0.29 BTC to a new address of the same script type; the odd remainder marks it as change returning to the sender, with 0.01 BTC as fee](/img/diagrams/privacy/chain-change-detection.svg)
+
+</div>
 
 Several indicators help analysts make this determination:
 
@@ -96,16 +81,11 @@ The real power comes from combining heuristics. Once analysts identify a change 
 
 Using the same address twice is a privacy catastrophe. It creates an undeniable link between transactions.
 
-```
-ADDRESS REUSE RISK:
-──────────────────────────────────────────────────────────
-Transaction 1: Someone pays you at Address A
-Transaction 2: You pay someone from Address A
-Transaction 3: Someone else pays you at Address A
+<div class="doc-diagram">
 
-All three transactions are now linked.
-Anyone who knows one transaction knows all of them.
-```
+![Address reuse: a payment received at address A, a payment sent from A and a second payment received at A are all permanently linked; knowing one transaction reveals the others, which is why wallets rotate addresses](/img/diagrams/privacy/chain-address-reuse.svg)
+
+</div>
 
 Modern wallets generate new addresses automatically for this reason, but address reuse still happens, especially when people share a single "donation" address publicly or when merchants use static payment addresses.
 
@@ -119,30 +99,15 @@ If you deposit to an exchange and withdraw minutes later, those transactions are
 
 Numbers tell stories. Payments are often round numbers (0.1 BTC, 0.01 BTC), while change addresses tend to have irregular amounts. If 0.5 BTC enters a mixer and 0.5 BTC exits somewhere else, they might be connected, though sophisticated mixers work hard to break this correlation.
 
-
 ## Clustering: Building Your Profile
 
 The real power of chain analysis comes from combining these techniques. Individually, each heuristic provides a piece of the puzzle. Together, they build comprehensive profiles.
 
-```
-CLUSTER BUILDING:
-──────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Step 1: Find multi-input transaction
-  Addresses A, B, C spent together → Same owner
+![Cluster building: addresses A, B and C spent together are one owner, change detection adds D, a later co-spend adds E, and the analyst ends up holding a map of every address you control](/img/diagrams/privacy/chain-analysis-cluster.svg)
 
-Step 2: Identify change addresses
-  Transaction from A creates change at D → Add D to cluster
-
-Step 3: Follow the chain
-  D later spent with E → Add E to cluster
-
-Step 4: Continue...
-  Cluster grows: {A, B, C, D, E, F, G, H...}
-
-Result: Analyst knows all your addresses
-```
-
+</div>
 
 ## External Data Sources
 
@@ -164,7 +129,6 @@ That donation address on your blog? It's been catalogued. That transaction ID yo
 
 Even beyond blockchain and web data, your transactions leak information. If you're not using Tor, your IP address may be associated with your transactions. Browser fingerprints, transaction timing patterns, and unique wallet behaviors all create signatures that can be correlated with other data.
 
-
 ## The Attribution Challenge
 
 There's an important distinction between clustering and attribution. Clustering means determining that addresses A, B, and C belong to the same entity. Attribution means determining that entity is you.
@@ -175,7 +139,6 @@ There's an important distinction between clustering and attribution. Clustering 
 
 Chain analysis companies often have high confidence in their clusters but varying confidence in attribution. They know addresses belong together; they're less certain about who controls them. This matters because weak attribution can be challenged, and because it creates false positive risk.
 
-
 ## What This Means for You
 
 Let's make this concrete. If an analyst has identified even one address you control, here's what they can potentially learn:
@@ -185,7 +148,6 @@ Let's make this concrete. If an analyst has identified even one address you cont
 **Past actions affect future privacy.** Those coins you bought years ago still carry their history. Address reuse from the past still creates links. Your entire financial history can be reconstructed retroactively if the starting point is identified.
 
 **Exchanges are key vulnerability points.** KYC exchanges create the identity links that make everything else possible. Even using an exchange once, years ago, creates a permanent record that can anchor future analysis.
-
 
 ## Limitations of Chain Analysis
 
@@ -205,7 +167,6 @@ Chain analysis is powerful, but it's not omniscient. Every technique has limitat
 **CoinJoin and similar techniques** specifically target these heuristics. When multiple people combine their transactions, the common input ownership assumption breaks down completely. When outputs are all equal amounts, change detection becomes impossible. When timing is randomized, temporal analysis loses power.
 
 This is the key insight: chain analysis relies on assumptions about how people typically use Bitcoin. Use Bitcoin atypically, intentionally, and those assumptions fail.
-
 
 ## Key Takeaways
 

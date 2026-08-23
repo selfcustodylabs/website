@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800" height="290" role="img" aria-label="The transaction pipeline: the wallet creates it, the key signs it, nodes relay the broadcast, it waits in the mempool until a miner includes it in a block, and every following block adds a confirmation.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="289" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">FROM CREATE TO CONFIRMED</text>
+  <rect class="box" x="40" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt" x="93" y="145" text-anchor="middle">CREATE</text>
+  <text class="mono tag" x="93" y="182" text-anchor="middle">WALLET BUILDS</text>
+  <path class="flow" d="M148,140 L166,140"/>
+  <path d="M166,140 L159,135.9 M166,140 L159,144.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="162" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt" x="215" y="145" text-anchor="middle">SIGN</text>
+  <text class="mono tag" x="215" y="182" text-anchor="middle">KEY PROVES OWNER</text>
+  <path class="flow" d="M270,140 L288,140"/>
+  <path d="M288,140 L281,135.9 M288,140 L281,144.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="284" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt" x="337" y="145" text-anchor="middle">BROADCAST</text>
+  <text class="mono tag" x="337" y="182" text-anchor="middle">NODES RELAY</text>
+  <path class="flow" d="M392,140 L410,140"/>
+  <path d="M410,140 L403,135.9 M410,140 L403,144.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="406" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt" x="459" y="145" text-anchor="middle">MEMPOOL</text>
+  <text class="mono tag" x="459" y="182" text-anchor="middle">WAITS FOR A MINER</text>
+  <path class="flow" d="M514,140 L532,140"/>
+  <path d="M532,140 L525,135.9 M532,140 L525,144.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="528" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt" x="581" y="145" text-anchor="middle">BLOCK</text>
+  <text class="mono tag" x="581" y="182" text-anchor="middle">MINER INCLUDES</text>
+  <path class="flow" d="M636,140 L654,140"/>
+  <path d="M654,140 L647,135.9 M654,140 L647,144.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="650" y="120" width="106" height="40" rx="6"/>
+  <text class="mono amt-lit" x="703" y="145" text-anchor="middle">CONFIRMED</text>
+  <text class="mono tag" x="703" y="182" text-anchor="middle">EACH BLOCK ADDS</text>
+  <text class="mono note" x="40" y="250">EACH NEW BLOCK BURIES THE TRANSACTION DEEPER &#183; REVERSAL BECOMES IMPRACTICAL</text>
+</svg>

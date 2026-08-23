@@ -9,11 +9,9 @@ tags: ["bitcoin", "transactions", "signing"]
 
 Before a Bitcoin transaction can be broadcast to the network, it must first be signed using a private key. This signature acts as proof that you control the coins you’re trying to spend.
 
-
 ## What Is Signing?
 
 Think of signing as placing a digital signature on your transaction. It tells the Bitcoin network, “Yes, I’m authorized to move these funds.” To do this, you need your **private key**, a secret piece of data that should never be shared. If anyone else gets access to your private key, they can steal your Bitcoin.
-
 
 ## Online vs. Offline Signing
 
@@ -23,7 +21,6 @@ In **online signing**, the wallet that builds and signs the transaction is conne
 
 This approach is popular in cold storage and high-security setups.
 
-
 ## Single-Sig vs. Multisig Signing
 
 With **single-signature** (single-sig) wallets, only one private key is required to sign a transaction. This setup is common for personal use and simpler wallets.
@@ -31,7 +28,6 @@ With **single-signature** (single-sig) wallets, only one private key is required
 In contrast, **multi-signature** (multisig) wallets require multiple keys to sign. For example, a “2-of-3” configuration means two out of three keys must sign the transaction before it’s valid. This method is often used in business wallets, collaborative custody, or more secure personal setups.
 
 Multisig is frequently combined with **PSBTs** and air-gapped workflows for added flexibility and safety.
-
 
 ## What Is PSBT? (Partially Signed Bitcoin Transaction)
 
@@ -45,7 +41,6 @@ It’s particularly useful when:
 
 PSBTs are a key tool for multisig arrangements and air-gapped environments, where no single device handles every step of the process.
 
-
 ## Air-Gapped Signing Workflow (Example)
 
 Here’s how a typical air-gapped signing setup works:
@@ -56,6 +51,12 @@ Here’s how a typical air-gapped signing setup works:
 4. Sign the transaction with the private key on the offline device.
 5. Move the signed transaction back to the online device.
 6. Broadcast it to the Bitcoin network.
+
+<div class="doc-diagram">
+
+![Air-gapped signing: an online watch-only wallet builds the transaction and exports a PSBT, the file crosses the gap by USB, QR or SD card, an offline device holding the private key signs it, and the signed PSBT returns for broadcast; the key never crosses](/img/diagrams/transactions/airgap-signing.svg)
+
+</div>
 
 This layered approach keeps your private key isolated from internet exposure while allowing secure transaction signing.
 ---

@@ -10,7 +10,6 @@ tags: ["node", "privacy", "security", "bitcoin"]
 
 Running your own Bitcoin node isn't required, but it's strongly recommended for anyone serious about self-custody. Here's why.
 
-
 ## The Privacy Problem
 
 When your wallet checks your balance, it asks a Bitcoin node for information. If you don't run your own node, you're asking someone else's.
@@ -51,7 +50,6 @@ REALITY:
    I've added them to my database." (Surveillance node)
 ```
 
-
 ## The Verification Problem
 
 Without your own node, you trust others to tell you the truth about Bitcoin.
@@ -64,17 +62,11 @@ A technically skilled attacker could:
 2. Send you a fake transaction that doesn't exist on the real blockchain
 3. Your wallet shows "confirmed" when it isn't
 
-```
-ATTACKER'S NODE:
-  "Yes, that 10 BTC transaction to you is confirmed!"
-  
-REAL BLOCKCHAIN:
-  Transaction doesn't exist
-  
-LATER:
-  Your wallet connects to an honest node
-  Your balance is suddenly 10 BTC less than expected
-```
+<div class="doc-diagram">
+
+![The fake confirmation attack: an attacker's node tells your wallet a 10 BTC payment is confirmed while no such transaction exists on the real chain, and the loss surfaces later; your own node verifies blocks itself, making the lie impossible](/img/diagrams/nodes/fake-confirmation.svg)
+
+</div>
 
 This is difficult to pull off but not impossible, especially in targeted attacks.
 
@@ -87,7 +79,6 @@ If Bitcoin ever splits into different versions (like the 2017 Bitcoin/Bitcoin Ca
 - The coins have different rules and values
 
 With your own node, you choose exactly which version of Bitcoin you're using.
-
 
 ## The Security Benefits
 
@@ -116,7 +107,6 @@ WITH YOUR NODE:
 
 A payment isn't confirmed until your node verifies the block containing it. No one can trick you about confirmation status.
 
-
 ## The Self-Custody Connection
 
 True self-custody means:
@@ -126,17 +116,11 @@ True self-custody means:
 
 Without your own node, you're only 2/3 of the way there.
 
-```
-COMPLETE SELF-CUSTODY:
-────────────────────────────────────────────────────
-Your Hardware Wallet    Your Node    Your Internet
-(signs transactions)    (verifies)   (broadcasts)
-         │                  │              │
-         └──────────────────┴──────────────┘
-                        │
-              Full control, no third parties
-```
+<div class="doc-diagram">
 
+![Complete self-custody stands on three legs: a hardware wallet that signs, your own node that verifies, and your own connection that broadcasts; together they give full control with no third party in the loop](/img/diagrams/nodes/self-custody-trio.svg)
+
+</div>
 
 ## Benefits Beyond Privacy and Security
 
@@ -169,7 +153,6 @@ Your own node can power:
 
 It becomes the foundation for a complete Bitcoin setup.
 
-
 ## Common Objections
 
 ### "It's too technical"
@@ -187,7 +170,6 @@ Nodes only need to be running when you're using your wallet. They can catch up w
 ### "I'm not a target"
 
 You might not be a target today. Privacy is easier to maintain than to recover. And you don't know who's logging data for future use.
-
 
 ## Who Should Run a Node?
 
@@ -209,7 +191,6 @@ You might not be a target today. Privacy is easier to maintain than to recover. 
 - Complete beginners (learn basics first)
 - Those holding very small amounts
 - Those who only use custodial services
-
 
 ## Key Takeaways
 

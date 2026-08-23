@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Two ways to broadcast a transaction: through your own node it reaches the peer-to-peer network with no intermediary, while a third-party server sees your IP address and can log, delay or censor the transaction before relaying it.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .own     { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .third   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">TWO WAYS TO BROADCAST</text>
+
+  <rect class="box" x="40" y="180" width="150" height="44" rx="8"/>
+  <text class="mono amt" x="115" y="207" text-anchor="middle">YOUR WALLET</text>
+
+  <!-- own node path -->
+  <path class="own" d="M190,190 C280,190 280,130 370,130"/>
+  <rect class="box-lit" x="370" y="108" width="150" height="44" rx="8"/>
+  <text class="mono amt-lit" x="445" y="135" text-anchor="middle">YOUR NODE</text>
+  <path class="own" d="M520,130 C570,130 590,150 622,164"/>
+  <text class="mono cap" x="370" y="90" fill="#F59E0B">TRUSTLESS &#183; NO MIDDLEMAN &#183; IP SAFE BEHIND TOR</text>
+
+  <!-- third party path -->
+  <path class="third" d="M190,214 C280,214 280,290 370,290"/>
+  <rect class="box-e" x="370" y="268" width="190" height="44" rx="8"/>
+  <text class="mono amt" x="465" y="295" text-anchor="middle">THIRD-PARTY SERVER</text>
+  <path class="third" d="M560,290 C600,290 616,240 640,208"/>
+  <text class="mono cap" x="370" y="336" fill="#C66A20">SEES YOUR IP &#183; CAN LOG, DELAY OR CENSOR</text>
+
+  <!-- the network -->
+  <circle cx="668" cy="182" r="12" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="716" cy="152" r="10" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="722" cy="216" r="10" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="758" cy="184" r="8"  fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <path class="wire" d="M680,182 L706,158 M680,186 L712,212 M726,158 L754,178 M732,214 L752,190"/>
+  <text class="mono tag" x="712" y="248" text-anchor="middle">P2P NETWORK</text>
+
+  <text class="mono note" x="40" y="392">BOTH PATHS REACH THE SAME NETWORK &#183; ONLY ONE PUTS A STRANGER IN THE MIDDLE</text>
+</svg>

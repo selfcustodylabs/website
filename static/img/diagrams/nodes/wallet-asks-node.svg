@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" width="800" height="270" role="img" aria-label="A wallet holds keys but must ask a node for balances, incoming payments and broadcasting; every question reveals the wallet's addresses to whichever node answers.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="269" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">YOUR WALLET NEEDS A NODE &#183; THE QUESTION IS WHOSE</text>
+  <rect class="box" x="60" y="120" width="170" height="52" rx="6"/>
+  <text class="mono amt" x="145" y="143" text-anchor="middle">WALLET</text>
+  <text class="mono tag" x="145" y="161" text-anchor="middle">YOUR KEYS</text>
+  <rect class="box" x="560" y="120" width="170" height="52" rx="6"/>
+  <text class="mono amt" x="645" y="143" text-anchor="middle">NODE</text>
+  <text class="mono tag" x="645" y="161" text-anchor="middle">THE BLOCKCHAIN</text>
+  <path class="flow" d="M234,146 L556,146"/>
+  <path d="M556,146 L549,141.9 M556,146 L549,150.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono tag" x="395" y="106" text-anchor="middle">WHAT'S MY BALANCE? &#183; DID I GET PAID? &#183; BROADCAST THIS</text>
+  <text class="mono note" x="40" y="230">EVERY QUESTION NAMES YOUR ADDRESSES &#183; WHOEVER ANSWERS, LEARNS THEM</text>
+</svg>

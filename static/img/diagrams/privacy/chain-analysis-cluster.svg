@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Cluster building: addresses A, B and C spent together are one owner, change detection adds D, a later co-spend adds E, and the analyst ends up holding a map of every address you control.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .addr    { font-size: 13px; font-weight: 700; fill: #A8AEBB; }
+    .edge-l  { font-size: 9px; font-weight: 700; letter-spacing: 1.2px; fill: #767C8A; }
+    .step    { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .step-n  { font-size: 10px; font-weight: 700; fill: #F59E0B; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .edge    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .add     { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .hull    { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 8 6; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">CLUSTERING &#183; HOW ONE HEURISTIC FEEDS THE NEXT</text>
+
+  <!-- the finished cluster, hull drawn around it -->
+  <rect class="hull" x="150" y="80" width="420" height="240" rx="24"/>
+
+  <path class="edge" d="M240,140 L360,120"/>
+  <path class="edge" d="M240,140 L330,220"/>
+  <path class="edge" d="M360,120 L330,220"/>
+  <path class="add"  d="M240,140 L250,260"/>
+  <path class="add"  d="M250,260 L460,250"/>
+
+  <circle cx="240" cy="140" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="240" y="145" text-anchor="middle">A</text>
+  <circle cx="360" cy="120" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="360" y="125" text-anchor="middle">B</text>
+  <circle cx="330" cy="220" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="330" y="225" text-anchor="middle">C</text>
+  <circle cx="250" cy="260" r="22" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono addr" x="250" y="265" text-anchor="middle">D</text>
+  <circle cx="460" cy="250" r="22" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono addr" x="460" y="255" text-anchor="middle">E</text>
+
+  <text class="mono edge-l" x="300" y="106" text-anchor="middle">SPENT TOGETHER</text>
+  <text class="mono edge-l" x="212" y="208" text-anchor="end">CHANGE</text>
+  <text class="mono edge-l" x="356" y="272" text-anchor="middle">CO-SPENT LATER</text>
+
+  <text class="mono cap" x="588" y="96">ONE OWNER:</text>
+  <text class="mono cap" x="588" y="114">THE WHOLE BOX</text>
+
+  <!-- how it grew -->
+  <text class="mono step-n" x="40" y="356">1</text>
+  <text class="mono step" x="58" y="356">A, B, C SPENT TOGETHER &#8594; SAME OWNER</text>
+  <text class="mono step-n" x="40" y="376">2</text>
+  <text class="mono step" x="58" y="376">CHANGE DETECTION ADDS D</text>
+  <text class="mono step-n" x="40" y="396">3</text>
+  <text class="mono step" x="58" y="396">D CO-SPENT WITH E &#8594; CLUSTER GROWS AGAIN</text>
+
+  <text class="mono note" x="470" y="396">EVERY SPEND CAN GROW THE BOX</text>
+</svg>

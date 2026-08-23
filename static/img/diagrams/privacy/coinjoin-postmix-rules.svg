@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540" role="img" aria-label="Two transactions that undo a mix: merging a 0.10 BTC mixed coin with a 0.15 BTC KYC coin into one 0.25 BTC payment re-attaches your identity; consolidating three 0.10 BTC mixed coins into 0.30 BTC proves one owner did all three rounds.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .title   { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #C66A20; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .panel   { fill: none; stroke: #C66A20; stroke-width: 2; }
+    .merge   { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .mixed   { fill: #0C0E12; stroke: #F59E0B; stroke-width: 2; }
+    .kyc     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .out     { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="539" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">TWO WAYS TO UNDO YOUR MIX</text>
+
+  <!-- PANEL A: rule 1 -->
+  <rect class="panel" x="40" y="66" width="720" height="196" rx="10"/>
+  <text class="mono title" x="56" y="94">RULE 1 BROKEN &#183; MIXED COIN MERGED WITH KYC COIN</text>
+
+  <path class="merge" d="M240,132 C370,132 370,158 500,158"/>
+  <path class="merge" d="M240,180 C370,180 370,166 500,166"/>
+
+  <rect class="mixed" x="80" y="116" width="160" height="32" rx="6"/>
+  <text class="mono amt-lit" x="160" y="137" text-anchor="middle">0.10 &#183; MIXED</text>
+  <rect class="kyc" x="80" y="164" width="160" height="32" rx="6"/>
+  <text class="mono amt" x="160" y="185" text-anchor="middle">0.15 &#183; KYC</text>
+
+  <rect class="out" x="500" y="142" width="170" height="40" rx="8"/>
+  <text class="mono amt" x="585" y="167" text-anchor="middle">0.25 PAYMENT</text>
+
+  <text class="mono cap" x="80" y="240" fill="#C66A20">THE KYC IDENTITY NOW ATTACHES TO THE MIXED COIN</text>
+
+  <!-- PANEL B: rule 2 -->
+  <rect class="panel" x="40" y="286" width="720" height="196" rx="10"/>
+  <text class="mono title" x="56" y="314">RULE 2 BROKEN &#183; MIXED COINS CONSOLIDATED TOGETHER</text>
+
+  <path class="merge" d="M240,352 C370,352 370,382 500,382"/>
+  <path class="merge" d="M240,392 C370,392 370,392 500,392"/>
+  <path class="merge" d="M240,432 C370,432 370,402 500,402"/>
+
+  <rect class="mixed" x="80" y="338" width="160" height="28" rx="6"/>
+  <text class="mono amt-lit" x="160" y="357" text-anchor="middle">0.10 &#183; ROUND 1</text>
+  <rect class="mixed" x="80" y="378" width="160" height="28" rx="6"/>
+  <text class="mono amt-lit" x="160" y="397" text-anchor="middle">0.10 &#183; ROUND 2</text>
+  <rect class="mixed" x="80" y="418" width="160" height="28" rx="6"/>
+  <text class="mono amt-lit" x="160" y="437" text-anchor="middle">0.10 &#183; ROUND 3</text>
+
+  <rect class="out" x="500" y="372" width="190" height="40" rx="8"/>
+  <text class="mono amt" x="595" y="397" text-anchor="middle">0.30 &#183; ONE OWNER</text>
+
+  <text class="mono cap" x="80" y="464" fill="#C66A20">PROVES ONE PERSON RAN ALL THREE ROUNDS</text>
+
+  <text class="mono note" x="40" y="518">MINING FEES OMITTED &#183; SPEND MIXED COINS ALONE: NOT TOGETHER, NOT WITH KYC COINS</text>
+</svg>

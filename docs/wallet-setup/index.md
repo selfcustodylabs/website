@@ -21,11 +21,11 @@ If you're new to Bitcoin, start with [Learn](/docs/learn/) to understand the fun
 
 Follow these guides in order for a secure setup:
 
-```
-1. Hardware Wallet Setup    →  Get your device configured
-2. Backup Verification      →  Test that your backup works
-3. Before You Deposit       →  Final checklist before funding
-```
+<div class="doc-diagram">
+
+![The wallet setup path in order: configure the hardware wallet, verify the backup actually restores it, then run the final pre-deposit checks; nothing gets funded until all three steps pass](/img/diagrams/wallet-setup/setup-path.svg)
+
+</div>
 
 ---
 

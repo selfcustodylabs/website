@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320" role="img" aria-label="Sending from a hardware wallet: the software creates the transaction, the device screen shows the real recipient and the 1,500 sat fee, you press confirm on the device and it signs, then the software broadcasts; malware can redraw a monitor but not the device screen.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="319" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">SENDING &#183; VERIFY ON THE DEVICE, NOT THE COMPUTER</text>
+  <text class="mono head" x="56" y="90" fill="#767C8A">WALLET SOFTWARE</text>
+  <text class="mono head" x="496" y="90" fill="#F59E0B">HARDWARE WALLET</text>
+  <rect class="box" x="56" y="110" width="250" height="38" rx="6"/>
+  <text class="mono amt" x="72" y="134">1 &#183; CREATE TRANSACTION</text>
+  <rect class="box" x="496" y="110" width="250" height="68" rx="6"/>
+  <text class="mono amt" x="512" y="132">2 &#183; DEVICE SCREEN SHOWS:</text>
+  <text class="mono tag-a" x="512" y="152">"SEND 0.01 TO BC1Q...?"</text>
+  <text class="mono tag-a" x="512" y="168">"FEE: 1,500 SATS"</text>
+  <rect class="box-lit" x="496" y="198" width="250" height="38" rx="6"/>
+  <text class="mono amt-lit" x="512" y="222">3 &#183; YOU PRESS CONFIRM, IT SIGNS</text>
+  <rect class="box" x="56" y="198" width="250" height="38" rx="6"/>
+  <text class="mono amt" x="72" y="222">4 &#183; BROADCAST SIGNATURE</text>
+  <path class="wire" d="M310,129 L492,129"/>
+  <path d="M492,129 L485,124.9 M492,129 L485,133.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <path class="wire" d="M492,217 L320,217"/>
+  <path d="M320,217 L327,212.9 M320,217 L327,221.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <text class="mono note" x="40" y="290">MALWARE CAN REDRAW YOUR MONITOR &#183; IT CANNOT REDRAW THE DEVICE SCREEN</text>
+</svg>

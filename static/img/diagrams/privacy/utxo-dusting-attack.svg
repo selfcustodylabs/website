@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" width="800" height="470" role="img" aria-label="A dusting attack in three steps: the attacker sends 546 sats to thousands of addresses, the victim co-spends the dust with a real 0.4 BTC coin, and the dust's movement links the victim's addresses into one cluster.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .step    { font-size: 13px; font-weight: 700; fill: #F59E0B; }
+    .amt     { font-size: 10px; font-weight: 500; fill: #A8AEBB; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .txt     { font-size: 11px; font-weight: 500; letter-spacing: 1px; fill: #A8AEBB; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .dashw   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 5 5; }
+    .att     { fill: #0C0E12; stroke: #C66A20; stroke-width: 2; }
+    .dust    { fill: #0C0E12; stroke: #C66A20; stroke-width: 2; }
+    .mine    { fill: #0C0E12; stroke: #F59E0B; stroke-width: 2; }
+    .taint   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .addr    { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="469" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">DUSTING ATTACK &#183; HOW 546 SATS TRACKS YOU</text>
+
+  <!-- STEP 1: dust lands everywhere -->
+  <text class="mono step" x="40" y="124">01</text>
+  <rect class="att" x="84" y="104" width="84" height="32" rx="6"/>
+  <text class="mono amt" x="126" y="124" text-anchor="middle">ATTACKER</text>
+  <text class="mono tag" x="180" y="86">546 SATS EACH</text>
+  <path class="wire" d="M168,120 C230,120 240,84 294,84"/>
+  <path class="wire" d="M168,120 C230,120 240,102 294,102"/>
+  <path class="wire" d="M168,120 C230,120 240,120 294,120"/>
+  <path class="wire" d="M168,120 C230,120 240,138 294,138"/>
+  <path class="wire" d="M168,120 C230,120 240,156 294,156"/>
+  <circle cx="300" cy="84"  r="6" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="300" cy="102" r="6" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="300" cy="120" r="6" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono tag-a" x="316" y="124">YOU</text>
+  <circle cx="300" cy="138" r="6" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="300" cy="156" r="6" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono tag" x="300" y="180" text-anchor="middle">&#215;1000S</text>
+  <text class="mono txt" x="540" y="112">ATTACKER SENDS 546 SATS</text>
+  <text class="mono txt" x="540" y="130">TO THOUSANDS OF ADDRESSES</text>
+
+  <!-- STEP 2: you co-spend the dust -->
+  <text class="mono step" x="40" y="239">02</text>
+  <text class="mono tag" x="84" y="198">DUST &#183; FROM ATTACKER</text>
+  <rect class="dust" x="84" y="204" width="104" height="26" rx="5"/>
+  <text class="mono amt" x="136" y="221" text-anchor="middle">0.00000546</text>
+  <rect class="mine" x="84" y="240" width="104" height="26" rx="5"/>
+  <text class="mono amt" x="136" y="257" text-anchor="middle">0.40000000</text>
+  <text class="mono tag" x="84" y="282">YOURS</text>
+  <path class="wire" d="M188,217 C294,217 294,229 400,229"/>
+  <path class="wire" d="M188,253 C294,253 294,241 400,241"/>
+  <rect class="taint" x="400" y="216" width="110" height="38" rx="6"/>
+  <text class="mono amt" x="455" y="239" text-anchor="middle">0.40000546</text>
+  <text class="mono tag" x="400" y="272">TAINTED &#183; CONTAINS THE DUST</text>
+  <text class="mono txt" x="540" y="227">ONE ORDINARY SPEND LATER,</text>
+  <text class="mono txt" x="540" y="245">THE DUST MOVES WITH YOUR COIN</text>
+
+  <!-- STEP 3: the cluster -->
+  <text class="mono step" x="40" y="354">03</text>
+  <rect class="att" x="84" y="334" width="84" height="32" rx="6"/>
+  <text class="mono amt" x="126" y="354" text-anchor="middle">ATTACKER</text>
+  <path class="dashw" d="M168,350 L292,350"/>
+  <path d="M292,350 L284.5,345.5 M292,350 L284.5,354.5" stroke="#C66A20" stroke-width="2" fill="none"/>
+  <rect class="taint" x="300" y="332" width="210" height="36" rx="6"/>
+  <text class="mono amt" x="405" y="355" text-anchor="middle">ALL YOUR ADDRESSES &#183; LINKED</text>
+  <text class="mono txt" x="540" y="342">WATCHING THE DUST MOVE MAPS</text>
+  <text class="mono txt" x="540" y="360">YOUR WALLET INTO ONE CLUSTER</text>
+
+  <text class="mono note" x="40" y="434">DEFENSE: FREEZE THE DUST (MARK IT DO-NOT-SPEND) AND NEVER CO-SPEND IT</text>
+</svg>

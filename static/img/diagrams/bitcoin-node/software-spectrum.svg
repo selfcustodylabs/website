@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" width="800" height="330" role="img" aria-label="Node software on a spectrum from guided to manual: Umbrel's web UI, Start9's app store, Parmanode's terminal wizard, RaspiBlitz's scripts and Raspibolt's fully manual setup; these guides use Parmanode, in the middle.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="329" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">NODE SOFTWARE &#183; GUIDED TO MANUAL</text>
+  <path class="wire" d="M60,150 L740,150"/>
+  <path d="M60,150 L67,145.9 M60,150 L67,154.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <path d="M740,150 L733,145.9 M740,150 L733,154.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <text class="mono head" x="60" y="110" fill="#767C8A">MORE GUIDED</text>
+  <text class="mono head" x="740" y="110" fill="#767C8A" text-anchor="end">MORE CONTROL</text>
+  <circle cx="80" cy="150" r="5" fill="#2E3643"/>
+  <text class="mono amt" x="80" y="190" text-anchor="middle">UMBREL</text>
+  <text class="mono tag" x="80" y="210" text-anchor="middle">WEB UI</text>
+  <circle cx="235" cy="150" r="5" fill="#2E3643"/>
+  <text class="mono amt" x="235" y="190" text-anchor="middle">START9</text>
+  <text class="mono tag" x="235" y="210" text-anchor="middle">APP STORE</text>
+  <circle cx="390" cy="150" r="7" fill="#F59E0B"/>
+  <text class="mono amt-lit" x="390" y="190" text-anchor="middle">PARMANODE</text>
+  <text class="mono tag" x="390" y="210" text-anchor="middle">TERMINAL WIZARD</text>
+  <circle cx="545" cy="150" r="5" fill="#2E3643"/>
+  <text class="mono amt" x="545" y="190" text-anchor="middle">RASPIBLITZ</text>
+  <text class="mono tag" x="545" y="210" text-anchor="middle">SCRIPTS, MENUS</text>
+  <circle cx="700" cy="150" r="5" fill="#2E3643"/>
+  <text class="mono amt" x="700" y="190" text-anchor="middle">RASPIBOLT</text>
+  <text class="mono tag" x="700" y="210" text-anchor="middle">FULLY MANUAL</text>
+  <text class="mono cap" x="390" y="250" fill="#F59E0B" text-anchor="middle">THE GUIDES HERE USE PARMANODE &#183; GUIDED ENOUGH TO FINISH, MANUAL ENOUGH TO LEARN</text>
+  <text class="mono note" x="40" y="300">EASY TO START MEANS HARD TO DEBUG &#183; CONTROL MEANS UNDERSTANDING YOUR OWN SYSTEM</text>
+</svg>

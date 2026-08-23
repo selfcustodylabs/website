@@ -10,7 +10,6 @@ tags: ["bitcoin", "transactions", "understanding", "lifecycle"]
 
 Bitcoin might seem complicated at first, but once you understand a few key ideas, the process becomes much clearer. This page covers both the structure of transactions and what happens when you send one.
 
-
 ## Inputs and Outputs
 
 Bitcoin doesn't work like a bank account where your balance is just a number. Instead, it uses the **UTXO model** (Unspent Transaction Outputs).
@@ -26,7 +25,6 @@ When you send Bitcoin, you're telling the network:
 
 *"I want to consume these inputs (UTXOs I previously received) and create these outputs (new UTXOs for the recipient and change for myself)."*
 
-
 ## You Always Spend the Whole Input
 
 One important detail: Bitcoin doesn't let you spend just a portion of an input. You always spend the whole thing. If you only need part of it, the rest is sent back to you as **change**, usually to a new address that your wallet controls automatically.
@@ -38,7 +36,6 @@ Example:
 - The remaining 0.002 BTC goes back to you as change on a new address
 
 Your wallet takes care of this behind the scenes, but it helps to understand what's happening.
-
 
 ## Transaction Fees
 
@@ -52,12 +49,17 @@ Going back to our example:
 
 That means the remaining 0.0001 BTC was used as the transaction fee.
 
+<div class="doc-diagram">
+
+![Anatomy of a transaction: a 0.01 BTC input becomes 0.008 BTC to a friend and 0.0019 BTC change to a new address you control; the missing 0.0001 BTC is the fee, which is just the difference between inputs and outputs](/img/diagrams/transactions/tx-anatomy.svg)
+
+</div>
+
 Your wallet usually calculates the fee for you, based on how busy the network is.
 
 :::info Fee Insight
 Fees depend on transaction **size** (in bytes), not the **value** being sent. More UTXOs means a larger transaction and higher fees. See [Transaction Fees](/docs/learn/transactions/fees) for a complete guide.
 :::
-
 
 ---
 
@@ -112,20 +114,11 @@ Once your transaction is in a block, each additional block that gets added after
 
 The more confirmations a transaction has, the harder it becomes to reverse. That's why businesses and users often wait for multiple confirmations before considering a payment final.
 
-```
-TRANSACTION FLOW
-════════════════════════════════════════════════════════════
+<div class="doc-diagram">
 
-  Create → Sign → Broadcast → Mempool → Block → Confirmed
-    │        │        │          │        │         │
-  Wallet   Private   Nodes    Waiting   Miner    Each new
-  builds    key     relay     for       adds     block adds
-  tx      proves    to       miner     to       confirmation
-          owner   network   pickup   blockchain
+![The transaction pipeline: the wallet creates it, the key signs it, nodes relay the broadcast, it waits in the mempool until a miner includes it in a block, and every following block adds a confirmation](/img/diagrams/transactions/tx-pipeline.svg)
 
-════════════════════════════════════════════════════════════
-```
-
+</div>
 
 ## Key Takeaways
 
@@ -134,7 +127,6 @@ TRANSACTION FLOW
 - **Fees** are the difference between inputs and outputs
 - Transactions wait in the **mempool** until a miner includes them in a block
 - More **confirmations** = more security (6 is the standard for large amounts)
-
 
 <RelatedArticles 
   title="Related Topics"

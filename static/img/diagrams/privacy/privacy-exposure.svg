@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="A KYC exchange records that John Smith withdrew to address A; the public chain shows A paying B, then C, then D, so an analyst attributes all four addresses, the total balance and the merchant payments to John Smith.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; fill: #767C8A; }
+    .amt     { font-size: 11px; font-weight: 500; fill: #A8AEBB; }
+    .addr    { font-size: 13px; font-weight: 700; fill: #A8AEBB; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .con     { font-size: 11px; font-weight: 500; letter-spacing: 1px; fill: #A8AEBB; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .trail   { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .kyc     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .node    { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ONE KYC WITHDRAWAL &#183; A PERMANENT TRAIL</text>
+
+  <rect class="kyc" x="40" y="96" width="170" height="52" rx="8"/>
+  <text class="mono amt" x="125" y="118" text-anchor="middle">KYC EXCHANGE</text>
+  <text class="mono tag" x="125" y="136" text-anchor="middle">KNOWS: JOHN SMITH &#8594; A</text>
+
+  <!-- the public chain of hops -->
+  <path class="trail" d="M218,122 L266,122"/>
+  <path class="trail" d="M266,122 L259,117.9 M266,122 L259,126.1"/>
+  <circle cx="296" cy="122" r="22" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono addr" x="296" y="127" text-anchor="middle">A</text>
+  <path class="trail" d="M324,122 L392,122"/>
+  <path class="trail" d="M392,122 L385,117.9 M392,122 L385,126.1"/>
+  <circle cx="422" cy="122" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="422" y="127" text-anchor="middle">B</text>
+  <path class="trail" d="M450,122 L518,122"/>
+  <path class="trail" d="M518,122 L511,117.9 M518,122 L511,126.1"/>
+  <circle cx="548" cy="122" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="548" y="127" text-anchor="middle">C</text>
+  <path class="trail" d="M576,122 L644,122"/>
+  <path class="trail" d="M644,122 L637,117.9 M644,122 L637,126.1"/>
+  <circle cx="674" cy="122" r="22" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono addr" x="674" y="127" text-anchor="middle">D</text>
+
+  <text class="mono tag" x="485" y="170" text-anchor="middle">EVERY HOP IS PUBLIC, FOREVER</text>
+
+  <!-- what the analyst now claims -->
+  <path class="dashe" d="M296,152 C296,210 320,228 360,240"/>
+  <rect class="dashe" x="220" y="240" width="470" height="110" rx="10" fill="none"/>
+  <text class="mono cap" x="240" y="268">ANALYST CONCLUDES</text>
+  <text class="mono con" x="240" y="294">&#183; JOHN SMITH CONTROLS A, B, C AND D</text>
+  <text class="mono con" x="240" y="314">&#183; THE TOTAL HOLDINGS ARE VISIBLE</text>
+  <text class="mono con" x="240" y="334">&#183; EVERY MERCHANT PAID IS ON RECORD</text>
+
+  <text class="mono note" x="40" y="398">ONE IDENTITY LINK PLUS A PUBLIC LEDGER = A FULL FINANCIAL PROFILE</text>
+</svg>

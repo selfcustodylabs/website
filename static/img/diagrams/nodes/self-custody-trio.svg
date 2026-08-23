@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-label="Complete self-custody stands on three legs: a hardware wallet that signs, your own node that verifies, and your own connection that broadcasts; together they give full control with no third party in the loop.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="389" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">COMPLETE SELF-CUSTODY &#183; THREE LEGS</text>
+  <rect class="box" x="40" y="90" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="150" y="114" text-anchor="middle">HARDWARE WALLET</text>
+  <text class="mono tag" x="150" y="134" text-anchor="middle">SIGNS TRANSACTIONS</text>
+  <path class="flow" d="M150,146 C275,146 275,250 400,250"/>
+  <rect class="box" x="290" y="90" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="400" y="114" text-anchor="middle">YOUR NODE</text>
+  <text class="mono tag" x="400" y="134" text-anchor="middle">VERIFIES EVERYTHING</text>
+  <path class="flow" d="M400,146 C400,146 400,250 400,250"/>
+  <rect class="box" x="540" y="90" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="650" y="114" text-anchor="middle">YOUR CONNECTION</text>
+  <text class="mono tag" x="650" y="134" text-anchor="middle">BROADCASTS</text>
+  <path class="flow" d="M650,146 C525,146 525,250 400,250"/>
+  <rect class="box-lit" x="250" y="250" width="300" height="56" rx="6"/>
+  <text class="mono amt-lit" x="400" y="274" text-anchor="middle">FULL CONTROL</text>
+  <text class="mono tag" x="400" y="294" text-anchor="middle">NO THIRD PARTY IN THE LOOP</text>
+  <text class="mono note" x="40" y="360">KEYS WITHOUT VERIFICATION IS TWO THIRDS OF SELF-CUSTODY &#183; THE NODE IS THE MISSING LEG</text>
+</svg>

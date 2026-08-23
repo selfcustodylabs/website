@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="A transaction from address A worth 1.80 BTC paying 1.50 BTC to B with 0.30 BTC change: the blockchain publishes both addresses, both amounts and the time at block 812,345, readable by anyone forever, with no names attached.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="399" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">WHAT THE BLOCKCHAIN SHOWS &#183; EVERYTHING BUT YOUR NAME</text>
+  <rect class="box-lit" x="60" y="140" width="160" height="40" rx="6"/>
+  <text class="mono amt-lit" x="140" y="165" text-anchor="middle">A &#183; 1.80</text>
+  <path class="flow" d="M220,160 C350,160 350,120 480,120"/>
+  <path class="wire" d="M220,160 C350,160 350,210 480,210"/>
+  <rect class="box" x="480" y="102" width="140" height="36" rx="6"/>
+  <text class="mono amt" x="550" y="125" text-anchor="middle">B &#183; 1.50</text>
+  <text class="mono tag" x="634" y="125">PAYMENT</text>
+  <rect class="box" x="480" y="192" width="140" height="36" rx="6"/>
+  <text class="mono amt" x="550" y="215" text-anchor="middle">C &#183; 0.30</text>
+  <text class="mono tag" x="634" y="215">CHANGE</text>
+  <rect class="dashd" x="60" y="260" width="560" height="64" rx="8" fill="none"/>
+  <text class="mono tag" x="76" y="284">PUBLIC FOREVER: BOTH ADDRESSES &#183; BOTH AMOUNTS &#183; THE TIME</text>
+  <text class="mono tag" x="76" y="304">RECORDED AT BLOCK 812,345 &#183; READABLE BY ANYONE, FOREVER</text>
+  <text class="mono note" x="40" y="374">1.80 = 1.50 + 0.30 &#183; FEE OMITTED &#183; NO NAMES, BUT PATTERNS ARE ENOUGH</text>
+</svg>

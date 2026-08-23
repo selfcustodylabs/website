@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Multisig signing flow: an unsigned PSBT goes to device 1 and device 2, each signs independently, the signatures combine into a fully signed transaction and it is broadcast; no single machine ever holds two keys.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="459" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">SIGNING A MULTISIG TRANSACTION</text>
+  <rect class="box" x="300" y="76" width="200" height="44" rx="6"/>
+  <text class="mono amt" x="400" y="97" text-anchor="middle">PSBT</text>
+  <text class="mono tag" x="400" y="114" text-anchor="middle">UNSIGNED TRANSACTION</text>
+  <path class="wire" d="M400,120 C310,120 310,176 220,176"/>
+  <path class="wire" d="M400,120 C490,120 490,176 580,176"/>
+  <rect class="box-lit" x="130" y="176" width="180" height="44" rx="6"/>
+  <text class="mono amt-lit" x="220" y="197" text-anchor="middle">DEVICE 1 SIGNS</text>
+  <text class="mono tag" x="220" y="214" text-anchor="middle">1 OF 2 NEEDED</text>
+  <rect class="box-lit" x="490" y="176" width="180" height="44" rx="6"/>
+  <text class="mono amt-lit" x="580" y="197" text-anchor="middle">DEVICE 2 SIGNS</text>
+  <text class="mono tag" x="580" y="214" text-anchor="middle">2 OF 2 NEEDED</text>
+  <path class="flow" d="M220,220 C310,220 310,274 400,274"/>
+  <path class="flow" d="M580,220 C490,220 490,274 400,274"/>
+  <rect class="box-lit" x="290" y="274" width="220" height="40" rx="6"/>
+  <text class="mono amt-lit" x="400" y="299" text-anchor="middle">FULLY SIGNED</text>
+  <path class="flow" d="M400,316 L400,344"/>
+  <path d="M400,344 L395.9,337 M400,344 L404.1,337" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="290" y="346" width="220" height="40" rx="6"/>
+  <text class="mono amt" x="400" y="371" text-anchor="middle">BROADCAST</text>
+  <text class="mono note" x="40" y="430">EACH DEVICE SIGNS ON ITS OWN &#183; NO SINGLE MACHINE EVER HOLDS TWO KEYS</text>
+</svg>

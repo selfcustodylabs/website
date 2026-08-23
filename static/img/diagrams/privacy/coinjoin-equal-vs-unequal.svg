@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="With unequal outputs an analyst matches 0.5, 0.8 and 0.3 BTC inputs to their outputs by amount; with three equal 0.30 BTC outputs plus change of 0.20 and 0.50, the amounts carry no signal.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .lbl     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .traced  { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 2; }
+    .dash    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">WHY THE OUTPUTS MUST BE EQUAL</text>
+
+  <text class="mono head" x="40" y="82" fill="#C66A20">UNEQUAL &#183; TRACEABLE</text>
+  <text class="mono head" x="420" y="82" fill="#F59E0B">EQUAL &#183; UNTRACEABLE</text>
+
+  <line x1="395" y1="100" x2="395" y2="340" stroke="#1C2028" stroke-width="1"/>
+
+  <!-- LEFT: amounts betray the mapping -->
+  <path class="traced" d="M150,120 C195,120 195,180 240,180"/>
+  <path class="traced" d="M150,180 C195,180 195,240 240,240"/>
+  <path class="traced" d="M150,240 C195,240 195,120 240,120"/>
+  <rect class="box" x="60" y="104" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="105" y="125" text-anchor="middle">0.50</text>
+  <rect class="box" x="60" y="164" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="105" y="185" text-anchor="middle">0.80</text>
+  <rect class="box" x="60" y="224" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="105" y="245" text-anchor="middle">0.30</text>
+  <rect class="box" x="240" y="104" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="285" y="125" text-anchor="middle">0.30</text>
+  <rect class="box" x="240" y="164" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="285" y="185" text-anchor="middle">0.50</text>
+  <rect class="box" x="240" y="224" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="285" y="245" text-anchor="middle">0.80</text>
+  <text class="mono cap" x="40" y="322" fill="#C66A20">MATCH THE AMOUNTS &#183; MAPPING SOLVED</text>
+
+  <!-- RIGHT: identical outputs, change aside -->
+  <path class="wire" d="M500,110 C570,110 570,160 640,160"/>
+  <path class="wire" d="M500,160 C570,160 570,210 640,210"/>
+  <path class="wire" d="M500,210 C570,210 570,110 640,110"/>
+  <rect class="box" x="420" y="94" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="115" text-anchor="middle">0.50</text>
+  <rect class="box" x="420" y="144" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="165" text-anchor="middle">0.80</text>
+  <rect class="box" x="420" y="194" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="215" text-anchor="middle">0.30</text>
+  <rect class="box-lit" x="640" y="94" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="680" y="115" text-anchor="middle">0.30</text>
+  <rect class="box-lit" x="640" y="144" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="680" y="165" text-anchor="middle">0.30</text>
+  <rect class="box-lit" x="640" y="194" width="80" height="32" rx="6"/>
+  <text class="mono amt" x="680" y="215" text-anchor="middle">0.30</text>
+
+  <rect class="dash" x="420" y="248" width="340" height="52" rx="8"/>
+  <text class="mono lbl" x="436" y="268">CHANGE &#183; 0.50 KEEPS 0.20 &#183; 0.80 KEEPS 0.50</text>
+  <rect class="box" x="436" y="274" width="46" height="20" rx="4"/>
+  <text class="mono lbl" x="459" y="288" text-anchor="middle" fill="#A8AEBB">0.20</text>
+  <rect class="box" x="488" y="274" width="46" height="20" rx="4"/>
+  <text class="mono lbl" x="511" y="288" text-anchor="middle" fill="#A8AEBB">0.50</text>
+
+  <text class="mono cap" x="420" y="322" fill="#F59E0B">THREE IDENTICAL 0.30 &#183; NOTHING TO FOLLOW</text>
+
+  <text class="mono note" x="40" y="380">SAME 1.60 IN ON BOTH SIDES &#183; RIGHT: 1.60 = 3 &#215; 0.30 + 0.70 CHANGE</text>
+  <text class="mono note" x="40" y="400">FEES OMITTED &#183; THE DENOMINATION IS SET BY THE SMALLEST PARTICIPANT</text>
+</svg>

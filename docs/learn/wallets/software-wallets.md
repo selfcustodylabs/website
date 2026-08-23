@@ -16,32 +16,19 @@ That said, software wallets come with an important trade-off. They're incredibly
 
 Let's understand how they work, when to use them, and how to use them safely.
 
-
 ## How Software Wallets Work
 
 The mechanics are straightforward, even if the implications are profound. When you install a software wallet, you're essentially creating a tiny, personal bank inside your phone or computer, one that only you control.
 
 Here's what happens behind the scenes: the app generates a seed phrase (those 12 or 24 words you'll need to protect carefully), derives your private keys from that seed, and stores everything on your device. When you want to send Bitcoin, the wallet uses those keys to sign the transaction, proving to the network that you're the rightful owner.
 
-```
-SOFTWARE WALLET FLOW:
-─────────────────────────────────────────────────────────
-Your Device (Phone/Computer)
-┌─────────────────────────────────────────────────┐
-│  Wallet App                                      │
-│  ┌─────────────┐    ┌──────────────────────┐   │
-│  │ Private Key │───►│ Sign Transaction     │   │
-│  │ (stored)    │    │                      │   │
-│  └─────────────┘    └──────────┬───────────┘   │
-│                                │               │
-└────────────────────────────────┼───────────────┘
-                                 │
-                                 ▼
-                        Bitcoin Network
-```
+<div class="doc-diagram">
+
+![A software wallet stores the private key and signs transactions on the same online phone or computer that runs the browser and apps, then broadcasts to the network; convenient for spending, the wrong place for savings](/img/diagrams/wallets/software-wallet-flow.svg)
+
+</div>
 
 The key difference from hardware wallets: **your private keys exist on an internet-connected device**, which is why software wallets are also called "hot wallets."
-
 
 ## When to Use a Software Wallet
 
@@ -60,7 +47,6 @@ Software wallets shine in situations where convenience matters more than Fort Kn
 </div>
 
 Here's a mental model that helps: think of a software wallet like **cash in your pocket**. You wouldn't walk around with $10,000 in your jeans, but having $100 for coffee and emergencies makes perfect sense. The same logic applies here.
-
 
 ## Security Considerations
 
@@ -87,7 +73,6 @@ If malware gains access to your device, it can read your seed phrase from storag
 :::warning Rule of Thumb
 Never store more Bitcoin in a software wallet than you'd be willing to carry as cash in your pocket. For most people, that's somewhere between $100 and $1,000, not their retirement savings.
 :::
-
 
 ## Recommended Software Wallets
 
@@ -128,7 +113,6 @@ Desktop wallets typically offer more features and better visibility into what's 
 
 **My recommendation for desktop:** Sparrow Wallet, hands down. It's what I use for teaching and what I recommend to everyone from curious beginners to experienced Bitcoiners. The interface reveals exactly what Bitcoin is doing under the hood, which makes it an incredible learning tool, and it scales beautifully as your needs grow.
 
-
 ## Setting Up a Software Wallet
 
 Setting up a software wallet takes about ten minutes, but those ten minutes deserve your full attention. Find a quiet moment, put your phone on do-not-disturb, and follow these steps carefully.
@@ -144,7 +128,6 @@ Setting up a software wallet takes about ten minutes, but those ten minutes dese
 **Set a strong PIN or password.** Most wallets let you add an extra layer of protection. Use it. Don't reuse passwords from other services: if your email password leaks, you don't want it to also unlock your Bitcoin.
 
 **Finally, verify everything works.** Send a small test amount to your new wallet. Watch it arrive. Send a tiny bit back. This confirms your setup is correct before you trust it with anything meaningful.
-
 
 ## Software Wallet Best Practices
 
@@ -170,7 +153,6 @@ And the things to avoid:
 
 **Never skip updates.** Old versions have known vulnerabilities that attackers actively exploit.
 
-
 ## Connecting to Your Own Node
 
 Here's something most beginners don't realize: when you use a software wallet, it needs to talk to the Bitcoin network somehow. By default, most wallets connect to servers run by the wallet developer or random public nodes scattered around the internet.
@@ -192,7 +174,6 @@ The solution is running your own Bitcoin node and connecting your wallet to it. 
 
 Don't worry if this sounds complicated right now. Running a node is a project for later, once you're comfortable with the basics. When you're ready, our [Bitcoin Node Guide](/docs/bitcoin-node) will walk you through it.
 
-
 ## When to Graduate to a Hardware Wallet
 
 A software wallet is a fantastic starting point, but at some point, you'll feel the pull toward something more secure. Here are the signs you're ready to upgrade:
@@ -206,7 +187,6 @@ A software wallet is a fantastic starting point, but at some point, you'll feel 
 **You're ready for more responsibility.** Hardware wallets require more care: maintaining the device, protecting additional backups, following proper security procedures. If that sounds appealing rather than annoying, you're ready.
 
 A software wallet is a great learning tool and a perfectly reasonable choice for everyday spending money. But for significant savings (the Bitcoin you're holding for years or decades), a [hardware wallet](/docs/learn/wallets/hardware-wallets) is essential.
-
 
 ---
 

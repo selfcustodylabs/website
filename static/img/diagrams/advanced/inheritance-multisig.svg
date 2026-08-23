@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-label="An inheritance 2-of-3 multisig: you hold key 1 for daily use, your heir keeps key 2, and key 3 sits in a vault or with an attorney; while you live you spend with key 1 plus another, and after your death the heir recovers everything with keys 2 and 3.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="389" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">A 2-OF-3 THAT OUTLIVES YOU</text>
+  <rect class="box" x="40" y="90" width="220" height="52" rx="6"/>
+  <text class="mono amt" x="150" y="112" text-anchor="middle">KEY 1</text>
+  <text class="mono tag" x="150" y="131" text-anchor="middle">YOU &#183; DAILY USE</text>
+  <rect class="box" x="290" y="90" width="220" height="52" rx="6"/>
+  <text class="mono amt" x="400" y="112" text-anchor="middle">KEY 2</text>
+  <text class="mono tag" x="400" y="131" text-anchor="middle">YOUR HEIR KEEPS IT</text>
+  <rect class="box" x="540" y="90" width="220" height="52" rx="6"/>
+  <text class="mono amt" x="650" y="112" text-anchor="middle">KEY 3</text>
+  <text class="mono tag" x="650" y="131" text-anchor="middle">VAULT OR ATTORNEY</text>
+  <text class="mono head" x="40" y="200" fill="#F59E0B">WHILE YOU LIVE</text>
+  <text class="mono amt-lit" x="240" y="200">KEY 1 + KEY 2 OR KEY 3</text>
+  <text class="mono tag" x="480" y="200">YOU SPEND AS NORMAL</text>
+  <text class="mono head" x="40" y="250" fill="#F59E0B">AFTER YOU'RE GONE</text>
+  <text class="mono amt-lit" x="240" y="250">KEY 2 + KEY 3</text>
+  <text class="mono tag" x="480" y="250">YOUR HEIR RECOVERS EVERYTHING</text>
+  <text class="mono cap" x="40" y="310" fill="#767C8A">NOBODY HOLDS TWO KEYS &#183; NOT THE HEIR, NOT THE ATTORNEY, NOT A BURGLAR</text>
+  <text class="mono note" x="40" y="360">SAME WALLET SERVES BOTH LIVES &#183; NO LAWYER CAN SPEND ALONE, NO HEIR IS LOCKED OUT</text>
+</svg>

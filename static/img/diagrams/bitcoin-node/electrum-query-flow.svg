@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" role="img" aria-label="An Electrum server sits between Sparrow and Bitcoin Core: the wallet asks for an address balance, the server answers instantly from its index, and the index is built by reading the chain Core has verified.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="299" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">WHAT AN ELECTRUM SERVER DOES</text>
+  <rect class="box" x="40" y="130" width="180" height="52" rx="6"/>
+  <text class="mono amt" x="130" y="152" text-anchor="middle">SPARROW</text>
+  <text class="mono tag" x="130" y="171" text-anchor="middle">YOUR WALLET</text>
+  <rect class="box-lit" x="310" y="130" width="200" height="52" rx="6"/>
+  <text class="mono amt-lit" x="410" y="152" text-anchor="middle">ELECTRUM SERVER</text>
+  <text class="mono tag" x="410" y="171" text-anchor="middle">THE INDEX</text>
+  <rect class="box" x="580" y="130" width="180" height="52" rx="6"/>
+  <text class="mono amt" x="670" y="152" text-anchor="middle">BITCOIN CORE</text>
+  <text class="mono tag" x="670" y="171" text-anchor="middle">THE VERIFIED CHAIN</text>
+  <path class="flow" d="M224,144 L306,144"/>
+  <path d="M306,144 L299,139.9 M306,144 L299,148.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono tag" x="265" y="122" text-anchor="middle">BALANCE FOR BC1Q...?</text>
+  <path class="flow" d="M306,168 L234,168"/>
+  <path d="M234,168 L241,163.9 M234,168 L241,172.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono tag-a" x="265" y="196" text-anchor="middle">0.5 BTC &#183; INSTANT</text>
+  <path class="dashd" d="M576,156 L518,156"/>
+  <text class="mono tag" x="547" y="146" text-anchor="middle">READS</text>
+  <text class="mono note" x="40" y="266">CORE VERIFIES BUT IS SLOW TO SEARCH &#183; THE INDEX EXISTS SO ANSWERS COME BACK INSTANTLY</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Hardware wallet signing: the computer builds an unsigned transaction, the device shows the recipient and amount on its own screen, you verify and press the button, it signs internally and returns only the signature for broadcast; the private key never leaves.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="419" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">SIGNING &#183; THE KEY NEVER LEAVES THE DEVICE</text>
+  <rect class="dashd" x="40" y="80" width="290" height="270" rx="10" fill="none"/>
+  <text class="mono head" x="56" y="106" fill="#767C8A">YOUR COMPUTER</text>
+  <rect class="dashe" x="470" y="80" width="290" height="270" rx="10" fill="none"/>
+  <text class="mono head" x="486" y="106" fill="#F59E0B">HARDWARE WALLET</text>
+  <rect class="box" x="60" y="126" width="250" height="38" rx="6"/>
+  <text class="mono amt" x="76" y="150">1 &#183; BUILD UNSIGNED TX</text>
+  <rect class="box" x="60" y="296" width="250" height="38" rx="6"/>
+  <text class="mono amt" x="76" y="320">6 &#183; BROADCAST SIGNED TX</text>
+  <rect class="box" x="490" y="126" width="250" height="54" rx="6"/>
+  <text class="mono amt" x="506" y="146">2 &#183; SCREEN SHOWS:</text>
+  <text class="mono tag-a" x="506" y="168">"SEND 0.1 TO BC1Q...?"</text>
+  <rect class="box" x="490" y="200" width="250" height="38" rx="6"/>
+  <text class="mono amt" x="506" y="224">3 &#183; VERIFY, PRESS BUTTON</text>
+  <rect class="box-lit" x="490" y="258" width="250" height="38" rx="6"/>
+  <text class="mono amt-lit" x="506" y="282">4 &#183; SIGNS INTERNALLY</text>
+  <path class="wire" d="M334,145 L466,145"/>
+  <path d="M466,145 L459,140.9 M466,145 L459,149.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <path class="wire" d="M470,277 L344,277"/>
+  <path d="M344,277 L351,272.9 M344,277 L351,281.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <text class="mono tag" x="400" y="268" text-anchor="middle">5 &#183; SIGNATURE ONLY</text>
+  <text class="mono note" x="40" y="392">VERIFY ON THE DEVICE SCREEN, NOT THE COMPUTER'S &#183; THE KEY WAS USED BUT NEVER EXPOSED</text>
+</svg>

@@ -11,11 +11,15 @@ Once your Bitcoin transaction is fully signed, it's ready to be **broadcasted**,
 
 In short, broadcasting is how your transaction gets announced to the network for confirmation.
 
-
 ## Broadcasting via Your Own Node vs. Third-Party Servers
 
 You have two main ways to broadcast a transaction: through your own full node or via third-party servers.
 
+<div class="doc-diagram">
+
+![Two ways to broadcast a transaction: through your own node it reaches the peer-to-peer network with no intermediary, while a third-party server sees your IP address and can log, delay or censor the transaction before relaying it](/img/diagrams/transactions/broadcast-paths.svg)
+
+</div>
 
 ### Using Your Own Node
 
@@ -23,13 +27,11 @@ When your wallet connects to your personal full node, the transaction is sent di
 
 This method offers **maximum privacy and control**. It’s trustless, meaning you independently verify everything without relying on a third party. However, it does require you to run and maintain a full node (e.g., Bitcoin Core or Umbrel), which can be a technical or resource commitment.
 
-
 ### Using Third-Party Servers
 
 Many wallets, especially mobile apps, broadcast transactions through external servers such as Electrum public servers, Blockstream.info, or the wallet provider’s backend.
 
 This approach is much more convenient. It’s fast, with no setup required. But there’s a tradeoff: you’re trusting that server not to log your IP, delay, censor, or snoop on your transaction. This method offers less privacy, and you lose some control over how your transaction is relayed.
-
 
 ## Privacy Considerations
 

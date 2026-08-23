@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Coins from a KYC exchange, a peer-to-peer trade and mining kept in separate compartments stay unlinked; spending 0.05, 0.07 and 0.03 BTC from all three in one 0.15 BTC transaction links every history.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .lane    { font-size: 11px; font-weight: 500; letter-spacing: 1.4px; fill: #767C8A; }
+    .amt     { font-size: 11px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 14px; font-weight: 700; fill: #FCD34D; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .cap     { font-size: 11px; font-weight: 700; letter-spacing: 2.4px; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .pen     { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .utxo    { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .chip    { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .leak    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 5 5; }
+    .merge   { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .out     { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">UTXO SOURCE SEPARATION</text>
+
+  <text class="mono head" x="40"  y="76" fill="#767C8A">KEPT SEPARATE</text>
+  <text class="mono head" x="420" y="76" fill="#C66A20">MERGED IN ONE TRANSACTION</text>
+
+  <!-- LEFT: three compartments, nothing links them -->
+  <rect class="pen" x="40" y="95"  width="320" height="64" rx="8"/>
+  <text class="mono lane" x="56" y="131">KYC EXCHANGE</text>
+  <rect class="utxo" x="207" y="114" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="247" y="114" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="287" y="114" width="26" height="26" rx="5"/>
+
+  <rect class="pen" x="40" y="175" width="320" height="64" rx="8"/>
+  <text class="mono lane" x="56" y="211">P2P TRADE</text>
+  <rect class="utxo" x="207" y="194" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="247" y="194" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="287" y="194" width="26" height="26" rx="5"/>
+
+  <rect class="pen" x="40" y="255" width="320" height="64" rx="8"/>
+  <text class="mono lane" x="56" y="291">MINING</text>
+  <rect class="utxo" x="207" y="274" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="247" y="274" width="26" height="26" rx="5"/>
+  <rect class="utxo" x="287" y="274" width="26" height="26" rx="5"/>
+
+  <text class="mono cap" x="200" y="352" text-anchor="middle" fill="#767C8A">HISTORIES STAY APART</text>
+
+  <line x1="395" y1="95" x2="395" y2="345" stroke="#1C2028" stroke-width="1"/>
+
+  <!-- one coin leaves each compartment -->
+  <path class="leak" d="M360,127 C398,127 398,124 436,124"/>
+  <path class="leak" d="M360,207 C398,207 398,184 436,184"/>
+  <path class="leak" d="M360,287 C398,287 398,244 436,244"/>
+
+  <!-- RIGHT: the merge transaction -->
+  <rect x="420" y="90" width="360" height="230" rx="10" fill="none" stroke="#C66A20" stroke-width="2"/>
+
+  <path class="merge" d="M536,124 C591,124 591,180 646,180"/>
+  <path class="merge" d="M536,184 C591,184 591,191 646,191"/>
+  <path class="merge" d="M536,244 C591,244 591,202 646,202"/>
+
+  <rect class="chip" x="436" y="110" width="100" height="28" rx="6"/>
+  <text class="mono amt" x="486" y="128" text-anchor="middle">0.05 &#183; KYC</text>
+  <rect class="chip" x="436" y="170" width="100" height="28" rx="6"/>
+  <text class="mono amt" x="486" y="188" text-anchor="middle">0.07 &#183; P2P</text>
+  <rect class="chip" x="436" y="230" width="100" height="28" rx="6"/>
+  <text class="mono amt" x="486" y="248" text-anchor="middle">0.03 &#183; MINE</text>
+
+  <rect class="out" x="646" y="164" width="110" height="52" rx="8"/>
+  <text class="mono amt-lit" x="701" y="187" text-anchor="middle">0.15</text>
+  <text class="mono tag" x="701" y="205" text-anchor="middle">ONE PAYMENT</text>
+
+  <text class="mono tag" x="600" y="302" text-anchor="middle">0.05 + 0.07 + 0.03 = 0.15 &#183; FEE OMITTED</text>
+
+  <text class="mono cap" x="600" y="352" text-anchor="middle" fill="#C66A20">HISTORIES LINKED</text>
+
+  <text class="mono note" x="40" y="392">SPENDING UTXOS TOGETHER PROVES ONE OWNER CONTROLS ALL OF THEM.</text>
+  <text class="mono note" x="40" y="410">CHAIN ANALYSTS CALL THIS THE COMMON-INPUT-OWNERSHIP HEURISTIC.</text>
+</svg>

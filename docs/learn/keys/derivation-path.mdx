@@ -12,11 +12,9 @@ import TabItem from '@theme/TabItem';
 
 A derivation path determines how your private keys are derived from your seed phrase and which addresses are generated from those keys.
 
-
 ## The BIP32 Standard
 
 The BIP32 (Bitcoin Improvement Proposal) standard defines how hierarchical deterministic (HD) wallets work. HD wallets use a tree-like structure where every branch can produce a new keypair (private and public key). This means you only need to back up the seed phrase, and the wallet can regenerate all keys and addresses from that phrase.
-
 
 ## Anatomy of a Derivation Path
 
@@ -35,6 +33,11 @@ Here’s what each part means:
 - `0` - The change type (0 for external addresses, 1 for internal addresses like change).
 - `0` - The address index. This is used to generate a new address each time.
 
+<div class="doc-diagram">
+
+![Anatomy of the derivation path m/44'/0'/0'/0/0: master seed, purpose, coin type where 0 means Bitcoin, account number, change flag where 0 is external and 1 is change, and the address index](/img/diagrams/keys/derivation-path-anatomy.svg)
+
+</div>
 
 ## Common Derivation Paths
 

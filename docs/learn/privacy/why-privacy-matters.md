@@ -16,26 +16,17 @@ Bitcoin's blockchain is completely public. Every transaction ever made is visibl
 
 The good news: privacy is possible. The first step is understanding what you're dealing with.
 
-
 ## The Transparency Problem
 
 When you make a Bitcoin transaction, more information is recorded than most people realize. The sending address, the receiving address, the exact amount, the precise time: all of it goes on a permanent public ledger that will exist as long as Bitcoin exists.
 
-```
-WHAT THE BLOCKCHAIN SHOWS:
-──────────────────────────────────────────────────────────
-Address A  ──→  1.5 BTC  ──→  Address B
-                0.3 BTC  ──→  Address C (change)
+<div class="doc-diagram">
 
-Anyone can see:
-• A sent 1.5 BTC to B
-• A received 0.3 BTC back as change
-• This happened at block 812,345
-• This data will exist forever
-```
+![A transaction from address A worth 1.80 BTC paying 1.50 BTC to B with 0.30 BTC change: the blockchain publishes both addresses, both amounts and the time at block 812,345, readable by anyone forever, with no names attached](/img/diagrams/privacy/blockchain-shows.svg)
+
+</div>
 
 Now, the blockchain doesn't contain names, only addresses. This is called **pseudonymity**. You're identified by a string of characters rather than your legal name. At first glance, this seems private enough. But here's the problem: pseudonymity is fragile. Once your identity connects to any address, the veil starts to unravel.
-
 
 ## From Pseudonymous to Identified
 
@@ -57,23 +48,13 @@ Think about how most people acquire Bitcoin. They sign up for an exchange, submi
 
 Once that first link exists, blockchain analysis can follow the trail. Your coins move from address to address, and each hop is publicly recorded.
 
-```
-YOUR PRIVACY LEAK:
-──────────────────────────────────────────────────────────
-Exchange knows:
-  "John Smith withdrew to address A"
-        ↓
-Blockchain shows:
-  Address A → Address B → Address C → Address D
-        ↓
-Analyst concludes:
-  "John Smith likely controls A, B, C, and D"
-  "John Smith has approximately X bitcoin"
-  "John Smith paid merchant M on this date"
-```
+<div class="doc-diagram">
+
+![A KYC exchange records that John Smith withdrew to address A; the public chain shows A paying B, then C, then D, so an analyst attributes all four addresses, the total balance and the merchant payments to John Smith](/img/diagrams/privacy/privacy-exposure.svg)
+
+</div>
 
 What started as "just one withdrawal" becomes a comprehensive financial profile.
-
 
 ## Why Should You Care?
 
@@ -103,7 +84,6 @@ Perhaps the most fundamental argument: financial privacy is a reasonable expecta
 
 You shouldn't have to justify every purchase. Your wealth shouldn't be visible to anyone curious enough to look. Your financial decisions are your own business. Privacy isn't about having something to hide; it's about having something to protect.
 
-
 ## Bitcoin Is Not Anonymous
 
 Let's address the elephant in the room. A common misconception persists: "Bitcoin is anonymous." This belief has led to catastrophic mistakes.
@@ -124,7 +104,6 @@ Bitcoin may actually be **less private** than traditional banking in some import
 
 This isn't an argument against Bitcoin. It's an argument for taking privacy seriously.
 
-
 ## The Surveillance Industry
 
 What started as academic research has become a multi-billion dollar industry. Chain analysis companies employ hundreds of specialists to study blockchain data, and they've gotten remarkably good at what they do.
@@ -144,7 +123,6 @@ These companies don't just look at the blockchain in isolation. They build compr
 - Cryptocurrency exchanges screening transactions
 
 To be clear: some of this activity is legitimate. Tracking ransomware payments and recovering stolen funds are valuable services. But the same tools that trace criminals can trace anyone, and the surveillance infrastructure, once built, doesn't distinguish between legitimate privacy and criminal evasion.
-
 
 ## The Good News
 

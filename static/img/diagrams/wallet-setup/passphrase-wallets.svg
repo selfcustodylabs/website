@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 410" width="800" height="410" role="img" aria-label="A passphrase splits one seed into two wallets: the 24 words alone derive the decoy wallet at one address, and the words plus your passphrase derive your real wallet at a different address; the passphrase is part of the backup.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="409" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ONE SEED, TWO WALLETS</text>
+  <rect class="box" x="40" y="150" width="200" height="52" rx="6"/>
+  <text class="mono amt" x="140" y="172" text-anchor="middle">YOUR 24 WORDS</text>
+  <text class="mono tag" x="140" y="191" text-anchor="middle">THE SEED PHRASE</text>
+  <path class="wire" d="M240,162 C355,162 355,110 470,110"/>
+  <rect class="box" x="470" y="88" width="250" height="48" rx="6"/>
+  <text class="mono amt" x="595" y="108" text-anchor="middle">BC1Q111...XXX</text>
+  <text class="mono tag" x="595" y="126" text-anchor="middle">SEED ALONE &#183; DECOY WALLET</text>
+  <path class="flow" d="M240,190 C355,190 355,250 470,250"/>
+  <rect class="box-lit" x="300" y="226" width="130" height="34" rx="6"/>
+  <text class="mono amt-lit" x="365" y="248" text-anchor="middle">+ PASSPHRASE</text>
+  <rect class="box-lit" x="470" y="226" width="250" height="48" rx="6"/>
+  <text class="mono amt-lit" x="595" y="246" text-anchor="middle">BC1Q222...YYY</text>
+  <text class="mono tag" x="595" y="264" text-anchor="middle">YOUR REAL WALLET</text>
+  <text class="mono cap" x="40" y="330" fill="#F59E0B">THE PASSPHRASE IS PART OF THE BACKUP &#183; WORDS ALONE OPEN THE WRONG WALLET</text>
+  <text class="mono note" x="40" y="380">CAPITALIZATION, SPACES AND SIMILAR CHARACTERS ALL MATTER &#183; VERIFY BOTH DERIVATIONS</text>
+</svg>

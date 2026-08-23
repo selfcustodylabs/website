@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-label="The key hierarchy: entropy becomes a 24-word BIP39 seed phrase, which derives the master private key, which the derivation path expands into unlimited child keys and addresses; the seed at the root restores everything.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="559" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">THE KEY HIERARCHY &#183; EVERYTHING GROWS FROM THE SEED</text>
+  <rect class="box" x="120" y="74" width="280" height="44" rx="6"/>
+  <text class="mono amt" x="260" y="101" text-anchor="middle">ENTROPY</text>
+  <text class="mono tag" x="430" y="101">A LARGE RANDOM NUMBER</text>
+  <path class="flow" d="M260,120 L260,146"/>
+  <path d="M260,146 L255.9,139 M260,146 L264.1,139" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="120" y="150" width="280" height="44" rx="6"/>
+  <text class="mono amt-lit" x="260" y="177" text-anchor="middle">SEED PHRASE &#183; BIP39</text>
+  <text class="mono tag" x="430" y="177">24 WORDS YOU WRITE DOWN &#183; THE ROOT</text>
+  <path class="flow" d="M260,196 L260,222"/>
+  <path d="M260,222 L255.9,215 M260,222 L264.1,215" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="120" y="226" width="280" height="44" rx="6"/>
+  <text class="mono amt" x="260" y="253" text-anchor="middle">MASTER KEY &#183; XPRV</text>
+  <text class="mono tag" x="430" y="253">ONE KEY THAT CONTROLS EVERYTHING BELOW</text>
+  <path class="flow" d="M260,272 L260,298"/>
+  <path d="M260,298 L255.9,291 M260,298 L264.1,291" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="120" y="302" width="280" height="44" rx="6"/>
+  <text class="mono amt" x="260" y="329" text-anchor="middle">DERIVATION PATH</text>
+  <text class="mono tag" x="430" y="329">M/84'/0'/0'/0/0 &#183; THE RULEBOOK</text>
+  <path class="flow" d="M260,348 L260,374"/>
+  <path d="M260,374 L255.9,367 M260,374 L264.1,367" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="120" y="378" width="280" height="44" rx="6"/>
+  <text class="mono amt" x="260" y="405" text-anchor="middle">CHILD KEYS</text>
+  <text class="mono tag" x="430" y="405">ONE PER ADDRESS, UNLIMITED</text>
+  <path class="flow" d="M260,424 L260,450"/>
+  <path d="M260,450 L255.9,443 M260,450 L264.1,443" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="120" y="454" width="280" height="44" rx="6"/>
+  <text class="mono amt" x="260" y="481" text-anchor="middle">ADDRESSES</text>
+  <text class="mono tag" x="430" y="481">BC1Q... &#183; WHERE COINS ARRIVE</text>
+  <text class="mono note" x="40" y="538">ONE SEED RESTORES THE WHOLE TREE IN ANY COMPATIBLE WALLET &#183; LOSE IT AND ALL OF THIS IS GONE</text>
+</svg>
