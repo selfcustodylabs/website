@@ -10,6 +10,7 @@ export { default as AuthorByline } from "./AuthorByline";
 export { default as Card } from "./Card";
 export { default as DifficultyTag } from "./DifficultyTag";
 export { default as CategorySection } from "./CategorySection";
+export { default as ScrollProgress } from "./ScrollProgress";
 
 // Custom icons (not available in Material UI)
 export { ClubOrangeIcon, KeybaseIcon, NostrIcon } from "./icons";
