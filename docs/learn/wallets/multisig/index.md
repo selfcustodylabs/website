@@ -9,9 +9,9 @@ slug: /learn/wallets/multisig
 
 # Multisig: Multi-Signature Wallets
 
-A standard Bitcoin wallet has a single point of failure: one seed phrase controls everything. If it's stolen, your bitcoin is gone. If it's lost, your bitcoin is gone.
+A **multisig** (multi-signature) wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. The usual choice for an individual is 2-of-3, where any two of three keys can move the funds, so losing one key does not lose your bitcoin and stealing one key does not steal it.
 
-**Multisig** (multi-signature) eliminates this vulnerability by requiring multiple keys to spend bitcoin.
+A standard Bitcoin wallet has a single point of failure instead: one seed phrase controls everything. If it's stolen, your bitcoin is gone. If it's lost, your bitcoin is gone. Multisig eliminates that vulnerability by distributing control across several keys.
 
 
 ## What is Multisig?

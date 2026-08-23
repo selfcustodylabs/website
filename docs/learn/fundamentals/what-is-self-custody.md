@@ -9,11 +9,13 @@ slug: /learn/fundamentals/what-is-self-custody
 
 # What is Bitcoin Self-Custody?
 
+Bitcoin self-custody means holding the private keys to your own bitcoin yourself, so that no bank, exchange, or company can freeze it, block a payment, or lose it on your behalf. If you hold the keys, you hold the coins. If someone else holds the keys, what you hold is a promise.
+
 By the end of this page you'll understand what self-custody really means, why the phrase "not your keys, not your coins" is a literal description rather than a slogan, and how to start thinking about which approach fits your situation.
 
 Most people who say they "own" Bitcoin don't actually control it. They have a balance on an exchange's website, which is a number on someone else's computer that they can see for as long as that company chooses to honor the promise behind it. The moment the company decides otherwise, or gets hacked, or goes under, the number on the screen turns into a line in a bankruptcy filing.
 
-Self-custody means something different. It means you are in full control of your bitcoin, with no bank, no exchange, and no company standing between you and your money. The mechanism that makes this possible is something called a private key, and when you hold that key yourself, you hold the coins themselves.
+Self-custody is the alternative. You are in full control of your bitcoin, with no bank, no exchange, and no company standing between you and your money. The mechanism that makes this possible is something called a private key, and when you hold that key yourself, you hold the coins themselves.
 
 The contrast with traditional money is worth stating plainly, because it's the thing that makes self-custody feel unfamiliar at first. With a bank account, your money is legally controlled by the bank, which means they can freeze it, delay a transfer, block a payment, or comply with a court order, all without asking you first. With self-custodied Bitcoin none of that is possible, because there is nobody in the middle to ask. Your coins answer to you and only you, which is what people mean when they use the phrase "financial sovereignty". It's not a philosophy. It's a practical reality that millions of people rely on every day.
 

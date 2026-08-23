@@ -11,7 +11,7 @@ slug: /reference/glossary
 
 # Bitcoin Glossary
 
-A comprehensive reference for Bitcoin and self-custody terminology. Click any term to jump to its definition.
+Plain-language definitions of the Bitcoin and self-custody terms used across this site, from address types and air-gapping through to UTXOs, xpubs, and derivation paths. Over 100 entries, listed alphabetically.
 
 ---
 

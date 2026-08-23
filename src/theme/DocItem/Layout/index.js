@@ -50,6 +50,63 @@ function deriveBreadcrumbSchema(sidebarBreadcrumbs) {
   };
 }
 
+/**
+ * Convert Docusaurus's last-updated stamp to an ISO 8601 date.
+ *
+ * `lastUpdatedAt` is milliseconds in Docusaurus 3, and it comes from git, so it
+ * is only correct in a production build: the dev server leaves a placeholder
+ * behind in .docusaurus. Anything that does not land in a plausible year is
+ * dropped rather than published, since a wrong date is worse than no date.
+ *
+ * @param {number|undefined} timestamp - milliseconds since epoch
+ * @returns {string|null} ISO 8601 string, or null if unusable
+ */
+function toIsoDate(timestamp) {
+  if (typeof timestamp !== "number" || !Number.isFinite(timestamp)) return null;
+  const date = new Date(timestamp);
+  const year = date.getUTCFullYear();
+  if (year < 2020 || year > 2100) return null;
+  return date.toISOString();
+}
+
+/**
+ * Add the fields every Article shares, whichever generator produced it.
+ *
+ * Freshness is a primary input to how AI assistants rank sources, and this site
+ * covers a fast-moving subject: an answer about the 2026 Coldcard entropy
+ * incident should be able to tell how recently the page was revised.
+ *
+ * `datePublished` is only emitted when a doc declares a `date` in frontmatter.
+ * Docusaurus exposes no creation date, and claiming last-modified as the
+ * publication date would be a fabricated fact in structured data.
+ *
+ * @param {Object|null} schema - Article schema from either generator
+ * @param {Object} metadata - doc metadata from useDoc()
+ * @returns {Object|null} enriched schema
+ */
+function enrichArticleSchema(schema, metadata) {
+  if (!schema) return null;
+
+  const enriched = {
+    ...schema,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+  };
+
+  const modified = toIsoDate(metadata?.lastUpdatedAt);
+  if (modified) enriched.dateModified = modified;
+
+  const published = metadata?.frontMatter?.date;
+  if (published) enriched.datePublished = new Date(published).toISOString();
+
+  const keywords = metadata?.frontMatter?.keywords;
+  if (Array.isArray(keywords) && keywords.length > 0) {
+    enriched.keywords = keywords.join(", ");
+  }
+
+  return enriched;
+}
+
 function deriveArticleSchema(metadata, path) {
   if (!metadata?.title || !metadata?.description) return null;
   return {
@@ -75,8 +132,10 @@ export default function DocItemLayoutWrapper(props) {
   const howToSchema = generateHowToSchema(path);
   const breadcrumbSchema =
     generateBreadcrumbSchema(path) ?? deriveBreadcrumbSchema(sidebarBreadcrumbs);
-  const articleSchema =
-    generateArticleSchema(path) ?? deriveArticleSchema(metadata, path);
+  const articleSchema = enrichArticleSchema(
+    generateArticleSchema(path) ?? deriveArticleSchema(metadata, path),
+    metadata,
+  );
   const faqSchema = generateFAQSchema(path);
   const itemListSchema = generateItemListSchema(path);
   const ogImagePath = ogManifest[path];

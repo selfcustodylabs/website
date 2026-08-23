@@ -128,6 +128,110 @@ export const faqSchemas = {
       },
     ],
   },
+
+  // The four pages below carry no FAQ section on the page itself; these pairs
+  // exist because a question-and-answer is the most directly retrievable shape
+  // there is, and these are the queries assistants actually get asked about
+  // this site's subject matter. Answers must stay in sync with the page.
+  "/docs/reference/hardware-wallet-comparison/": {
+    questions: [
+      {
+        question: "What is the best Bitcoin hardware wallet in 2026?",
+        answer:
+          "There is no single best device, and after the 2026 Coldcard entropy incident the practices matter more than the hardware. For beginners the Trezor Safe 5 ($169) or BitBox02 Nova (~$185) are the easiest to use safely. For verifiable security on a budget, the Blockstream Jade Plus ($149) offers QR air-gapping. SeedSigner is our favourite for people comfortable building their own device, though it is explicitly not for beginners. Whichever you pick, supply your own dice entropy at seed creation, add a passphrase, and use multisig across vendors for significant holdings.",
+      },
+      {
+        question: "Is Coldcard still safe to use in 2026?",
+        answer:
+          "Self Custody Labs does not currently recommend Coldcard. A build-system error meant Coldcards generated seeds with a software pseudo-random generator instead of the hardware TRNG between March 2021 and July 2026, and roughly 1,816 BTC was drained from more than 5,200 addresses. Coinkite shipped fixes quickly once draining began, but it had dismissed a developer's warning about the same code in May 2025. Devices are safe to use with an externally generated or dice-generated seed, but we point new buyers elsewhere.",
+      },
+      {
+        question: "Do I need a secure element in a hardware wallet?",
+        answer:
+          "Not necessarily. A secure element resists physical extraction of your seed if someone steals the device, which matters if physical theft is in your threat model. Devices without one, such as the Blockstream Jade Plus, use a blind oracle design instead and are fully open source and verifiable. The 2026 Coldcard incident is the reminder that a secure element does not help if the seed was weak to begin with.",
+      },
+      {
+        question: "Should I use dice to generate my Bitcoin seed phrase?",
+        answer:
+          "Yes, for any holding you would be upset to lose. Every current hardware wallet supports mixing in your own dice rolls at seed creation. Coldcard owners who used dice entropy lost nothing in the 2026 incident, while owners who trusted the device default lost everything. Dice entropy removes your dependence on the vendor's random number generator being correct.",
+      },
+    ],
+  },
+
+  "/docs/learn/wallets/coldcard-entropy-incident/": {
+    questions: [
+      {
+        question: "What was the 2026 Coldcard entropy incident?",
+        answer:
+          "From firmware v4.0.1 in March 2021, a linker error made Coldcard devices generate seed phrases using Yasmarang, a software pseudo-random generator meant as a fallback, instead of the hardware true random number generator. The generator was seeded from almost nothing: a chip ID recoverable from the USB serial number, a millisecond counter, and a clock register that read zero on Mk2 and Mk3 devices. Attackers began draining wallets on 30 July 2026, taking roughly 1,816 BTC (about $116M) from more than 5,200 addresses. The bug was undetected for 1,978 days.",
+      },
+      {
+        question: "Is my Coldcard wallet affected by the entropy bug?",
+        answer:
+          "It depends on how and when the seed was created, not on the firmware running today. At critical risk: seeds generated on-device on Mk2 or Mk3 with firmware 4.0.1 to 4.1.9. At risk: seeds generated on-device on Mk4 or Mk5 before 5.6.0, or Q before 1.5.0Q. Not affected: seeds generated with 50 or more dice rolls, seeds imported from elsewhere, seeds generated before March 2021, seeds generated on fixed firmware, and TAPSIGNER, SATSCARD or OPENDIME devices.",
+      },
+      {
+        question: "Does a BIP39 passphrase protect me from the Coldcard bug?",
+        answer:
+          "It helped but it is not a pass. Wallets with a strong, unique passphrase were not drained, because the attacker would have to brute-force the passphrase on top of the recovered seed. That barrier visibly saved people. Your foundation is still a weak seed, so migrate to a newly generated one anyway. The passphrase bought time, not safety.",
+      },
+      {
+        question: "Were Coldcard signatures affected, or only seed generation?",
+        answer:
+          "Only seed generation. Coldcard uses deterministic nonces per RFC 6979 when signing, so transactions signed by an affected device leaked nothing about the private key. The flaw lived entirely in the path that created the seed.",
+      },
+    ],
+  },
+
+  "/docs/learn/privacy/coinjoin/": {
+    questions: [
+      {
+        question: "What is a Bitcoin CoinJoin?",
+        answer:
+          "A CoinJoin is a single Bitcoin transaction in which several users combine their inputs and each receives an equal-sized output, so an outside observer cannot match inputs to outputs. Think of ten people each dropping an identical note into a hat, shaking it, and each taking one back out: everyone leaves with what they put in, but nobody watching can say which note went to whom.",
+      },
+      {
+        question: "Does Whirlpool still work in 2026?",
+        answer:
+          "The original Whirlpool is dead and a revival exists under new management. US authorities seized Samourai Wallet's coordinator in April 2024 and every Whirlpool client stopped mixing the same day; Sparrow Wallet removed its integration shortly after. In June 2025 Ashigaru, an open-source fork run by anonymous maintainers, launched an independent Whirlpool coordinator reachable over Tor. Self Custody Labs covers it but does not recommend it, because it reintroduces the coordinator risk that caused the original failure.",
+      },
+      {
+        question: "Which CoinJoin implementation should I use in 2026?",
+        answer:
+          "Self Custody Labs recommends JoinMarket NG with the Jam web interface. JoinMarket NG has no coordinator at all: it is a peer-to-peer market where takers pay a fee to mix on demand and makers earn those fees, so there is nothing to seize and nobody to subpoena. Jam turns what used to be a command-line tool into a point-and-click app that ships on most node-in-a-box platforms. It requires your own Bitcoin node, and per-round anonymity sets are typically 4 to 20 participants, so plan on several rounds.",
+      },
+      {
+        question: "Is CoinJoin legal?",
+        answer:
+          "CoinJoin is a privacy technique, not an offence in itself, and financial privacy is a normal expectation in every other part of life. That said, the 2024 to 2026 period saw operators of custodial and coordinated mixing services prosecuted in the United States, and some exchanges flag deposits with CoinJoin history. Understand your own jurisdiction and the policies of any exchange you use before mixing.",
+      },
+    ],
+  },
+
+  "/docs/learn/wallets/multisig/": {
+    questions: [
+      {
+        question: "What is a Bitcoin multisig wallet?",
+        answer:
+          "A multisig wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. A 2-of-3 wallet has three keys and any two can authorise a spend, so losing one key does not lose the funds and stealing one key does not steal them. Each key normally lives on a separate hardware wallet in a separate location.",
+      },
+      {
+        question: "Do I need multisig for my Bitcoin?",
+        answer:
+          "Not for everything. Multisig suits significant holdings you would be devastated to lose, long-term vault storage, business funds needing multiple approvals, and inheritance planning, and it assumes you have several secure storage locations. It is unnecessary for amounts under roughly $10,000, for daily spending funds, and for anyone still learning basic self-custody, where the added complexity is itself a risk of loss.",
+      },
+      {
+        question: "What multisig configuration should I use?",
+        answer:
+          "2-of-3 is the most popular choice for individual self-custody: it tolerates the loss of any single key while requiring an attacker to compromise two. 3-of-5 suits high-value holdings and organizations. 2-of-2 gives shared control with no fault tolerance, so a single lost key is fatal. Use hardware wallets from different manufacturers so no single vendor's mistake can reach your funds.",
+      },
+      {
+        question: "Does multisig protect against a hardware wallet vulnerability?",
+        answer:
+          "Yes, and the 2026 Coldcard entropy incident demonstrated it. Where one key in a 2-of-3 quorum was a weak Coldcard seed, the attacker still could not spend, because they needed a second signature. This is precisely the failure mode multisig exists for. The weak key should still be replaced, but the funds were never at risk.",
+      },
+    ],
+  },
 };
 
 /**
