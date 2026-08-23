@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="Anatomy of a transaction: a 0.01 BTC input becomes 0.008 BTC to a friend and 0.0019 BTC change to a new address you control; the missing 0.0001 BTC is the fee, which is just the difference between inputs and outputs.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; fill: #767C8A; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .dash    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 5 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="399" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ANATOMY OF A TRANSACTION</text>
+
+  <text class="mono head" x="60" y="82">INPUT</text>
+  <text class="mono head" x="540" y="82">OUTPUTS</text>
+
+  <path class="flow" d="M250,190 C395,190 395,130 540,130"/>
+  <path class="flow" d="M250,190 C395,190 395,212 540,212"/>
+  <path class="dash" d="M250,190 C395,190 395,294 540,294"/>
+
+  <rect class="box-lit" x="60" y="170" width="190" height="40" rx="8"/>
+  <text class="mono amt-lit" x="155" y="195" text-anchor="middle">0.01 &#183; YOUR UTXO</text>
+
+  <rect class="box" x="540" y="114" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="615" y="135" text-anchor="middle">0.008</text>
+  <text class="mono tag" x="702" y="135">TO FRIEND</text>
+
+  <rect class="box" x="540" y="196" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="615" y="217" text-anchor="middle">0.0019</text>
+  <text class="mono tag" x="702" y="211">CHANGE &#183;</text>
+  <text class="mono tag" x="702" y="225">NEW ADDR</text>
+
+  <rect class="dash" x="540" y="278" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="615" y="299" text-anchor="middle">0.0001</text>
+  <text class="mono tag" x="702" y="299">FEE</text>
+
+  <text class="mono tag" x="40" y="334">THE FEE HAS NO OUTPUT LINE &#183; IT IS SIMPLY WHAT THE OUTPUTS LEAVE BEHIND</text>
+
+  <text class="mono note" x="40" y="376">INPUTS &#8722; OUTPUTS = FEE &#183; 0.01 &#8722; (0.008 + 0.0019) = 0.0001 &#183; THE MINER KEEPS IT</text>
+</svg>

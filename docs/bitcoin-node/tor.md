@@ -10,7 +10,6 @@ tags: ["bitcoin node", "tor", "privacy", "self custody"]
 
 Your Bitcoin node talks to the world in two ways: it connects to other Bitcoin nodes to stay synchronized, and it serves your wallet's queries. Both of these connections have privacy implications, and Tor can help with both.
 
-
 ## Why Tor Matters for Nodes
 
 ### Your IP Address is Your Identity
@@ -29,27 +28,11 @@ Running your node over Tor hides your IP address from the Bitcoin network. Other
 
 Tor serves two distinct purposes for your node:
 
-```
-TOR USE CASES
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-1. NODE-TO-NODE (Privacy)
-   
-   Your Node ──► Tor Network ──► Other Bitcoin Nodes
-   
-   Hides your IP from the Bitcoin network.
-   Other nodes can't see where you're located.
+![Tor serves two jobs for a node: routing node-to-network traffic so other Bitcoin nodes never see your IP or location, and carrying wallet-to-node connections to your onion address so you can reach home from anywhere without port forwarding](/img/diagrams/bitcoin-node/tor-use-cases.svg)
 
-2. WALLET-TO-NODE (Remote Access)
-   
-   Your Wallet ──► Tor Network ──► Your Node's Onion Address
-   
-   Enables access from anywhere in the world.
-   No port forwarding or VPN needed.
-
-─────────────────────────────────────────────────────────────
-```
-
+</div>
 
 ## Connection 1: Node to Bitcoin Network
 
@@ -76,7 +59,6 @@ onlynet=onion
 
 These settings tell Bitcoin Core to route all connections through Tor and only connect to other Tor-enabled nodes.
 
-
 ## Connection 2: Your Wallet to Your Node
 
 This is about **remote access**. When you're home, your wallet connects to your node over your local network (completely private, no Tor needed). But what happens when you're away from home?
@@ -95,30 +77,13 @@ Your node has an internal IP address (like `192.168.1.100`) that only exists on 
 
 Your node creates a Tor hidden service, an `.onion` address that routes through the Tor network to reach your node. Your wallet connects to this onion address from anywhere:
 
-```
-Remote Access via Tor
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-You (traveling)              Home Network
-      │                           │
-      │                    ┌──────┴──────┐
-      │                    │  Your Node   │
-      │                    │  (electrum   │
-      ▼                    │   server)    │
-┌───────────┐              └──────▲───────┘
-│  Wallet   │                     │
-│ (phone or │                     │
-│  laptop)  │                     │
-└─────┬─────┘              Tor Hidden Service
-      │                    abc123xyz.onion
-      │                           ▲
-      └──────► Tor Network ───────┘
+![Remote access over Tor: a wallet on a traveling phone connects through the Tor network to the hidden service onion address of your node at home; no open ports, no exposed IP and no VPN needed](/img/diagrams/bitcoin-node/tor-remote-access.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The connection is encrypted, your home IP is never exposed, and no port forwarding is required.
-
 
 ## Setting Up Tor
 
@@ -136,20 +101,17 @@ TOR:  abc123...xyz.onion:50001
 
 Enter this address in your wallet's server settings to connect from anywhere.
 
-
 ## Sharing Your Node
 
 One benefit of Tor access: you can share your node with friends and family. Give them your Electrum server's onion address, and they can connect their wallets to your node from anywhere in the world.
 
 **A word of caution:** Each connected wallet adds load to your node. A Raspberry Pi can handle a few simultaneous connections, but don't share your address publicly unless you have robust hardware.
 
-
 ## Privacy Tradeoffs
 
 Running over Tor adds latency. Connections are slower because traffic routes through multiple relays. For most node operations, this is acceptable. For time-sensitive applications (like running a routing Lightning node), the latency might matter.
 
 You can also run in "hybrid" mode, connecting to both Tor and clearnet peers. This improves connectivity but reduces privacy, as clearnet connections expose your IP.
-
 
 ## Key Takeaways
 

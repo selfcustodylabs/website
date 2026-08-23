@@ -14,7 +14,6 @@ A hardware wallet is a dedicated physical device designed specifically to protec
 
 This isn't security theater. It's a fundamental architectural difference that eliminates entire categories of attacks. But 2026 added an asterisk the industry can no longer ignore: a hardware wallet protects whatever key it holds, but it cannot prove to you that the key was born unpredictable. The [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) made that distinction worth $116 million. Let's understand why hardware wallets exist, how they work, where their guarantees actually end, and how to choose the right one for your situation.
 
-
 ## Why Hardware Wallets Exist
 
 Think about your computer or phone for a moment. How many apps are installed? How many websites have you visited? How many email attachments have you opened? Each of those interactions is a potential entry point for malicious software.
@@ -23,17 +22,11 @@ General-purpose devices are designed to do everything, which means they're optim
 
 A hardware wallet takes the opposite approach. It does **one job only**: protect your keys and sign transactions securely. No web browser. No email client. No app store. No attack surface.
 
-```
-THE SECURITY DIFFERENCE:
-─────────────────────────────────────────────────────────
-Software Wallet                 Hardware Wallet
-───────────────                 ───────────────
-Keys on computer/phone          Keys on dedicated device
-Connected to internet           Never touches internet
-Vulnerable to malware           Isolated from attacks
-Signs on same device            Signs in secure enclave
-```
+<div class="doc-diagram">
 
+![The security difference: a software wallet keeps keys on an online device shared with a browser and possible malware, while a hardware wallet keeps keys on a dedicated offline chip that signs in isolation and does exactly one job](/img/diagrams/wallets/hot-vs-cold.svg)
+
+</div>
 
 ## How Hardware Wallets Work
 
@@ -43,27 +36,15 @@ When you want to send Bitcoin, here's what actually happens. Your computer (runn
 
 This is the critical moment. You look at the hardware wallet's screen (not your computer's screen) and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature, never the key itself.
 
-```
-TRANSACTION SIGNING FLOW:
-─────────────────────────────────────────────────────────
-Your Computer                    Hardware Wallet
-─────────────                    ───────────────
-1. Create unsigned        ───►   
-   transaction                   2. Display on screen:
-                                    "Send 0.1 BTC to bc1q...?"
-                                 3. You verify and press button
-                                 4. Device signs internally
-                          ◄───   5. Return ONLY the signature
-6. Broadcast signed                 (private key stays inside)
-   transaction
+<div class="doc-diagram">
 
-Result: Your key was used but never exposed.
-```
+![Hardware wallet signing: the computer builds an unsigned transaction, the device shows the recipient and amount on its own screen, you verify and press the button, it signs internally and returns only the signature for broadcast; the private key never leaves](/img/diagrams/wallets/hw-signing-flow.svg)
+
+</div>
 
 Here's why this matters: even if your computer is completely compromised (keyloggers recording everything, malware watching your screen, attackers with full access), they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
 
 The hardware wallet is your last line of defense, and it's a strong one.
-
 
 ## The Randomness Problem
 
@@ -79,7 +60,6 @@ Two habits close this gap:
 - **Verify what the device did with it.** A buggy or malicious device could ignore your rolls. Re-deriving the seed from the same rolls on an independent device (or by hand) and comparing the words catches that; it's covered at the end of the dice guide.
 
 Add a [passphrase](/docs/learn/keys/passphrase/) on top and your funds no longer depend on any single secret being perfect. In July 2026, that layering was precisely the line between drained and untouched.
-
 
 ## Types of Hardware Wallets
 
@@ -105,7 +85,6 @@ Be precise about what that isolation buys you, though. An air gap stops malware 
 
 For most people, standard hardware wallets provide excellent security. Air-gapped devices are for those who want to eliminate every possible attack vector. Just don't mistake the air gap for a guarantee about entropy.
 
-
 ## Comparing Popular Hardware Wallets
 
 The hardware wallet market has matured significantly and been stress-tested. Here's the August 2026 lineup at a glance (full details, including why some entries carry warnings, in the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/)):
@@ -127,7 +106,6 @@ The hardware wallet market has matured significantly and been stress-tested. Her
 </div>
 
 *Jade uses a "virtual secure element": a blind oracle server (Blockstream's or self-hosted) rate-limits PIN attempts instead of a dedicated chip.
-
 
 ## Key Features Explained
 
@@ -165,7 +143,6 @@ Can you mix your own randomness, typically dice rolls, into seed generation, so 
 
 The feature has one blind spot: you can't see whether the device honestly used your rolls. The fix is cheap: re-derive the seed from the same rolls independently and compare words. Our [dice guide](/docs/learn/keys/random/) covers both the full manual process and this cross-check.
 
-
 ## Choosing Your Hardware Wallet
 
 With so many options, analysis paralysis is real. Here's how to cut through the noise based on what actually matters to different types of users.
@@ -198,7 +175,6 @@ If verifiability matters more to you than any single feature, the Safe 7 is the 
 
 If you primarily use your phone for Bitcoin, Keystone's QR code approach works beautifully with mobile wallets: no cables, no adapters, just point and scan, and the air gap holds the whole time. BitBox02 Nova's Bluetooth support is the convenient wired-free alternative if you're an iPhone user who prefers a pocketable device.
 
-
 ## Security Best Practices
 
 A hardware wallet is only as secure as how you use it. These practices separate "pretty safe" from "actually safe."
@@ -225,7 +201,6 @@ The things to avoid are equally important:
 
 **Never store your device with your seed backup.** Redundancy is the point. If fire destroys your home, you want either the device or the backup to survive, ideally in different locations.
 
-
 ## Hardware Wallet vs. Other Methods
 
 Where do hardware wallets fit in the broader self-custody landscape? Here's an honest comparison:
@@ -243,7 +218,6 @@ Where do hardware wallets fit in the broader self-custody landscape? Here's an h
 </div>
 
 For most people serious about self-custody, **a hardware wallet hits the sweet spot**. It's dramatically more secure than software wallets, far more practical than air-gapped computers, and doesn't require the complexity of multisig. You get 90% of the security with 30% of the hassle.
-
 
 ## Common Misconceptions
 
@@ -277,7 +251,6 @@ Architecture matters. Firmware transparency matters. And here is 2026's addition
 
 Do your research. Read independent reviews. Check if security researchers have examined the device. The price difference between options is trivial compared to what you're protecting.
 
-
 ## When to Consider Multisig Instead
 
 A single hardware wallet, properly used, is excellent security. But it's still a single point of failure. If your device is compromised, your seed backup is stolen, or you're physically coerced, a single-signature setup can't protect you.
@@ -290,7 +263,6 @@ A single hardware wallet, properly used, is excellent security. But it's still a
 - **You're planning for inheritance**: multisig makes it possible for heirs to access funds without giving any single person full control
 
 Multisig is more complex to set up and use, but for substantial holdings you plan to keep long-term, that complexity buys meaningful peace of mind.
-
 
 ---
 

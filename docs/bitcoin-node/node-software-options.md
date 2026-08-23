@@ -10,25 +10,19 @@ tags: ["bitcoin node", "setup", "comparison"]
 
 There's no single "best" way to run a Bitcoin node. Different solutions optimize for different things: ease of use, learning opportunity, feature richness, or maximum control. Here's how to think about your options.
 
-
 ## The Spectrum of Control
 
 Node software exists on a spectrum from "just works" to "build everything yourself":
 
-```
-MORE GUIDED                                    MORE CONTROL
-─────────────────────────────────────────────────────────────
-   Umbrel    Start9    Parmanode    RaspiBlitz    Raspibolt
-   
-   Pretty      App     Terminal      Scripts      Manual
-   web UI     store    wizard        & menus      setup
-─────────────────────────────────────────────────────────────
-```
+<div class="doc-diagram">
+
+![Node software on a spectrum from guided to manual: Umbrel's web UI, Start9's app store, Parmanode's terminal wizard, RaspiBlitz's scripts and Raspibolt's fully manual setup; these guides use Parmanode, in the middle](/img/diagrams/bitcoin-node/software-spectrum.svg)
+
+</div>
 
 **Left side:** Easy to start, but when something breaks, you may not understand why.
 
 **Right side:** Steeper learning curve, but you understand your system deeply.
-
 
 ## Quick Comparison
 
@@ -43,7 +37,6 @@ MORE GUIDED                                    MORE CONTROL
 | **Raspibolt** | Hard | Maximum | Maximum | Deep learners |
 
 </div>
-
 
 ## Option 1: Parmanode (Recommended)
 
@@ -64,7 +57,6 @@ Parmanode is our recommended approach because it strikes the ideal balance. You'
 
 → **[Parmanode Setup Guide](/docs/bitcoin-node/parmanode-setup)**
 
-
 ## Option 2: Umbrel
 
 **Best for:** Non-technical users who just want a working node
@@ -83,7 +75,6 @@ Umbrel provides a beautiful web interface and an "app store" for installing Bitc
 - When things break, you may feel helpless
 
 → [Umbrel Website](https://umbrel.com)
-
 
 ## Option 3: Start9
 
@@ -104,7 +95,6 @@ Start9 goes beyond Bitcoin: it's trying to build a "personal server" for all you
 
 → [Start9 Website](https://start9.com)
 
-
 ## Option 4: RaspiBlitz
 
 **Best for:** Lightning Network enthusiasts
@@ -123,7 +113,6 @@ RaspiBlitz started as a Lightning-focused node and has grown from there. It's fe
 - Primarily Raspberry Pi focused
 
 → [RaspiBlitz Documentation](https://docs.raspiblitz.org)
-
 
 ## Option 5: DIY (Raspibolt/Minibolt)
 
@@ -144,7 +133,6 @@ Raspibolt and Minibolt are step-by-step guides to building a node from scratch. 
 
 → [Raspibolt Guide](https://raspibolt.org) (Raspberry Pi)  
 → [Minibolt Guide](https://minibolt.minibolt.info) (PC/Laptop)
-
 
 ## Decision Framework
 
@@ -175,7 +163,6 @@ Raspibolt and Minibolt are step-by-step guides to building a node from scratch. 
 - You want to understand every component
 - You enjoy technical challenges
 
-
 ## Hardware Considerations
 
 Most node software works on similar hardware:
@@ -194,7 +181,6 @@ Most node software works on similar hardware:
 :::warning SSD Required
 All node software requires an SSD. Traditional hard drives are too slow for the Bitcoin blockchain. Don't try to save money here: you'll waste days of sync time and have ongoing performance issues.
 :::
-
 
 ## Our Recommendation
 

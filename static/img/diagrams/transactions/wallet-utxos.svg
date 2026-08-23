@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" width="800" height="370" role="img" aria-label="A wallet showing a 0.088 BTC balance actually holds five separate UTXOs of 0.05, 0.02, 0.01, 0.005 and 0.003 BTC, each locked to its own address with its own history, and each spent whole or not at all.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="369" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ONE BALANCE, FIVE SEPARATE COINS</text>
+  <rect class="dashd" x="40" y="80" width="720" height="210" rx="10" fill="none"/>
+  <text class="mono tag" x="56" y="106">YOUR WALLET</text>
+  <rect class="box" x="66" y="126" width="120" height="56" rx="6"/>
+  <text class="mono amt" x="126" y="150" text-anchor="middle">0.05</text>
+  <text class="mono tag" x="126" y="170" text-anchor="middle">ADDR A</text>
+  <rect class="box" x="206" y="126" width="120" height="56" rx="6"/>
+  <text class="mono amt" x="266" y="150" text-anchor="middle">0.02</text>
+  <text class="mono tag" x="266" y="170" text-anchor="middle">ADDR B</text>
+  <rect class="box" x="346" y="126" width="120" height="56" rx="6"/>
+  <text class="mono amt" x="406" y="150" text-anchor="middle">0.01</text>
+  <text class="mono tag" x="406" y="170" text-anchor="middle">ADDR C</text>
+  <rect class="box" x="486" y="126" width="120" height="56" rx="6"/>
+  <text class="mono amt" x="546" y="150" text-anchor="middle">0.005</text>
+  <text class="mono tag" x="546" y="170" text-anchor="middle">ADDR D</text>
+  <rect class="box" x="626" y="126" width="120" height="56" rx="6"/>
+  <text class="mono amt" x="686" y="150" text-anchor="middle">0.003</text>
+  <text class="mono tag" x="686" y="170" text-anchor="middle">ADDR E</text>
+  <text class="mono amt-lit" x="400" y="246" text-anchor="middle">DISPLAYED BALANCE: 0.088</text>
+  <text class="mono tag" x="400" y="268" text-anchor="middle">ACTUAL STRUCTURE: FIVE UTXOS, EACH SPENT WHOLE OR NOT AT ALL</text>
+  <text class="mono note" x="40" y="340">0.05 + 0.02 + 0.01 + 0.005 + 0.003 = 0.088 &#183; EACH COIN HAS ITS OWN ADDRESS AND HISTORY</text>
+</svg>

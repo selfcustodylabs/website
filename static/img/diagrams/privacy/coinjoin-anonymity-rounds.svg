@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="One coin entering three successive CoinJoin rounds of five participants: candidate owners grow from 5 after one round to 25 after two and up to 125 after three.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; fill: #767C8A; }
+    .count   { font-size: 15px; font-weight: 700; fill: #F59E0B; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #767C8A; }
+    .amt     { font-size: 10px; font-weight: 700; fill: #FCD34D; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .env     { fill: none; stroke: #202630; stroke-width: 2; }
+    .path    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ANONYMITY SET &#183; REMIX ROUNDS</text>
+  <text class="mono head" x="250" y="104" text-anchor="middle">ROUND 1</text>
+  <text class="mono head" x="438" y="104" text-anchor="middle">ROUND 2</text>
+  <text class="mono head" x="636" y="104" text-anchor="middle">ROUND 3</text>
+  <path class="env" d="M128,218 C186,218 186,132 243,132"/>
+  <path class="env" d="M128,234 C186,234 186,328 243,328"/>
+  <path class="env" d="M257,126 C325,126 325,152 393,152"/>
+  <path class="env" d="M257,334 C325,334 325,308 393,308"/>
+  <path class="env" d="M483,150 C542,150 542,134 600,134"/>
+  <path class="env" d="M483,310 C542,310 542,326 600,326"/>
+  <path class="path" d="M128,226 C186,226 186,230 241,230"/>
+  <path class="path" d="M259,230 C340,230 410,224 452,198"/>
+  <path class="path" d="M464,188 C530,172 560,262 612,283"/>
+  <rect x="48" y="210" width="80" height="32" rx="6" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono amt" x="88" y="230" text-anchor="middle">YOUR COIN</text>
+  <circle cx="250" cy="130" r="8" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="250" cy="180" r="8" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="250" cy="230" r="8" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <circle cx="250" cy="280" r="8" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="250" cy="330" r="8" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="398" cy="154" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="418" cy="154" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="438" cy="154" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="458" cy="154" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="478" cy="154" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="398" cy="192" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="418" cy="192" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="438" cy="192" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="458" cy="192" r="5" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <circle cx="478" cy="192" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="398" cy="230" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="418" cy="230" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="438" cy="230" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="458" cy="230" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="478" cy="230" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="398" cy="268" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="418" cy="268" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="438" cy="268" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="458" cy="268" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="478" cy="268" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="398" cy="306" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="418" cy="306" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="438" cy="306" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="458" cy="306" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="478" cy="306" r="5" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="604" cy="134" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="134" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="134" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="134" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="134" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="142" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="142" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="142" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="142" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="142" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="150" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="150" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="150" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="150" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="150" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="158" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="158" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="158" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="158" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="158" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="166" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="166" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="166" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="166" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="166" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="174" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="174" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="174" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="174" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="174" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="182" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="182" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="182" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="182" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="182" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="190" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="190" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="190" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="190" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="190" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="198" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="198" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="198" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="198" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="198" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="206" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="206" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="206" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="206" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="206" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="214" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="214" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="214" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="214" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="214" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="222" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="222" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="222" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="222" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="222" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="230" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="230" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="230" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="230" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="230" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="238" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="238" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="238" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="238" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="238" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="246" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="246" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="246" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="246" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="246" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="254" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="254" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="254" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="254" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="254" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="262" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="262" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="262" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="262" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="262" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="270" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="270" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="270" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="270" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="270" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="278" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="278" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="278" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="278" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="278" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="286" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="286" r="3.4" fill="#F59E0B"/>
+  <circle cx="636" cy="286" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="286" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="286" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="294" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="294" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="294" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="294" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="294" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="302" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="302" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="302" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="302" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="302" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="310" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="310" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="310" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="310" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="310" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="318" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="318" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="318" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="318" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="318" r="2" fill="#2E3643"/>
+  <circle cx="604" cy="326" r="2" fill="#2E3643"/>
+  <circle cx="620" cy="326" r="2" fill="#2E3643"/>
+  <circle cx="636" cy="326" r="2" fill="#2E3643"/>
+  <circle cx="652" cy="326" r="2" fill="#2E3643"/>
+  <circle cx="668" cy="326" r="2" fill="#2E3643"/>
+  <text class="mono count" x="250" y="368" text-anchor="middle">5</text>
+  <text class="mono count" x="438" y="368" text-anchor="middle">25</text>
+  <text class="mono count" x="636" y="368" text-anchor="middle">125</text>
+  <text class="mono cap" x="438" y="388" text-anchor="middle">CANDIDATE OWNERS OF YOUR COIN</text>
+  <text class="mono note" x="40" y="414">5 PARTICIPANTS PER ROUND &#183; UP TO 5 &#215; 5 &#215; 5 = 125 CANDIDATES AFTER THREE ROUNDS</text>
+</svg>

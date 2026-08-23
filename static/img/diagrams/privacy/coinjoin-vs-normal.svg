@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="A normal 1.00 BTC payment from Alice to Bob leaves one traceable link; in a CoinJoin, Alice, Bob and Carol each put in 1.00 BTC and each take 1.00 BTC back, so every output has three equally likely owners.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .q       { font-size: 12px; font-weight: 700; fill: #767C8A; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .traced  { stroke: #F59E0B; stroke-width: 3; fill: none; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">NORMAL PAYMENT VS COINJOIN</text>
+
+  <text class="mono head" x="40" y="82" fill="#767C8A">NORMAL PAYMENT</text>
+  <text class="mono head" x="420" y="82" fill="#F59E0B">COINJOIN</text>
+
+  <line x1="380" y1="100" x2="380" y2="340" stroke="#1C2028" stroke-width="1"/>
+
+  <!-- LEFT: one traced link -->
+  <rect class="box" x="60" y="150" width="110" height="36" rx="6"/>
+  <text class="mono amt" x="115" y="173" text-anchor="middle">ALICE 1.00</text>
+  <path class="traced" d="M178,168 L242,168"/>
+  <path class="traced" d="M242,168 L235.1,172.1 M242,168 L235.1,163.9"/>
+  <rect class="box" x="250" y="150" width="110" height="36" rx="6"/>
+  <text class="mono amt" x="305" y="173" text-anchor="middle">BOB 1.00</text>
+  <text class="mono cap" x="210" y="212" text-anchor="middle" fill="#F59E0B">TRACED</text>
+  <text class="mono cap" x="40" y="322">THE ANALYST FOLLOWS THIS LINK FOREVER</text>
+
+  <!-- RIGHT: three in, three out, nobody can match them -->
+  <path class="wire" d="M510,142 C580,142 580,202 650,202"/>
+  <path class="wire" d="M510,202 C580,202 580,262 650,262"/>
+  <path class="wire" d="M510,262 C580,262 580,142 650,142"/>
+
+  <rect class="box" x="410" y="126" width="100" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="147" text-anchor="middle">ALICE 1.00</text>
+  <rect class="box" x="410" y="186" width="100" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="207" text-anchor="middle">BOB 1.00</text>
+  <rect class="box" x="410" y="246" width="100" height="32" rx="6"/>
+  <text class="mono amt" x="460" y="267" text-anchor="middle">CAROL 1.00</text>
+
+  <rect class="box-lit" x="650" y="126" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="695" y="147" text-anchor="middle">1.00</text>
+  <circle cx="762" cy="142" r="10" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono q" x="762" y="146" text-anchor="middle">?</text>
+  <rect class="box-lit" x="650" y="186" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="695" y="207" text-anchor="middle">1.00</text>
+  <circle cx="762" cy="202" r="10" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono q" x="762" y="206" text-anchor="middle">?</text>
+  <rect class="box-lit" x="650" y="246" width="90" height="32" rx="6"/>
+  <text class="mono amt" x="695" y="267" text-anchor="middle">1.00</text>
+  <circle cx="762" cy="262" r="10" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono q" x="762" y="266" text-anchor="middle">?</text>
+
+  <text class="mono cap" x="420" y="322">EACH OUTPUT HAS 3 EQUALLY LIKELY OWNERS</text>
+
+  <text class="mono note" x="40" y="398">3.00 IN &#183; 3.00 OUT &#183; MINING FEE OMITTED &#183; EACH USER SIGNS ONLY THEIR OWN INPUT</text>
+</svg>

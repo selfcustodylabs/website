@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 406" width="800" height="406" role="img" aria-label="Tor serves two jobs for a node: routing node-to-network traffic so other Bitcoin nodes never see your IP or location, and carrying wallet-to-node connections to your onion address so you can reach home from anywhere without port forwarding.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="405" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">TWO JOBS FOR TOR</text>
+  <text class="mono head" x="40" y="90" fill="#767C8A">1 &#183; PRIVACY &#183; NODE TO NETWORK</text>
+  <rect class="box" x="40" y="106" width="150" height="40" rx="6"/>
+  <text class="mono amt" x="115" y="131" text-anchor="middle">YOUR NODE</text>
+  <rect class="dashd" x="330" y="106" width="160" height="40" rx="6"/>
+  <text class="mono tag" x="410" y="131" text-anchor="middle">TOR NETWORK</text>
+  <rect class="box" x="630" y="106" width="130" height="40" rx="6"/>
+  <text class="mono amt" x="695" y="131" text-anchor="middle">OTHER NODES</text>
+  <path class="flow" d="M194,126 L326,126"/>
+  <path d="M326,126 L319,121.9 M326,126 L319,130.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <path class="flow" d="M494,126 L626,126"/>
+  <path d="M626,126 L619,121.9 M626,126 L619,130.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono cap" x="40" y="178" fill="#F59E0B">OTHER NODES NEVER SEE YOUR IP OR LOCATION</text>
+  <line x1="40" y1="204" x2="760" y2="204" stroke="#1C2028" stroke-width="1"/>
+  <text class="mono head" x="40" y="238" fill="#767C8A">2 &#183; REMOTE ACCESS &#183; WALLET TO NODE</text>
+  <rect class="box" x="40" y="254" width="150" height="40" rx="6"/>
+  <text class="mono amt" x="115" y="279" text-anchor="middle">YOUR WALLET</text>
+  <rect class="dashd" x="330" y="254" width="160" height="40" rx="6"/>
+  <text class="mono tag" x="410" y="279" text-anchor="middle">TOR NETWORK</text>
+  <rect class="box-lit" x="630" y="254" width="130" height="40" rx="6"/>
+  <text class="mono amt-lit" x="695" y="274" text-anchor="middle">YOUR NODE</text>
+  <text class="mono tag" x="695" y="288" text-anchor="middle">.ONION</text>
+  <path class="flow" d="M194,274 L326,274"/>
+  <path d="M326,274 L319,269.9 M326,274 L319,278.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <path class="flow" d="M494,274 L626,274"/>
+  <path d="M626,274 L619,269.9 M626,274 L619,278.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono cap" x="40" y="326" fill="#F59E0B">REACH HOME FROM ANYWHERE &#183; NO PORT FORWARDING, NO VPN</text>
+  <text class="mono note" x="40" y="376">SAME TOR, TWO DIRECTIONS &#183; ONE HIDES YOU FROM PEERS, ONE CARRIES YOU HOME</text>
+</svg>

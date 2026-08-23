@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="The journey of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="399" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">MAYA SENDS DANIEL 0.1 BTC &#183; THE WHOLE JOURNEY</text>
+  <rect class="box" x="40" y="90" width="220" height="60" rx="6"/>
+  <text class="mono amt" x="150" y="117" text-anchor="middle">1 &#183; MAYA SENDS 0.1</text>
+  <text class="mono tag" x="150" y="136" text-anchor="middle">WALLET BUILDS THE TX</text>
+  <path class="flow" d="M264,120 L286,120"/>
+  <path d="M286,120 L279,115.9 M286,120 L279,124.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="290" y="90" width="220" height="60" rx="6"/>
+  <text class="mono amt-lit" x="400" y="117" text-anchor="middle">2 &#183; SIGNS WITH HER KEY</text>
+  <text class="mono tag" x="400" y="136" text-anchor="middle">PROOF SHE OWNS THE COINS</text>
+  <path class="flow" d="M514,120 L536,120"/>
+  <path d="M536,120 L529,115.9 M536,120 L529,124.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="540" y="90" width="220" height="60" rx="6"/>
+  <text class="mono amt" x="650" y="117" text-anchor="middle">3 &#183; BROADCAST</text>
+  <text class="mono tag" x="650" y="136" text-anchor="middle">THOUSANDS OF NODES, SECONDS</text>
+  <rect class="box" x="40" y="240" width="220" height="60" rx="6"/>
+  <text class="mono amt" x="150" y="267" text-anchor="middle">4 &#183; MINERS VERIFY</text>
+  <text class="mono tag" x="150" y="286" text-anchor="middle">EVERY RULE CHECKED</text>
+  <path class="flow" d="M264,270 L286,270"/>
+  <path d="M286,270 L279,265.9 M286,270 L279,274.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="290" y="240" width="220" height="60" rx="6"/>
+  <text class="mono amt" x="400" y="267" text-anchor="middle">5 &#183; INTO A BLOCK</text>
+  <text class="mono tag" x="400" y="286" text-anchor="middle">PERMANENT PUBLIC RECORD</text>
+  <path class="flow" d="M514,270 L536,270"/>
+  <path d="M536,270 L529,265.9 M536,270 L529,274.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="540" y="240" width="220" height="60" rx="6"/>
+  <text class="mono amt-lit" x="650" y="267" text-anchor="middle">6 &#183; DANIEL HAS 0.1</text>
+  <text class="mono tag" x="650" y="286" text-anchor="middle">HE VERIFIES IT HIMSELF</text>
+  <path class="flow" d="M760,156 C760,205 100,180 150,236"/>
+  <path d="M150,236 L141.5,234.5 M150,236 L145.5,228.5" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono note" x="40" y="370">NO BANK, NO CARD NETWORK, NO PERMISSION &#183; THE NETWORK ITSELF DOES THAT JOB</text>
+</svg>

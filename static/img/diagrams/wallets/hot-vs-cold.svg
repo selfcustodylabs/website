@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 376" width="800" height="376" role="img" aria-label="The security difference: a software wallet keeps keys on an online device shared with a browser and possible malware, while a hardware wallet keeps keys on a dedicated offline chip that signs in isolation and does exactly one job.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="375" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">THE SECURITY DIFFERENCE</text>
+  <text class="mono head" x="70" y="90" fill="#767C8A">SOFTWARE WALLET</text>
+  <text class="mono head" x="430" y="90" fill="#F59E0B">HARDWARE WALLET</text>
+  <line x1="395" y1="76" x2="395" y2="290" stroke="#1C2028" stroke-width="1"/>
+  <rect class="box" x="70" y="116" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="106" y="130">KEYS ON AN ONLINE DEVICE</text>
+  <rect class="box" x="70" y="160" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="106" y="174">SHARES THE DEVICE WITH MALWARE</text>
+  <rect class="box" x="70" y="204" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="106" y="218">SIGNS WHERE IT BROWSES</text>
+  <rect class="box" x="70" y="248" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="106" y="262">GOOD FOR SPENDING MONEY</text>
+  <rect class="box-lit" x="430" y="116" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="466" y="130">KEYS ON A DEDICATED CHIP</text>
+  <rect class="box-lit" x="430" y="160" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="466" y="174">NEVER TOUCHES THE INTERNET</text>
+  <rect class="box-lit" x="430" y="204" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="466" y="218">SIGNS IN ISOLATION</text>
+  <rect class="box-lit" x="430" y="248" width="20" height="20" rx="4"/>
+  <text class="mono amt" x="466" y="262">BUILT FOR SAVINGS</text>
+  <text class="mono note" x="40" y="346">ONE DEVICE DOES EVERYTHING &#183; THE OTHER DOES EXACTLY ONE JOB, AND THAT IS THE POINT</text>
+</svg>

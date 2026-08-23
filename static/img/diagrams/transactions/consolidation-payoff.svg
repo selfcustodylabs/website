@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Consolidation: one low-fee transaction turns 50 small UTXOs into a single large one, so the next payment needs 1 input instead of 50; do it at 1-5 sat/vB and only with same-source coins, because consolidation links histories.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="419" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">CONSOLIDATE WHEN FEES ARE LOW</text>
+  <rect class="dashd" x="40" y="90" width="250" height="150" rx="10" fill="none"/>
+  <rect class="box" x="58" y="108" width="32" height="24" rx="4"/>
+  <rect class="box" x="102" y="108" width="32" height="24" rx="4"/>
+  <rect class="box" x="146" y="108" width="32" height="24" rx="4"/>
+  <rect class="box" x="190" y="108" width="32" height="24" rx="4"/>
+  <rect class="box" x="234" y="108" width="32" height="24" rx="4"/>
+  <rect class="box" x="58" y="146" width="32" height="24" rx="4"/>
+  <rect class="box" x="102" y="146" width="32" height="24" rx="4"/>
+  <rect class="box" x="146" y="146" width="32" height="24" rx="4"/>
+  <rect class="box" x="190" y="146" width="32" height="24" rx="4"/>
+  <rect class="box" x="234" y="146" width="32" height="24" rx="4"/>
+  <rect class="box" x="58" y="184" width="32" height="24" rx="4"/>
+  <rect class="box" x="102" y="184" width="32" height="24" rx="4"/>
+  <rect class="box" x="146" y="184" width="32" height="24" rx="4"/>
+  <rect class="box" x="190" y="184" width="32" height="24" rx="4"/>
+  <rect class="box" x="234" y="184" width="32" height="24" rx="4"/>
+  <text class="mono tag" x="165" y="230" text-anchor="middle">. . .</text>
+  <text class="mono tag" x="165" y="262" text-anchor="middle">50 SMALL UTXOS</text>
+  <path class="flow" d="M300,165 L430,165"/>
+  <path d="M430,165 L423,160.9 M430,165 L423,169.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text class="mono tag-a" x="365" y="148" text-anchor="middle">ONE LOW-FEE TX</text>
+  <rect class="box-lit" x="440" y="135" width="180" height="60" rx="6"/>
+  <text class="mono amt-lit" x="530" y="170" text-anchor="middle">1 LARGE UTXO</text>
+  <text class="mono tag" x="530" y="262" text-anchor="middle">SAME VALUE, ONE COIN</text>
+  <text class="mono cap" x="40" y="316" fill="#C66A20">NEXT PAYMENT BEFORE: 50 INPUTS &#183; EXPENSIVE</text>
+  <text class="mono cap" x="40" y="336" fill="#F59E0B">NEXT PAYMENT AFTER: 1 INPUT &#183; CHEAP</text>
+  <text class="mono note" x="40" y="386">DO IT AT 1-5 SAT/VB &#183; SAME-SOURCE COINS ONLY, CONSOLIDATION LINKS HISTORIES</text>
+</svg>

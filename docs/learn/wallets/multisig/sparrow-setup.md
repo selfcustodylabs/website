@@ -11,7 +11,6 @@ slug: /learn/wallets/multisig/sparrow-setup
 
 Sparrow Wallet is the best free option for managing multisig wallets. This guide walks through creating a **2-of-3 multisig** step by step.
 
-
 ## Prerequisites
 
 Before starting:
@@ -19,7 +18,6 @@ Before starting:
 - [ ] 3 hardware wallets set up with unique seeds ([Hardware Setup](/docs/learn/wallets/multisig/hardware-setup))
 - [ ] Master fingerprint recorded for each device
 - [ ] Ideally: Your own [Bitcoin node](/docs/bitcoin-node) running
-
 
 ## Step 1: Connect Sparrow to a Server
 
@@ -33,7 +31,6 @@ For maximum privacy, connect Sparrow to your own Bitcoin node. If you don't have
    - **Public Server**: acceptable for testing (less private)
 4. Click `Test Connection` then `Close`
 
-
 ## Step 2: Create New Multisig Wallet
 
 1. Go to `File` → `New Wallet`
@@ -41,7 +38,6 @@ For maximum privacy, connect Sparrow to your own Bitcoin node. If you don't have
 3. Click `Create Wallet`
 
 You'll see the **Settings** screen with configuration options.
-
 
 ## Step 3: Configure Multisig Settings
 
@@ -59,7 +55,6 @@ This creates a **2-of-3 multisig**.
 3. Leave as **Native Segwit (P2WSH)**: most efficient and recommended
 
 Your settings should show: `2 of 3 Multi Signature (Sorted Multi, Native Segwit)`
-
 
 ## Step 4: Add Keystore 1 (First Hardware Wallet)
 
@@ -94,7 +89,6 @@ The keystore details will populate:
 
 **Rename the label** to identify which device (e.g., "Coldcard - Key #1")
 
-
 ## Step 5: Add Keystore 2
 
 1. Click the `Keystore 2` tab
@@ -103,14 +97,12 @@ The keystore details will populate:
 4. Label appropriately (e.g., "Keystone - Key #2")
 5. **Verify the fingerprint matches your records**
 
-
 ## Step 6: Add Keystore 3
 
 1. Click the `Keystore 3` tab
 2. Repeat the process for your third hardware wallet
 3. Label appropriately (e.g., "BitBox02 - Key #3")
 4. **Verify the fingerprint matches your records**
-
 
 ## Step 7: Apply and Save
 
@@ -122,7 +114,6 @@ The keystore details will populate:
 4. Click **"Save"**
 
 Your wallet is now created!
-
 
 ## Step 8: Register Multisig on Hardware Wallets
 
@@ -154,7 +145,6 @@ These devices register automatically when you verify an address:
 3. The device will show the multisig configuration for confirmation
 4. Verify and confirm
 
-
 ## Step 9: Verify Your First Address
 
 **Never deposit to an address without verifying it!**
@@ -167,17 +157,11 @@ These devices register automatically when you verify an address:
 
 If addresses don't match on all devices, **STOP**: something is wrong.
 
-```
-ADDRESS VERIFICATION:
-────────────────────────────────────────
-Sparrow shows:    bc1q8n5...xyz
-Coldcard shows:   bc1q8n5...xyz  ✓
-Keystone shows:   bc1q8n5...xyz  ✓
-Trezor shows:     bc1q8n5...xyz  ✓
+<div class="doc-diagram">
 
-All match = Safe to receive!
-```
+![Multisig address verification: Sparrow, Coldcard, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately](/img/diagrams/wallets/address-verification.svg)
 
+</div>
 
 ## Step 10: Backup Your Wallet Descriptor
 
@@ -202,7 +186,6 @@ The PDF contains:
 - Script type
 
 **Store this with your seed backups.** You'll need it for recovery.
-
 
 ## Making Your First Transaction
 
@@ -247,18 +230,11 @@ You need **2 of 3** signatures. Here's the process:
 1. After 2 signatures, click **"Broadcast Transaction"**
 2. Your transaction is sent to the network
 
-```
-SIGNING FLOW:
-─────────────────────────────────────────────
-Sparrow creates PSBT (unsigned transaction)
-        ↓
-Device #1 signs → Now have 1 of 2 needed
-        ↓
-Device #2 signs → Now have 2 of 2 needed ✓
-        ↓
-Sparrow broadcasts to network
-```
+<div class="doc-diagram">
 
+![Signing a 2-of-3 multisig spend in Sparrow: Sparrow creates the unsigned PSBT, device 1 signs for one of two needed signatures, device 2 completes the quorum, and Sparrow broadcasts; the PSBT moves between devices, the keys never do](/img/diagrams/wallets/sparrow-signing-steps.svg)
+
+</div>
 
 ## Important Tips
 
@@ -284,7 +260,6 @@ Sparrow receives security updates:
 2. Verify download signatures
 3. Update promptly for security fixes
 
-
 ## Troubleshooting
 
 ### Device Not Detected
@@ -306,7 +281,6 @@ Sparrow receives security updates:
 - Ensure PSBT is for the correct wallet
 - Verify device has the multisig registered
 - Check that you're signing with a key from this multisig
-
 
 ## Summary
 

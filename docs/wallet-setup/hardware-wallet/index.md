@@ -28,7 +28,6 @@ In this guide, you will:
 A hardware wallet is the foundation of secure Bitcoin self-custody. Unlike software wallets, your private keys never touch an internet-connected device, protecting you from malware, hackers, and remote attacks.
 :::
 
-
 ## What is a Hardware Wallet?
 
 A hardware wallet is a dedicated physical device designed to store your Bitcoin private keys securely. Think of it as a personal vault that:
@@ -38,20 +37,11 @@ A hardware wallet is a dedicated physical device designed to store your Bitcoin 
 - **Signs transactions internally** (your computer never sees your private key)
 - **Verifies on its own screen**: Confirm addresses without trusting your computer
 
-```
-HOW A HARDWARE WALLET WORKS:
-─────────────────────────────────────────────────────────
-Your Computer                    Hardware Wallet
-─────────────                    ───────────────
-1. Create transaction    ───►    
-                                 2. Display details on screen
-                                 3. You verify and approve
-                                 4. Device signs internally
-                         ◄───    5. Return signed transaction
-6. Broadcast to network
-                                 Private key NEVER leaves device
-```
+<div class="doc-diagram">
 
+![Sending from a hardware wallet: the software creates the transaction, the device screen shows the real recipient and the 1,500 sat fee, you press confirm on the device and it signs, then the software broadcasts; malware can redraw a monitor but not the device screen](/img/diagrams/wallet-setup/hw-signing.svg)
+
+</div>
 
 ## Choosing Your Hardware Wallet
 
@@ -91,7 +81,6 @@ See the full [hardware wallet comparison](/docs/reference/hardware-wallet-compar
 **Ledger** devices use closed-source secure-element firmware that cannot be independently audited. After 2026, unverifiable randomness is a bigger ask than ever.
 :::
 
-
 ## Before You Begin
 
 ### Security Checklist
@@ -119,7 +108,6 @@ Before setting up your hardware wallet:
 | 15-30 minutes of privacy | Uninterrupted setup time |
 
 </div>
-
 
 ## General Setup Process
 
@@ -211,7 +199,6 @@ Your hardware wallet needs companion software to:
 Before receiving Bitcoin, confirm the address shown in your software matches what's displayed on your hardware wallet screen. Malware can show you fake addresses.
 :::
 
-
 ## Your First Transaction
 
 ### Receiving Bitcoin
@@ -232,20 +219,6 @@ Before receiving Bitcoin, confirm the address shown in your software matches wha
    - Check the fee
 4. Approve on the device
 5. Software broadcasts the signed transaction
-
-```
-SENDING FLOW:
-────────────────────────────────────────────────────
-Software                         Hardware Wallet
-────────                         ───────────────
-Create transaction    ────►      
-                                 Show: "Send 0.01 BTC to bc1q...?"
-                                 Show: "Fee: 1,500 sats"
-                      ◄────      You verify and press CONFIRM
-Receive signature     ◄────      Device signs transaction
-Broadcast to network
-```
-
 
 ## Common Mistakes to Avoid
 
@@ -279,7 +252,6 @@ Malware can display fake addresses on your computer. **Always verify addresses o
 
 Pre-compromised devices have been sold on eBay and Amazon. Only buy directly from manufacturers or authorized resellers.
 
-
 ## Passphrase (Optional Advanced Feature)
 
 A passphrase (sometimes called the "25th word") adds extra security:
@@ -295,7 +267,6 @@ A passphrase (sometimes called the "25th word") adds extra security:
 
 Only use a passphrase if you fully understand the risks. See [DIY Passphrase Guide](/docs/learn/keys/passphrase) for details.
 :::
-
 
 ## Next Steps
 

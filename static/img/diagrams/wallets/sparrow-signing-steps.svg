@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Signing a 2-of-3 multisig spend in Sparrow: Sparrow creates the unsigned PSBT, device 1 signs for one of two needed signatures, device 2 completes the quorum, and Sparrow broadcasts; the PSBT moves between devices, the keys never do.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="459" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">SPARROW &#183; 2-OF-3 SIGNING, STEP BY STEP</text>
+  <rect class="box" x="230" y="84" width="340" height="48" rx="6"/>
+  <text class="mono amt" x="400" y="105" text-anchor="middle">SPARROW CREATES THE PSBT</text>
+  <text class="mono tag" x="400" y="122" text-anchor="middle">UNSIGNED</text>
+  <path class="flow" d="M400,134 L400,160"/>
+  <path d="M400,160 L395.9,153 M400,160 L404.1,153" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="230" y="164" width="340" height="48" rx="6"/>
+  <text class="mono amt" x="400" y="185" text-anchor="middle">DEVICE 1 SIGNS</text>
+  <text class="mono tag" x="400" y="202" text-anchor="middle">1 OF 2 COLLECTED</text>
+  <path class="flow" d="M400,214 L400,240"/>
+  <path d="M400,240 L395.9,233 M400,240 L404.1,233" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="230" y="244" width="340" height="48" rx="6"/>
+  <text class="mono amt-lit" x="400" y="265" text-anchor="middle">DEVICE 2 SIGNS</text>
+  <text class="mono tag" x="400" y="282" text-anchor="middle">2 OF 2 &#183; COMPLETE</text>
+  <path class="flow" d="M400,294 L400,320"/>
+  <path d="M400,320 L395.9,313 M400,320 L404.1,313" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="230" y="324" width="340" height="48" rx="6"/>
+  <text class="mono amt" x="400" y="345" text-anchor="middle">SPARROW BROADCASTS</text>
+  <text class="mono tag" x="400" y="362" text-anchor="middle">ON ITS WAY</text>
+  <text class="mono note" x="40" y="430">THE PSBT MOVES BETWEEN DEVICES &#183; THE KEYS NEVER DO</text>
+</svg>

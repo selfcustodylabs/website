@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540" role="img" aria-label="Without coin control the wallet auto-selects a 0.03 BTC KYC coin and a 0.025 BTC non-KYC coin for a 0.05 BTC payment, linking the sources; with coin control you spend a single 0.05 BTC KYC coin and the non-KYC coin stays separate.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .title-b { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #C66A20; }
+    .title-g { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #F59E0B; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .badp    { fill: none; stroke: #C66A20; stroke-width: 2; }
+    .goodp   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .merge   { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .kyc     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .nonkyc  { fill: #0C0E12; stroke: #F59E0B; stroke-width: 2; }
+    .out-b   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .out-g   { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .dash    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="539" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">SENDING 0.05 &#183; TWO WAYS</text>
+
+  <!-- PANEL A: the wallet decides -->
+  <rect class="badp" x="40" y="66" width="720" height="196" rx="10"/>
+  <text class="mono title-b" x="56" y="94">WITHOUT COIN CONTROL &#183; THE WALLET AUTO-SELECTS</text>
+
+  <path class="merge" d="M256,132 C378,132 378,152 500,152"/>
+  <path class="merge" d="M256,180 C378,180 378,166 500,166"/>
+
+  <rect class="kyc" x="80" y="116" width="176" height="32" rx="6"/>
+  <text class="mono amt" x="168" y="137" text-anchor="middle">0.03 &#183; KYC</text>
+  <rect class="nonkyc" x="80" y="164" width="176" height="32" rx="6"/>
+  <text class="mono amt-lit" x="168" y="185" text-anchor="middle">0.025 &#183; NON-KYC</text>
+
+  <rect class="out-b" x="500" y="128" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="575" y="149" text-anchor="middle">0.05 PAYMENT</text>
+  <rect class="kyc" x="500" y="176" width="150" height="28" rx="6"/>
+  <text class="mono amt" x="575" y="195" text-anchor="middle">0.005 CHANGE</text>
+
+  <text class="mono cap" x="80" y="240" fill="#C66A20">KYC AND NON-KYC ARE NOW LINKED FOREVER</text>
+
+  <!-- PANEL B: you decide -->
+  <rect class="goodp" x="40" y="286" width="720" height="196" rx="10"/>
+  <text class="mono title-g" x="56" y="314">WITH COIN CONTROL &#183; YOU CHOOSE THE COIN</text>
+
+  <path class="flow" d="M256,376 C378,376 378,376 500,376"/>
+
+  <rect class="kyc" x="80" y="360" width="176" height="32" rx="6"/>
+  <text class="mono amt" x="168" y="381" text-anchor="middle">0.05 &#183; KYC</text>
+
+  <rect class="dash" x="80" y="412" width="176" height="32" rx="6"/>
+  <text class="mono amt" x="168" y="433" text-anchor="middle">0.025 &#183; NON-KYC</text>
+  <text class="mono tag" x="270" y="432">UNTOUCHED</text>
+
+  <rect class="out-g" x="500" y="360" width="150" height="32" rx="6"/>
+  <text class="mono amt" x="575" y="381" text-anchor="middle">0.05 PAYMENT</text>
+
+  <text class="mono cap" x="80" y="460" fill="#F59E0B">SOURCES STAY APART</text>
+
+  <text class="mono note" x="40" y="518">FEES OMITTED &#183; COIN CONTROL = CHOOSING EXACTLY WHICH UTXOS A PAYMENT SPENDS</text>
+</svg>

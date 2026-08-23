@@ -26,6 +26,12 @@ This means:
 - Complex transactions (more inputs/outputs) cost more
 - Simple transactions are cheapest
 
+<div class="doc-diagram">
+
+![Bitcoin fees follow transaction size, not value: sending 0.001 BTC and sending 100 BTC in the same 140 vB transaction both cost 1,400 sats at 10 sat/vB, while a 10-input transaction of 1,100 vB costs 11,000 sats](/img/diagrams/transactions/fee-size-not-value.svg)
+
+</div>
+
 ### Why Fees Vary
 
 Bitcoin blocks have limited space (~4MB, or ~2,000-3,000 transactions). When more people want to transact than blocks can hold, a market forms:
@@ -38,7 +44,6 @@ Bitcoin blocks have limited space (~4MB, or ~2,000-3,000 transactions). When mor
 | Extreme | 100-500+ sats/vB | Priority inclusion |
 
 Fees fluctuate constantly based on network demand.
-
 
 ## Understanding Fee Rates
 
@@ -59,7 +64,6 @@ A typical single-input, single-output transaction is ~140 vB.
 | Complex (10 inputs → 2 outputs) | ~1,100 vB | 11,000 sats (~$4.70) | 55,000 sats (~$24) |
 
 *Prices assume ~$43,000/BTC*
-
 
 ## What Affects Transaction Size
 
@@ -86,7 +90,6 @@ Different address types have different sizes:
 
 **Recommendation**: Use Native SegWit (`bc1q`) or Taproot (`bc1p`) addresses for lowest fees.
 
-
 ## Fee Estimation
 
 ### Mempool Analysis
@@ -108,7 +111,6 @@ The **mempool** is the waiting room for unconfirmed transactions. Analyzing it h
 ❌ **Overpaying during low demand**: checking fees saves money  
 ❌ **Underpaying during high demand**: transaction gets stuck  
 ❌ **Using wallet defaults blindly**: often set too high
-
 
 ## Stuck Transactions
 
@@ -139,20 +141,17 @@ Create a new transaction that spends the unconfirmed output with a high enough f
 **How it works:**
 The new transaction's fee must cover the "deficit" of the parent transaction to make the combined package attractive to miners.
 
-
 ## Fee Optimization Strategies
 
 ### 1. Consolidate During Low Fees
 
 When fees are cheap (1-5 sats/vB), combine small UTXOs:
 
-```
-BEFORE: 50 small UTXOs
-  → Future transaction needs 50 inputs = expensive
+<div class="doc-diagram">
 
-AFTER: 1 large UTXO
-  → Future transaction needs 1 input = cheap
-```
+![Consolidation: one low-fee transaction turns 50 small UTXOs into a single large one, so the next payment needs 1 input instead of 50; do it at 1-5 sat/vB and only with same-source coins, because consolidation links histories](/img/diagrams/transactions/consolidation-payoff.svg)
+
+</div>
 
 See [UTXO Consolidation](/docs/learn/privacy/utxo-management#consolidation-strategies) for details.
 
@@ -160,17 +159,11 @@ See [UTXO Consolidation](/docs/learn/privacy/utxo-management#consolidation-strat
 
 If sending to multiple recipients, batch them:
 
-```
-INEFFICIENT:
-  Transaction 1: You → Alice     (140 vB)
-  Transaction 2: You → Bob       (140 vB)
-  Transaction 3: You → Charlie   (140 vB)
-  Total: 420 vB
+<div class="doc-diagram">
 
-EFFICIENT:
-  Transaction 1: You → Alice, Bob, Charlie (200 vB)
-  Savings: 52%
-```
+![Batching: three separate 140 vB payments to Alice, Bob and Charlie total 420 vB, while one transaction paying all three is about 200 vB, 52% smaller and cheaper at any fee rate](/img/diagrams/transactions/batching.svg)
+
+</div>
 
 ### 3. Time Your Transactions
 
@@ -187,7 +180,6 @@ Switching from Legacy to SegWit addresses can save 30-40% on fees.
 
 Always enable RBF (Replace-By-Fee) so you can bump fees if needed. Sparrow Wallet enables this by default.
 
-
 ## Lightning Network
 
 For small, frequent transactions, the [Lightning Network](https://lightning.network) offers:
@@ -196,7 +188,6 @@ For small, frequent transactions, the [Lightning Network](https://lightning.netw
 - No on-chain footprint per transaction
 
 **Tradeoff**: Requires channel management and isn't suitable for cold storage.
-
 
 ## Fee Calculator
 
@@ -209,7 +200,6 @@ Quick reference for planning:
 | Send within a day | Pay "low priority" rate |
 | Consolidate UTXOs | Wait for under 5 sats/vB |
 | Large cold storage deposit | Use batching, wait for low fees |
-
 
 ## Summary
 

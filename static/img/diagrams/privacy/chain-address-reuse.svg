@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-label="Address reuse: a payment received at address A, a payment sent from A and a second payment received at A are all permanently linked; knowing one transaction reveals the others, which is why wallets rotate addresses.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="389" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">HEURISTIC 3 &#183; ADDRESS REUSE</text>
+  <rect class="dashe" x="130" y="80" width="540" height="230" rx="20" fill="none"/>
+  <circle cx="400" cy="195" r="34" fill="#0C0E12" stroke="#F59E0B" stroke-width="3"/>
+  <text class="mono amt-lit" x="400" y="200" text-anchor="middle">A</text>
+  <rect class="box" x="150" y="110" width="140" height="36" rx="6"/>
+  <text class="mono amt" x="220" y="133" text-anchor="middle">TX 1 &#183; IN</text>
+  <path class="wire" d="M294,165 L360,165"/>
+  <path d="M360,165 L353,160.9 M360,165 L353,169.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <rect class="box" x="510" y="110" width="140" height="36" rx="6"/>
+  <text class="mono amt" x="580" y="133" text-anchor="middle">TX 2 &#183; OUT</text>
+  <path class="wire" d="M440,150 L506,150"/>
+  <path d="M506,150 L499,145.9 M506,150 L499,154.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <rect class="box" x="150" y="250" width="140" height="36" rx="6"/>
+  <text class="mono amt" x="220" y="273" text-anchor="middle">TX 3 &#183; IN</text>
+  <path class="wire" d="M294,240 L360,240"/>
+  <path d="M360,240 L353,235.9 M360,240 L353,244.1" stroke="#262E3A" stroke-width="2" fill="none"/>
+  <text class="mono cap" x="690" y="200" fill="#C66A20">ALL</text>
+  <text class="mono cap" x="690" y="218" fill="#C66A20">LINKED</text>
+  <text class="mono note" x="40" y="360">ONE REUSED ADDRESS TIES EVERY TRANSACTION TOGETHER &#183; WALLETS ROTATE ADDRESSES FOR THIS REASON</text>
+</svg>

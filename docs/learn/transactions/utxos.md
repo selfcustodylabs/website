@@ -12,13 +12,11 @@ Most people think of their Bitcoin wallet like a bank account, a single balance 
 
 Bitcoin uses the **UTXO model**: Unspent Transaction Outputs. Understanding UTXOs is fundamental to understanding Bitcoin.
 
-
 ## What is a UTXO?
 
 A UTXO is an **Unspent Transaction Output**, a discrete chunk of bitcoin that you can spend.
 
 Think of UTXOs as **digital coins** or **digital bills** in your wallet. You don't have a "balance" in the traditional sense. You have a collection of individual UTXOs, and your wallet displays their sum.
-
 
 ## The Cash Analogy
 
@@ -54,7 +52,6 @@ Your Bitcoin wallet works the same way:
 
 You don't have "0.1 BTC of balance." You have **five UTXOs** that add up to 0.1 BTC.
 
-
 ## How UTXOs Are Created and Destroyed
 
 UTXOs follow a simple lifecycle:
@@ -76,32 +73,11 @@ When you send bitcoin:
 1. **Inputs**: Existing UTXOs you own are consumed (destroyed)
 2. **Outputs**: New UTXOs are created for recipients (and change for you)
 
-```
-BEFORE TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #1: 0.05 BTC
-  UTXO #2: 0.03 BTC
-  UTXO #3: 0.02 BTC
+<div class="doc-diagram">
 
-TRANSACTION (pay someone 0.04 BTC):
-──────────────────────────────────────────────────
-INPUTS (destroyed):           OUTPUTS (created):
-  UTXO #1: 0.05 BTC    →      0.04 BTC (to recipient)
-                               0.0099 BTC (change to you)
-                               [0.0001 BTC fee]
+![Paying 0.04 BTC from a wallet holding 0.05, 0.03 and 0.02 BTC UTXOs: the 0.05 is destroyed whole and becomes 0.04 for the recipient, a new 0.0099 change UTXO and a 0.0001 mining fee, while the other two UTXOs stay untouched](/img/diagrams/transactions/utxo-lifecycle.svg)
 
-AFTER TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #2: 0.03 BTC (unchanged)
-  UTXO #3: 0.02 BTC (unchanged)
-  UTXO #4: 0.0099 BTC (new - your change)
-
-Recipient's wallet contains:
-  New UTXO: 0.04 BTC
-```
-
+</div>
 
 ## Key Properties of UTXOs
 
@@ -120,29 +96,21 @@ You have a 0.1 BTC UTXO and want to pay 0.03 BTC.
 
 You can spend multiple UTXOs in a single transaction. They all get consumed, and their combined value creates new outputs.
 
-```
-COMBINING UTXOs:
-──────────────────────────────────────────────────
-INPUTS:                       OUTPUTS:
-  UTXO A: 0.02 BTC  ─┐
-  UTXO B: 0.02 BTC  ─┼──→    0.05 BTC (payment)
-  UTXO C: 0.02 BTC  ─┘        0.0099 BTC (change)
-                              [0.0001 fee]
-```
+<div class="doc-diagram">
+
+![Combining UTXOs: three 0.02 BTC coins are consumed together to pay 0.05 BTC, produce 0.0099 BTC change and leave 0.0001 BTC as fee; all three inputs are destroyed in one spend](/img/diagrams/transactions/utxo-combining.svg)
+
+</div>
 
 ### 3. Each UTXO Has a History
 
 Every UTXO can be traced back through the blockchain to its creation. This history is permanent and public.
 
-```
-UTXO HISTORY EXAMPLE:
-──────────────────────────────────────────────────
-Your 0.05 BTC UTXO came from:
-  ← A payment from Alice
-    ← Who got it from an exchange withdrawal
-      ← Who got it from a mining pool
-        ← ...back to the coinbase (mining reward)
-```
+<div class="doc-diagram">
+
+![A 0.05 BTC UTXO traced back through its history: a payment from Alice, before that an exchange withdrawal, a mining pool payout, and finally the coinbase mining reward; every hop is permanent and public](/img/diagrams/transactions/utxo-history.svg)
+
+</div>
 
 This traceable history has important implications for [privacy](/docs/learn/privacy/why-privacy-matters).
 
@@ -151,7 +119,6 @@ This traceable history has important implications for [privacy](/docs/learn/priv
 Each UTXO is "locked" to a specific Bitcoin address. Only someone with the private key for that address can "unlock" and spend it.
 
 Your wallet manages many addresses and their UTXOs automatically. When you see a "balance," your wallet is summing all UTXOs locked to addresses it controls.
-
 
 ## Why the UTXO Model Matters
 
@@ -213,7 +180,6 @@ If a UTXO is worth less than the fee required to spend it, it becomes **economic
 - A UTXO worth 5,000 sats costs more to spend than it's worth
 - This UTXO is effectively worthless until fees drop significantly
 
-
 ## UTXOs in Your Wallet
 
 Your wallet software handles UTXOs automatically:
@@ -248,40 +214,21 @@ Different wallets use different strategies:
 
 Advanced users use **coin control** to manually select UTXOs. This is important for privacy and fee optimization.
 
-
 ## UTXO Visualization
 
 Here's how to think about your wallet:
 
-```
-YOUR WALLET
-──────────────────────────────────────────────────
-┌──────────────────────────────────────────────┐
-│                                              │
-│   ┌─────────┐  ┌─────────┐  ┌─────────┐     │
-│   │  UTXO   │  │  UTXO   │  │  UTXO   │     │
-│   │ 0.05 BTC│  │ 0.02 BTC│  │ 0.01 BTC│     │
-│   │ addr: A │  │ addr: B │  │ addr: C │     │
-│   └─────────┘  └─────────┘  └─────────┘     │
-│                                              │
-│   ┌─────────┐  ┌─────────┐                  │
-│   │  UTXO   │  │  UTXO   │                  │
-│   │0.005 BTC│  │0.003 BTC│                  │
-│   │ addr: D │  │ addr: E │                  │
-│   └─────────┘  └─────────┘                  │
-│                                              │
-│   Balance displayed: 0.088 BTC              │
-│   Actual structure: 5 separate UTXOs        │
-│                                              │
-└──────────────────────────────────────────────┘
-```
+<div class="doc-diagram">
+
+![A wallet showing a 0.088 BTC balance actually holds five separate UTXOs of 0.05, 0.02, 0.01, 0.005 and 0.003 BTC, each locked to its own address with its own history, and each spent whole or not at all](/img/diagrams/transactions/wallet-utxos.svg)
+
+</div>
 
 Each UTXO:
 - Has a specific value
 - Is locked to a specific address
 - Has a history on the blockchain
 - Must be spent entirely when used
-
 
 ## Common Misconceptions
 
@@ -300,7 +247,6 @@ Each UTXO:
 ### ❌ "My wallet balance is one number"
 
 **Reality:** Your balance is a sum of discrete UTXOs. Understanding which UTXOs you have and where they came from is important for fees and privacy.
-
 
 ## Key Takeaways
 

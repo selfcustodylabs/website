@@ -25,7 +25,6 @@ In this guide, you will:
 **Prerequisites:** LILYGO T-Display, USB cable, Chrome-based browser
 :::
 
-
 ## Why Use a Hardware Signing Device?
 
 A Nostr Signing Device (NSD) keeps your private key isolated from your computer:
@@ -42,18 +41,18 @@ The NSD signs messages directly on the device - your private key never touches y
 
 </div>
 
-
 ## How It Works
 
-```
-NSD (signs messages) --> Horse Extension --> Nostr Client
-```
+<div class="doc-diagram">
+
+![The NSD chain: the T-Display device holds the Nostr key and signs, the Horse browser extension bridges it to the browser, and the Nostr client only ever sees signatures, never the key](/img/diagrams/nostr-signing-device/nsd-chain.svg)
+
+</div>
 
 **Components:**
 - **LILYGO T-Display** - The physical signing device
 - **Horse Extension** - Browser extension that connects NSD to clients
 - **Nostr Client** - Where you interact with Nostr (e.g., Coracle)
-
 
 ## What You'll Need
 

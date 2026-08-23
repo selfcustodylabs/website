@@ -44,6 +44,7 @@ MDX, and swizzled components all resolve. Run it before claiming a content chang
 | [scripts/generate-favicons.py](scripts/generate-favicons.py) | Renders the root favicon set from `assets/logo-mark.png` |
 | [scripts/indexnow-submit.mjs](scripts/indexnow-submit.mjs) | Pings IndexNow with changed doc URLs; run from the deploy workflow |
 | [static/](static/) | Images, `robots.txt`, `CNAME`, `keybase.txt`, IndexNow key, root favicon set |
+| [static/img/diagrams/](static/img/diagrams/) | Hand-authored SVG concept diagrams, in the OG card visual language |
 
 ## Adding or editing a doc
 
@@ -124,6 +125,38 @@ logo runs large over a defocused full-bleed `seed/dice.webp`. It reads the mark 
 needs no SVG rasteriser; if the logo ever changes, re-render it with
 `cairosvg logo.svg -o logo-mark.png -W 640 -H 640` (strip the stray Illustrator `<image>` tags
 first, they point at a missing local file) and re-trim to the alpha bbox.
+
+**In-doc diagrams are hand-authored SVG**, not raster and not AI-generated, and they live in
+[static/img/diagrams/](static/img/diagrams/). They reuse the OG palette and grammar verbatim
+(`AMBER #F59E0B` at 3px means "this is the subject", `DIM2 #2E3643` at 2px means "context";
+mono labels in caps with 1.4-2.4 letter-spacing; 6px corner radii; S-curves eased on y). The
+`Pen` class in [scripts/og_theme.py](scripts/og_theme.py) is the reference for all of it, so
+when a page's subject already has a motif (`m_quorum`, `m_derivation`, `m_utxo`, `m_mix`),
+copy its construction rather than inventing a second way to draw the same thing.
+
+Four things that are easy to get wrong here:
+
+- **Embed with plain Markdown `![alt](/img/diagrams/...)`, never `FeaturedImage`.** That
+  component is in `DROP_COMPONENTS` in [plugins/llms-txt/index.js](plugins/llms-txt/index.js),
+  so the whole block is stripped from the `.md` mirrors and its alt text goes with it. A
+  Markdown image survives and its URL is rewritten absolute. **The alt text is the only part
+  of a diagram an assistant can read**, so write it as a full sentence stating what the
+  diagram shows, not a label.
+- **Fonts must be a system stack.** An SVG referenced from `<img>` is an isolated document
+  that cannot load the site's webfonts, so JetBrains Mono resolves only if the reader happens
+  to have it. Use `ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace`
+  and keep the text as real `<text>`, never converted to paths.
+- **Wrap each one in `<div class="doc-diagram">`** (defined in
+  [src/css/utilities.css](src/css/utilities.css)). It pins a 680px minimum width and scrolls
+  horizontally below that, because shrink-to-fit renders 11px mono labels at about 5px on a
+  phone. Same trade `.fixed-width-table` makes for wide tables.
+- **Webpack inlines any SVG under its asset threshold as a base64 data URI**, so the file in
+  `build/img/diagrams/` is not what the page actually loads and CSS cannot target these images
+  by `src`. That is why the wrapper class exists rather than an `img[src*="diagrams"]` rule.
+
+Verify a new diagram by rendering it: `chromium --headless --screenshot=out.png
+--window-size=800,430 file://$PWD/static/img/diagrams/<path>.svg`, then again against
+`npm run serve` at 390px to confirm the labels still read.
 
 ## SEO invariants: don't break these
 

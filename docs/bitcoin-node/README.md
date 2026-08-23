@@ -26,7 +26,6 @@ By the end of this guide, you will have:
 **Cost:** $100-300 (Raspberry Pi + SSD) or $50-100 (repurpose old PC)
 :::
 
-
 ## Why Run a Node?
 
 When you use Bitcoin without your own node, you're trusting someone else's computer to tell you:
@@ -43,25 +42,15 @@ With your own node:
 
 → Read more: [Why Run Your Own Node](/docs/learn/nodes/why-run-node)
 
-
 ## What You're Building
 
 A complete node setup connects three components:
 
-```
-YOUR NODE SETUP
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-  Bitcoin Core  ───►  Electrum Server  ───►  Your Wallet
-  (Full Node)              │                  (Sparrow)
-       │                   │                      │
-       ▼                   ▼                      ▼
-  Downloads &         Indexes data          Connects to
-  verifies the        for efficient         YOUR server,
-  blockchain          wallet queries        not public ones
+![A complete node setup: Bitcoin Core downloads and verifies the full chain, an Electrum server indexes it for fast queries, and Sparrow Wallet connects to your own server instead of a stranger's](/img/diagrams/bitcoin-node/node-stack.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 <div class="fixed-width-table">
 
@@ -72,7 +61,6 @@ YOUR NODE SETUP
 | **Your Wallet** | Connects to your server instead of random public servers |
 
 </div>
-
 
 ## Hardware Requirements
 
@@ -99,7 +87,6 @@ A Raspberry Pi 4/5 or old laptop running 24/7. Low power consumption, always ava
 **Your Desktop Computer**  
 No extra hardware, but your node only runs when your computer is on. You'll need to catch up each time you restart.
 
-
 ## Guide Structure
 
 <div class="fixed-width-table">
@@ -113,7 +100,6 @@ No extra hardware, but your node only runs when your computer is on. You'll need
 | 5. [Connect Wallet](/docs/bitcoin-node/connect-sparrow-wallet) | Link Sparrow to your node | 15 min |
 
 </div>
-
 
 ## Time Expectations
 
@@ -132,7 +118,6 @@ Be realistic about timing:
 </div>
 
 The initial sync is slow but only happens once. After that, your node stays current automatically. Don't wait by the computer; start the sync and go live your life.
-
 
 ## Our Recommended Approach: Parmanode
 

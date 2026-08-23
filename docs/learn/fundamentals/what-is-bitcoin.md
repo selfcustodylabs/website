@@ -15,13 +15,11 @@ Bitcoin is digital money that no single person, company, or government controls.
 
 That last point is worth pausing on, because it's the feature that makes Bitcoin feel strange the first time you use it. When you send bitcoin, it leaves your hands for good. There's no customer service line, no chargeback, no "wait, can we undo that?" The upside is the same as the downside: nobody else can undo it either.
 
-
 ## How Bitcoin is different from the money you already use
 
 The money in your bank account is created by central banks, and there is no ceiling on how much of it can exist. Banks and payment companies sit in the middle of every transfer, which is why your card can be declined, your account can be frozen, and a wire can be clawed back days later. It's a system built on trusted institutions, and it works well right up until the moment you need to do something those institutions don't want you to do.
 
 Bitcoin inverts almost all of that. New coins are created by mathematical rules that no one can rewrite, the total supply is permanently capped at 21 million, and there's no company standing between you and the person you're paying. Transfers move directly from one participant to another, they can't be censored by a middleman, and once they're confirmed they stay confirmed. This is why people describe Bitcoin as "permissionless" money. You don't need anyone's approval to use it.
-
 
 ## How a Bitcoin transaction actually works
 
@@ -29,31 +27,13 @@ The easiest way to understand Bitcoin is to picture it as a shared notebook. Ima
 
 Here's what happens when Maya, who lives in Mexico City, wants to send a little bitcoin to her cousin Daniel in Buenos Aires.
 
-```
-HOW A BITCOIN TRANSACTION WORKS:
-─────────────────────────────────────────────────────────
-1. Maya decides to send 0.1 BTC to Daniel
+<div class="doc-diagram">
 
-2. Her wallet creates a transaction and signs it
-   with her private key, which is her proof
-   that she actually owns those coins
+![The journey of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself](/img/diagrams/fundamentals/tx-journey.svg)
 
-3. The signed transaction is broadcast to the
-   Bitcoin network, reaching thousands of
-   computers around the world within seconds
-
-4. Miners check that the transaction follows
-   every rule, then bundle it into a block
-
-5. The block is added to the blockchain,
-   becoming a permanent part of the public record
-
-6. Daniel now owns 0.1 BTC, and he can verify
-   this himself without asking anyone for permission
-```
+</div>
 
 Notice what's missing from that sequence: a bank, a card network, a wire service, a foreign exchange desk. Maya and Daniel don't need any of them, because the network itself is doing the job those institutions normally do. That's the core invention.
-
 
 ## Miners, blocks, and why the chain can't be rewritten
 
@@ -61,13 +41,11 @@ Miners are specialized computers that compete to add the next page to that share
 
 This competition matters because it's what makes the history tamper-proof. To rewrite an old block, an attacker would have to redo all the lottery work for that block and every block that has been added since, faster than the rest of the world is adding new ones. In practice this is so expensive that it has never happened to Bitcoin. The deeper a transaction sits in the chain, the more settled it becomes.
 
-
 ## Why the supply is fixed at 21 million
 
 Bitcoin's software will only ever allow 21 million coins to exist, and that rule is enforced by every participant on the network rather than by a policy decision somebody could quietly change. Roughly 19.5 million of those coins have already been mined, and the rate of new issuance gets cut in half every four years. The final fraction of a bitcoin is expected to be mined sometime around the year 2140.
 
 The reason this matters is simple. When a central bank prints more money, every unit you hold quietly becomes a smaller slice of the pie. Bitcoin can't do that to you, because the pie is a fixed size and everyone can verify it. That's why people sometimes call it "digital gold": you can't mine past a known ceiling, and the scarcity is baked into the rules rather than promised by a company.
-
 
 ## Why Bitcoin matters to you
 
@@ -76,7 +54,6 @@ The first reason is that Bitcoin lets you move money to anyone in the world with
 The second reason is protection from the slow erosion of inflation. Because no one can expand the supply, the bitcoin you hold today is the same fraction of the total that it will be ten years from now. You may not need this protection if you live somewhere with a stable currency, but for people in countries where inflation regularly runs double digits, it's not an abstract benefit at all.
 
 The third reason is ownership that actually belongs to you. Bank accounts, brokerage accounts, and even real estate can be frozen, seized, or restricted by someone with enough authority. When you hold your own Bitcoin keys, there is no such authority. If you control the keys, you control the coins, and nobody else gets a say.
-
 
 ## What Bitcoin is not
 
@@ -93,7 +70,6 @@ A lot of what people "know" about Bitcoin is wrong, and it's worth clearing up t
 **Bitcoin is too volatile to be useful.** Its price swings have gotten smaller as the network has grown, and many people treat it as long-term savings rather than a way to buy groceries. Volatility looks different when your time horizon is ten years instead of ten days.
 
 :::
-
 
 ## Units and satoshis
 
@@ -112,7 +88,6 @@ One bitcoin is divisible into 100 million smaller pieces, because the protocol s
 
 At current prices a single satoshi is worth a fraction of a cent, which means Bitcoin is practical at any size, from buying a coffee to settling a real estate deal. You're never forced to transact in whole coins.
 
-
 ## How people get bitcoin
 
 There are a handful of realistic ways to acquire bitcoin, and they differ mainly in how much effort they take and how much you trust the counterparty.
@@ -127,13 +102,11 @@ There are a handful of realistic ways to acquire bitcoin, and they differ mainly
 When you buy bitcoin on an exchange, the exchange holds the coins for you. This arrangement is called **custodial** storage, because someone else is the actual custodian of your money. If that exchange is hacked, goes bankrupt, or decides to freeze your account, you can lose access to your bitcoin even though your balance "belongs" to you on paper. This is exactly why self-custody exists, and it's why we recommend moving your bitcoin off the exchange as soon as you're comfortable doing it.
 :::
 
-
 ## Why self-custody is the point
 
 Owning bitcoin on an exchange is a lot like having a gift card from a store. The card says you have a balance, but you're really only trusting the store to honor it. Self-custody means holding your own private keys, which is the actual mechanism that authorizes a Bitcoin transaction. Once you hold the keys, no exchange failure can take your coins, no account freeze can stop you from spending them, and no third party can say no on your behalf.
 
 This is what people mean by the phrase "not your keys, not your coins". It sounds like a slogan, but it's a literal description of how Bitcoin works under the hood. Learning to do self-custody well takes a little patience and a little care, because the flip side of having no third party is that there's no one to call when you make a mistake. The upside is that you end up with an asset that truly answers to you alone.
-
 
 ## Where to go next
 

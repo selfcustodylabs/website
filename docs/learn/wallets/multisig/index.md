@@ -13,13 +13,11 @@ A **multisig** (multi-signature) wallet requires more than one key to spend, wri
 
 A standard Bitcoin wallet has a single point of failure instead: one seed phrase controls everything. If it's stolen, your bitcoin is gone. If it's lost, your bitcoin is gone. Multisig eliminates that vulnerability by distributing control across several keys.
 
-
 ## What is Multisig?
 
 A multisig wallet requires **multiple private keys** to authorize a transaction. Instead of one key having complete control, you distribute control across several keys.
 
 Think of it like a bank vault that requires two managers to turn their keys simultaneously; neither can open it alone.
-
 
 ## The M-of-N Model
 
@@ -28,14 +26,11 @@ Multisig uses an "M-of-N" structure:
 - **N** = Total number of keys in the setup
 - **M** = Number of keys required to sign
 
-```
-2-of-3 MULTISIG:
-────────────────────────────────────────────────────
-Total keys: 3
-Required to spend: 2
+<div class="doc-diagram">
 
-Any combination of 2 keys can authorize a transaction.
-```
+![A 2-of-3 multisig: three keys exist at home, office and safe, and any two signatures spend; no single key ever can, so one key can be lost or stolen without losing the funds](/img/diagrams/wallets/multisig-quorum.svg)
+
+</div>
 
 ### Common Configurations
 
@@ -49,7 +44,6 @@ Any combination of 2 keys can authorize a transaction.
 | **1-of-2** | 1 | 2 | Easy access from multiple locations |
 
 </div>
-
 
 ## How It Works
 
@@ -67,26 +61,11 @@ Any combination of 2 keys can authorize a transaction.
 3. Sign with Device 2 → Transaction is now valid
 4. Broadcast the fully-signed transaction
 
-```
-SIGNING FLOW:
-────────────────────────────────────────────────────
-                     PSBT (Unsigned Transaction)
-                              │
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-               ┌─────────┐         ┌─────────┐
-               │ Device 1│         │ Device 2│
-               │  Signs  │         │  Signs  │
-               └────┬────┘         └────┬────┘
-                    │                   │
-                    └─────────┬─────────┘
-                              ▼
-                    Fully Signed Transaction
-                              │
-                              ▼
-                      Broadcast to Network
-```
+<div class="doc-diagram">
 
+![Multisig signing flow: an unsigned PSBT goes to device 1 and device 2, each signs independently, the signatures combine into a fully signed transaction and it is broadcast; no single machine ever holds two keys](/img/diagrams/wallets/multisig-signing.svg)
+
+</div>
 
 ## Why Use Multisig?
 
@@ -107,20 +86,11 @@ SIGNING FLOW:
 
 With multisig, your bitcoin security doesn't depend on any single thing:
 
-```
-SINGLE-SIG:
-──────────────────
-One seed phrase → Full control → Single point of failure
+<div class="doc-diagram">
 
-MULTISIG (2-of-3):
-──────────────────
-Key 1 (Home)    ─┐
-Key 2 (Office)  ─┼─→ Need ANY 2 to spend
-Key 3 (Safe)    ─┘
+![Single-sig puts full control on one seed phrase, one point of failure; a 2-of-3 multisig spreads control over three keys where any two spend, so one key compromised or lost leaves the funds safe](/img/diagrams/wallets/multisig-vs-single.svg)
 
-One key compromised ≠ funds lost
-```
-
+</div>
 
 ## The Tradeoffs
 
@@ -149,7 +119,6 @@ Multisig adds complexity that can lead to permanent fund loss if mismanaged:
 If you're not comfortable with single-sig hardware wallets yet, master that first.
 :::
 
-
 ## When to Consider Multisig
 
 ### Good Candidates
@@ -166,7 +135,6 @@ If you're not comfortable with single-sig hardware wallets yet, master that firs
 - Daily spending funds
 - Users still learning basic self-custody
 - Those without multiple secure storage locations
-
 
 ## Key Components
 
@@ -193,7 +161,6 @@ A text string containing:
 **The wallet descriptor is as important as your seed phrases.** Without it, you cannot reconstruct your multisig wallet, even with all seeds.
 :::
 
-
 ## Collaborative Custody
 
 Some services offer "assisted" multisig where they hold one key:
@@ -211,7 +178,6 @@ Some services offer "assisted" multisig where they hold one key:
 **Benefits:** Professional backup, inheritance support, recovery assistance
 
 **Tradeoff:** Third party involved (though they can't spend without you)
-
 
 ## Key Takeaways
 
@@ -239,7 +205,6 @@ If you understand the concepts above and want to implement a 2-of-3 multisig, th
 **📊 Difficulty:** Intermediate to Advanced
 **💰 Estimated cost:** $200-450 (3 hardware wallets) + $30-60 (metal seed backups)
 :::
-
 
 ## Choosing Your Configuration
 
@@ -276,7 +241,6 @@ For very large holdings or organizations:
 - Both parties must be available to spend
 - Use only for specific shared-custody scenarios
 
-
 ## DIY vs. Collaborative Custody
 
 Don't want to manage all keys yourself? **Collaborative custody** providers hold one key while you hold the majority.
@@ -308,7 +272,6 @@ Don't want to manage all keys yourself? **Collaborative custody** providers hold
 - **New to multisig?** Start with collaborative custody to learn the concepts
 - **Technical and privacy-focused?** DIY with Sparrow Wallet
 - **Significant holdings but not technical?** Collaborative custody is worth the cost
-
 
 ## Common Multisig Mistakes
 
@@ -350,7 +313,6 @@ This stopped being hypothetical in July 2026. The [Coldcard entropy flaw](/docs/
 
 **Solution:** **Always verify receive addresses on your hardware wallet screens** before depositing.
 
-
 ## Security Checklist
 
 Before depositing significant funds, verify:
@@ -364,7 +326,6 @@ Before depositing significant funds, verify:
 - [ ] You've practiced full wallet recovery from backups
 - [ ] You understand you need M keys to spend (not just one)
 - [ ] Hardware wallets are registered with the multisig configuration
-
 
 <NextSteps
   title="Set Up Your Multisig"

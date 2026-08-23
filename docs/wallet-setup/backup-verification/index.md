@@ -30,7 +30,6 @@ In this guide, you will:
 **Test your backup BEFORE depositing significant funds.**
 :::
 
-
 ## The Problem
 
 Most people set up their wallet like this:
@@ -50,11 +49,9 @@ Most people set up their wallet like this:
 - Wrong word list was used
 - Passphrase was forgotten
 
-
 ## The Solution: Test Your Recovery
 
 The only way to **know** your backup works is to actually use it to recover your wallet. This guide shows you how to do this safely.
-
 
 ## Method 1: Recovery Test on the Same Device
 
@@ -109,7 +106,6 @@ Connect to your wallet software and verify:
 Before resetting, write down your first receive address. After recovery, verify this address matches exactly. If it matches, your backup is correct.
 :::
 
-
 ## Method 2: Recovery Test on a Different Device
 
 More thorough: verify your backup works on independent hardware.
@@ -137,24 +133,17 @@ Enter your seed phrase (and passphrase if applicable) on the second device.
 
 The recovered wallet should show the same addresses as your original:
 
-```
-VERIFICATION CHECK:
-─────────────────────────────────────────────────────────
-Original Wallet          Recovered Wallet
-────────────────         ────────────────
-First address:           First address:
-bc1qxy2...abc     =?     bc1qxy2...abc
+<div class="doc-diagram">
 
-If they match → ✅ Backup is correct
-If different → ❌ Something is wrong
-```
+![Backup verification: restore the written seed on a second device and compare first addresses; identical addresses prove the paper backup restores the wallet, any difference means stop and find the error before funding](/img/diagrams/wallet-setup/backup-check.svg)
+
+</div>
 
 **4. Delete the test wallet**
 
 After verification, securely delete the recovered wallet from the second device:
 - Factory reset hardware wallet, or
 - Securely delete software wallet data
-
 
 ## Method 3: Address Verification (No Recovery Needed)
 
@@ -195,7 +184,6 @@ The tool shows addresses derived from your seed. Compare the first several with 
 **If they match** → Your seed backup is correct
 **If they don't match** → Check for errors in your seed, passphrase, or derivation path
 
-
 ## Method 4: Using Sparrow Wallet's Verification
 
 Sparrow Wallet can verify your backup matches your wallet.
@@ -211,7 +199,6 @@ Sparrow Wallet can verify your backup matches your wallet.
 **4. Enter your seed phrase**
 
 Sparrow will verify the seed matches the connected wallet without exposing your keys.
-
 
 ## Verifying Passphrase Backups
 
@@ -229,15 +216,11 @@ A passphrase creates a **completely different wallet**. Even a tiny difference (
 4. Note the first address (this is your real wallet)
 5. Verify this matches your actual wallet
 
-```
-PASSPHRASE VERIFICATION:
-─────────────────────────────────────────────────────────
-Seed only:          seed + "MyPassphrase":
-bc1q111...xxx       bc1q222...yyy
-(decoy wallet)      (your real wallet)
+<div class="doc-diagram">
 
-Both should be derivable from your backup.
-```
+![A passphrase splits one seed into two wallets: the 24 words alone derive the decoy wallet at one address, and the words plus your passphrase derive your real wallet at a different address; the passphrase is part of the backup](/img/diagrams/wallet-setup/passphrase-wallets.svg)
+
+</div>
 
 ### Common Passphrase Mistakes
 
@@ -245,7 +228,6 @@ Both should be derivable from your backup.
 - Extra spaces: "my phrase" ≠ "my phrase "
 - Similar characters: "0" (zero) ≠ "O" (letter)
 - Forgetting you used one at all
-
 
 ## How Often to Verify
 
@@ -261,7 +243,6 @@ Both should be derivable from your backup.
 
 </div>
 
-
 ## Signs Your Backup May Be Compromised
 
 Perform a full recovery test if:
@@ -272,7 +253,6 @@ Perform a full recovery test if:
 - Metal stamps are unclear or corroded
 - You found your backup wasn't stored securely
 - You suspect someone may have seen it
-
 
 ## What If Verification Fails?
 
@@ -311,7 +291,6 @@ If your backup was wrong, it may have been compromised. Consider:
 - Moving funds to the new wallet
 - Properly backing up the new seed
 
-
 ## Backup Verification Checklist
 
 Before trusting your backup with significant funds:
@@ -324,7 +303,6 @@ Before trusting your backup with significant funds:
 - [ ] First receive address matches original wallet
 - [ ] Passphrase verified (if applicable)
 - [ ] Backup stored securely after verification
-
 
 ## Summary
 

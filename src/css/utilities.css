@@ -23,6 +23,24 @@ div.img-small img {
   margin-top: 2rem;
 }
 
+/*
+ * Line-drawn SVG diagrams (static/img/diagrams/). These carry mono labels sized
+ * for a ~700px canvas, so shrink-to-fit turns them into unreadable 5px type on a
+ * phone. Scroll instead of scaling below that width, the same trade
+ * .fixed-width-table makes for wide tables in tables.css.
+ */
+.doc-diagram {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.doc-diagram img {
+  display: block;
+  min-width: 680px;
+  width: 100%;
+  height: auto;
+}
+
 /* ===========================================
    HERO SPACING (docs hub pages)
    =========================================== */

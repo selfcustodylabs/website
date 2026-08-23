@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-label="A software wallet stores the private key and signs transactions on the same online phone or computer that runs the browser and apps, then broadcasts to the network; convenient for spending, the wrong place for savings.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="359" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">A SOFTWARE WALLET LIVES ON AN ONLINE DEVICE</text>
+  <rect class="dashe" x="40" y="80" width="440" height="200" rx="10" fill="none"/>
+  <text class="mono tag-e" x="56" y="106">YOUR PHONE OR COMPUTER &#183; BROWSER AND APPS SHARE IT</text>
+  <rect class="box-lit" x="70" y="130" width="170" height="44" rx="6"/>
+  <text class="mono amt-lit" x="155" y="151" text-anchor="middle">PRIVATE KEY</text>
+  <text class="mono tag" x="155" y="168" text-anchor="middle">STORED ON DEVICE</text>
+  <path class="flow" d="M244,152 L296,152"/>
+  <path d="M296,152 L289,147.9 M296,152 L289,156.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="300" y="130" width="160" height="44" rx="6"/>
+  <text class="mono amt" x="380" y="151" text-anchor="middle">SIGNS THE TX</text>
+  <text class="mono tag" x="380" y="168" text-anchor="middle">ON THE SAME DEVICE</text>
+  <path class="flow" d="M460,152 C535,152 535,190 610,190"/>
+  <circle cx="650" cy="190" r="12" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="694" cy="166" r="9" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <circle cx="698" cy="216" r="9" fill="#0C0E12" stroke="#2E3643" stroke-width="2"/>
+  <text class="mono tag" x="672" y="250" text-anchor="middle">NETWORK</text>
+  <text class="mono note" x="40" y="330">EVERYTHING HAPPENS WHERE THE MALWARE LIVES &#183; RIGHT FOR SPENDING, WRONG FOR SAVINGS</text>
+</svg>

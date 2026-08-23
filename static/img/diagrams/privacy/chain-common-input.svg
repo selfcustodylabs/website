@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="The common input ownership heuristic: addresses A, B and C worth 0.5, 0.3 and 0.4 BTC are spent together into outputs of 0.7 and 0.5 BTC, so an analyst concludes one entity controls all three inputs.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="419" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">HEURISTIC 1 &#183; COMMON INPUT OWNERSHIP</text>
+  <path class="embr" d="M200,122 C275,122 275,177 350,177"/>
+  <path class="embr" d="M200,186 C275,186 275,177 350,177"/>
+  <path class="embr" d="M200,250 C275,250 275,177 350,177"/>
+  <path class="embr" d="M350,177 C410,177 410,148 470,148"/>
+  <path class="embr" d="M350,177 C410,177 410,212 470,212"/>
+  <circle cx="350" cy="177" r="6" fill="#C66A20"/>
+  <rect class="box" x="70" y="104" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="127" text-anchor="middle">A &#183; 0.5</text>
+  <rect class="box" x="70" y="168" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="191" text-anchor="middle">B &#183; 0.3</text>
+  <rect class="box" x="70" y="232" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="255" text-anchor="middle">C &#183; 0.4</text>
+  <rect class="box" x="470" y="130" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="535" y="153" text-anchor="middle">X &#183; 0.7</text>
+  <rect class="box" x="470" y="194" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="535" y="217" text-anchor="middle">Y &#183; 0.5</text>
+  <text class="mono cap" x="70" y="316" fill="#C66A20">SPENDING A, B AND C TOGETHER TAKES ALL THREE KEYS</text>
+  <text class="mono cap" x="70" y="336" fill="#C66A20">ANALYST: ONE ENTITY CONTROLS ALL THREE</text>
+  <text class="mono note" x="40" y="386">1.2 IN = 1.2 OUT &#183; COINJOIN AND PAYJOIN EXIST TO BREAK EXACTLY THIS ASSUMPTION</text>
+</svg>

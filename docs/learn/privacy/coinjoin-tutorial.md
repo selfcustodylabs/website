@@ -27,14 +27,11 @@ The stack has four pieces, and you will set them up in this order:
 
 ## What You're Building
 
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Bitcoin Core    │◄────│  JoinMarket NG    │◄────│  Jam             │
-│  (your node)     │     │  (daemon + Tor)   │     │  (your browser)  │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-  verifies the chain      talks to makers,          buttons instead
-  and your balance        signs your coinjoins      of command lines
-```
+<div class="doc-diagram">
+
+![The JoinMarket stack: Jam in your browser drives the JoinMarket NG daemon, which signs coinjoins and talks to makers over Tor, while your own Bitcoin Core node verifies the chain and your balance](/img/diagrams/privacy/joinmarket-stack.svg)
+
+</div>
 
 Jam is the control panel, JoinMarket NG does the mixing, and your node keeps everything private and verified. Counterparty traffic runs over Tor.
 

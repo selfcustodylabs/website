@@ -14,36 +14,17 @@ This is where an Electrum server comes in. It creates an index of the blockchain
 
 Think of it like the difference between reading every page of a 600-gigabyte book versus checking the index at the back.
 
-
 ## What an Electrum Server Does
 
 An Electrum server sits between Bitcoin Core and your wallet:
 
-```
-QUERY FLOW
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Sparrow Wallet                     Bitcoin Core
-     │                                  │
-     │  "Balance for                    │
-     │   address bc1q...?"              │
-     │                                  │
-     ▼                                  │
-┌─────────────────┐                     │
-│ Electrum Server │◄────────────────────┘
-│   (Index)       │     Reads blockchain
-└────────┬────────┘
-         │
-         │  "0.5 BTC"
-         │  (instant response)
-         ▼
-   Sparrow Wallet
+![An Electrum server sits between Sparrow and Bitcoin Core: the wallet asks for an address balance, the server answers instantly from its index, and the index is built by reading the chain Core has verified](/img/diagrams/bitcoin-node/electrum-query-flow.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The server indexes all addresses and transactions, building a database that can answer wallet queries efficiently. Your wallet never talks directly to Bitcoin Core. It talks to the Electrum server, which has already organized all the data for fast retrieval.
-
 
 ## Why You Need One
 
@@ -57,7 +38,6 @@ Fast, but defeats the purpose of running your own node. The public server sees a
 
 **Option 3: Run your own Electrum server**  
 Best of both worlds. Fast queries, complete privacy. This is what we recommend.
-
 
 ## Electrum Server Options
 
@@ -89,7 +69,6 @@ In Parmanode, type `ersd` for the Docker version of electrs.
 
 The original Python implementation. Still works but generally not recommended for new setups; the alternatives are faster and more efficient.
 
-
 ## The Indexing Process
 
 After Bitcoin Core finishes syncing, your Electrum server needs to build its index. This is a one-time process that takes **12-48 hours** depending on your hardware.
@@ -102,7 +81,6 @@ During indexing:
 
 **Be patient.** Just like the Bitcoin Core sync, this only happens once. After the initial index is built, the server stays current automatically.
 
-
 ## Security and Privacy Benefits
 
 Running your own Electrum server provides significant advantages:
@@ -114,7 +92,6 @@ Running your own Electrum server provides significant advantages:
 **Reliability:** Public servers can go offline, be slow, or be shut down. Your own server is always available (when your computer is running).
 
 **No Logging:** Public servers could be logging your activity. Your own server logs only what you configure it to log.
-
 
 ## Connection Information
 
@@ -134,7 +111,6 @@ TOR:        [onion address for remote access]
 
 If you installed your wallet through Parmanode, it will already be configured: no manual setup needed.
 
-
 ## Storage Requirements
 
 Your Electrum server index adds storage beyond Bitcoin Core's blockchain:
@@ -150,7 +126,6 @@ Your Electrum server index adds storage beyond Bitcoin Core's blockchain:
 </div>
 
 Plan for **at least 1.5 TB total** for Bitcoin Core plus Fulcrum, or **1.2 TB** for Bitcoin Core plus electrs.
-
 
 ## Troubleshooting
 
