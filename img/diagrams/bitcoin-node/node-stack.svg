@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" width="800" height="270" role="img" aria-label="A complete node setup: Bitcoin Core downloads and verifies the full chain, an Electrum server indexes it for fast queries, and Sparrow Wallet connects to your own server instead of a stranger's.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="269" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">YOUR NODE SETUP &#183; THREE PIECES</text>
+  <rect class="box" x="40" y="110" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="150" y="134" text-anchor="middle">BITCOIN CORE</text>
+  <text class="mono tag" x="150" y="154" text-anchor="middle">VERIFIES ALL &#183; ~600 GB</text>
+  <path class="flow" d="M264,138 L286,138"/>
+  <path d="M286,138 L279,133.9 M286,138 L279,142.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="290" y="110" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="400" y="134" text-anchor="middle">ELECTRUM SERVER</text>
+  <text class="mono tag" x="400" y="154" text-anchor="middle">INDEXES FOR FAST QUERIES</text>
+  <path class="flow" d="M514,138 L536,138"/>
+  <path d="M536,138 L529,133.9 M536,138 L529,142.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="540" y="110" width="220" height="56" rx="6"/>
+  <text class="mono amt" x="650" y="134" text-anchor="middle">SPARROW WALLET</text>
+  <text class="mono tag" x="650" y="154" text-anchor="middle">ASKS YOUR SERVER ONLY</text>
+  <text class="mono note" x="40" y="230">EACH PIECE TRUSTS ONLY THE ONE BEFORE IT &#183; AND THE FIRST ONE TRUSTS NOBODY</text>
+</svg>

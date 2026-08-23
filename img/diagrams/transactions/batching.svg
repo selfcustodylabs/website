@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Batching: three separate 140 vB payments to Alice, Bob and Charlie total 420 vB, while one transaction paying all three is about 200 vB, 52% smaller and cheaper at any fee rate.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="419" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">BATCHING &#183; ONE TX, THREE RECIPIENTS</text>
+  <text class="mono head" x="40" y="84" fill="#767C8A">THREE SEPARATE PAYMENTS</text>
+  <text class="mono amt" x="40" y="120">YOU &#8594; ALICE</text>
+  <rect class="box" x="240" y="104" width="140" height="24" rx="4"/>
+  <text class="mono tag" x="392" y="120">140 VB</text>
+  <text class="mono amt" x="40" y="160">YOU &#8594; BOB</text>
+  <rect class="box" x="240" y="144" width="140" height="24" rx="4"/>
+  <text class="mono tag" x="392" y="160">140 VB</text>
+  <text class="mono amt" x="40" y="200">YOU &#8594; CHARLIE</text>
+  <rect class="box" x="240" y="184" width="140" height="24" rx="4"/>
+  <text class="mono tag" x="392" y="200">140 VB</text>
+  <text class="mono tag-e" x="240" y="238">TOTAL: 420 VB</text>
+  <text class="mono head" x="40" y="286" fill="#F59E0B">ONE BATCHED PAYMENT</text>
+  <text class="mono amt" x="40" y="322">YOU &#8594; ALICE + BOB + CHARLIE</text>
+  <rect class="box-lit" x="320" y="306" width="200" height="24" rx="4"/>
+  <text class="mono tag-a" x="532" y="322">200 VB</text>
+  <text class="mono note" x="40" y="386">420 VB &#8594; 200 VB &#183; 52% SMALLER, 52% CHEAPER AT ANY FEE RATE</text>
+</svg>

@@ -3,7 +3,7 @@
 > Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/broadcast/
-Last updated: 2026-01-16
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -15,6 +15,12 @@ In short, broadcasting is how your transaction gets announced to the network for
 ## Broadcasting via Your Own Node vs. Third-Party Servers
 
 You have two main ways to broadcast a transaction: through your own full node or via third-party servers.
+
+<div class="doc-diagram">
+
+![Two ways to broadcast a transaction: through your own node it reaches the peer-to-peer network with no intermediary, while a third-party server sees your IP address and can log, delay or censor the transaction before relaying it](https://selfcustodylabs.com/img/diagrams/transactions/broadcast-paths.svg)
+
+</div>
 
 ### Using Your Own Node
 

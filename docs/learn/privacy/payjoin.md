@@ -3,7 +3,7 @@
 > Learn how PayJoin (BIP78) enhances Bitcoin privacy by breaking the common-input-ownership assumption. Set up PayJoin with Sparrow Wallet and BTCPay Server.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/payjoin/
-Last updated: 2026-08-22
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -18,28 +18,11 @@ PayJoin (also called P2EP: Pay-to-EndPoint, specified as BIP78) is a privacy tec
 
 In a normal Bitcoin transaction the sender provides the inputs, the receiver gets an output, and the sender gets change. PayJoin adds a twist: the receiver also adds one of their own inputs. The on-chain result looks like a normal transaction, but the assumptions that blockchain analysts make about it are wrong.
 
-```
-NORMAL TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender)              →       Bob (receiver)
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│        ───────►   │ Output: 0.7 │ Bob
-└─────────────┘                    │ Output: 0.3 │ Alice (change)
-                                   └─────────────┘
+<div class="doc-diagram">
 
-Analyst assumes: All inputs belong to sender (Alice).
+![In a normal payment Alice's 1.0 BTC input pays Bob 0.7 with 0.3 change; in a PayJoin Bob adds his own 0.5 BTC input and receives 1.2, so the analyst reads the payment as 1.2 and wrongly assumes every input is Alice's](https://selfcustodylabs.com/img/diagrams/privacy/payjoin-vs-normal.svg)
 
-PAYJOIN TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender) + Bob (receiver)  →  Both
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│ (Alice)           │ Output: 1.2 │ Bob
-│ Input: 0.5  │ (Bob)    ───────► │ Output: 0.3 │ Alice (change)
-└─────────────┘                    └─────────────┘
-
-Analyst assumes: All inputs belong to sender. Wrong.
-The common-input-ownership heuristic fails.
-```
+</div>
 
 ## Why PayJoin Matters
 

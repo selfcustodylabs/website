@@ -3,7 +3,7 @@
 > Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow, consolidation strategies, dusting attacks, and source separation rules.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/utxo-management/
-Last updated: 2026-08-22
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -79,18 +79,11 @@ Same amount sent. Wildly different fees.
 
 When you spend multiple UTXOs in one transaction, you reveal they belong to the same person:
 
-```
-BAD FOR PRIVACY:
-────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.05 BTC (from Exchange A)  ─┬─→ 0.15 BTC (payment)
-0.07 BTC (from Exchange B)  ─┤
-0.03 BTC (from friend)      ─┘
+<div class="doc-diagram">
 
-Result: Exchange A, Exchange B, and your friend
-        can now link all these sources to you.
-```
+![Coins from a KYC exchange, a peer-to-peer trade and mining kept in three separate compartments stay unlinked, while spending 0.05, 0.07 and 0.03 BTC from all three in one 0.15 BTC transaction links every history under the common-input-ownership heuristic](https://selfcustodylabs.com/img/diagrams/privacy/utxo-source-separation.svg)
+
+</div>
 
 This is the **common-input-ownership heuristic**, one of the primary tools blockchain analysts use to track people.
 
@@ -121,16 +114,11 @@ Recommended minimum: **0.01 BTC (1,000,000 sats).** This keeps your UTXOs spenda
 
 Having all your bitcoin in a single UTXO is bad for privacy. Any payment you make reveals your entire holdings to the recipient.
 
-```
-You pay someone 0.01 BTC from your 1.0 BTC UTXO:
+<div class="doc-diagram">
 
-INPUT                             OUTPUTS
-─────                             ───────
-1.0 BTC (your entire stack)  →    0.01 BTC (payment)
-                                  0.99 BTC (change)
+![Paying 0.01 BTC from a single 1.00 BTC UTXO creates a 0.99 BTC change output, so the recipient can see the sender held at least 1.00 BTC](https://selfcustodylabs.com/img/diagrams/privacy/utxo-change-reveal.svg)
 
-The recipient sees: "This person has at least 1 BTC."
-```
+</div>
 
 ### Rule 3: Keep UTXOs from Different Sources Separate
 
@@ -155,28 +143,11 @@ Without labels you will forget where each UTXO came from, which are KYC vs. non-
 
 **Coin control** is the ability to select exactly which UTXOs you spend in a transaction. Without it, your wallet makes these decisions for you, often poorly.
 
-### Without Coin Control
+<div class="doc-diagram">
 
-```
-You want to send 0.05 BTC.
+![Without coin control the wallet auto-selects a 0.03 BTC KYC coin and a 0.025 BTC non-KYC coin for a 0.05 BTC payment, linking the sources; with coin control you spend a single 0.05 BTC KYC coin and the non-KYC coin stays separate](https://selfcustodylabs.com/img/diagrams/privacy/utxo-coin-control.svg)
 
-Wallet automatically picks:
-- 0.03 BTC (from KYC exchange)
-- 0.025 BTC (from non-KYC source)
-─────────────────────────────────
-Result: KYC and non-KYC coins are now linked.
-```
-
-### With Coin Control
-
-```
-You want to send 0.05 BTC.
-
-You select:
-- 0.05 BTC (from KYC exchange only)
-─────────────────────────────────
-Result: Non-KYC coins remain separate.
-```
+</div>
 
 ### Coin Control in Sparrow Wallet
 
@@ -280,26 +251,11 @@ Signs you need consolidation:
 
 When you consolidate, you create an on-chain record that says "all these UTXOs belong to the same person":
 
-```
-GOOD CONSOLIDATION:
-────────────────────────────────────────────
-0.01 BTC (from Coinbase)     ─┐
-0.02 BTC (from Coinbase)     ─┼─→ 0.06 BTC (to yourself)
-0.03 BTC (from Coinbase)     ─┘
+<div class="doc-diagram">
 
-✅ All from same source, already linked to same identity.
-```
+![Consolidating 0.01, 0.02 and 0.03 BTC that all came from Coinbase into 0.06 BTC reveals nothing new; consolidating the same amounts from Coinbase, Kraken and a non-KYC trade fuses three separate histories forever](https://selfcustodylabs.com/img/diagrams/privacy/utxo-consolidation-rule.svg)
 
-```
-BAD CONSOLIDATION:
-────────────────────────────────────────────
-0.01 BTC (from Coinbase)     ─┐
-0.02 BTC (from Kraken)       ─┼─→ 0.06 BTC (to yourself)
-0.03 BTC (non-KYC trade)     ─┘
-
-❌ Coinbase, Kraken, and your non-KYC coins are now
-   linked together forever.
-```
+</div>
 
 ### Step-by-Step Consolidation
 
@@ -422,6 +378,12 @@ A **dusting attack** is when someone sends tiny amounts of bitcoin to many addre
 2. Recipients spend these tiny UTXOs alongside their other coins.
 3. The attacker sees which other UTXOs now co-spent with the dust, and links them all to the same owner.
 4. Combined with other analysis, the attacker may identify you.
+
+<div class="doc-diagram">
+
+![A dusting attack in three steps: the attacker sends 546 sats to thousands of addresses, the victim co-spends the dust with a real 0.4 BTC coin, and the movement of the dust links the victim's addresses into one cluster](https://selfcustodylabs.com/img/diagrams/privacy/utxo-dusting-attack.svg)
+
+</div>
 
 ### How to Protect Yourself
 

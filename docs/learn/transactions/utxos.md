@@ -3,7 +3,7 @@
 > Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/utxos/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -73,31 +73,11 @@ When you send bitcoin:
 1. **Inputs**: Existing UTXOs you own are consumed (destroyed)
 2. **Outputs**: New UTXOs are created for recipients (and change for you)
 
-```
-BEFORE TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #1: 0.05 BTC
-  UTXO #2: 0.03 BTC
-  UTXO #3: 0.02 BTC
+<div class="doc-diagram">
 
-TRANSACTION (pay someone 0.04 BTC):
-──────────────────────────────────────────────────
-INPUTS (destroyed):           OUTPUTS (created):
-  UTXO #1: 0.05 BTC    →      0.04 BTC (to recipient)
-                               0.0099 BTC (change to you)
-                               [0.0001 BTC fee]
+![Paying 0.04 BTC from a wallet holding 0.05, 0.03 and 0.02 BTC UTXOs: the 0.05 is destroyed whole and becomes 0.04 for the recipient, a new 0.0099 change UTXO and a 0.0001 mining fee, while the other two UTXOs stay untouched](https://selfcustodylabs.com/img/diagrams/transactions/utxo-lifecycle.svg)
 
-AFTER TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #2: 0.03 BTC (unchanged)
-  UTXO #3: 0.02 BTC (unchanged)
-  UTXO #4: 0.0099 BTC (new - your change)
-
-Recipient's wallet contains:
-  New UTXO: 0.04 BTC
-```
+</div>
 
 ## Key Properties of UTXOs
 
@@ -116,29 +96,21 @@ You have a 0.1 BTC UTXO and want to pay 0.03 BTC.
 
 You can spend multiple UTXOs in a single transaction. They all get consumed, and their combined value creates new outputs.
 
-```
-COMBINING UTXOs:
-──────────────────────────────────────────────────
-INPUTS:                       OUTPUTS:
-  UTXO A: 0.02 BTC  ─┐
-  UTXO B: 0.02 BTC  ─┼──→    0.05 BTC (payment)
-  UTXO C: 0.02 BTC  ─┘        0.0099 BTC (change)
-                              [0.0001 fee]
-```
+<div class="doc-diagram">
+
+![Combining UTXOs: three 0.02 BTC coins are consumed together to pay 0.05 BTC, produce 0.0099 BTC change and leave 0.0001 BTC as fee; all three inputs are destroyed in one spend](https://selfcustodylabs.com/img/diagrams/transactions/utxo-combining.svg)
+
+</div>
 
 ### 3. Each UTXO Has a History
 
 Every UTXO can be traced back through the blockchain to its creation. This history is permanent and public.
 
-```
-UTXO HISTORY EXAMPLE:
-──────────────────────────────────────────────────
-Your 0.05 BTC UTXO came from:
-  ← A payment from Alice
-    ← Who got it from an exchange withdrawal
-      ← Who got it from a mining pool
-        ← ...back to the coinbase (mining reward)
-```
+<div class="doc-diagram">
+
+![A 0.05 BTC UTXO traced back through its history: a payment from Alice, before that an exchange withdrawal, a mining pool payout, and finally the coinbase mining reward; every hop is permanent and public](https://selfcustodylabs.com/img/diagrams/transactions/utxo-history.svg)
+
+</div>
 
 This traceable history has important implications for [privacy](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters).
 
@@ -246,28 +218,11 @@ Advanced users use **coin control** to manually select UTXOs. This is important 
 
 Here's how to think about your wallet:
 
-```
-YOUR WALLET
-──────────────────────────────────────────────────
-┌──────────────────────────────────────────────┐
-│                                              │
-│   ┌─────────┐  ┌─────────┐  ┌─────────┐     │
-│   │  UTXO   │  │  UTXO   │  │  UTXO   │     │
-│   │ 0.05 BTC│  │ 0.02 BTC│  │ 0.01 BTC│     │
-│   │ addr: A │  │ addr: B │  │ addr: C │     │
-│   └─────────┘  └─────────┘  └─────────┘     │
-│                                              │
-│   ┌─────────┐  ┌─────────┐                  │
-│   │  UTXO   │  │  UTXO   │                  │
-│   │0.005 BTC│  │0.003 BTC│                  │
-│   │ addr: D │  │ addr: E │                  │
-│   └─────────┘  └─────────┘                  │
-│                                              │
-│   Balance displayed: 0.088 BTC              │
-│   Actual structure: 5 separate UTXOs        │
-│                                              │
-└──────────────────────────────────────────────┘
-```
+<div class="doc-diagram">
+
+![A wallet showing a 0.088 BTC balance actually holds five separate UTXOs of 0.05, 0.02, 0.01, 0.005 and 0.003 BTC, each locked to its own address with its own history, and each spent whole or not at all](https://selfcustodylabs.com/img/diagrams/transactions/wallet-utxos.svg)
+
+</div>
 
 Each UTXO:
 - Has a specific value

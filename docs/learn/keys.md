@@ -3,7 +3,7 @@
 > Learn how Bitcoin keys work: private keys, seed phrases (BIP39), extended keys (xpub/xprv), and derivation paths. The foundation of Bitcoin ownership.
 
 Source: https://selfcustodylabs.com/docs/learn/keys/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -14,31 +14,11 @@ Everything in Bitcoin self-custody comes back to one thing: **keys**. Your keys 
 
 Here's what you need to understand: Bitcoin doesn't know who you are. It doesn't care about your name, your identity, or your bank account. The only thing that matters is whether you can prove you control the keys to a specific address.
 
-```
-THE KEY HIERARCHY
-═══════════════════════════════════════════════════════════════
+<div class="doc-diagram">
 
-  Random Number (Entropy)
-         │
-         ▼
-    Seed Phrase ──────────► 24 words you write down
-    (BIP39)                  "abandon ability able..."
-         │
-         ▼
-  Master Private Key ─────► One key that rules them all
-    (xprv)                   Controls everything below
-         │
-         ▼
-  Derivation Path ────────► Rules for generating child keys
-    (BIP32/44/84)            m/84'/0'/0'/0/0
-         │
-         ▼
-  Individual Keys ────────► Specific keys for specific addresses
-         │
-         ▼
-    Addresses ────────────► Where Bitcoin is sent
-                             bc1q...
-```
+![The key hierarchy: entropy becomes a 24-word BIP39 seed phrase, which derives the master private key, which the derivation path expands into unlimited child keys and addresses; the seed at the root restores everything](https://selfcustodylabs.com/img/diagrams/keys/key-hierarchy.svg)
+
+</div>
 
 **You don't need to understand every detail.** But knowing the general flow helps you understand:
 - Why your seed phrase is so important (it's the root of everything)

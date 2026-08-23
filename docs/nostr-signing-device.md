@@ -3,7 +3,7 @@
 > Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/
-Last updated: 2026-01-14
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -41,9 +41,11 @@ The NSD signs messages directly on the device - your private key never touches y
 
 ## How It Works
 
-```
-NSD (signs messages) --> Horse Extension --> Nostr Client
-```
+<div class="doc-diagram">
+
+![The NSD chain: the T-Display device holds the Nostr key and signs, the Horse browser extension bridges it to the browser, and the Nostr client only ever sees signatures, never the key](https://selfcustodylabs.com/img/diagrams/nostr-signing-device/nsd-chain.svg)
+
+</div>
 
 **Components:**
 - **LILYGO T-Display** - The physical signing device

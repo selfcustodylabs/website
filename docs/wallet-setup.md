@@ -3,7 +3,7 @@
 > Step-by-step Bitcoin wallet setup guides. Learn to configure hardware wallets, verify backups, and complete the pre-deposit security checklist.
 
 Source: https://selfcustodylabs.com/docs/wallet-setup/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -17,11 +17,11 @@ If you're new to Bitcoin, start with [Learn](https://selfcustodylabs.com/docs/le
 
 Follow these guides in order for a secure setup:
 
-```
-1. Hardware Wallet Setup    →  Get your device configured
-2. Backup Verification      →  Test that your backup works
-3. Before You Deposit       →  Final checklist before funding
-```
+<div class="doc-diagram">
+
+![The wallet setup path in order: configure the hardware wallet, verify the backup actually restores it, then run the final pre-deposit checks; nothing gets funded until all three steps pass](https://selfcustodylabs.com/img/diagrams/wallet-setup/setup-path.svg)
+
+</div>
 
 ---
 

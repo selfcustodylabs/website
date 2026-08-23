@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" width="800" height="270" role="img" aria-label="A 0.05 BTC UTXO traced back through its history: a payment from Alice, before that an exchange withdrawal, a mining pool payout, and finally the coinbase mining reward; every hop is permanent and public.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="269" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">EVERY COIN CARRIES ITS HISTORY</text>
+  <rect class="box" x="40" y="120" width="128" height="44" rx="6"/>
+  <text class="mono amt" x="104" y="141" text-anchor="middle">COINBASE</text>
+  <text class="mono tag" x="104" y="157" text-anchor="middle">MINING REWARD</text>
+  <path class="flow" d="M170,142 L188,142"/>
+  <path d="M188,142 L181,137.9 M188,142 L181,146.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="192" y="120" width="128" height="44" rx="6"/>
+  <text class="mono amt" x="256" y="141" text-anchor="middle">MINING POOL</text>
+  <text class="mono tag" x="256" y="157" text-anchor="middle">PAYOUT</text>
+  <path class="flow" d="M322,142 L340,142"/>
+  <path d="M340,142 L333,137.9 M340,142 L333,146.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="344" y="120" width="128" height="44" rx="6"/>
+  <text class="mono amt" x="408" y="141" text-anchor="middle">EXCHANGE</text>
+  <text class="mono tag" x="408" y="157" text-anchor="middle">WITHDRAWAL</text>
+  <path class="flow" d="M474,142 L492,142"/>
+  <path d="M492,142 L485,137.9 M492,142 L485,146.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box" x="496" y="120" width="128" height="44" rx="6"/>
+  <text class="mono amt" x="560" y="141" text-anchor="middle">ALICE</text>
+  <text class="mono tag" x="560" y="157" text-anchor="middle">PAYMENT</text>
+  <path class="flow" d="M626,142 L644,142"/>
+  <path d="M644,142 L637,137.9 M644,142 L637,146.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="648" y="120" width="128" height="44" rx="6"/>
+  <text class="mono amt-lit" x="712" y="141" text-anchor="middle">YOUR 0.05</text>
+  <text class="mono tag" x="712" y="157" text-anchor="middle">TODAY</text>
+  <text class="mono note" x="40" y="230">EVERY HOP IS PERMANENT AND PUBLIC &#183; THE HISTORY TRAVELS WITH THE COIN</text>
+</svg>

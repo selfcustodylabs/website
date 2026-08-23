@@ -3,7 +3,7 @@
 > Practical guide: Derivation Path. Covers The BIP32 Standard, Anatomy of a Derivation Path, Common Derivation Paths.
 
 Source: https://selfcustodylabs.com/docs/learn/keys/derivation-path/
-Last updated: 2026-01-16
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -30,6 +30,12 @@ Here’s what each part means:
 - `0'` - The account. A wallet can have multiple accounts, each with its own address.
 - `0` - The change type (0 for external addresses, 1 for internal addresses like change).
 - `0` - The address index. This is used to generate a new address each time.
+
+<div class="doc-diagram">
+
+![Anatomy of the derivation path m/44'/0'/0'/0/0: master seed, purpose, coin type where 0 means Bitcoin, account number, change flag where 0 is external and 1 is change, and the address index](https://selfcustodylabs.com/img/diagrams/keys/derivation-path-anatomy.svg)
+
+</div>
 
 ## Common Derivation Paths
 

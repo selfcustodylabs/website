@@ -3,7 +3,7 @@
 > Understand and build a Bitcoin air-gapped wallet. Concepts, hardware options (laptop, Raspberry Pi, desktop), and a full step-by-step air-gapped computer setup.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -36,6 +36,12 @@ The offline device signs it.
 The signed transaction is then sent to the network.
 
 The private keys never leave the offline device.
+
+<div class="doc-diagram">
+
+![The air gap: a watch-only wallet on the online computer exchanges only PSBTs with the air-gapped signer via QR codes or SD cards; the seed and private keys never cross, and neither does any cable, wifi or bluetooth](https://selfcustodylabs.com/img/diagrams/wallets/airgap-transfer.svg)
+
+</div>
 
 ## Is This for Everyone?
 

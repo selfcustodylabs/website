@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-label="Combining UTXOs: three 0.02 BTC coins are consumed together to pay 0.05 BTC, produce 0.0099 BTC change and leave 0.0001 BTC as fee; all three inputs are destroyed in one spend.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="385" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">COMBINING UTXOS &#183; ALL CONSUMED TOGETHER</text>
+  <path class="flow" d="M200,118 C275,118 275,178 348,178"/>
+  <path class="flow" d="M200,174 C275,174 275,178 348,178"/>
+  <path class="flow" d="M200,230 C275,230 275,178 348,178"/>
+  <path class="flow" d="M352,178 C405,178 405,136 470,136"/>
+  <path class="flow" d="M352,178 C405,178 405,226 470,226"/>
+  <path class="wire" d="M352,178 C405,178 405,283 470,283"/>
+  <circle cx="350" cy="178" r="6" fill="#F59E0B"/>
+  <rect class="box" x="70" y="100" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="123" text-anchor="middle">A &#183; 0.02</text>
+  <rect class="box" x="70" y="156" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="179" text-anchor="middle">B &#183; 0.02</text>
+  <rect class="box" x="70" y="212" width="130" height="36" rx="6"/>
+  <text class="mono amt" x="135" y="235" text-anchor="middle">C &#183; 0.02</text>
+  <rect class="box" x="470" y="118" width="150" height="36" rx="6"/>
+  <text class="mono amt" x="545" y="141" text-anchor="middle">0.05 PAYMENT</text>
+  <rect class="box-lit" x="470" y="208" width="150" height="36" rx="6"/>
+  <text class="mono amt-lit" x="545" y="231" text-anchor="middle">0.0099 CHANGE</text>
+  <rect class="dashd" x="470" y="268" width="150" height="30" rx="6"/>
+  <text class="mono tag" x="545" y="288" text-anchor="middle">0.0001 FEE</text>
+  <text class="mono note" x="40" y="356">0.06 IN = 0.05 + 0.0099 + 0.0001 FEE &#183; ALL THREE COINS ARE DESTROYED IN ONE SPEND</text>
+</svg>

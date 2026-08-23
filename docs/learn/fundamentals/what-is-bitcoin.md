@@ -3,7 +3,7 @@
 > Understand what Bitcoin is, how it works, and why it matters. A beginner's introduction to digital money that no one controls.
 
 Source: https://selfcustodylabs.com/docs/learn/fundamentals/what-is-bitcoin/
-Last updated: 2026-04-14
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -26,28 +26,11 @@ The easiest way to understand Bitcoin is to picture it as a shared notebook. Ima
 
 Here's what happens when Maya, who lives in Mexico City, wants to send a little bitcoin to her cousin Daniel in Buenos Aires.
 
-```
-HOW A BITCOIN TRANSACTION WORKS:
-─────────────────────────────────────────────────────────
-1. Maya decides to send 0.1 BTC to Daniel
+<div class="doc-diagram">
 
-2. Her wallet creates a transaction and signs it
-   with her private key, which is her proof
-   that she actually owns those coins
+![The journey of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself](https://selfcustodylabs.com/img/diagrams/fundamentals/tx-journey.svg)
 
-3. The signed transaction is broadcast to the
-   Bitcoin network, reaching thousands of
-   computers around the world within seconds
-
-4. Miners check that the transaction follows
-   every rule, then bundle it into a block
-
-5. The block is added to the blockchain,
-   becoming a permanent part of the public record
-
-6. Daniel now owns 0.1 BTC, and he can verify
-   this himself without asking anyone for permission
-```
+</div>
 
 Notice what's missing from that sequence: a bank, a card network, a wire service, a foreign exchange desk. Maya and Daniel don't need any of them, because the network itself is doing the job those institutions normally do. That's the core invention.
 

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" width="800" height="470" role="img" aria-label="Bitcoin fees follow transaction size, not value: sending 0.001 BTC and sending 100 BTC in the same 140 vB transaction both cost 1,400 sats at 10 sat/vB, while a 10-input transaction of 1,100 vB costs 11,000 sats.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .title   { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #767C8A; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .fee     { font-size: 13px; font-weight: 700; fill: #FCD34D; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .bar     { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="469" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">FEES FOLLOW SIZE, NOT VALUE &#183; ALL AT 10 SAT/VB</text>
+
+  <!-- PANEL A: same size, same fee -->
+  <rect class="panel" x="40" y="66" width="720" height="180" rx="10"/>
+  <text class="mono title" x="56" y="94">SAME SIZE &#8594; SAME FEE</text>
+
+  <rect class="box" x="80" y="112" width="200" height="36" rx="6"/>
+  <text class="mono amt" x="180" y="135" text-anchor="middle">SENDS 0.001 BTC</text>
+  <rect class="bar" x="80" y="158" width="45" height="10" rx="3"/>
+  <text class="mono tag" x="136" y="167">140 VB</text>
+  <text class="mono fee" x="80" y="200">1,400 SATS</text>
+
+  <rect class="box" x="440" y="112" width="200" height="36" rx="6"/>
+  <text class="mono amt" x="540" y="135" text-anchor="middle">SENDS 100.0 BTC</text>
+  <rect class="bar" x="440" y="158" width="45" height="10" rx="3"/>
+  <text class="mono tag" x="496" y="167">140 VB</text>
+  <text class="mono fee" x="440" y="200">1,400 SATS</text>
+
+  <text class="mono tag" x="56" y="230">100,000 TIMES THE VALUE &#183; EXACTLY THE SAME FEE</text>
+
+  <!-- PANEL B: more inputs, bigger tx -->
+  <rect class="panel" x="40" y="270" width="720" height="146" rx="10"/>
+  <text class="mono title" x="56" y="298">MORE INPUTS &#8594; BIGGER TRANSACTION &#8594; BIGGER FEE</text>
+
+  <text class="mono amt" x="80" y="330">1 INPUT</text>
+  <rect class="bar" x="200" y="320" width="45" height="10" rx="3"/>
+  <text class="mono tag" x="256" y="329">140 VB</text>
+  <text class="mono fee" x="620" y="331" text-anchor="end">1,400 SATS</text>
+
+  <text class="mono amt" x="80" y="374">10 INPUTS</text>
+  <rect class="bar" x="200" y="364" width="354" height="10" rx="3"/>
+  <text class="mono tag" x="566" y="373">1,100 VB</text>
+  <text class="mono fee" x="740" y="375" text-anchor="end">11,000 SATS</text>
+
+  <text class="mono note" x="40" y="446">FEE = SIZE (VB) &#215; RATE (SAT/VB) &#183; THE VALUE BEING MOVED NEVER ENTERS THE FORMULA</text>
+</svg>

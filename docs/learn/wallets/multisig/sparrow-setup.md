@@ -3,7 +3,7 @@
 > Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow. Learn to configure your multisig, verify addresses, and make transactions.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -156,16 +156,11 @@ These devices register automatically when you verify an address:
 
 If addresses don't match on all devices, **STOP**: something is wrong.
 
-```
-ADDRESS VERIFICATION:
-────────────────────────────────────────
-Sparrow shows:    bc1q8n5...xyz
-Coldcard shows:   bc1q8n5...xyz  ✓
-Keystone shows:   bc1q8n5...xyz  ✓
-Trezor shows:     bc1q8n5...xyz  ✓
+<div class="doc-diagram">
 
-All match = Safe to receive!
-```
+![Multisig address verification: Sparrow, Coldcard, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately](https://selfcustodylabs.com/img/diagrams/wallets/address-verification.svg)
+
+</div>
 
 ## Step 10: Backup Your Wallet Descriptor
 
@@ -234,17 +229,11 @@ You need **2 of 3** signatures. Here's the process:
 1. After 2 signatures, click **"Broadcast Transaction"**
 2. Your transaction is sent to the network
 
-```
-SIGNING FLOW:
-─────────────────────────────────────────────
-Sparrow creates PSBT (unsigned transaction)
-        ↓
-Device #1 signs → Now have 1 of 2 needed
-        ↓
-Device #2 signs → Now have 2 of 2 needed ✓
-        ↓
-Sparrow broadcasts to network
-```
+<div class="doc-diagram">
+
+![Signing a 2-of-3 multisig spend in Sparrow: Sparrow creates the unsigned PSBT, device 1 signs for one of two needed signatures, device 2 completes the quorum, and Sparrow broadcasts; the PSBT moves between devices, the keys never do](https://selfcustodylabs.com/img/diagrams/wallets/sparrow-signing-steps.svg)
+
+</div>
 
 ## Important Tips
 

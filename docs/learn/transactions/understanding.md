@@ -3,7 +3,7 @@
 > Understand how Bitcoin transactions work: inputs, outputs, change, fees, and the complete lifecycle from creation to confirmation.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/understanding/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -47,6 +47,12 @@ Going back to our example:
 - **Fee**: 0.0001 BTC (automatically calculated by your wallet)
 
 That means the remaining 0.0001 BTC was used as the transaction fee.
+
+<div class="doc-diagram">
+
+![Anatomy of a transaction: a 0.01 BTC input becomes 0.008 BTC to a friend and 0.0019 BTC change to a new address you control; the missing 0.0001 BTC is the fee, which is just the difference between inputs and outputs](https://selfcustodylabs.com/img/diagrams/transactions/tx-anatomy.svg)
+
+</div>
 
 Your wallet usually calculates the fee for you, based on how busy the network is.
 
@@ -106,19 +112,11 @@ Once your transaction is in a block, each additional block that gets added after
 
 The more confirmations a transaction has, the harder it becomes to reverse. That's why businesses and users often wait for multiple confirmations before considering a payment final.
 
-```
-TRANSACTION FLOW
-════════════════════════════════════════════════════════════
+<div class="doc-diagram">
 
-  Create → Sign → Broadcast → Mempool → Block → Confirmed
-    │        │        │          │        │         │
-  Wallet   Private   Nodes    Waiting   Miner    Each new
-  builds    key     relay     for       adds     block adds
-  tx      proves    to       miner     to       confirmation
-          owner   network   pickup   blockchain
+![The transaction pipeline: the wallet creates it, the key signs it, nodes relay the broadcast, it waits in the mempool until a miner includes it in a block, and every following block adds a confirmation](https://selfcustodylabs.com/img/diagrams/transactions/tx-pipeline.svg)
 
-════════════════════════════════════════════════════════════
-```
+</div>
 
 ## Key Takeaways
 

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Single-sig puts full control on one seed phrase, one point of failure; a 2-of-3 multisig spreads control over three keys where any two spend, so one key compromised or lost leaves the funds safe.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">ONE SEED VS A QUORUM</text>
+  <text class="mono head" x="56" y="90" fill="#C66A20">SINGLE-SIG</text>
+  <rect class="box-e" x="56" y="110" width="180" height="40" rx="6"/>
+  <text class="mono amt" x="146" y="135" text-anchor="middle">ONE SEED PHRASE</text>
+  <path class="embr" d="M240,130 L300,130"/>
+  <path d="M300,130 L293,125.9 M300,130 L293,134.1" stroke="#C66A20" stroke-width="2" fill="none"/>
+  <rect class="box" x="304" y="110" width="170" height="40" rx="6"/>
+  <text class="mono amt" x="389" y="135" text-anchor="middle">FULL CONTROL</text>
+  <text class="mono cap" x="56" y="190" fill="#C66A20">LOSE IT OR LEAK IT: FUNDS GONE</text>
+  <line x1="40" y1="220" x2="760" y2="220" stroke="#1C2028" stroke-width="1"/>
+  <text class="mono head" x="56" y="254" fill="#F59E0B">2-OF-3 MULTISIG</text>
+  <rect class="box-lit" x="56" y="274" width="110" height="38" rx="6"/>
+  <text class="mono amt-lit" x="111" y="298" text-anchor="middle">KEY 1</text>
+  <rect class="box-lit" x="186" y="274" width="110" height="38" rx="6"/>
+  <text class="mono amt-lit" x="241" y="298" text-anchor="middle">KEY 2</text>
+  <rect class="box" x="316" y="274" width="110" height="38" rx="6"/>
+  <text class="mono amt" x="371" y="298" text-anchor="middle">KEY 3</text>
+  <path class="flow" d="M452,293 L512,293"/>
+  <path d="M512,293 L505,288.9 M512,293 L505,297.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <rect class="box-lit" x="516" y="274" width="190" height="38" rx="6"/>
+  <text class="mono amt-lit" x="611" y="298" text-anchor="middle">ANY 2 SPEND</text>
+  <text class="mono cap" x="56" y="348" fill="#F59E0B">ONE KEY COMPROMISED OR LOST: STILL SAFE</text>
+  <text class="mono note" x="40" y="398">SINGLE-SIG IS ONE POINT OF FAILURE &#183; THE QUORUM REMOVES IT</text>
+</svg>

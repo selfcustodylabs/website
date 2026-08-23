@@ -3,7 +3,7 @@
 > Understand Electrum servers (Electrs, Fulcrum): what they do, why you need one, and how to choose between options for your Bitcoin node setup.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/electrum-server/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -18,28 +18,11 @@ Think of it like the difference between reading every page of a 600-gigabyte boo
 
 An Electrum server sits between Bitcoin Core and your wallet:
 
-```
-QUERY FLOW
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Sparrow Wallet                     Bitcoin Core
-     │                                  │
-     │  "Balance for                    │
-     │   address bc1q...?"              │
-     │                                  │
-     ▼                                  │
-┌─────────────────┐                     │
-│ Electrum Server │◄────────────────────┘
-│   (Index)       │     Reads blockchain
-└────────┬────────┘
-         │
-         │  "0.5 BTC"
-         │  (instant response)
-         ▼
-   Sparrow Wallet
+![An Electrum server sits between Sparrow and Bitcoin Core: the wallet asks for an address balance, the server answers instantly from its index, and the index is built by reading the chain Core has verified](https://selfcustodylabs.com/img/diagrams/bitcoin-node/electrum-query-flow.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The server indexes all addresses and transactions, building a database that can answer wallet queries efficiently. Your wallet never talks directly to Bitcoin Core. It talks to the Electrum server, which has already organized all the data for fast retrieval.
 

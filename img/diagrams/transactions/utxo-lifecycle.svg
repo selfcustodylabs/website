@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-label="Paying 0.04 BTC from a wallet holding 0.05, 0.03 and 0.02 BTC UTXOs: the 0.05 is destroyed whole and becomes 0.04 for the recipient, a new 0.0099 change UTXO, and a 0.0001 mining fee, while the other two UTXOs stay untouched.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .zone    { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #767C8A; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .wall    { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="429" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">PAYING 0.04 &#183; A UTXO IS SPENT WHOLE</text>
+
+  <!-- wallet before -->
+  <rect class="wall" x="40" y="80" width="220" height="220" rx="10"/>
+  <text class="mono zone" x="56" y="106">YOUR WALLET</text>
+  <rect class="box-lit" x="56" y="122" width="130" height="32" rx="6"/>
+  <text class="mono amt-lit" x="121" y="143" text-anchor="middle">0.05</text>
+  <text class="mono tag-a" x="200" y="143">SPENT</text>
+  <rect class="box" x="56" y="170" width="130" height="32" rx="6"/>
+  <text class="mono amt" x="121" y="191" text-anchor="middle">0.03</text>
+  <text class="mono tag" x="200" y="191">STAYS</text>
+  <rect class="box" x="56" y="218" width="130" height="32" rx="6"/>
+  <text class="mono amt" x="121" y="239" text-anchor="middle">0.02</text>
+  <text class="mono tag" x="200" y="239">STAYS</text>
+
+  <!-- the whole 0.05 leaves; three things come out -->
+  <path class="flow" d="M260,138 C380,138 380,124 500,124"/>
+  <path class="flow" d="M260,138 C380,138 380,206 500,206"/>
+  <path class="wire" d="M260,138 C380,138 380,288 500,288"/>
+
+  <rect class="box" x="500" y="108" width="160" height="32" rx="6"/>
+  <text class="mono amt" x="580" y="129" text-anchor="middle">0.04</text>
+  <text class="mono tag" x="672" y="129">TO RECIPIENT</text>
+
+  <rect class="box-lit" x="500" y="190" width="160" height="32" rx="6"/>
+  <text class="mono amt-lit" x="580" y="211" text-anchor="middle">0.0099</text>
+  <text class="mono tag-a" x="672" y="205">CHANGE &#183;</text>
+  <text class="mono tag-a" x="672" y="219">NEW UTXO</text>
+
+  <rect class="box" x="500" y="272" width="160" height="32" rx="6"/>
+  <text class="mono amt" x="580" y="293" text-anchor="middle">0.0001</text>
+  <text class="mono tag" x="672" y="293">MINING FEE</text>
+
+  <text class="mono note" x="40" y="360">THE 0.05 NO LONGER EXISTS &#183; ITS VALUE LIVES ON IN THREE NEW PLACES</text>
+  <text class="mono note" x="40" y="380">0.05 = 0.04 + 0.0099 + 0.0001 &#183; UTXOS ARE NEVER SPENT IN PART</text>
+</svg>

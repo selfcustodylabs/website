@@ -3,7 +3,7 @@
 > Learn how blockchain surveillance works. Understand the heuristics and techniques used to track Bitcoin transactions and link addresses to identities.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -40,17 +40,11 @@ This is the most powerful tool in the analyst's arsenal, and it's deceptively si
 
 **Why it usually works:** To spend bitcoin from multiple addresses in one transaction, you need the private keys for all of them. Typically, only one person has those keys.
 
-```
-TRANSACTION EXAMPLE:
-──────────────────────────────────────────────────────────
-Inputs:                      Outputs:
-  Address A (0.5 BTC)  ─┐
-  Address B (0.3 BTC)  ─┼──→  Address X (0.7 BTC)
-  Address C (0.4 BTC)  ─┘     Address Y (0.5 BTC)
+<div class="doc-diagram">
 
-Analyst concludes:
-  "A, B, and C are controlled by the same entity"
-```
+![The common input ownership heuristic: addresses A, B and C worth 0.5, 0.3 and 0.4 BTC are spent together into outputs of 0.7 and 0.5 BTC, so an analyst concludes one entity controls all three inputs](https://selfcustodylabs.com/img/diagrams/privacy/chain-common-input.svg)
+
+</div>
 
 **When it breaks down:**
 - CoinJoin transactions intentionally combine inputs from multiple people
@@ -62,18 +56,11 @@ When you spend bitcoin, you rarely have the exact amount needed. If you have a 1
 
 Analysts exploit this pattern. In any transaction with two outputs, they ask: which one is the payment, and which one is change returning to the sender?
 
-```
-CHANGE DETECTION:
-──────────────────────────────────────────────────────────
-Input:                       Outputs:
-  Address A (1.0 BTC)  ──→   Address B (0.7 BTC)  ← Payment
-                              Address C (0.29 BTC) ← Change?
+<div class="doc-diagram">
 
-Clues that C is change:
-• C is a new address (never seen before)
-• C has an odd amount (0.29 vs round 0.7)
-• C uses same address type as input
-```
+![Change detection: a 1.00 BTC input pays 0.70 BTC to a round-number payment output and 0.29 BTC to a new address of the same script type; the odd remainder marks it as change returning to the sender, with 0.01 BTC as fee](https://selfcustodylabs.com/img/diagrams/privacy/chain-change-detection.svg)
+
+</div>
 
 Several indicators help analysts make this determination:
 
@@ -94,16 +81,11 @@ The real power comes from combining heuristics. Once analysts identify a change 
 
 Using the same address twice is a privacy catastrophe. It creates an undeniable link between transactions.
 
-```
-ADDRESS REUSE RISK:
-──────────────────────────────────────────────────────────
-Transaction 1: Someone pays you at Address A
-Transaction 2: You pay someone from Address A
-Transaction 3: Someone else pays you at Address A
+<div class="doc-diagram">
 
-All three transactions are now linked.
-Anyone who knows one transaction knows all of them.
-```
+![Address reuse: a payment received at address A, a payment sent from A and a second payment received at A are all permanently linked; knowing one transaction reveals the others, which is why wallets rotate addresses](https://selfcustodylabs.com/img/diagrams/privacy/chain-address-reuse.svg)
+
+</div>
 
 Modern wallets generate new addresses automatically for this reason, but address reuse still happens, especially when people share a single "donation" address publicly or when merchants use static payment addresses.
 
@@ -121,24 +103,11 @@ Numbers tell stories. Payments are often round numbers (0.1 BTC, 0.01 BTC), whil
 
 The real power of chain analysis comes from combining these techniques. Individually, each heuristic provides a piece of the puzzle. Together, they build comprehensive profiles.
 
-```
-CLUSTER BUILDING:
-──────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Step 1: Find multi-input transaction
-  Addresses A, B, C spent together → Same owner
+![Cluster building: addresses A, B and C spent together are one owner, change detection adds D, a later co-spend adds E, and the analyst ends up holding a map of every address you control](https://selfcustodylabs.com/img/diagrams/privacy/chain-analysis-cluster.svg)
 
-Step 2: Identify change addresses
-  Transaction from A creates change at D → Add D to cluster
-
-Step 3: Follow the chain
-  D later spent with E → Add E to cluster
-
-Step 4: Continue...
-  Cluster grows: {A, B, C, D, E, F, G, H...}
-
-Result: Analyst knows all your addresses
-```
+</div>
 
 ## External Data Sources
 

@@ -342,7 +342,7 @@ Your questions help us improve these guides for everyone.
 > Understand what Bitcoin is, how it works, and why it matters. A beginner's introduction to digital money that no one controls.
 
 Source: https://selfcustodylabs.com/docs/learn/fundamentals/what-is-bitcoin/
-Last updated: 2026-04-14
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -365,28 +365,11 @@ The easiest way to understand Bitcoin is to picture it as a shared notebook. Ima
 
 Here's what happens when Maya, who lives in Mexico City, wants to send a little bitcoin to her cousin Daniel in Buenos Aires.
 
-```
-HOW A BITCOIN TRANSACTION WORKS:
-─────────────────────────────────────────────────────────
-1. Maya decides to send 0.1 BTC to Daniel
+<div class="doc-diagram">
 
-2. Her wallet creates a transaction and signs it
-   with her private key, which is her proof
-   that she actually owns those coins
+![The journey of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself](https://selfcustodylabs.com/img/diagrams/fundamentals/tx-journey.svg)
 
-3. The signed transaction is broadcast to the
-   Bitcoin network, reaching thousands of
-   computers around the world within seconds
-
-4. Miners check that the transaction follows
-   every rule, then bundle it into a block
-
-5. The block is added to the blockchain,
-   becoming a permanent part of the public record
-
-6. Daniel now owns 0.1 BTC, and he can verify
-   this himself without asking anyone for permission
-```
+</div>
 
 Notice what's missing from that sequence: a bank, a card network, a wire service, a foreign exchange desk. Maya and Daniel don't need any of them, because the network itself is doing the job those institutions normally do. That's the core invention.
 
@@ -912,7 +895,7 @@ If the audit you've done shows you need a hardware wallet, start with the [Hardw
 > Learn how Bitcoin keys work: private keys, seed phrases (BIP39), extended keys (xpub/xprv), and derivation paths. The foundation of Bitcoin ownership.
 
 Source: https://selfcustodylabs.com/docs/learn/keys/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -923,31 +906,11 @@ Everything in Bitcoin self-custody comes back to one thing: **keys**. Your keys 
 
 Here's what you need to understand: Bitcoin doesn't know who you are. It doesn't care about your name, your identity, or your bank account. The only thing that matters is whether you can prove you control the keys to a specific address.
 
-```
-THE KEY HIERARCHY
-═══════════════════════════════════════════════════════════════
+<div class="doc-diagram">
 
-  Random Number (Entropy)
-         │
-         ▼
-    Seed Phrase ──────────► 24 words you write down
-    (BIP39)                  "abandon ability able..."
-         │
-         ▼
-  Master Private Key ─────► One key that rules them all
-    (xprv)                   Controls everything below
-         │
-         ▼
-  Derivation Path ────────► Rules for generating child keys
-    (BIP32/44/84)            m/84'/0'/0'/0/0
-         │
-         ▼
-  Individual Keys ────────► Specific keys for specific addresses
-         │
-         ▼
-    Addresses ────────────► Where Bitcoin is sent
-                             bc1q...
-```
+![The key hierarchy: entropy becomes a 24-word BIP39 seed phrase, which derives the master private key, which the derivation path expands into unlimited child keys and addresses; the seed at the root restores everything](https://selfcustodylabs.com/img/diagrams/keys/key-hierarchy.svg)
+
+</div>
 
 **You don't need to understand every detail.** But knowing the general flow helps you understand:
 - Why your seed phrase is so important (it's the root of everything)
@@ -1338,7 +1301,7 @@ Guard your **financial privacy** carefully, and protect your **Bitcoin private k
 > Practical guide: Derivation Path. Covers The BIP32 Standard, Anatomy of a Derivation Path, Common Derivation Paths.
 
 Source: https://selfcustodylabs.com/docs/learn/keys/derivation-path/
-Last updated: 2026-01-16
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -1365,6 +1328,12 @@ Here’s what each part means:
 - `0'` - The account. A wallet can have multiple accounts, each with its own address.
 - `0` - The change type (0 for external addresses, 1 for internal addresses like change).
 - `0` - The address index. This is used to generate a new address each time.
+
+<div class="doc-diagram">
+
+![Anatomy of the derivation path m/44'/0'/0'/0/0: master seed, purpose, coin type where 0 means Bitcoin, account number, change flag where 0 is external and 1 is change, and the address index](https://selfcustodylabs.com/img/diagrams/keys/derivation-path-anatomy.svg)
+
+</div>
 
 ## Common Derivation Paths
 
@@ -2355,7 +2324,7 @@ Pick the model that matches your threat model, not the one that looks coolest. T
 > Understand software wallets for Bitcoin: what they are, when to use them, recommended options, and security best practices.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/software-wallets/
-Last updated: 2026-08-03
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -2374,22 +2343,11 @@ The mechanics are straightforward, even if the implications are profound. When y
 
 Here's what happens behind the scenes: the app generates a seed phrase (those 12 or 24 words you'll need to protect carefully), derives your private keys from that seed, and stores everything on your device. When you want to send Bitcoin, the wallet uses those keys to sign the transaction, proving to the network that you're the rightful owner.
 
-```
-SOFTWARE WALLET FLOW:
-─────────────────────────────────────────────────────────
-Your Device (Phone/Computer)
-┌─────────────────────────────────────────────────┐
-│  Wallet App                                      │
-│  ┌─────────────┐    ┌──────────────────────┐   │
-│  │ Private Key │───►│ Sign Transaction     │   │
-│  │ (stored)    │    │                      │   │
-│  └─────────────┘    └──────────┬───────────┘   │
-│                                │               │
-└────────────────────────────────┼───────────────┘
-                                 │
-                                 ▼
-                        Bitcoin Network
-```
+<div class="doc-diagram">
+
+![A software wallet stores the private key and signs transactions on the same online phone or computer that runs the browser and apps, then broadcasts to the network; convenient for spending, the wrong place for savings](https://selfcustodylabs.com/img/diagrams/wallets/software-wallet-flow.svg)
+
+</div>
 
 The key difference from hardware wallets: **your private keys exist on an internet-connected device**, which is why software wallets are also called "hot wallets."
 
@@ -2580,7 +2538,7 @@ Software wallets occupy an important place in your Bitcoin toolkit. They're your
 > Understand hardware wallets for Bitcoin self-custody: how they work, why they're secure, popular options compared, and how to choose the right one.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/hardware-wallets/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -2599,16 +2557,11 @@ General-purpose devices are designed to do everything, which means they're optim
 
 A hardware wallet takes the opposite approach. It does **one job only**: protect your keys and sign transactions securely. No web browser. No email client. No app store. No attack surface.
 
-```
-THE SECURITY DIFFERENCE:
-─────────────────────────────────────────────────────────
-Software Wallet                 Hardware Wallet
-───────────────                 ───────────────
-Keys on computer/phone          Keys on dedicated device
-Connected to internet           Never touches internet
-Vulnerable to malware           Isolated from attacks
-Signs on same device            Signs in secure enclave
-```
+<div class="doc-diagram">
+
+![The security difference: a software wallet keeps keys on an online device shared with a browser and possible malware, while a hardware wallet keeps keys on a dedicated offline chip that signs in isolation and does exactly one job](https://selfcustodylabs.com/img/diagrams/wallets/hot-vs-cold.svg)
+
+</div>
 
 ## How Hardware Wallets Work
 
@@ -2618,22 +2571,11 @@ When you want to send Bitcoin, here's what actually happens. Your computer (runn
 
 This is the critical moment. You look at the hardware wallet's screen (not your computer's screen) and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature, never the key itself.
 
-```
-TRANSACTION SIGNING FLOW:
-─────────────────────────────────────────────────────────
-Your Computer                    Hardware Wallet
-─────────────                    ───────────────
-1. Create unsigned        ───►   
-   transaction                   2. Display on screen:
-                                    "Send 0.1 BTC to bc1q...?"
-                                 3. You verify and press button
-                                 4. Device signs internally
-                          ◄───   5. Return ONLY the signature
-6. Broadcast signed                 (private key stays inside)
-   transaction
+<div class="doc-diagram">
 
-Result: Your key was used but never exposed.
-```
+![Hardware wallet signing: the computer builds an unsigned transaction, the device shows the recipient and amount on its own screen, you verify and press the button, it signs internally and returns only the signature for broadcast; the private key never leaves](https://selfcustodylabs.com/img/diagrams/wallets/hw-signing-flow.svg)
+
+</div>
 
 Here's why this matters: even if your computer is completely compromised (keyloggers recording everything, malware watching your screen, attackers with full access), they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
 
@@ -2894,7 +2836,7 @@ Ready to set up your hardware wallet?
 > Understand and build a Bitcoin air-gapped wallet. Concepts, hardware options (laptop, Raspberry Pi, desktop), and a full step-by-step air-gapped computer setup.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -2927,6 +2869,12 @@ The offline device signs it.
 The signed transaction is then sent to the network.
 
 The private keys never leave the offline device.
+
+<div class="doc-diagram">
+
+![The air gap: a watch-only wallet on the online computer exchanges only PSBTs with the air-gapped signer via QR codes or SD cards; the seed and private keys never cross, and neither does any cable, wifi or bluetooth](https://selfcustodylabs.com/img/diagrams/wallets/airgap-transfer.svg)
+
+</div>
 
 ## Is This for Everyone?
 
@@ -3205,14 +3153,11 @@ Multisig uses an "M-of-N" structure:
 - **N** = Total number of keys in the setup
 - **M** = Number of keys required to sign
 
-```
-2-of-3 MULTISIG:
-────────────────────────────────────────────────────
-Total keys: 3
-Required to spend: 2
+<div class="doc-diagram">
 
-Any combination of 2 keys can authorize a transaction.
-```
+![A 2-of-3 multisig: three keys exist at home, office and safe, and any two signatures spend; no single key ever can, so one key can be lost or stolen without losing the funds](https://selfcustodylabs.com/img/diagrams/wallets/multisig-quorum.svg)
+
+</div>
 
 ### Common Configurations
 
@@ -3243,25 +3188,11 @@ Any combination of 2 keys can authorize a transaction.
 3. Sign with Device 2 → Transaction is now valid
 4. Broadcast the fully-signed transaction
 
-```
-SIGNING FLOW:
-────────────────────────────────────────────────────
-                     PSBT (Unsigned Transaction)
-                              │
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-               ┌─────────┐         ┌─────────┐
-               │ Device 1│         │ Device 2│
-               │  Signs  │         │  Signs  │
-               └────┬────┘         └────┬────┘
-                    │                   │
-                    └─────────┬─────────┘
-                              ▼
-                    Fully Signed Transaction
-                              │
-                              ▼
-                      Broadcast to Network
-```
+<div class="doc-diagram">
+
+![Multisig signing flow: an unsigned PSBT goes to device 1 and device 2, each signs independently, the signatures combine into a fully signed transaction and it is broadcast; no single machine ever holds two keys](https://selfcustodylabs.com/img/diagrams/wallets/multisig-signing.svg)
+
+</div>
 
 ## Why Use Multisig?
 
@@ -3282,19 +3213,11 @@ SIGNING FLOW:
 
 With multisig, your bitcoin security doesn't depend on any single thing:
 
-```
-SINGLE-SIG:
-──────────────────
-One seed phrase → Full control → Single point of failure
+<div class="doc-diagram">
 
-MULTISIG (2-of-3):
-──────────────────
-Key 1 (Home)    ─┐
-Key 2 (Office)  ─┼─→ Need ANY 2 to spend
-Key 3 (Safe)    ─┘
+![Single-sig puts full control on one seed phrase, one point of failure; a 2-of-3 multisig spreads control over three keys where any two spend, so one key compromised or lost leaves the funds safe](https://selfcustodylabs.com/img/diagrams/wallets/multisig-vs-single.svg)
 
-One key compromised ≠ funds lost
-```
+</div>
 
 ## The Tradeoffs
 
@@ -3798,7 +3721,7 @@ With your hardware wallets prepared:
 > Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow. Learn to configure your multisig, verify addresses, and make transactions.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -3951,16 +3874,11 @@ These devices register automatically when you verify an address:
 
 If addresses don't match on all devices, **STOP**: something is wrong.
 
-```
-ADDRESS VERIFICATION:
-────────────────────────────────────────
-Sparrow shows:    bc1q8n5...xyz
-Coldcard shows:   bc1q8n5...xyz  ✓
-Keystone shows:   bc1q8n5...xyz  ✓
-Trezor shows:     bc1q8n5...xyz  ✓
+<div class="doc-diagram">
 
-All match = Safe to receive!
-```
+![Multisig address verification: Sparrow, Coldcard, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately](https://selfcustodylabs.com/img/diagrams/wallets/address-verification.svg)
+
+</div>
 
 ## Step 10: Backup Your Wallet Descriptor
 
@@ -4029,17 +3947,11 @@ You need **2 of 3** signatures. Here's the process:
 1. After 2 signatures, click **"Broadcast Transaction"**
 2. Your transaction is sent to the network
 
-```
-SIGNING FLOW:
-─────────────────────────────────────────────
-Sparrow creates PSBT (unsigned transaction)
-        ↓
-Device #1 signs → Now have 1 of 2 needed
-        ↓
-Device #2 signs → Now have 2 of 2 needed ✓
-        ↓
-Sparrow broadcasts to network
-```
+<div class="doc-diagram">
+
+![Signing a 2-of-3 multisig spend in Sparrow: Sparrow creates the unsigned PSBT, device 1 signs for one of two needed signatures, device 2 completes the quorum, and Sparrow broadcasts; the PSBT moves between devices, the keys never do](https://selfcustodylabs.com/img/diagrams/wallets/sparrow-signing-steps.svg)
+
+</div>
 
 ## Important Tips
 
@@ -4474,7 +4386,7 @@ A Bitcoin transaction is not a debit from an account. It is a chain of cryptogra
 > Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/utxos/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -4544,31 +4456,11 @@ When you send bitcoin:
 1. **Inputs**: Existing UTXOs you own are consumed (destroyed)
 2. **Outputs**: New UTXOs are created for recipients (and change for you)
 
-```
-BEFORE TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #1: 0.05 BTC
-  UTXO #2: 0.03 BTC
-  UTXO #3: 0.02 BTC
+<div class="doc-diagram">
 
-TRANSACTION (pay someone 0.04 BTC):
-──────────────────────────────────────────────────
-INPUTS (destroyed):           OUTPUTS (created):
-  UTXO #1: 0.05 BTC    →      0.04 BTC (to recipient)
-                               0.0099 BTC (change to you)
-                               [0.0001 BTC fee]
+![Paying 0.04 BTC from a wallet holding 0.05, 0.03 and 0.02 BTC UTXOs: the 0.05 is destroyed whole and becomes 0.04 for the recipient, a new 0.0099 change UTXO and a 0.0001 mining fee, while the other two UTXOs stay untouched](https://selfcustodylabs.com/img/diagrams/transactions/utxo-lifecycle.svg)
 
-AFTER TRANSACTION:
-──────────────────────────────────────────────────
-Your wallet contains:
-  UTXO #2: 0.03 BTC (unchanged)
-  UTXO #3: 0.02 BTC (unchanged)
-  UTXO #4: 0.0099 BTC (new - your change)
-
-Recipient's wallet contains:
-  New UTXO: 0.04 BTC
-```
+</div>
 
 ## Key Properties of UTXOs
 
@@ -4587,29 +4479,21 @@ You have a 0.1 BTC UTXO and want to pay 0.03 BTC.
 
 You can spend multiple UTXOs in a single transaction. They all get consumed, and their combined value creates new outputs.
 
-```
-COMBINING UTXOs:
-──────────────────────────────────────────────────
-INPUTS:                       OUTPUTS:
-  UTXO A: 0.02 BTC  ─┐
-  UTXO B: 0.02 BTC  ─┼──→    0.05 BTC (payment)
-  UTXO C: 0.02 BTC  ─┘        0.0099 BTC (change)
-                              [0.0001 fee]
-```
+<div class="doc-diagram">
+
+![Combining UTXOs: three 0.02 BTC coins are consumed together to pay 0.05 BTC, produce 0.0099 BTC change and leave 0.0001 BTC as fee; all three inputs are destroyed in one spend](https://selfcustodylabs.com/img/diagrams/transactions/utxo-combining.svg)
+
+</div>
 
 ### 3. Each UTXO Has a History
 
 Every UTXO can be traced back through the blockchain to its creation. This history is permanent and public.
 
-```
-UTXO HISTORY EXAMPLE:
-──────────────────────────────────────────────────
-Your 0.05 BTC UTXO came from:
-  ← A payment from Alice
-    ← Who got it from an exchange withdrawal
-      ← Who got it from a mining pool
-        ← ...back to the coinbase (mining reward)
-```
+<div class="doc-diagram">
+
+![A 0.05 BTC UTXO traced back through its history: a payment from Alice, before that an exchange withdrawal, a mining pool payout, and finally the coinbase mining reward; every hop is permanent and public](https://selfcustodylabs.com/img/diagrams/transactions/utxo-history.svg)
+
+</div>
 
 This traceable history has important implications for [privacy](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters).
 
@@ -4717,28 +4601,11 @@ Advanced users use **coin control** to manually select UTXOs. This is important 
 
 Here's how to think about your wallet:
 
-```
-YOUR WALLET
-──────────────────────────────────────────────────
-┌──────────────────────────────────────────────┐
-│                                              │
-│   ┌─────────┐  ┌─────────┐  ┌─────────┐     │
-│   │  UTXO   │  │  UTXO   │  │  UTXO   │     │
-│   │ 0.05 BTC│  │ 0.02 BTC│  │ 0.01 BTC│     │
-│   │ addr: A │  │ addr: B │  │ addr: C │     │
-│   └─────────┘  └─────────┘  └─────────┘     │
-│                                              │
-│   ┌─────────┐  ┌─────────┐                  │
-│   │  UTXO   │  │  UTXO   │                  │
-│   │0.005 BTC│  │0.003 BTC│                  │
-│   │ addr: D │  │ addr: E │                  │
-│   └─────────┘  └─────────┘                  │
-│                                              │
-│   Balance displayed: 0.088 BTC              │
-│   Actual structure: 5 separate UTXOs        │
-│                                              │
-└──────────────────────────────────────────────┘
-```
+<div class="doc-diagram">
+
+![A wallet showing a 0.088 BTC balance actually holds five separate UTXOs of 0.05, 0.02, 0.01, 0.005 and 0.003 BTC, each locked to its own address with its own history, and each spent whole or not at all](https://selfcustodylabs.com/img/diagrams/transactions/wallet-utxos.svg)
+
+</div>
 
 Each UTXO:
 - Has a specific value
@@ -4782,7 +4649,7 @@ Each UTXO:
 > Understand how Bitcoin transactions work: inputs, outputs, change, fees, and the complete lifecycle from creation to confirmation.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/understanding/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -4826,6 +4693,12 @@ Going back to our example:
 - **Fee**: 0.0001 BTC (automatically calculated by your wallet)
 
 That means the remaining 0.0001 BTC was used as the transaction fee.
+
+<div class="doc-diagram">
+
+![Anatomy of a transaction: a 0.01 BTC input becomes 0.008 BTC to a friend and 0.0019 BTC change to a new address you control; the missing 0.0001 BTC is the fee, which is just the difference between inputs and outputs](https://selfcustodylabs.com/img/diagrams/transactions/tx-anatomy.svg)
+
+</div>
 
 Your wallet usually calculates the fee for you, based on how busy the network is.
 
@@ -4885,19 +4758,11 @@ Once your transaction is in a block, each additional block that gets added after
 
 The more confirmations a transaction has, the harder it becomes to reverse. That's why businesses and users often wait for multiple confirmations before considering a payment final.
 
-```
-TRANSACTION FLOW
-════════════════════════════════════════════════════════════
+<div class="doc-diagram">
 
-  Create → Sign → Broadcast → Mempool → Block → Confirmed
-    │        │        │          │        │         │
-  Wallet   Private   Nodes    Waiting   Miner    Each new
-  builds    key     relay     for       adds     block adds
-  tx      proves    to       miner     to       confirmation
-          owner   network   pickup   blockchain
+![The transaction pipeline: the wallet creates it, the key signs it, nodes relay the broadcast, it waits in the mempool until a miner includes it in a block, and every following block adds a confirmation](https://selfcustodylabs.com/img/diagrams/transactions/tx-pipeline.svg)
 
-════════════════════════════════════════════════════════════
-```
+</div>
 
 ## Key Takeaways
 
@@ -4959,7 +4824,7 @@ This method is particularly useful in wallets that support advanced fee control 
 > How Bitcoin transaction signing works: what signing means, online vs offline signing flows, and single-sig versus multisig signing.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/sign/
-Last updated: 2026-04-15
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -5009,6 +4874,12 @@ Here’s how a typical air-gapped signing setup works:
 5. Move the signed transaction back to the online device.
 6. Broadcast it to the Bitcoin network.
 
+<div class="doc-diagram">
+
+![Air-gapped signing: an online watch-only wallet builds the transaction and exports a PSBT, the file crosses the gap by USB, QR or SD card, an offline device holding the private key signs it, and the signed PSBT returns for broadcast; the key never crosses](https://selfcustodylabs.com/img/diagrams/transactions/airgap-signing.svg)
+
+</div>
+
 This layered approach keeps your private key isolated from internet exposure while allowing secure transaction signing.
 ---
 
@@ -5020,7 +4891,7 @@ This layered approach keeps your private key isolated from internet exposure whi
 > Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/broadcast/
-Last updated: 2026-01-16
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -5032,6 +4903,12 @@ In short, broadcasting is how your transaction gets announced to the network for
 ## Broadcasting via Your Own Node vs. Third-Party Servers
 
 You have two main ways to broadcast a transaction: through your own full node or via third-party servers.
+
+<div class="doc-diagram">
+
+![Two ways to broadcast a transaction: through your own node it reaches the peer-to-peer network with no intermediary, while a third-party server sees your IP address and can log, delay or censor the transaction before relaying it](https://selfcustodylabs.com/img/diagrams/transactions/broadcast-paths.svg)
+
+</div>
 
 ### Using Your Own Node
 
@@ -5062,7 +4939,7 @@ Broadcasting can reveal information about you if not done carefully. To improve 
 > Understand how Bitcoin transaction fees work, why they vary, and how to minimize costs. Learn fee estimation, RBF, CPFP, and fee optimization strategies.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/fees/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -5083,6 +4960,12 @@ This means:
 - Sending 0.001 BTC costs the same as sending 100 BTC
 - Complex transactions (more inputs/outputs) cost more
 - Simple transactions are cheapest
+
+<div class="doc-diagram">
+
+![Bitcoin fees follow transaction size, not value: sending 0.001 BTC and sending 100 BTC in the same 140 vB transaction both cost 1,400 sats at 10 sat/vB, while a 10-input transaction of 1,100 vB costs 11,000 sats](https://selfcustodylabs.com/img/diagrams/transactions/fee-size-not-value.svg)
+
+</div>
 
 ### Why Fees Vary
 
@@ -5199,13 +5082,11 @@ The new transaction's fee must cover the "deficit" of the parent transaction to 
 
 When fees are cheap (1-5 sats/vB), combine small UTXOs:
 
-```
-BEFORE: 50 small UTXOs
-  → Future transaction needs 50 inputs = expensive
+<div class="doc-diagram">
 
-AFTER: 1 large UTXO
-  → Future transaction needs 1 input = cheap
-```
+![Consolidation: one low-fee transaction turns 50 small UTXOs into a single large one, so the next payment needs 1 input instead of 50; do it at 1-5 sat/vB and only with same-source coins, because consolidation links histories](https://selfcustodylabs.com/img/diagrams/transactions/consolidation-payoff.svg)
+
+</div>
 
 See [UTXO Consolidation](https://selfcustodylabs.com/docs/learn/privacy/utxo-management#consolidation-strategies) for details.
 
@@ -5213,17 +5094,11 @@ See [UTXO Consolidation](https://selfcustodylabs.com/docs/learn/privacy/utxo-man
 
 If sending to multiple recipients, batch them:
 
-```
-INEFFICIENT:
-  Transaction 1: You → Alice     (140 vB)
-  Transaction 2: You → Bob       (140 vB)
-  Transaction 3: You → Charlie   (140 vB)
-  Total: 420 vB
+<div class="doc-diagram">
 
-EFFICIENT:
-  Transaction 1: You → Alice, Bob, Charlie (200 vB)
-  Savings: 52%
-```
+![Batching: three separate 140 vB payments to Alice, Bob and Charlie total 420 vB, while one transaction paying all three is about 200 vB, 52% smaller and cheaper at any fee rate](https://selfcustodylabs.com/img/diagrams/transactions/batching.svg)
+
+</div>
 
 ### 3. Time Your Transactions
 
@@ -5357,7 +5232,7 @@ This section covers what the chain reveals, how surveillance firms link addresse
 > Why financial privacy matters for Bitcoin users. What information is exposed on the public blockchain and how it affects your security.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -5374,18 +5249,11 @@ The good news: privacy is possible. The first step is understanding what you're 
 
 When you make a Bitcoin transaction, more information is recorded than most people realize. The sending address, the receiving address, the exact amount, the precise time: all of it goes on a permanent public ledger that will exist as long as Bitcoin exists.
 
-```
-WHAT THE BLOCKCHAIN SHOWS:
-──────────────────────────────────────────────────────────
-Address A  ──→  1.5 BTC  ──→  Address B
-                0.3 BTC  ──→  Address C (change)
+<div class="doc-diagram">
 
-Anyone can see:
-• A sent 1.5 BTC to B
-• A received 0.3 BTC back as change
-• This happened at block 812,345
-• This data will exist forever
-```
+![A transaction from address A worth 1.80 BTC paying 1.50 BTC to B with 0.30 BTC change: the blockchain publishes both addresses, both amounts and the time at block 812,345, readable by anyone forever, with no names attached](https://selfcustodylabs.com/img/diagrams/privacy/blockchain-shows.svg)
+
+</div>
 
 Now, the blockchain doesn't contain names, only addresses. This is called **pseudonymity**. You're identified by a string of characters rather than your legal name. At first glance, this seems private enough. But here's the problem: pseudonymity is fragile. Once your identity connects to any address, the veil starts to unravel.
 
@@ -5409,20 +5277,11 @@ Think about how most people acquire Bitcoin. They sign up for an exchange, submi
 
 Once that first link exists, blockchain analysis can follow the trail. Your coins move from address to address, and each hop is publicly recorded.
 
-```
-YOUR PRIVACY LEAK:
-──────────────────────────────────────────────────────────
-Exchange knows:
-  "John Smith withdrew to address A"
-        ↓
-Blockchain shows:
-  Address A → Address B → Address C → Address D
-        ↓
-Analyst concludes:
-  "John Smith likely controls A, B, C, and D"
-  "John Smith has approximately X bitcoin"
-  "John Smith paid merchant M on this date"
-```
+<div class="doc-diagram">
+
+![A KYC exchange records that John Smith withdrew to address A; the public chain shows A paying B, then C, then D, so an analyst attributes all four addresses, the total balance and the merchant payments to John Smith](https://selfcustodylabs.com/img/diagrams/privacy/privacy-exposure.svg)
+
+</div>
 
 What started as "just one withdrawal" becomes a comprehensive financial profile.
 
@@ -5531,7 +5390,7 @@ The Bitcoin privacy landscape is challenging but navigable. Keep these principle
 > Learn how blockchain surveillance works. Understand the heuristics and techniques used to track Bitcoin transactions and link addresses to identities.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -5568,17 +5427,11 @@ This is the most powerful tool in the analyst's arsenal, and it's deceptively si
 
 **Why it usually works:** To spend bitcoin from multiple addresses in one transaction, you need the private keys for all of them. Typically, only one person has those keys.
 
-```
-TRANSACTION EXAMPLE:
-──────────────────────────────────────────────────────────
-Inputs:                      Outputs:
-  Address A (0.5 BTC)  ─┐
-  Address B (0.3 BTC)  ─┼──→  Address X (0.7 BTC)
-  Address C (0.4 BTC)  ─┘     Address Y (0.5 BTC)
+<div class="doc-diagram">
 
-Analyst concludes:
-  "A, B, and C are controlled by the same entity"
-```
+![The common input ownership heuristic: addresses A, B and C worth 0.5, 0.3 and 0.4 BTC are spent together into outputs of 0.7 and 0.5 BTC, so an analyst concludes one entity controls all three inputs](https://selfcustodylabs.com/img/diagrams/privacy/chain-common-input.svg)
+
+</div>
 
 **When it breaks down:**
 - CoinJoin transactions intentionally combine inputs from multiple people
@@ -5590,18 +5443,11 @@ When you spend bitcoin, you rarely have the exact amount needed. If you have a 1
 
 Analysts exploit this pattern. In any transaction with two outputs, they ask: which one is the payment, and which one is change returning to the sender?
 
-```
-CHANGE DETECTION:
-──────────────────────────────────────────────────────────
-Input:                       Outputs:
-  Address A (1.0 BTC)  ──→   Address B (0.7 BTC)  ← Payment
-                              Address C (0.29 BTC) ← Change?
+<div class="doc-diagram">
 
-Clues that C is change:
-• C is a new address (never seen before)
-• C has an odd amount (0.29 vs round 0.7)
-• C uses same address type as input
-```
+![Change detection: a 1.00 BTC input pays 0.70 BTC to a round-number payment output and 0.29 BTC to a new address of the same script type; the odd remainder marks it as change returning to the sender, with 0.01 BTC as fee](https://selfcustodylabs.com/img/diagrams/privacy/chain-change-detection.svg)
+
+</div>
 
 Several indicators help analysts make this determination:
 
@@ -5622,16 +5468,11 @@ The real power comes from combining heuristics. Once analysts identify a change 
 
 Using the same address twice is a privacy catastrophe. It creates an undeniable link between transactions.
 
-```
-ADDRESS REUSE RISK:
-──────────────────────────────────────────────────────────
-Transaction 1: Someone pays you at Address A
-Transaction 2: You pay someone from Address A
-Transaction 3: Someone else pays you at Address A
+<div class="doc-diagram">
 
-All three transactions are now linked.
-Anyone who knows one transaction knows all of them.
-```
+![Address reuse: a payment received at address A, a payment sent from A and a second payment received at A are all permanently linked; knowing one transaction reveals the others, which is why wallets rotate addresses](https://selfcustodylabs.com/img/diagrams/privacy/chain-address-reuse.svg)
+
+</div>
 
 Modern wallets generate new addresses automatically for this reason, but address reuse still happens, especially when people share a single "donation" address publicly or when merchants use static payment addresses.
 
@@ -5649,24 +5490,11 @@ Numbers tell stories. Payments are often round numbers (0.1 BTC, 0.01 BTC), whil
 
 The real power of chain analysis comes from combining these techniques. Individually, each heuristic provides a piece of the puzzle. Together, they build comprehensive profiles.
 
-```
-CLUSTER BUILDING:
-──────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Step 1: Find multi-input transaction
-  Addresses A, B, C spent together → Same owner
+![Cluster building: addresses A, B and C spent together are one owner, change detection adds D, a later co-spend adds E, and the analyst ends up holding a map of every address you control](https://selfcustodylabs.com/img/diagrams/privacy/chain-analysis-cluster.svg)
 
-Step 2: Identify change addresses
-  Transaction from A creates change at D → Add D to cluster
-
-Step 3: Follow the chain
-  D later spent with E → Add E to cluster
-
-Step 4: Continue...
-  Cluster grows: {A, B, C, D, E, F, G, H...}
-
-Result: Analyst knows all your addresses
-```
+</div>
 
 ## External Data Sources
 
@@ -6017,7 +5845,7 @@ You now understand why privacy matters, how blockchain surveillance works, and t
 > Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow, consolidation strategies, dusting attacks, and source separation rules.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/utxo-management/
-Last updated: 2026-08-22
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -6093,18 +5921,11 @@ Same amount sent. Wildly different fees.
 
 When you spend multiple UTXOs in one transaction, you reveal they belong to the same person:
 
-```
-BAD FOR PRIVACY:
-────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.05 BTC (from Exchange A)  ─┬─→ 0.15 BTC (payment)
-0.07 BTC (from Exchange B)  ─┤
-0.03 BTC (from friend)      ─┘
+<div class="doc-diagram">
 
-Result: Exchange A, Exchange B, and your friend
-        can now link all these sources to you.
-```
+![Coins from a KYC exchange, a peer-to-peer trade and mining kept in three separate compartments stay unlinked, while spending 0.05, 0.07 and 0.03 BTC from all three in one 0.15 BTC transaction links every history under the common-input-ownership heuristic](https://selfcustodylabs.com/img/diagrams/privacy/utxo-source-separation.svg)
+
+</div>
 
 This is the **common-input-ownership heuristic**, one of the primary tools blockchain analysts use to track people.
 
@@ -6135,16 +5956,11 @@ Recommended minimum: **0.01 BTC (1,000,000 sats).** This keeps your UTXOs spenda
 
 Having all your bitcoin in a single UTXO is bad for privacy. Any payment you make reveals your entire holdings to the recipient.
 
-```
-You pay someone 0.01 BTC from your 1.0 BTC UTXO:
+<div class="doc-diagram">
 
-INPUT                             OUTPUTS
-─────                             ───────
-1.0 BTC (your entire stack)  →    0.01 BTC (payment)
-                                  0.99 BTC (change)
+![Paying 0.01 BTC from a single 1.00 BTC UTXO creates a 0.99 BTC change output, so the recipient can see the sender held at least 1.00 BTC](https://selfcustodylabs.com/img/diagrams/privacy/utxo-change-reveal.svg)
 
-The recipient sees: "This person has at least 1 BTC."
-```
+</div>
 
 ### Rule 3: Keep UTXOs from Different Sources Separate
 
@@ -6169,28 +5985,11 @@ Without labels you will forget where each UTXO came from, which are KYC vs. non-
 
 **Coin control** is the ability to select exactly which UTXOs you spend in a transaction. Without it, your wallet makes these decisions for you, often poorly.
 
-### Without Coin Control
+<div class="doc-diagram">
 
-```
-You want to send 0.05 BTC.
+![Without coin control the wallet auto-selects a 0.03 BTC KYC coin and a 0.025 BTC non-KYC coin for a 0.05 BTC payment, linking the sources; with coin control you spend a single 0.05 BTC KYC coin and the non-KYC coin stays separate](https://selfcustodylabs.com/img/diagrams/privacy/utxo-coin-control.svg)
 
-Wallet automatically picks:
-- 0.03 BTC (from KYC exchange)
-- 0.025 BTC (from non-KYC source)
-─────────────────────────────────
-Result: KYC and non-KYC coins are now linked.
-```
-
-### With Coin Control
-
-```
-You want to send 0.05 BTC.
-
-You select:
-- 0.05 BTC (from KYC exchange only)
-─────────────────────────────────
-Result: Non-KYC coins remain separate.
-```
+</div>
 
 ### Coin Control in Sparrow Wallet
 
@@ -6294,26 +6093,11 @@ Signs you need consolidation:
 
 When you consolidate, you create an on-chain record that says "all these UTXOs belong to the same person":
 
-```
-GOOD CONSOLIDATION:
-────────────────────────────────────────────
-0.01 BTC (from Coinbase)     ─┐
-0.02 BTC (from Coinbase)     ─┼─→ 0.06 BTC (to yourself)
-0.03 BTC (from Coinbase)     ─┘
+<div class="doc-diagram">
 
-✅ All from same source, already linked to same identity.
-```
+![Consolidating 0.01, 0.02 and 0.03 BTC that all came from Coinbase into 0.06 BTC reveals nothing new; consolidating the same amounts from Coinbase, Kraken and a non-KYC trade fuses three separate histories forever](https://selfcustodylabs.com/img/diagrams/privacy/utxo-consolidation-rule.svg)
 
-```
-BAD CONSOLIDATION:
-────────────────────────────────────────────
-0.01 BTC (from Coinbase)     ─┐
-0.02 BTC (from Kraken)       ─┼─→ 0.06 BTC (to yourself)
-0.03 BTC (non-KYC trade)     ─┘
-
-❌ Coinbase, Kraken, and your non-KYC coins are now
-   linked together forever.
-```
+</div>
 
 ### Step-by-Step Consolidation
 
@@ -6437,6 +6221,12 @@ A **dusting attack** is when someone sends tiny amounts of bitcoin to many addre
 3. The attacker sees which other UTXOs now co-spent with the dust, and links them all to the same owner.
 4. Combined with other analysis, the attacker may identify you.
 
+<div class="doc-diagram">
+
+![A dusting attack in three steps: the attacker sends 546 sats to thousands of addresses, the victim co-spends the dust with a real 0.4 BTC coin, and the movement of the dust links the victim's addresses into one cluster](https://selfcustodylabs.com/img/diagrams/privacy/utxo-dusting-attack.svg)
+
+</div>
+
 ### How to Protect Yourself
 
 - **Freeze suspicious small UTXOs:** mark them "do not spend"
@@ -6508,20 +6298,11 @@ Picture ten people around a table. Each drops an identical 50 euro note into a h
 
 CoinJoin is that hat, built as a single Bitcoin transaction. Multiple users combine their inputs and receive **equal-sized outputs**, so an outside observer cannot match inputs to outputs.
 
-```
-NORMAL TRANSACTION:
-────────────────────────────────
-Alice (1 BTC) ─────► Bob (1 BTC)
-Easy to trace: Alice paid Bob.
+<div class="doc-diagram">
 
-COINJOIN TRANSACTION:
-────────────────────────────────
-Alice (1 BTC) ──┐
-Bob   (1 BTC) ──┼──► 1 BTC ──► ??? (Alice? Bob? Carol?)
-Carol (1 BTC) ──┘    1 BTC ──► ??? (Alice? Bob? Carol?)
-                     1 BTC ──► ??? (Alice? Bob? Carol?)
-Hard to trace: each participant got 1 BTC back, but who got which?
-```
+![A normal payment of 1.00 BTC from Alice to Bob leaves one traceable link, while a CoinJoin where Alice, Bob and Carol each contribute 1.00 BTC and each receive 1.00 BTC back gives every output three equally likely owners](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-vs-normal.svg)
+
+</div>
 
 Two properties make this safe:
 
@@ -6541,31 +6322,31 @@ CoinJoin attacks the tracing directly. It breaks the **common-input-ownership he
 
 ## How CoinJoin Works {#how-coinjoin-works}
 
+<div class="doc-diagram">
+
+![Five unequal inputs of 0.82, 0.31, 0.55, 0.24 and 0.47 BTC each produce one identical 0.20 BTC mixed output plus their own change of 0.62, 0.11, 0.35, 0.04 and 0.27 BTC; the mixed outputs cannot be told apart, but change stays linkable by amount](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-equal-outputs.svg)
+
+</div>
+
 ### Equal Outputs Make Coins Interchangeable
 
 If outputs had different sizes, you could trace them by following the amounts. Equal outputs remove that signal.
 
-```
-Without equal outputs (traceable):
-  Inputs:  0.5 + 0.8 + 0.3 BTC
-  Outputs: 0.3 + 0.5 + 0.8 BTC
-  Analyst: "The 0.8 output belongs to whoever sent 0.8."
+<div class="doc-diagram">
 
-With equal outputs (not traceable):
-  Inputs:  0.5 + 0.8 + 0.3 BTC
-  Outputs: 0.5 + 0.5 + 0.5 BTC + change
-  Analyst: "Three identical outputs. I cannot tell them apart."
-```
+![With unequal outputs an analyst matches the 0.5, 0.8 and 0.3 BTC inputs to their outputs by amount; with three equal 0.30 BTC outputs plus change of 0.20 and 0.50, the amounts carry no signal](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-equal-vs-unequal.svg)
+
+</div>
 
 ### The Anonymity Set
 
 The **anonymity set** is the number of equally plausible owners each output has. Bigger is better.
 
-```
- 3-person coinjoin:  each output has  3 possible owners
-10-person coinjoin:  each output has 10 possible owners
-100-person coinjoin: each output has 100 possible owners
-```
+<div class="doc-diagram">
+
+![One coin entering three successive CoinJoin rounds of five participants each: candidate owners grow from 5 after one round to 25 after two and up to 125 after three, multiplying with every remix](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-anonymity-rounds.svg)
+
+</div>
 
 After one 100-person round, an analyst picking an output has a 1% chance of naming the right owner.
 
@@ -6593,13 +6374,11 @@ Three people each hold 0.1 BTC with a history they would rather not carry around
 
 They coinjoin:
 
-```
-INPUTS                      OUTPUTS
-──────                      ───────
-Alice's 0.1 BTC  ─┐         ──► 0.1 BTC to ???
-Bob's   0.1 BTC  ─┼──►      ──► 0.1 BTC to ???
-Carol's 0.1 BTC  ─┘         ──► 0.1 BTC to ???
-```
+<div class="doc-diagram">
+
+![Alice's employer, Bob's exchange and anyone watching Carol each follow a 0.1 BTC coin into the same CoinJoin and out to three identical 0.1 BTC outputs; every watcher's trail dead-ends into a one-in-three guess](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-dead-ends.svg)
+
+</div>
 
 Afterward, Alice's employer sees her 0.1 BTC entered a coinjoin and then becomes one of three identical outputs. It cannot tell which one is hers, and neither can Bob's exchange or anyone watching Carol's coins. Each history now dead-ends into ambiguity, and with bigger rounds and more remixes the ambiguity grows from "one in three" to "one in hundreds".
 
@@ -6714,34 +6493,17 @@ Mixing is half the work. What you do **afterward** decides whether the privacy h
 
 The most common way people destroy their own coinjoin:
 
-```
-BAD TRANSACTION:
-─────────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.1 BTC (mixed, private)   ─┬─→ 0.25 BTC (payment)
-0.15 BTC (KYC, not mixed)  ─┘
+<div class="doc-diagram">
 
-Result: the mixed coin is now linked to your identity again.
-```
+![Two transactions that undo a mix: merging a 0.10 BTC mixed coin with a 0.15 BTC KYC coin into one 0.25 BTC payment re-attaches your identity, and consolidating three 0.10 BTC mixed coins from different rounds into a single 0.30 BTC output proves one owner ran all three rounds](https://selfcustodylabs.com/img/diagrams/privacy/coinjoin-postmix-rules.svg)
+
+</div>
 
 The KYC coin carries your name. Spending both in one transaction signs your name onto the mixed coin too, and the mixing fee bought you nothing. Keep mixed and unmixed funds in **separate wallets** so your software cannot combine them by accident.
 
 ### Rule 2: Don't Consolidate Mixed Coins
 
-```
-BAD TRANSACTION:
-─────────────────────────────────────────────────
-INPUTS                          OUTPUT
-──────                          ──────
-0.1 BTC (mixed, round 1)   ─┬─→ 0.3 BTC (your address)
-0.1 BTC (mixed, round 2)   ─┤
-0.1 BTC (mixed, round 3)   ─┘
-
-Observer: "these three mixed coins belong to one person."
-```
-
-Before this transaction each output could have belonged to anyone in its round. After it, all three provably share an owner, which collapses their anonymity sets at once. Spend mixed UTXOs individually. If a payment truly requires combining, understand you are spending privacy to make it.
+Before such a consolidation, each mixed output could have belonged to anyone in its round. After it, all three provably share an owner, which collapses their anonymity sets at once. Spend mixed UTXOs individually. If a payment truly requires combining, understand you are spending privacy to make it.
 
 ### Rule 3: Handle Change Carefully
 
@@ -6827,7 +6589,7 @@ Ready for practice? Continue with the [CoinJoin Tutorial: JoinMarket NG and Jam]
 > Step-by-step Bitcoin coinjoin with JoinMarket NG and Jam: your own node, a dedicated hot wallet, funding, mixing rounds, and sweeping out cleanly.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/coinjoin-tutorial/
-Last updated: 2026-08-22
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -6849,14 +6611,11 @@ The stack has four pieces, and you will set them up in this order:
 
 ## What You're Building
 
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Bitcoin Core    │◄────│  JoinMarket NG    │◄────│  Jam             │
-│  (your node)     │     │  (daemon + Tor)   │     │  (your browser)  │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-  verifies the chain      talks to makers,          buttons instead
-  and your balance        signs your coinjoins      of command lines
-```
+<div class="doc-diagram">
+
+![The JoinMarket stack: Jam in your browser drives the JoinMarket NG daemon, which signs coinjoins and talks to makers over Tor, while your own Bitcoin Core node verifies the chain and your balance](https://selfcustodylabs.com/img/diagrams/privacy/joinmarket-stack.svg)
+
+</div>
 
 Jam is the control panel, JoinMarket NG does the mixing, and your node keeps everything private and verified. Counterparty traffic runs over Tor.
 
@@ -6989,7 +6748,7 @@ You now have a working, coordinator-free privacy pipeline: node, JoinMarket NG, 
 > Learn how PayJoin (BIP78) enhances Bitcoin privacy by breaking the common-input-ownership assumption. Set up PayJoin with Sparrow Wallet and BTCPay Server.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/payjoin/
-Last updated: 2026-08-22
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -7004,28 +6763,11 @@ PayJoin (also called P2EP: Pay-to-EndPoint, specified as BIP78) is a privacy tec
 
 In a normal Bitcoin transaction the sender provides the inputs, the receiver gets an output, and the sender gets change. PayJoin adds a twist: the receiver also adds one of their own inputs. The on-chain result looks like a normal transaction, but the assumptions that blockchain analysts make about it are wrong.
 
-```
-NORMAL TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender)              →       Bob (receiver)
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│        ───────►   │ Output: 0.7 │ Bob
-└─────────────┘                    │ Output: 0.3 │ Alice (change)
-                                   └─────────────┘
+<div class="doc-diagram">
 
-Analyst assumes: All inputs belong to sender (Alice).
+![In a normal payment Alice's 1.0 BTC input pays Bob 0.7 with 0.3 change; in a PayJoin Bob adds his own 0.5 BTC input and receives 1.2, so the analyst reads the payment as 1.2 and wrongly assumes every input is Alice's](https://selfcustodylabs.com/img/diagrams/privacy/payjoin-vs-normal.svg)
 
-PAYJOIN TRANSACTION:
-─────────────────────────────────────────────────────────
-Alice (sender) + Bob (receiver)  →  Both
-┌─────────────┐                    ┌─────────────┐
-│ Input: 1 BTC│ (Alice)           │ Output: 1.2 │ Bob
-│ Input: 0.5  │ (Bob)    ───────► │ Output: 0.3 │ Alice (change)
-└─────────────┘                    └─────────────┘
-
-Analyst assumes: All inputs belong to sender. Wrong.
-The common-input-ownership heuristic fails.
-```
+</div>
 
 ## Why PayJoin Matters
 
@@ -7248,7 +6990,7 @@ Ready to actually run one? See the [Bitcoin Node setup guide](https://selfcustod
 > Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network. Essential knowledge before running your own node.
 
 Source: https://selfcustodylabs.com/docs/learn/nodes/what-is-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -7267,14 +7009,11 @@ A Bitcoin node performs several critical functions, each one essential to the ne
 
 A full node downloads and stores the complete Bitcoin blockchain: every transaction since Satoshi mined the genesis block in January 2009. This currently requires around 600+ GB of storage, and it grows by roughly 50-100 GB per year.
 
-```
-YOUR NODE'S COPY:
-──────────────────────────────────────────────
-Block 1 → Block 2 → Block 3 → ... → Block 850,000+
-                                     (and counting)
+<div class="doc-diagram">
 
-Every transaction ever made, stored locally.
-```
+![A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally](https://selfcustodylabs.com/img/diagrams/nodes/block-chain-copy.svg)
+
+</div>
 
 This might seem excessive, but there's a reason for it. Having the complete history means your node can independently verify any claim about any transaction. No trust required.
 
@@ -7314,21 +7053,11 @@ This distinction is critical:
 
 **Your wallet needs a node to work.** The question is: whose node?
 
-```
-                    ┌─────────────┐
-                    │   Wallet    │
-                    │ (your keys) │
-                    └──────┬──────┘
-                           │
-                           │ "What's my balance?"
-                           │ "Did I receive payment?"
-                           │ "Broadcast this transaction"
-                           ▼
-                    ┌─────────────┐
-                    │    Node     │
-                    │ (blockchain)│
-                    └─────────────┘
-```
+<div class="doc-diagram">
+
+![A wallet holds keys but must ask a node for balances, incoming payments and broadcasting; every question reveals the wallet's addresses to whichever node answers](https://selfcustodylabs.com/img/diagrams/nodes/wallet-asks-node.svg)
+
+</div>
 
 ## Why the Node Matters
 
@@ -7340,29 +7069,17 @@ If you use **someone else's node**, they learn all of this. And "someone else" c
 
 Many wallets default to connecting to random public nodes. From the user's perspective, this just works: you open your wallet, see your balance, send transactions. Behind the scenes, however, your wallet is having a very revealing conversation:
 
-```
-YOUR WALLET:
-  "What's the balance of address bc1q...abc?"
-  "What's the balance of address bc1q...xyz?"
-  "What's the balance of address bc1q...123?"
-           │
-           ▼
-RANDOM NODE (possibly surveillance company):
-  "Interesting... these addresses all belong 
-   to the same person. Let me log this."
-```
+<div class="doc-diagram">
+
+![A wallet's queries can go to a random public node, whose unknown operator logs the addresses and builds a profile, or to your own node, where the queries never leave your home](https://selfcustodylabs.com/img/diagrams/nodes/who-answers.svg)
+
+</div>
 
 The node operator now knows that these addresses belong to the same wallet. Combined with timing information and transaction patterns, this builds a comprehensive profile.
 
 ### Your Own Node
 
-When you run your own node, this privacy leak disappears. Your wallet queries your node, and those queries never leave your control:
-
-```
-YOUR WALLET ──→ YOUR NODE
-                   │
-                   └─ Queries stay between you and your own infrastructure
-```
+When you run your own node, this privacy leak disappears. Your wallet queries your node, and those queries never leave your control.
 
 This is why running a node isn't just for technical enthusiasts; it's a fundamental privacy measure.
 
@@ -7460,7 +7177,7 @@ Understanding what nodes do is the first step. The next is understanding why run
 > Understand why running your own Bitcoin node matters for privacy, security, and true self-custody. Learn the risks of using third-party nodes.
 
 Source: https://selfcustodylabs.com/docs/learn/nodes/why-run-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -7519,17 +7236,11 @@ A technically skilled attacker could:
 2. Send you a fake transaction that doesn't exist on the real blockchain
 3. Your wallet shows "confirmed" when it isn't
 
-```
-ATTACKER'S NODE:
-  "Yes, that 10 BTC transaction to you is confirmed!"
-  
-REAL BLOCKCHAIN:
-  Transaction doesn't exist
-  
-LATER:
-  Your wallet connects to an honest node
-  Your balance is suddenly 10 BTC less than expected
-```
+<div class="doc-diagram">
+
+![The fake confirmation attack: an attacker's node tells your wallet a 10 BTC payment is confirmed while no such transaction exists on the real chain, and the loss surfaces later; your own node verifies blocks itself, making the lie impossible](https://selfcustodylabs.com/img/diagrams/nodes/fake-confirmation.svg)
+
+</div>
 
 This is difficult to pull off but not impossible, especially in targeted attacks.
 
@@ -7579,16 +7290,11 @@ True self-custody means:
 
 Without your own node, you're only 2/3 of the way there.
 
-```
-COMPLETE SELF-CUSTODY:
-────────────────────────────────────────────────────
-Your Hardware Wallet    Your Node    Your Internet
-(signs transactions)    (verifies)   (broadcasts)
-         │                  │              │
-         └──────────────────┴──────────────┘
-                        │
-              Full control, no third parties
-```
+<div class="doc-diagram">
+
+![Complete self-custody stands on three legs: a hardware wallet that signs, your own node that verifies, and your own connection that broadcasts; together they give full control with no third party in the loop](https://selfcustodylabs.com/img/diagrams/nodes/self-custody-trio.svg)
+
+</div>
 
 ## Benefits Beyond Privacy and Security
 
@@ -7684,7 +7390,7 @@ Congratulations, you now understand the core concepts of Bitcoin self-custody: k
 > Step-by-step Bitcoin wallet setup guides. Learn to configure hardware wallets, verify backups, and complete the pre-deposit security checklist.
 
 Source: https://selfcustodylabs.com/docs/wallet-setup/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -7698,11 +7404,11 @@ If you're new to Bitcoin, start with [Learn](https://selfcustodylabs.com/docs/le
 
 Follow these guides in order for a secure setup:
 
-```
-1. Hardware Wallet Setup    →  Get your device configured
-2. Backup Verification      →  Test that your backup works
-3. Before You Deposit       →  Final checklist before funding
-```
+<div class="doc-diagram">
+
+![The wallet setup path in order: configure the hardware wallet, verify the backup actually restores it, then run the final pre-deposit checks; nothing gets funded until all three steps pass](https://selfcustodylabs.com/img/diagrams/wallet-setup/setup-path.svg)
+
+</div>
 
 ---
 
@@ -7841,7 +7547,7 @@ Skip to [Backup Verification](https://selfcustodylabs.com/docs/wallet-setup/back
 > Step-by-step guide to setting up your first hardware wallet. Learn how to initialize, secure, and use a hardware wallet for Bitcoin self-custody.
 
 Source: https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -7872,19 +7578,11 @@ A hardware wallet is a dedicated physical device designed to store your Bitcoin 
 - **Signs transactions internally** (your computer never sees your private key)
 - **Verifies on its own screen**: Confirm addresses without trusting your computer
 
-```
-HOW A HARDWARE WALLET WORKS:
-─────────────────────────────────────────────────────────
-Your Computer                    Hardware Wallet
-─────────────                    ───────────────
-1. Create transaction    ───►    
-                                 2. Display details on screen
-                                 3. You verify and approve
-                                 4. Device signs internally
-                         ◄───    5. Return signed transaction
-6. Broadcast to network
-                                 Private key NEVER leaves device
-```
+<div class="doc-diagram">
+
+![Sending from a hardware wallet: the software creates the transaction, the device screen shows the real recipient and the 1,500 sat fee, you press confirm on the device and it signs, then the software broadcasts; malware can redraw a monitor but not the device screen](https://selfcustodylabs.com/img/diagrams/wallet-setup/hw-signing.svg)
+
+</div>
 
 ## Choosing Your Hardware Wallet
 
@@ -8059,19 +7757,6 @@ Before receiving Bitcoin, confirm the address shown in your software matches wha
 4. Approve on the device
 5. Software broadcasts the signed transaction
 
-```
-SENDING FLOW:
-────────────────────────────────────────────────────
-Software                         Hardware Wallet
-────────                         ───────────────
-Create transaction    ────►      
-                                 Show: "Send 0.01 BTC to bc1q...?"
-                                 Show: "Fee: 1,500 sats"
-                      ◄────      You verify and press CONFIRM
-Receive signature     ◄────      Device signs transaction
-Broadcast to network
-```
-
 ## Common Mistakes to Avoid
 
 ### ❌ Storing Seed Digitally
@@ -8137,7 +7822,7 @@ Now that your hardware wallet is set up:
 > Learn how to properly verify your Bitcoin seed backup works before trusting it with significant funds. Step-by-step guide to testing your recovery process.
 
 Source: https://selfcustodylabs.com/docs/wallet-setup/backup-verification/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -8261,17 +7946,11 @@ Enter your seed phrase (and passphrase if applicable) on the second device.
 
 The recovered wallet should show the same addresses as your original:
 
-```
-VERIFICATION CHECK:
-─────────────────────────────────────────────────────────
-Original Wallet          Recovered Wallet
-────────────────         ────────────────
-First address:           First address:
-bc1qxy2...abc     =?     bc1qxy2...abc
+<div class="doc-diagram">
 
-If they match → ✅ Backup is correct
-If different → ❌ Something is wrong
-```
+![Backup verification: restore the written seed on a second device and compare first addresses; identical addresses prove the paper backup restores the wallet, any difference means stop and find the error before funding](https://selfcustodylabs.com/img/diagrams/wallet-setup/backup-check.svg)
+
+</div>
 
 **4. Delete the test wallet**
 
@@ -8349,15 +8028,11 @@ A passphrase creates a **completely different wallet**. Even a tiny difference (
 4. Note the first address (this is your real wallet)
 5. Verify this matches your actual wallet
 
-```
-PASSPHRASE VERIFICATION:
-─────────────────────────────────────────────────────────
-Seed only:          seed + "MyPassphrase":
-bc1q111...xxx       bc1q222...yyy
-(decoy wallet)      (your real wallet)
+<div class="doc-diagram">
 
-Both should be derivable from your backup.
-```
+![A passphrase splits one seed into two wallets: the 24 words alone derive the decoy wallet at one address, and the words plus your passphrase derive your real wallet at a different address; the passphrase is part of the backup](https://selfcustodylabs.com/img/diagrams/wallet-setup/passphrase-wallets.svg)
+
+</div>
 
 ### Common Passphrase Mistakes
 
@@ -9780,7 +9455,7 @@ Since you'll be setting up a Bitcoin node on a separate device that runs over To
 > Plan Bitcoin inheritance for your heirs. Approaches from sealed instructions to family multisig, plus how to write recovery instructions.
 
 Source: https://selfcustodylabs.com/docs/advanced/inheritance-planning/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -9944,12 +9619,11 @@ For most people with significant Bitcoin holdings, a family multisig provides th
 
 ### How It Works
 
-```
-2-of-3 Multisig Structure
-├── Key 1: Your primary hardware wallet (daily use)
-├── Key 2: Spouse/child's hardware wallet (stored securely)
-└── Key 3: Backup location (safe deposit box, attorney, etc.)
-```
+<div class="doc-diagram">
+
+![An inheritance 2-of-3 multisig: you hold key 1 for daily use, your heir keeps key 2, and key 3 sits in a vault or with an attorney; while you live you spend with key 1 plus another, and after your death the heir recovers everything with keys 2 and 3](https://selfcustodylabs.com/img/diagrams/advanced/inheritance-multisig.svg)
+
+</div>
 
 **During your lifetime:** You use Key 1 plus Key 2 or Key 3 to spend.
 
@@ -12262,7 +11936,7 @@ For most users: start with a **BitBox02 Nova** or **Trezor Safe 5**, generate th
 > Complete guide to running your own Bitcoin node. Learn why it matters, compare software options, and follow step-by-step setup instructions with Parmanode.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -12302,20 +11976,11 @@ With your own node:
 
 A complete node setup connects three components:
 
-```
-YOUR NODE SETUP
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-  Bitcoin Core  ───►  Electrum Server  ───►  Your Wallet
-  (Full Node)              │                  (Sparrow)
-       │                   │                      │
-       ▼                   ▼                      ▼
-  Downloads &         Indexes data          Connects to
-  verifies the        for efficient         YOUR server,
-  blockchain          wallet queries        not public ones
+![A complete node setup: Bitcoin Core downloads and verifies the full chain, an Electrum server indexes it for fast queries, and Sparrow Wallet connects to your own server instead of a stranger's](https://selfcustodylabs.com/img/diagrams/bitcoin-node/node-stack.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 <div class="fixed-width-table">
 
@@ -12766,7 +12431,7 @@ Once your node is running:
 > Compare Bitcoin node software options: Parmanode, Umbrel, RaspiBlitz, Start9, and DIY setups. Find the right approach for your skill level and needs.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/node-software-options/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -12777,15 +12442,11 @@ There's no single "best" way to run a Bitcoin node. Different solutions optimize
 
 Node software exists on a spectrum from "just works" to "build everything yourself":
 
-```
-MORE GUIDED                                    MORE CONTROL
-─────────────────────────────────────────────────────────────
-   Umbrel    Start9    Parmanode    RaspiBlitz    Raspibolt
-   
-   Pretty      App     Terminal      Scripts      Manual
-   web UI     store    wizard        & menus      setup
-─────────────────────────────────────────────────────────────
-```
+<div class="doc-diagram">
+
+![Node software on a spectrum from guided to manual: Umbrel's web UI, Start9's app store, Parmanode's terminal wizard, RaspiBlitz's scripts and Raspibolt's fully manual setup; these guides use Parmanode, in the middle](https://selfcustodylabs.com/img/diagrams/bitcoin-node/software-spectrum.svg)
+
+</div>
 
 **Left side:** Easy to start, but when something breaks, you may not understand why.
 
@@ -12972,7 +12633,7 @@ The important thing is running a node, period. Any of these options gets you the
 > Understand Electrum servers (Electrs, Fulcrum): what they do, why you need one, and how to choose between options for your Bitcoin node setup.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/electrum-server/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -12987,28 +12648,11 @@ Think of it like the difference between reading every page of a 600-gigabyte boo
 
 An Electrum server sits between Bitcoin Core and your wallet:
 
-```
-QUERY FLOW
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-Sparrow Wallet                     Bitcoin Core
-     │                                  │
-     │  "Balance for                    │
-     │   address bc1q...?"              │
-     │                                  │
-     ▼                                  │
-┌─────────────────┐                     │
-│ Electrum Server │◄────────────────────┘
-│   (Index)       │     Reads blockchain
-└────────┬────────┘
-         │
-         │  "0.5 BTC"
-         │  (instant response)
-         ▼
-   Sparrow Wallet
+![An Electrum server sits between Sparrow and Bitcoin Core: the wallet asks for an address balance, the server answers instantly from its index, and the index is built by reading the chain Core has verified](https://selfcustodylabs.com/img/diagrams/bitcoin-node/electrum-query-flow.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The server indexes all addresses and transactions, building a database that can answer wallet queries efficiently. Your wallet never talks directly to Bitcoin Core. It talks to the Electrum server, which has already organized all the data for fast retrieval.
 
@@ -13163,7 +12807,7 @@ This is normal. Once the initial index is complete, CPU usage drops dramatically
 > Configure your Bitcoin node to run over Tor for enhanced privacy. Hide your IP address and enable secure remote access to your node.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/tor/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -13188,26 +12832,11 @@ Running your node over Tor hides your IP address from the Bitcoin network. Other
 
 Tor serves two distinct purposes for your node:
 
-```
-TOR USE CASES
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-1. NODE-TO-NODE (Privacy)
-   
-   Your Node ──► Tor Network ──► Other Bitcoin Nodes
-   
-   Hides your IP from the Bitcoin network.
-   Other nodes can't see where you're located.
+![Tor serves two jobs for a node: routing node-to-network traffic so other Bitcoin nodes never see your IP or location, and carrying wallet-to-node connections to your onion address so you can reach home from anywhere without port forwarding](https://selfcustodylabs.com/img/diagrams/bitcoin-node/tor-use-cases.svg)
 
-2. WALLET-TO-NODE (Remote Access)
-   
-   Your Wallet ──► Tor Network ──► Your Node's Onion Address
-   
-   Enables access from anywhere in the world.
-   No port forwarding or VPN needed.
-
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 ## Connection 1: Node to Bitcoin Network
 
@@ -13252,27 +12881,11 @@ Your node has an internal IP address (like `192.168.1.100`) that only exists on 
 
 Your node creates a Tor hidden service, an `.onion` address that routes through the Tor network to reach your node. Your wallet connects to this onion address from anywhere:
 
-```
-Remote Access via Tor
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-You (traveling)              Home Network
-      │                           │
-      │                    ┌──────┴──────┐
-      │                    │  Your Node   │
-      │                    │  (electrum   │
-      ▼                    │   server)    │
-┌───────────┐              └──────▲───────┘
-│  Wallet   │                     │
-│ (phone or │                     │
-│  laptop)  │                     │
-└─────┬─────┘              Tor Hidden Service
-      │                    abc123xyz.onion
-      │                           ▲
-      └──────► Tor Network ───────┘
+![Remote access over Tor: a wallet on a traveling phone connects through the Tor network to the hidden service onion address of your node at home; no open ports, no exposed IP and no VPN needed](https://selfcustodylabs.com/img/diagrams/bitcoin-node/tor-remote-access.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The connection is encrypted, your home IP is never exposed, and no port forwarding is required.
 
@@ -16009,7 +15622,7 @@ In this output, Intel ME remains in the initializing state and fails to become f
 > Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/
-Last updated: 2026-01-14
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -16047,9 +15660,11 @@ The NSD signs messages directly on the device - your private key never touches y
 
 ## How It Works
 
-```
-NSD (signs messages) --> Horse Extension --> Nostr Client
-```
+<div class="doc-diagram">
+
+![The NSD chain: the T-Display device holds the Nostr key and signs, the Horse browser extension bridges it to the browser, and the Nostr client only ever sees signatures, never the key](https://selfcustodylabs.com/img/diagrams/nostr-signing-device/nsd-chain.svg)
+
+</div>
 
 **Components:**
 - **LILYGO T-Display** - The physical signing device

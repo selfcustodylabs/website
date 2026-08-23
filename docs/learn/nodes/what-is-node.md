@@ -3,7 +3,7 @@
 > Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network. Essential knowledge before running your own node.
 
 Source: https://selfcustodylabs.com/docs/learn/nodes/what-is-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -22,14 +22,11 @@ A Bitcoin node performs several critical functions, each one essential to the ne
 
 A full node downloads and stores the complete Bitcoin blockchain: every transaction since Satoshi mined the genesis block in January 2009. This currently requires around 600+ GB of storage, and it grows by roughly 50-100 GB per year.
 
-```
-YOUR NODE'S COPY:
-──────────────────────────────────────────────
-Block 1 → Block 2 → Block 3 → ... → Block 850,000+
-                                     (and counting)
+<div class="doc-diagram">
 
-Every transaction ever made, stored locally.
-```
+![A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally](https://selfcustodylabs.com/img/diagrams/nodes/block-chain-copy.svg)
+
+</div>
 
 This might seem excessive, but there's a reason for it. Having the complete history means your node can independently verify any claim about any transaction. No trust required.
 
@@ -69,21 +66,11 @@ This distinction is critical:
 
 **Your wallet needs a node to work.** The question is: whose node?
 
-```
-                    ┌─────────────┐
-                    │   Wallet    │
-                    │ (your keys) │
-                    └──────┬──────┘
-                           │
-                           │ "What's my balance?"
-                           │ "Did I receive payment?"
-                           │ "Broadcast this transaction"
-                           ▼
-                    ┌─────────────┐
-                    │    Node     │
-                    │ (blockchain)│
-                    └─────────────┘
-```
+<div class="doc-diagram">
+
+![A wallet holds keys but must ask a node for balances, incoming payments and broadcasting; every question reveals the wallet's addresses to whichever node answers](https://selfcustodylabs.com/img/diagrams/nodes/wallet-asks-node.svg)
+
+</div>
 
 ## Why the Node Matters
 
@@ -95,29 +82,17 @@ If you use **someone else's node**, they learn all of this. And "someone else" c
 
 Many wallets default to connecting to random public nodes. From the user's perspective, this just works: you open your wallet, see your balance, send transactions. Behind the scenes, however, your wallet is having a very revealing conversation:
 
-```
-YOUR WALLET:
-  "What's the balance of address bc1q...abc?"
-  "What's the balance of address bc1q...xyz?"
-  "What's the balance of address bc1q...123?"
-           │
-           ▼
-RANDOM NODE (possibly surveillance company):
-  "Interesting... these addresses all belong 
-   to the same person. Let me log this."
-```
+<div class="doc-diagram">
+
+![A wallet's queries can go to a random public node, whose unknown operator logs the addresses and builds a profile, or to your own node, where the queries never leave your home](https://selfcustodylabs.com/img/diagrams/nodes/who-answers.svg)
+
+</div>
 
 The node operator now knows that these addresses belong to the same wallet. Combined with timing information and transaction patterns, this builds a comprehensive profile.
 
 ### Your Own Node
 
-When you run your own node, this privacy leak disappears. Your wallet queries your node, and those queries never leave your control:
-
-```
-YOUR WALLET ──→ YOUR NODE
-                   │
-                   └─ Queries stay between you and your own infrastructure
-```
+When you run your own node, this privacy leak disappears. Your wallet queries your node, and those queries never leave your control.
 
 This is why running a node isn't just for technical enthusiasts; it's a fundamental privacy measure.
 

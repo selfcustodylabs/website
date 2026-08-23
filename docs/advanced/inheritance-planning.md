@@ -3,7 +3,7 @@
 > Plan Bitcoin inheritance for your heirs. Approaches from sealed instructions to family multisig, plus how to write recovery instructions.
 
 Source: https://selfcustodylabs.com/docs/advanced/inheritance-planning/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -167,12 +167,11 @@ For most people with significant Bitcoin holdings, a family multisig provides th
 
 ### How It Works
 
-```
-2-of-3 Multisig Structure
-├── Key 1: Your primary hardware wallet (daily use)
-├── Key 2: Spouse/child's hardware wallet (stored securely)
-└── Key 3: Backup location (safe deposit box, attorney, etc.)
-```
+<div class="doc-diagram">
+
+![An inheritance 2-of-3 multisig: you hold key 1 for daily use, your heir keeps key 2, and key 3 sits in a vault or with an attorney; while you live you spend with key 1 plus another, and after your death the heir recovers everything with keys 2 and 3](https://selfcustodylabs.com/img/diagrams/advanced/inheritance-multisig.svg)
+
+</div>
 
 **During your lifetime:** You use Key 1 plus Key 2 or Key 3 to spend.
 

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" role="img" aria-label="The fake confirmation attack: an attacker's node tells your wallet a 10 BTC payment is confirmed while no such transaction exists on the real chain, and the loss surfaces later; your own node verifies blocks itself, making the lie impossible.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="379" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">THE FAKE CONFIRMATION ATTACK</text>
+  <rect class="box-e" x="40" y="90" width="320" height="64" rx="6"/>
+  <text class="mono amt" x="200" y="114" text-anchor="middle">ATTACKER'S NODE</text>
+  <text class="mono tag-e" x="200" y="136" text-anchor="middle">"YOUR 10 BTC IS CONFIRMED!"</text>
+  <rect class="box" x="440" y="90" width="320" height="64" rx="6"/>
+  <text class="mono amt" x="600" y="114" text-anchor="middle">THE REAL CHAIN</text>
+  <text class="mono tag" x="600" y="136" text-anchor="middle">NO SUCH TRANSACTION EXISTS</text>
+  <path class="embr" d="M200,158 L200,220"/>
+  <path d="M200,220 L195.9,213 M200,220 L204.1,213" stroke="#C66A20" stroke-width="2" fill="none"/>
+  <rect class="box-e" x="40" y="224" width="320" height="64" rx="6"/>
+  <text class="mono amt" x="200" y="248" text-anchor="middle">LATER, ON AN HONEST NODE</text>
+  <text class="mono tag-e" x="200" y="270" text-anchor="middle">YOUR BALANCE IS 10 BTC SHORT</text>
+  <text class="mono cap" x="440" y="258" fill="#767C8A">DIFFICULT, NOT IMPOSSIBLE &#183;</text>
+  <text class="mono cap" x="440" y="276" fill="#767C8A">TARGETED ATTACKS USE EXACTLY THIS</text>
+  <text class="mono note" x="40" y="348">YOUR OWN NODE MAKES THE LIE IMPOSSIBLE &#183; IT CHECKS EVERY BLOCK ITSELF</text>
+</svg>

@@ -3,7 +3,7 @@
 > Understand why running your own Bitcoin node matters for privacy, security, and true self-custody. Learn the risks of using third-party nodes.
 
 Source: https://selfcustodylabs.com/docs/learn/nodes/why-run-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -62,17 +62,11 @@ A technically skilled attacker could:
 2. Send you a fake transaction that doesn't exist on the real blockchain
 3. Your wallet shows "confirmed" when it isn't
 
-```
-ATTACKER'S NODE:
-  "Yes, that 10 BTC transaction to you is confirmed!"
-  
-REAL BLOCKCHAIN:
-  Transaction doesn't exist
-  
-LATER:
-  Your wallet connects to an honest node
-  Your balance is suddenly 10 BTC less than expected
-```
+<div class="doc-diagram">
+
+![The fake confirmation attack: an attacker's node tells your wallet a 10 BTC payment is confirmed while no such transaction exists on the real chain, and the loss surfaces later; your own node verifies blocks itself, making the lie impossible](https://selfcustodylabs.com/img/diagrams/nodes/fake-confirmation.svg)
+
+</div>
 
 This is difficult to pull off but not impossible, especially in targeted attacks.
 
@@ -122,16 +116,11 @@ True self-custody means:
 
 Without your own node, you're only 2/3 of the way there.
 
-```
-COMPLETE SELF-CUSTODY:
-────────────────────────────────────────────────────
-Your Hardware Wallet    Your Node    Your Internet
-(signs transactions)    (verifies)   (broadcasts)
-         │                  │              │
-         └──────────────────┴──────────────┘
-                        │
-              Full control, no third parties
-```
+<div class="doc-diagram">
+
+![Complete self-custody stands on three legs: a hardware wallet that signs, your own node that verifies, and your own connection that broadcasts; together they give full control with no third party in the loop](https://selfcustodylabs.com/img/diagrams/nodes/self-custody-trio.svg)
+
+</div>
 
 ## Benefits Beyond Privacy and Security
 

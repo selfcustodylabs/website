@@ -3,7 +3,7 @@
 > Understand how Bitcoin transaction fees work, why they vary, and how to minimize costs. Learn fee estimation, RBF, CPFP, and fee optimization strategies.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/fees/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -24,6 +24,12 @@ This means:
 - Sending 0.001 BTC costs the same as sending 100 BTC
 - Complex transactions (more inputs/outputs) cost more
 - Simple transactions are cheapest
+
+<div class="doc-diagram">
+
+![Bitcoin fees follow transaction size, not value: sending 0.001 BTC and sending 100 BTC in the same 140 vB transaction both cost 1,400 sats at 10 sat/vB, while a 10-input transaction of 1,100 vB costs 11,000 sats](https://selfcustodylabs.com/img/diagrams/transactions/fee-size-not-value.svg)
+
+</div>
 
 ### Why Fees Vary
 
@@ -140,13 +146,11 @@ The new transaction's fee must cover the "deficit" of the parent transaction to 
 
 When fees are cheap (1-5 sats/vB), combine small UTXOs:
 
-```
-BEFORE: 50 small UTXOs
-  → Future transaction needs 50 inputs = expensive
+<div class="doc-diagram">
 
-AFTER: 1 large UTXO
-  → Future transaction needs 1 input = cheap
-```
+![Consolidation: one low-fee transaction turns 50 small UTXOs into a single large one, so the next payment needs 1 input instead of 50; do it at 1-5 sat/vB and only with same-source coins, because consolidation links histories](https://selfcustodylabs.com/img/diagrams/transactions/consolidation-payoff.svg)
+
+</div>
 
 See [UTXO Consolidation](https://selfcustodylabs.com/docs/learn/privacy/utxo-management#consolidation-strategies) for details.
 
@@ -154,17 +158,11 @@ See [UTXO Consolidation](https://selfcustodylabs.com/docs/learn/privacy/utxo-man
 
 If sending to multiple recipients, batch them:
 
-```
-INEFFICIENT:
-  Transaction 1: You → Alice     (140 vB)
-  Transaction 2: You → Bob       (140 vB)
-  Transaction 3: You → Charlie   (140 vB)
-  Total: 420 vB
+<div class="doc-diagram">
 
-EFFICIENT:
-  Transaction 1: You → Alice, Bob, Charlie (200 vB)
-  Savings: 52%
-```
+![Batching: three separate 140 vB payments to Alice, Bob and Charlie total 420 vB, while one transaction paying all three is about 200 vB, 52% smaller and cheaper at any fee rate](https://selfcustodylabs.com/img/diagrams/transactions/batching.svg)
+
+</div>
 
 ### 3. Time Your Transactions
 

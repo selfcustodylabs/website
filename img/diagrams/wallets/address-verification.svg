@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-label="Multisig address verification: Sparrow, Coldcard, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="385" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">EVERY SCREEN MUST AGREE</text>
+  <text class="mono amt" x="60" y="114">SPARROW</text>
+  <rect class="box" x="220" y="90" width="260" height="38" rx="6"/>
+  <text class="mono amt" x="350" y="114" text-anchor="middle">BC1Q8N5...XYZ</text>
+  <text class="mono cap" x="510" y="114" fill="#F59E0B">MATCH</text>
+  <text class="mono amt" x="60" y="168">COLDCARD</text>
+  <rect class="box" x="220" y="144" width="260" height="38" rx="6"/>
+  <text class="mono amt" x="350" y="168" text-anchor="middle">BC1Q8N5...XYZ</text>
+  <text class="mono cap" x="510" y="168" fill="#F59E0B">MATCH</text>
+  <text class="mono amt" x="60" y="222">KEYSTONE</text>
+  <rect class="box" x="220" y="198" width="260" height="38" rx="6"/>
+  <text class="mono amt" x="350" y="222" text-anchor="middle">BC1Q8N5...XYZ</text>
+  <text class="mono cap" x="510" y="222" fill="#F59E0B">MATCH</text>
+  <text class="mono amt" x="60" y="276">TREZOR</text>
+  <rect class="box" x="220" y="252" width="260" height="38" rx="6"/>
+  <text class="mono amt" x="350" y="276" text-anchor="middle">BC1Q8N5...XYZ</text>
+  <text class="mono cap" x="510" y="276" fill="#F59E0B">MATCH</text>
+  <rect class="dashd" x="40" y="76" width="560" height="230" rx="10" fill="none"/>
+  <text class="mono cap" x="620" y="180" fill="#F59E0B">ALL FOUR</text>
+  <text class="mono cap" x="620" y="198" fill="#F59E0B">IDENTICAL</text>
+  <text class="mono note" x="40" y="356">SAME ADDRESS ON EVERY DEVICE = SAFE TO RECEIVE &#183; ANY MISMATCH = STOP IMMEDIATELY</text>
+</svg>

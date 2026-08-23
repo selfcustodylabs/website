@@ -3,7 +3,7 @@
 > Compare Bitcoin node software options: Parmanode, Umbrel, RaspiBlitz, Start9, and DIY setups. Find the right approach for your skill level and needs.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/node-software-options/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -14,15 +14,11 @@ There's no single "best" way to run a Bitcoin node. Different solutions optimize
 
 Node software exists on a spectrum from "just works" to "build everything yourself":
 
-```
-MORE GUIDED                                    MORE CONTROL
-─────────────────────────────────────────────────────────────
-   Umbrel    Start9    Parmanode    RaspiBlitz    Raspibolt
-   
-   Pretty      App     Terminal      Scripts      Manual
-   web UI     store    wizard        & menus      setup
-─────────────────────────────────────────────────────────────
-```
+<div class="doc-diagram">
+
+![Node software on a spectrum from guided to manual: Umbrel's web UI, Start9's app store, Parmanode's terminal wizard, RaspiBlitz's scripts and Raspibolt's fully manual setup; these guides use Parmanode, in the middle](https://selfcustodylabs.com/img/diagrams/bitcoin-node/software-spectrum.svg)
+
+</div>
 
 **Left side:** Easy to start, but when something breaks, you may not understand why.
 

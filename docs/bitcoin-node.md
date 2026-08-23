@@ -3,7 +3,7 @@
 > Complete guide to running your own Bitcoin node. Learn why it matters, compare software options, and follow step-by-step setup instructions with Parmanode.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -43,20 +43,11 @@ With your own node:
 
 A complete node setup connects three components:
 
-```
-YOUR NODE SETUP
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-  Bitcoin Core  ───►  Electrum Server  ───►  Your Wallet
-  (Full Node)              │                  (Sparrow)
-       │                   │                      │
-       ▼                   ▼                      ▼
-  Downloads &         Indexes data          Connects to
-  verifies the        for efficient         YOUR server,
-  blockchain          wallet queries        not public ones
+![A complete node setup: Bitcoin Core downloads and verifies the full chain, an Electrum server indexes it for fast queries, and Sparrow Wallet connects to your own server instead of a stranger's](https://selfcustodylabs.com/img/diagrams/bitcoin-node/node-stack.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 <div class="fixed-width-table">
 

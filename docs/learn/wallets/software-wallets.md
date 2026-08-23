@@ -3,7 +3,7 @@
 > Understand software wallets for Bitcoin: what they are, when to use them, recommended options, and security best practices.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/software-wallets/
-Last updated: 2026-08-03
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -22,22 +22,11 @@ The mechanics are straightforward, even if the implications are profound. When y
 
 Here's what happens behind the scenes: the app generates a seed phrase (those 12 or 24 words you'll need to protect carefully), derives your private keys from that seed, and stores everything on your device. When you want to send Bitcoin, the wallet uses those keys to sign the transaction, proving to the network that you're the rightful owner.
 
-```
-SOFTWARE WALLET FLOW:
-─────────────────────────────────────────────────────────
-Your Device (Phone/Computer)
-┌─────────────────────────────────────────────────┐
-│  Wallet App                                      │
-│  ┌─────────────┐    ┌──────────────────────┐   │
-│  │ Private Key │───►│ Sign Transaction     │   │
-│  │ (stored)    │    │                      │   │
-│  └─────────────┘    └──────────┬───────────┘   │
-│                                │               │
-└────────────────────────────────┼───────────────┘
-                                 │
-                                 ▼
-                        Bitcoin Network
-```
+<div class="doc-diagram">
+
+![A software wallet stores the private key and signs transactions on the same online phone or computer that runs the browser and apps, then broadcasts to the network; convenient for spending, the wrong place for savings](https://selfcustodylabs.com/img/diagrams/wallets/software-wallet-flow.svg)
+
+</div>
 
 The key difference from hardware wallets: **your private keys exist on an internet-connected device**, which is why software wallets are also called "hot wallets."
 

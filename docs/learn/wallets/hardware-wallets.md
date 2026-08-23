@@ -3,7 +3,7 @@
 > Understand hardware wallets for Bitcoin self-custody: how they work, why they're secure, popular options compared, and how to choose the right one.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/hardware-wallets/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -22,16 +22,11 @@ General-purpose devices are designed to do everything, which means they're optim
 
 A hardware wallet takes the opposite approach. It does **one job only**: protect your keys and sign transactions securely. No web browser. No email client. No app store. No attack surface.
 
-```
-THE SECURITY DIFFERENCE:
-─────────────────────────────────────────────────────────
-Software Wallet                 Hardware Wallet
-───────────────                 ───────────────
-Keys on computer/phone          Keys on dedicated device
-Connected to internet           Never touches internet
-Vulnerable to malware           Isolated from attacks
-Signs on same device            Signs in secure enclave
-```
+<div class="doc-diagram">
+
+![The security difference: a software wallet keeps keys on an online device shared with a browser and possible malware, while a hardware wallet keeps keys on a dedicated offline chip that signs in isolation and does exactly one job](https://selfcustodylabs.com/img/diagrams/wallets/hot-vs-cold.svg)
+
+</div>
 
 ## How Hardware Wallets Work
 
@@ -41,22 +36,11 @@ When you want to send Bitcoin, here's what actually happens. Your computer (runn
 
 This is the critical moment. You look at the hardware wallet's screen (not your computer's screen) and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature, never the key itself.
 
-```
-TRANSACTION SIGNING FLOW:
-─────────────────────────────────────────────────────────
-Your Computer                    Hardware Wallet
-─────────────                    ───────────────
-1. Create unsigned        ───►   
-   transaction                   2. Display on screen:
-                                    "Send 0.1 BTC to bc1q...?"
-                                 3. You verify and press button
-                                 4. Device signs internally
-                          ◄───   5. Return ONLY the signature
-6. Broadcast signed                 (private key stays inside)
-   transaction
+<div class="doc-diagram">
 
-Result: Your key was used but never exposed.
-```
+![Hardware wallet signing: the computer builds an unsigned transaction, the device shows the recipient and amount on its own screen, you verify and press the button, it signs internally and returns only the signature for broadcast; the private key never leaves](https://selfcustodylabs.com/img/diagrams/wallets/hw-signing-flow.svg)
+
+</div>
 
 Here's why this matters: even if your computer is completely compromised (keyloggers recording everything, malware watching your screen, attackers with full access), they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
 

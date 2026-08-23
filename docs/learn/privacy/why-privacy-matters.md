@@ -3,7 +3,7 @@
 > Why financial privacy matters for Bitcoin users. What information is exposed on the public blockchain and how it affects your security.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -20,18 +20,11 @@ The good news: privacy is possible. The first step is understanding what you're 
 
 When you make a Bitcoin transaction, more information is recorded than most people realize. The sending address, the receiving address, the exact amount, the precise time: all of it goes on a permanent public ledger that will exist as long as Bitcoin exists.
 
-```
-WHAT THE BLOCKCHAIN SHOWS:
-──────────────────────────────────────────────────────────
-Address A  ──→  1.5 BTC  ──→  Address B
-                0.3 BTC  ──→  Address C (change)
+<div class="doc-diagram">
 
-Anyone can see:
-• A sent 1.5 BTC to B
-• A received 0.3 BTC back as change
-• This happened at block 812,345
-• This data will exist forever
-```
+![A transaction from address A worth 1.80 BTC paying 1.50 BTC to B with 0.30 BTC change: the blockchain publishes both addresses, both amounts and the time at block 812,345, readable by anyone forever, with no names attached](https://selfcustodylabs.com/img/diagrams/privacy/blockchain-shows.svg)
+
+</div>
 
 Now, the blockchain doesn't contain names, only addresses. This is called **pseudonymity**. You're identified by a string of characters rather than your legal name. At first glance, this seems private enough. But here's the problem: pseudonymity is fragile. Once your identity connects to any address, the veil starts to unravel.
 
@@ -55,20 +48,11 @@ Think about how most people acquire Bitcoin. They sign up for an exchange, submi
 
 Once that first link exists, blockchain analysis can follow the trail. Your coins move from address to address, and each hop is publicly recorded.
 
-```
-YOUR PRIVACY LEAK:
-──────────────────────────────────────────────────────────
-Exchange knows:
-  "John Smith withdrew to address A"
-        ↓
-Blockchain shows:
-  Address A → Address B → Address C → Address D
-        ↓
-Analyst concludes:
-  "John Smith likely controls A, B, C, and D"
-  "John Smith has approximately X bitcoin"
-  "John Smith paid merchant M on this date"
-```
+<div class="doc-diagram">
+
+![A KYC exchange records that John Smith withdrew to address A; the public chain shows A paying B, then C, then D, so an analyst attributes all four addresses, the total balance and the merchant payments to John Smith](https://selfcustodylabs.com/img/diagrams/privacy/privacy-exposure.svg)
+
+</div>
 
 What started as "just one withdrawal" becomes a comprehensive financial profile.
 

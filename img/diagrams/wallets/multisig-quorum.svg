@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-label="A 2-of-3 multisig: three keys exist at home, office and safe, and any two signatures spend; no single key ever can, so one key can be lost or stolen without losing the funds.">
+  <style>
+    .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
+    .head    { font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .amt     { font-size: 12px; font-weight: 500; fill: #A8AEBB; }
+    .amt-lit { font-size: 12px; font-weight: 700; fill: #FCD34D; }
+    .cap     { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+    .tag     { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #767C8A; }
+    .tag-a   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #F59E0B; }
+    .tag-e   { font-size: 9px; font-weight: 700; letter-spacing: 1.4px; fill: #C66A20; }
+    .note    { font-size: 11px; letter-spacing: 1.4px; fill: #767C8A; }
+    .wire    { fill: none; stroke: #262E3A; stroke-width: 2; }
+    .flow    { fill: none; stroke: #F59E0B; stroke-width: 3; }
+    .embr    { fill: none; stroke: #C66A20; stroke-width: 3; }
+    .dashd   { fill: none; stroke: #2E3643; stroke-width: 2; stroke-dasharray: 6 5; }
+    .dashe   { fill: none; stroke: #C66A20; stroke-width: 2; stroke-dasharray: 6 5; }
+    .box     { fill: #0C0E12; stroke: #2E3643; stroke-width: 2; }
+    .box-lit { fill: #0C0E12; stroke: #F59E0B; stroke-width: 3; }
+    .box-e   { fill: #0C0E12; stroke: #C66A20; stroke-width: 3; }
+    .panel   { fill: none; stroke: #2E3643; stroke-width: 2; }
+    .panel-e { fill: none; stroke: #C66A20; stroke-width: 2; }
+  </style>
+  <rect x="0.5" y="0.5" width="799" height="385" rx="14" fill="#0C0E12" stroke="#1C2028"/>
+  <text class="mono eyebrow" x="40" y="42">2-OF-3 &#183; ANY TWO KEYS UNLOCK</text>
+  <rect class="box-lit" x="60" y="96" width="180" height="42" rx="6"/>
+  <text class="mono amt-lit" x="150" y="122" text-anchor="middle">KEY 1 &#183; HOME</text>
+  <path class="flow" d="M240,117 C355,117 355,170 470,170"/>
+  <rect class="box-lit" x="60" y="158" width="180" height="42" rx="6"/>
+  <text class="mono amt-lit" x="150" y="184" text-anchor="middle">KEY 2 &#183; OFFICE</text>
+  <path class="flow" d="M240,179 C355,179 355,170 470,170"/>
+  <rect class="box" x="60" y="220" width="180" height="42" rx="6"/>
+  <text class="mono amt" x="150" y="246" text-anchor="middle">KEY 3 &#183; SAFE</text>
+  <rect class="box-lit" x="470" y="146" width="190" height="48" rx="6"/>
+  <text class="mono amt-lit" x="565" y="168" text-anchor="middle">SPEND</text>
+  <text class="mono tag" x="565" y="186" text-anchor="middle">2 SIGNATURES PRESENT</text>
+  <text class="mono cap" x="60" y="306" fill="#F59E0B">ANY PAIR WORKS &#183; NO SINGLE KEY EVER CAN</text>
+  <text class="mono note" x="40" y="356">3 KEYS EXIST &#183; 2 MUST SIGN &#183; 1 CAN BE LOST OR STOLEN WITHOUT LOSING THE FUNDS</text>
+</svg>

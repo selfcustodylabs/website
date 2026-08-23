@@ -3,7 +3,7 @@
 > Configure your Bitcoin node to run over Tor for enhanced privacy. Hide your IP address and enable secure remote access to your node.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/tor/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -28,26 +28,11 @@ Running your node over Tor hides your IP address from the Bitcoin network. Other
 
 Tor serves two distinct purposes for your node:
 
-```
-TOR USE CASES
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-1. NODE-TO-NODE (Privacy)
-   
-   Your Node ──► Tor Network ──► Other Bitcoin Nodes
-   
-   Hides your IP from the Bitcoin network.
-   Other nodes can't see where you're located.
+![Tor serves two jobs for a node: routing node-to-network traffic so other Bitcoin nodes never see your IP or location, and carrying wallet-to-node connections to your onion address so you can reach home from anywhere without port forwarding](https://selfcustodylabs.com/img/diagrams/bitcoin-node/tor-use-cases.svg)
 
-2. WALLET-TO-NODE (Remote Access)
-   
-   Your Wallet ──► Tor Network ──► Your Node's Onion Address
-   
-   Enables access from anywhere in the world.
-   No port forwarding or VPN needed.
-
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 ## Connection 1: Node to Bitcoin Network
 
@@ -92,27 +77,11 @@ Your node has an internal IP address (like `192.168.1.100`) that only exists on 
 
 Your node creates a Tor hidden service, an `.onion` address that routes through the Tor network to reach your node. Your wallet connects to this onion address from anywhere:
 
-```
-Remote Access via Tor
-─────────────────────────────────────────────────────────────
+<div class="doc-diagram">
 
-You (traveling)              Home Network
-      │                           │
-      │                    ┌──────┴──────┐
-      │                    │  Your Node   │
-      │                    │  (electrum   │
-      ▼                    │   server)    │
-┌───────────┐              └──────▲───────┘
-│  Wallet   │                     │
-│ (phone or │                     │
-│  laptop)  │                     │
-└─────┬─────┘              Tor Hidden Service
-      │                    abc123xyz.onion
-      │                           ▲
-      └──────► Tor Network ───────┘
+![Remote access over Tor: a wallet on a traveling phone connects through the Tor network to the hidden service onion address of your node at home; no open ports, no exposed IP and no VPN needed](https://selfcustodylabs.com/img/diagrams/bitcoin-node/tor-remote-access.svg)
 
-─────────────────────────────────────────────────────────────
-```
+</div>
 
 The connection is encrypted, your home IP is never exposed, and no port forwarding is required.
 

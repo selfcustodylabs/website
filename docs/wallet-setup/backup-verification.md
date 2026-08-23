@@ -3,7 +3,7 @@
 > Learn how to properly verify your Bitcoin seed backup works before trusting it with significant funds. Step-by-step guide to testing your recovery process.
 
 Source: https://selfcustodylabs.com/docs/wallet-setup/backup-verification/
-Last updated: 2026-08-02
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -127,17 +127,11 @@ Enter your seed phrase (and passphrase if applicable) on the second device.
 
 The recovered wallet should show the same addresses as your original:
 
-```
-VERIFICATION CHECK:
-─────────────────────────────────────────────────────────
-Original Wallet          Recovered Wallet
-────────────────         ────────────────
-First address:           First address:
-bc1qxy2...abc     =?     bc1qxy2...abc
+<div class="doc-diagram">
 
-If they match → ✅ Backup is correct
-If different → ❌ Something is wrong
-```
+![Backup verification: restore the written seed on a second device and compare first addresses; identical addresses prove the paper backup restores the wallet, any difference means stop and find the error before funding](https://selfcustodylabs.com/img/diagrams/wallet-setup/backup-check.svg)
+
+</div>
 
 **4. Delete the test wallet**
 
@@ -215,15 +209,11 @@ A passphrase creates a **completely different wallet**. Even a tiny difference (
 4. Note the first address (this is your real wallet)
 5. Verify this matches your actual wallet
 
-```
-PASSPHRASE VERIFICATION:
-─────────────────────────────────────────────────────────
-Seed only:          seed + "MyPassphrase":
-bc1q111...xxx       bc1q222...yyy
-(decoy wallet)      (your real wallet)
+<div class="doc-diagram">
 
-Both should be derivable from your backup.
-```
+![A passphrase splits one seed into two wallets: the 24 words alone derive the decoy wallet at one address, and the words plus your passphrase derive your real wallet at a different address; the passphrase is part of the backup](https://selfcustodylabs.com/img/diagrams/wallet-setup/passphrase-wallets.svg)
+
+</div>
 
 ### Common Passphrase Mistakes
 

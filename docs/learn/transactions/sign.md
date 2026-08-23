@@ -3,7 +3,7 @@
 > How Bitcoin transaction signing works: what signing means, online vs offline signing flows, and single-sig versus multisig signing.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/sign/
-Last updated: 2026-04-15
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -52,6 +52,12 @@ Here’s how a typical air-gapped signing setup works:
 4. Sign the transaction with the private key on the offline device.
 5. Move the signed transaction back to the online device.
 6. Broadcast it to the Bitcoin network.
+
+<div class="doc-diagram">
+
+![Air-gapped signing: an online watch-only wallet builds the transaction and exports a PSBT, the file crosses the gap by USB, QR or SD card, an offline device holding the private key signs it, and the signed PSBT returns for broadcast; the key never crosses](https://selfcustodylabs.com/img/diagrams/transactions/airgap-signing.svg)
+
+</div>
 
 This layered approach keeps your private key isolated from internet exposure while allowing secure transaction signing.
 ---

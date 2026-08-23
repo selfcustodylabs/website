@@ -25,14 +25,11 @@ Multisig uses an "M-of-N" structure:
 - **N** = Total number of keys in the setup
 - **M** = Number of keys required to sign
 
-```
-2-of-3 MULTISIG:
-────────────────────────────────────────────────────
-Total keys: 3
-Required to spend: 2
+<div class="doc-diagram">
 
-Any combination of 2 keys can authorize a transaction.
-```
+![A 2-of-3 multisig: three keys exist at home, office and safe, and any two signatures spend; no single key ever can, so one key can be lost or stolen without losing the funds](https://selfcustodylabs.com/img/diagrams/wallets/multisig-quorum.svg)
+
+</div>
 
 ### Common Configurations
 
@@ -63,25 +60,11 @@ Any combination of 2 keys can authorize a transaction.
 3. Sign with Device 2 → Transaction is now valid
 4. Broadcast the fully-signed transaction
 
-```
-SIGNING FLOW:
-────────────────────────────────────────────────────
-                     PSBT (Unsigned Transaction)
-                              │
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-               ┌─────────┐         ┌─────────┐
-               │ Device 1│         │ Device 2│
-               │  Signs  │         │  Signs  │
-               └────┬────┘         └────┬────┘
-                    │                   │
-                    └─────────┬─────────┘
-                              ▼
-                    Fully Signed Transaction
-                              │
-                              ▼
-                      Broadcast to Network
-```
+<div class="doc-diagram">
+
+![Multisig signing flow: an unsigned PSBT goes to device 1 and device 2, each signs independently, the signatures combine into a fully signed transaction and it is broadcast; no single machine ever holds two keys](https://selfcustodylabs.com/img/diagrams/wallets/multisig-signing.svg)
+
+</div>
 
 ## Why Use Multisig?
 
@@ -102,19 +85,11 @@ SIGNING FLOW:
 
 With multisig, your bitcoin security doesn't depend on any single thing:
 
-```
-SINGLE-SIG:
-──────────────────
-One seed phrase → Full control → Single point of failure
+<div class="doc-diagram">
 
-MULTISIG (2-of-3):
-──────────────────
-Key 1 (Home)    ─┐
-Key 2 (Office)  ─┼─→ Need ANY 2 to spend
-Key 3 (Safe)    ─┘
+![Single-sig puts full control on one seed phrase, one point of failure; a 2-of-3 multisig spreads control over three keys where any two spend, so one key compromised or lost leaves the funds safe](https://selfcustodylabs.com/img/diagrams/wallets/multisig-vs-single.svg)
 
-One key compromised ≠ funds lost
-```
+</div>
 
 ## The Tradeoffs
 
