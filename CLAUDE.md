@@ -259,8 +259,13 @@ swizzle. Do not "fix" the site's own breadcrumb schema thinking it is the duplic
 ## Deploy & hosting boundaries
 
 Push to `main` → [.github/workflows/deploy.yml](.github/workflows/deploy.yml) builds and pushes
-`./build` to the `gh-pages` branch via `peaceiris/actions-gh-pages`. CI uses Node 23; `.nvmrc`
-says 20; `engines` says >=18.
+`./build` to the `gh-pages` branch via `peaceiris/actions-gh-pages`. CI and `.nvmrc` are both on
+**Node 24** (current Active LTS); `engines` says >=18, which is a floor rather than a target.
+Dependencies install with **`npm ci`**, not `npm install`: the old `npm install --frozen-lockfile`
+passed a pnpm/yarn flag that npm silently ignores, so the lockfile was never enforced and CI could
+resolve versions a local build never saw. The three actions are pinned to node24-runtime versions
+(`checkout@v7.0.1`, `setup-node@v7.0.0`, `actions-gh-pages@v4.1.0`); the v4 line targeted the
+deprecated node20 and warned on every deploy.
 
 **Not fixable in this repo**: don't propose code changes for these:
 
