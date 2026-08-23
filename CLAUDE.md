@@ -38,10 +38,12 @@ MDX, and swizzled components all resolve. Run it before claiming a content chang
 | [src/data/schema/](src/data/schema/) | Schema.org generators (Article, HowTo, FAQ, Breadcrumb, ItemList) |
 | [src/data/](src/data/) | Per-path lookup tables: `progressData`, `nextStepsData`, `sectionConfig`, `ogManifest.json` |
 | [src/components/](src/components/) | Shared React; barrel-exported from [src/components/index.js](src/components/index.js) |
-| [src/pages/](src/pages/) | Standalone routes (`/`, `/learn`, `/guides`, `/books`, `/podcasts`, `/privacy`, 404) |
+| [src/pages/](src/pages/) | Standalone routes (`/`, `/learn`, `/guides`, `/books`, `/podcasts`, `/about`, `/privacy`, 404) |
+| [plugins/llms-txt/](plugins/llms-txt/) | postBuild plugin: `/llms.txt`, `/llms-full.txt`, per-doc `<route>.md` mirrors |
 | [scripts/generate-og-images.py](scripts/generate-og-images.py) | Renders per-doc OG cards + rewrites `ogManifest.json` |
 | [scripts/generate-favicons.py](scripts/generate-favicons.py) | Renders the root favicon set from `assets/logo-mark.png` |
-| [static/](static/) | Images, `robots.txt`, `CNAME`, `keybase.txt`, root favicon set |
+| [scripts/indexnow-submit.mjs](scripts/indexnow-submit.mjs) | Pings IndexNow with changed doc URLs; run from the deploy workflow |
+| [static/](static/) | Images, `robots.txt`, `CNAME`, `keybase.txt`, IndexNow key, root favicon set |
 
 ## Adding or editing a doc
 
@@ -66,6 +68,25 @@ MDX, and swizzled components all resolve. Run it before claiming a content chang
    first, a semicolon or full stop between independent clauses, commas or parentheses around
    an aside. Check with `grep -rnP "\x{2014}" docs/ src/ *.md *.js`, which must come back
    empty. En dashes in numeric ranges (`120-160`, `4.0.1-4.1.9`) are correct and stay.
+
+7. **Write for retrieval as well as for readers.** AI assistants answer from chunks, not
+   pages: a section that only makes sense after the three above it cannot be lifted into an
+   answer, and a page that opens with framing gives a retriever framing to quote. So:
+   - **Open with the answer.** The first paragraph after the H1 answers the question the title
+     implies, in full sentences, before any preamble. Not "by the end of this page you'll
+     understand X" and not "choosing X is an important decision": say what X *is*, or which
+     one to pick. See [docs/learn/wallets/coldcard-entropy-incident.md](docs/learn/wallets/coldcard-entropy-incident.md)
+     and [docs/reference/hardware-wallet-comparison.md](docs/reference/hardware-wallet-comparison.md).
+   - **Never put a metadata box between the H1 and the answer.** A `:::info What You'll Learn`
+     block first means the first thing extracted from the page is a time estimate.
+   - **H2s are the questions people ask**, not topic labels.
+   - **Sections stand alone.** Re-name the subject rather than opening with a pronoun that
+     points at the previous section.
+   - **Date time-sensitive claims inline**: "As of August 2026, ...". Prices, firmware versions
+     and recommendations all go stale, and an undated claim gets quoted years later.
+   - **Definitions are one sentence of the form "X is Y"**, not a concept spread over a paragraph.
+   - **Comparative content goes in a table**, following
+     [docs/reference/hardware-wallet-comparison.md](docs/reference/hardware-wallet-comparison.md).
 
 These MDX components are globally available with **no import** (registered in
 [src/theme/MDXComponents/index.js](src/theme/MDXComponents/index.js)): `ProgressIndicator`,
@@ -147,6 +168,70 @@ first, they point at a missing local file) and re-trim to the alpha bbox.
 - **Client redirects are meta-refresh pages returning HTTP 200**, not server 301s; GitHub Pages
   can't do path-level 301s. Old URLs scattering across GSC's "Page with redirect" *and*
   "Crawled – currently not indexed" is expected, not repo-fixable.
+
+## AI discoverability: the second pipeline
+
+Google is not the only retrieval path any more, and the other one has different rules. An
+assistant cites a page only if its crawler was allowed, the page is in the index that assistant
+retrieves from, and the chunk it lifted stands on its own. Rules 1-6 above cover Google; rule 7
+and this section cover the rest.
+
+- **[static/robots.txt](static/robots.txt) names every AI crawler explicitly, and still has zero
+  `Disallow`.** Training bots (GPTBot, ClaudeBot, CCBot, Google-Extended), search bots that build
+  the citation pool (OAI-SearchBot, Claude-SearchBot, PerplexityBot), and live user-triggered
+  fetchers (ChatGPT-User, Claude-User, Perplexity-User) are all allowed. **The footgun:**
+  robots.txt is most-specific-group-wins, so a bot that finds a group naming itself reads only
+  that group and ignores `User-agent: *` entirely. Anything you add to the `*` group from now on
+  does not apply to any named bot unless you repeat it in that bot's group.
+- **[plugins/llms-txt/](plugins/llms-txt/) writes `/llms.txt`, `/llms-full.txt` and a
+  `<route>.md` mirror of every doc** into the build output on every `command npm run build`.
+  Nothing is committed. Honest framing: Google stated in May 2026 that it does not use
+  `llms.txt`, and GPTBot rarely requests it; Anthropic does recommend it. The `.md` mirrors are
+  the part with real value, since they cost an agent roughly a fifth of the tokens the HTML does.
+  - **Routes come from Docusaurus, never from the file path.** The plugin captures the docs
+    plugin's own `permalink` in `allContentLoaded` (the only hook handed other plugins' content;
+    `postBuild` is not) and then asserts every permalink against the built `routesPaths`. This is
+    deliberately unlike `generate-og-images.py`, which derives URLs from file path and ignores
+    `slug:`. A drifted route is a hard build failure.
+  - Normalization is **fenced-code-aware**: several docs contain Python starting with
+    `import hashlib,sys`, which a naive import-stripping pass would eat. Content nested in a
+    `Grid`/`Tabs`/`TabItem` wrapper is dedented when the wrapper is removed, because four spaces
+    of leftover indentation means "code block" in Markdown. `assertClean()` fails the build on
+    residual JSX, admonition markers, or unresolved relative links, rather than shipping them.
+  - Adding an eleventh sidebar requires a heading in `SIDEBAR_LABELS`; an unmapped one throws.
+- **The IndexNow key file URL must never change**, exactly like the favicon set:
+  `static/d18fe17c571b4c2ca23cec3da15bc089.txt`. IndexNow verifies ownership by fetching it back
+  from the site root. The key is public by design and lives in plain text in
+  [.github/workflows/deploy.yml](.github/workflows/deploy.yml); it is not a secret. The deploy
+  workflow submits **only the docs changed in that push** (`git diff HEAD~1 HEAD -- docs/`,
+  which works because `fetch-depth: 0` is set), mapping files to URLs through the
+  `.indexnow-urls.json` the plugin writes outside `build/`. Submitting the whole corpus on every
+  push is what gets a key rate-limited. The step is `continue-on-error`: a failed ping must never
+  fail a deploy that already published.
+- **Bing matters more than its search share suggests.** Its index is the retrieval layer for
+  ChatGPT search and Copilot, so a page Bing has not crawled cannot be cited by either.
+- **The Organization is one entity, addressed by `@id`.** `ORGANIZATION_ID` in
+  [src/data/schema/constants.js](src/data/schema/constants.js) must stay equal to the `@id` on
+  the Organization block in [docusaurus.config.js](docusaurus.config.js). Without it every
+  Article inlines an anonymous copy, and the graph describes ~97 unrelated organizations that
+  happen to share a name.
+- **`dateModified` comes from git via `metadata.lastUpdatedAt`** (milliseconds in Docusaurus 3)
+  and is only correct in a production build; the dev server leaves a placeholder in
+  `.docusaurus`. `toIsoDate()` in [src/theme/DocItem/Layout/index.js](src/theme/DocItem/Layout/index.js)
+  drops anything outside 2020-2100 rather than publishing a wrong date. **`datePublished` is
+  emitted only when a doc sets `date:` in frontmatter**, because Docusaurus exposes no creation
+  date and claiming last-modified as publication date would be a fabricated fact in structured data.
+- **[/about](src/pages/about.mdx) is the entity page**, the one an assistant reads to decide
+  whether this publisher is credible and what it is an authority on. It states the editorial
+  method, the standing positions (Coldcard, SeedSigner, Bitkey, CoinJoin), and the independence
+  claim. Keep it in sync when a stance changes. Its navbar and footer links are raw
+  `themeConfig` strings, so `onBrokenLinks` does not check them; verify `/about/` by hand.
+
+**Known, not ours to fix:** every doc page carries two `BreadcrumbList` blocks. One is the
+site's own; the other comes from upstream `@docusaurus/plugin-content-docs`
+(`client/structuredDataUtils.js`) via `DocBreadcrumbs`, and it is the lower-quality of the two
+(emoji in the labels, no `Home` crumb, no trailing slashes). Removing it needs a `DocBreadcrumbs`
+swizzle. Do not "fix" the site's own breadcrumb schema thinking it is the duplicate.
 
 ## Front-end conventions
 

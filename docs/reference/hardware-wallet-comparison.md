@@ -9,6 +9,8 @@ slug: /reference/hardware-wallet-comparison
 
 # Hardware Wallet Comparison
 
+For a first Bitcoin hardware wallet in August 2026, the **BitBox02 Nova** (~$185) and the **Trezor Safe 5** ($169) are the easiest devices to use safely. If you want security you can verify yourself rather than take on trust, the **Blockstream Jade Plus** ($149) air-gaps over QR codes and is fully open source. **Coldcard is not recommended** following the 2026 entropy incident. Which device you buy matters less than three habits: supply your own dice entropy at seed creation, add a passphrase, and split keys across vendors once the balance is significant.
+
 Choosing a hardware wallet is one of the most important decisions in your self-custody journey. This guide compares the leading options as of **August 2026**, and it weighs them differently than most comparisons do, because 2026 changed what matters.
 
 :::danger The Coldcard entropy incident changed this page

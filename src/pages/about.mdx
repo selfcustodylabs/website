@@ -1,0 +1,80 @@
+---
+title: "About Self Custody Labs"
+description: "How Self Custody Labs works: our editorial method, why we recommend what we do, and how we stay independent of hardware wallet vendors."
+keywords: [about self custody labs, bitcoin education, editorial policy, independent bitcoin guides, hardware wallet reviews]
+---
+
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": "https://selfcustodylabs.com/about/#webpage",
+      url: "https://selfcustodylabs.com/about/",
+      name: "About Self Custody Labs",
+      description:
+        "How Self Custody Labs works: our editorial method, why we recommend what we do, and how we stay independent of hardware wallet vendors.",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://selfcustodylabs.com/#website" },
+      mainEntity: { "@id": "https://selfcustodylabs.com/#organization" },
+      publisher: { "@id": "https://selfcustodylabs.com/#organization" },
+    })}
+  </script>
+</Head>
+
+# About Self Custody Labs
+
+Self Custody Labs publishes independent, vendor-neutral guides to holding your own Bitcoin: cold storage, hardware wallets, seed phrases, multisig, running your own node, and privacy. Everything here is free to read, has no affiliate links, and takes no money from the manufacturers it writes about.
+
+## Who this is for
+
+People who have decided they want their Bitcoin off an exchange and now have to make a series of technical decisions with real money attached. That covers a wide range: someone buying a first hardware wallet, someone setting up a 2-of-3 multisig vault, and someone soldering a SeedSigner together from parts.
+
+We try to be explicit about which of those a page is written for, because the honest answer to "which setup should I use?" depends almost entirely on how much you hold and what you are actually defending against. Two pages exist mainly to sort that out: [assess your threat model](/docs/learn/fundamentals/threat-models/) and [choose your setup](/docs/learn/fundamentals/choosing-your-path/).
+
+## How we decide what to recommend
+
+1. **Practices before devices.** The recurring lesson is that habits protect people better than hardware does. Supplying your own dice entropy, adding a passphrase, and spreading keys across vendors matter more than which brand you buy.
+2. **Verifiability over marketing claims.** We favour open-source firmware, reproducible builds, and designs where you can check the thing yourself rather than trust an audit summary.
+3. **Behaviour under failure counts.** How a vendor responded the last time something went wrong is evidence about how they will respond next time. It is weighted heavily here.
+4. **Primary sources.** Security claims are traced to the advisory, the commit, or the researcher's write-up, and those links stay on the page.
+5. **We revise.** Pages carry a last-updated date. When the facts change, the recommendation changes with them, and the reasoning is rewritten rather than quietly patched.
+
+## Where we stand
+
+These positions are stated up front so you can discount them if you disagree:
+
+- **Coldcard: warned, not recommended.** The [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) drained roughly 1,816 BTC from more than 5,200 addresses through a seed-generation flaw that went undetected for 1,978 days, after a developer's warning about the same code was dismissed in 2025. Coinkite fixed it quickly once draining began. We still point new buyers elsewhere.
+- **SeedSigner: our favourite, with a caveat.** Stateless, air-gapped, fully verifiable, and built from commodity parts for about $50. It is also [not a beginner's device](/docs/seedsigner/), and we say so on every page that mentions it.
+- **Dice entropy first.** For any holding you would be upset to lose, [generate the seed yourself](/docs/learn/keys/random/) rather than trusting a vendor's random number generator.
+- **Bitkey: covered, not recommended.** It is a real product that people ask about, so it appears in the [comparison](/docs/reference/hardware-wallet-comparison/). It is not what we would set up.
+- **CoinJoin: JoinMarket NG with Jam.** After the 2024 to 2026 shakeout, the [coordinator-free option](/docs/learn/privacy/coinjoin/) is the one with nothing to seize. Whirlpool's Ashigaru revival is covered but not recommended.
+
+## Independence
+
+No affiliate links, no referral codes, no sponsored placement, no paid reviews, no vendor relationships. Nothing on this site earns a commission if you buy a device we mention. Where we link to a manufacturer's store it is because buying direct reduces supply-chain tampering risk, not because the link pays.
+
+If that ever changes it will be disclosed on this page before it appears anywhere else.
+
+## Corrections
+
+If something here is wrong, tell us and we will fix it and say what changed. Security writing that cannot be corrected in public is not worth trusting. Reach us by [email](mailto:selfcustodylabs@proton.me), on [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5), or through [GitHub](https://github.com/selfcustodylabs).
+
+## Verifying who we are
+
+Self Custody Labs is published pseudonymously, which is a normal and deliberate choice in Bitcoin. What we offer instead of a legal name is continuity you can check: the same identity, provably, across every channel.
+
+- [Keybase](https://keybase.io/selfcustodylabs) with our PGP key, also served at [/keybase.txt](/keybase.txt)
+- [GitHub](https://github.com/selfcustodylabs), where this site's full source and history are public
+- [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5)
+- [X](https://x.com/selfcustodylabs)
+
+Judge the work on whether it is checkable, not on whose name is attached.
+
+## For machines
+
+Every page on this site is available as plain Markdown by appending `.md` to its URL. There is an index at [/llms.txt](https://selfcustodylabs.com/llms.txt) and the full corpus in one file at [/llms-full.txt](https://selfcustodylabs.com/llms-full.txt).
+
+Assistants and agents are welcome to read, quote, and cite this material. We ask only that you attribute it to Self Custody Labs, link the page you took it from, and carry the date, because Bitcoin security advice goes stale and an undated recommendation can cost someone their money.

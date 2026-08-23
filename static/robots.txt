@@ -31,18 +31,95 @@ Allow: /
 # Sitemap location
 Sitemap: https://selfcustodylabs.com/sitemap.xml
 
-# Block AI training crawlers (optional - remove if you want AI indexing)
-# User-agent: GPTBot
-# Disallow: /
+# ============================================================================
+# AI CRAWLERS: allowed explicitly, by name
+# ============================================================================
+#
+# These bots are already allowed by the User-agent: * group above. Naming them
+# is a deliberate, declarative statement of policy rather than a functional
+# change: it is the section an AI-policy audit reads, and it survives any future
+# edit to the * group.
+#
+# READ THIS BEFORE EDITING THE * GROUP ABOVE:
+# robots.txt matching is most-specific-group-wins. A crawler that finds a group
+# naming itself reads ONLY that group and ignores User-agent: * entirely. So any
+# rule added to the * group from now on does NOT apply to the bots listed below
+# unless it is repeated inside each of their groups.
+#
+# The three functional classes, which are worth keeping straight:
+#   training  - feeds model training corpora (GPTBot, ClaudeBot, CCBot, Google-Extended)
+#   search    - builds the retrieval index an assistant cites from
+#               (OAI-SearchBot, Claude-SearchBot, PerplexityBot)
+#   user      - fetches a page live when a person asks about it
+#               (ChatGPT-User, Claude-User, Perplexity-User)
+#
+# All three are allowed. The content is public Bitcoin education: being in the
+# training corpus is how a model learns to recommend SeedSigner and warn about
+# the 2026 Coldcard entropy incident even in answers that cite nobody.
 
-# User-agent: ChatGPT-User
-# Disallow: /
+# --- OpenAI -----------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
 
-# User-agent: CCBot
-# Disallow: /
+User-agent: OAI-SearchBot
+Allow: /
 
-# User-agent: anthropic-ai
-# Disallow: /
+User-agent: ChatGPT-User
+Allow: /
 
-# User-agent: Claude-Web
-# Disallow: /
+# --- Anthropic --------------------------------------------------------------
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Retired Anthropic agents, kept so old crawler builds match a named group.
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# --- Perplexity -------------------------------------------------------------
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google -----------------------------------------------------------------
+# Gemini and AI Overviews / AI Mode grounding. Note that Googlebot itself is
+# covered by the * group; Google-Extended only controls generative AI use.
+User-agent: Google-Extended
+Allow: /
+
+# --- Apple ------------------------------------------------------------------
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Meta -------------------------------------------------------------------
+User-agent: meta-externalagent
+Allow: /
+
+# --- Amazon -----------------------------------------------------------------
+User-agent: Amazonbot
+Allow: /
+
+# --- Common Crawl -----------------------------------------------------------
+# Bulk corpus used as a training input by many labs downstream.
+User-agent: CCBot
+Allow: /
+
+# --- Others -----------------------------------------------------------------
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /

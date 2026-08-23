@@ -8,7 +8,9 @@ tags: ["seed", "BIP39", "private keys", "backup"]
 
 # Seed Phrases
 
-Your seed phrase is arguably the most important thing in Bitcoin self-custody. These 12 or 24 words *are* your Bitcoin. Whoever has them controls your funds. Understanding what they are and how they work is essential before you entrust real money to them.
+A seed phrase is a list of 12 or 24 ordinary words that encodes every private key in your Bitcoin wallet, and it is the only thing you need to restore that wallet on any device, from any manufacturer, years later.
+
+It is arguably the most important thing in Bitcoin self-custody. These words *are* your Bitcoin: whoever has them controls your funds, and whoever loses them loses the funds. Understanding how they work is essential before you entrust real money to them.
 
 ## What is a Seed Phrase?
 

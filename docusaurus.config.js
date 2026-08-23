@@ -94,6 +94,20 @@ const config = {
         "@id": "https://selfcustodylabs.com/#organization",
         "name": "Self Custody Labs",
         "url": "https://selfcustodylabs.com",
+        // description and knowsAbout are what an AI assistant reads to decide
+        // what this publisher is an authority on before citing it.
+        "description":
+          "Independent, vendor-neutral guides to Bitcoin self-custody: cold storage, hardware wallets, seed phrases, multisig, node operation, and privacy. No affiliate links and no sponsored placement.",
+        "knowsAbout": [
+          "Bitcoin self-custody",
+          "Hardware wallets",
+          "Seed phrases and BIP39",
+          "Multisignature wallets",
+          "Air-gapped transaction signing",
+          "Bitcoin privacy and CoinJoin",
+          "Running a Bitcoin node",
+          "Coreboot and Libreboot",
+        ],
         "logo": {
           "@type": "ImageObject",
           "url": "https://selfcustodylabs.com/img/logo.svg",
@@ -103,7 +117,8 @@ const config = {
         "sameAs": [
           "https://x.com/selfcustodylabs",
           "https://github.com/selfcustodylabs",
-          "https://keybase.io/selfcustodylabs"
+          "https://keybase.io/selfcustodylabs",
+          "https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
@@ -359,6 +374,16 @@ const config = {
             type: 'dropdown',
             position: 'right',
             items: [
+              // NOTE: onBrokenLinks does not walk themeConfig, so this internal
+              // route is not link-checked by the build. Verify it by hand.
+              {
+                to: '/about/',
+                label: 'About Self Custody Labs',
+              },
+              {
+                type: 'html',
+                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
+              },
               {
                 href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
                 label: 'Nostr',
@@ -485,6 +510,10 @@ const config = {
                 href: 'https://mempool.space/',
               },
               {
+                label: 'About',
+                to: '/about/',
+              },
+              {
                 label: 'Privacy Policy',
                 to: '/privacy/',
               },
@@ -562,6 +591,10 @@ const config = {
         },
       };
     },
+    // Machine-readable mirrors for AI agents: /llms.txt, /llms-full.txt and a
+    // per-doc <route>.md beside each index.html. See plugins/llms-txt/index.js.
+    './plugins/llms-txt',
+
     [
       '@docusaurus/plugin-client-redirects',
       {

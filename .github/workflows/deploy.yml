@@ -44,3 +44,28 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+      # Bing's index is the retrieval layer for ChatGPT search and Copilot, so a
+      # page it has not crawled cannot be cited by either. IndexNow shortens that
+      # from weeks to about a day. Only changed docs are submitted; resubmitting
+      # the whole corpus on every push is what gets a key rate-limited.
+      #
+      # Runs after the deploy so the URLs are live when Bing comes to fetch them,
+      # and never fails the job: the pages are already published either way.
+      - name: Ping IndexNow with changed docs
+        continue-on-error: true
+        env:
+          # Public by design: IndexNow verifies ownership by fetching this key
+          # back from https://selfcustodylabs.com/<key>.txt, so it is not a secret.
+          INDEXNOW_KEY: d18fe17c571b4c2ca23cec3da15bc089
+        run: |
+          if ! git rev-parse HEAD~1 >/dev/null 2>&1; then
+            echo "no previous commit to diff against, skipping"
+            exit 0
+          fi
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- docs/)
+          if [ -z "$CHANGED" ]; then
+            echo "no doc changes in this push, skipping"
+            exit 0
+          fi
+          echo "$CHANGED" | xargs node scripts/indexnow-submit.mjs
