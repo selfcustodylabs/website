@@ -25,11 +25,18 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v7.0.0
         with:
-          node-version: 23
+          # Node 24 is the current Active LTS and matches .nvmrc. 23 was an
+          # odd-numbered line that went EOL in May 2025, and nothing local or
+          # in CI was actually running it.
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
-        run: npm install --frozen-lockfile
+        # npm ci, not npm install: --frozen-lockfile is a pnpm/yarn flag that
+        # npm silently ignores, so the lockfile was never actually enforced and
+        # a deploy could resolve different versions than a local build. npm ci
+        # installs strictly from package-lock.json and fails if the two drift.
+        run: npm ci
       - name: Build website
         run: npm run build
 
