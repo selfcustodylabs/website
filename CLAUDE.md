@@ -208,6 +208,12 @@ and this section cover the rest.
   `.indexnow-urls.json` the plugin writes outside `build/`. Submitting the whole corpus on every
   push is what gets a key rate-limited. The step is `continue-on-error`: a failed ping must never
   fail a deploy that already published.
+  - **The script preflights the key file** (fetches it, checks the contents match `INDEXNOW_KEY`)
+    and exits non-zero if it is missing or wrong, which surfaces as a failed step in the Actions
+    UI without failing the deploy. This exists because **a 202 response proves nothing**: the API
+    returns "202 received, validation pending" for a completely invalid key too, so a broken key
+    file degrades silently forever rather than erroring. Verified 23 Aug 2026 against Bing's own
+    endpoint, which does discriminate: valid key returns 200, invalid returns 202.
 - **Bing matters more than its search share suggests.** Its index is the retrieval layer for
   ChatGPT search and Copilot, so a page Bing has not crawled cannot be cited by either.
 - **The Organization is one entity, addressed by `@id`.** `ORGANIZATION_ID` in
