@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/selfcustodylabs
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://selfcustodylabs.com
+  * I am selfcustodylabs (https://keybase.io/selfcustodylabs) on keybase.
+  * I have a public key ASDQKN1-iD9eDmCv4fvXOiNJenWhduqojk2h7E6ZZaXKWgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d028dd7e883f5e0e60afe1fbd73a23497a75a176eaa88e4da1ec4e9965a5ca5a0a",
+      "host": "keybase.io",
+      "kid": "0120d028dd7e883f5e0e60afe1fbd73a23497a75a176eaa88e4da1ec4e9965a5ca5a0a",
+      "uid": "b0c1b0cdc496b273fb93828569429b19",
+      "username": "selfcustodylabs"
+    },
+    "merkle_root": {
+      "ctime": 1768009759,
+      "hash": "cfaff55d2bd93244ee43c4ad1c4eaec197841b9ec1f182b36a7c8fd7b448ca683f7360c57e931b9864e78faa265d772be8659efdccb914c5beb9bad806937cde",
+      "hash_meta": "ecb91f083222a1f9f22ed51e777d9818b2647ad1b6fa97b3134104920a044249",
+      "seqno": 27337541
+    },
+    "service": {
+      "entropy": "e0JDdousVX/d6Dawse96SZPv",
+      "hostname": "selfcustodylabs.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1768009884,
+  "expire_in": 504576000,
+  "prev": "22cad3e3ed067bd5e3bda476486d22e87c9ce76c96b1f106ad95f92601aebce4",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg0Cjdfog/Xg5gr+H71zojSXp1oXbqqI5NoexOmWWlyloKp3BheWxvYWTESpcCBcQgIsrT4+0Ge9XjvaR2SG0i6Hyc52yWsfEGrZX5JgGuvOTEIMclubd4eqHd4IMNDmECmxC+cfCM1mVU7uZuUjnEqoONAgHCo3NpZ8RA5IBXZbWDoGlQyUr4TFeGjhnhl14OLy74JI4K59gAn0z1sHAq0Whpb6wkM7xfO80mbjBQjDmbYJAmO5Fa9tksAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIA8JRG18YuU4GjghVgQVyit+s3maCmNbMU0nNOiNNH8o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/selfcustodylabs
+
+==================================================================
