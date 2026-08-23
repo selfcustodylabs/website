@@ -3,7 +3,7 @@
 > Generate a BIP39 Bitcoin seed phrase from dice rolls. True randomness, verifiable checksum, fully offline, no need to trust the wallet RNG.
 
 Source: https://selfcustodylabs.com/docs/learn/keys/random/
-Last updated: 2026-08-21
+Last updated: 2026-08-23
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
@@ -621,6 +621,34 @@ As Step 3 explained, 8 different last words all pass that check, and 7 of them o
 If every word matches, the seed really is the one your dice produced. If any word differs, trust the dice grid and find the mistake before you send any funds to it.
 
 ![Importing the seed into Sparrow Wallet for verification](https://selfcustodylabs.com/img/seed/import.webp)
+
+### Check the same words on a second, independent wallet
+
+The re-derivation above proves your words match your dice. It does not prove the wallet is doing the right thing with them. A tampered Sparrow build, the wrong derivation path, or a passphrase you did not mean to set will each accept all 24 words and then show you addresses belonging to a different wallet. You would fund those addresses and find out only when you tried to recover.
+
+The check that catches this is entering the same 24 words into a second, independent wallet implementation and confirming both derive the same account.
+
+**Set both wallets up identically first**, or they will disagree for reasons that are not a bug:
+
+- **Same derivation path.** Use `m/84'/0'/0'` (native segwit) on both unless you have a reason to pick another. Sparrow defaults to it; most signing devices ask.
+- **Same script type.** A wallet set to legacy or nested segwit shows completely different addresses from the same key.
+- **No passphrase on either.** A [BIP39 passphrase](https://selfcustodylabs.com/docs/learn/keys/passphrase/) opens a different wallet entirely, and a stray space counts as one.
+
+Then compare, in this order:
+
+1. **The account xpub.** Both wallets should show the same [extended public key](https://selfcustodylabs.com/docs/learn/keys/xpub/) for the account. Compare the whole string, not the first few characters. This is the check that matters, because the xpub covers every address in the account rather than one of them.
+2. **The first receive address**, character for character.
+3. **One address further down**, say index 5 or 10, as a spot check that the two agree past index 0.
+
+If the two disagree, do not fund anything. Re-check path, script type and passphrase before you suspect the seed, then re-check the words you typed into each wallet. A mismatch is far more often a settings difference than a bad seed. If the settings are identical and the addresses still differ, trust the dice grid over both wallets and find the error there.
+
+**A stateless device makes the better second wallet.** [SeedSigner](https://selfcustodylabs.com/docs/seedsigner/) has no persistent storage for a seed to sit in, so the words are exposed only while it is powered, and it is a reasonable second opinion here if you already own one (building and running it is not a beginner project, which is why it is a cross-check in this guide rather than a prerequisite). A second general-purpose computer has storage and may have been online at some point in its life; if you use one, wipe it afterwards and treat it as burned.
+
+**What this check proves, and what it does not.** It proves two independent implementations agree on which wallet your words open, so one tampered wallet build cannot quietly point you at somebody else's addresses. It does not prove your entropy was good: that is what the dice in Step 1 are for, and two wallets fed the same words will always agree on the addresses whether those words came from dice or from a backdoored generator. It also does not prove either machine kept your seed to itself, and it costs you a second place the phrase has been. One extra exposure buys a real check; a third device buys nothing.
+
+Comparing addresses across devices protects the setup, not the coins. Once funded, the defence against any single compromised device is [multisig](https://selfcustodylabs.com/docs/learn/wallets/multisig/) across different vendors, where no one device can move funds on its own.
+
+For this same comparison run against your finished metal backup rather than your paper draft, see [Backup Verification](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/).
 
 ## Step 6: Back Up on Metal
 
