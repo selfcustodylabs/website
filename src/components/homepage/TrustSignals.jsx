@@ -27,6 +27,7 @@ export default function TrustSignals() {
 
   return (
     <section
+      id="trust-signals"
       ref={ref}
       className="reveal relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32"
     >

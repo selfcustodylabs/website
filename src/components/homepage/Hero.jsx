@@ -23,6 +23,23 @@ function Pill({ icon: Icon, label }) {
   );
 }
 
+function scrollToContent() {
+  const target = document.getElementById('trust-signals');
+  if (!target) return;
+
+  // Measure the navbar rather than parsing --ifm-navbar-height: that token is
+  // set in rem (3.75rem), so parseInt would read it as 3.
+  const navbar = document.querySelector('.navbar');
+  const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 60;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.scrollTo({
+    top: target.getBoundingClientRect().top + window.scrollY - navbarHeight,
+    behavior: prefersReducedMotion ? 'auto' : 'smooth',
+  });
+}
+
 export default function Hero() {
   return (
     <header className="relative isolate flex min-h-[88vh] items-center justify-center overflow-hidden pb-24 pt-20 md:min-h-[78vh] md:pb-32 md:pt-28">
@@ -84,9 +101,17 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce motion-reduce:animate-none">
-        <KeyboardArrowDownRoundedIcon sx={{ fontSize: 28 }} className="text-white/35" />
-      </div>
+      <button
+        type="button"
+        onClick={scrollToContent}
+        aria-label="Scroll down"
+        className="group absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer appearance-none border-0 bg-transparent p-2.5 text-white/35 transition-colors duration-300 hover:text-amber-400 focus-visible:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+      >
+        <KeyboardArrowDownRoundedIcon
+          sx={{ fontSize: 28 }}
+          className="block animate-bounce motion-reduce:animate-none"
+        />
+      </button>
     </header>
   );
 }
