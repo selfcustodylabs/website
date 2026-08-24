@@ -147,16 +147,21 @@ Four things that are easy to get wrong here:
   to have it. Use `ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace`
   and keep the text as real `<text>`, never converted to paths.
 - **Wrap each one in `<div class="doc-diagram">`** (defined in
-  [src/css/utilities.css](src/css/utilities.css)). It pins a 680px minimum width and scrolls
-  horizontally below that, because shrink-to-fit renders 11px mono labels at about 5px on a
-  phone. Same trade `.fixed-width-table` makes for wide tables.
+  [src/css/utilities.css](src/css/utilities.css)). It scales the SVG to the container on every
+  screen, so a phone shows the whole diagram at once and the fine mono labels need a pinch-zoom.
+  A 680px min-width + horizontal scroll version shipped first and was reverted (24 Aug 2026):
+  a clipped diagram behind a scrollbar nobody notices reads as broken, and Sergio vetoed it
+  from a real phone. Don't reintroduce it; `.fixed-width-table` still makes the scroll trade
+  for wide tables, which wrap instead of scaling and so can't shrink.
 - **Webpack inlines any SVG under its asset threshold as a base64 data URI**, so the file in
   `build/img/diagrams/` is not what the page actually loads and CSS cannot target these images
   by `src`. That is why the wrapper class exists rather than an `img[src*="diagrams"]` rule.
 
 Verify a new diagram by rendering it: `chromium --headless --screenshot=out.png
 --window-size=800,430 file://$PWD/static/img/diagrams/<path>.svg`, then again against
-`npm run serve` at 390px to confirm the labels still read.
+`npm run serve` at 390px to confirm the whole diagram fits the viewport and its structure
+(boxes, flows, the amber subject) still reads at that scale; individual labels are allowed
+to need a pinch-zoom there.
 
 ## SEO invariants: don't break these
 
