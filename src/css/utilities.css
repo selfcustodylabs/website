@@ -24,19 +24,18 @@ div.img-small img {
 }
 
 /*
- * Line-drawn SVG diagrams (static/img/diagrams/). These carry mono labels sized
- * for a ~700px canvas, so shrink-to-fit turns them into unreadable 5px type on a
- * phone. Scroll instead of scaling below that width, the same trade
- * .fixed-width-table makes for wide tables in tables.css.
+ * Line-drawn SVG diagrams (static/img/diagrams/). Scale to the container on
+ * every screen: on a phone the whole diagram is visible at once and the fine
+ * mono labels need a pinch-zoom, which beats a clipped image behind a scrollbar
+ * nobody notices (the min-width + overflow-x approach tried first, reverted
+ * 24 Aug 2026).
  */
 .doc-diagram {
-  overflow-x: auto;
   margin: 1.5rem 0;
 }
 
 .doc-diagram img {
   display: block;
-  min-width: 680px;
   width: 100%;
   height: auto;
 }
