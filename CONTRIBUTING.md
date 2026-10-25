@@ -48,7 +48,7 @@ npm run format
 ### Style Guidelines
 
 - **JavaScript/React**: ES6+ syntax, functional components with hooks
-- **Imports**: Group by type (React, Docusaurus, MUI, local components)
+- **Imports**: Group by type (React, Docusaurus, local components)
 - **Components**: Use JSDoc comments for props documentation
 - **CSS**: Use CSS Modules (`.module.css` files)
 
@@ -78,11 +78,12 @@ export default function ExampleCard({ title, href }) {
 ```
 src/
 ├── components/       # Shared React components
-│   ├── icons/        # Custom SVG icon components
+│   ├── landing/      # Index pages: tables, sections, site-index access
+│   ├── search/       # Pagefind search UI
 │   └── index.js      # Barrel exports
 ├── css/              # Global styles
-├── data/             # Static data (schemas, progress data)
-├── pages/            # Landing pages (index, learn, guides)
+├── data/             # Static data (schemas, progress, advisories, positions)
+├── pages/            # Standalone pages (index, learn, guides, about, books)
 └── theme/            # Docusaurus theme overrides
 
 docs/                 # Documentation content (MDX files)

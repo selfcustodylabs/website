@@ -4,12 +4,11 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { execSync } from "node:child_process";
-import tailwindcss from "tailwindcss";
-import autoprefixer from "autoprefixer";
 
 import { redirects, createRedirects } from "./src/data/redirects.js";
 import { contentSecurityPolicy } from "./src/data/securityHeaders.js";
 import { prismLab } from "./src/data/prismTheme.js";
+import { currentAdvisory } from "./src/data/advisories.js";
 
 /** Short hash of the commit being built, printed in the footer as the build mark. */
 function buildCommit() {
@@ -278,7 +277,7 @@ const config = {
         
         // Theme
         theme: {
-          customCss: ["./src/css/custom.css", "./src/css/tailwind.css"],
+          customCss: ["./src/css/custom.css"],
         },
       }),
     ],
@@ -315,17 +314,15 @@ const config = {
       // NOTE: hrefs below are NOT covered by onBrokenLinks. The link checker only
       // walks Markdown/MDX. Verify these routes by hand after any edit.
       // Bump `id` to re-show the bar to visitors who already dismissed it.
-      announcementBar: {
-        id: 'coldcard_rng_2026',
-        content:
-          '<span class="scl-advisory">Advisory · 1 Aug 2026</span>' +
-          '<strong>Coldcard seeds made 2021 to 2026 may be guessable</strong>, and new firmware does ' +
-          '<strong>not</strong> fix an existing seed. ' +
-          '<a href="/docs/learn/wallets/coldcard-entropy-incident/">Am I affected?</a> · ' +
-          'Make your own: <a href="/docs/learn/keys/random/">dice seed</a> and ' +
-          '<a href="/docs/learn/keys/passphrase/">passphrase</a>.',
-        isCloseable: true,
-      },
+      // From the current advisory in src/data/advisories.js, which is also the
+      // homepage bulletin (src/theme/AnnouncementBar hides the bar on "/").
+      ...(currentAdvisory && {
+        announcementBar: {
+          id: currentAdvisory.id,
+          content: currentAdvisory.bar,
+          isCloseable: true,
+        },
+      }),
       
       // ===========================================
       // Navigation
@@ -484,19 +481,12 @@ const config = {
   // PLUGINS
   // ===========================================
   plugins: [
-    function tailwindPlugin() {
-      return {
-        name: 'docusaurus-tailwind',
-        configurePostCss(postcssOptions) {
-          postcssOptions.plugins.push(tailwindcss);
-          postcssOptions.plugins.push(autoprefixer);
-          return postcssOptions;
-        },
-      };
-    },
     // Machine-readable mirrors for AI agents: /llms.txt, /llms-full.txt and a
     // per-doc <route>.md beside each index.html. See plugins/llms-txt/index.js.
     './plugins/llms-txt',
+    // Title, description, guide facts and git date of every doc, as a data
+    // module for the pages that list docs (/, /learn/, /guides/).
+    './plugins/site-index',
     // Cloudflare Pages: _redirects (real 301s from the same redirect list as
     // below) and _headers (CSP, HSTS, caching). See plugins/cloudflare/index.js.
     './plugins/cloudflare',

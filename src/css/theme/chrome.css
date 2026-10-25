@@ -417,7 +417,8 @@ li {
    PROSE (doc markdown and MDX pages)
    =========================================== */
 
-.markdown {
+.markdown,
+.mdx-page article {
   --ifm-h1-font-size: clamp(2rem, 3.4vw, 2.6rem);
   --ifm-h2-font-size: 1.55rem;
   --ifm-h3-font-size: 1.2rem;
@@ -430,50 +431,64 @@ li {
 .markdown h2,
 .markdown h3,
 .markdown h4,
-.markdown h5 {
+.markdown h5,
+.mdx-page article h1,
+.mdx-page article h2,
+.mdx-page article h3,
+.mdx-page article h4,
+.mdx-page article h5 {
   color: var(--scl-ink);
   font-weight: 700;
 }
 
 /* Tighter tracking at display sizes stands in for Inter Display's cut. */
-.markdown h1 {
+.markdown h1,
+.mdx-page article h1 {
   margin-bottom: 1.25rem;
   letter-spacing: -0.028em;
   line-height: 1.08;
 }
 
-.markdown h2 {
+.markdown h2,
+.mdx-page article h2 {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: var(--scl-rule);
   letter-spacing: -0.018em;
 }
 
-.markdown h3 {
+.markdown h3,
+.mdx-page article h3 {
   margin-top: 2.2rem;
   letter-spacing: -0.01em;
 }
 
-.markdown h4 {
+.markdown h4,
+.mdx-page article h4 {
   margin-top: 1.6rem;
 }
 
 .markdown p,
-.markdown li {
+.markdown li,
+.mdx-page article p,
+.mdx-page article li {
   color: var(--scl-ink-2);
 }
 
-.markdown li + li {
+.markdown li + li,
+.mdx-page article li + li {
   margin-top: 0.3rem;
 }
 
-.markdown strong {
+.markdown strong,
+.mdx-page article strong {
   color: var(--scl-ink);
   font-weight: 650;
 }
 
 /* Links: ink text, amber rule under it. Amber text is kept for the subject. */
-.markdown a {
+.markdown a,
+.mdx-page article a {
   color: var(--scl-ink);
   text-decoration: underline;
   text-decoration-color: rgba(245, 158, 11, 0.6);
@@ -481,17 +496,20 @@ li {
   text-underline-offset: 3px;
 }
 
-.markdown a:hover {
+.markdown a:hover,
+.mdx-page article a:hover {
   color: var(--scl-amber-lit);
   text-decoration-color: var(--scl-amber);
 }
 
-.markdown .hash-link {
+.markdown .hash-link,
+.mdx-page article .hash-link {
   color: var(--scl-faint);
   text-decoration: none;
 }
 
-.markdown :not(pre) > code {
+.markdown :not(pre) > code,
+.mdx-page article :not(pre) > code {
   padding: 0.1rem 0.35rem;
   border: var(--scl-rule-strong);
   border-radius: 4px;
@@ -501,30 +519,35 @@ li {
   vertical-align: 0.04em;
 }
 
-.markdown a code {
+.markdown a code,
+.mdx-page article a code {
   color: inherit;
 }
 
 /* Code blocks */
-.markdown div[class*="codeBlockContainer"] {
+.markdown div[class*="codeBlockContainer"],
+.mdx-page article div[class*="codeBlockContainer"] {
   border: var(--scl-rule-strong);
   border-radius: var(--scl-radius);
   box-shadow: none;
 }
 
-.markdown div[class*="codeBlockTitle"] {
+.markdown div[class*="codeBlockTitle"],
+.mdx-page article div[class*="codeBlockTitle"] {
   border-bottom: var(--scl-rule);
   color: var(--scl-muted);
   font-family: var(--scl-font-mono);
   font-size: 0.75rem;
 }
 
-.markdown pre {
+.markdown pre,
+.mdx-page article pre {
   font-size: 0.85rem;
   line-height: 1.6;
 }
 
-.markdown blockquote {
+.markdown blockquote,
+.mdx-page article blockquote {
   margin: 1.5rem 0;
   padding: 0.25rem 0 0.25rem 1.1rem;
   border-left: 2px solid var(--scl-dim2);
@@ -532,17 +555,20 @@ li {
   color: var(--scl-muted);
 }
 
-.markdown hr {
+.markdown hr,
+.mdx-page article hr {
   margin: 2.5rem 0;
   border: 0;
   border-top: var(--scl-rule);
 }
 
-.markdown img {
+.markdown img,
+.mdx-page article img {
   border-radius: var(--scl-radius);
 }
 
-.markdown details {
+.markdown details,
+.mdx-page article details {
   margin: 1.25rem 0;
   padding: 0.75rem 1rem;
   border: var(--scl-rule-strong);
@@ -553,12 +579,14 @@ li {
   --ifm-alert-border-color: var(--scl-dim2);
 }
 
-.markdown details > summary {
+.markdown details > summary,
+.mdx-page article details > summary {
   color: var(--scl-ink);
   font-weight: 600;
 }
 
-.markdown kbd {
+.markdown kbd,
+.mdx-page article kbd {
   padding: 0.05rem 0.35rem;
   border: var(--scl-rule-strong);
   border-radius: 3px;
@@ -570,7 +598,8 @@ li {
 }
 
 /* Tables: mono caps head, hairline rows. */
-.markdown table {
+.markdown table,
+.mdx-page article table {
   display: table;
   width: 100%;
   margin: 1.5rem 0;
@@ -579,11 +608,13 @@ li {
   font-size: 0.9rem;
 }
 
-.markdown table thead tr {
+.markdown table thead tr,
+.mdx-page article table thead tr {
   border-bottom: 1px solid var(--scl-dim2);
 }
 
-.markdown table th {
+.markdown table th,
+.mdx-page article table th {
   padding: 0.55rem 0.75rem;
   border: 0;
   background: none;
@@ -597,7 +628,8 @@ li {
   vertical-align: bottom;
 }
 
-.markdown table td {
+.markdown table td,
+.mdx-page article table td {
   padding: 0.6rem 0.75rem;
   border: 0;
   border-bottom: var(--scl-rule);
@@ -605,12 +637,26 @@ li {
   vertical-align: top;
 }
 
-.markdown table tr {
+.markdown table tr,
+.mdx-page article table tr {
   background: none;
 }
 
-.markdown table tbody tr:nth-child(2n) {
+.markdown table tbody tr:nth-child(2n),
+.mdx-page article table tbody tr:nth-child(2n) {
   background: none;
+}
+
+/* Standalone MDX pages (/about/, /privacy/, /books/, /podcasts/): the prose
+   rules above, in a centred column at the doc measure. */
+.mdx-page main.container {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.mdx-page article {
+  max-width: 46rem;
+  margin: 0 auto;
 }
 
 /* ===========================================
@@ -722,8 +768,12 @@ li {
   letter-spacing: 0.04em;
 }
 
+/* Underlined: inside a line of text, colour alone does not mark a link (WCAG 1.4.1). */
 .footer__copyright a {
   color: var(--scl-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-dim2);
+  text-underline-offset: 3px;
 }
 
 .footer__copyright a:hover {
