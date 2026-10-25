@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate per-page Open Graph images for all docs.
 
-Walks docs/**/*.md, parses the frontmatter title, and renders a 1200x630 PNG
+Walks docs/**/*.md and *.mdx, parses the frontmatter title, and renders a 1200x630 PNG
 to static/img/og/ following the URL slug structure. Writes a manifest file
 at src/data/ogManifest.json mapping doc URL paths to image paths.
 
@@ -80,6 +80,9 @@ PHOTO_EXACT = {
     "/docs/libreboot/raspberry-pico/": "libreboot/pico.webp",
     "/docs/libreboot/raspberry-pico/build-serprog/": "libreboot/connection.webp",
     "/docs/coreboot/build/": "coreboot/connection.webp",
+    "/docs/coreboot/requirements/": "coreboot/connection.webp",
+    "/docs/coreboot/external-flashing/": "libreboot/connection.webp",
+    "/docs/libreboot/raspberry-pico/connection/": "libreboot/floating-setup.webp",
     "/docs/coreboot/internal/flashing-bios/": "coreboot/connection.webp",
 }
 
@@ -411,7 +414,9 @@ def main():
     OG_DIR.mkdir(parents=True, exist_ok=True)
     manifest = {}
     count = 0
-    for md in sorted(DOCS.rglob("*.md")):
+    # .mdx too: four docs are MDX, and until Oct 2026 this loop missed them,
+    # so they silently shipped the generic social card.
+    for md in sorted([*DOCS.rglob("*.md"), *DOCS.rglob("*.mdx")]):
         text = md.read_text(encoding="utf-8")
         title, _slug = parse_frontmatter(text)
         if not title:
