@@ -31,10 +31,6 @@ const config = {
     { tagName: "link", attributes: { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192x192.png" } },
     { tagName: "link", attributes: { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" } },
 
-    // Preconnect for performance
-    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.googletagmanager.com" } },
-    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.google-analytics.com" } },
-
     // ===========================================
     // Open Graph Meta Tags (Facebook, LinkedIn, etc.)
     // ===========================================
@@ -70,17 +66,18 @@ const config = {
     // ===========================================
     // Content Security Policy
     // ===========================================
+    // A meta CSP cannot carry frame-ancestors, and browsers ignore
+    // X-Frame-Options / X-Content-Type-Options in a meta tag, so those belong
+    // in real response headers (static/_headers once the site is on
+    // Cloudflare Pages). 'unsafe-inline' stays for Docusaurus's inline
+    // color-mode script; nothing on the site needs 'unsafe-eval'.
     {
       tagName: "meta",
       attributes: {
         "http-equiv": "Content-Security-Policy",
-        content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+        content: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; base-uri 'self'; form-action 'self';"
       }
     },
-
-    // Additional security headers via meta tags
-    { tagName: "meta", attributes: { "http-equiv": "X-Content-Type-Options", content: "nosniff" } },
-    { tagName: "meta", attributes: { "http-equiv": "X-Frame-Options", content: "DENY" } },
 
     // ===========================================
     // Structured Data - Organization Schema
@@ -90,7 +87,9 @@ const config = {
       attributes: { type: "application/ld+json" },
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Organization",
+        // One entity, two types: a separate EducationalOrganization block with
+        // its own @id made the graph describe two publishers.
+        "@type": ["Organization", "EducationalOrganization"],
         "@id": "https://selfcustodylabs.com/#organization",
         "name": "Self Custody Labs",
         "url": "https://selfcustodylabs.com",
@@ -107,7 +106,9 @@ const config = {
           "Bitcoin privacy and CoinJoin",
           "Running a Bitcoin node",
           "Coreboot and Libreboot",
+          "Bitcoin inheritance planning",
         ],
+        "areaServed": "Worldwide",
         "logo": {
           "@type": "ImageObject",
           "url": "https://selfcustodylabs.com/img/logo.svg",
@@ -123,7 +124,7 @@ const config = {
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "selfcustodylabs@proton.me",
-          "contactType": "customer support"
+          "contactType": "editorial"
         }
       }),
     },
@@ -145,37 +146,6 @@ const config = {
           "@id": "https://selfcustodylabs.com/#organization"
         },
         "inLanguage": "en-US"
-      }),
-    },
-    
-    // ===========================================
-    // Structured Data - Educational Organization
-    // ===========================================
-    {
-      tagName: "script",
-      attributes: { type: "application/ld+json" },
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "@id": "https://selfcustodylabs.com/#educationalorg",
-        "name": "Self Custody Labs",
-        "description": "Free educational resources for Bitcoin self-custody",
-        "url": "https://selfcustodylabs.com",
-        "sameAs": [
-          "https://x.com/selfcustodylabs",
-          "https://github.com/selfcustodylabs"
-        ],
-        "areaServed": "Worldwide",
-        "knowsAbout": [
-          "Bitcoin",
-          "Self-custody",
-          "Hardware wallets",
-          "Cold storage",
-          "Cryptocurrency security",
-          "Private keys",
-          "Seed phrases",
-          "Multisig wallets"
-        ]
       }),
     },
   ],
@@ -227,12 +197,6 @@ const config = {
       "classic",
       // @type {import('@docusaurus/preset-classic').Options}
       ({
-        // Google Analytics
-        gtag: {
-          trackingID: "G-DB4LHSKK4J",
-          anonymizeIP: true,
-        },
-        
         // Sitemap Configuration
         sitemap: {
           lastmod: 'date',
@@ -255,8 +219,6 @@ const config = {
           showLastUpdateTime: true,
           // Breadcrumbs help with SEO and navigation
           breadcrumbs: true,
-          // Internal planning docs live here but are not published
-          exclude: ["superpowers/**"],
         },
         
         // Blog disabled
@@ -541,7 +503,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Self Custody Labs. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Self Custody Labs`,
       },
       
       // ===========================================

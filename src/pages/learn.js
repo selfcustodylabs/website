@@ -282,8 +282,6 @@ export default function LearnPage() {
       description="Free Bitcoin education: understand private keys, seed phrases, hardware wallets, transactions, UTXOs, privacy techniques, and why to run your own node."
     >
       <Head>
-        {/* Page-specific meta tags */}
-        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(learnCollectionSchema)}</script>
       </Head>
       <main className="homepage relative bg-neutral-950 text-white">
