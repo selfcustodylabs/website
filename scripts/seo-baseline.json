@@ -1,0 +1,4465 @@
+{
+  "pages": {
+    "/": {
+      "title": "Bitcoin Self-Custody Guides & Tutorials | Self Custody Labs",
+      "description": "Learn Bitcoin self-custody: hardware wallet setup, seed phrase security, multisig configurations, privacy best practices, and running your own node. Free step-by-step guides.",
+      "canonical": "https://selfcustodylabs.com/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/404.html": {
+      "title": "Page Not Found | Self Custody Labs",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "canonical": "https://selfcustodylabs.com/404.html/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/404/": {
+      "title": "Page Not Found | Self Custody Labs",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "canonical": "https://selfcustodylabs.com/404/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/about/": {
+      "title": "About Self Custody Labs | Self Custody Labs",
+      "description": "How Self Custody Labs works: our editorial method, why we recommend what we do, and how we stay independent of hardware wallet vendors.",
+      "canonical": "https://selfcustodylabs.com/about/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "AboutPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/books/": {
+      "title": "Bitcoin Books | Self Custody Labs",
+      "description": "Must-read books about Bitcoin and the broken state of fiat money.",
+      "canonical": "https://selfcustodylabs.com/books/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/advanced/": {
+      "title": "Advanced Bitcoin Security: Multisig & Air-Gapped Setups | Self Custody Labs",
+      "description": "Advanced Bitcoin self-custody: 2-of-3 multisig setup, inheritance planning for heirs, air-gapped signing computers, and open-source firmware guides.",
+      "canonical": "https://selfcustodylabs.com/docs/advanced/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/advanced.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/advanced/bitcoin-computer/": {
+      "title": "Dedicated Bitcoin Computer Guide | Self Custody Labs",
+      "description": "Build a dedicated Bitcoin computer for secure transactions. Learn why using a regular computer is dangerous and how to protect your Bitcoin.",
+      "canonical": "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/advanced-bitcoin-computer.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/advanced/bitcoin-computer/choice/": {
+      "title": "Choose Your Bitcoin Computer | Self Custody Labs",
+      "description": "How to choose the right laptop for Bitcoin self-custody. Hardware recommendations and security precautions for your dedicated Bitcoin machine.",
+      "canonical": "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/choice/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/advanced-bitcoin-computer-choice.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/advanced/bitcoin-computer/setup/": {
+      "title": "Bitcoin Computer Setup Guide | Self Custody Labs",
+      "description": "Set up your dedicated Bitcoin computer with Libreboot BIOS, Linux Mint, and LUKS encryption for maximum security and privacy.",
+      "canonical": "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/advanced-bitcoin-computer-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/advanced/inheritance-planning/": {
+      "title": "Bitcoin Inheritance Planning: Pass Bitcoin to Heirs | Self Custody Labs",
+      "description": "Plan Bitcoin inheritance for your heirs. Approaches from sealed instructions to family multisig, plus how to write recovery instructions.",
+      "canonical": "https://selfcustodylabs.com/docs/advanced/inheritance-planning/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/advanced-inheritance-planning.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/": {
+      "title": "Run Your Own Bitcoin Node: Complete Setup Guide | Self Custody Labs",
+      "description": "Complete guide to running your own Bitcoin node. Learn why it matters, compare software options, and follow step-by-step setup instructions with Parmanode.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/connect-sparrow-wallet/": {
+      "title": "Connect Sparrow Wallet to Your Node | Self Custody Labs",
+      "description": "Connect Sparrow Wallet to your own Bitcoin node and Electrum server so transactions stay private and verified by your own infrastructure.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/connect-sparrow-wallet/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-connect-sparrow-wallet.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/electrum-server/": {
+      "title": "Electrum Server Explained | Self Custody Labs",
+      "description": "Understand Electrum servers (Electrs, Fulcrum): what they do, why you need one, and how to choose between options for your Bitcoin node setup.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/electrum-server/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-electrum-server.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/node-software-options/": {
+      "title": "Node Software Options | Self Custody Labs",
+      "description": "Compare Bitcoin node software options: Parmanode, Umbrel, RaspiBlitz, Start9, and DIY setups. Find the right approach for your skill level and needs.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/node-software-options/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-node-software-options.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/parmanode-setup/": {
+      "title": "Parmanode Setup Guide | Self Custody Labs",
+      "description": "Step-by-step guide to setting up a Bitcoin node with Parmanode. Easy installation for Linux, Mac, and Raspberry Pi with automatic wallet configuration.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/parmanode-setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-parmanode-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/bitcoin-node/tor/": {
+      "title": "Tor Configuration for Bitcoin Nodes | Self Custody Labs",
+      "description": "Configure your Bitcoin node to run over Tor for enhanced privacy. Hide your IP address and enable secure remote access to your node.",
+      "canonical": "https://selfcustodylabs.com/docs/bitcoin-node/tor/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-tor.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/": {
+      "title": "Coreboot Installation Guide | Self Custody Labs",
+      "description": "Install Coreboot open-source firmware for a fast, secure, and transparent boot process. Perfect for Bitcoin nodes and security-focused setups.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/build/": {
+      "title": "Build Coreboot | Self Custody Labs",
+      "description": "Build Coreboot from source on Linux: install the dependencies, clone the source tree, build the cross-compiler toolchain, configure your ThinkPad and compile.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/build/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-build.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/external-flashing/": {
+      "title": "External Flashing | Self Custody Labs",
+      "description": "Flash Coreboot with an external SPI programmer: detect the chip, back up the factory BIOS, neutralise Intel ME, write the image and confirm ME is disabled.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/external-flashing/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-external-flashing.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/internal/": {
+      "title": "Internal Coreboot Flashing | Self Custody Labs",
+      "description": "Flash Coreboot from inside a running system: downgrade your stock BIOS, unlock the Intel Flash Descriptor, and write the new firmware safely.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/internal/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/internal/downgrading-bios/": {
+      "title": "Downgrading BIOS | Self Custody Labs",
+      "description": "Downgrade your laptop's stock BIOS to a version with an unlocked Intel ME region, a prerequisite for internal Coreboot flashing.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/internal/downgrading-bios/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal-downgrading-bios.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/internal/flashing-bios/": {
+      "title": "Flash Coreboot to Your Laptop BIOS | Self Custody Labs",
+      "description": "Flash Coreboot from inside a running system after the BIOS region is unlocked. Includes safety checks and verification of the flashed image.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/internal/flashing-bios/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal-flashing-bios.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/internal/unlocking-bios/": {
+      "title": "Unlocking BIOS | Self Custody Labs",
+      "description": "Unlock the Intel Flash Descriptor BIOS region with CHIPSEC so Coreboot can be flashed internally without an external SPI programmer.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/internal/unlocking-bios/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal-unlocking-bios.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/coreboot/requirements/": {
+      "title": "Coreboot Hardware Requirements | Self Custody Labs",
+      "description": "What you need to install Coreboot on a ThinkPad: a supported model, a Linux machine and, for external flashing, a Raspberry Pi Pico plus a clip or pogo pins.",
+      "canonical": "https://selfcustodylabs.com/docs/coreboot/requirements/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/coreboot-requirements.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/": {
+      "title": "Learn Bitcoin Self-Custody | Self Custody Labs",
+      "description": "Comprehensive educational content about Bitcoin self-custody. From fundamentals to advanced concepts. Everything you need to truly own your Bitcoin.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/": {
+      "title": "Start Here: Bitcoin Self-Custody | Self Custody Labs",
+      "description": "New to Bitcoin self-custody? Start here. Learn what self-custody means, assess your needs, and find the right path for your situation.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/choosing-your-path/": {
+      "title": "Choose Your Self-Custody Setup | Self Custody Labs",
+      "description": "Which Bitcoin self-custody setup fits what you hold: four tiers from a phone wallet to multisig, with the hardware, cost and effort each tier takes.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/choosing-your-path/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-choosing-your-path.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/holding-bitcoin/": {
+      "title": "Why Holding Your Own Bitcoin Matters | Self Custody Labs",
+      "description": "Understand the difference between holding Bitcoin yourself vs on an exchange. Learn why 'not your keys, not your coins' is essential for true ownership.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/holding-bitcoin/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-holding-bitcoin.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/threat-models/": {
+      "title": "Assess Your Threat Model | Self Custody Labs",
+      "description": "Determine what level of Bitcoin security you actually need. Match your setup to your real risks. Not everyone needs maximum security, but some people do.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/threat-models/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-threat-models.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/what-is-bitcoin/": {
+      "title": "What is Bitcoin? | Self Custody Labs",
+      "description": "Understand what Bitcoin is, how it works, and why it matters. A beginner's introduction to digital money that no one controls.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-bitcoin/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-what-is-bitcoin.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/fundamentals/what-is-self-custody/": {
+      "title": "What is Bitcoin Self-Custody? | Self Custody Labs",
+      "description": "Learn what Bitcoin self-custody means: controlling your own private keys, seed phrases, and taking full ownership of your Bitcoin without third parties.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-self-custody/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-what-is-self-custody.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/": {
+      "title": "Bitcoin Keys: Private Keys, Seeds, Derivation Paths | Self Custody Labs",
+      "description": "Learn how Bitcoin keys work: private keys, seed phrases (BIP39), extended keys (xpub/xprv), and derivation paths. The foundation of Bitcoin ownership.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/derivation-path/": {
+      "title": "Derivation Path | Self Custody Labs",
+      "description": "What a Bitcoin derivation path such as m/44'/0'/0'/0/0 means, how BIP32 grows a tree of keys from one seed, and which path each address type uses.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/derivation-path/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-derivation-path.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/intro/": {
+      "title": "Understanding Bitcoin Private Keys | Self Custody Labs",
+      "description": "Learn what Bitcoin private keys are, how they work, and why they're essential for controlling your Bitcoin. The foundation of self-custody explained.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/intro/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-intro.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/number-systems/": {
+      "title": "Number Systems: Binary, Decimal, Hex | Self Custody Labs",
+      "description": "Understand binary, decimal, and hexadecimal number systems used in Bitcoin private keys. Essential foundation for understanding seed phrases.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/number-systems/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-number-systems.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/passphrase/": {
+      "title": "Bitcoin Passphrase (25th Word): Diceware Generation | Self Custody Labs",
+      "description": "Learn what a Bitcoin passphrase is, when to use it, and how to generate a strong one with dice and the EFF word list. Full 3-step DIY guide.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/passphrase/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-passphrase.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/random/": {
+      "title": "Generate Your Own Bitcoin Seed Phrase with Dice | Self Custody Labs",
+      "description": "Generate a BIP39 Bitcoin seed phrase from dice rolls. True randomness, verifiable checksum, fully offline, no need to trust the wallet RNG.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/random/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-random.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/seed/": {
+      "title": "Bitcoin Seed Phrases Explained (BIP39) | Self Custody Labs",
+      "description": "Understand how BIP39 seed phrases work: converting private keys to memorable words. Learn the 2048-word list and how seeds protect your Bitcoin.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/seed/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-seed.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/xprv/": {
+      "title": "Extended Private Key (XPRV) | Self Custody Labs",
+      "description": "What a Bitcoin extended private key (xprv) is, why it can spend from every address in a wallet, how to keep it offline, and what its prefix tells you.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/xprv/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-xprv.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/keys/xpub/": {
+      "title": "Extended Public Key (XPUB) | Self Custody Labs",
+      "description": "What a Bitcoin extended public key (xpub) is: it lets a watch-only wallet see every address and balance without spending, so it still needs protecting.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/keys/xpub/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-xpub.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/nodes/": {
+      "title": "Bitcoin Nodes: What They Are and Why They Matter | Self Custody Labs",
+      "description": "What Bitcoin nodes do, why running your own matters for self-custody, and how a personal node verifies every transaction without trusting third parties.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/nodes/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-nodes.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/nodes/what-is-node/": {
+      "title": "What is a Bitcoin Node | Self Custody Labs",
+      "description": "Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network. Essential knowledge before running your own node.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/nodes/what-is-node/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-nodes-what-is-node.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/nodes/why-run-node/": {
+      "title": "Why Run Your Own Node | Self Custody Labs",
+      "description": "Understand why running your own Bitcoin node matters for privacy, security, and true self-custody. Learn the risks of using third-party nodes.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/nodes/why-run-node/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-nodes-why-run-node.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/": {
+      "title": "Bitcoin Privacy: Chain Analysis, CoinJoin, UTXO Control | Self Custody Labs",
+      "description": "Bitcoin privacy fundamentals: what is exposed on the public blockchain, how chain analysis works, and how CoinJoin and UTXO control protect you.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/chain-analysis/": {
+      "title": "Chain Analysis Explained | Self Custody Labs",
+      "description": "Learn how blockchain surveillance works. Understand the heuristics and techniques used to track Bitcoin transactions and link addresses to identities.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-chain-analysis.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/coinjoin-tutorial/": {
+      "title": "CoinJoin Tutorial: JoinMarket NG and Jam Step by Step | Self Custody Labs",
+      "description": "Step-by-step Bitcoin coinjoin with JoinMarket NG and Jam: your own node, a dedicated hot wallet, funding, mixing rounds, and sweeping out cleanly.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/coinjoin-tutorial/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-coinjoin-tutorial.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/coinjoin/": {
+      "title": "Bitcoin CoinJoin: How It Works & Best Practices | Self Custody Labs",
+      "description": "How Bitcoin CoinJoin works: equal outputs, anonymity sets, the 2026 tools (JoinMarket NG, Jam, Ashigaru Whirlpool, Wasabi), and post-mix rules.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/coinjoin/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-coinjoin.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/payjoin/": {
+      "title": "Bitcoin PayJoin (BIP78): Stealth Privacy for Payments | Self Custody Labs",
+      "description": "Learn how PayJoin (BIP78) enhances Bitcoin privacy by breaking the common-input-ownership assumption. Set up PayJoin with Sparrow Wallet and BTCPay Server.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/payjoin/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-payjoin.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/protecting-privacy/": {
+      "title": "Protecting Your Privacy | Self Custody Labs",
+      "description": "Overview of Bitcoin privacy techniques. Learn the principles and methods for protecting your financial privacy when using Bitcoin.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/protecting-privacy/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-protecting-privacy.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/utxo-management/": {
+      "title": "Bitcoin UTXO Management: Coin Control & Consolidation Guide | Self Custody Labs",
+      "description": "Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow, consolidation strategies, dusting attacks, and source separation rules.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/utxo-management/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-utxo-management.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/privacy/why-privacy-matters/": {
+      "title": "Why Bitcoin Privacy Matters | Self Custody Labs",
+      "description": "Why financial privacy matters for Bitcoin users. What information is exposed on the public blockchain and how it affects your security.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-why-privacy-matters.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/": {
+      "title": "Bitcoin Transactions: How They Work | Self Custody Labs",
+      "description": "How Bitcoin transactions work end to end: UTXOs, transaction creation, signing, broadcasting, fees, and the transaction types you will actually encounter.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/broadcast/": {
+      "title": "How to Broadcast a Bitcoin Transaction | Self Custody Labs",
+      "description": "How a signed Bitcoin transaction reaches the network, and why broadcasting through your own node instead of a public server keeps your IP and addresses private.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/broadcast/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-broadcast.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/create/": {
+      "title": "How Bitcoin Transactions Are Created | Self Custody Labs",
+      "description": "How a Bitcoin transaction is put together: choosing UTXOs as inputs, setting outputs and change, and unsticking a slow payment with RBF or CPFP.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/create/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-create.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/fees/": {
+      "title": "Bitcoin Transaction Fees Explained | Self Custody Labs",
+      "description": "Understand how Bitcoin transaction fees work, why they vary, and how to minimize costs. Learn fee estimation, RBF, CPFP, and fee optimization strategies.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/fees/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-fees.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/sign/": {
+      "title": "How Bitcoin Transaction Signing Works | Self Custody Labs",
+      "description": "How Bitcoin transaction signing works: what signing means, online vs offline signing flows, and single-sig versus multisig signing.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/sign/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-sign.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/types/": {
+      "title": "Bitcoin Transaction Types Explained | Self Custody Labs",
+      "description": "Bitcoin transaction types explained: pre-signed, fully signed, and partially signed (PSBT). When each type is used and how they differ.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/types/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-types.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/understanding/": {
+      "title": "How Bitcoin Transactions Work | Self Custody Labs",
+      "description": "Understand how Bitcoin transactions work: inputs, outputs, change, fees, and the complete lifecycle from creation to confirmation.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/understanding/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-understanding.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/transactions/utxos/": {
+      "title": "UTXOs Explained | Self Custody Labs",
+      "description": "Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/transactions/utxos/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-utxos.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/": {
+      "title": "Bitcoin Wallets: Hardware, Software, Air-Gapped, Multisig | Self Custody Labs",
+      "description": "Bitcoin wallet types compared: hardware wallets, software wallets, air-gapped setups, and multisig vaults. Pick the right security model for your needs.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/air-gapped-wallets/": {
+      "title": "Air-Gapped Wallets: Complete Guide | Self Custody Labs",
+      "description": "Understand and build a Bitcoin air-gapped wallet. Concepts, hardware options (laptop, Raspberry Pi, desktop), and a full step-by-step air-gapped computer setup.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-air-gapped-wallets.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/coldcard-entropy-incident/": {
+      "title": "Coldcard Entropy Incident: What Happened, Who's Affected | Self Custody Labs",
+      "description": "The 2026 Coldcard entropy flaw explained: which devices and firmware are affected, how $116M was stolen, and how to migrate your funds safely.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-coldcard-entropy-incident.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/hardware-wallets/": {
+      "title": "Hardware Wallets Explained | Self Custody Labs",
+      "description": "Understand hardware wallets for Bitcoin self-custody: how they work, why they're secure, popular options compared, and how to choose the right one.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/hardware-wallets/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-hardware-wallets.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/multisig/": {
+      "title": "Bitcoin Multisig: Complete Guide | Self Custody Labs",
+      "description": "Understand and set up a Bitcoin multisig wallet. Concepts, 2-of-3 configurations, hardware devices, and a full step-by-step setup guide.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/multisig/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/multisig/backup-recovery/": {
+      "title": "Multisig Backup & Recovery | Self Custody Labs",
+      "description": "How to properly backup your multisig wallet and recover it if needed. Critical information for protecting your bitcoin long-term.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig-backup-recovery.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/multisig/hardware-setup/": {
+      "title": "Multisig Hardware Setup | Self Custody Labs",
+      "description": "Prepare your hardware wallets for multisig. Learn how to initialize signing devices from different manufacturers for maximum security.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/multisig/hardware-setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig-hardware-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/multisig/sparrow-setup/": {
+      "title": "Multisig in Sparrow Wallet | Self Custody Labs",
+      "description": "Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow. Learn to configure your multisig, verify addresses, and make transactions.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig-sparrow-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/learn/wallets/software-wallets/": {
+      "title": "Software Wallets Explained | Self Custody Labs",
+      "description": "Understand software wallets for Bitcoin: what they are, when to use them, recommended options, and security best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/learn/wallets/software-wallets/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-software-wallets.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/": {
+      "title": "Libreboot Installation Guide | Self Custody Labs",
+      "description": "Install Libreboot open-source firmware to replace your BIOS. Remove Intel ME backdoors and enhance security for your Bitcoin computer.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/build-flashprog/": {
+      "title": "Build Flashprog for Libreboot | Self Custody Labs",
+      "description": "Compile Flashprog from the Libreboot build system. Required tool for reading and writing BIOS chips during Libreboot installation.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/build-flashprog/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-build-flashprog.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/build/": {
+      "title": "Build Libreboot | Self Custody Labs",
+      "description": "Build a Libreboot ROM from source on Linux: install dependencies, clone the lbmk repository, and run a multi-threaded compile.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/build/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-build.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/flashing-bios/": {
+      "title": "Flash Libreboot to Your Laptop BIOS | Self Custody Labs",
+      "description": "Flash a Libreboot ROM onto your laptop with an external SPI programmer: locate the chips, split the ROM, detect, and write the new firmware.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/flashing-bios/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-flashing-bios.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/raspberry-pico/": {
+      "title": "Prepare a Raspberry Pi Pico for Libreboot Flashing | Self Custody Labs",
+      "description": "Set up a Raspberry Pi Pico H as an SPI programmer for flashing Libreboot: build the serprog firmware and wire the Pico to your laptop's BIOS chip.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-raspberry-pico.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/raspberry-pico/build-serprog/": {
+      "title": "Build Serprog | Self Custody Labs",
+      "description": "Build serprog firmware for the Raspberry Pi Pico H so it can act as an SPI programmer for flashing Libreboot to a laptop chip.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-raspberry-pico-build-serprog.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/raspberry-pico/connection/": {
+      "title": "Pico-Pomona Clip Connection | Self Custody Labs",
+      "description": "Wire a Raspberry Pi Pico to a Pomona SOIC-8 clip for flashing Libreboot: find pin 1, follow the pin map, and handle the dual-chip T530 and W530 boards.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-raspberry-pico-connection.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/requirements/": {
+      "title": "Libreboot Hardware Requirements | Self Custody Labs",
+      "description": "Hardware list for flashing Libreboot: supported laptops, Raspberry Pi Pico H programmer, Pomona SOIC8 clip, and required cables.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/requirements/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-requirements.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/roms/": {
+      "title": "Build Libreboot ROM Images | Self Custody Labs",
+      "description": "Generate Libreboot ROM images for your specific laptop model. Compile custom BIOS firmware using the lbmk build system, ready to flash.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/roms/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-roms.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/libreboot/update-bios/": {
+      "title": "Update Libreboot Firmware | Self Custody Labs",
+      "description": "Update an existing Libreboot install from inside Linux without opening the laptop: relax /dev/mem access, back up the chip, write the new ROM and verify it.",
+      "canonical": "https://selfcustodylabs.com/docs/libreboot/update-bios/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/libreboot-update-bios.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/": {
+      "title": "Build a Nostr Signing Device (NSD) | Self Custody Labs",
+      "description": "Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/arduino-ide/": {
+      "title": "Arduino IDE Setup for NSD | Self Custody Labs",
+      "description": "Install and configure Arduino IDE to flash your Nostr Signing Device. Download the legacy version and set up ESP32 board support.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/arduino-ide/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-arduino-ide.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/client-connect/": {
+      "title": "Connect NSD to Nostr Clients | Self Custody Labs",
+      "description": "Connect your Nostr Signing Device to clients like Coracle and NoStrudel. Final step to start using your hardware-secured Nostr identity.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/client-connect/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-client-connect.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/esp32-module/": {
+      "title": "ESP32 Board Support Setup | Self Custody Labs",
+      "description": "Add ESP32 board support to Arduino IDE so you can compile and flash firmware for the LILYGO T-Display module used by the Nostr Signing Device.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/esp32-module/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-esp32-module.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/horse-extension/": {
+      "title": "Install Horse Browser Extension | Self Custody Labs",
+      "description": "Install the Horse Chromium browser extension to connect your Nostr Signing Device to web clients and sign Nostr events from your browser.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/horse-extension/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-horse-extension.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/nostr-signing-device/setup/": {
+      "title": "Prepare the NSD Firmware | Self Custody Labs",
+      "description": "Clone the NSD repository and flash the firmware to your LILYGO device. Step-by-step instructions to prepare your Nostr Signing Device.",
+      "canonical": "https://selfcustodylabs.com/docs/nostr-signing-device/setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/": {
+      "title": "Bitcoin Reference Guide: Glossary, FAQs & Comparisons | Self Custody Labs",
+      "description": "Bitcoin self-custody reference: 100+ term glossary, hardware wallet comparisons, address type explanations, and frequently asked questions answered.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/address-types/": {
+      "title": "Bitcoin Address Types Explained | Self Custody Labs",
+      "description": "Understand the different Bitcoin address types: Legacy, SegWit, Native SegWit, and Taproot. Learn which to use and why it matters for fees and compatibility.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/address-types/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-address-types.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/faq/": {
+      "title": "Frequently Asked Questions | Self Custody Labs",
+      "description": "Common questions about Bitcoin self-custody, seed phrases, recovery, and security. Get answers to the questions that could save your Bitcoin.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/faq/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-faq.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/faq/lost-seed/": {
+      "title": "What Happens If You Lose Your Seed Phrase? | Self Custody Labs",
+      "description": "The hard truth about losing your Bitcoin seed phrase. What you can do, what you can't do, and how to prevent this from happening to you.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/faq/lost-seed/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-faq-lost-seed.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/faq/recovery-scams/": {
+      "title": "Bitcoin Recovery Scams: How to Protect Yourself | Self Custody Labs",
+      "description": "Why almost every 'Bitcoin recovery service' is a scam. Learn to recognize fraud and understand what legitimate recovery actually looks like.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/faq/recovery-scams/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-faq-recovery-scams.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/faq/recovery-troubleshooting/": {
+      "title": "Wallet Recovery Troubleshooting | Self Custody Labs",
+      "description": "Common problems when recovering a Bitcoin wallet and how to solve them. Empty wallet after recovery, wrong addresses, and other troubleshooting steps.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/faq/recovery-troubleshooting/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-faq-recovery-troubleshooting.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/glossary/": {
+      "title": "Bitcoin Glossary: 100+ Terms Explained | Self Custody Labs",
+      "description": "Complete glossary of Bitcoin and self-custody terminology. Definitions for UTXO, seed phrase, hardware wallet, multisig, and 100+ other terms.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/glossary/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-glossary.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/reference/hardware-wallet-comparison/": {
+      "title": "Coldcard vs Trezor vs Jade vs Passport: 2026 Compared | Self Custody Labs",
+      "description": "Compare Bitcoin hardware wallets after the 2026 Coldcard incident: Trezor Safe 7, BitBox02 Nova, Jade Plus, Passport, SeedSigner, Bitkey, and more.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/hardware-wallet-comparison/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-hardware-wallet-comparison.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/security/": {
+      "title": "Bitcoin Security: DIY Seed Generation & Advanced Protection | Self Custody Labs",
+      "description": "Advanced Bitcoin security: generate seeds with dice, add passphrase protection, and apply operational and physical security best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/security/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/security.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/security/operational-security/": {
+      "title": "Operational Security for Bitcoiners | Self Custody Labs",
+      "description": "Essential operational security practices for Bitcoin holders. Learn how your behavior affects your security and how to minimize your attack surface.",
+      "canonical": "https://selfcustodylabs.com/docs/security/operational-security/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/security-operational-security.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/security/physical-security/": {
+      "title": "Physical Security for Bitcoin Holders | Self Custody Labs",
+      "description": "Protect your Bitcoin from real-world threats. Home security, backup storage, travel considerations, and defense against physical attacks.",
+      "canonical": "https://selfcustodylabs.com/docs/security/physical-security/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/security-physical-security.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/seedsigner/": {
+      "title": "SeedSigner: Our Favourite Bitcoin Signing Device | Self Custody Labs",
+      "description": "Why SeedSigner is the Self Custody Labs favourite signing solution: stateless, air-gapped, fully verifiable, and built by you from commodity parts.",
+      "canonical": "https://selfcustodylabs.com/docs/seedsigner/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/seedsigner.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/seedsigner/build-guide/": {
+      "title": "Build Your Own SeedSigner | Self Custody Labs",
+      "description": "Source the Raspberry Pi parts, verify and flash SeedSigner OS, and assemble an air-gapped Bitcoin signing device for about $50 in parts.",
+      "canonical": "https://selfcustodylabs.com/docs/seedsigner/build-guide/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/seedsigner-build-guide.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/seedsigner/using-seedsigner/": {
+      "title": "Using SeedSigner: Seeds, SeedQR, and Signing | Self Custody Labs",
+      "description": "Generate a seed with dice on your SeedSigner, back it up as a SeedQR, and sign transactions with Sparrow over an air-gapped QR workflow.",
+      "canonical": "https://selfcustodylabs.com/docs/seedsigner/using-seedsigner/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/seedsigner-using-seedsigner.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/": {
+      "title": "Tags | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/addresses/": {
+      "title": "One doc tagged with \"addresses\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/addresses/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/advanced/": {
+      "title": "5 docs tagged with \"advanced\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/advanced/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/air-gapped/": {
+      "title": "2 docs tagged with \"air-gapped\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/air-gapped/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/arduino/": {
+      "title": "2 docs tagged with \"arduino\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/arduino/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/backup/": {
+      "title": "4 docs tagged with \"backup\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/backup/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/basics/": {
+      "title": "6 docs tagged with \"basics\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/basics/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/beginner/": {
+      "title": "One doc tagged with \"beginner\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/beginner/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/binary/": {
+      "title": "One doc tagged with \"binary\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/binary/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/bios/": {
+      "title": "12 docs tagged with \"bios\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/bios/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/bip-39/": {
+      "title": "5 docs tagged with \"bip39\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/bip-39/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/bip-78/": {
+      "title": "One doc tagged with \"BIP78\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/bip-78/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/bitcoin-node/": {
+      "title": "6 docs tagged with \"bitcoin node\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/bitcoin-node/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/bitcoin/": {
+      "title": "34 docs tagged with \"bitcoin\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/bitcoin/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/broadcasting/": {
+      "title": "One doc tagged with \"broadcasting\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/broadcasting/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/browser/": {
+      "title": "One doc tagged with \"browser\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/browser/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/build/": {
+      "title": "4 docs tagged with \"build\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/build/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/cables/": {
+      "title": "One doc tagged with \"cables\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/cables/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/chain-analysis/": {
+      "title": "One doc tagged with \"chain analysis\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/chain-analysis/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/checklist/": {
+      "title": "One doc tagged with \"checklist\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/checklist/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/chipsec/": {
+      "title": "3 docs tagged with \"chipsec\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/chipsec/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/client/": {
+      "title": "One doc tagged with \"client\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/client/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/clip/": {
+      "title": "One doc tagged with \"clip\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/clip/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/coin-control/": {
+      "title": "One doc tagged with \"coin control\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/coin-control/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/coinjoin/": {
+      "title": "2 docs tagged with \"coinjoin\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/coinjoin/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/cold-storage/": {
+      "title": "One doc tagged with \"cold storage\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/cold-storage/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/coldcard/": {
+      "title": "One doc tagged with \"coldcard\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/coldcard/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/comparison/": {
+      "title": "2 docs tagged with \"comparison\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/comparison/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/computer/": {
+      "title": "3 docs tagged with \"computer\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/computer/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/consolidation/": {
+      "title": "One doc tagged with \"consolidation\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/consolidation/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/coreboot/": {
+      "title": "8 docs tagged with \"coreboot\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/coreboot/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/creation/": {
+      "title": "One doc tagged with \"creation\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/creation/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/decision/": {
+      "title": "One doc tagged with \"decision\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/decision/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/derivation-path/": {
+      "title": "One doc tagged with \"derivation path\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/derivation-path/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/dice/": {
+      "title": "2 docs tagged with \"dice\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/dice/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/diy/": {
+      "title": "2 docs tagged with \"diy\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/diy/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/downgrading/": {
+      "title": "One doc tagged with \"downgrading\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/downgrading/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/electrum/": {
+      "title": "One doc tagged with \"electrum\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/electrum/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/entropy/": {
+      "title": "3 docs tagged with \"entropy\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/entropy/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/esp-32/": {
+      "title": "2 docs tagged with \"ESP32\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/esp-32/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/estate-planning/": {
+      "title": "One doc tagged with \"estate planning\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/estate-planning/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/exchange/": {
+      "title": "One doc tagged with \"exchange\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/exchange/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/extension/": {
+      "title": "One doc tagged with \"extension\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/extension/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/external/": {
+      "title": "One doc tagged with \"external\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/external/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/faq/": {
+      "title": "5 docs tagged with \"faq\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/faq/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/fees/": {
+      "title": "2 docs tagged with \"fees\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/fees/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/firmware/": {
+      "title": "5 docs tagged with \"firmware\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/firmware/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/flashing/": {
+      "title": "3 docs tagged with \"flashing\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/flashing/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/flashprog/": {
+      "title": "3 docs tagged with \"flashprog\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/flashprog/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/fundamentals/": {
+      "title": "2 docs tagged with \"fundamentals\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/fundamentals/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/getting-started/": {
+      "title": "6 docs tagged with \"getting started\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/getting-started/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/github/": {
+      "title": "One doc tagged with \"github\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/github/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/glossary/": {
+      "title": "2 docs tagged with \"glossary\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/glossary/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/guide/": {
+      "title": "3 docs tagged with \"guide\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/guide/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/hardware-wallet/": {
+      "title": "9 docs tagged with \"hardware wallet\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/hardware-wallet/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/hardware/": {
+      "title": "2 docs tagged with \"hardware\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/hardware/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/help/": {
+      "title": "One doc tagged with \"help\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/help/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/horse/": {
+      "title": "One doc tagged with \"horse\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/horse/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/hot-wallet/": {
+      "title": "One doc tagged with \"hot wallet\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/hot-wallet/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/inheritance/": {
+      "title": "2 docs tagged with \"inheritance\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/inheritance/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/internal/": {
+      "title": "One doc tagged with \"internal\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/internal/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/introduction/": {
+      "title": "One doc tagged with \"introduction\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/introduction/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/joinmarket/": {
+      "title": "2 docs tagged with \"joinmarket\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/joinmarket/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/keys/": {
+      "title": "One doc tagged with \"keys\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/keys/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/lbmk/": {
+      "title": "One doc tagged with \"lbmk\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/lbmk/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/learn/": {
+      "title": "One doc tagged with \"learn\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/learn/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/libreboot/": {
+      "title": "11 docs tagged with \"libreboot\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/libreboot/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/lifecycle/": {
+      "title": "One doc tagged with \"lifecycle\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/lifecycle/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/lilygo/": {
+      "title": "One doc tagged with \"LILYGO\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/lilygo/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/malware/": {
+      "title": "One doc tagged with \"malware\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/malware/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/multisig/": {
+      "title": "6 docs tagged with \"multisig\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/multisig/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/network/": {
+      "title": "One doc tagged with \"network\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/network/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/node/": {
+      "title": "2 docs tagged with \"node\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/node/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/nodes/": {
+      "title": "One doc tagged with \"nodes\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/nodes/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/nostr/": {
+      "title": "4 docs tagged with \"nostr\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/nostr/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/open-source/": {
+      "title": "2 docs tagged with \"open source\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/open-source/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/opsec/": {
+      "title": "2 docs tagged with \"opsec\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/opsec/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/optimization/": {
+      "title": "One doc tagged with \"optimization\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/optimization/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/parmanode/": {
+      "title": "One doc tagged with \"parmanode\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/parmanode/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/passphrase/": {
+      "title": "2 docs tagged with \"passphrase\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/passphrase/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/payjoin/": {
+      "title": "One doc tagged with \"payjoin\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/payjoin/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/physical-security/": {
+      "title": "One doc tagged with \"physical security\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/physical-security/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/pico/": {
+      "title": "4 docs tagged with \"pico\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/pico/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/pomona/": {
+      "title": "One doc tagged with \"pomona\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/pomona/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/privacy/": {
+      "title": "11 docs tagged with \"privacy\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/privacy/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/private-keys/": {
+      "title": "7 docs tagged with \"private keys\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/private-keys/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/questions/": {
+      "title": "One doc tagged with \"questions\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/questions/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/random-number/": {
+      "title": "One doc tagged with \"random number\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/random-number/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/raspberry/": {
+      "title": "4 docs tagged with \"raspberry\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/raspberry/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/recovery/": {
+      "title": "3 docs tagged with \"recovery\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/recovery/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/reference/": {
+      "title": "3 docs tagged with \"reference\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/reference/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/repository/": {
+      "title": "One doc tagged with \"repository\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/repository/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/requirements/": {
+      "title": "One doc tagged with \"requirements\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/requirements/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/rom/": {
+      "title": "One doc tagged with \"ROM\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/rom/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/safety/": {
+      "title": "2 docs tagged with \"safety\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/safety/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/scam/": {
+      "title": "One doc tagged with \"scam\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/scam/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/security/": {
+      "title": "26 docs tagged with \"security\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/security/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/seed-phrase/": {
+      "title": "One doc tagged with \"seed phrase\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/seed-phrase/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/seed/": {
+      "title": "9 docs tagged with \"seed\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/seed/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/seedqr/": {
+      "title": "One doc tagged with \"seedqr\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/seedqr/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/seedsigner/": {
+      "title": "3 docs tagged with \"seedsigner\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/seedsigner/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/segwit/": {
+      "title": "One doc tagged with \"segwit\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/segwit/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/self-custody/": {
+      "title": "18 docs tagged with \"self custody\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/self-custody/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/serprog/": {
+      "title": "2 docs tagged with \"serprog\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/serprog/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/setup/": {
+      "title": "10 docs tagged with \"setup\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/setup/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/signing-device/": {
+      "title": "One doc tagged with \"signing device\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/signing-device/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/signing/": {
+      "title": "One doc tagged with \"signing\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/signing/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/software/": {
+      "title": "One doc tagged with \"software\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/software/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/sparrow-wallet/": {
+      "title": "One doc tagged with \"sparrow wallet\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/sparrow-wallet/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/sparrow/": {
+      "title": "2 docs tagged with \"sparrow\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/sparrow/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/surveillance/": {
+      "title": "One doc tagged with \"surveillance\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/surveillance/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/taproot/": {
+      "title": "One doc tagged with \"taproot\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/taproot/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/threat-model/": {
+      "title": "One doc tagged with \"threat model\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/threat-model/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/tor/": {
+      "title": "One doc tagged with \"tor\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/tor/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/transactions/": {
+      "title": "9 docs tagged with \"transactions\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/transactions/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/trezor/": {
+      "title": "One doc tagged with \"trezor\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/trezor/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/troubleshooting/": {
+      "title": "One doc tagged with \"troubleshooting\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/troubleshooting/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/tutorial/": {
+      "title": "One doc tagged with \"tutorial\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/tutorial/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/understanding/": {
+      "title": "One doc tagged with \"understanding\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/understanding/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/unlocking/": {
+      "title": "One doc tagged with \"unlocking\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/unlocking/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/update/": {
+      "title": "One doc tagged with \"update\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/update/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/usb/": {
+      "title": "One doc tagged with \"usb\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/usb/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/utxo/": {
+      "title": "2 docs tagged with \"utxo\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/utxo/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/verification/": {
+      "title": "One doc tagged with \"verification\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/verification/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/wallet-setup/": {
+      "title": "2 docs tagged with \"wallet setup\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/wallet-setup/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/wallet/": {
+      "title": "7 docs tagged with \"wallet\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/wallet/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/warning/": {
+      "title": "One doc tagged with \"warning\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/warning/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/xprv/": {
+      "title": "One doc tagged with \"xprv\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/xprv/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/tags/xpub/": {
+      "title": "One doc tagged with \"xpub\" | Self Custody Labs",
+      "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
+      "canonical": "https://selfcustodylabs.com/docs/tags/xpub/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/": {
+      "title": "Bitcoin Wallet Setup: Hardware Wallet & Backup Guides | Self Custody Labs",
+      "description": "Step-by-step Bitcoin wallet setup guides. Learn to configure hardware wallets, verify backups, and complete the pre-deposit security checklist.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "ItemList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/backup-verification/": {
+      "title": "How to Test Your Bitcoin Seed Backup (Before You Need It) | Self Custody Labs",
+      "description": "Learn how to properly verify your Bitcoin seed backup works before trusting it with significant funds. Step-by-step guide to testing your recovery process.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/backup-verification/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-backup-verification.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/before-you-deposit/": {
+      "title": "Before You Deposit: Critical Checklist | Self Custody Labs",
+      "description": "Essential verification steps before sending Bitcoin to any new wallet. This checklist can save you from catastrophic, irreversible mistakes.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/before-you-deposit/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-before-you-deposit.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/hardware-wallet/": {
+      "title": "Hardware Wallet Setup: Step-by-Step Bitcoin Security Guide | Self Custody Labs",
+      "description": "Step-by-step guide to setting up your first hardware wallet. Learn how to initialize, secure, and use a hardware wallet for Bitcoin self-custody.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-hardware-wallet.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "BreadcrumbList",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/guides/": {
+      "title": "Bitcoin Self-Custody Guides: Setup, Security & Privacy | Self Custody Labs",
+      "description": "Step-by-step Bitcoin guides: hardware wallet setup, seed generation, multisig configuration, node setup, privacy tools, and security best practices.",
+      "canonical": "https://selfcustodylabs.com/guides/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "CollectionPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/learn/": {
+      "title": "Learn Bitcoin Self-Custody: Keys, Wallets, Transactions & Privacy | Self Custody Labs",
+      "description": "Free Bitcoin education: understand private keys, seed phrases, hardware wallets, transactions, UTXOs, privacy techniques, and why to run your own node.",
+      "canonical": "https://selfcustodylabs.com/learn/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "CollectionPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/podcasts/": {
+      "title": "Bitcoin Podcasts | Self Custody Labs",
+      "description": "Must-listen podcasts about Bitcoin and the disgrace of fiat money.",
+      "canonical": "https://selfcustodylabs.com/podcasts/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/privacy/": {
+      "title": "Privacy Policy | Self Custody Labs",
+      "description": "What Self Custody Labs collects when you read this site, which is no analytics, no cookies and no accounts, plus what the hosting provider sees and how to reach us.",
+      "canonical": "https://selfcustodylabs.com/privacy/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/search/": {
+      "title": "Search | Self Custody Labs",
+      "description": "Search every Self Custody Labs guide. The search runs in your browser and the query is not sent anywhere.",
+      "canonical": "https://selfcustodylabs.com/search/",
+      "robots": [
+        "noindex, follow",
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    }
+  },
+  "redirects": {
+    "/bitcoin-devices/": "/docs/reference/hardware-wallet-comparison/",
+    "/docs/advanced/air-gapped-computer/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/advanced/air-gapped-computer/setup/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/advanced/air-gapped-computer/types/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/advanced/multisig/": "/docs/learn/wallets/multisig/",
+    "/docs/advanced/multisig/backup-recovery/": "/docs/learn/wallets/multisig/backup-recovery/",
+    "/docs/advanced/multisig/hardware-setup/": "/docs/learn/wallets/multisig/hardware-setup/",
+    "/docs/advanced/multisig/sparrow-setup/": "/docs/learn/wallets/multisig/sparrow-setup/",
+    "/docs/air-gapped-computer/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/air-gapped-computer/setup/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/air-gapped-computer/types/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/backup-verification/": "/docs/wallet-setup/backup-verification/",
+    "/docs/basics/address-types/": "/docs/reference/address-types/",
+    "/docs/basics/fundamentals/": "/docs/learn/fundamentals/",
+    "/docs/basics/glossary/": "/docs/reference/glossary/",
+    "/docs/basics/holding/": "/docs/learn/fundamentals/holding-bitcoin/",
+    "/docs/basics/keys/": "/docs/learn/keys/",
+    "/docs/basics/keys/derivation-path/": "/docs/learn/keys/derivation-path/",
+    "/docs/basics/keys/intro/": "/docs/learn/keys/intro/",
+    "/docs/basics/keys/number-systems/": "/docs/learn/keys/number-systems/",
+    "/docs/basics/keys/passphrase/": "/docs/learn/keys/passphrase/",
+    "/docs/basics/keys/random/": "/docs/learn/keys/random/",
+    "/docs/basics/keys/seed/": "/docs/learn/keys/seed/",
+    "/docs/basics/keys/xprv/": "/docs/learn/keys/xprv/",
+    "/docs/basics/keys/xpub/": "/docs/learn/keys/xpub/",
+    "/docs/basics/nodes/": "/docs/learn/nodes/",
+    "/docs/basics/nodes/what-is-node/": "/docs/learn/nodes/what-is-node/",
+    "/docs/basics/nodes/why-run-node/": "/docs/learn/nodes/why-run-node/",
+    "/docs/basics/privacy/": "/docs/learn/privacy/",
+    "/docs/basics/privacy/chain-analysis/": "/docs/learn/privacy/chain-analysis/",
+    "/docs/basics/privacy/coinjoin-tutorial/": "/docs/learn/privacy/coinjoin-tutorial/",
+    "/docs/basics/privacy/coinjoin/": "/docs/learn/privacy/coinjoin/",
+    "/docs/basics/privacy/payjoin/": "/docs/learn/privacy/payjoin/",
+    "/docs/basics/privacy/protecting-privacy/": "/docs/learn/privacy/protecting-privacy/",
+    "/docs/basics/privacy/utxo-management/": "/docs/learn/privacy/utxo-management/",
+    "/docs/basics/privacy/why-privacy-matters/": "/docs/learn/privacy/why-privacy-matters/",
+    "/docs/basics/transactions/": "/docs/learn/transactions/",
+    "/docs/basics/transactions/broadcast/": "/docs/learn/transactions/broadcast/",
+    "/docs/basics/transactions/create/": "/docs/learn/transactions/create/",
+    "/docs/basics/transactions/fees/": "/docs/learn/transactions/fees/",
+    "/docs/basics/transactions/sign/": "/docs/learn/transactions/sign/",
+    "/docs/basics/transactions/types/": "/docs/learn/transactions/types/",
+    "/docs/basics/transactions/understanding/": "/docs/learn/transactions/understanding/",
+    "/docs/basics/transactions/utxos/": "/docs/learn/transactions/utxos/",
+    "/docs/basics/wallets/": "/docs/learn/wallets/",
+    "/docs/basics/wallets/air-gapped-wallets/": "/docs/learn/wallets/air-gapped-wallets/",
+    "/docs/basics/wallets/coldcard-entropy-incident/": "/docs/learn/wallets/coldcard-entropy-incident/",
+    "/docs/basics/wallets/hardware-wallets/": "/docs/learn/wallets/hardware-wallets/",
+    "/docs/basics/wallets/multisig/": "/docs/learn/wallets/multisig/",
+    "/docs/basics/wallets/multisig/backup-recovery/": "/docs/learn/wallets/multisig/backup-recovery/",
+    "/docs/basics/wallets/multisig/hardware-setup/": "/docs/learn/wallets/multisig/hardware-setup/",
+    "/docs/basics/wallets/multisig/sparrow-setup/": "/docs/learn/wallets/multisig/sparrow-setup/",
+    "/docs/basics/wallets/software-wallets/": "/docs/learn/wallets/software-wallets/",
+    "/docs/basics/what-is-bitcoin/": "/docs/learn/fundamentals/what-is-bitcoin/",
+    "/docs/bitcoin-computer/": "/docs/advanced/bitcoin-computer/",
+    "/docs/bitcoin-computer/choice/": "/docs/advanced/bitcoin-computer/choice/",
+    "/docs/bitcoin-computer/setup/": "/docs/advanced/bitcoin-computer/setup/",
+    "/docs/bitcoin-node/node-setup/": "/docs/bitcoin-node/",
+    "/docs/category/internal-flashing/": "/docs/coreboot/internal/",
+    "/docs/category/keys-and-seeds/": "/docs/learn/keys/",
+    "/docs/category/nodes/": "/docs/learn/nodes/",
+    "/docs/category/privacy/": "/docs/learn/privacy/",
+    "/docs/category/raspberry-pico/": "/docs/libreboot/raspberry-pico/",
+    "/docs/category/transactions/": "/docs/learn/transactions/",
+    "/docs/category/wallets/": "/docs/learn/wallets/",
+    "/docs/coinjoin/": "/docs/learn/privacy/coinjoin/",
+    "/docs/coinjoin/best-practices/": "/docs/learn/privacy/coinjoin/",
+    "/docs/coinjoin/how-it-works/": "/docs/learn/privacy/coinjoin/",
+    "/docs/coinjoin/services/": "/docs/learn/privacy/coinjoin/",
+    "/docs/getting-started/": "/docs/learn/fundamentals/",
+    "/docs/getting-started/before-you-deposit/": "/docs/wallet-setup/before-you-deposit/",
+    "/docs/getting-started/choosing-your-path/": "/docs/learn/fundamentals/choosing-your-path/",
+    "/docs/getting-started/holding-bitcoin/": "/docs/learn/fundamentals/holding-bitcoin/",
+    "/docs/getting-started/threat-models/": "/docs/learn/fundamentals/threat-models/",
+    "/docs/getting-started/what-is-bitcoin/": "/docs/learn/fundamentals/what-is-bitcoin/",
+    "/docs/getting-started/what-is-self-custody/": "/docs/learn/fundamentals/what-is-self-custody/",
+    "/docs/hardware-wallet-setup/": "/docs/wallet-setup/hardware-wallet/",
+    "/docs/learn/address-types/": "/docs/reference/address-types/",
+    "/docs/learn/fundamentals/before-you-deposit/": "/docs/wallet-setup/before-you-deposit/",
+    "/docs/learn/glossary/": "/docs/reference/glossary/",
+    "/docs/learn/transactions/lifecycle/": "/docs/learn/transactions/understanding/",
+    "/docs/libreboot/build-libreboot/": "/docs/libreboot/build/",
+    "/docs/libreboot/update/": "/docs/libreboot/update-bios/",
+    "/docs/multisig/": "/docs/learn/wallets/multisig/",
+    "/docs/multisig/backup-recovery/": "/docs/learn/wallets/multisig/backup-recovery/",
+    "/docs/multisig/hardware-setup/": "/docs/learn/wallets/multisig/hardware-setup/",
+    "/docs/multisig/sparrow-setup/": "/docs/learn/wallets/multisig/sparrow-setup/",
+    "/docs/passphrase/": "/docs/learn/keys/passphrase/",
+    "/docs/passphrase/backup/": "/docs/learn/keys/passphrase/",
+    "/docs/passphrase/dice-roll/": "/docs/learn/keys/passphrase/",
+    "/docs/passphrase/word-lists/": "/docs/learn/keys/passphrase/",
+    "/docs/payjoin/": "/docs/learn/privacy/payjoin/",
+    "/docs/privacy/": "/docs/learn/privacy/",
+    "/docs/privacy/coinjoin/": "/docs/learn/privacy/coinjoin/",
+    "/docs/privacy/coinjoin/best-practices/": "/docs/learn/privacy/coinjoin/",
+    "/docs/privacy/coinjoin/how-it-works/": "/docs/learn/privacy/coinjoin/",
+    "/docs/privacy/coinjoin/services/": "/docs/learn/privacy/coinjoin/",
+    "/docs/privacy/payjoin/": "/docs/learn/privacy/payjoin/",
+    "/docs/privacy/utxo-management/": "/docs/learn/privacy/utxo-management/",
+    "/docs/privacy/utxo-management/coin-control/": "/docs/learn/privacy/utxo-management/",
+    "/docs/privacy/utxo-management/consolidation/": "/docs/learn/privacy/utxo-management/",
+    "/docs/security/passphrase/": "/docs/learn/keys/passphrase/",
+    "/docs/security/passphrase/backup/": "/docs/learn/keys/passphrase/",
+    "/docs/security/passphrase/dice-roll/": "/docs/learn/keys/passphrase/",
+    "/docs/security/passphrase/word-lists/": "/docs/learn/keys/passphrase/",
+    "/docs/security/seed-generation/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/backup/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/binary-decimal/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/bip39/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/checksum/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/dice-roll/": "/docs/learn/keys/random/",
+    "/docs/security/seed-generation/requirements/": "/docs/learn/keys/random/",
+    "/docs/seed/": "/docs/learn/keys/random/",
+    "/docs/seed/backup/": "/docs/learn/keys/random/",
+    "/docs/seed/binary-decimal/": "/docs/learn/keys/random/",
+    "/docs/seed/bip39/": "/docs/learn/keys/random/",
+    "/docs/seed/checksum/": "/docs/learn/keys/random/",
+    "/docs/seed/dice-roll/": "/docs/learn/keys/random/",
+    "/docs/seed/requirements/": "/docs/learn/keys/random/",
+    "/docs/utxo-management/": "/docs/learn/privacy/utxo-management/",
+    "/docs/utxo-management/coin-control/": "/docs/learn/privacy/utxo-management/",
+    "/docs/utxo-management/consolidation/": "/docs/learn/privacy/utxo-management/"
+  },
+  "sitemap": [
+    "https://selfcustodylabs.com/",
+    "https://selfcustodylabs.com/about/",
+    "https://selfcustodylabs.com/books/",
+    "https://selfcustodylabs.com/docs/advanced/",
+    "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/",
+    "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/choice/",
+    "https://selfcustodylabs.com/docs/advanced/bitcoin-computer/setup/",
+    "https://selfcustodylabs.com/docs/advanced/inheritance-planning/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/connect-sparrow-wallet/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/electrum-server/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/node-software-options/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/parmanode-setup/",
+    "https://selfcustodylabs.com/docs/bitcoin-node/tor/",
+    "https://selfcustodylabs.com/docs/coreboot/",
+    "https://selfcustodylabs.com/docs/coreboot/build/",
+    "https://selfcustodylabs.com/docs/coreboot/external-flashing/",
+    "https://selfcustodylabs.com/docs/coreboot/internal/",
+    "https://selfcustodylabs.com/docs/coreboot/internal/downgrading-bios/",
+    "https://selfcustodylabs.com/docs/coreboot/internal/flashing-bios/",
+    "https://selfcustodylabs.com/docs/coreboot/internal/unlocking-bios/",
+    "https://selfcustodylabs.com/docs/coreboot/requirements/",
+    "https://selfcustodylabs.com/docs/learn/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/choosing-your-path/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/holding-bitcoin/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/threat-models/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-bitcoin/",
+    "https://selfcustodylabs.com/docs/learn/fundamentals/what-is-self-custody/",
+    "https://selfcustodylabs.com/docs/learn/keys/",
+    "https://selfcustodylabs.com/docs/learn/keys/derivation-path/",
+    "https://selfcustodylabs.com/docs/learn/keys/intro/",
+    "https://selfcustodylabs.com/docs/learn/keys/number-systems/",
+    "https://selfcustodylabs.com/docs/learn/keys/passphrase/",
+    "https://selfcustodylabs.com/docs/learn/keys/random/",
+    "https://selfcustodylabs.com/docs/learn/keys/seed/",
+    "https://selfcustodylabs.com/docs/learn/keys/xprv/",
+    "https://selfcustodylabs.com/docs/learn/keys/xpub/",
+    "https://selfcustodylabs.com/docs/learn/nodes/",
+    "https://selfcustodylabs.com/docs/learn/nodes/what-is-node/",
+    "https://selfcustodylabs.com/docs/learn/nodes/why-run-node/",
+    "https://selfcustodylabs.com/docs/learn/privacy/",
+    "https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/",
+    "https://selfcustodylabs.com/docs/learn/privacy/coinjoin-tutorial/",
+    "https://selfcustodylabs.com/docs/learn/privacy/coinjoin/",
+    "https://selfcustodylabs.com/docs/learn/privacy/payjoin/",
+    "https://selfcustodylabs.com/docs/learn/privacy/protecting-privacy/",
+    "https://selfcustodylabs.com/docs/learn/privacy/utxo-management/",
+    "https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/",
+    "https://selfcustodylabs.com/docs/learn/transactions/",
+    "https://selfcustodylabs.com/docs/learn/transactions/broadcast/",
+    "https://selfcustodylabs.com/docs/learn/transactions/create/",
+    "https://selfcustodylabs.com/docs/learn/transactions/fees/",
+    "https://selfcustodylabs.com/docs/learn/transactions/sign/",
+    "https://selfcustodylabs.com/docs/learn/transactions/types/",
+    "https://selfcustodylabs.com/docs/learn/transactions/understanding/",
+    "https://selfcustodylabs.com/docs/learn/transactions/utxos/",
+    "https://selfcustodylabs.com/docs/learn/wallets/",
+    "https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/",
+    "https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/",
+    "https://selfcustodylabs.com/docs/learn/wallets/hardware-wallets/",
+    "https://selfcustodylabs.com/docs/learn/wallets/multisig/",
+    "https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/",
+    "https://selfcustodylabs.com/docs/learn/wallets/multisig/hardware-setup/",
+    "https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/",
+    "https://selfcustodylabs.com/docs/learn/wallets/software-wallets/",
+    "https://selfcustodylabs.com/docs/libreboot/",
+    "https://selfcustodylabs.com/docs/libreboot/build-flashprog/",
+    "https://selfcustodylabs.com/docs/libreboot/build/",
+    "https://selfcustodylabs.com/docs/libreboot/flashing-bios/",
+    "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/",
+    "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog/",
+    "https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection/",
+    "https://selfcustodylabs.com/docs/libreboot/requirements/",
+    "https://selfcustodylabs.com/docs/libreboot/roms/",
+    "https://selfcustodylabs.com/docs/libreboot/update-bios/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/arduino-ide/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/client-connect/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/esp32-module/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/horse-extension/",
+    "https://selfcustodylabs.com/docs/nostr-signing-device/setup/",
+    "https://selfcustodylabs.com/docs/reference/",
+    "https://selfcustodylabs.com/docs/reference/address-types/",
+    "https://selfcustodylabs.com/docs/reference/faq/",
+    "https://selfcustodylabs.com/docs/reference/faq/lost-seed/",
+    "https://selfcustodylabs.com/docs/reference/faq/recovery-scams/",
+    "https://selfcustodylabs.com/docs/reference/faq/recovery-troubleshooting/",
+    "https://selfcustodylabs.com/docs/reference/glossary/",
+    "https://selfcustodylabs.com/docs/reference/hardware-wallet-comparison/",
+    "https://selfcustodylabs.com/docs/security/",
+    "https://selfcustodylabs.com/docs/security/operational-security/",
+    "https://selfcustodylabs.com/docs/security/physical-security/",
+    "https://selfcustodylabs.com/docs/seedsigner/",
+    "https://selfcustodylabs.com/docs/seedsigner/build-guide/",
+    "https://selfcustodylabs.com/docs/seedsigner/using-seedsigner/",
+    "https://selfcustodylabs.com/docs/wallet-setup/",
+    "https://selfcustodylabs.com/docs/wallet-setup/backup-verification/",
+    "https://selfcustodylabs.com/docs/wallet-setup/before-you-deposit/",
+    "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/",
+    "https://selfcustodylabs.com/guides/",
+    "https://selfcustodylabs.com/learn/",
+    "https://selfcustodylabs.com/podcasts/",
+    "https://selfcustodylabs.com/privacy/"
+  ]
+}

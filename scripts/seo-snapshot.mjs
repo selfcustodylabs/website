@@ -52,9 +52,14 @@ function tags(html, tag) {
   let m;
   while ((m = re.exec(html))) {
     const attrs = {};
-    const are = /([a-zA-Z:-]+)\s*=\s*"([^"]*)"/g;
+    // Quoted or unquoted values: minifiers drop quotes where HTML allows it.
+    const are = /([a-zA-Z:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/g;
     let a;
-    while ((a = are.exec(m[1]))) attrs[a[1].toLowerCase()] = decode(a[2]);
+    while ((a = are.exec(m[1]))) {
+      let v = a[2] ?? a[3] ?? a[4] ?? "";
+      if (a[4] !== undefined && v.endsWith("/")) v = v.slice(0, -1);
+      attrs[a[1].toLowerCase()] = decode(v);
+    }
     out.push(attrs);
   }
   return out;

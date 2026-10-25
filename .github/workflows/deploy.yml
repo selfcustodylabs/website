@@ -37,8 +37,17 @@ jobs:
         # a deploy could resolve different versions than a local build. npm ci
         # installs strictly from package-lock.json and fails if the two drift.
         run: npm ci
+      # The rules in CLAUDE.md that a build alone does not enforce: frontmatter
+      # limits, no em dashes, OG card parity, no hydration-breaking <p> wrappers.
+      - name: Check content
+        run: npm run lint && npm run check
       - name: Build website
         run: npm run build
+      # Title, description, canonical, robots and JSON-LD of every page, plus the
+      # sitemap URL set, against the committed baseline. An intended change is
+      # accepted with `npm run seo:accept` and committed with the change itself.
+      - name: Check SEO snapshot
+        run: npm run seo:check
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus

@@ -5,6 +5,7 @@ description: "New to Bitcoin self-custody? Start here. Learn what self-custody m
 keywords: ["bitcoin self custody", "getting started", "beginner bitcoin", "start here", "bitcoin basics"]
 tags: ["getting started", "beginner", "self custody"]
 slug: /learn/fundamentals
+sidebar_position: 1
 ---
 
 <SectionBadge section="fundamentals" />
