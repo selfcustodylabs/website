@@ -29,7 +29,7 @@ export default function DocItemContentWrapper(props) {
     <>
       {/* Section badge and progress indicator */}
       {!isIndexPage && (section || progressData) && (
-        <div style={{ marginBottom: "16px" }}>
+        <div style={{ marginBottom: "16px" }} data-pagefind-ignore="all">
           {section && <SectionBadge section={section} />}
           {progressData && (
             <ProgressIndicator

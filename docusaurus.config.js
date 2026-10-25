@@ -34,6 +34,7 @@ const config = {
     { tagName: "link", attributes: { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192x192.png" } },
     { tagName: "link", attributes: { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" } },
 
+
     // ===========================================
     // Open Graph Meta Tags (Facebook, LinkedIn, etc.)
     // ===========================================
@@ -150,6 +151,44 @@ const config = {
       }),
     },
   ],
+
+  // ===========================================
+  // FUTURE FLAGS (Docusaurus v4 behaviour, opted into one by one)
+  // ===========================================
+  future: {
+    v4: {
+      // postBuild no longer receives the legacy `head` attribute; no plugin
+      // here reads it. Required by the faster SSG worker threads.
+      removeLegacyPostBuildHeadAttribute: true,
+      // Infima and theme CSS go into cascade layers, so site CSS (unlayered)
+      // always wins. This retires the Infima `a:hover` specificity trap.
+      useCssCascadeLayers: true,
+      // Off on purpose: namespacing would rename every localStorage key and
+      // re-show the dismissed announcement bar to everyone, for no gain on a
+      // site that owns its whole domain.
+      siteStorageNamespacing: false,
+      // Rspack, SWC and Lightning CSS (package @docusaurus/faster).
+      fasterByDefault: true,
+      // Off on purpose: MDX 1 compat keeps `:::tip Title` admonitions and
+      // `<!-- -->` comments working, which the docs and llms-txt rely on.
+      mdx1CompatDisabledByDefault: false,
+    },
+    // Everything Docusaurus Faster offers except the SWC HTML minifier, which
+    // strips the quotes from <meta> attribute values. That is valid HTML, but the
+    // head is what search engines and social-card scrapers parse, so it keeps the
+    // previous minifier's output shape. Build time is dominated by the bundler.
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: false,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      ssgWorkerThreads: true,
+      gitEagerVcs: true,
+    },
+  },
 
   // ===========================================
   // SITE URLS - Critical for canonical tags
@@ -518,29 +557,6 @@ const config = {
     }),
     
   // ===========================================
-  // THEMES (Search)
-  // ===========================================
-  themes: [
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      // @type {import("@easyops-cn/docusaurus-search-local").PluginOptions}
-      ({
-        hashed: true,
-        language: ["en"],
-        indexDocs: true,
-        indexPages: true,
-        indexBlog: false,
-        docsRouteBasePath: "/docs",
-        // Improve search result quality
-        searchResultLimits: 8,
-        searchResultContextMaxLength: 50,
-        // Highlight search terms
-        highlightSearchTermsOnTargetPage: true,
-      }),
-    ],
-  ],
-  
-  // ===========================================
   // PLUGINS
   // ===========================================
   plugins: [
@@ -560,6 +576,9 @@ const config = {
     // Cloudflare Pages: _redirects (real 301s from the same redirect list as
     // below) and _headers (CSP, HSTS, caching). See plugins/cloudflare/index.js.
     './plugins/cloudflare',
+    // Static search index (build/pagefind/), loaded by src/theme/SearchBar and
+    // src/pages/search.jsx. See plugins/pagefind/index.js.
+    './plugins/pagefind',
 
     [
       '@docusaurus/plugin-client-redirects',

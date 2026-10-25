@@ -3,6 +3,7 @@
  *
  * Loads Infima + Tailwind + the chrome theme layer + content utilities.
  *
+ * - tokens.css: fonts, palette and type tokens (the lab-manual grammar)
  * - base.css: Infima root variables and accessibility focus rings
  * - theme/chrome.css: all Infima selector overrides (navbar, sidebar,
  *   breadcrumbs, TOC, pagination, markdown prose, admonitions, footer)
@@ -11,6 +12,7 @@
  *   .guide-card, etc.)
  */
 
+@import "./tokens.css";
 @import "./base.css";
 @import "./theme/chrome.css";
 @import "./tables.css";

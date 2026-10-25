@@ -21,8 +21,14 @@
 const CSP = {
   "default-src": ["'self'"],
   // 'unsafe-inline': Docusaurus inlines its color-mode and announcement-bar
-  // scripts in <head>. No 'unsafe-eval' anywhere.
-  "script-src": ["'self'", "'unsafe-inline'", "https://static.cloudflareinsights.com"],
+  // scripts in <head>. 'wasm-unsafe-eval' lets Pagefind compile its search
+  // WebAssembly; it does not allow eval() of JavaScript. No 'unsafe-eval'.
+  "script-src": [
+    "'self'",
+    "'unsafe-inline'",
+    "'wasm-unsafe-eval'",
+    "https://static.cloudflareinsights.com",
+  ],
   "style-src": ["'self'", "'unsafe-inline'"],
   "img-src": ["'self'", "data:"],
   "font-src": ["'self'"],

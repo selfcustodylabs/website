@@ -7,7 +7,7 @@ export default function NextSteps({ title = "Next Steps", items = [] }) {
   if (!items.length) return null;
 
   return (
-    <section className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
+    <section data-pagefind-ignore="all" className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
       <h3 className="mb-5 flex items-center gap-2 font-display text-lg font-bold text-white">
         <ArrowForwardRoundedIcon sx={{ fontSize: 20 }} className="text-amber-400" />
         {title}

@@ -5,6 +5,7 @@ import VerifiedRoundedIcon from "@mui/icons-material/VerifiedRounded";
 export default function AuthorByline() {
   return (
     <aside
+      data-pagefind-ignore="all"
       className="mt-10 flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white/70"
       itemScope
       itemType="https://schema.org/Organization"

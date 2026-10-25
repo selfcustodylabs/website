@@ -66,7 +66,7 @@ export default function RelatedArticles({
   if (!displayArticles.length) return null;
 
   return (
-    <section className="mt-12 border-t border-white/10 pt-8">
+    <section data-pagefind-ignore="all" className="mt-12 border-t border-white/10 pt-8">
       <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.12em] text-white/60">
         {title}
       </h3>
