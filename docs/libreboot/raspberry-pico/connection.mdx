@@ -100,17 +100,13 @@ Now the inactive chip is fully disabled, and you’re ready to flash the BIOS re
 
 Here’s what the setup looks like:
 
-import Grid from '@mui/material/Grid';
+<div className="photo-pair">
 
-<Grid container spacing={2}>
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/floating-setup.webp" alt="Connection Setup" className="mdx-grid-image" />
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/floating-clip.webp" alt="Connection Clip" className="mdx-grid-image" />
-  </Grid>
-</Grid>
+![The bench setup for the T530 and W530: the Pico wired to the Pomona clip, plus an AMS1117 3.3V regulator board powered from a 5V adapter, with a red test hook on its output lead](/img/libreboot/floating-setup.webp)
+
+![The same setup on a ThinkPad motherboard: the Pomona clip on the chip being flashed and the red test hook holding the other chip's CS# pin at 3.3V](/img/libreboot/floating-clip.webp)
+
+</div>
 
 ## Conclusion
 

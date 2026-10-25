@@ -23,17 +23,13 @@ Now, you need to detect the chip model using flashrom. To ensure accurate detect
 - Attach the clip firmly onto the BIOS chip, ensuring proper contact with all pins
 - Plug the Raspberry Pico into the laptop using a USB cable
 
-import Grid from '@mui/material/Grid';
+<div className="photo-pair">
 
-<Grid container spacing={2}>
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/connection.webp" alt="Connection Setup" className="mdx-grid-image" />
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/coreboot/connection.webp" alt="Connection Clip" className="mdx-grid-image" />
-  </Grid>
-</Grid>
+![A Raspberry Pi Pico wired with six coloured Dupont cables to a blue Pomona SOIC-8 test clip, the setup for chips in an 8-pin SOIC package](/img/libreboot/connection.webp)
+
+![The same Raspberry Pi Pico wired instead to a pogo-pin adapter, used for WSON chips that a clip cannot grip](/img/coreboot/connection.webp)
+
+</div>
 
 
 Execute the following command to detect the chip

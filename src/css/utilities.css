@@ -132,3 +132,26 @@ header.guidesHero {
   white-space: pre-wrap;
   overflow-x: visible;
 }
+
+/*
+ * Two photographs side by side (one above the other on a phone). Plain
+ * Markdown images inside, so their alt text survives the .md mirrors.
+ */
+.photo-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  align-items: start;
+}
+
+.photo-pair p {
+  margin: 0;
+}
+
+.photo-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

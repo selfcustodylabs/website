@@ -43,14 +43,10 @@ You’ll also need the following tools:
 
 If you’re flashing the BIOS externally, you’ll need an SPI flasher such as a Raspberry Pi Pico. Depending on the type of BIOS chip (e.g., SOIC or WSON), you’ll also need either a Pomona Clip or Pogo Pins Adapter, connected with Dupont cables to the RPi.
 
-import Grid from '@mui/material/Grid';
+<div className="photo-pair">
 
-<Grid container spacing={2}>
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/connection.webp" alt="Connection Setup" className="mdx-grid-image" />
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/coreboot/connection.webp" alt="Connection Clip" className="mdx-grid-image" />
-  </Grid>
-</Grid>
+![A Raspberry Pi Pico wired with six coloured Dupont cables to a blue Pomona SOIC-8 test clip, the setup for chips in an 8-pin SOIC package](/img/libreboot/connection.webp)
+
+![The same Raspberry Pi Pico wired instead to a pogo-pin adapter, used for WSON chips that a clip cannot grip](/img/coreboot/connection.webp)
+
+</div>
