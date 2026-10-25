@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -12,10 +12,10 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      # All three actions below are pinned to versions whose own runtime is
+      # All actions below are pinned to versions whose own runtime is
       # node24. The v4 line targeted node20, which GitHub deprecated and was
       # force-running on node24 anyway, with a warning on every deploy.
       # fetch-depth: 0 is load-bearing twice over: showLastUpdateTime reads git
@@ -56,6 +56,24 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+      # Cloudflare Pages is the primary host once DNS points there. The build
+      # already contains _redirects (real 301s) and _headers (CSP, HSTS,
+      # caching), both written by plugins/cloudflare. GitHub Pages above keeps
+      # deploying the same build as the rollback target until the rollback
+      # window closes; see "Deploy & hosting boundaries" in CLAUDE.md.
+      #
+      # Gated on the CLOUDFLARE_ACCOUNT_ID repository *variable* (not a secret:
+      # an account ID grants nothing), so the step is skipped until the move is
+      # set up. The API token is a secret handed to this step only; putting it
+      # in job-level env would expose it to every npm install script above.
+      - name: Deploy to Cloudflare Pages
+        if: ${{ vars.CLOUDFLARE_ACCOUNT_ID != '' }}
+        uses: cloudflare/wrangler-action@v4.1.3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy build --project-name=selfcustodylabs --branch=main
 
       # Bing's index is the retrieval layer for ChatGPT search and Copilot, so a
       # page it has not crawled cannot be cited by either. IndexNow shortens that
