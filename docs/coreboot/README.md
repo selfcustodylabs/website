@@ -64,11 +64,11 @@ Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (
 ## Related Guides
 
 :::info Libreboot Alternative
-For even more freedom, check out **[Libreboot](/docs/libreboot)** – a Coreboot distribution that removes additional proprietary blobs like Intel ME. It supports fewer devices but offers maximum openness.
+For even more freedom, check out **[Libreboot](/docs/libreboot)**, a Coreboot distribution that removes additional proprietary blobs like Intel ME. It supports fewer devices but offers maximum openness.
 :::
 
 :::tip Use Cases
 Once you have Coreboot installed, use your laptop as a:
-- **[Bitcoin Computer](/docs/advanced/bitcoin-computer)** – For secure transaction creation and broadcasting
-- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)** – For offline seed generation and signing
+- **[Bitcoin Computer](/docs/advanced/bitcoin-computer)**: For secure transaction creation and broadcasting
+- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)**: For offline seed generation and signing
 :::

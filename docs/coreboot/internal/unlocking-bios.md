@@ -74,9 +74,9 @@ On Intel platforms, there are two main mechanisms that protect the BIOS chip fro
 Located in the LPC Interface Bridge Registers (accessible through PCI configuration space at offset 0xDC).
 It contains the following important bits:
 
-- **SMM_BWP** (SMM BIOS Write Protect) – If set to 1, the BIOS can only be written from System Management Mode (SMM). Once enabled, it cannot be changed.
-- **BLE** (BIOS Lock Enable) – If set to 1, attempting to set BIOSWE to 1 will trigger a System Management Interrupt (SMI). Once enabled, it cannot be changed.
-- **BIOSWE** (BIOS Write Enable) – Controls whether the BIOS is writable. This bit is always read/write.
+- **SMM_BWP** (SMM BIOS Write Protect): If set to 1, the BIOS can only be written from System Management Mode (SMM). Once enabled, it cannot be changed.
+- **BLE** (BIOS Lock Enable): If set to 1, attempting to set BIOSWE to 1 will trigger a System Management Interrupt (SMI). Once enabled, it cannot be changed.
+- **BIOSWE** (BIOS Write Enable): Controls whether the BIOS is writable. This bit is always read/write.
 
 2. SPI Protected Range Registers (**PR0–PR4**)
 
@@ -116,7 +116,6 @@ This will display the Hardware Sequencing Flash Status (HSFS) register, located 
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 [x][ =======================================================================
@@ -133,7 +132,6 @@ This will display the Hardware Sequencing Flash Status (HSFS) register, located 
     [15] FLOCKDN          = 1 << Flash Configuration Lock-Down
 ```
 
-</p>
 </details>
 
 One of the most important bits here is:
@@ -161,7 +159,6 @@ sudo python chipsec_main.py -m common.bios_wp
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
  [x][ =======================================================================
@@ -187,7 +184,6 @@ sudo python chipsec_main.py -m common.bios_wp
  PR4 (84)     | 8AAF0800 | 00800000 | 00AAFFFF | 1   | 0
 ```
 
-</p>
 </details>
 
 - **Good:** On older BIOS versions, `SMM_BWP = 0` and `BLE = 0`.
@@ -244,7 +240,6 @@ If your `SPIBAR` address is `0xFED1F800`, that’s `0xFED1F804` for HSFS.
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Entry at offset 0x2B8F (len = 0x17, header len = 0x0):
@@ -259,7 +254,6 @@ Entry at offset 0x2B8F (len = 0x17, header len = 0x0):
    Values : 0x0004E009
 ```
 
-</p>
 </details>
 
 That `0x0004E009` value sets `FLOCKDN = 1`, which we don’t want.
@@ -310,7 +304,6 @@ sudo python chipsec_main.py -m tools.uefi.s3script_modify -a replace_op,mmio_wr,
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
  [*] Modifying S3 boot script entry at address 0x00000000DAF49B8F..
@@ -329,7 +322,6 @@ sudo python chipsec_main.py -m tools.uefi.s3script_modify -a replace_op,mmio_wr,
  [+] PASSED: The script has been modified. Go to sleep..
 ```
 
-</p>
 </details>
 
 If successful, you’ll see at the end of the logs a “Modified entry” output with the new `0x6009` value:
@@ -346,7 +338,6 @@ sudo python chipsec_main.py -m common.spi_lock
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 ...
@@ -366,7 +357,6 @@ sudo python chipsec_main.py -m common.spi_lock
 [-] FAILED: SPI Flash Controller not locked correctly.
 ```
 
-</p>
 </details>
 
 If you see:
@@ -398,7 +388,6 @@ sudo python chipsec_main.py -m common.bios_wp
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 [x][ =======================================================================
@@ -424,7 +413,6 @@ PR3 (80)     | 0BFF0B40 | 00B40000 | 00BFF000 | 0   | 0
 PR4 (84)     | 00000000 | 00000000 | 00000000 | 0   | 0
 ```
 
-</p>
 </details>
 
 If all `WP?` values are now 0, the BIOS region is fully writable.

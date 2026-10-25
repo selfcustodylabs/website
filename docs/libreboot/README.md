@@ -60,9 +60,9 @@ It initializes your hardware (CPU, RAM, storage, etc.) and loads your operating 
 
 Libreboot includes multiple bootloader options:
 
-- **GRUB** – A flexible GNU bootloader for Linux and BSD.
-- **SeaBIOS** – A lightweight BIOS-compatible option for legacy software.
-- **U-Boot** – A simple UEFI bootloader for ARM and some x86/x86_64 systems.
+- **GRUB**: A flexible GNU bootloader for Linux and BSD.
+- **SeaBIOS**: A lightweight BIOS-compatible option for legacy software.
+- **U-Boot**: A simple UEFI bootloader for ARM and some x86/x86_64 systems.
 
 All these options come bundled, letting you choose the right one when you boot.
 
@@ -76,6 +76,6 @@ Libreboot is based on Coreboot but removes more proprietary blobs. If your hardw
 
 :::tip Use Cases
 Once you have Libreboot installed, use your laptop as a:
-- **[Bitcoin Computer](/docs/advanced/bitcoin-computer)** – For secure transaction creation and broadcasting
-- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)** – For offline seed generation and signing
+- **[Bitcoin Computer](/docs/advanced/bitcoin-computer)**: For secure transaction creation and broadcasting
+- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)**: For offline seed generation and signing
 :::

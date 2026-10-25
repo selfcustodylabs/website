@@ -20,9 +20,9 @@ Our favourite does not mean our recommendation for most people. SeedSigner adds 
 - Verify and flash SeedSigner OS
 - Generate a seed with dice, back it up as a SeedQR, and sign with Sparrow
 
-**Time required:** 1-2 hours build, plus practice
-**Difficulty:** Intermediate to advanced
-**Estimated cost:** $50-80 in parts
+**Time required:** 1-2 hours build, plus practice  
+**Difficulty:** Intermediate to advanced  
+**Estimated cost:** $50-80 in parts  
 **Prerequisites:** comfort with basic command-line verification and DIY assembly
 :::
 

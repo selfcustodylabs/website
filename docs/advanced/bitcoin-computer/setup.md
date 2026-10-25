@@ -33,6 +33,6 @@ Since you'll be setting up a Bitcoin node on a separate device that runs over To
 
 ### Why Use Tor?
 
-- **Hides Your IP Address** – Prevents blockchain surveillance from linking your node or wallet activity to your location.
-- **Bypasses Censorship** – Some ISPs or governments restrict Bitcoin traffic; Tor helps bypass these blocks.
-- **Enhances Privacy** – Even if you’re running a full node, Tor ensures your connections remain anonymous.
+- **Hides Your IP Address**: Prevents blockchain surveillance from linking your node or wallet activity to your location.
+- **Bypasses Censorship**: Some ISPs or governments restrict Bitcoin traffic; Tor helps bypass these blocks.
+- **Enhances Privacy**: Even if you’re running a full node, Tor ensures your connections remain anonymous.

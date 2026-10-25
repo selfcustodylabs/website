@@ -14,9 +14,9 @@ Now that we have installed Libreboot, set up flashprog, and prepared our Raspber
 
 The following ThinkPad models have a 12MB BIOS, which is split between **two chips** on the motherboard: one with 4MB and the other with 8MB.
 
-- X230 – Accessing the BIOS chips is simple; you only need to remove the keyboard and palm rest (see the photo).
-- T440p – The BIOS chips can be accessed from the back of the laptop.
-- T420 / T430 / T530 / W530 – Full disassembly of the laptop is required to access the BIOS chips.
+- **X230**: the BIOS chips are easy to reach; you only need to remove the keyboard and palm rest (see the photo).
+- **T440p**: the BIOS chips can be reached from the back of the laptop.
+- **T420, T430, T530, W530**: full disassembly of the laptop is required to access the BIOS chips.
 
 ![Dual Chip](/img/libreboot/dual-chip.webp)
 
@@ -27,7 +27,7 @@ If you're flashing this model, you **DO NOT** need to split the ROM, as it has o
 
 ## Splitting the Rom
 
-For the , you'll need to divide your ROM into two distinct portions prior to flashing. This can be accomplished using the dd command.
+For the dual-chip models (X230, T420, T430, T440p, T530 and W530), split the 12MB ROM into an 8MB bottom part and a 4MB top part before flashing. `dd` does this:
 
 ```bash
 dd if=seabios_<rom_name>_libgfxinit_corebootfb.rom of=libreboot_top.rom bs=1M skip=8

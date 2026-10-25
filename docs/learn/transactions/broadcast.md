@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: "How to Broadcast a Bitcoin Transaction"
-description: "Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin."
+description: "How a signed Bitcoin transaction reaches the network, and why broadcasting through your own node instead of a public server keeps your IP and addresses private."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "broadcasting"]
 tags: ["bitcoin", "transactions", "broadcasting"]
 ---

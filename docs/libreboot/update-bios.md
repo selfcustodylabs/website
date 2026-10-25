@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 title: "Update Libreboot Firmware"
-description: "Practical guide: Update. Covers Disable security protections before flashing, Flash Chip Size, Read the Current Chip Contents."
+description: "Update an existing Libreboot install from inside Linux without opening the laptop: relax /dev/mem access, back up the chip, write the new ROM and verify it."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "update"]
 tags: ["libreboot", "update", "flashprog", "bios"]
 ---

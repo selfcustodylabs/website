@@ -17,13 +17,13 @@ Some people suggest buying a brand-new laptop for security reasons, but what abo
 
 ### Budget Options
 
-- **Low Budget** – The Lenovo ThinkPad [X230](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) or [T430](https://psref.lenovo.com/syspool/sys/pdf/withdrawnbook/thinkpad_t430.pdf). These are legendary laptops, possibly among the best ever made!
-- **Medium Budget** – The Lenovo ThinkPad [T480s](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480s/ThinkPad_T480s_Spec.pdf). Recently supported by Libreboot, it’s easy to flash, supports NVMe SSDs, and can handle up to 24GB of RAM. This is an amazing laptop that can also be used for everyday tasks or other Bitcoin-related activities.
+- **Low Budget**: The Lenovo ThinkPad [X230](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) or [T430](https://psref.lenovo.com/syspool/sys/pdf/withdrawnbook/thinkpad_t430.pdf). These are legendary laptops, possibly among the best ever made!
+- **Medium Budget**: The Lenovo ThinkPad [T480s](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480s/ThinkPad_T480s_Spec.pdf). Recently supported by Libreboot, it’s easy to flash, supports NVMe SSDs, and can handle up to 24GB of RAM. This is an amazing laptop that can also be used for everyday tasks or other Bitcoin-related activities.
 
 
 ## Hardware Precautions
 
 Since these laptops are often purchased second-hand on eBay, Gumtree, or Marketplace, it's important to take a few precautions before turning them into a Bitcoin computer:
 
-- **Use a brand-new SSD** – If possible, replace the old storage drive with a new SSD. If you can’t afford one, at the very least, format the existing drive twice and encrypt it using LUKS.
-- **Use new USB drives** – Avoid using old or unknown USB sticks for installation and backups. Start fresh with brand-new USB keys.
+- **Use a brand-new SSD**: If possible, replace the old storage drive with a new SSD. If you can’t afford one, at the very least, format the existing drive twice and encrypt it using LUKS.
+- **Use new USB drives**: Avoid using old or unknown USB sticks for installation and backups. Start fresh with brand-new USB keys.

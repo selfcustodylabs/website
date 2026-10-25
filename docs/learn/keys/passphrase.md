@@ -22,11 +22,11 @@ You can also use `Wallet A` without a passphrase as a **decoy wallet**, storing 
 
 Adding a passphrase to your seed offers strong security benefits, especially if you're storing a significant amount of Bitcoin. However, it also comes with risk:
 
-- **Risk of Losing Access** – If you forget or mistype your passphrase, there's no way to recover it, and you'll lose access to your funds.
-- **More Complexity** – Managing and securely storing an extra secret can be tricky, increasing the chance of mistakes.
-- **Potential for Mistakes** – Even a small typo creates an entirely new wallet, making it easy to lock yourself out.
-- **Not All Wallets Support It** – Some hardware and software wallets don't support passphrases, limiting compatibility.
-- **Social Engineering Risk** – If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
+- **Risk of Losing Access**: If you forget or mistype your passphrase, there's no way to recover it, and you'll lose access to your funds.
+- **More Complexity**: Managing and securely storing an extra secret can be tricky, increasing the chance of mistakes.
+- **Potential for Mistakes**: Even a small typo creates an entirely new wallet, making it easy to lock yourself out.
+- **Not All Wallets Support It**: Some hardware and software wallets don't support passphrases, limiting compatibility.
+- **Social Engineering Risk**: If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
 
 
 ## How Much Security?

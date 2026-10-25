@@ -26,7 +26,7 @@ Treat that seed as compromised and **migrate your funds to a new wallet**. Updat
 | March 1, 2021 | Firmware v4.0.1 ships with the entropy bug (Mk2/Mk3) |
 | May 2025 | Developer James O'Beirne raises concerns about the RNG code with Coinkite; the report is dismissed |
 | July 30, 2026, 01:31 UTC | First attack wave: ~594 BTC (~$38M) drained from ~500 addresses in 25 minutes |
-| July 30 – Aug 4, 2026 | Three more waves follow |
+| July 30 to Aug 4, 2026 | Three more waves follow |
 | July 31, 2026 | Coinkite ships fixed firmware for all models |
 | August 1, 2026 | Coinkite publishes its security advisory |
 | August 4, 2026 | TRM Labs tallies ~1,816 BTC (~$116M) stolen from 5,200+ addresses |

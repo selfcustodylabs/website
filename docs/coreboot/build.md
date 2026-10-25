@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "Build Coreboot"
-description: "Practical guide: Build Coreboot. Covers Step 1: Install tools and libraries needed for coreboot, Step 2: Download Coreboot Source Tree, Step 3: Build the."
+description: "Build Coreboot from source on Linux: install the dependencies, clone the source tree, build the cross-compiler toolchain, configure your ThinkPad and compile."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "build"]
 tags: ["coreboot", "build", "bios"]
 ---
@@ -62,7 +62,6 @@ make help_toolchain
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 *** Toolchain targets ***
@@ -79,7 +78,6 @@ make help_toolchain
   Use "make [target] BUILDGCC_OPTIONS="-m" to get packages from coreboot mirror"
 ```
 
-</p>
 </details>
 
 Choose the one that matches your target architecture.
@@ -183,7 +181,6 @@ Create a basic `grub.cfg` to define the boot behavior and include it in the “I
 
 <details>
 <summary>grub.cfg</summary>
-<p>
 
 ```text
 # Coreboot GRUB2: auto-boot with ESC menu and user instructions
@@ -210,7 +207,6 @@ menuentry "Boot USB" {
 }
 ```
 
-</p>
 </details>
 
 #### (Optional) Save your configuration to a file:

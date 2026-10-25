@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: "Choose Your Self-Custody Setup"
-description: "Interactive decision tree to help you choose the right Bitcoin self-custody setup based on your holdings, technical comfort, and security needs."
+description: "Which Bitcoin self-custody setup fits what you hold: four tiers from a phone wallet to multisig, with the hardware, cost and effort each tier takes."
 keywords: ["bitcoin wallet choice", "self custody setup", "hardware wallet comparison", "bitcoin security decision"]
 tags: ["getting started", "wallet", "decision", "setup"]
 slug: /learn/fundamentals/choosing-your-path

@@ -35,9 +35,9 @@ In this guide you will:
 - Verify the finished seed in an offline wallet
 - Securely back up your seed phrase on metal
 
-**Time required:** 2–4 hours
-**Difficulty:** Intermediate
-**Estimated cost:** $10–30 (casino dice) + $20–50 (metal backup plate)
+**Time required:** 2–4 hours  
+**Difficulty:** Intermediate  
+**Estimated cost:** $10–30 (casino dice) + $20–50 (metal backup plate)  
 **Requirements:** [Air-gapped computer](/docs/learn/wallets/air-gapped-wallets) or Raspberry Pi Zero, casino dice
 :::
 
@@ -477,7 +477,6 @@ BITS=101110001011101110010010111100111011010001011111101010111111001000001000001
 
 <details>
 <summary>Just the Checksum</summary>
-<p>
 
 ```bash
 python3 -c "
@@ -492,7 +491,6 @@ print('row 24 decimal:',int(b[253:]+cs,2))
 " "$BITS"
 ```
 
-</p>
 </details>
 
 For our example this prints:
@@ -507,7 +505,6 @@ row 24 decimal: 338
 
 <details>
 <summary>All 24 Numbers</summary>
-<p>
 
 ```bash
 python3 -c "
@@ -523,7 +520,6 @@ for n in range(24):
 " "$BITS"
 ```
 
-</p>
 </details>
 
 If you have saved the [official BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) as `english.txt` in the same folder, this also prints the words, giving you an independent check on the lookups you do in Step 4. Without that file it prints the numbers only, which is all you need.

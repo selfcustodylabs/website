@@ -96,7 +96,7 @@ Both are privacy techniques, but they work differently:
 
 | Feature | PayJoin | CoinJoin |
 |---------|---------|----------|
-| **Participants** | 2 (sender + receiver) | Many (5 – 100+) |
+| **Participants** | 2 (sender + receiver) | Many (5–100+) |
 | **Coordination** | Direct, during payment | Requires coordinator or protocol |
 | **Visibility** | Looks like normal transaction | Clearly identifiable on-chain |
 | **Use case** | Privacy during payments | Breaking transaction history |

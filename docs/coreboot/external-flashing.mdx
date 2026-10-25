@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: "External Flashing"
-description: "Practical guide: External Flashing. Covers Detect the Chip, Backup the Factory Bios, Neutralize Intel ME."
+description: "Flash Coreboot with an external SPI programmer: detect the chip, back up the factory BIOS, neutralise Intel ME, write the image and confirm ME is disabled."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "external", "flashing"]
 tags: ["coreboot", "chipsec", "bios", "external", "flashing"]
 ---
@@ -99,7 +99,6 @@ It should print a long output, including the section related to Intel ME:
 
 <details>
 <summary>Output</summary>
-<p>
 
 
 ```text
@@ -353,7 +352,6 @@ Found Processor Strap Section
 ????:      0xffffffff
 ```
 
-</p>
 </details>
 
 Now to check if the dumped ME image is valid just run:
@@ -366,7 +364,6 @@ You should get an output like the one below:
 
 <details>
 <summary>Output</summary>
-<p>
 
 
 ```text
@@ -381,7 +378,6 @@ The AltMeDisable bit is NOT SET
 Checking the FTPR RSA signature... VALID
 ```
 
-</p>
 </details>
 
 
@@ -397,7 +393,6 @@ You should get an output like the one below:
 
 <details>
 <summary>Output</summary>
-<p>
 
 
 ```text
@@ -457,7 +452,6 @@ Checking the FTPR RSA signature... VALID
 Done! Good luck!
 ```
 
-</p>
 </details>
 
 
@@ -537,7 +531,6 @@ The output you want to see should look similar to this:
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Bad news, you have a `QM77 Express Chipset LPC Controller` so you have ME hardware on board and you can't control or disable it, continuing...
@@ -568,7 +561,6 @@ ME: failed to become ready
 ME: GET FW VERSION message failed
 ```
 
-</p>
 </details>
 
 In this output, Intel ME remains in the initializing state and fails to become fully ready. This is exactly what you expect when ME has been neutralized: the hardware is present, but the ME firmware is disabled and cannot initialize.

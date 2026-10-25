@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: "How Bitcoin Transactions Are Created"
-description: "Practical guide: Creation. Covers Manually Building Transactions, Using Wallets to Send Transactions, RBF – Replace-by-Fee."
+description: "How a Bitcoin transaction is put together: choosing UTXOs as inputs, setting outputs and change, and unsticking a slow payment with RBF or CPFP."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "creation"]
 tags: ["bitcoin", "transactions", "creation"]
 ---
@@ -24,7 +24,7 @@ Most wallets take care of everything for you. They automatically select inputs a
 From your end, all you typically do is enter the recipient's address and the amount to send. Some wallets may also let you choose a **fee rate** or priority level. This convenience makes wallet-based sending ideal for everyday use and helps minimize user error.
 
 
-## RBF – Replace-by-Fee
+## RBF: Replace-by-Fee
 
 
 **Replace-by-Fee (RBF)** is a feature that lets you increase a transaction’s fee after it’s been broadcast, provided it hasn’t been confirmed yet.
@@ -34,7 +34,7 @@ This is especially useful when a transaction gets stuck in the mempool because t
 To use RBF, you need to enable it when creating the transaction. Most wallets have a checkbox or setting for this. If the transaction remains unconfirmed, you can then replace it with a higher-fee version.
 
 
-## CPFP – Child Pays for Parent
+## CPFP: Child Pays for Parent
 
 If you didn’t enable RBF and your transaction is stuck, there’s another option: **Child Pays for Parent (CPFP)**.
 

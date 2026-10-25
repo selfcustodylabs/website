@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "Extended Private Key (XPRV)"
-description: "Practical guide: Extended Private Key (XPRV). Covers Why the Extended Private Key Matters, Security Considerations, Generating and Testing an Extended Private."
+description: "What a Bitcoin extended private key (xprv) is, why it can spend from every address in a wallet, how to keep it offline, and what its prefix tells you."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "private", "xprv"]
 tags: ["private keys", "xprv", "bip39", "seed"]
 ---

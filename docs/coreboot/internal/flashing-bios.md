@@ -107,7 +107,6 @@ cbfstool coreboot.rom print
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 FMAP REGION: COREBOOT
@@ -128,7 +127,6 @@ fallback/payload               0x45dc0    simple elf     473556 none
 bootblock                      0xeadc0    bootblock       20480 none
 ```
 
-</p>
 </details>
 
 Print the CBFS layout of the Flashed BIOS:
@@ -139,7 +137,6 @@ cbfstool flashed.bin print
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 FMAP REGION: COREBOOT
@@ -160,7 +157,6 @@ fallback/payload               0x45dc0    simple elf     473556 none
 bootblock                      0xeadc0    bootblock       20480 none
 ```
 
-</p>
 </details>
 
 Compare it with the intended Coreboot image:

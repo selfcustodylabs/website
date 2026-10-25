@@ -315,8 +315,8 @@ Future cost if you spend those same 10 UTXOs later at 100 sat/vB:
 
 | Purpose | Target Size | Reasoning |
 |---------|-------------|-----------|
-| Long-term holding | 0.1 – 1.0 BTC | Efficient for large future spends |
-| Regular spending | 0.01 – 0.1 BTC | Flexible without revealing full stack |
+| Long-term holding | 0.1–1.0 BTC | Efficient for large future spends |
+| Regular spending | 0.01–0.1 BTC | Flexible without revealing full stack |
 | Minimum viable | 0.01 BTC | Stays economical in most fee environments |
 
 </div>
