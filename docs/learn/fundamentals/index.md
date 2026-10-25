@@ -8,7 +8,6 @@ slug: /learn/fundamentals
 sidebar_position: 1
 ---
 
-<SectionBadge section="fundamentals" />
 
 # Start Here: Your Bitcoin Self-Custody Journey
 
@@ -36,7 +35,6 @@ Self-custody is how Bitcoin was designed to work. It's also a responsibility: th
 
 → **Deep dive:** [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) explains this in full detail.
 
-
 ## Before You Continue: A Word of Caution
 
 :::danger This is Serious
@@ -53,7 +51,6 @@ There is no "forgot password" button. No customer support. No second chances.
 
 The good news: millions of people successfully self-custody their Bitcoin. With the right knowledge and care, you can too.
 
-
 ## Who Is This Site For?
 
 Self Custody Labs is for anyone serious about Bitcoin security:
@@ -65,7 +62,6 @@ Self Custody Labs is for anyone serious about Bitcoin security:
 | **Already have a hardware wallet** | [Verify your backup](/docs/wallet-setup/backup-verification/), consider [running a node](/docs/bitcoin-node/) |
 | **Significant holdings** | Explore [multisig](/docs/learn/wallets/multisig/) and [advanced setups](/docs/learn/wallets/air-gapped-wallets/) |
 | **Privacy-focused / high-risk** | Start with [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) |
-
 
 ## Assess Your Threat Model
 
@@ -86,7 +82,6 @@ Not everyone needs the same level of security. A good setup depends on:
    - Technical → Can jump to advanced setups
 
 → **Deep dive:** [Assess Your Threat Model](/docs/learn/fundamentals/threat-models) - A guide to help you decide what level of security you need.
-
 
 ## Choose Your Path
 
@@ -171,7 +166,6 @@ Don't keep all your eggs in one basket. Geographic distribution. Different walle
 
 A backup you've never tested isn't a backup. Verify your seed restores correctly *before* depositing significant funds.
 
-
 ## Ready to Begin?
 
 <div class="button-group">
@@ -199,13 +193,3 @@ If something in our guides is unclear, you can:
 - Reach out via [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs)
 
 Your questions help us improve these guides for everyone.
-
-<RelatedArticles 
-  title="Explore Topics"
-  articles={[
-    { title: "What is Bitcoin?", href: "/docs/learn/fundamentals/what-is-bitcoin/", tag: "Start Here" },
-    { title: "Private Keys", href: "/docs/learn/keys/intro/", tag: "Learn" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
-  ]}
-/>

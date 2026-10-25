@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import BackgroundMotif from './BackgroundMotif';
-import useReveal from '@site/src/hooks/useReveal';
+import BackgroundMotif from "./BackgroundMotif";
+import useReveal from "@site/src/hooks/useReveal";
 
 export default function PageHeader({ eyebrow, title, subtitle }) {
   const ref = useReveal();

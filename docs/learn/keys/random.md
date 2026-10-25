@@ -4,11 +4,18 @@ title: "Generate Your Own Bitcoin Seed Phrase with Dice"
 description: "Generate a BIP39 Bitcoin seed phrase from dice rolls. True randomness, verifiable checksum, fully offline, no need to trust the wallet RNG."
 keywords: ["bitcoin seed", "DIY seed", "dice entropy", "BIP39", "seed phrase generation", "air-gapped", "true randomness", "entropy"]
 tags: ["private keys", "random number", "entropy", "seed", "BIP39", "dice"]
+guide:
+  time: "2–4 hours"
+  level: "Intermediate"
+  cost: "$10–30 (casino dice) + $20–50 (metal backup plate)"
+  needs: "Casino dice, an air-gapped computer or Raspberry Pi Zero, a metal backup plate"
 ---
 
 # Generate Your Own Bitcoin Seed Phrase with Dice
 
 Most wallets generate seed phrases for you, but that requires trust: you are trusting that the wallet's random number generator is actually random, hasn't been backdoored, and wasn't compromised somewhere in the supply chain. This guide shows you how to generate a 24-word BIP39 seed phrase from dice rolls, entirely offline, with randomness you can verify yourself.
+
+<GuideFacts />
 
 :::danger Fund Loss Warning
 **Mistakes in seed generation can result in permanent, irreversible loss of all Bitcoin.**
@@ -25,22 +32,6 @@ Common fatal errors:
 **Do not proceed unless you fully understand these risks.**
 :::
 
-:::info What You'll Do
-In this guide you will:
-
-- Generate true randomness using physical dice rolls
-- Convert your binary entropy into decimal numbers
-- Calculate the checksum that completes the final word
-- Look up all 24 BIP39 seed words
-- Verify the finished seed in an offline wallet
-- Securely back up your seed phrase on metal
-
-**Time required:** 2–4 hours  
-**Difficulty:** Intermediate  
-**Estimated cost:** $10–30 (casino dice) + $20–50 (metal backup plate)  
-**Requirements:** [Air-gapped computer](/docs/learn/wallets/air-gapped-wallets) or Raspberry Pi Zero, casino dice
-:::
-
 :::tip Prerequisites
 Before starting, make sure you understand:
 
@@ -48,7 +39,6 @@ Before starting, make sure you understand:
 - [Private keys](/docs/learn/keys/intro) and how they relate to seeds
 - [Number systems](/docs/learn/keys/number-systems): binary, decimal, and hex
 :::
-
 
 ## Why Generate Your Own Seed?
 
@@ -72,7 +62,6 @@ By generating your own seed with physical dice, you:
 - **Eliminate software vulnerabilities**: dice can't be hacked
 - **Understand what you're protecting**: knowledge is security
 
-
 ## Who Is This Guide For?
 
 | Situation | Recommendation |
@@ -92,7 +81,6 @@ Most current devices (BitBox02, Trezor Safe, Jade, Keystone, Coldcard) can mix d
 1. **Roll enough.** 50 rolls contribute ~128 bits, enough to protect you even if the device's generator is completely broken. For a 24-word seed, use 99 rolls (~256 bits). This is exactly why dice-rolled Coldcard seeds survived the incident untouched.
 2. **Cross-check the result.** A buggy or malicious device could silently ignore your rolls. Catch it by re-deriving the seed from the same rolls on an independent device (a [SeedSigner](/docs/seedsigner/) or [Krux](/docs/reference/hardware-wallet-comparison/#seedsigner--krux-diy), or this guide's manual process on an air-gapped computer) and comparing all 24 words. If they match, the device honored your entropy.
 
-
 ## Critical Environment Requirements
 
 :::warning Before You Begin
@@ -107,7 +95,6 @@ Your seed generation environment **must** meet ALL of these requirements:
 
 **If any of these are not met, your seed may be compromised before you even finish generating it.**
 :::
-
 
 ## What You'll Need
 
@@ -144,7 +131,6 @@ Once your seed phrase is created, it should be permanently stored on a fireproof
 
 ![Metal seed backup](/img/seed/metalseed.webp)
 
-
 ## How the Numbers Fit Together
 
 Before you start rolling, it helps to see where the process is going. A 24-word BIP39 seed is **264 bits**, and those bits come from two different places:
@@ -162,7 +148,6 @@ Before you start rolling, it helps to see where the process is going. A 24-word 
 You will write your 256 dice bits into a grid of 24 rows, 11 bits per row. That fills 23 rows completely (23 × 11 = 253) and leaves **3 bits** in row 24. Row 24 stays unfinished until Step 3, when the checksum supplies its last 8 bits.
 
 This is why the steps must be done in order: **row 24 does not have a value until Step 3.**
-
 
 ## Step 1: Roll Dice for Entropy
 
@@ -227,7 +212,6 @@ Write your 256 bits into 23 rows of 11 binary digits, plus a 24th row that will 
 You have now generated your 256 bits of entropy: 23 full rows of 11 bits, plus 3 bits in row 24.
 
 **Do not roll dice for the remaining 8 bits.** They are not random data. They are the checksum, and they must be *calculated* from the 256 bits above so your wallet can detect typos later.
-
 
 ## Step 2: Convert Binary to Decimal
 
@@ -306,7 +290,6 @@ Repeat this for rows 1 through 23. You will have 23 decimal numbers, each in the
 |**24)**|0|0|1|–|–|–|–|–|–|–|–|*Step 3*|
 
 </div>
-
 
 ## Step 3: Calculate the Checksum
 
@@ -565,7 +548,6 @@ Tools that offer you a menu of "valid last words" are built for a different star
 The effect is far more visible with 12-word seeds. There the last word carries 7 entropy bits and only 4 checksum bits, so **128 of the 2048 words** are valid last words. That is where most people first run into this idea, and it does not carry over to a dice-rolled seed where every bit of entropy is already fixed.
 :::
 
-
 ## Step 4: Look Up BIP39 Words
 
 BIP39 (Bitcoin Improvement Proposal 39) defines a list of **2048 words**, arranged alphabetically. Each word corresponds to a specific position, and each of your 24 decimal numbers points at one word.
@@ -618,7 +600,6 @@ The words must stay in this exact order. The same 24 words in a different order 
 
 You have now created a 24-word Bitcoin mnemonic seed. The next step confirms it is valid.
 
-
 ## Step 5: Verify Your Seed Phrase
 
 Install a software wallet such as Sparrow on your air-gapped computer and enter the 24 words in order.
@@ -641,7 +622,6 @@ As Step 3 explained, 8 different last words all pass that check, and 7 of them o
 If every word matches, the seed really is the one your dice produced. If any word differs, trust the dice grid and find the mistake before you send any funds to it.
 
 ![Importing the seed into Sparrow Wallet for verification](/img/seed/import.webp)
-
 
 ### Check the same words on a second, independent wallet
 
@@ -671,7 +651,6 @@ Comparing addresses across devices protects the setup, not the coins. Once funde
 
 For this same comparison run against your finished metal backup rather than your paper draft, see [Backup Verification](/docs/wallet-setup/backup-verification/).
 
-
 ## Step 6: Back Up on Metal
 
 Your Bitcoin seed phrase is the key to your funds. If it is lost or compromised, your Bitcoin is gone forever. Paper and digital backups can degrade, get lost, or be destroyed. A metal seed plate is a durable, fireproof, waterproof backup that can last decades.
@@ -693,15 +672,3 @@ Your Bitcoin seed phrase is the key to your funds. If it is lost or compromised,
 Consider splitting your backup across multiple secure locations, and never store the seed digitally or photograph it.
 
 Your Bitcoin is only as safe as your seed backup. Protect it wisely.
-
----
-
-<RelatedArticles
-  title="Related Topics"
-  articles={[
-    { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
-    { title: "Number Systems", href: "/docs/learn/keys/number-systems/", tag: "Technical" },
-    { title: "Air-Gapped Computer", href: "/docs/learn/wallets/air-gapped-wallets/", tag: "Guide" },
-    { title: "Keys Overview", href: "/docs/learn/keys/", tag: "Overview" },
-  ]}
-/>

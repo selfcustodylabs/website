@@ -1,12 +1,12 @@
-import React from 'react';
-import Layout from '@theme/Layout';
+import React from "react";
+import Layout from "@theme/Layout";
 
-import Hero from '@site/src/components/homepage/Hero';
-import TrustSignals from '@site/src/components/homepage/TrustSignals';
-import FeatureBento from '@site/src/components/homepage/FeatureBento';
-import LearningPath from '@site/src/components/homepage/LearningPath';
-import CommunityCallout from '@site/src/components/homepage/CommunityCallout';
-import FinalCTA from '@site/src/components/homepage/FinalCTA';
+import Hero from "@site/src/components/homepage/Hero";
+import TrustSignals from "@site/src/components/homepage/TrustSignals";
+import FeatureBento from "@site/src/components/homepage/FeatureBento";
+import LearningPath from "@site/src/components/homepage/LearningPath";
+import CommunityCallout from "@site/src/components/homepage/CommunityCallout";
+import FinalCTA from "@site/src/components/homepage/FinalCTA";
 
 export default function Home() {
   return (

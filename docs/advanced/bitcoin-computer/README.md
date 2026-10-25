@@ -5,21 +5,14 @@ description: "Build a dedicated Bitcoin computer for secure transactions. Learn 
 keywords: ["bitcoin computer", "dedicated computer", "malware protection", "secure transactions", "self custody"]
 tags: ["bitcoin", "computer", "security", "malware", "advanced"]
 slug: /advanced/bitcoin-computer
+guide:
+  time: "1-2 hours"
+  level: "Beginner to intermediate"
+  cost: "$50-150 (used laptop) or $0 (repurpose old computer)"
+  needs: "Spare laptop or desktop, USB drive"
 ---
 
 # Dedicated Bitcoin Computer
-
-:::info What You'll Do
-In this guide, you will:
-- Understand why a dedicated Bitcoin computer is important
-- Choose hardware for your Bitcoin-only machine
-- Set up a secure environment for transactions
-
-**Time required:** 1-2 hours  
-**Difficulty:** Beginner to Intermediate  
-**Estimated cost:** $50-150 (used laptop) or $0 (repurpose old computer)  
-**Prerequisites:** Spare laptop or desktop, USB drive
-:::
 
 :::tip Background Reading
 Before starting, make sure you understand:
@@ -31,6 +24,7 @@ Before starting, make sure you understand:
 **Never use your regular computer for Bitcoin transactions!** Malware on your everyday machine can compromise your security even if you use a hardware wallet.
 :::
 
+<GuideFacts />
 
 ## What is a Bitcoin Computer?
 
@@ -39,7 +33,6 @@ A Bitcoin computer is a dedicated device for securely creating and broadcasting 
 Transaction signing should still be handled by:
 - A hardware wallet, or
 - An [air-gapped computer](/docs/learn/wallets/air-gapped-wallets) for maximum security
-
 
 ## Why Your Regular Computer is Dangerous
 
@@ -62,7 +55,6 @@ If malware infects your regular computer, attackers could:
 </div>
 
 A dedicated Bitcoin computer isolates your Bitcoin activity from these risks.
-
 
 ## Guide Overview
 

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useEffect, useState } from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 /** One shared Pagefind instance per page load, created on first use. */
 let pagefindPromise = null;
@@ -30,14 +30,14 @@ function loadPagefind(url) {
  * @returns {string}
  */
 export function sectionLabel(url) {
-  const parts = url.split('#')[0].split('/').filter(Boolean);
-  if (parts[0] === 'docs') parts.shift();
+  const parts = url.split("#")[0].split("/").filter(Boolean);
+  if (parts[0] === "docs") parts.shift();
   const trail = parts.length > 1 ? parts.slice(0, -1) : parts;
-  return trail.slice(0, 2).join(' / ').replace(/-/g, ' ');
+  return trail.slice(0, 2).join(" / ").replace(/-/g, " ");
 }
 
 /** Docusaurus puts a zero-width space in each heading's anchor link. */
-const clean = (text) => (text ?? '').replace(/\u200b/g, '').trim();
+const clean = (text) => (text ?? "").replace(/\u200b/g, "").trim();
 
 function normalise(data, query) {
   const title = clean(data.meta?.title) || data.url;
@@ -48,7 +48,9 @@ function normalise(data, query) {
   // page itself, in which case the top of the page is the better answer.
   const section = titleMatches
     ? null
-    : (data.sub_results ?? []).find((s) => s.url.includes('#') && clean(s.title) && clean(s.title) !== title);
+    : (data.sub_results ?? []).find(
+        (s) => s.url.includes("#") && clean(s.title) && clean(s.title) !== title
+      );
   return {
     url: data.url,
     target: section ? section.url : data.url,
@@ -71,28 +73,32 @@ function normalise(data, query) {
  * @returns {{status: string, results: Array<object>, total: number}}
  */
 export default function usePagefind(query, { limit = 8 } = {}) {
-  const url = useBaseUrl('/pagefind/pagefind.js');
-  const [state, setState] = useState({ status: 'idle', results: [], total: 0 });
+  const url = useBaseUrl("/pagefind/pagefind.js");
+  const [state, setState] = useState({ status: "idle", results: [], total: 0 });
 
   useEffect(() => {
     const q = query.trim();
     if (!q) {
-      setState({ status: 'idle', results: [], total: 0 });
+      setState({ status: "idle", results: [], total: 0 });
       return undefined;
     }
     let cancelled = false;
-    setState((s) => ({ ...s, status: 'loading' }));
+    setState((s) => ({ ...s, status: "loading" }));
     loadPagefind(url)
       .then(async (pagefind) => {
         const search = await pagefind.debouncedSearch(q, {}, 120);
         if (cancelled || search === null) return;
         const data = await Promise.all(search.results.slice(0, limit).map((r) => r.data()));
         if (!cancelled) {
-          setState({ status: 'done', results: data.map((d) => normalise(d, q)), total: search.results.length });
+          setState({
+            status: "done",
+            results: data.map((d) => normalise(d, q)),
+            total: search.results.length,
+          });
         }
       })
       .catch(() => {
-        if (!cancelled) setState({ status: 'unavailable', results: [], total: 0 });
+        if (!cancelled) setState({ status: "unavailable", results: [], total: 0 });
       });
     return () => {
       cancelled = true;

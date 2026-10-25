@@ -1,24 +1,26 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import React from "react";
+import Link from "@docusaurus/Link";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
-import useReveal from '@site/src/hooks/useReveal';
+import useReveal from "@site/src/hooks/useReveal";
 
 const collapses = [
   {
-    figure: '$8B',
-    label: 'FTX (2022)',
-    description: 'Customer funds misappropriated in one of the largest financial frauds in crypto history.',
+    figure: "$8B",
+    label: "FTX (2022)",
+    description:
+      "Customer funds misappropriated in one of the largest financial frauds in crypto history.",
   },
   {
-    figure: '~850,000 BTC',
-    label: 'Mt. Gox (2014)',
-    description: 'The largest Bitcoin exchange in the world, hacked and mismanaged over years.',
+    figure: "~850,000 BTC",
+    label: "Mt. Gox (2014)",
+    description: "The largest Bitcoin exchange in the world, hacked and mismanaged over years.",
   },
   {
-    figure: '$4.7B',
-    label: 'Celsius (2022)',
-    description: 'Froze customer withdrawals, then filed for bankruptcy. Customers became unsecured creditors.',
+    figure: "$4.7B",
+    label: "Celsius (2022)",
+    description:
+      "Froze customer withdrawals, then filed for bankruptcy. Customers became unsecured creditors.",
   },
 ];
 
@@ -51,7 +53,7 @@ export default function TrustSignals() {
           >
             <div
               className="mb-5 bg-gradient-to-br from-amber-300 via-amber-500 to-orange-500 bg-clip-text font-display text-5xl font-extrabold leading-none tracking-tightest text-transparent md:text-6xl"
-              style={{ backgroundSize: '200% 200%' }}
+              style={{ backgroundSize: "200% 200%" }}
             >
               {c.figure}
             </div>
@@ -66,8 +68,8 @@ export default function TrustSignals() {
 
       <div className="mt-12 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
         <p className="max-w-xl text-base text-white/60">
-          None of them were holding their own keys. If they had been, none of those collapses
-          would have touched their coins.
+          None of them were holding their own keys. If they had been, none of those collapses would
+          have touched their coins.
         </p>
         <Link
           to="/docs/learn/fundamentals/holding-bitcoin"

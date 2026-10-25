@@ -7,11 +7,8 @@ tags: ["checklist", "security", "self custody", "safety"]
 slug: /wallet-setup/before-you-deposit
 ---
 
-<SectionBadge section="wallet-setup" label="Final Checklist" />
 
 # Before You Deposit: Critical Checklist
-
-<ProgressIndicator current={3} total={3} title="Wallet Setup Journey" />
 
 :::danger Stop and Read This
 This page exists because people have lost Bitcoin by skipping these steps.
@@ -31,7 +28,6 @@ Moving Bitcoin to a new wallet is **irreversible**. If anything is wrong with yo
 - Untested backup → False sense of security
 
 This checklist ensures you've verified everything *before* it matters.
-
 
 ## The Pre-Deposit Checklist
 
@@ -110,7 +106,6 @@ Before sending significant funds:
 - [ ] **I have successfully sent a transaction** from this wallet
 - [ ] **I understand the fee structure** and how to set appropriate fees
 
-
 ## The Mental Checklist
 
 Beyond technical verification, ask yourself:
@@ -135,7 +130,6 @@ Beyond technical verification, ask yourself:
 - [ ] I have taken at least 24 hours between setup and significant deposit
 - [ ] I have read through this entire checklist, not just skimmed it
 
-
 ## Red Flags: Stop If...
 
 🚩 **Do NOT deposit if any of these apply:**
@@ -150,7 +144,6 @@ Beyond technical verification, ask yourself:
 
 **It's better to delay than to lose everything.**
 
-
 ## After You Deposit
 
 Once funds are in your wallet:
@@ -161,7 +154,6 @@ Once funds are in your wallet:
    - Your receive address publicly (address reuse = privacy leak)
    - Screenshots showing your balance
    - That you own Bitcoin at all (for physical security)
-
 
 ## What If Something Goes Wrong?
 
@@ -192,7 +184,6 @@ Assume compromise. Immediately:
 2. Transfer all funds to the new wallet
 3. The old seed should never be used again
 
-
 ## Summary
 
 This checklist exists because self-custody is serious. The freedom and security it provides comes with real responsibility.
@@ -205,32 +196,3 @@ Then, and only then, are you ready to truly own your Bitcoin.
 If you've completed this checklist, you've finished the core wallet setup journey. You now have a secure hardware wallet with a verified backup. Welcome to true Bitcoin ownership!
 :::
 
-<NextSteps 
-  title="What's Next?"
-  items={[
-    { 
-      label: "Recommended", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Verify transactions yourself: the ultimate step in sovereignty" 
-    },
-    { 
-      label: "Privacy", 
-      title: "UTXO Management", 
-      href: "/docs/learn/privacy/utxo-management/", 
-      description: "Learn to manage your coins for better privacy and lower fees" 
-    },
-    { 
-      label: "Advanced", 
-      title: "Multisig Setup", 
-      href: "/docs/learn/wallets/multisig/", 
-      description: "Eliminate single points of failure for significant holdings" 
-    },
-    { 
-      label: "Learn More", 
-      title: "Why Privacy Matters", 
-      href: "/docs/learn/privacy/why-privacy-matters/", 
-      description: "Understand what's exposed on the blockchain and how to protect yourself" 
-    }
-  ]}
-/>

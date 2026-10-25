@@ -111,7 +111,6 @@ const GUIDES = {
       },
     ],
   },
-
 };
 
 // ===========================================
@@ -151,27 +150,6 @@ export const guideProgress = buildGuideProgress();
 // ===========================================
 
 /**
- * Section mapping based on URL path
- */
-export function getSectionFromPath(path) {
-  if (path.includes("/learn/fundamentals")) return "fundamentals";
-  if (path.includes("/learn/keys")) return "keys";
-  if (path.includes("/learn/wallets")) return "wallets";
-  if (path.includes("/learn/transactions")) return "transactions";
-  if (path.includes("/learn/privacy")) return "privacy";
-  if (path.includes("/learn/nodes")) return "nodes";
-  if (path.includes("/security/")) return "security";
-  if (path.includes("/advanced/")) return "advanced";
-  if (path.includes("/reference/")) return "reference";
-  if (path.includes("/wallet-setup/")) return "wallets";
-  if (path.includes("/bitcoin-node/")) return "nodes";
-  if (path.includes("/libreboot/")) return "advanced";
-  if (path.includes("/coreboot/")) return "advanced";
-  if (path.includes("/seedsigner/")) return "seedsigner";
-  return null;
-}
-
-/**
  * Get progress data for a given path
  */
 export function getProgressData(path) {
@@ -207,7 +185,6 @@ export function getGuidePaths(slug) {
 
 export default {
   guideProgress,
-  getSectionFromPath,
   getProgressData,
   getAllGuides,
   getGuideBySlug,

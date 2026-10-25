@@ -4,6 +4,11 @@ title: "Build a Nostr Signing Device (NSD)"
 description: "Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension."
 keywords: ["nostr signing device", "NSD", "LILYGO", "hardware signer", "nostr security", "Horse extension"]
 tags: ["nostr", "signing device", "hardware", "security"]
+guide:
+  time: "1-2 hours"
+  level: "Intermediate"
+  cost: "$10-15 (LILYGO T-Display)"
+  needs: "LILYGO T-Display, USB cable, Chrome-based browser"
 ---
 
 # Nostr Signing Device (NSD)
@@ -12,18 +17,7 @@ tags: ["nostr", "signing device", "hardware", "security"]
 This guide is a bonus project for Bitcoiners interested in Nostr. The same security principles that apply to Bitcoin private keys - keeping them offline and isolated - apply to your Nostr identity.
 :::
 
-:::info What You'll Do
-In this guide, you will:
-- Set up Arduino IDE for ESP32 development
-- Flash firmware to a LILYGO T-Display
-- Install the Horse browser extension
-- Connect to Nostr clients securely
-
-**Time required:** 1-2 hours  
-**Difficulty:** Intermediate  
-**Estimated cost:** $10-15 (LILYGO T-Display)  
-**Prerequisites:** LILYGO T-Display, USB cable, Chrome-based browser
-:::
+<GuideFacts />
 
 ## Why Use a Hardware Signing Device?
 

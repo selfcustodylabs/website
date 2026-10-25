@@ -1,0 +1,129 @@
+/**
+ * Print: black on white, chrome removed, nothing hidden.
+ *
+ * People print the dice-seed, passphrase and multisig pages to work through
+ * them at an offline desk, so a printout must carry the whole procedure:
+ * collapsed <details> are opened before printing (src/theme/Layout), external
+ * links show their address, and tables are not split across pages.
+ */
+
+@media print {
+  @page {
+    margin: 16mm 14mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .navbar,
+  .navbar-sidebar,
+  .theme-doc-sidebar-container,
+  .theme-doc-toc-desktop,
+  .theme-doc-toc-mobile,
+  .theme-doc-breadcrumbs,
+  .pagination-nav,
+  .footer,
+  .theme-doc-footer,
+  .theme-announcement-bar,
+  [class*="skipToContent"],
+  [data-pagefind-ignore],
+  [class*="copyButton"],
+  [class*="buttonGroup"],
+  .hash-link,
+  dialog {
+    display: none !important;
+  }
+
+  main,
+  .container,
+  .row,
+  .col,
+  [class*="docItemCol"],
+  [class*="docMainContainer"],
+  [class*="docItemContainer"] {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .markdown,
+  .markdown * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .markdown h1 {
+    font-size: 20pt;
+  }
+
+  .markdown h2 {
+    margin-top: 1.4em;
+    padding-top: 0;
+    border-top: 0;
+    font-size: 14pt;
+    break-after: avoid;
+  }
+
+  .markdown h3 {
+    font-size: 12pt;
+    break-after: avoid;
+  }
+
+  .markdown a {
+    text-decoration: underline;
+  }
+
+  .markdown a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+
+  .markdown pre,
+  .markdown div[class*="codeBlockContainer"] {
+    border: 1px solid #999 !important;
+    white-space: pre-wrap !important;
+    word-break: break-all;
+    break-inside: avoid;
+  }
+
+  .markdown table,
+  .fixed-width-table,
+  .comparison-table {
+    break-inside: avoid;
+    overflow: visible !important;
+  }
+
+  .markdown table th {
+    border-bottom: 1px solid #000 !important;
+  }
+
+  .markdown table td {
+    border-bottom: 1px solid #bbb !important;
+  }
+
+  .theme-admonition {
+    border-left: 2pt solid #000 !important;
+    break-inside: avoid;
+  }
+
+  /* The diagrams are drawn light-on-dark; invert them for paper and turn the
+     hue back so the amber subject stays warm. */
+  .doc-diagram img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  img {
+    max-width: 100% !important;
+    break-inside: avoid;
+  }
+}

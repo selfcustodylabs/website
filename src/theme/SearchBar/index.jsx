@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
-import Link from '@docusaurus/Link';
-import { useHistory } from '@docusaurus/router';
+import React, { useCallback, useEffect, useId, useRef, useState } from "react";
+import Link from "@docusaurus/Link";
+import { useHistory } from "@docusaurus/router";
 
-import usePagefind from '@site/src/components/search/usePagefind';
-import SearchResults from '@site/src/components/search/SearchResults';
-import styles from './styles.module.css';
+import usePagefind from "@site/src/components/search/usePagefind";
+import SearchResults from "@site/src/components/search/SearchResults";
+import styles from "./styles.module.css";
 
 function isTyping(target) {
   if (!(target instanceof HTMLElement)) return false;
@@ -29,12 +29,12 @@ function SearchIcon() {
 export default function SearchBar() {
   const dialogRef = useRef(null);
   const inputRef = useRef(null);
-  const listId = useId().replace(/:/g, '');
+  const listId = useId().replace(/:/g, "");
   const history = useHistory();
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [active, setActive] = useState(-1);
-  const { status, results, total } = usePagefind(open ? query : '');
+  const { status, results, total } = usePagefind(open ? query : "");
 
   const show = useCallback(() => {
     const dialog = dialogRef.current;
@@ -50,26 +50,29 @@ export default function SearchBar() {
 
   useEffect(() => {
     const onKey = (e) => {
-      const combo = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
-      if (combo || (e.key === '/' && !isTyping(e.target) && !e.metaKey && !e.ctrlKey && !e.altKey)) {
+      const combo = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k";
+      if (
+        combo ||
+        (e.key === "/" && !isTyping(e.target) && !e.metaKey && !e.ctrlKey && !e.altKey)
+      ) {
         e.preventDefault();
         show();
       }
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [show]);
 
   useEffect(() => setActive(results.length > 0 ? 0 : -1), [results]);
 
   const onInputKey = (e) => {
-    if (e.key === 'ArrowDown' && results.length > 0) {
+    if (e.key === "ArrowDown" && results.length > 0) {
       e.preventDefault();
       setActive((i) => (i + 1) % results.length);
-    } else if (e.key === 'ArrowUp' && results.length > 0) {
+    } else if (e.key === "ArrowUp" && results.length > 0) {
       e.preventDefault();
       setActive((i) => (i <= 0 ? results.length - 1 : i - 1));
-    } else if (e.key === 'Enter' && active >= 0 && results[active]) {
+    } else if (e.key === "Enter" && active >= 0 && results[active]) {
       e.preventDefault();
       history.push(results[active].target);
       hide();
@@ -77,13 +80,21 @@ export default function SearchBar() {
   };
 
   let status_line = null;
-  if (status === 'loading' && results.length === 0) status_line = 'Searching';
-  else if (status === 'done' && total === 0) status_line = 'Nothing matches that. Try a shorter word.';
-  else if (status === 'unavailable') status_line = 'The search index is built with the site (npm run build); it is not available in the dev server.';
+  if (status === "loading" && results.length === 0) status_line = "Searching";
+  else if (status === "done" && total === 0)
+    status_line = "Nothing matches that. Try a shorter word.";
+  else if (status === "unavailable")
+    status_line =
+      "The search index is built with the site (npm run build); it is not available in the dev server.";
 
   return (
     <>
-      <button type="button" className={styles.trigger} onClick={show} aria-label="Search the guides">
+      <button
+        type="button"
+        className={styles.trigger}
+        onClick={show}
+        aria-label="Search the guides"
+      >
         <SearchIcon />
         <span className={styles.triggerLabel}>Search</span>
         <kbd className={styles.kbd}>/</kbd>

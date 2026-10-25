@@ -5,18 +5,19 @@ description: "Step-by-step Bitcoin coinjoin with JoinMarket NG and Jam: your own
 keywords: ["coinjoin tutorial", "joinmarket ng", "jam joinmarket", "how to coinjoin bitcoin", "joinmarket guide", "jam web ui", "bitcoin privacy tutorial", "coinjoin setup"]
 tags: ["coinjoin", "privacy", "joinmarket"]
 slug: /learn/privacy/coinjoin-tutorial
+guide:
+  time: "1-2 hours of setup, then mixing runs on its own"
+  level: "Advanced"
+  cost: "Maker fees (a small fraction of a percent) plus mining fees"
 ---
 
 # Run Your First CoinJoin with JoinMarket NG and Jam
 
-:::info What You'll Do
-**Time:** 1-2 hours of setup, then mixing runs on its own  
-**Difficulty:** Advanced  
-**Cost:** Maker fees (a small fraction of a percent) plus mining fees  
-**Prerequisites:** The [CoinJoin theory page](/docs/learn/privacy/coinjoin/) and a [Bitcoin node](/docs/bitcoin-node/), or the willingness to set one up in Step 1.
-:::
-
 The [theory page](/docs/learn/privacy/coinjoin/) explains why CoinJoin works. This page is the practice: by the end you will have run real coinjoins through your own node, with no coordinator and no third-party server involved.
+
+<GuideFacts />
+
+Read first: the [CoinJoin theory page](/docs/learn/privacy/coinjoin/). You also need a [Bitcoin node](/docs/bitcoin-node/), or the willingness to set one up in Step 1.
 
 The stack has four pieces, and you will set them up in this order:
 

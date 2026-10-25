@@ -11,7 +11,9 @@
   .reveal {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 700ms ease-out, transform 700ms ease-out;
+    transition:
+      opacity 700ms ease-out,
+      transform 700ms ease-out;
     will-change: opacity, transform;
   }
 

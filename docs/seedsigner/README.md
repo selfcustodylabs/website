@@ -4,28 +4,22 @@ title: "SeedSigner: Our Favourite Bitcoin Signing Device"
 description: "Why SeedSigner is the Self Custody Labs favourite signing solution: stateless, air-gapped, fully verifiable, and built by you from commodity parts."
 keywords: ["seedsigner", "bitcoin signing device", "stateless wallet", "air-gapped wallet", "diy hardware wallet", "seedqr"]
 tags: ["seedsigner", "hardware wallet", "diy", "security"]
+guide:
+  time: "1-2 hours build, plus practice"
+  level: "Intermediate to advanced"
+  cost: "$50-80 in parts"
+  needs: "comfort with basic command-line verification and DIY assembly"
 ---
 
 # SeedSigner: Our Favourite
 
 SeedSigner is a Bitcoin signing device you build yourself from about $50 of off-the-shelf Raspberry Pi parts. It is the Self Custody Labs favourite signing solution, and this section explains why, how to [build one](/docs/seedsigner/build-guide/), and how to [use it](/docs/seedsigner/using-seedsigner/).
 
+<GuideFacts />
+
 :::warning Not for everyone
 Our favourite does not mean our recommendation for most people. SeedSigner adds layers of complication that a beginner should not take on: you assemble the hardware, verify and flash the software, and manage your seed backup entirely on your own. If you are setting up self-custody for the first time, start with the [hardware wallet setup guide](/docs/wallet-setup/hardware-wallet/) and a device from our [comparison page](/docs/reference/hardware-wallet-comparison/). Come back when the workflow below sounds appealing rather than intimidating.
 :::
-
-:::info What You'll Do in This Guide
-- Understand the stateless security model and its trade-offs
-- Source parts and assemble the device
-- Verify and flash SeedSigner OS
-- Generate a seed with dice, back it up as a SeedQR, and sign with Sparrow
-
-**Time required:** 1-2 hours build, plus practice  
-**Difficulty:** Intermediate to advanced  
-**Estimated cost:** $50-80 in parts  
-**Prerequisites:** comfort with basic command-line verification and DIY assembly
-:::
-
 
 ## Why It's Our Favourite
 
@@ -41,7 +35,6 @@ The [2026 Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incide
 
 **True QR air gap.** The device communicates with your wallet software exclusively through QR codes in both directions. No USB, no Bluetooth, no SD card shuffling. The recommended Raspberry Pi Zero v1.3 has no WiFi or Bluetooth hardware at all.
 
-
 ## The Honest Trade-Offs
 
 Every one of these is the flip side of a strength. Weigh them seriously:
@@ -56,7 +49,6 @@ Every one of these is the flip side of a strength. Weigh them seriously:
 
 For a deeper look at how SeedSigner compares to a full air-gapped computer, see [air-gapped wallets](/docs/learn/wallets/air-gapped-wallets/).
 
-
 ## Where It Fits Best
 
 - **As a multisig key.** SeedSigner is an outstanding quorum member in a [multisig setup](/docs/learn/wallets/multisig/): a key with no vendor, no supply chain, and no stored state diversifies beautifully against your other devices.
@@ -65,26 +57,3 @@ For a deeper look at how SeedSigner compares to a full air-gapped computer, see 
 
 Ready? Start with the [build guide](/docs/seedsigner/build-guide/).
 
-<NextSteps
-  title="Build Yours"
-  items={[
-    {
-      label: "Next",
-      title: "Build Your Own SeedSigner",
-      href: "/docs/seedsigner/build-guide/",
-      description: "Parts list, software verification, flashing, and assembly"
-    },
-    {
-      label: "Then",
-      title: "Using SeedSigner",
-      href: "/docs/seedsigner/using-seedsigner/",
-      description: "Dice seeds, SeedQR backups, and signing with Sparrow"
-    },
-    {
-      label: "Compare",
-      title: "Hardware Wallet Comparison",
-      href: "/docs/reference/hardware-wallet-comparison/",
-      description: "How SeedSigner stacks up against every device we cover"
-    }
-  ]}
-/>

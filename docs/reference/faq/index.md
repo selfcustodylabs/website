@@ -7,7 +7,6 @@ tags: ["faq", "questions", "help"]
 slug: /reference/faq
 ---
 
-<SectionBadge section="reference" label="FAQ" />
 
 # Frequently Asked Questions
 

@@ -30,7 +30,6 @@ In July 2026, attackers drained ~$116M from wallets whose seeds were generated o
 
 **Jump to section:** [How to Choose](#how-to-choose-practices-before-devices) · [Security Comparison](#security-architecture-comparison) · [Recommendations](#recommendations-by-use-case) · [Where to Buy](#where-to-buy)
 
-
 ## Quick Comparison Table
 
 Prices are manufacturer list prices as of August 2026; check official stores for current figures.
@@ -53,7 +52,6 @@ Prices are manufacturer list prices as of August 2026; check official stores for
 
 </div>
 
-
 ## How to Choose: Practices Before Devices
 
 The 2026 incident made one thing measurable: **the practices around a device protected people better than the device itself**. Coldcard owners who used dice entropy, a strong passphrase, or multisig lost nothing. Owners who trusted the device's defaults lost everything. So before comparing screens and chips, decide on your practices:
@@ -63,7 +61,6 @@ The 2026 incident made one thing measurable: **the practices around a device pro
 3. **Use [multisig](/docs/learn/wallets/multisig/) across vendors** for significant holdings, so no single vendor's mistake can reach your funds.
 
 With those in place, the device choice is about verification ergonomics (screen, buttons, QR vs USB), supply-chain trust, and how the vendor has behaved when things went wrong.
-
 
 ## Detailed Comparisons
 
@@ -277,7 +274,6 @@ Bitkey fails the standard this page was rebuilt around: **you cannot verify it**
 Bitkey's honest niche is someone leaving an exchange who would otherwise never self-custody at all: its 2-of-3 design with an Emergency Exit Kit is far better than custodial. But if you can follow a setup guide, a [BitBox02 Nova or Trezor Safe 5](#recommendations-by-use-case) gives you a portable, [standards-based seed](/docs/learn/keys/seed/) you can verify and recover anywhere.
 :::
 
-
 ## Security Architecture Comparison
 
 ### Secure Elements
@@ -328,7 +324,6 @@ New for 2026, and it earned its place: when the Coldcard news broke, response sp
 | Coinkite (Coldcard) | Fast patch + advisory, but see [dismissed 2025 warning](/docs/learn/wallets/coldcard-entropy-incident/) | The incident itself |
 | Ledger | Brief statement ~14h later | Recover controversy (2023), customer-data breach (2020) |
 
-
 ## Recommendations by Use Case
 
 ### 👶 First Hardware Wallet
@@ -351,7 +346,6 @@ Stateless, assembled from commodity parts, entropy fully in your hands. See the 
 **Multisig across vendors**, e.g. Jade Plus + Keystone 3 Pro + Trezor Safe 5
 Three architectures, three supply chains, three firmware teams. July 2026 proved this isn't paranoia: multisig users with a weak Coldcard key lost nothing. See the [multisig guide](/docs/learn/wallets/multisig/).
 
-
 ## Where to Buy
 
 Always buy directly from manufacturers:
@@ -373,7 +367,6 @@ Always buy directly from manufacturers:
 Amazon, eBay, and other resellers have been sources of tampered devices. Only buy directly from manufacturers or authorized resellers listed on their official websites. And regardless of vendor: initialize the device yourself; a "pre-configured" wallet or included seed card is always a scam.
 :::
 
-
 ## Summary
 
 There's no single "best" hardware wallet, but after 2026 there is a best *approach*: open hardware, entropy you supplied or verified, a passphrase, and multisig once the stakes are real.
@@ -389,26 +382,3 @@ There's no single "best" hardware wallet, but after 2026 there is a best *approa
 
 For most users: start with a **BitBox02 Nova** or **Trezor Safe 5**, generate the seed with **your own dice entropy**, and graduate to **multisig** as your holdings grow. And if you're comfortable building your own hardware, our favourite solution on this whole page is the [SeedSigner](/docs/seedsigner/).
 
-<NextSteps 
-  title="Ready to Set Up?"
-  items={[
-    { 
-      label: "Next", 
-      title: "Hardware Wallet Setup Guide", 
-      href: "/docs/wallet-setup/hardware-wallet/", 
-      description: "Step-by-step instructions for your first hardware wallet" 
-    },
-    { 
-      label: "Context", 
-      title: "The Coldcard Entropy Incident", 
-      href: "/docs/learn/wallets/coldcard-entropy-incident/", 
-      description: "The 2026 exploit that reshaped how this page ranks devices" 
-    },
-    { 
-      label: "Advanced", 
-      title: "Multisig Setup", 
-      href: "/docs/learn/wallets/multisig/", 
-      description: "Use multiple hardware wallets for maximum security" 
-    }
-  ]}
-/>

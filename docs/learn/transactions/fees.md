@@ -212,26 +212,3 @@ Quick reference for planning:
 
 Understanding fees helps you save money and ensures your transactions confirm when you need them.
 
-<NextSteps 
-  title="Related Topics"
-  items={[
-    { 
-      label: "Essential", 
-      title: "UTXOs Explained", 
-      href: "/docs/learn/transactions/utxos/", 
-      description: "Understand how UTXOs affect your transaction fees" 
-    },
-    { 
-      label: "Optimize", 
-      title: "UTXO Management", 
-      href: "/docs/learn/privacy/utxo-management/", 
-      description: "Strategies to minimize fees and improve privacy" 
-    },
-    { 
-      label: "Tools", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Get accurate fee estimation from your own mempool" 
-    }
-  ]}
-/>

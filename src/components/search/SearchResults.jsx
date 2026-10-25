@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
+import React from "react";
+import Link from "@docusaurus/Link";
 
-import styles from './SearchResults.module.css';
+import styles from "./SearchResults.module.css";
 
 /**
  * A list of Pagefind results in the lab-manual style: mono section label,

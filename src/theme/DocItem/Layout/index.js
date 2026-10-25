@@ -10,11 +10,7 @@ import {
   generateFAQSchema,
   generateItemListSchema,
 } from "@site/src/data/schema";
-import {
-  SITE_URL,
-  DEFAULT_ORGANIZATION,
-  DEFAULT_PUBLISHER,
-} from "@site/src/data/schema/constants";
+import { SITE_URL, DEFAULT_ORGANIZATION, DEFAULT_PUBLISHER } from "@site/src/data/schema/constants";
 import { normalizePath } from "@site/src/utils/pathUtils";
 import ogManifest from "@site/src/data/ogManifest.json";
 
@@ -134,7 +130,7 @@ export default function DocItemLayoutWrapper(props) {
     generateBreadcrumbSchema(path) ?? deriveBreadcrumbSchema(sidebarBreadcrumbs);
   const articleSchema = enrichArticleSchema(
     generateArticleSchema(path) ?? deriveArticleSchema(metadata, path),
-    metadata,
+    metadata
   );
   const faqSchema = generateFAQSchema(path);
   const itemListSchema = generateItemListSchema(path);

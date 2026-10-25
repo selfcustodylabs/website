@@ -13,17 +13,12 @@ export default function CategorySection({ title, description, items }) {
   const ref = useReveal();
 
   return (
-    <section
-      ref={ref}
-      className="reveal mt-16 first:mt-0"
-    >
+    <section ref={ref} className="reveal mt-16 first:mt-0">
       <div className="mb-8">
         <h2 className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
           {title}
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-white/60 sm:text-base">
-          {description}
-        </p>
+        <p className="mt-2 text-sm leading-relaxed text-white/60 sm:text-base">{description}</p>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (

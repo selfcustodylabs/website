@@ -260,8 +260,7 @@ export default function LearnPage() {
     {
       icon: MenuBookRoundedIcon,
       title: "Bitcoin Glossary",
-      description:
-        "100+ terms defined. From UTXO to Taproot: every Bitcoin term you need to know.",
+      description: "100+ terms defined. From UTXO to Taproot: every Bitcoin term you need to know.",
       href: "/docs/reference/glossary",
       badge: "NEW",
       level: "Beginner",

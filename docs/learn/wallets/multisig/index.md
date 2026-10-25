@@ -5,11 +5,17 @@ description: "Understand and set up a Bitcoin multisig wallet. Concepts, 2-of-3 
 keywords: ["multisig", "multi-signature", "bitcoin security", "2-of-3", "hardware wallet", "self custody", "sparrow"]
 tags: ["multisig", "security", "wallet", "bitcoin", "hardware wallet", "advanced"]
 slug: /learn/wallets/multisig
+guide:
+  time: "2-3 hours"
+  level: "Intermediate to advanced"
+  cost: "$200-450 (3 hardware wallets) + $30-60 (metal seed backups)"
 ---
 
 # Multisig: Multi-Signature Wallets
 
 A **multisig** (multi-signature) wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. The usual choice for an individual is 2-of-3, where any two of three keys can move the funds, so losing one key does not lose your bitcoin and stealing one key does not steal it.
+
+<GuideFacts />
 
 A standard Bitcoin wallet has a single point of failure instead: one seed phrase controls everything. If it's stolen, your bitcoin is gone. If it's lost, your bitcoin is gone. Multisig eliminates that vulnerability by distributing control across several keys.
 
@@ -195,17 +201,6 @@ Some services offer "assisted" multisig where they hold one key:
 
 If you understand the concepts above and want to implement a 2-of-3 multisig, the following sections walk you through the full DIY setup with Sparrow Wallet.
 
-:::info What You'll Do
-- Set up 3 hardware wallets for multisig
-- Create a 2-of-3 multisig wallet in Sparrow
-- Properly back up seed phrases and wallet descriptor
-- Test your recovery procedure
-
-**⏱️ Time required:** 2-3 hours
-**📊 Difficulty:** Intermediate to Advanced
-**💰 Estimated cost:** $200-450 (3 hardware wallets) + $30-60 (metal seed backups)
-:::
-
 ## Choosing Your Configuration
 
 ### 2-of-3: The Sweet Spot
@@ -327,26 +322,3 @@ Before depositing significant funds, verify:
 - [ ] You understand you need M keys to spend (not just one)
 - [ ] Hardware wallets are registered with the multisig configuration
 
-<NextSteps
-  title="Set Up Your Multisig"
-  items={[
-    {
-      label: "Step 1",
-      title: "Hardware Setup",
-      href: "/docs/learn/wallets/multisig/hardware-setup/",
-      description: "Prepare your three signing devices for multisig"
-    },
-    {
-      label: "Step 2",
-      title: "Sparrow Setup",
-      href: "/docs/learn/wallets/multisig/sparrow-setup/",
-      description: "Create your 2-of-3 multisig wallet in Sparrow"
-    },
-    {
-      label: "Step 3",
-      title: "Backup & Recovery",
-      href: "/docs/learn/wallets/multisig/backup-recovery/",
-      description: "Properly secure your seeds and wallet descriptor"
-    }
-  ]}
-/>

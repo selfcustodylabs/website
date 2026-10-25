@@ -208,32 +208,3 @@ Congratulations, you now understand the core concepts of Bitcoin self-custody: k
 
 **Now it's time to put knowledge into practice.**
 
-<NextSteps 
-  title="What's Next?"
-  items={[
-    { 
-      label: "Recommended", 
-      title: "Hardware Wallet Setup", 
-      href: "/docs/wallet-setup/hardware-wallet/", 
-      description: "Ready to secure your Bitcoin? Start here." 
-    },
-    { 
-      label: "Important", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Complete your self-custody setup with your own verification" 
-    },
-    { 
-      label: "Browse", 
-      title: "All Guides", 
-      href: "/guides/", 
-      description: "Explore security, privacy, and advanced setup guides" 
-    },
-    { 
-      label: "Reference", 
-      title: "Glossary", 
-      href: "/docs/reference/glossary/", 
-      description: "Quick definitions for any terms you need to revisit" 
-    }
-  ]}
-/>

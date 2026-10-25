@@ -1,11 +1,11 @@
-import React, { useEffect, useId, useState } from 'react';
-import Layout from '@theme/Layout';
-import Head from '@docusaurus/Head';
-import { useHistory, useLocation } from '@docusaurus/router';
+import React, { useEffect, useId, useState } from "react";
+import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
+import { useHistory, useLocation } from "@docusaurus/router";
 
-import usePagefind from '@site/src/components/search/usePagefind';
-import SearchResults from '@site/src/components/search/SearchResults';
-import styles from './search.module.css';
+import usePagefind from "@site/src/components/search/usePagefind";
+import SearchResults from "@site/src/components/search/SearchResults";
+import styles from "./search.module.css";
 
 /**
  * Full search results at /search/?q=...
@@ -18,30 +18,35 @@ import styles from './search.module.css';
 export default function SearchPage() {
   const location = useLocation();
   const history = useHistory();
-  const listId = useId().replace(/:/g, '');
-  const [query, setQuery] = useState('');
+  const listId = useId().replace(/:/g, "");
+  const [query, setQuery] = useState("");
 
   // Read ?q= after hydration, so the server-rendered and first client render
   // agree (the server has no query string).
   useEffect(() => {
-    setQuery(new URLSearchParams(location.search).get('q') ?? '');
+    setQuery(new URLSearchParams(location.search).get("q") ?? "");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const q = query.trim();
-    history.replace({ search: q ? `?q=${encodeURIComponent(q)}` : '' });
+    history.replace({ search: q ? `?q=${encodeURIComponent(q)}` : "" });
   }, [query, history]);
 
   const { status, results, total } = usePagefind(query, { limit: 40 });
 
   let line = null;
-  if (status === 'loading' && results.length === 0) line = 'Searching';
-  else if (status === 'done') line = total === 0 ? 'Nothing matches that.' : `${total} page${total === 1 ? '' : 's'}`;
-  else if (status === 'unavailable') line = 'The search index is built with the site and is not available in the dev server.';
+  if (status === "loading" && results.length === 0) line = "Searching";
+  else if (status === "done")
+    line = total === 0 ? "Nothing matches that." : `${total} page${total === 1 ? "" : "s"}`;
+  else if (status === "unavailable")
+    line = "The search index is built with the site and is not available in the dev server.";
 
   return (
-    <Layout title="Search" description="Search every Self Custody Labs guide. The search runs in your browser and the query is not sent anywhere.">
+    <Layout
+      title="Search"
+      description="Search every Self Custody Labs guide. The search runs in your browser and the query is not sent anywhere."
+    >
       <Head>
         <meta name="robots" content="noindex, follow" />
       </Head>

@@ -84,9 +84,22 @@ function proseLines(body) {
   return out;
 }
 
+/**
+ * Warning rules that reached zero and became errors, so they cannot return.
+ * When a rewrite drives another warning to zero, add it here.
+ */
+const PROMOTED = new Set([
+  "what-youll-box", // Oct 2026: replaced by <GuideFacts /> and guide: frontmatter
+  "emoji-sidebar", // Oct 2026: emoji leaked into breadcrumbs and their JSON-LD
+]);
+
 const errors = [];
 const warnings = new Map();
 const warn = (rule, msg) => {
+  if (PROMOTED.has(rule)) {
+    errors.push(`${msg} [${rule}]`);
+    return;
+  }
   if (!warnings.has(rule)) warnings.set(rule, []);
   warnings.get(rule).push(msg);
 };

@@ -35,7 +35,11 @@ export const breadcrumbMappings = {
   "/docs/learn/wallets/software-wallets/": ["Learn", "Wallets", "Software Wallets"],
   "/docs/learn/wallets/hardware-wallets/": ["Learn", "Wallets", "Hardware Wallets"],
   "/docs/learn/wallets/air-gapped-wallets/": ["Learn", "Wallets", "Air-Gapped Wallets"],
-  "/docs/learn/wallets/coldcard-entropy-incident/": ["Learn", "Wallets", "Coldcard Entropy Incident"],
+  "/docs/learn/wallets/coldcard-entropy-incident/": [
+    "Learn",
+    "Wallets",
+    "Coldcard Entropy Incident",
+  ],
   "/docs/learn/wallets/multisig/": ["Learn", "Wallets", "Multisig"],
   "/docs/learn/wallets/multisig/hardware-setup/": ["Learn", "Multisig", "Hardware Setup"],
   "/docs/learn/wallets/multisig/sparrow-setup/": ["Learn", "Multisig", "Sparrow Setup"],

@@ -1,17 +1,17 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import React from "react";
+import Link from "@docusaurus/Link";
+import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
+import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import VpnKeyRoundedIcon from "@mui/icons-material/VpnKeyRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
-import BackgroundMotif from './BackgroundMotif';
+import BackgroundMotif from "./BackgroundMotif";
 
 const pills = [
-  { icon: ShieldRoundedIcon, label: 'Privacy First' },
-  { icon: SchoolRoundedIcon, label: 'Step-by-Step' },
-  { icon: VpnKeyRoundedIcon, label: 'Be Your Own Bank' },
+  { icon: ShieldRoundedIcon, label: "Privacy First" },
+  { icon: SchoolRoundedIcon, label: "Step-by-Step" },
+  { icon: VpnKeyRoundedIcon, label: "Be Your Own Bank" },
 ];
 
 function Pill({ icon: Icon, label }) {
@@ -24,19 +24,19 @@ function Pill({ icon: Icon, label }) {
 }
 
 function scrollToContent() {
-  const target = document.getElementById('trust-signals');
+  const target = document.getElementById("trust-signals");
   if (!target) return;
 
   // Measure the navbar rather than parsing --ifm-navbar-height: that token is
   // set in rem (3.75rem), so parseInt would read it as 3.
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.querySelector(".navbar");
   const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 60;
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   window.scrollTo({
     top: target.getBoundingClientRect().top + window.scrollY - navbarHeight,
-    behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    behavior: prefersReducedMotion ? "auto" : "smooth",
   });
 }
 
@@ -58,7 +58,7 @@ export default function Hero() {
           <br />
           <span
             className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
-            style={{ backgroundSize: '200% 200%' }}
+            style={{ backgroundSize: "200% 200%" }}
           >
             Your Bitcoin
           </span>

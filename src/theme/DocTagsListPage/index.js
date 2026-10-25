@@ -1,6 +1,6 @@
-import React from 'react';
-import Head from '@docusaurus/Head';
-import DocTagsListPage from '@theme-original/DocTagsListPage';
+import React from "react";
+import Head from "@docusaurus/Head";
+import DocTagsListPage from "@theme-original/DocTagsListPage";
 
 export default function DocTagsListPageWrapper(props) {
   return (

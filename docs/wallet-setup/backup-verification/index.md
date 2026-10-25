@@ -5,30 +5,22 @@ description: "Learn how to properly verify your Bitcoin seed backup works before
 keywords: ["bitcoin", "seed backup", "verification", "recovery test", "self custody", "hardware wallet"]
 tags: ["backup", "verification", "seed", "security", "self custody", "wallet setup"]
 slug: /wallet-setup/backup-verification
+guide:
+  time: "30-60 minutes"
+  level: "Beginner"
+  cost: "Free"
+  needs: "A seed phrase backup to test"
 ---
 
-<SectionBadge section="security" label="Wallet Setup Guide" />
-
 # Backup Verification Guide
-
-:::info What You'll Do
-In this guide, you will:
-- Understand why backup verification is critical
-- Learn safe methods to test your backup
-- Perform a complete recovery test
-- Verify your backup without risking funds
-
-**Time required:** 30-60 minutes  
-**Difficulty:** Beginner  
-**Estimated cost:** Free  
-**Prerequisites:** A seed phrase backup to test
-:::
 
 :::danger Why This Matters
 **Thousands of Bitcoin have been lost** because people assumed their backup was correct without testing it. A single wrong word, a smudged letter, or a misread character can make your backup useless.
 
 **Test your backup BEFORE depositing significant funds.**
 :::
+
+<GuideFacts />
 
 ## The Problem
 
@@ -316,26 +308,3 @@ The process is simple:
 
 Taking 30 minutes to verify your backup can save you from losing everything.
 
-<NextSteps 
-  title="Complete Your Setup"
-  items={[
-    { 
-      label: "Final Step", 
-      title: "Before You Deposit", 
-      href: "/docs/wallet-setup/before-you-deposit/", 
-      description: "Complete checklist before moving significant funds to your wallet" 
-    },
-    { 
-      label: "Enhance Security", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Verify transactions yourself for maximum privacy and security" 
-    },
-    { 
-      label: "Advanced", 
-      title: "Consider Multisig", 
-      href: "/docs/learn/wallets/multisig/", 
-      description: "Eliminate single points of failure for significant holdings" 
-    }
-  ]}
-/>

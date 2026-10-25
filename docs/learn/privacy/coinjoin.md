@@ -5,17 +5,18 @@ description: "How Bitcoin CoinJoin works: equal outputs, anonymity sets, the 202
 keywords: ["bitcoin coinjoin", "joinmarket ng", "jam joinmarket", "whirlpool", "ashigaru", "wasabi", "bitcoin privacy", "chain analysis", "anonymity set", "post-mix best practices"]
 tags: ["coinjoin", "privacy", "joinmarket"]
 slug: /learn/privacy/coinjoin
+guide:
+  time: "30 minutes"
+  level: "Intermediate"
 ---
 
 # CoinJoin: How It Works and When to Use It
 
 CoinJoin is Bitcoin's most important on-chain privacy tool. It lets strangers combine their transactions into one, so that blockchain analysts can no longer tell who owns which coin. This page explains the concept: how it works, what it can and cannot do, which tools still work in 2026, and the post-mix rules that decide whether your privacy survives.
 
-:::info What You'll Learn
-**Time:** 30 minutes  
-**Difficulty:** Intermediate  
-**Prerequisites:** Understanding of [UTXOs](/docs/learn/transactions/utxos), [chain analysis](/docs/learn/privacy/chain-analysis), and [UTXO management](/docs/learn/privacy/utxo-management).
-:::
+<GuideFacts />
+
+Read first: [UTXOs](/docs/learn/transactions/utxos), [chain analysis](/docs/learn/privacy/chain-analysis) and [UTXO management](/docs/learn/privacy/utxo-management).
 
 :::tip Want to actually do it?
 This page is the theory. When you are ready to run real coinjoins, follow the hands-on guide: [CoinJoin Tutorial: JoinMarket NG and Jam](/docs/learn/privacy/coinjoin-tutorial/).

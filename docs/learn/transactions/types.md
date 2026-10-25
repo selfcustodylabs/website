@@ -17,7 +17,6 @@ Once the unsigned transaction is ready, you transfer it to an offline (air-gappe
 
 You can learn more in the Air-Gapped Computer [section](/docs/learn/wallets/air-gapped-wallets).
 
-
 ## Fully Signed
 
 Once your offline (air-gapped) computer signs the transaction using your private keys, it becomes a fully signed transaction.
@@ -27,7 +26,6 @@ You then transfer it back to your online computer and load it into your wallet t
 Since the air-gapped machine is offline, it can’t broadcast the transaction itself, it just signs it securely.
 
 You can also create and save fully signed transactions ahead of time, so they’re ready to be broadcast later when you're online.
-
 
 ## Partially Signed (PSBT)
 
@@ -46,26 +44,3 @@ Here’s how it works:
 
 You now understand how Bitcoin moves: from UTXOs to transaction creation, signing, broadcasting, fees, and different transaction types. Next, explore why privacy matters on a transparent blockchain.
 
-<NextSteps 
-  title="What's Next?"
-  items={[
-    { 
-      label: "Continue", 
-      title: "Why Privacy Matters", 
-      href: "/docs/learn/privacy/why-privacy-matters/", 
-      description: "Understand what's exposed on Bitcoin's public blockchain" 
-    },
-    { 
-      label: "Practical", 
-      title: "UTXO Management Guide", 
-      href: "/docs/learn/privacy/utxo-management/", 
-      description: "Learn to manage your coins for privacy and lower fees" 
-    },
-    { 
-      label: "Advanced", 
-      title: "Multisig Setup", 
-      href: "/docs/learn/wallets/multisig/", 
-      description: "PSBTs are essential for multisig. Ready to set one up?" 
-    }
-  ]}
-/>

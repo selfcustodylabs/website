@@ -1,46 +1,30 @@
 import React from "react";
 import DocItemContent from "@theme-original/DocItem/Content";
 import { useLocation } from "@docusaurus/router";
-import { getSectionFromPath, getProgressData } from "@site/src/data/progressData";
-import { SectionBadge, ProgressIndicator } from "@site/src/components";
-import { normalizePath, matchesAnyPattern } from "@site/src/utils/pathUtils";
 
-/** Pages that have their own headers and shouldn't show auto-generated badges */
-const INDEX_PAGES = [
-  "/docs/learn/",
-  "/docs/security/",
-  "/docs/advanced/",
-  "/docs/reference/",
-  "/docs/wallet-setup/",
-];
+import { getProgressData } from "@site/src/data/progressData";
+import ProgressIndicator from "@site/src/components/ProgressIndicator";
+import { normalizePath } from "@site/src/utils/pathUtils";
 
+/**
+ * Adds the step indicator above the H1 of every page that belongs to a
+ * multi-step guide (src/data/progressData.js). The section eyebrow comes from
+ * the breadcrumbs (src/theme/DocBreadcrumbs), so nothing else goes here: rule 7
+ * keeps the space between the H1 and the answer empty.
+ */
 export default function DocItemContentWrapper(props) {
   const location = useLocation();
-  const path = normalizePath(location.pathname);
-
-  // Get section and progress data
-  const section = getSectionFromPath(path);
-  const progressData = getProgressData(path);
-
-  // Don't show on index/overview pages (they have their own headers)
-  const isIndexPage = matchesAnyPattern(path, INDEX_PAGES);
+  const progress = getProgressData(normalizePath(location.pathname));
 
   return (
     <>
-      {/* Section badge and progress indicator */}
-      {!isIndexPage && (section || progressData) && (
-        <div style={{ marginBottom: "16px" }} data-pagefind-ignore="all">
-          {section && <SectionBadge section={section} />}
-          {progressData && (
-            <ProgressIndicator
-              current={progressData.current}
-              total={progressData.total}
-              title={progressData.guideName}
-              steps={progressData.steps}
-            />
-          )}
-        </div>
-      )}
+      {progress ? (
+        <ProgressIndicator
+          current={progress.current}
+          title={progress.guideName}
+          steps={progress.steps}
+        />
+      ) : null}
       <DocItemContent {...props} />
     </>
   );

@@ -94,7 +94,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -113,7 +112,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/advanced-bitcoin-computer.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -134,7 +132,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -153,7 +150,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -171,7 +167,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/advanced-inheritance-planning.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -192,7 +187,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -212,7 +206,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -230,7 +223,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-electrum-server.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -250,7 +242,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -268,7 +259,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/bitcoin-node-parmanode-setup.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -288,7 +278,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -306,7 +295,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/coreboot.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -327,7 +315,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -345,7 +332,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/coreboot-external-flashing.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -365,7 +351,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -383,7 +368,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal-downgrading-bios.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -403,7 +387,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -421,7 +404,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/coreboot-internal-unlocking-bios.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -441,7 +423,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -459,7 +440,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
@@ -480,7 +460,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -498,7 +477,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-choosing-your-path.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -518,7 +496,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -536,7 +513,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-threat-models.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -556,7 +532,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -574,7 +549,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-fundamentals-what-is-self-custody.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -594,7 +568,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -612,7 +585,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-derivation-path.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -632,7 +604,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -651,7 +622,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -669,7 +639,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-passphrase.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -690,7 +659,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -710,7 +678,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -728,7 +695,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-keys-xprv.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -748,7 +714,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -766,7 +731,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-nodes.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -786,7 +750,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -804,7 +767,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-nodes-why-run-node.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -824,7 +786,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -842,7 +803,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-chain-analysis.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -862,7 +822,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -881,7 +840,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-coinjoin.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "FAQPage",
         "HowTo",
@@ -903,7 +861,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -922,7 +879,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -940,7 +896,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-privacy-utxo-management.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -961,7 +916,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -979,7 +933,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -999,7 +952,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1017,7 +969,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-create.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1037,7 +988,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1055,7 +1005,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-sign.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1075,7 +1024,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1093,7 +1041,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-transactions-understanding.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1113,7 +1060,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1132,7 +1078,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1150,7 +1095,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-air-gapped-wallets.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -1171,7 +1115,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1191,7 +1134,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1209,7 +1151,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "FAQPage",
         "HowTo",
@@ -1231,7 +1172,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1249,7 +1189,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/learn-wallets-multisig-hardware-setup.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1269,7 +1208,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1288,7 +1226,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1306,7 +1243,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/libreboot.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -1327,7 +1263,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1345,7 +1280,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/libreboot-build.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1365,7 +1299,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1383,7 +1316,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/libreboot-raspberry-pico.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1403,7 +1335,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1421,7 +1352,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/libreboot-raspberry-pico-connection.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1441,7 +1371,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1459,7 +1388,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/libreboot-roms.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1479,7 +1407,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1497,7 +1424,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -1518,7 +1444,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1536,7 +1461,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-client-connect.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1556,7 +1480,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1574,7 +1497,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/nostr-signing-device-horse-extension.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1594,7 +1516,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1612,7 +1533,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/reference.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
@@ -1633,7 +1553,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1651,7 +1570,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/reference-faq.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
@@ -1672,7 +1590,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1691,7 +1608,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/reference-faq-recovery-scams.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
@@ -1712,7 +1628,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1732,7 +1647,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1750,7 +1664,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/reference-hardware-wallet-comparison.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "FAQPage",
         "Organization+EducationalOrganization",
@@ -1771,7 +1684,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -1791,7 +1703,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1810,7 +1721,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1828,7 +1738,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/seedsigner.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
@@ -1849,7 +1758,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1867,7 +1775,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/seedsigner-using-seedsigner.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -4080,7 +3987,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "ItemList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -4099,7 +4005,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-backup-verification.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",
@@ -4120,7 +4025,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "BreadcrumbList",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -4138,7 +4042,6 @@
       "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-hardware-wallet.png",
       "jsonLd": [
         "Article",
-        "BreadcrumbList",
         "BreadcrumbList",
         "HowTo",
         "Organization+EducationalOrganization",

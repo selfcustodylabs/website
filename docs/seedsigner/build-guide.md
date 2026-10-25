@@ -14,7 +14,6 @@ This guide takes you from a parts list to a working, verified SeedSigner. Budget
 The build is not a cost-saving compromise; it is the point. Generic parts mean there is no bitcoin-specific supply chain to intercept, and flashing software you verified yourself means there is no vendor you have to believe. If you would rather buy a pre-assembled unit (such as a SeedSigner+ kit), you are re-introducing a supply chain; buy only from a reputable builder, and still flash and verify the OS image yourself.
 :::
 
-
 ## Parts List
 
 <div class="fixed-width-table">
@@ -32,7 +31,6 @@ The build is not a cost-saving compromise; it is the point. Generic parts mean t
 **On the board choice:** SeedSigner OS also runs on the Pi Zero W, Pi Zero 2 W, Pi 2B, Pi 3B, and Pi 4B. The Zero v1.3 remains our recommendation because its air gap is physical: there is no radio to switch off and nothing to misconfigure. If you use a board with WiFi/Bluetooth (like the faster Zero 2 W), understand that you are trusting software to keep the radios off; SeedSigner OS never enables them, but absent hardware beats disabled hardware.
 
 **Sourcing:** buy parts from general electronics retailers (the official [seedsigner.com](https://seedsigner.com) site maintains a current parts list with links). Spreading purchases across ordinary retailers is exactly what makes the supply-chain story boring, which is what you want.
-
 
 ## Download and Verify SeedSigner OS
 
@@ -60,7 +58,6 @@ Both commands must succeed: a good signature from the key you checked, and an `O
 SeedSigner OS builds are reproducible: with the project's build system you can compile the image from source on your own machine and get a byte-identical result. You do not have to go that far, but the fact that anyone can is what keeps the published images honest.
 :::
 
-
 ## Flash the MicroSD Card
 
 Use any flashing tool you trust. With plain `dd` on Linux (double-check the target device name with `lsblk` first; `dd` overwrites without asking):
@@ -71,7 +68,6 @@ sudo dd if=seedsigner_os.0.8.7.pi0.img of=/dev/sdX bs=4M status=progress conv=fs
 
 Raspberry Pi Imager or balenaEtcher work too; if you use Raspberry Pi Imager, choose "Use custom image" and do not let it apply any OS customization.
 
-
 ## Assemble the Device
 
 1. **Connect the camera.** Lift the retaining clip on the Pi Zero's camera connector, insert the ribbon cable with the contacts facing the board, and press the clip closed. The Zero's connector is smaller than a full-size Pi's, which is why the Zero-specific ribbon matters.
@@ -81,33 +77,9 @@ Raspberry Pi Imager or balenaEtcher work too; if you use Raspberry Pi Imager, ch
 
 First boot takes under a minute and lands on the SeedSigner home screen. The device never needs, and never asks for, a network connection.
 
-
 ## Sanity Checks Before Real Funds
 
 - Power-cycle the device and confirm it remembers nothing: no seeds should survive a reboot.
 - Generate a throwaway test seed, load it into a hot wallet, and run one full sign-and-broadcast cycle on a small amount you can afford to lose.
 - Practice the full [usage workflow](/docs/seedsigner/using-seedsigner/), including restoring your backup, before trusting it with savings. The [backup verification guide](/docs/wallet-setup/backup-verification/) applies here in full.
 
-<NextSteps
-  title="Device Built?"
-  items={[
-    {
-      label: "Next",
-      title: "Using SeedSigner",
-      href: "/docs/seedsigner/using-seedsigner/",
-      description: "Generate a dice seed, back up a SeedQR, sign with Sparrow"
-    },
-    {
-      label: "Entropy",
-      title: "Randomness & Dice Rolls",
-      href: "/docs/learn/keys/random/",
-      description: "Why user-supplied entropy matters and how to verify it"
-    },
-    {
-      label: "Verify",
-      title: "Backup Verification",
-      href: "/docs/wallet-setup/backup-verification/",
-      description: "Prove your backup restores before depositing"
-    }
-  ]}
-/>

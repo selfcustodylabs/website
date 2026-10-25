@@ -5,28 +5,19 @@ description: "Step-by-step guide to setting up your first hardware wallet. Learn
 keywords: ["hardware wallet", "bitcoin", "self custody", "coldcard", "trezor", "ledger", "keystone", "setup guide"]
 tags: ["hardware wallet", "self custody", "bitcoin", "security", "wallet setup"]
 slug: /wallet-setup/hardware-wallet
+guide:
+  time: "1-2 hours"
+  level: "Beginner to intermediate"
+  cost: "$70-250 (hardware wallet)"
 ---
 
 # Hardware Wallet Setup Guide
 
-:::info What You'll Do
-In this guide, you will:
-- Choose the right hardware wallet for your needs
-- Initialize your device securely
-- Generate or import a seed phrase
-- Verify your backup works
-- Connect to wallet software
-- Receive and send your first transaction
-
-**Time required:** 1-2 hours  
-**Difficulty:** Beginner to Intermediate  
-**Estimated cost:** $70-250 (hardware wallet)  
-**Prerequisites:** None - this is a beginner guide
-:::
-
 :::tip Why This Matters
 A hardware wallet is the foundation of secure Bitcoin self-custody. Unlike software wallets, your private keys never touch an internet-connected device, protecting you from malware, hackers, and remote attacks.
 :::
+
+<GuideFacts />
 
 ## What is a Hardware Wallet?
 
@@ -278,26 +269,3 @@ Now that your hardware wallet is set up:
 4. **[Learn UTXO Management](/docs/learn/privacy/utxo-management)**: Manage your coins effectively
 5. **Consider [Multisig](/docs/learn/wallets/multisig)**: For significant holdings
 
-<NextSteps 
-  title="Continue Your Setup"
-  items={[
-    { 
-      label: "Next Step", 
-      title: "Verify Your Backup", 
-      href: "/docs/wallet-setup/backup-verification/", 
-      description: "Critical: Test that your seed backup actually works before trusting it with funds" 
-    },
-    { 
-      label: "Then", 
-      title: "Before You Deposit", 
-      href: "/docs/wallet-setup/before-you-deposit/", 
-      description: "Final checklist before moving significant Bitcoin to your wallet" 
-    },
-    { 
-      label: "Learn More", 
-      title: "Hardware Wallets Explained", 
-      href: "/docs/learn/wallets/hardware-wallets/", 
-      description: "Understand the theory behind how hardware wallets keep you safe" 
-    }
-  ]}
-/>

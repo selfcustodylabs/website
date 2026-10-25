@@ -28,7 +28,6 @@ These words aren't random: they're drawn from a specific list of **2048 carefull
 Your seed phrase **is** your Bitcoin. Anyone who sees these words can take everything. Never photograph them, type them into a computer (except your hardware wallet), or store them digitally.
 :::
 
-
 ## Why Words Instead of Numbers?
 
 Bitcoin private keys are enormous numbers, so large that writing them down accurately is nearly impossible for humans. A single digit wrong means your Bitcoin is gone forever.
@@ -47,7 +46,6 @@ No human can reliably copy that. Even converting to decimal doesn't help much: y
 - Easier to read and write accurately
 - Self-correcting (you'll notice if you wrote "reword" instead of "reward")
 - Harder to confuse (the word list was designed to avoid similar-looking words)
-
 
 ## How Seed Phrases Work
 
@@ -69,7 +67,6 @@ This is why **word order matters**: the words encode a specific number, and scra
 
 ![Words](/img/basics/words.webp)
 
-
 ## Why This Matters for You
 
 Understanding seed phrases isn't just academic; it has practical implications:
@@ -80,13 +77,11 @@ Understanding seed phrases isn't just academic; it has practical implications:
 
 **Different wallets, same seed.** Because BIP39 is a standard, you can restore your seed phrase in almost any Bitcoin wallet: Trezor, Ledger, Coldcard, Sparrow, or dozens of others. You're not locked into any vendor.
 
-
 ## The Checksum: Built-in Error Detection
 
 The last word of your seed phrase isn't fully random. It contains checksum bits that verify the rest of the phrase is valid. This means if you make a typo when restoring, most wallets will immediately tell you the phrase is invalid rather than creating a different (empty) wallet.
 
 However, the checksum only catches most errors, not all. Always verify your backup by testing recovery before depositing significant funds.
-
 
 ---
 
@@ -134,7 +129,6 @@ board potato whisper weasel chunk rival obvious clean
 
 The alphabetical ordering of the word list means words starting with 'A' represent lower numbers, while words near the end represent higher numbers. This becomes intuitive once you've worked with seed phrases for a while.
 
-
 ---
 
 ## Ready to Create Your Own Seed?
@@ -144,13 +138,3 @@ Now that you understand how seed phrases work, you can take full control by gene
 :::tip Next Step: DIY Seed Generation
 Learn how to create your own Bitcoin seed phrase with verifiable entropy in our **[DIY Seed Generation Guide](/docs/learn/keys/random/)**. This hands-on guide walks you through every step, from rolling dice to calculating checksums.
 :::
-
-<RelatedArticles 
-  title="Related Topics"
-  articles={[
-    { title: "Private Keys Explained", href: "/docs/learn/keys/intro/", tag: "Learn" },
-    { title: "Passphrases (25th Word)", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
-    { title: "DIY Seed Generation", href: "/docs/learn/keys/random/", tag: "Guide" },
-    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
-  ]}
-/>

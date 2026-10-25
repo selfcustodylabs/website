@@ -15,7 +15,6 @@ The extended private key is derived from the binary private key (along with an o
 Adding a passphrase significantly changes the resulting extended private key. Likewise, modifying the derivation path alters the generated keys and addresses. It’s generally best to stick with the default derivation path provided by your wallet software, but make sure to write it down for future reference.
 :::
 
-
 ## Why the Extended Private Key Matters
 
 The extended private key is responsible for generating all Bitcoin addresses in a wallet and granting the ability to spend from them. The key structure works as follows:
@@ -26,13 +25,11 @@ The extended private key is responsible for generating all Bitcoin addresses in 
 
 Additionally, the extended private key is used to derive the extended public key, which we’ll cover next.
 
-
 ## Security Considerations
 
 Each individual private key does not reveal the extended private key. While I’m not a cryptography expert, my understanding is that an individual private key might theoretically reveal the next private key in sequence, though this is uncertain. To stay safe, never share any private key with anyone.
 
 However, it is certain that a public key cannot reveal its corresponding private key, nor can it reveal any other private key in the wallet. This is crucial to understand for security.
-
 
 ## Generating and Testing an Extended Private Key
 
@@ -56,15 +53,3 @@ xprv9yVYaFXM2uUDeaj3STkiHS8svtqoASkVZ8hdTYuBdgVQGKjr76ks922e4r6826YvdQtQdu71ZA2q
 - Keys starting with uppercase “X”, “Y”, or “Z” are used for multisignature wallets.
 
 Understanding the extended private key is essential because it underpins all wallet addresses and transactions. Proper handling ensures security and smooth Bitcoin management.
-
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Extended Public Keys (xpub)", href: "/docs/learn/keys/xpub/", tag: "Next" },
-    { title: "Derivation Paths", href: "/docs/learn/keys/derivation-path/", tag: "Learn" },
-    { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
-    { title: "Passphrases", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
-  ]}
-/>

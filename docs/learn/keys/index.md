@@ -104,13 +104,3 @@ Start with the foundation:
 Or if you want the practical summary:
 
 → **[Seed Phrases](/docs/learn/keys/seed)**: The 24 words that control your Bitcoin
-
-<RelatedArticles 
-  title="Related Sections"
-  articles={[
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
-    { title: "DIY Seed Generation", href: "/docs/learn/keys/random/", tag: "Guide" },
-    { title: "Glossary", href: "/docs/reference/glossary/", tag: "Reference" },
-  ]}
-/>

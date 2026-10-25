@@ -12,7 +12,6 @@ Now that you understand [why privacy matters](/docs/learn/privacy/why-privacy-ma
 
 This page provides an overview of privacy techniques. Each has dedicated guides for implementation.
 
-
 ## The Privacy Mindset
 
 Before diving into techniques, adopt these principles:
@@ -37,7 +36,6 @@ Share only what's necessary:
 - Use new addresses for each transaction
 - Don't post addresses publicly unless required
 - Consider who can see your transaction
-
 
 ## Privacy Techniques Overview
 
@@ -83,7 +81,6 @@ These actively defeat chain analysis.
 
 </div>
 
-
 ## Run Your Own Node
 
 **Why it matters:**
@@ -101,7 +98,6 @@ With your own node:
 → **Learn:** [What is a Bitcoin Node](/docs/learn/nodes/what-is-node) | [Why Run Your Own](/docs/learn/nodes/why-run-node)
 
 → **Guide:** [Bitcoin Node Setup](/docs/bitcoin-node)
-
 
 ## UTXO Management
 
@@ -121,7 +117,6 @@ UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you o
 4. **Consolidate carefully:** Only combine same-source UTXOs
 
 → **Guide:** [UTXO Management](/docs/learn/privacy/utxo-management)
-
 
 ## CoinJoin
 
@@ -144,7 +139,6 @@ CoinJoin directly breaks the chain analysis heuristics by:
 
 → **Guide:** [CoinJoin](/docs/learn/privacy/coinjoin)
 
-
 ## Acquiring Bitcoin Privately
 
 **The acquisition problem:**
@@ -165,7 +159,6 @@ If you buy bitcoin through a KYC exchange, your identity is linked from the star
 </div>
 
 → **Guide:** Coming soon
-
 
 ## Network-Level Privacy
 
@@ -192,7 +185,6 @@ Even if your transactions look private on-chain, you might leak information at t
 
 → **Guide:** [Tor Setup](/docs/bitcoin-node/tor)
 
-
 ## What You Cannot Fix
 
 Some privacy losses are permanent:
@@ -214,7 +206,6 @@ Some privacy losses are permanent:
 - CoinJoin existing coins for forward privacy
 - Be more careful going forward
 
-
 ## Privacy and Tradeoffs
 
 Every technique has tradeoffs:
@@ -231,7 +222,6 @@ Every technique has tradeoffs:
 </div>
 
 Choose based on your threat model and resources.
-
 
 ## Building Your Privacy Practice
 
@@ -250,7 +240,6 @@ Choose based on your threat model and resources.
 - Keep different sources separate
 - Think before each transaction
 
-
 ## Key Takeaways
 
 - **Run your own node** to stop leaking addresses
@@ -266,32 +255,3 @@ Choose based on your threat model and resources.
 
 You now understand why privacy matters, how blockchain surveillance works, and the techniques available to protect yourself. Next, learn about running your own Bitcoin node for maximum sovereignty.
 
-<NextSteps 
-  title="What's Next?"
-  items={[
-    { 
-      label: "Continue", 
-      title: "What is a Bitcoin Node?", 
-      href: "/docs/learn/nodes/what-is-node/", 
-      description: "Understand the infrastructure that makes Bitcoin work" 
-    },
-    { 
-      label: "Recommended", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Stop leaking your addresses to third parties" 
-    },
-    { 
-      label: "Practical", 
-      title: "UTXO Management Guide", 
-      href: "/docs/learn/privacy/utxo-management/", 
-      description: "Implement coin control and labeling today" 
-    },
-    { 
-      label: "Advanced", 
-      title: "CoinJoin Guide", 
-      href: "/docs/learn/privacy/coinjoin/", 
-      description: "Break the chain analysis links" 
-    }
-  ]}
-/>

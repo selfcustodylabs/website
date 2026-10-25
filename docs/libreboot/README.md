@@ -4,33 +4,22 @@ title: "Libreboot Installation Guide"
 description: "Install Libreboot open-source firmware to replace your BIOS. Remove Intel ME backdoors and enhance security for your Bitcoin computer."
 keywords: ["libreboot", "open source firmware", "Intel ME", "BIOS replacement", "bitcoin security"]
 tags: ["libreboot", "open source", "bios", "firmware"]
+guide:
+  time: "3-5 hours"
+  level: "Advanced"
+  cost: "$15-30 (Raspberry Pi Pico + SOIC8 clip + jumper wires)"
+  needs: "Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip"
 ---
 
 # Libreboot BIOS
 
-<FeaturedImage
-  src="/img/libreboot/t480s.webp"
-  alt="ThinkPad T480s with Libreboot firmware"
-  caption="ThinkPad T480s running Libreboot open-source firmware"
-/>
-
-:::info What You'll Do
-In this guide, you will:
-- Set up external flashing hardware (Raspberry Pi Pico + SOIC8 clip)
-- Build Libreboot from source
-- Flash Libreboot to your laptop's BIOS chip
-- Configure bootloader options
-
-**Time required:** 3-5 hours  
-**Difficulty:** Advanced  
-**Estimated cost:** $15-30 (Raspberry Pi Pico + SOIC8 clip + jumper wires)  
-**Prerequisites:** Supported laptop (ThinkPad recommended), Raspberry Pi Pico, SOIC8 clip
-:::
+![A ThinkPad T480s booting Libreboot: the purple GRUB menu with the leaping-deer logo on screen](/img/libreboot/t480s.webp)
 
 :::tip Background Reading
 This guide assumes you're building a [Bitcoin Computer](/docs/advanced/bitcoin-computer) or [Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets). If you're not sure why open-source firmware matters, see those guides first.
 :::
 
+<GuideFacts />
 
 ## Why Libreboot?
 
@@ -48,7 +37,6 @@ For a Bitcoin-focused laptop, security and privacy are paramount. Libreboot prov
 </div>
 
 For Bitcoiners who value sovereignty, Libreboot ensures your laptop runs only transparent, user-controlled software.
-
 
 ## What is Libreboot?
 

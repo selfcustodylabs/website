@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-export default function useReveal({ threshold = 0.12, rootMargin = '0px 0px -8% 0px' } = {}) {
+export default function useReveal({ threshold = 0.12, rootMargin = "0px 0px -8% 0px" } = {}) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -8,12 +8,12 @@ export default function useReveal({ threshold = 0.12, rootMargin = '0px 0px -8% 
     if (!node) return;
 
     const prefersReducedMotion =
-      typeof window !== 'undefined' &&
+      typeof window !== "undefined" &&
       window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
-      node.classList.add('is-visible');
+    if (prefersReducedMotion || typeof IntersectionObserver === "undefined") {
+      node.classList.add("is-visible");
       return;
     }
 
@@ -21,12 +21,12 @@ export default function useReveal({ threshold = 0.12, rootMargin = '0px 0px -8% 
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold, rootMargin },
+      { threshold, rootMargin }
     );
 
     observer.observe(node);

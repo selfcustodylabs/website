@@ -4,27 +4,19 @@ title: "Run Your Own Bitcoin Node: Complete Setup Guide"
 description: "Complete guide to running your own Bitcoin node. Learn why it matters, compare software options, and follow step-by-step setup instructions with Parmanode."
 keywords: ["bitcoin node", "self custody", "bitcoin core", "full node", "parmanode", "electrum server"]
 tags: ["bitcoin node", "self custody", "guide"]
+guide:
+  time: "2-4 hours of active work (plus days of sync time)"
+  level: "Intermediate"
+  cost: "$100-300 (Raspberry Pi + SSD) or $50-100 (repurpose old PC)"
 ---
-
-<SectionBadge section="nodes" label="Node Guide" />
 
 # Bitcoin Node Guide
 
 Running your own Bitcoin node is one of the most important steps you can take toward true self-sovereignty. It's where "don't trust, verify" becomes real, where you stop relying on others to tell you what's happening on the network and start verifying everything yourself.
 
+<GuideFacts />
+
 This guide will take you from understanding why nodes matter to running your own fully-configured setup.
-
-:::info What You'll Achieve
-By the end of this guide, you will have:
-- Your own Bitcoin full node, verifying every transaction
-- An Electrum server for efficient wallet queries
-- Your wallet connected privately to YOUR infrastructure
-- Optional Tor configuration for network privacy
-
-**Time required:** 2-4 hours of active work (plus days of sync time)  
-**Difficulty:** Intermediate  
-**Cost:** $100-300 (Raspberry Pi + SSD) or $50-100 (repurpose old PC)
-:::
 
 ## Why Run a Node?
 

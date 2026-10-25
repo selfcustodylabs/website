@@ -16,7 +16,6 @@ It is the largest hardware wallet exploit in Bitcoin's history, and it rewrites 
 Treat that seed as compromised and **migrate your funds to a new wallet**. Updating firmware does **not** fix a seed that was already generated weak. Jump to [Am I affected?](#am-i-affected) and [How to migrate](#how-to-migrate-safely).
 :::
 
-
 ## What Happened
 
 <div class="fixed-width-table">
@@ -34,7 +33,6 @@ Treat that seed as compromised and **migrate your funds to a new wallet**. Updat
 </div>
 
 The bug went undetected for **1,978 days**. The attackers remain unidentified as of August 2026, and most of the stolen funds sit unmoved in attacker-controlled addresses. Coinkite apologized and released fixes quickly once the draining began, but has not offered compensation, and the dismissed 2025 warning remains the most damaging fact of the whole affair.
-
 
 ## What Went Wrong
 
@@ -61,7 +59,6 @@ Mk4, Mk5, and Q devices kept substantially more entropy because their secure ele
 
 The firmware was open source the entire time. Statistical randomness tests existed, but they ran against the simulator on a development machine, which used the developer's computer's randomness, not the chip's. Code reviewers confirmed the right function *existed*, but not which implementation the build actually linked. And in May 2025, when a respected Bitcoin developer questioned exactly this code path, the concern was waved off. Open source is necessary for verifiability; this incident proved it is not sufficient.
 
-
 ## Am I Affected?
 
 Your exposure depends on **how and when your seed was created**, not on which firmware the device runs today.
@@ -87,7 +84,6 @@ Two important nuances:
 
 Signing was never affected: Coldcards use deterministic nonces (RFC 6979), so transactions signed by an affected device leaked nothing. The flaw lived entirely in seed *generation*.
 
-
 ## How to Migrate Safely
 
 If your seed falls in a red or orange row above, move your funds to a fresh wallet. Do it calmly and in this order, because rushed migrations cause their own losses:
@@ -101,7 +97,6 @@ If your seed falls in a red or orange row above, move your funds to a fresh wall
 
 If the amounts at stake are significant, consider landing the funds in a [multisig setup](/docs/learn/wallets/multisig/) rather than another single-signature wallet. This incident is the strongest argument for it to date.
 
-
 ## What This Incident Teaches
 
 **Entropy is a trust point.** Every "your keys are generated securely inside the device" claim rests on an RNG you cannot see working. It failed silently here for five years, on a device marketed to and trusted by the most security-conscious users in Bitcoin. The fix is not a better brand; it's [supplying entropy yourself](/docs/learn/keys/random/) and verifying what you can.
@@ -114,7 +109,6 @@ If the amounts at stake are significant, consider landing the funds in a [multis
 
 For the fairness ledger: Coinkite shipped fixes within a day of the exploit, published a detailed advisory, and has since had independent reviewers validate the fixed RNG path. That's a competent crisis response, to a crisis a heeded warning could have prevented fourteen months earlier. Whether you continue using the brand is your call; our current device guidance is in the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/).
 
-
 ## Sources
 
 - [Coinkite security advisory](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/): affected versions and required actions
@@ -124,26 +118,3 @@ For the fairness ledger: Coinkite shipped fixes within a day of the exploit, pub
 
 *Figures on this page are as of early August 2026 and may be revised as investigations continue.*
 
-<NextSteps
-  title="Act on the Lessons"
-  items={[
-    {
-      label: "Do This",
-      title: "Generate Your Own Seed with Dice",
-      href: "/docs/learn/keys/random/",
-      description: "Remove the RNG trust point entirely: verifiable entropy from physical dice"
-    },
-    {
-      label: "Compare",
-      title: "Hardware Wallet Comparison",
-      href: "/docs/reference/hardware-wallet-comparison/",
-      description: "Our post-incident device guidance, updated for the 2026 lineup"
-    },
-    {
-      label: "Level Up",
-      title: "Multisig Wallets",
-      href: "/docs/learn/wallets/multisig/",
-      description: "The structural defense that contained this incident for those who had it"
-    }
-  ]}
-/>

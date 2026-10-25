@@ -1,27 +1,6 @@
 /**
- * Utilities CSS - Content utility classes used inside docs markdown.
- *
- * Image utilities, numbered step lists, and the legacy .guide-card used
- * on a few docs index pages. All restyled for the dark amber aesthetic.
+ * Content utility classes used inside docs markdown.
  */
-
-/* ===========================================
-   IMAGE UTILITIES
-   =========================================== */
-
-.img-center {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-div.img-small img {
-  height: 75px;
-  width: auto;
-  margin-bottom: -2rem;
-  margin-top: 2rem;
-}
 
 /*
  * Line-drawn SVG diagrams (static/img/diagrams/). Scale to the container on
@@ -31,106 +10,14 @@ div.img-small img {
  * 24 Aug 2026).
  */
 .doc-diagram {
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
 }
 
 .doc-diagram img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-/* ===========================================
-   HERO SPACING (docs hub pages)
-   =========================================== */
-
-header.bitcoinDevicesHero,
-header.guidesHero {
-  padding-top: 60px;
-}
-
-.bitcoinDevicesHero h1,
-.guidesHero h1 {
-  margin-bottom: 0.85rem;
-}
-
-.bitcoinDevicesHero p,
-.guidesHero p {
-  margin-top: 0;
-}
-
-/* ===========================================
-   STEP LISTS: numbered procedural lists
-   =========================================== */
-
-.steps-list {
-  counter-reset: step-counter;
-  list-style: none;
-  padding-left: 0;
-}
-
-.steps-list > li {
-  counter-increment: step-counter;
-  position: relative;
-  padding-left: 48px;
-  margin-bottom: 1.5rem;
-}
-
-.steps-list > li::before {
-  content: counter(step-counter);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  background: rgba(245, 158, 11, 0.18);
-  border: 1px solid rgba(245, 158, 11, 0.40);
-  color: #fde68a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.875rem;
-}
-
-/* ===========================================
-   GUIDE CARDS: used on a few docs index pages
-   =========================================== */
-
-.guide-card {
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 1rem;
-  margin: 1rem 0;
-  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
-}
-
-.guide-card:hover {
-  border-color: rgba(245, 158, 11, 0.40);
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-1px);
-}
-
-.guide-card h3 {
-  margin-top: 0;
-  color: white;
-}
-
-.guide-card h3 a {
-  color: #fbbf24;
-}
-
-/* ===========================================
-   CODE WRAPPING: enable word-wrap on long code
-   =========================================== */
-
-.wrap-code pre,
-.wrap-code .prism-code {
-  word-break: break-word;
-  white-space: pre-wrap;
-  overflow-x: visible;
+  border-radius: 0;
 }
 
 /*
@@ -153,5 +40,26 @@ header.guidesHero {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 6px;
+}
+
+/*
+ * Section-index entries on a few docs index pages: a titled block with a
+ * hairline above it, not a card.
+ */
+.guide-card {
+  margin: 0;
+  padding: 1.1rem 0 0.4rem;
+  border-top: var(--scl-rule);
+}
+
+.guide-card h3 {
+  margin-top: 0;
+}
+
+/* Long single-line values (a 256-bit string) wrap instead of scrolling. */
+.wrap-code pre,
+.wrap-code .prism-code {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: visible;
 }

@@ -7,7 +7,6 @@ tags: ["wallet", "setup", "hardware wallet", "backup"]
 slug: /wallet-setup
 ---
 
-<SectionBadge section="security" label="Setup Guides" />
 
 # Wallet Setup Guides
 

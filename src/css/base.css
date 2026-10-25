@@ -1,10 +1,11 @@
 /**
- * Base CSS - Infima root variables, focus rings, skip link.
+ * Base: Infima colour variables, focus rings, skip link.
  *
- * Theme colors and component overrides live in theme/chrome.css.
+ * Palette and type tokens live in tokens.css; region styling in theme/chrome.css.
  */
 
-:root {
+:root,
+html[data-theme="dark"] {
   --ifm-color-primary: #f59e0b;
   --ifm-color-primary-dark: #ea9106;
   --ifm-color-primary-darker: #dd8906;
@@ -14,22 +15,30 @@
   --ifm-color-primary-lightest: #fde68a;
 
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(245, 158, 11, 0.12);
-
-  --transition-fast: 150ms ease;
-}
-
-html[data-theme="dark"] {
-  --ifm-background-color: #0b0b0c;
-  --ifm-background-surface-color: #0f0f11;
+  --ifm-link-color: var(--scl-ink);
+  --ifm-link-hover-color: var(--scl-amber-lit);
+  --ifm-navbar-background-color: var(--scl-bg);
+  --ifm-navbar-link-color: var(--scl-muted);
+  --ifm-navbar-link-hover-color: var(--scl-ink);
+  --ifm-dropdown-background-color: var(--scl-bg);
+  --ifm-menu-color: var(--scl-muted);
+  --ifm-menu-color-active: var(--scl-ink);
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: transparent;
+  --ifm-toc-border-color: var(--scl-hairline);
+  --ifm-toc-link-color: var(--scl-faint);
+  --ifm-footer-background-color: var(--scl-bg);
+  --ifm-hr-background-color: var(--scl-hairline);
+  --ifm-table-border-color: var(--scl-hairline);
+  --docusaurus-highlighted-code-line-bg: rgba(245, 158, 11, 0.1);
 }
 
 /* ===========================================
-   ACCESSIBILITY - Focus Indicators
+   FOCUS: one visible ring everywhere, keyboard only
    =========================================== */
 
 :focus-visible {
-  outline: 2px solid #fbbf24;
+  outline: 2px solid var(--scl-amber-lit);
   outline-offset: 2px;
 }
 
@@ -37,45 +46,21 @@ html[data-theme="dark"] {
   outline: none;
 }
 
-a:focus-visible,
-button:focus-visible,
-[role="button"]:focus-visible {
-  outline: 2px solid #fbbf24;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid #fbbf24;
-  outline-offset: 0;
-}
-
 .menu__link:focus-visible {
-  outline: 2px solid #fbbf24;
   outline-offset: -2px;
 }
 
 /* ===========================================
-   SKIP TO CONTENT LINK
+   SKIP TO CONTENT (Docusaurus's own link; class name is hashed)
    =========================================== */
 
-.skip-to-content {
-  position: absolute;
-  top: -100px;
-  left: 16px;
-  z-index: 1000;
-  padding: 12px 24px;
-  background: #f59e0b;
-  color: #0b0b0c;
+[class*="skipToContent_"]:focus {
+  padding: 0.6rem 1rem;
+  background: var(--scl-amber);
+  color: var(--scl-bg);
+  font-family: var(--scl-font-mono);
+  font-size: 0.8rem;
   font-weight: 700;
-  text-decoration: none;
-  border-radius: 0 0 8px 8px;
-  transition: top 0.2s ease;
-}
-
-.skip-to-content:focus {
-  top: 0;
-  outline: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

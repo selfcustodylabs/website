@@ -5,18 +5,19 @@ description: "Learn how PayJoin (BIP78) enhances Bitcoin privacy by breaking the
 keywords: ["bitcoin payjoin", "BIP78", "P2EP", "pay to endpoint", "bitcoin privacy", "sparrow payjoin", "btcpay server payjoin", "blockchain analysis"]
 tags: ["payjoin", "privacy", "transactions", "BIP78"]
 slug: /learn/privacy/payjoin
+guide:
+  time: "30 minutes"
+  level: "Intermediate"
+  cost: "Free (just transaction fees)"
 ---
 
 # PayJoin: Stealth Privacy for Bitcoin Payments
 
-:::info What You'll Learn
-**Time:** 30 minutes  
-**Difficulty:** Intermediate  
-**Cost:** Free (just transaction fees)  
-**Prerequisites:** Understanding of [UTXOs](/docs/learn/transactions/utxos), a compatible wallet.
-:::
-
 PayJoin (also called P2EP: Pay-to-EndPoint, specified as BIP78) is a privacy technique where **both the sender and the receiver contribute inputs** to a transaction.
+
+<GuideFacts />
+
+Read first: [UTXOs](/docs/learn/transactions/utxos). You also need a wallet that supports PayJoin on both sides.
 
 In a normal Bitcoin transaction the sender provides the inputs, the receiver gets an output, and the sender gets change. PayJoin adds a twist: the receiver also adds one of their own inputs. The on-chain result looks like a normal transaction, but the assumptions that blockchain analysts make about it are wrong.
 
@@ -215,26 +216,3 @@ Maximum privacy uses multiple layers together.
 - [BTCPay Server PayJoin Docs](https://docs.btcpayserver.org/Payjoin/): setup guide for merchants
 - [Sparrow Wallet](https://sparrowwallet.com): desktop wallet with PayJoin support
 
-<NextSteps
-  title="Continue Building Privacy"
-  items={[
-    {
-      label: "Related",
-      title: "CoinJoin Privacy Guide",
-      href: "/docs/learn/privacy/coinjoin/",
-      description: "Break transaction history with collaborative mixing"
-    },
-    {
-      label: "Foundation",
-      title: "UTXO Management",
-      href: "/docs/learn/privacy/utxo-management/",
-      description: "Coin control, consolidation, and dusting-attack defense"
-    },
-    {
-      label: "Context",
-      title: "Why Privacy Matters",
-      href: "/docs/learn/privacy/why-privacy-matters/",
-      description: "Understand what you are defending against"
-    }
-  ]}
-/>

@@ -4,33 +4,22 @@ title: "Coreboot Installation Guide"
 description: "Install Coreboot open-source firmware for a fast, secure, and transparent boot process. Perfect for Bitcoin nodes and security-focused setups."
 keywords: ["coreboot", "open source firmware", "BIOS replacement", "secure boot", "bitcoin computer"]
 tags: ["coreboot", "open source", "bios", "firmware"]
+guide:
+  time: "2-4 hours"
+  level: "Advanced"
+  cost: "$0 (internal flash) or $15-30 (external flash hardware)"
+  needs: "Supported laptop, Linux system for building"
 ---
 
 # Coreboot BIOS
 
-<FeaturedImage
-  src="/img/coreboot/t430s.webp"
-  alt="ThinkPad T430s with Coreboot firmware"
-  caption="ThinkPad T430s running Coreboot open-source firmware"
-/>
-
-:::info What You'll Do
-In this guide, you will:
-- Choose between internal and external flashing methods
-- Build Coreboot from source for your laptop
-- Flash Coreboot to replace your stock BIOS
-- Configure your bootloader payload
-
-**Time required:** 2-4 hours  
-**Difficulty:** Advanced  
-**Estimated cost:** $0 (internal flash) or $15-30 (external flash hardware)  
-**Prerequisites:** Supported laptop, Linux system for building
-:::
+![A ThinkPad T430s running Coreboot with the SeaBIOS payload, its boot menu listing the DVD drive and the internal SSD](/img/coreboot/t430s.webp)
 
 :::tip Background Reading
 This guide assumes you're building a [Bitcoin Computer](/docs/advanced/bitcoin-computer) or [Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets). If you're not sure why open-source firmware matters, see those guides first.
 :::
 
+<GuideFacts />
 
 ## Why Coreboot?
 
@@ -49,11 +38,9 @@ Most computers use proprietary BIOS/UEFI firmware that is closed-source and pote
 
 For Bitcoiners running nodes or signing transactions, Coreboot ensures your machine starts with clean, transparent code.
 
-
 ## What is Coreboot?
 
 Coreboot is a free and open-source replacement for traditional BIOS/UEFI. It initializes your hardware just enough to launch a "payload", like GRUB, SeaBIOS, or a Linux kernel. It’s lightweight, secure, and designed to do only what’s necessary, nothing more.
-
 
 ## How Coreboot Works
 

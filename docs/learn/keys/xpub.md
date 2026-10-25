@@ -18,7 +18,6 @@ The purpose of the extended public key (xpub) might not be immediately obvious. 
 This type of public-key-only wallet is often called a **watch-only wallet**. You can safely use it on an insecure or internet-connected computer without risking your private keys. It allows you to monitor your balance and generate addresses to receive payments.
 :::
 
-
 ## Security Considerations
 
 Even though an extended public key cannot be used to spend Bitcoin, you should still **protect it**. Anyone who has access to your xpub can:
@@ -27,7 +26,6 @@ Even though an extended public key cannot be used to spend Bitcoin, you should s
 - Track your future transactions.
 
 It’s similar to handing someone your **bank statement**, they can’t take your money, but they can see how much you have and where it moves. To maintain financial privacy, **keep your xpub secure** and only share individual addresses when necessary.
-
 
 ## Identifying Extended Public Keys
 
@@ -43,18 +41,6 @@ Instead of starting with **“xprv”**, extended public keys start with:
 - **“zpub”** for native SegWit (Bech32) wallets
 - **“Xpub”**, **“Ypub”**, and **“Zpub”** for multisignature wallets (uppercase letters indicate multisig setups)
 
-
 ## Final Thoughts
 
 Guard your **financial privacy** carefully, and protect your **Bitcoin private keys** even more. While an xpub alone cannot spend funds, it still reveals sensitive information about your wallet’s activity, so treat it with care.
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Derivation Paths", href: "/docs/learn/keys/derivation-path/", tag: "Next" },
-    { title: "Extended Private Keys", href: "/docs/learn/keys/xprv/", tag: "Learn" },
-    { title: "Why Privacy Matters", href: "/docs/learn/privacy/why-privacy-matters/", tag: "Privacy" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-  ]}
-/>

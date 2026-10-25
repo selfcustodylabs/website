@@ -31,7 +31,6 @@ If you’re already familiar with binary, decimal, and hexadecimal, feel free to
 - Just like playing cards where the Jack, Queen, and King represent specific numbers, letters can be used to represent numbers in hex.
 - Hex numbers are more compact. For example, the decimal number 2047 is 11111111111 in binary (11 digits) but just 7FF in hex.
 
-
 <div class="fixed-width-table">
 
 |Decimal|Binary|HEX|
@@ -61,26 +60,3 @@ If you’re already familiar with binary, decimal, and hexadecimal, feel free to
 
 You now understand the foundation of Bitcoin ownership: how private keys work, how they become seed phrases, how child keys are derived, and the number systems that underpin it all.
 
-<NextSteps 
-  title="What's Next?"
-  items={[
-    { 
-      label: "Recommended", 
-      title: "Hardware Wallets Explained", 
-      href: "/docs/learn/wallets/hardware-wallets/", 
-      description: "Learn how hardware wallets protect your keys" 
-    },
-    { 
-      label: "Setup", 
-      title: "Hardware Wallet Setup", 
-      href: "/docs/wallet-setup/hardware-wallet/", 
-      description: "Ready to set up your first hardware wallet?" 
-    },
-    { 
-      label: "Advanced", 
-      title: "DIY Seed Generation", 
-      href: "/docs/learn/keys/random/", 
-      description: "Generate your own seed with verifiable randomness" 
-    }
-  ]}
-/>

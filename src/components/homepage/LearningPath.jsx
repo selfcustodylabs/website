@@ -1,33 +1,35 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import React from "react";
+import Link from "@docusaurus/Link";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
-import useReveal from '@site/src/hooks/useReveal';
+import useReveal from "@site/src/hooks/useReveal";
 
 const stages = [
   {
-    number: '01',
-    title: 'Understand',
-    description: 'Learn what Bitcoin is, why self-custody matters, and how private keys actually work.',
-    href: '/docs/learn/fundamentals',
+    number: "01",
+    title: "Understand",
+    description:
+      "Learn what Bitcoin is, why self-custody matters, and how private keys actually work.",
+    href: "/docs/learn/fundamentals",
   },
   {
-    number: '02',
-    title: 'Set up',
-    description: 'Pick a hardware wallet, generate a seed, and make your first secure backup.',
-    href: '/docs/wallet-setup/hardware-wallet',
+    number: "02",
+    title: "Set up",
+    description: "Pick a hardware wallet, generate a seed, and make your first secure backup.",
+    href: "/docs/wallet-setup/hardware-wallet",
   },
   {
-    number: '03',
-    title: 'Secure',
-    description: 'Add a passphrase, verify your backup, run your own node, and learn UTXO control.',
-    href: '/docs/learn/keys/passphrase',
+    number: "03",
+    title: "Secure",
+    description: "Add a passphrase, verify your backup, run your own node, and learn UTXO control.",
+    href: "/docs/learn/keys/passphrase",
   },
   {
-    number: '04',
-    title: 'Advance',
-    description: 'Graduate to multisig, air-gapped signing, and advanced privacy when you are ready.',
-    href: '/docs/learn/wallets/multisig',
+    number: "04",
+    title: "Advance",
+    description:
+      "Graduate to multisig, air-gapped signing, and advanced privacy when you are ready.",
+    href: "/docs/learn/wallets/multisig",
   },
 ];
 
@@ -35,10 +37,7 @@ export default function LearningPath() {
   const ref = useReveal();
 
   return (
-    <section
-      ref={ref}
-      className="reveal relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32"
-    >
+    <section ref={ref} className="reveal relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
       <div className="mb-16 max-w-2xl">
         <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
           <span className="h-px w-8 bg-amber-400/50" />

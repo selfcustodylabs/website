@@ -7,7 +7,6 @@ tags: ["glossary", "reference"]
 slug: /reference/glossary
 ---
 
-<SectionBadge section="reference" />
 
 # Bitcoin Glossary
 

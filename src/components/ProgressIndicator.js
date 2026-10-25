@@ -1,66 +1,57 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Link from "@docusaurus/Link";
 
-export default function ProgressIndicator({ current, total, title, steps = null }) {
-  const totalCount = steps && steps.length > 0 ? steps.length : total;
+import styles from "./doc/ProgressIndicator.module.css";
 
-  const renderSteps = () => {
-    const baseClass = "h-2 flex-1 rounded-full transition-all duration-200";
-    const pendingClass = `${baseClass} bg-white/10`;
-    const completeClass = `${baseClass} bg-amber-500`;
-    const currentClass = `${baseClass} bg-gradient-to-r from-amber-500 to-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.55)]`;
-
-    if (steps && steps.length > 0) {
-      return steps.map((step, i) => {
-        const stepNum = i + 1;
-        let cls;
-        if (stepNum < current) cls = completeClass;
-        else if (stepNum === current) cls = currentClass;
-        else cls = pendingClass;
-        return (
-          <Link
-            key={step.path || i}
-            to={step.path}
-            className={`${cls} hover:scale-y-125`}
-            title={step.title}
-            aria-label={`Step ${stepNum}: ${step.title}`}
-          />
-        );
-      });
-    }
-
-    return Array.from({ length: totalCount }, (_, i) => {
-      const stepNum = i + 1;
-      let cls;
-      if (stepNum < current) cls = completeClass;
-      else if (stepNum === current) cls = currentClass;
-      else cls = pendingClass;
-      return <div key={i} className={cls} />;
-    });
-  };
+/**
+ * Where this page sits in a multi-step guide: "STEP 2 / 5 · BITCOIN NODE SETUP",
+ * one segment per step (each a link to that step), and the name of the next
+ * step. Rendered above the H1 by src/theme/DocItem/Content from
+ * src/data/progressData.js; not meant to be placed by hand in MDX.
+ *
+ * @param {object} props
+ * @param {number} props.current - 1-based index of this page
+ * @param {string} props.title - guide name
+ * @param {Array<{path: string, title: string}>} props.steps - every step in order
+ */
+export default function ProgressIndicator({ current, title, steps = [] }) {
+  if (steps.length === 0) return null;
+  const next = steps[current];
 
   return (
-    <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-4">
-      <div className="flex items-center justify-between text-sm">
-        <span className="font-display font-semibold text-amber-400">{title}</span>
-        <span className="font-medium text-white/55">
-          Step {current} of {totalCount}
-        </span>
-      </div>
-      <div className="flex gap-1.5">{renderSteps()}</div>
-    </div>
+    <nav
+      className={styles.wrap}
+      aria-label={`${title}: step ${current} of ${steps.length}`}
+      data-pagefind-ignore="all"
+    >
+      <p className={styles.label}>
+        Step {current} / {steps.length} <span className={styles.dot}>·</span> {title}
+      </p>
+      <ol className={styles.steps}>
+        {steps.map((step, i) => {
+          const n = i + 1;
+          const state = n < current ? styles.done : n === current ? styles.here : styles.todo;
+          return (
+            <li key={step.path} className={styles.step}>
+              <Link
+                to={step.path}
+                className={`${styles.segment} ${state}`}
+                aria-current={n === current ? "step" : undefined}
+                title={`${n}. ${step.title}`}
+              >
+                <span className={styles.srOnly}>
+                  Step {n}: {step.title}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ol>
+      {next ? (
+        <p className={styles.next}>
+          Next: <Link to={next.path}>{next.title}</Link>
+        </p>
+      ) : null}
+    </nav>
   );
 }
-
-ProgressIndicator.propTypes = {
-  current: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ),
-};

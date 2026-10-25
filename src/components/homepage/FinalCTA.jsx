@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import React from "react";
+import Link from "@docusaurus/Link";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
-import BackgroundMotif from './BackgroundMotif';
-import useReveal from '@site/src/hooks/useReveal';
+import BackgroundMotif from "./BackgroundMotif";
+import useReveal from "@site/src/hooks/useReveal";
 
 export default function FinalCTA() {
   const ref = useReveal();
@@ -19,7 +19,7 @@ export default function FinalCTA() {
             <br />
             <span
               className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
-              style={{ backgroundSize: '200% 200%' }}
+              style={{ backgroundSize: "200% 200%" }}
             >
               your own bank?
             </span>

@@ -1,0 +1,30 @@
+.colophon {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: var(--scl-rule);
+  color: var(--scl-muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.mark {
+  color: var(--scl-ink);
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.colophon a {
+  color: var(--scl-ink-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 158, 11, 0.6);
+  text-underline-offset: 3px;
+}
+
+.colophon a:hover {
+  color: var(--scl-amber-lit);
+}

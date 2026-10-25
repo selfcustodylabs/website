@@ -1,119 +1,60 @@
 /**
- * Tables CSS - Content-level table utility classes used in docs markdown.
+ * Named table wrappers used inside docs markdown. Generic prose tables are
+ * styled in theme/chrome.css (.markdown table).
  *
- * Generic prose table styling lives in theme/chrome.css under
- * `article .theme-doc-markdown table`. This file only covers the named
- * wrappers (.fixed-width-table, .comparison-table) used across ~48 docs.
+ * - .fixed-width-table: dense numeric grids (the dice worksheet, hex tables).
+ *   Scrolls sideways on a phone rather than wrapping, because a wrapped bit
+ *   grid is unreadable. Centred mono cells, so columns of bits line up.
+ * - .comparison-table: wide feature comparisons, also scrolling on a phone.
  */
 
-/* ===========================================
-   DIY SEED TABLE: fixed-width dice rolling tables
-   =========================================== */
-
-.fixed-width-table {
-  overflow-x: auto;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 1rem;
-}
-
-.fixed-width-table table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-/*
- * These qualify with `article .theme-doc-markdown` (the real ancestry, see
- * chrome.css) to out-specificity the generic prose-table th/td rule there
- * ((0,1,3): article + table + th/td, 1 class). A bare `.fixed-width-table
- * th` is only (0,1,1) and silently loses padding/font-size/text-align to
- * that generic rule.
- */
-article .theme-doc-markdown .fixed-width-table th {
-  background: rgba(245, 158, 11, 0.18);
-  color: #fde68a;
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.5rem 0.2rem;
-  border-bottom: 1px solid rgba(245, 158, 11, 0.30);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 0.68rem;
-}
-
-article .theme-doc-markdown .fixed-width-table td {
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.4rem 0.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-article .theme-doc-markdown .fixed-width-table tr:last-child td {
-  border-bottom: 0;
-}
-
-/* ===========================================
-   COMPARISON TABLE: hardware wallet / tool comparisons
-   =========================================== */
-
+.fixed-width-table,
 .comparison-table {
-  overflow-x: auto;
   margin: 1.5rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 1rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--scl-dim2);
+  border-bottom: var(--scl-rule);
 }
 
+.fixed-width-table table,
 .comparison-table table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: separate;
-  border-spacing: 0;
   margin: 0;
 }
 
-.comparison-table th {
-  background: rgba(255, 255, 255, 0.04);
-  color: white;
-  font-weight: 700;
-  text-align: left;
-  padding: 0.75rem 1rem;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+.comparison-table table {
+  min-width: 600px;
 }
 
-.comparison-table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  vertical-align: top;
-  color: rgba(255, 255, 255, 0.82);
+/* (0,2,1) beats the generic `.markdown table td` rule without !important. */
+.markdown .fixed-width-table th,
+.markdown .fixed-width-table td {
+  padding: 0.35rem 0.3rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.comparison-table tbody tr:last-child td {
+.markdown .fixed-width-table td {
+  font-family: var(--scl-font-mono);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.markdown .fixed-width-table tr:last-child td,
+.markdown .comparison-table tr:last-child td {
   border-bottom: 0;
 }
 
-.comparison-table tbody tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+.markdown .comparison-table th {
+  white-space: nowrap;
 }
 
-/* Checkmarks and X marks */
-.comparison-table td:has(.check),
-.comparison-table td:has(.cross) {
-  text-align: center;
-}
-
+/* Yes / no marks in comparison tables */
 .check {
-  color: #34d399;
+  color: var(--scl-ok);
   font-weight: 700;
 }
 
 .cross {
-  color: #fb7185;
+  color: var(--scl-danger);
   font-weight: 700;
 }

@@ -4,10 +4,17 @@ title: "Bitcoin Passphrase (25th Word): Diceware Generation"
 description: "Learn what a Bitcoin passphrase is, when to use it, and how to generate a strong one with dice and the EFF word list. Full 3-step DIY guide."
 keywords: ["bitcoin passphrase", "25th word", "diceware", "EFF word list", "hidden wallet", "seed security", "plausible deniability"]
 tags: ["passphrase", "seed", "security", "entropy", "dice"]
+guide:
+  time: "30 minutes"
+  level: "Beginner"
+  cost: "$5-10 (casino dice) or $0 (use any dice)"
+  needs: "5 six-sided dice, pen and paper"
 ---
 # Bitcoin Passphrase (25th Word)
 
 A passphrase is an additional security layer. Unlike your seed phrase (which consists of predefined words from the [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) word list), a passphrase can be any combination of characters.
+
+<GuideFacts />
 
 Your wallet (collection of addresses) is derived from both the seed phrase and passphrase. Without the passphrase, an attacker who finds your seed will generate the wrong wallet.
 
@@ -16,7 +23,6 @@ For example, if you use the seed with the passphrase `Martha`, the attacker will
 ![Passphrase](/img/basics/passphrase.webp)
 
 You can also use `Wallet A` without a passphrase as a **decoy wallet**, storing a small amount of Bitcoin in it. If you're ever forced to reveal your wallet under pressure, you can show this decoy without exposing your main holdings. And remember, never share the full extent of your Bitcoin holdings with anyone, even those you trust, as accidental leaks can make you a target.
-
 
 ## Risks of Using a Passphrase
 
@@ -27,7 +33,6 @@ Adding a passphrase to your seed offers strong security benefits, especially if 
 - **Potential for Mistakes**: Even a small typo creates an entirely new wallet, making it easy to lock yourself out.
 - **Not All Wallets Support It**: Some hardware and software wallets don't support passphrases, limiting compatibility.
 - **Social Engineering Risk**: If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
-
 
 ## How Much Security?
 
@@ -58,16 +63,6 @@ With dice, every word is equally likely. No patterns. No bias. Just math. Each w
 
 For Bitcoin passphrases, **4-6 words** provides excellent security while remaining memorable.
 
-:::info What You'll Do
-The rest of this guide walks you through generating a cryptographically strong passphrase using dice rolls and the EFF word list.
-
-**Time required:** 30 minutes  
-**Difficulty:** Beginner  
-**Estimated cost:** $5-10 (casino dice) or $0 (use any dice)  
-**Requirements:** 5 six-sided dice, pen and paper
-:::
-
-
 ## Step 1: Choose Your Word List
 
 :::tip Word List
@@ -86,7 +81,6 @@ To create this list, EFF:
 The final result is a 7,776-word list suitable for dice-generated passphrases. On average, words in the list are 7.0 characters long, compared to 4.3 characters in Reinhold's original Diceware list. EFF prioritized familiar, meaningful words over very short ones.
 
 The security of passphrases generated with this list is identical to those made with Diceware; the difference is in usability, not security. For most cases, EFF recommends generating a **six word passphrase**, which provides 77 bits of entropy. Each additional word increases security by 12.9 bits; one extra bit doubles the number of guesses required to brute-force the passphrase.
-
 
 ## Step 2: Roll Dice for Your Words
 
@@ -123,7 +117,6 @@ running cope snowfield yippee darling diaphragm
 
 Your passphrase is now ready to use.
 
-
 ## Step 3: Back Up Your Passphrase
 
 Just like your Bitcoin seed phrase, your passphrase is a critical key to your funds. If you lose it or it gets compromised, your Bitcoin is gone forever. That's why proper storage is essential.
@@ -141,7 +134,6 @@ This method is only recommended if you have multiple secure backups.
 :::
 
 You can also memorize your passphrase. Try writing your passphrase down several times and gradually commit it to memory. If needed, use a **mnemonic technique** (e.g., creating a mental story from the words) to make it easier to remember.
-
 
 ## Important Warnings
 

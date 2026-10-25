@@ -27,6 +27,10 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
+// ESM, loaded through jiti like this plugin. The same formatter renders the
+// facts line on the page, so the mirror and the page say the same thing.
+const { guideFactsSentence } = require("../../src/data/guideFacts.js");
+
 const SITE_URL = "https://selfcustodylabs.com";
 
 /**
@@ -100,9 +104,10 @@ function withSlash(url) {
  *
  * @param {string} raw - file contents including frontmatter
  * @param {string} permalink - the doc's route, used as the base for relative links
+ * @param {string} [facts] - the guide's facts as a sentence, replacing <GuideFacts />
  * @returns {string} normalized Markdown
  */
-function normalize(raw, permalink) {
+function normalize(raw, permalink, facts = "") {
   const lines = raw.split("\n");
   let i = 0;
 
@@ -168,6 +173,12 @@ function normalize(raw, permalink) {
     // Inside a multi-line self-closing component block: swallow to its `/>`.
     if (dropping !== null) {
       if (trimmed.endsWith("/>") || trimmed === `</${dropping}>`) dropping = null;
+      continue;
+    }
+
+    // The facts line is content (time, cost, level, dates): keep it as text.
+    if (/^<GuideFacts\s*\/>$/.test(trimmed)) {
+      if (facts) emit(facts);
       continue;
     }
 
@@ -360,7 +371,7 @@ module.exports = function llmsTxtPlugin(context) {
           doc.source.replace(/^@site\//, ""),
         );
         const raw = await fs.readFile(sourcePath, "utf8");
-        const body = normalize(raw, doc.permalink);
+        const body = normalize(raw, doc.permalink, guideFactsSentence(doc.frontMatter?.guide, doc.lastUpdatedAt));
         assertClean(body, doc.permalink);
 
         const canonical = `${SITE_URL}${withSlash(doc.permalink)}`;

@@ -11,10 +11,12 @@ export default function DocItemFooterWrapper(props) {
 
   const nextSteps = getNextSteps(path);
 
+  // Order: where to go next, then the colophon, then Docusaurus's own footer
+  // (last updated, tags).
   return (
     <>
-      <AuthorByline />
       {nextSteps && <NextSteps items={nextSteps} />}
+      <AuthorByline />
       <DocItemFooter {...props} />
     </>
   );

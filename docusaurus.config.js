@@ -3,12 +3,24 @@
 // (when paired with `@ts-check`).
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from "prism-react-renderer";
+import { execSync } from "node:child_process";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 
 import { redirects, createRedirects } from "./src/data/redirects.js";
 import { contentSecurityPolicy } from "./src/data/securityHeaders.js";
+import { prismLab } from "./src/data/prismTheme.js";
+
+/** Short hash of the commit being built, printed in the footer as the build mark. */
+function buildCommit() {
+  try {
+    return execSync("git rev-parse --short=7 HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+  } catch {
+    return "";
+  }
+}
+const COMMIT = buildCommit();
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // @type {import('@docusaurus/types').Config}
 const config = {
@@ -306,13 +318,12 @@ const config = {
       announcementBar: {
         id: 'coldcard_rng_2026',
         content:
-          '⚠️ <strong>Coldcard RNG flaw:</strong> seeds generated 2021–2026 may be ' +
-          'brute-forceable, and new firmware does <strong>not</strong> fix an existing seed. ' +
+          '<span class="scl-advisory">Advisory · 1 Aug 2026</span>' +
+          '<strong>Coldcard seeds made 2021 to 2026 may be guessable</strong>, and new firmware does ' +
+          '<strong>not</strong> fix an existing seed. ' +
           '<a href="/docs/learn/wallets/coldcard-entropy-incident/">Am I affected?</a> · ' +
-          'Generate your own: <a href="/docs/learn/keys/random/">dice seed</a> + ' +
+          'Make your own: <a href="/docs/learn/keys/random/">dice seed</a> and ' +
           '<a href="/docs/learn/keys/passphrase/">passphrase</a>.',
-        backgroundColor: '#f59e0b',
-        textColor: '#000',
         isCloseable: true,
       },
       
@@ -326,110 +337,25 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            label: 'Learn',
-            to: '/learn/',
-            position: 'left',
-          },
-          {
-            label: 'Guides',
-            to: '/guides/',
-            position: 'left',
-          },
+          { label: 'Learn', to: '/learn/', position: 'left' },
+          { label: 'Guides', to: '/guides/', position: 'left' },
           {
             label: 'Resources',
             type: 'dropdown',
             position: 'left',
             items: [
-              {
-                to: '/books/',
-                label: 'Books',
-              },
-              {
-                to: '/podcasts/',
-                label: 'Podcasts',
-              },
-              {
-                type: 'html',
-                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
-              },
-              {
-                href: 'https://timechainstats.com/',
-                label: 'TimechainStats',
-              },
-              {
-                href: 'https://kycnot.me/',
-                label: 'No KYC'
-              },
-              {
-                href: 'https://mempool.space/',
-                label: 'Mempool',
-              },
-              {
-                href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
-                label: 'BIP39 Word List'
-              },
+              { to: '/books/', label: 'Books' },
+              { to: '/podcasts/', label: 'Podcasts' },
+              { type: 'html', value: '<hr class="scl-menu-sep" />' },
+              { href: 'https://mempool.space/', label: 'Mempool' },
+              { href: 'https://timechainstats.com/', label: 'TimechainStats' },
+              { href: 'https://kycnot.me/', label: 'No KYC' },
+              { href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt', label: 'BIP39 word list' },
             ],
           },
-          {
-            label: 'About',
-            type: 'dropdown',
-            position: 'right',
-            items: [
-              // NOTE: onBrokenLinks does not walk themeConfig, so this internal
-              // route is not link-checked by the build. Verify it by hand.
-              {
-                to: '/about/',
-                label: 'About Self Custody Labs',
-              },
-              {
-                type: 'html',
-                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
-              },
-              {
-                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-                label: 'Nostr',
-              },
-              {
-                href: 'https://x.com/selfcustodylabs',
-                label: 'X (Twitter)',
-              },
-              {
-                href: 'mailto:selfcustodylabs@proton.me',
-                label: 'E-mail'
-              },
-              {
-                href: 'https://app.cluborange.org/selfcustodylabs',
-                label: 'Club Orange App',
-              },
-              {
-                href: 'https://github.com/selfcustodylabs',
-                label: 'GitHub',
-              },
-              {
-                href: 'https://keybase.io/selfcustodylabs',
-                label: 'Keybase'
-              },
-            ],
-          },
-          {
-            href: 'https://github.com/selfcustodylabs',
-            position: 'right',
-            className: "header--github-link",
-            "aria-label": "GitHub repository",
-          },
-          {
-            href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-            position: 'right',
-            className: "header--nostr-link",
-            "aria-label": "Nostr profile",
-          },
-          {
-            href: 'https://app.cluborange.org/selfcustodylabs',
-            position: 'right',
-            className: "header--cluborange-link",
-            "aria-label": "Club Orange App",
-          },
+          // NOTE: onBrokenLinks does not walk themeConfig, so internal routes here
+          // are not link-checked by the build. Verify them by hand.
+          { label: 'About', to: '/about/', position: 'right' },
         ],
       },
       
@@ -524,34 +450,32 @@ const config = {
           {
             title: 'Connect',
             items: [
-              {
-                label: 'Nostr',
-                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://x.com/selfcustodylabs',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/selfcustodylabs',
-              },
-              {
-                label: 'Keybase',
-                href: 'https://keybase.io/selfcustodylabs',
-              },
+              { label: 'Nostr', href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5' },
+              { label: 'X', href: 'https://x.com/selfcustodylabs' },
+              { label: 'GitHub', href: 'https://github.com/selfcustodylabs' },
+              { label: 'Keybase', href: 'https://keybase.io/selfcustodylabs' },
+              { label: 'Club Orange', href: 'https://app.cluborange.org/selfcustodylabs' },
+              { label: 'Email', href: 'mailto:selfcustodylabs@proton.me' },
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Self Custody Labs`,
+        // The build mark is the commit the site was built from, like the plate
+        // hash on the OG cards: anyone can check what changed and when.
+        copyright:
+          `© ${new Date().getFullYear()} Self Custody Labs · ` +
+          (COMMIT
+            ? `build <a href="https://github.com/selfcustodylabs/website/commit/${COMMIT}">${COMMIT}</a>, ${BUILD_DATE} · `
+            : "") +
+          'Nostr <a href="https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5">selfcustodylabs@selfcustodylabs.com</a> · ' +
+          '<a href="https://keybase.io/selfcustodylabs">Keybase</a>',
       },
       
       // ===========================================
       // Code Highlighting
       // ===========================================
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismLab,
+        darkTheme: prismLab,
         additionalLanguages: ['bash', 'json'],
       },
     }),

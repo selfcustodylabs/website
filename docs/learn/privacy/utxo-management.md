@@ -5,17 +5,18 @@ description: "Bitcoin UTXO management for lower fees and better privacy. Coin co
 keywords: ["bitcoin utxo management", "coin control", "sparrow coin control", "electrum coin control", "utxo consolidation", "dusting attack", "bitcoin privacy", "bitcoin fees"]
 tags: ["utxo", "coin control", "privacy", "fees", "consolidation"]
 slug: /learn/privacy/utxo-management
+guide:
+  time: "40 minutes"
+  level: "Intermediate"
 ---
 
 # UTXO Management: Coin Control, Consolidation, and Privacy
 
 Most Bitcoin users never think about UTXOs. They see a balance in their wallet and assume that is all there is to know. That is a costly mistake, both for fees and for privacy.
 
-:::info What You'll Learn
-**Time:** 40 minutes  
-**Difficulty:** Intermediate  
-**Prerequisites:** Understanding of [UTXOs](/docs/learn/transactions/utxos), [transactions](/docs/learn/transactions/understanding), and [why privacy matters](/docs/learn/privacy/why-privacy-matters).
-:::
+<GuideFacts />
+
+Read first: [UTXOs](/docs/learn/transactions/utxos), [how transactions work](/docs/learn/transactions/understanding) and [why privacy matters](/docs/learn/privacy/why-privacy-matters).
 
 **UTXO management** is the practice of being intentional about:
 
@@ -431,26 +432,3 @@ Before every transaction:
 3. **Plan consolidation:** wait for low fees and consolidate same-source UTXOs
 4. **Use coin control:** make it a habit for every transaction
 
-<NextSteps
-  title="Continue Building Privacy"
-  items={[
-    {
-      label: "Next",
-      title: "CoinJoin Privacy Guide",
-      href: "/docs/learn/privacy/coinjoin/",
-      description: "Break transaction history with collaborative mixing"
-    },
-    {
-      label: "Then",
-      title: "PayJoin Privacy Guide",
-      href: "/docs/learn/privacy/payjoin/",
-      description: "Stealth privacy that looks like a normal payment"
-    },
-    {
-      label: "Foundation",
-      title: "Run Your Own Node",
-      href: "/docs/bitcoin-node/",
-      description: "Stop leaking your addresses to third parties"
-    }
-  ]}
-/>

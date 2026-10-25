@@ -7,7 +7,6 @@ tags: ["recovery", "troubleshooting", "wallet", "faq"]
 slug: /reference/faq/recovery-troubleshooting
 ---
 
-<SectionBadge section="reference" label="Troubleshooting" />
 
 # Wallet Recovery Troubleshooting
 
@@ -16,7 +15,6 @@ Recovering a Bitcoin wallet should be straightforward, but things can go wrong. 
 :::danger Before You Panic
 Most "missing" Bitcoin isn't actually lost: it's usually a configuration issue. Work through this guide systematically before assuming the worst.
 :::
-
 
 ## Problem: Wallet Shows Zero Balance After Recovery
 
@@ -82,7 +80,6 @@ Wallets only check a certain number of addresses. If you used many addresses wit
 - In Sparrow: Wallet → Settings → Script Type → Increase gap limit
 - Try scanning 100+ addresses
 
-
 ## Problem: Different Addresses Than Expected
 
 You recover successfully but the addresses don't match what you had before.
@@ -111,7 +108,6 @@ If you used Account 1, recovering with Account 0 shows different addresses.
 1. When importing, click "Show Advanced"
 2. Change the account number in the derivation path
 
-
 ## Problem: Recovery Fails Completely
 
 The wallet software rejects your seed phrase.
@@ -132,7 +128,6 @@ BIP39 has word lists in multiple languages (English, Spanish, Japanese, etc.). Y
 **Solution:**
 - Most wallets use English
 - If you created with non-English wallet, find matching word list
-
 
 ## Problem: Only Some Funds Recovered
 
@@ -166,7 +161,6 @@ Funds from unconfirmed transactions won't appear until confirmed.
 - Wait for confirmation
 - Check transaction status on mempool.space
 
-
 ## Problem: Hardware Wallet Shows Different Address
 
 Your hardware wallet shows a different address than your software wallet.
@@ -185,7 +179,6 @@ This is a **critical security issue**. Never send to an address your hardware wa
 2. Check derivation paths match
 3. Re-pair hardware wallet with software
 4. If still mismatched, DO NOT TRANSACT until resolved
-
 
 ## Problem: Multisig Recovery Issues
 
@@ -209,7 +202,6 @@ Multisig addresses depend on key ordering. Different order = different addresses
 **Solution:**
 - Import using original wallet descriptor
 - If manually recreating, match exact order of cosigners
-
 
 ## Systematic Recovery Checklist
 
@@ -236,7 +228,6 @@ Consider professional assistance if:
 Most "Bitcoin recovery services" are scams. See our [Recovery Scams](/docs/reference/faq/recovery-scams) guide before contacting anyone. Never share your seed phrase with "helpers."
 :::
 
-
 ## Prevention for the Future
 
 Avoid recovery problems by:
@@ -257,26 +248,3 @@ Avoid recovery problems by:
    - Stick to defaults when possible
    - BIP84 (Native SegWit) is the current standard
 
-<NextSteps 
-  title="Related Help"
-  items={[
-    { 
-      label: "Guide", 
-      title: "Backup Verification", 
-      href: "/docs/wallet-setup/backup-verification/", 
-      description: "How to properly test your backup before you need it" 
-    },
-    { 
-      label: "Warning", 
-      title: "Recovery Scams", 
-      href: "/docs/reference/faq/recovery-scams/", 
-      description: "How to avoid scammers targeting people with lost Bitcoin" 
-    },
-    { 
-      label: "FAQ", 
-      title: "Lost Seed Phrase", 
-      href: "/docs/reference/faq/lost-seed/", 
-      description: "What to do if you've actually lost your seed phrase" 
-    }
-  ]}
-/>

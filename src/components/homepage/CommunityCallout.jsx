@@ -1,37 +1,34 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-import XIcon from '@mui/icons-material/X';
+import React from "react";
+import Link from "@docusaurus/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import XIcon from "@mui/icons-material/X";
 
-import { ClubOrangeIcon, KeybaseIcon, NostrIcon } from '@site/src/components';
-import useReveal from '@site/src/hooks/useReveal';
+import { ClubOrangeIcon, KeybaseIcon, NostrIcon } from "@site/src/components";
+import useReveal from "@site/src/hooks/useReveal";
 
 const platforms = [
   {
     icon: NostrIcon,
-    label: 'Nostr',
-    href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
+    label: "Nostr",
+    href: "https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5",
   },
-  { icon: XIcon, label: 'X', href: 'https://x.com/selfcustodylabs' },
-  { icon: EmailRoundedIcon, label: 'E-mail', href: 'mailto:selfcustodylabs@proton.me' },
+  { icon: XIcon, label: "X", href: "https://x.com/selfcustodylabs" },
+  { icon: EmailRoundedIcon, label: "E-mail", href: "mailto:selfcustodylabs@proton.me" },
   {
     icon: ClubOrangeIcon,
-    label: 'Club Orange',
-    href: 'https://app.cluborange.org/selfcustodylabs',
+    label: "Club Orange",
+    href: "https://app.cluborange.org/selfcustodylabs",
   },
-  { icon: GitHubIcon, label: 'GitHub', href: 'https://github.com/selfcustodylabs' },
-  { icon: KeybaseIcon, label: 'Keybase', href: 'https://keybase.io/selfcustodylabs' },
+  { icon: GitHubIcon, label: "GitHub", href: "https://github.com/selfcustodylabs" },
+  { icon: KeybaseIcon, label: "Keybase", href: "https://keybase.io/selfcustodylabs" },
 ];
 
 export default function CommunityCallout() {
   const ref = useReveal();
 
   return (
-    <section
-      ref={ref}
-      className="reveal relative mx-auto w-full max-w-6xl px-6 py-20 md:py-24"
-    >
+    <section ref={ref} className="reveal relative mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
       <div className="mb-10 text-center">
         <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
           <span className="h-px w-8 bg-amber-400/50" />

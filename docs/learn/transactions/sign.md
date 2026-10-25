@@ -59,14 +59,3 @@ Here’s how a typical air-gapped signing setup works:
 </div>
 
 This layered approach keeps your private key isolated from internet exposure while allowing secure transaction signing.
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Broadcasting Transactions", href: "/docs/learn/transactions/broadcast/", tag: "Next" },
-    { title: "Creating Transactions", href: "/docs/learn/transactions/create/", tag: "Learn" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Air-Gapped Computers", href: "/docs/learn/wallets/air-gapped-wallets/", tag: "Advanced" },
-  ]}
-/>

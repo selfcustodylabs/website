@@ -1,16 +1,14 @@
-// Navigation improvement components
+// Doc navigation components
 export { default as ProgressIndicator } from "./ProgressIndicator";
 export { default as NextSteps } from "./NextSteps";
-export { default as SectionBadge } from "./SectionBadge";
-export { default as RelatedArticles, articleCollections } from "./RelatedArticles";
-export { default as FeaturedImage } from "./FeaturedImage";
 export { default as AuthorByline } from "./AuthorByline";
+export { default as GuideFacts } from "./GuideFacts";
 
-// Shared UI components
+// Landing-page components (replaced in the homepage rebuild)
 export { default as Card } from "./Card";
 export { default as DifficultyTag } from "./DifficultyTag";
 export { default as CategorySection } from "./CategorySection";
 export { default as ScrollProgress } from "./ScrollProgress";
 
-// Custom icons (not available in Material UI)
+// Custom icons
 export { ClubOrangeIcon, KeybaseIcon, NostrIcon } from "./icons";
