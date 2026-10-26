@@ -16,7 +16,7 @@ This comparison weighs devices differently from most. In July 2026, attackers dr
 
 ## Quick comparison table
 
-Prices are the makers' own store prices in US dollars, checked on 26 October 2026, except where marked "Aug": those were last confirmed in August 2026.
+Prices are the makers' own store prices, checked on 26 October 2026: in US dollars, except BitBox, which sells in euros. Bitkey's, marked "Aug", was last confirmed in August 2026.
 
 <div class="fixed-width-table">
 
@@ -24,14 +24,14 @@ Prices are the makers' own store prices in US dollars, checked on 26 October 202
 |--------|-------|---------|-------------|----------------|---------------------|----------|
 | Trezor Safe 5 | $129 | No | Yes | Yes, EAL6+ | Import only | Beginners |
 | Trezor Safe 7 | $249 | No | Yes | Yes, two (including the auditable TROPIC01) | Import only | Transparency with polish |
-| BitBox02 Nova | €175 (Aug) | No | Yes | Yes, EAL6+ | Vendor procedure | Simplicity |
+| BitBox02 Nova | €175 | No | Yes | Yes, EAL6+ | Vendor procedure | Simplicity |
 | Jade | $79 | Yes, QR with the optional camera | Yes | No: virtual, "blind oracle" | Vendor procedure | Budget |
 | Jade Plus | $149 ($169 metal) | Yes, QR | Yes | No: virtual, "blind oracle" | Vendor procedure | Verifiable security |
 | Passport Prime | $565 | Yes, QR, plus encrypted Bluetooth | Yes | Yes | Vendor procedure | Premium air-gap |
-| Keystone 3 Pro | $149 (Aug) | Yes, QR only | Yes | Yes, three chips | On the device | QR air-gap value |
+| Keystone 3 Pro | $149 | Yes, QR only | Yes | Yes, three chips | On the device | QR air-gap value |
 | SeedSigner or Krux | About $50-80 in parts | Yes, stateless QR | Yes | None: stateless | On the device | Building your own |
 | Coldcard Mk5 or Q | $219 or $319 | Yes, microSD (and QR on the Q) | Source visible, not open licence | Yes, two | On the device | Not recommended for new purchases |
-| Ledger (Nano, Flex, Stax) | $79-399 (Aug) | No | No: secure element firmware is closed | Yes | Import only | Not recommended |
+| Ledger (Nano, Flex, Stax) | $69-399 | No | No: secure element firmware is closed | Yes | Import only | Not recommended |
 | Bitkey | $250 (Aug) | No | Partly: source published, not reproducible | Yes, secure enclave | No | Not recommended |
 
 </div>
@@ -92,7 +92,7 @@ The BitBox02 Nova is the Swiss-made BitBox02 with an EAL6+ secure chip and the s
 
 | Aspect | Details |
 |--------|---------|
-| Price | €175 (August 2026); the classic BitBox02 is €149 |
+| Price | €175 (October 2026); the classic BitBox02 is €149 |
 | Screen | Glass OLED with touch sliders |
 | Connectivity | USB-C, and Bluetooth for iPhone and iPad |
 | Open source | Yes, fully |
@@ -151,7 +151,7 @@ The Keystone 3 Pro is a QR-only air-gapped device at a mid-range price.
 
 | Aspect | Details |
 |--------|---------|
-| Price | $149 (August 2026) |
+| Price | $149 (October 2026, sold as a pre-order) |
 | Screen | 4-inch colour touchscreen, fingerprint reader |
 | Connectivity | QR codes and microSD only |
 | Open source | Yes, fully |
@@ -187,7 +187,7 @@ The current hardware (Mk5 $219, Q $319 at the store's October 2026 prices) is ca
 
 ### Ledger
 
-Ledger devices (Nano S Plus and X, Flex, Stax; $79 to $399 as of August 2026) have strong secure elements and came through 2026 without an entropy incident; the company was quick to point to its certified hardware random number generator. Our concerns are unchanged. The secure element firmware is closed source; the 2023 Ledger Recover service showed the firmware can export seed material, split into shares; and the 2020 customer-data breach exposed buyers to years of phishing. You cannot verify the parts that matter most, and 2026 showed how much silent trust that asks for. Ledger suits people committed to its multi-coin ecosystem; for bitcoin self-custody, the open devices above are stronger choices.
+Ledger devices (Nano S Plus, Nano X and Nano Gen5, Flex, Stax; $69 to $399 as of October 2026) have strong secure elements and came through 2026 without an entropy incident; the company was quick to point to its certified hardware random number generator. Our concerns are unchanged. The secure element firmware is closed source; the 2023 Ledger Recover service showed the firmware can export seed material, split into shares; and the 2020 customer-data breach exposed buyers to years of phishing. You cannot verify the parts that matter most, and 2026 showed how much silent trust that asks for. Ledger suits people committed to its multi-coin ecosystem; for bitcoin self-custody, the open devices above are stronger choices.
 
 ### Bitkey
 
