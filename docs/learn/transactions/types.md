@@ -5,42 +5,30 @@ description: "Bitcoin transaction types explained: pre-signed, fully signed, and
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "types"]
 tags: ["bitcoin", "transactions"]
 ---
-# Transaction Types
 
-There are three main stages of a Bitcoin transaction:
+# Transaction types
 
-## Pre-Signed
+A bitcoin transaction goes through up to three states: unsigned (built, but not yet authorised), partially signed (some but not all of the needed signatures added, as in multisig), and fully signed (ready to broadcast). The standard file format for the first two is the PSBT. A pre-signed transaction is a fully signed one kept to broadcast later, for example as part of an inheritance plan.
 
-This is the first step, where a transaction is created but not yet signed. It’s typically made on an internet-connected computer using a watch-only wallet, ideally connected to your own Bitcoin node. Since this wallet doesn’t have access to your private keys, it can safely build the transaction without risking your Bitcoin.
+## What is an unsigned transaction?
 
-Once the unsigned transaction is ready, you transfer it to an offline (air-gapped) computer for signing. This offline computer securely holds your private keys and is never connected to the internet, keeping them safe from hackers.
+An unsigned transaction is one that has been built (inputs, outputs and fee chosen) but not signed. It is usually made on an internet-connected computer by a watch-only wallet, ideally connected to your own node; since that wallet has no private keys, building the transaction there puts nothing at risk. The unsigned transaction, in PSBT format, is then carried to the device that holds the keys, such as an [air-gapped computer](/docs/learn/wallets/air-gapped-wallets/) or a hardware wallet.
 
-You can learn more in the Air-Gapped Computer [section](/docs/learn/wallets/air-gapped-wallets).
+## What is a partially signed transaction?
 
-## Fully Signed
+A partially signed transaction has some of its required signatures but not all, the normal state of a [multisig](/docs/learn/wallets/multisig/) spend in progress:
 
-Once your offline (air-gapped) computer signs the transaction using your private keys, it becomes a fully signed transaction.
+1. A watch-only wallet builds the transaction and exports it as a PSBT.
+2. The first signing device adds its signature.
+3. The PSBT goes to the next device, which adds another, until the required number is reached.
+4. The complete transaction returns to the online computer for broadcast.
 
-You then transfer it back to your online computer and load it into your wallet to broadcast it to the Bitcoin network.
+The PSBT format (BIP174) carries the transaction and everything each signer needs through all of these steps; a PSBT with no signatures yet is still a PSBT.
 
-Since the air-gapped machine is offline, it can’t broadcast the transaction itself, it just signs it securely.
+## What is a fully signed transaction?
 
-You can also create and save fully signed transactions ahead of time, so they’re ready to be broadcast later when you're online.
+A fully signed transaction has every signature it needs and is valid to broadcast. After an offline device signs, the transaction comes back to the online computer, which broadcasts it; the offline device has no connection to do so itself.
 
-## Partially Signed (PSBT)
+## What is a pre-signed transaction?
 
-Partially Signed Bitcoin Transactions (PSBTs) are mostly used in multi-signature wallets, where more than one signature is required to approve a transaction.
-
-Here’s how it works:
-
-- You first create the transaction on your online watch-only wallet, just like with a regular unsigned transaction
-- Then, you transfer it to the first offline (air-gapped) device, which adds the first signature; the transaction is now a PSBT.
-- After that, you pass the PSBT to the next offline device, and so on, until the required number of signatures has been added. Once all the necessary signatures are included, the PSBT becomes a fully signed transaction.
-- Finally, you move it back to your online computer and broadcast it to the Bitcoin network.
-
----
-
-## You've Completed the Transactions Section
-
-You now understand how Bitcoin moves: from UTXOs to transaction creation, signing, broadcasting, fees, and different transaction types. Next, explore why privacy matters on a transparent blockchain.
-
+A pre-signed transaction is a fully signed transaction saved to broadcast later, without needing the keys again. It stays valid until any of its inputs is spent by another transaction. Pre-signed transactions combined with a timelock, which makes a transaction invalid before a set date or block height, are one way to build inheritance and recovery plans; [inheritance planning](/docs/advanced/inheritance-planning/) covers the options.
