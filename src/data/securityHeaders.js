@@ -43,13 +43,18 @@ const CSP = {
 const HEADER_ONLY = new Set(["frame-ancestors"]);
 
 /**
- * @param {{forMeta?: boolean}} [options]
+ * @param {{forMeta?: boolean, dev?: boolean}} [options] `dev` adds
+ *   'unsafe-eval' for `npm run start`, whose bundles use eval() for source maps;
+ *   without it the dev server renders a blank page. Production never gets it.
  * @returns {string} the policy as a header value
  */
-export function contentSecurityPolicy({ forMeta = false } = {}) {
+export function contentSecurityPolicy({ forMeta = false, dev = false } = {}) {
   return Object.entries(CSP)
     .filter(([name]) => !(forMeta && HEADER_ONLY.has(name)))
-    .map(([name, values]) => [name, ...values].join(" "))
+    .map(([name, values]) =>
+      dev && name === "script-src" ? [name, ...values, "'unsafe-eval'"] : [name, ...values],
+    )
+    .map((parts) => parts.join(" "))
     .join("; ");
 }
 

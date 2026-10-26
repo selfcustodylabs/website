@@ -85,11 +85,15 @@ const config = {
     // Defined once in src/data/securityHeaders.js and shared with the real
     // response headers that plugins/cloudflare writes to build/_headers. The
     // meta copy leaves out frame-ancestors, which browsers ignore in a meta tag.
+    // `docusaurus start` sets NODE_ENV to development; only then is eval allowed.
     {
       tagName: "meta",
       attributes: {
         "http-equiv": "Content-Security-Policy",
-        content: contentSecurityPolicy({ forMeta: true }),
+        content: contentSecurityPolicy({
+          forMeta: true,
+          dev: process.env.NODE_ENV === "development",
+        }),
       },
     },
 
