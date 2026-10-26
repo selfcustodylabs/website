@@ -9,7 +9,7 @@ date: "2025-12-29"
 
 # Hardware wallets
 
-A hardware wallet is a small dedicated device that creates your bitcoin private keys, stores them and signs transactions with them, without the keys ever leaving it. Because it shows each payment on its own screen and needs a button press to sign, malware on the computer it connects to can neither steal the keys nor change a payment unseen. What it cannot do is prove that the keys it created were unpredictable: the 2026 Coldcard incident drained $116 million from working, air-gapped devices whose seeds were guessable. So use one with your own dice entropy, and check addresses on its screen.
+A hardware wallet is a small dedicated device that creates your bitcoin private keys, stores them and signs transactions with them, without the keys ever leaving it. Because it shows each payment on its own screen and needs a button press to sign, malware on the computer it connects to can neither steal the keys nor change a payment unseen. It is a facilitator rather than a requirement: a computer that never goes online can hold the same keys and sign the same transactions, with more work. What it cannot do is prove that the keys it created were unpredictable: the 2026 Coldcard incident drained $116 million from working, air-gapped devices whose seeds were guessable. So use one with your own dice entropy, and check addresses on its screen.
 
 ## Why do hardware wallets exist?
 
@@ -20,6 +20,19 @@ A phone or laptop runs a browser, email, an app store and whatever you have down
 ![The security difference: a software wallet keeps keys on an online device shared with a browser and possible malware, while a hardware wallet keeps keys on a dedicated offline chip that signs in isolation and does exactly one job](/img/diagrams/wallets/hot-vs-cold.svg)
 
 </div>
+
+## Do you need a hardware wallet to hold bitcoin?
+
+No. A hardware wallet is a facilitator: it makes keeping keys offline and checking payments easy, and nothing in bitcoin requires one. A transaction is data that any wallet software can build, any device holding the private key can sign, and any node can broadcast; the network checks only that the signature is valid, never what produced it. Every step can be done by hand with general-purpose computers:
+
+1. A watch-only wallet on an online computer, which holds only public keys, builds the unsigned transaction as a [PSBT](/docs/learn/transactions/sign/#what-is-a-psbt). In Sparrow that is **Create Transaction**, **Finalize Transaction for Signing**, then **Save Transaction** or **Show QR**; in Bitcoin Core, the `walletcreatefundedpsbt` command.
+2. The PSBT is carried on an SD card, or as a QR code, to a computer that has never been online and holds the private keys.
+3. That computer shows the address and amount, you check them, and it signs: Sparrow running offline, or `walletprocesspsbt` and then `finalizepsbt` in Bitcoin Core.
+4. The signed transaction is carried back and broadcast from any node: your own with `sendrawtransaction`, or Sparrow's **Broadcast Transaction**.
+
+Bitcoin Core's [PSBT documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md) describes each of those commands, and the [air-gapped wallets guide](/docs/learn/wallets/air-gapped-wallets/) sets up the offline computer.
+
+What a hardware wallet adds is convenience and a smaller attack surface: a device that does nothing but sign, a screen that malware on the computer cannot redraw, a PIN, and on most models a chip that resists someone holding the device. Without one, those jobs are yours: keeping a computer offline for its whole life, checking every address on its screen, carrying every transaction across by hand, and updating its software without connecting it. That trade is why we suggest a hardware wallet to most people, while the keys themselves belong to no device: the same seed phrase restores them in any wallet.
 
 ## How does a hardware wallet sign a transaction?
 

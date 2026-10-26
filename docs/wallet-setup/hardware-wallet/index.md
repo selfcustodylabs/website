@@ -20,7 +20,7 @@ Setting up a hardware wallet takes one to two hours: buy the device from its mak
 
 ## What is a hardware wallet?
 
-A hardware wallet is a small dedicated device that creates and stores your bitcoin private keys and signs transactions with them, without the keys ever leaving it. It does four things a phone or computer wallet cannot:
+A hardware wallet is a small dedicated device that creates and stores your bitcoin private keys and signs transactions with them, without the keys ever leaving it. It does four things an online phone or computer wallet cannot:
 
 - It generates the seed phrase inside the device, offline.
 - It keeps the keys in isolated storage that the computer cannot read.
@@ -32,6 +32,8 @@ A hardware wallet is a small dedicated device that creates and stores your bitco
 ![Sending from a hardware wallet: the software creates the transaction, the device screen shows the real recipient and the 1,500 sat fee, you press confirm on the device and it signs, then the software broadcasts; malware can redraw a monitor but not the device screen](/img/diagrams/wallet-setup/hw-signing.svg)
 
 </div>
+
+You do not need a hardware wallet to hold bitcoin yourself. It is a facilitator: a transaction can be built on an online computer, signed by hand on a computer that never goes online, and broadcast from any node, as [do you need a hardware wallet?](/docs/learn/wallets/hardware-wallets/#do-you-need-a-hardware-wallet-to-hold-bitcoin) shows step by step. A hardware wallet makes that offline signing quick and hard to get wrong, which is why this guide uses one.
 
 ## Which hardware wallet should you buy?
 
