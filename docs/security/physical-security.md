@@ -6,280 +6,77 @@ keywords: ["bitcoin physical security", "bitcoin safety", "wrench attack", "seed
 tags: ["security", "physical security", "self custody", "safety"]
 ---
 
-# Physical Security for Bitcoin Holders
+# Physical security for bitcoin holders
 
-Cryptography can't protect you from physical threats.
+Physical security is protecting your bitcoin, and yourself, from threats in the real world: burglary, fire, theft of a backup, and someone forcing you to hand over your coins. Cryptography cannot help against a person who threatens you until you transfer the funds, the so-called "$5 wrench attack", and kidnappings aimed at bitcoin holders, such as the January 2025 abduction of Ledger co-founder David Balland in France, show it is not theoretical. The defences, in order, are not letting anyone know you are worth targeting, secure storage spread across places, and a setup that you cannot empty alone under duress.
 
-:::warning The Uncomfortable Truth
-No amount of technical security helps if someone threatens you or your family. Physical security is about preventing that situation and having options if it occurs.
-:::
+## How do you avoid becoming a target?
 
-## The $5 Wrench Attack
+The best physical security is never being identified as worth attacking.
 
-The famous "$5 wrench attack" illustrates a harsh reality:
+| Avoid | Examples |
+|---|---|
+| Advertising | Bitcoin clothing, stickers on a laptop or car, hardware wallets on display, branded packaging on deliveries (ask for plain boxes) |
+| Discussing | Mentioning that you own bitcoin to acquaintances, at meetups or under your real name online; "I don't own any" is an acceptable answer |
+| Displaying | Checking your balance in public, wallet apps on your home screen, bitcoin tabs open where others can see |
 
-```
-CRYPTOGRAPHIC SECURITY
-══════════════════════════════════════════════════════════════
-Advanced encryption protects your Bitcoin from digital attacks.
-Breaking it would take longer than the age of the universe.
+## What home security makes sense?
 
-$5 WRENCH ATTACK
-══════════════════════════════════════════════════════════════
-Someone threatens you with physical harm until you transfer
-your Bitcoin. Works immediately.
-```
+For significant holdings, ordinary home security matters:
 
-**The point:** Your security model must account for physical threats, not just digital ones.
+- Barriers: good locks on every entrance, reinforced door frames (kicked doors break at the frame, not the lock), window locks or film, motion-activated outside lights, and no bushes hiding doors and windows.
+- Monitoring: visible cameras, a monitored alarm, smart locks that tell you when doors open, and neighbours who look out for each other.
+- Storage: a fire-rated safe bolted down, somewhere other than the main bedroom (the first place burglars search), some ordinary valuables a burglar can take instead, and nothing irreplaceable stored only at home.
 
+## Where should seed backups be kept?
 
-## Prevention First
+The seed backup is the most sensitive object you own.
 
-The best physical security is preventing attackers from knowing you're a target.
-
-### Don't Advertise
-
-- No Bitcoin merchandise (shirts, hats, stickers)
-- No car stickers or license plate frames
-- No laptop stickers
-- Don't display hardware wallets
-- Be careful with mail packaging (generic boxes preferred)
-
-### Don't Discuss
-
-- Don't mention Bitcoin ownership to casual acquaintances
-- Be especially careful at Bitcoin events/meetups
-- Don't post on social media with real identity
-- "I don't own any" is a valid response
-
-### Don't Display
-
-- Don't check portfolios in public
-- Don't have wallet apps on home screen
-- Be careful with screen visibility
-- Close Bitcoin tabs when others can see
-
-
-## Home Security Basics
-
-If you hold significant Bitcoin, basic home security matters:
-
-### Physical Barriers
-
-- **Quality locks** on all entry points
-- **Reinforced door frames** (kicks break frames, not locks)
-- **Window security**: locks, film, or bars where appropriate
-- **Lighting** (motion-activated exterior lights)
-- **Visibility**: trim bushes near windows/doors
-
-### Monitoring
-
-- **Cameras** (visible deterrent + evidence)
-- **Alarm system**: Monitored service recommended
-- **Smart locks**: Know when doors open
-- **Neighbors** (community awareness helps)
-
-### Safe Storage
-
-For hardware wallets and backup materials:
-
-- **Home safe**: Fire-rated, bolted down
-- **Hidden location**: Not the master bedroom (first place checked)
-- **Decoy valuables** (give burglars something to take)
-- **Off-site backup**: Don't keep everything in one location
-
-
-## Seed Backup Storage
-
-Your seed backup is the most sensitive physical item.
-
-### Storage Options
-
-| Location | Pros | Cons |
+| Location | Strengths | Weaknesses |
 |----------|------|------|
-| **Home safe** | Accessible, you control it | Known location, fire/flood risk |
-| **Bank safe deposit box** | Secure, fire-protected | Bank access required, not truly private |
-| **Buried/hidden** | Very hard to find | Forgetting location, environmental damage |
-| **Trusted family** | Geographic distribution | Trust required, their security matters |
-| **Multiple locations** | Redundancy | More exposure points |
+| A safe at home | Accessible, under your control | A known location; fire and flood |
+| A bank safe deposit box | Secure and fire-protected | Bank hours and rules; not private from the bank |
+| Buried or hidden | Very hard to find | You may forget where; damp and corrosion |
+| A trusted relative's home | Another location | Needs trust, and depends on their security |
+| Several locations | Survives losing one | More places that could be found |
 
-### Best Practices
+Keep backups on metal, since paper burns; keep two or three copies in different places, in different cities if you can; use tamper-evident bags so you would know if one were opened; and keep a secure record of where each one is. A single backup, a paper-only backup, a bank box as the only copy, a backup loose in a drawer and a hiding place you might forget are all ways to lose everything.
 
-- **Metal backup**: Paper burns; metal survives fires
-- **Multiple copies**: At least 2-3 in different locations
-- **Geographic distribution** (different cities if possible)
-- **Tamper evidence**: Know if backup has been accessed
-- **Documentation**: Record where backups are (securely)
+## How can you prepare for coercion?
 
-### What NOT to Do
+### A decoy wallet
 
-❌ Single backup in one location
-❌ Paper-only backup
-❌ Bank safe deposit box as only copy
-❌ Unprotected in a drawer
-❌ Hidden somewhere you might forget
+A [passphrase](/docs/learn/keys/passphrase/) lets one seed phrase open two wallets: without the passphrase it opens a decoy holding a small, believable amount; with it, the real wallet. Under threat you reveal only the decoy, and the attacker cannot tell the passphrase wallet exists.
 
-
-## Duress Protection
-
-If you're ever in a situation where you're being coerced:
-
-### Plausible Deniability
-
-**Decoy wallet strategy:**
-1. Primary wallet (large holdings) with passphrase
-2. Decoy wallet (small amount) without passphrase
-3. If coerced, reveal only the decoy
-
-**How it works:**
-- Same seed phrase generates two different wallets
-- Without passphrase → Decoy wallet
-- With passphrase → Real wallet
-- Attacker can't know the passphrase wallet exists
-
-:::warning Limitations
-This only works if:
-- Attacker doesn't know about passphrases
-- Decoy has believable amount
-- You can convincingly act defeated
-- Attacker doesn't do research first
+:::warning A decoy only works if the attacker believes it
+It fails if the attacker knows about passphrases and suspects one, if the decoy's balance is implausible, or if they have researched you first. Never put your life at risk for it.
 :::
 
-### Multisig Distribution
+### Multisig
 
-With multisig, you genuinely cannot access funds alone:
+With [multisig](/docs/learn/wallets/multisig/), you genuinely cannot spend alone: the other keys are in other places, or with other people. That is not a bluff, and it makes you a less attractive target.
 
-- "I need my partners to sign"
-- "The other keys are in different locations"
-- This isn't a bluff; it's true
+### Timelocks
 
-This makes you a less attractive target.
+Some setups delay transactions, so that funds are not available immediately even under coercion, which buys time. They are more complex to set up.
 
-### Time Locks
+## How should you travel with bitcoin?
 
-Some setups allow time-delayed transactions:
+Carry only what you need, keep a separate travel wallet away from your main holdings, advertise nothing, and know the local laws, which vary.
 
-- Even if coerced, funds aren't immediately available
-- Provides time for intervention
-- More complex to set up
+For a hardware wallet, there are three options: leave it at home, take an empty device and create a wallet at your destination if needed, or take a loaded device, which you need for spending but which raises the risk. If you take one, keep it in your hand luggage, know how to explain it at security, consider keeping only a small amount on it, and memorise the PIN rather than writing it down.
 
+At borders, some countries require crypto holdings to be declared and some can compel you to unlock devices; research before you travel. A hotel safe is better than nothing but not secure, so do not leave devices unattended in the room.
 
-## Travel Security
+## What do you do if something happens?
 
-Traveling with Bitcoin requires additional consideration.
+| Event | What to do |
+|---|---|
+| Your home is burgled | Check whether a backup was touched; if so, move the funds to a new wallet straight away; report it to the police; improve your security |
+| You are physically threatened | Comply if you must, since no amount of bitcoin is worth injury; give up the decoy wallet if you have one; report it when safe; move the remaining funds to a new setup |
+| A seed backup is stolen | Move the funds immediately while you still have the device, to a new wallet with a new seed, and work out what else was exposed |
+| A hardware wallet is stolen | The PIN and its limited attempts give you time; restore from your backup onto a new device and move the funds to a new seed, treating the old one as compromised |
 
-### General Principles
+## How much is enough?
 
-- **Minimize what you carry**: Only what you need
-- **Don't advertise** (no Bitcoin merchandise or visible hardware)
-- **Separate wallets**: Travel wallet vs. main holdings
-- **Know local laws**: Cryptocurrency regulations vary
-
-### Hardware Wallet Travel
-
-**Options:**
-1. **Don't bring it**: Access via secure remote method if needed
-2. **Bring empty device** (create new wallet at destination if needed)
-3. **Bring loaded device**: Necessary for spending, increases risk
-
-**If bringing a device:**
-- Keep in carry-on (never checked luggage)
-- Know how to explain it at security
-- Consider a small decoy amount
-- Memorize PIN (don't write it down)
-
-### Border Crossings
-
-- **Legal requirements vary**: Some countries require declaring crypto
-- **Device searches**: Can you be compelled to unlock?
-- **Plausible deniability** (empty device, passphrase wallet)
-- **Know your rights**: Research before traveling
-
-### Accommodation
-
-- **Hotel safes**: Better than nothing, not truly secure
-- **Don't leave devices unattended**: Maid service access
-- **Be aware of surroundings** (who sees you with device?)
-
-
-## Emergency Planning
-
-Have a plan for various scenarios:
-
-### If Your Home is Burglarized
-
-1. Check if backup was accessed (tamper evidence)
-2. If compromised, move funds to new wallet immediately
-3. File police report (for insurance, not recovery expectation)
-4. Review security, upgrade where needed
-
-### If You're Physically Threatened
-
-1. **Comply if necessary**: Bitcoin isn't worth injury or death
-2. Give access to decoy wallet if you have one
-3. Report to police when safe
-4. Move any remaining funds to new setup
-
-### If Backup is Stolen
-
-1. Move funds immediately if you still have device access
-2. Create new wallet with new seed
-3. Secure new backup better
-4. Consider what else was compromised
-
-### If Hardware Wallet is Stolen
-
-1. Don't panic. PIN + limited attempts provides time
-2. Use backup to restore to new device
-3. Move funds to new wallet (new seed)
-4. Old seed should be considered compromised
-
-
-## Security vs. Paranoia
-
-Balance is important:
-
-**Appropriate security:**
-- Matches your actual threat level
-- Doesn't significantly impair your life
-- Is consistently maintainable
-- Allows you to still use your Bitcoin
-
-**Paranoia:**
-- Excessive for your actual risk
-- Causes significant stress
-- Makes setup so complex you lock yourself out
-- Prevents you from ever actually using Bitcoin
-
-Most people need:
-- Basic OpSec (don't advertise)
-- Hardware wallet
-- Distributed backups
-- Basic home security
-
-Few people need:
-- Elaborate decoy systems
-- Underground bunkers
-- Professional security teams
-
-
-## Summary
-
-Physical security for Bitcoin:
-
-1. **Prevention**: Don't let attackers know you're a target
-2. **Barriers** (basic home security, secure storage)
-3. **Distribution**: Don't keep everything in one place
-4. **Contingency**: Decoy wallets, duress planning
-5. **Balance**: Match security to actual threat level
-
-The goal is making yourself a harder target than alternatives, not achieving perfect security.
-
----
-
-## Related Guides
-
-- [Operational Security](/docs/security/operational-security/): Behavioral security
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models) (what level do you need?)
-- [Passphrase Guide](/docs/learn/keys/passphrase/): Enable decoy wallets
-- [Multisig Setup](/docs/learn/wallets/multisig/): Distributed key security
+Security that fits your real threat, does not take over your life, can be kept up consistently and still lets you use your bitcoin is right. Security that exceeds your risk, causes constant stress, or is so complex you lock yourself out is paranoia, and it has its own risks. Most people need basic discretion, a hardware wallet, backups in more than one place and ordinary home security; few need elaborate decoys or professional protection. The aim is to be a harder target than the alternatives, not to be invulnerable. Match the effort to your [threat model](/docs/learn/fundamentals/threat-models/).

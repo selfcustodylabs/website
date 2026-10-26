@@ -8,15 +8,15 @@ tags: ["nodes", "bitcoin", "self custody"]
 slug: /learn/nodes
 ---
 
-# Bitcoin Nodes
+# Bitcoin nodes
 
-A Bitcoin node is software that downloads the blockchain, validates every transaction and block against consensus rules, and serves data to wallets. When you run your own node, you stop trusting somebody else's view of the chain. You verify it yourself.
+A Bitcoin node is software that downloads the blockchain, checks every block and transaction against the consensus rules, and answers wallets' questions. Running your own means you stop trusting someone else's view of the chain and verify it yourself. For self-custody it matters more than most people realise: without your own node, your wallet asks a stranger's server about your balance and transactions, revealing your addresses and trusting the answers.
 
-For self-custody, this matters more than most people realize. Without your own node, your wallet asks a stranger's server about your balance and transactions, leaking your addresses and trusting their answers.
+## What does this section cover?
 
-## In this section
+| Page | What it explains |
+|---|---|
+| [What is a Bitcoin node](/docs/learn/nodes/what-is-node/) | What a node does, the kinds of node, and how a node differs from a wallet |
+| [Why run your own node](/docs/learn/nodes/why-run-node/) | The privacy and verification you gain, and the common objections |
 
-- **[What Is a Bitcoin Node](./what-is-node)**: the technical role nodes play in the network
-- **[Why Run Your Own Node](./why-run-node)**: privacy, sovereignty, and the verification you gain
-
-Ready to actually run one? See the [Bitcoin Node setup guide](/docs/bitcoin-node/) for a full walkthrough.
+The [node guide](/docs/bitcoin-node/) sets one up.

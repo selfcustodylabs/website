@@ -6,61 +6,36 @@ keywords: ["bitcoin node", "privacy", "security", "self custody", "verification"
 tags: ["node", "privacy", "security", "bitcoin"]
 ---
 
-# Why Run Your Own Node
+# Why run your own node
 
-Running your own Bitcoin node isn't required, but it's strongly recommended for anyone serious about self-custody. Here's why.
+Running your own Bitcoin node is not required to hold bitcoin, but it completes self-custody: your keys sign, and your own node verifies. Without one, your wallet tells someone else's server all your addresses, balances and history, and trusts that server to tell the truth about payments and confirmations. With one, nobody learns what you own and nobody can fool you about whether you were paid. It costs a small computer, a 2 TB SSD and a few days of syncing.
 
-## The Privacy Problem
+## What does a third-party node learn about you?
 
-When your wallet checks your balance, it asks a Bitcoin node for information. If you don't run your own node, you're asking someone else's.
-
-### What Gets Exposed
-
-Every time your wallet connects to a third-party node:
+Every time your wallet connects to someone else's node or server, it reveals:
 
 <div class="fixed-width-table">
 
-| Information Revealed | Risk |
+| What is revealed | What the operator can do with it |
 |---------------------|------|
-| All your addresses | Node knows your complete wallet structure |
-| Your balances | Node knows how much bitcoin you have |
-| Your transaction history | Node can build your financial profile |
-| Your IP address | Node can link addresses to your location |
-| When you're online | Node knows your activity patterns |
-| Future addresses | Wallets often query unused addresses too |
+| All your addresses | Map your whole wallet |
+| Your balances | Know how much bitcoin you have |
+| Your transaction history | Build a financial profile |
+| Your IP address | Link your addresses to your location |
+| When you are online | Learn your patterns of activity |
+| Addresses you have not used yet | Wallets often ask about these in advance |
 
 </div>
 
-### Who Might Be Watching
+Public servers can be run by anyone: analysis companies building databases of who owns which address, exchanges following what customers do after withdrawing, governments monitoring finances, or thieves looking for targets. You cannot know who runs the ones your wallet connects to.
 
-Random public nodes could be run by:
-- **Surveillance companies**: Building databases of address ownership
-- **Exchanges**: Tracking customer activity post-withdrawal
-- **Governments**: Monitoring financial activity
-- **Hackers**: Identifying targets for theft
+## Can someone else's node lie to you?
 
-You have no way of knowing who operates the nodes your wallet connects to.
+Yes. Without your own node, you trust others to tell you the truth about the blockchain.
 
-```
-YOUR WALLET THINKS:
-  "I'll just ask this helpful node for my balance"
+### Fake confirmations
 
-REALITY:
-  "Thanks for telling me all your addresses. 
-   I've added them to my database." (Surveillance node)
-```
-
-## The Verification Problem
-
-Without your own node, you trust others to tell you the truth about Bitcoin.
-
-### The Fake Confirmation Attack
-
-A technically skilled attacker could:
-
-1. Manipulate which node your wallet connects to
-2. Send you a fake transaction that doesn't exist on the real blockchain
-3. Your wallet shows "confirmed" when it isn't
+A skilled attacker who can control which node your wallet talks to can show it a payment that does not exist on the real blockchain, and the wallet will display it as confirmed.
 
 <div class="doc-diagram">
 
@@ -68,53 +43,19 @@ A technically skilled attacker could:
 
 </div>
 
-This is difficult to pull off but not impossible, especially in targeted attacks.
+It is difficult to pull off, but not impossible in a targeted attack.
 
-### The Wrong Chain Problem
+### The wrong chain
 
-If Bitcoin ever splits into different versions (like the 2017 Bitcoin/Bitcoin Cash split), your wallet might connect to a node running the "wrong" version:
+If bitcoin splits into competing versions, as Bitcoin and Bitcoin Cash did in 2017, a wallet can end up connected to a node following the other one, and you may believe you received bitcoin when you received a different coin with different rules and value. Your own node follows the rules you chose to run.
 
-- You think you're receiving Bitcoin
-- You're actually receiving a different coin
-- The coins have different rules and values
+## What does your own node verify?
 
-With your own node, you choose exactly which version of Bitcoin you're using.
+Your node checks for itself that every transaction is valid, that every block follows every rule, and that your balance is real. Your security then rests on your wallet and your own verification, instead of your wallet and a node of unknown honesty, and a payment counts as confirmed only when your node has verified the block it is in.
 
-## The Security Benefits
+## How does a node complete self-custody?
 
-### You Verify Everything
-
-Your node independently verifies:
-- That transactions are valid
-- That blocks follow all rules
-- That no one is cheating
-- That your balance is real
-
-You don't ask anyone; you check yourself.
-
-### No Single Point of Trust
-
-```
-WITHOUT YOUR NODE:
-  Your security = Wallet + Third-party node
-                          (unknown trustworthiness)
-
-WITH YOUR NODE:
-  Your security = Wallet + Your own verification
-```
-
-### No Lies About Confirmations
-
-A payment isn't confirmed until your node verifies the block containing it. No one can trick you about confirmation status.
-
-## The Self-Custody Connection
-
-True self-custody means:
-- ✅ You control your keys (hardware wallet)
-- ✅ You verify your transactions (your own node)
-- ✅ You don't depend on third parties
-
-Without your own node, you're only 2/3 of the way there.
+Self-custody has three parts: you control the keys (a hardware wallet), you verify the transactions (your own node), and you depend on no third party. A hardware wallet alone covers the first; the node covers the other two.
 
 <div class="doc-diagram">
 
@@ -122,89 +63,36 @@ Without your own node, you're only 2/3 of the way there.
 
 </div>
 
-## Benefits Beyond Privacy and Security
+## What else does a node give you?
 
-### Supporting the Network
+- It strengthens the network: more nodes make bitcoin harder to attack and more decentralised, and running one is taking part in enforcing its rules.
+- It teaches you how bitcoin works: how transactions spread, how blocks are checked, how the mempool fills and empties.
+- It powers other services: your own Electrum server, a Lightning node, a block explorer or payment processing.
 
-Every node strengthens Bitcoin:
-- More nodes = harder to attack
-- More nodes = faster transaction propagation
-- More nodes = more decentralization
+## What are the common objections?
 
-Running a node is participating in Bitcoin's consensus.
+### Isn't it too technical?
 
-### Learning How Bitcoin Works
+Not any more. If you can install an app and wait for it to sync, you can run a node, and packages such as Umbrel and RaspiBlitz make it easier still.
 
-Operating a node teaches you:
-- How transactions propagate
-- How blocks are verified
-- How the mempool works
-- How Bitcoin's rules are enforced
-
-This knowledge is valuable for any serious bitcoiner.
-
-### Enabling Other Services
-
-Your own node can power:
-- Your own Electrum server (wallet backend)
-- Lightning Network node
-- Block explorer
-- Payment processing
-
-It becomes the foundation for a complete Bitcoin setup.
-
-## Common Objections
-
-### "It's too technical"
-
-Modern node software is user-friendly. If you can install an app and wait for it to sync, you can run a node. Pre-built solutions like Umbrel or RaspiBlitz make it even easier.
-
-### "I don't have the storage space"
+### Isn't the storage too much?
 
 A pruned node needs only about 10 GB. A full node needs about 770 GB as of September 2026, and a 2 TB SSD costs far less than the bitcoin it protects.
 
-### "I don't leave my computer on"
+### What if you don't leave your computer on?
 
-Nodes only need to be running when you're using your wallet. They can catch up when turned on. For best results, a dedicated device (Raspberry Pi, old laptop) can run 24/7.
+A node only needs to be running when you use your wallet, and it catches up when switched on. A dedicated small computer or old laptop left running is more convenient.
 
-### "I'm not a target"
+### What if you're not a target?
 
-You might not be a target today. Privacy is easier to maintain than to recover. And you don't know who's logging data for future use.
+You may not be today. But privacy is easier to keep than to recover, and you cannot know who is logging data for later use.
 
-## Who Should Run a Node?
+## Who should run a node?
 
-### Strongly Recommended
+| | Who |
+|---|---|
+| Strongly recommended | Anyone holding significant bitcoin, valuing financial privacy, regularly receiving bitcoin, or using self-custodial Lightning |
+| Worth doing | Anyone who wants to learn how bitcoin works, support the network, or depend less on others |
+| Can wait | Complete beginners, people holding very small amounts, and people who only use custodial services |
 
-- Anyone holding significant bitcoin
-- Anyone who values financial privacy
-- Anyone regularly receiving bitcoin
-- Anyone using non-custodial Lightning
-
-### Nice to Have
-
-- Hobbyist bitcoiners wanting to learn
-- Anyone wanting to support the network
-- Those moving toward more sovereignty
-
-### Can Probably Wait
-
-- Complete beginners (learn basics first)
-- Those holding very small amounts
-- Those who only use custodial services
-
-## Key Takeaways
-
-- Using third-party nodes **exposes your privacy**
-- Without your own node, you **trust others** to tell the truth
-- Running your own node enables **true verification**
-- A node completes your **self-custody setup**
-- Modern tools make running a node **accessible to anyone**
-
----
-
-## You've Completed the Learn Section! 🎉
-
-Congratulations, you now understand the core concepts of Bitcoin self-custody: keys, wallets, transactions, privacy, and nodes. You have the knowledge foundation to confidently secure your Bitcoin.
-
-**Now it's time to put knowledge into practice.**
-
+The [node guide](/docs/bitcoin-node/) sets one up.
