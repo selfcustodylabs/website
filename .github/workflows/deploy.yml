@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  # "Run workflow" on the Actions tab: redeploys main without a new commit, for
+  # example right after the Cloudflare token and account ID are added.
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -92,6 +93,8 @@ jobs:
       # Runs after the deploy so the URLs are live when Bing comes to fetch them,
       # and never fails the job: the pages are already published either way.
       - name: Ping IndexNow with changed docs
+        # A manual run redeploys what is already live and indexed.
+        if: ${{ github.event_name == 'push' }}
         continue-on-error: true
         env:
           # Public by design: IndexNow verifies ownership by fetching this key
