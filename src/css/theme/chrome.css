@@ -50,7 +50,7 @@ li {
    =========================================== */
 
 .navbar {
-  height: 3.5rem;
+  height: var(--ifm-navbar-height);
   padding: 0 1.25rem;
   background: var(--scl-bg);
   border-bottom: var(--scl-rule);

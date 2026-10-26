@@ -17,6 +17,9 @@ html[data-theme="dark"] {
   --ifm-code-font-size: 95%;
   --ifm-link-color: var(--scl-ink);
   --ifm-link-hover-color: var(--scl-amber-lit);
+  /* The real navbar height: Docusaurus offsets anchors, the sticky sidebar
+     and the TOC by it, and Infima's 3.75rem default left them 4px off. */
+  --ifm-navbar-height: 3.5rem;
   --ifm-navbar-background-color: var(--scl-bg);
   --ifm-navbar-link-color: var(--scl-muted);
   --ifm-navbar-link-hover-color: var(--scl-ink);
