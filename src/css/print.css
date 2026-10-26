@@ -103,8 +103,13 @@
     overflow: visible !important;
   }
 
+  .markdown table thead {
+    background: none !important;
+  }
+
   .markdown table th {
     border-bottom: 1px solid #000 !important;
+    color: #000 !important;
   }
 
   .markdown table td {
