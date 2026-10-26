@@ -597,7 +597,9 @@ li {
   font-size: 0.8em;
 }
 
-/* Tables: mono caps head, hairline rows. */
+/* Tables: hairline rows under a head set like the OG card's eyebrow: amber
+   mono caps on a faint amber wash, closed by an amber rule. The wash also
+   replaces Infima's grey stripe, which it paints on every thead. */
 .markdown table,
 .mdx-page article table {
   display: table;
@@ -608,9 +610,14 @@ li {
   font-size: 0.9rem;
 }
 
+.markdown table thead,
+.mdx-page article table thead {
+  background: var(--scl-amber-wash);
+}
+
 .markdown table thead tr,
 .mdx-page article table thead tr {
-  border-bottom: 1px solid var(--scl-dim2);
+  border-bottom: 1px solid var(--scl-amber);
 }
 
 .markdown table th,
@@ -618,7 +625,7 @@ li {
   padding: 0.55rem 0.75rem;
   border: 0;
   background: none;
-  color: var(--scl-muted);
+  color: var(--scl-amber);
   font-family: var(--scl-font-mono);
   font-size: 0.68rem;
   font-weight: 600;

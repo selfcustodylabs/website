@@ -228,7 +228,7 @@
 
 .table th,
 .table td {
-  padding: 0.85rem 1rem 0.85rem 0;
+  padding: 0.85rem 1rem 0.85rem 0.75rem;
   border: 0;
   border-bottom: var(--scl-rule);
   color: var(--scl-ink-2);
@@ -241,10 +241,17 @@
   padding-right: 0;
 }
 
+/* Head as in the docs (theme/chrome.css): amber mono caps on a faint amber
+   wash, closed by an amber rule. */
+.table thead {
+  background: var(--scl-amber-wash);
+}
+
 .table thead th {
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  color: var(--scl-faint);
+  border-bottom: 1px solid var(--scl-amber);
+  color: var(--scl-amber);
   font-family: var(--scl-font-mono);
   font-size: 0.66rem;
   font-weight: 600;
