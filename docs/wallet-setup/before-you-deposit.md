@@ -12,6 +12,8 @@ date: "2026-01-15"
 
 Before sending a significant amount of bitcoin to a new wallet, check six things: the seed phrase was made safely and is written down correctly; a recovery from the written backup alone has been tested; the passphrase, if you use one, is backed up and tested; receive addresses are checked on the hardware wallet's own screen; the device and software came from their makers and are up to date; and a small test amount has gone in and come back out. A payment into a wallet cannot be undone, so a mistake found after the deposit is found too late. If any item below is not true yet, wait.
 
+The same checks are a [printable checklist](/worksheets/before-you-deposit/) to tick off at your desk.
+
 ## What can go wrong if you skip a check?
 
 | Skipped check | What can happen |

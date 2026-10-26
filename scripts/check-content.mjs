@@ -201,6 +201,21 @@ for (const url of Object.keys(manifest)) {
   if (!seenUrls.has(url)) errors.push(`src/data/ogManifest.json: ${url} has no doc or note (stale card)`);
 }
 
+// Every worksheet has both PDFs (scripts/build-worksheets.mjs), and no PDF is
+// left over from a sheet that no longer exists.
+{
+  const { worksheets } = await import(join(ROOT, "src/data/worksheets.js"));
+  const expected = new Set(worksheets.flatMap(({ slug }) => [`${slug}-a4.pdf`, `${slug}-letter.pdf`]));
+  const dir = join(ROOT, "static", "worksheets");
+  const present = new Set(existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(".pdf")) : []);
+  for (const f of expected) {
+    if (!present.has(f)) errors.push(`static/worksheets/${f} is missing (npm run build, then npm run worksheets)`);
+  }
+  for (const f of present) {
+    if (!expected.has(f)) errors.push(`static/worksheets/${f} has no worksheet in src/data/worksheets.js`);
+  }
+}
+
 // Em dashes outside docs too: CLAUDE.md bans them repo-wide.
 for (const dir of ["src", "plugins", "scripts"]) {
   for (const file of walk(join(ROOT, dir), [".js", ".jsx", ".mjs", ".css", ".md", ".mdx", ".py", ".json"])) {

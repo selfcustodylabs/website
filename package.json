@@ -14,6 +14,7 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,css,md}\"",
     "check": "node scripts/check-content.mjs --summary",
     "og": "python3 scripts/generate-og-images.py",
+    "worksheets": "node scripts/build-worksheets.mjs",
     "images": "python3 scripts/optimize-images.py",
     "seo:check": "node scripts/seo-snapshot.mjs --compare scripts/seo-baseline.json",
     "seo:accept": "node scripts/seo-snapshot.mjs --write scripts/seo-baseline.json",

@@ -4227,6 +4227,119 @@
       "organizationIds": [
         "https://selfcustodylabs.com/#organization"
       ]
+    },
+    "/worksheets/": {
+      "title": "Printable Bitcoin Self-Custody Worksheets | Self Custody Labs",
+      "description": "Printable worksheets for the parts of self-custody done on paper: a dice seed grid, a passphrase sheet, a multisig record, backup and deposit checks.",
+      "canonical": "https://selfcustodylabs.com/worksheets/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "CollectionPage",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/backup-check/": {
+      "title": "Backup Verification Worksheet | Self Custody Labs",
+      "description": "A printable sheet for testing a seed backup: what the wallet should show before the restore, what the restored wallet shows, and when to test again.",
+      "canonical": "https://selfcustodylabs.com/worksheets/backup-check/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/before-you-deposit/": {
+      "title": "Before You Deposit: Printable Checklist | Self Custody Labs",
+      "description": "The checks to finish before moving bitcoin to a new hardware wallet, as a printable list: seed, tested backup, passphrase, address, device, test send.",
+      "canonical": "https://selfcustodylabs.com/worksheets/before-you-deposit/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/dice-seed/": {
+      "title": "Dice Seed Worksheet: 24 Words from 256 Rolls | Self Custody Labs",
+      "description": "A printable grid for making a 24-word BIP39 seed with dice: 256 bit boxes in 24 rows, powers of two for each decimal, and a column for every word.",
+      "canonical": "https://selfcustodylabs.com/worksheets/dice-seed/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/diceware-passphrase/": {
+      "title": "Diceware Passphrase Worksheet | Self Custody Labs",
+      "description": "A printable sheet for a six-word BIP39 passphrase from the EFF word list: five dice per word, the word itself, its length, and a record of the test.",
+      "canonical": "https://selfcustodylabs.com/worksheets/diceware-passphrase/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/inheritance-letter/": {
+      "title": "Bitcoin Inheritance Letter Template | Self Custody Labs",
+      "description": "A printable letter for your heirs: what they inherit, what they need, how to reach the funds with Sparrow, who to call, and where each key is kept.",
+      "canonical": "https://selfcustodylabs.com/worksheets/inheritance-letter/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/worksheets/multisig-record/": {
+      "title": "Multisig Record Sheet: Keys, Fingerprints, Places | Self Custody Labs",
+      "description": "A printable record for a 2-of-3 multisig: each key's device, fingerprint, firmware and storage place, and where every copy of the descriptor is kept.",
+      "canonical": "https://selfcustodylabs.com/worksheets/multisig-record/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
     }
   },
   "redirects": {
@@ -4461,6 +4574,13 @@
     "https://selfcustodylabs.com/notes/coldcard-no-longer-recommended/",
     "https://selfcustodylabs.com/notes/site-rebuild-2026/",
     "https://selfcustodylabs.com/podcasts/",
-    "https://selfcustodylabs.com/privacy/"
+    "https://selfcustodylabs.com/privacy/",
+    "https://selfcustodylabs.com/worksheets/",
+    "https://selfcustodylabs.com/worksheets/backup-check/",
+    "https://selfcustodylabs.com/worksheets/before-you-deposit/",
+    "https://selfcustodylabs.com/worksheets/dice-seed/",
+    "https://selfcustodylabs.com/worksheets/diceware-passphrase/",
+    "https://selfcustodylabs.com/worksheets/inheritance-letter/",
+    "https://selfcustodylabs.com/worksheets/multisig-record/"
   ]
 }

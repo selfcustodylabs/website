@@ -38,6 +38,8 @@ The first two are the full test, because they recover the wallet from the backup
 
 Step 1 notes the values the restored wallet must reproduce. In your wallet software (Sparrow, for example), write down the wallet's first receive address and, ideally, its account xpub, the [extended public key](/docs/learn/keys/xpub/) that covers every address in the account. Note also the derivation path and script type the wallet uses, usually `m/84'/0'/0'` and native segwit (addresses starting `bc1q`), and whether you use a passphrase.
 
+The [backup verification worksheet](/worksheets/backup-check/) has boxes for these values and for what the restored wallet shows, so the comparison in step 3 is side by side on one sheet.
+
 ## Step 2: Restore the wallet from the backup
 
 Step 2 rebuilds the wallet using only what is written on the backup.

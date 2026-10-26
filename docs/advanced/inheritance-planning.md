@@ -105,6 +105,8 @@ A 2-of-3 multisig bitcoin wallet. Any two of its three keys can move the funds.
 - Bitcoin cannot be "hacked": if the seeds are safe, the funds are safe
 ```
 
+The [inheritance letter template](/worksheets/inheritance-letter/) is this letter as a printable form to fill in by hand, with the step 6 table at the end.
+
 ## Step 5: Test the plan
 
 Step 5 proves it works before anyone depends on it:

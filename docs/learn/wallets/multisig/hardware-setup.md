@@ -46,7 +46,7 @@ Step 4 writes down what you will need to identify each key later. For every devi
 | Where the device is kept | Home safe |
 | Where its seed backup is kept | Bank safe deposit box |
 
-The master fingerprint identifies the key without revealing it; Sparrow shows it when the device connects, and it appears in the wallet descriptor. Store these records separately from the seed phrases, and label each device (1, 2, 3).
+The master fingerprint identifies the key without revealing it; Sparrow shows it when the device connects, and it appears in the wallet descriptor. Store these records separately from the seed phrases, and label each device (1, 2, 3). The [multisig record sheet](/worksheets/multisig-record/) has these fields for all three keys, plus the wallet details Sparrow gives you later.
 
 ## Step 5: Back up each seed on metal, in separate places
 

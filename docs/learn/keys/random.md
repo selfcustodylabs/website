@@ -98,7 +98,7 @@ You do need a computer. Steps 1, 2 and 4 can be done with pen and paper, but ste
 
 ### Paper and pen
 
-Paper is only a temporary record of the process, and every sheet is burned once the seed phrase is on metal.
+Paper is only a temporary record of the process, and every sheet is burned once the seed phrase is on metal. The [dice seed worksheet](/worksheets/dice-seed/) is the grid from steps 1 to 4 as a printable sheet, with the column values, the checksum boxes and a column for each word.
 
 ### Metal seed storage
 

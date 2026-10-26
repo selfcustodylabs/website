@@ -108,6 +108,8 @@ Step 2 picks each word with five dice. Casino dice are the most even, but any si
 2. Find that number in the EFF list: `52465` is `running`.
 3. Repeat until you have six words. Do not reroll a word because you dislike it; that removes entropy.
 
+The [diceware passphrase worksheet](/worksheets/diceware-passphrase/) has a row of five dice boxes for each word and space to record the test in step 3.
+
 Six rolls might give:
 
 ```text

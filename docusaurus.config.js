@@ -371,6 +371,7 @@ const config = {
           { label: 'Learn', to: '/learn/', position: 'left' },
           { label: 'Guides', to: '/guides/', position: 'left' },
           { label: 'Notes', to: '/notes/', position: 'left' },
+          { label: 'Worksheets', to: '/worksheets/', position: 'left' },
           {
             label: 'Resources',
             type: 'dropdown',
@@ -456,6 +457,10 @@ const config = {
               {
                 label: 'Field Notes',
                 to: '/notes/',
+              },
+              {
+                label: 'Worksheets',
+                to: '/worksheets/',
               },
               {
                 label: 'Books',
