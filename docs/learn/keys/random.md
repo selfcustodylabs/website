@@ -46,17 +46,17 @@ Generating the seed with dice means you can check the randomness yourself, no so
 
 | Situation | Recommendation |
 |-----------|----------------|
-| Learning with small amounts | Use your hardware wallet's dice-roll feature instead of the full manual process |
+| Learning with small amounts | Use a hardware wallet that takes dice rolls, with the cross-check below, instead of the full manual process |
 | Moderate holdings, and you want to learn how it works | Yes: practise on testnet first |
 | Significant holdings | Yes: verifiable entropy is worth the effort |
 | You do not trust hardware wallet random number generators | Yes: 2026 proved that instinct right |
-| You are not comfortable with technical processes | Use the device's dice feature with the cross-check below; a mistake in the manual process loses everything |
+| You are not comfortable with technical processes | Use a device that takes dice rolls, with the cross-check below; a mistake in the manual process loses everything |
 
 Before July 2026 we said most people should let their hardware wallet generate the seed. The [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) retired that advice: device randomness is now the fallback, not the default. If the full manual process is more than you want, the middle path below gets most of the benefit.
 
 ### How do you use your hardware wallet's dice feature safely?
 
-Most current devices (BitBox02, Trezor Safe, Jade, Keystone, Coldcard) can mix dice rolls into seed generation. Two rules make it trustworthy:
+As of October 2026 a few devices take dice rolls on the device itself: the Keystone 3 Pro, SeedSigner, Krux and Coldcard. BitBox and Foundation (Passport) document procedures for choosing the words yourself, and the Trezor Safe and Jade have no dice entry, so with those you make the seed with this guide and restore it onto the device; the [comparison](/docs/reference/hardware-wallet-comparison/#entropy-who-lets-you-verify) lists each. With a device that takes rolls, two rules make it trustworthy:
 
 1. Roll enough. 50 rolls of a six-sided die contribute about 128 bits, enough to protect you even if the device's generator is completely broken. For a 24-word seed, roll 99 times (about 256 bits). This is why dice-rolled Coldcard seeds survived the incident.
 2. Cross-check the result. A buggy or malicious device could silently ignore your rolls. Re-derive the seed from the same rolls on an independent device (a [SeedSigner](/docs/seedsigner/) or [Krux](/docs/reference/hardware-wallet-comparison/#seedsigner--krux-diy), or this guide's manual process on an air-gapped computer) and compare all 24 words. If they match, the device used your entropy.

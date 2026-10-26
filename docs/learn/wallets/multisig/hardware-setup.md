@@ -30,7 +30,7 @@ Step 2 makes sure each device is genuine and current before any seed exists on i
 
 ## Step 3: Create a separate seed on each device, with dice
 
-Step 3 gives every device its own key. Each device gets a fresh seed that has never existed anywhere else: never reuse a seed from another wallet, never put the same seed on two devices. Use each device's dice-roll option (99 rolls for 24 words), or import a seed you [made yourself with dice](/docs/learn/keys/random/). Independent entropy for each key is what keeps one vendor's silent failure from mattering. Choose 24 words, and give each device its own PIN of at least 6 to 8 digits, with no obvious patterns and none reused between devices.
+Step 3 gives every device its own key. Each device gets a fresh seed that has never existed anywhere else: never reuse a seed from another wallet, never put the same seed on two devices. Make each seed with dice: [by hand](/docs/learn/keys/random/), then restore it onto the device, or with the device's own dice entry where it has one (the Keystone 3 Pro and SeedSigner; 99 rolls for 24 words). Independent entropy for each key is what keeps one vendor's silent failure from mattering. Choose 24 words, and give each device its own PIN of at least 6 to 8 digits, with no obvious patterns and none reused between devices.
 
 ## Step 4: Record each device
 
@@ -74,19 +74,19 @@ The menus differ by maker. These notes cover what matters for multisig; follow t
 
 ### Trezor
 
-Connect by USB and create the wallet in Trezor Suite or Sparrow, choosing 24 words and the dice option where offered. Trezor PINs can be up to 50 digits. For multisig, Sparrow reads the key directly from the device over USB; no export file is needed.
+Connect by USB and set the device up in Trezor Suite. Trezor has no dice entry on the device as of October 2026, so choose to recover a wallet and enter the 24 words you made with dice, rather than letting it create one. Trezor PINs can be up to 50 digits. For multisig, Sparrow reads the key directly from the device over USB; no export file is needed.
 
 ### BitBox02
 
-Connect by USB and create the wallet in the BitBoxApp, then set the device password. For multisig, Sparrow reads the key directly over USB and shows the fingerprint.
+Connect by USB and set the wallet up in the BitBoxApp: restore the 24 words you made with dice, or follow BitBox's own diceware procedure, then set the device password. For multisig, Sparrow reads the key directly over USB and shows the fingerprint.
 
 ### Jade and Jade Plus
 
-Create the wallet on the device, using its dice option, and choose QR mode for air-gapped use. For multisig, export the key to Sparrow by scanning the QR code the Jade displays.
+The Jade has no dice entry, so restore the 24 words you made with dice on the device, and choose QR mode for air-gapped use. For multisig, export the key to Sparrow by scanning the QR code the Jade displays.
 
 ### Keystone
 
-Create the wallet on the device with a password and 24 words. For multisig, export the extended public key from the device's multisig menu as a QR code or to a microSD card.
+Create the wallet on the device with a password and 24 words, using its dice roll option (firmware 1.2.6 or later). For multisig, export the extended public key from the device's multisig menu as a QR code or to a microSD card.
 
 ### Coldcard (existing owners)
 

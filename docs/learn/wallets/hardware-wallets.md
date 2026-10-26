@@ -41,7 +41,7 @@ When a device creates a seed, it draws randomness from its own generator, and yo
 
 Two habits close the gap:
 
-- Supply the randomness yourself. Every device we recommend can mix your own dice rolls into seed creation (99 rolls cover a 24-word seed even if the device's generator is broken), or you can [generate the seed entirely by hand](/docs/learn/keys/random/).
+- Supply the randomness yourself. Every device we recommend can take a seed you [made by hand from dice](/docs/learn/keys/random/), by restoring it, and a few take the rolls on the device (99 rolls cover a 24-word seed even if the device's generator is broken).
 - Check what the device did with it. A buggy or malicious device could ignore your rolls; re-deriving the seed from the same rolls on an independent device and comparing the words catches that, as the dice guide explains.
 
 A [passphrase](/docs/learn/keys/passphrase/) on top means no single secret has to be perfect. In July 2026 that layering was the line between drained and untouched.
@@ -75,7 +75,7 @@ Firmware that supports only bitcoin has less code, and so fewer places for bugs.
 
 ### Your own dice entropy
 
-Being able to mix your own dice rolls into seed creation is, after 2026, a requirement rather than a feature. Every device we recommend supports it; Ledger and Bitkey do not. Fifty rolls protect a 12-word seed even if the device's generator is completely broken, and 99 cover a 24-word seed, which is exactly what kept dice-generated Coldcard seeds safe.
+After 2026, supplying your own randomness is a requirement rather than a feature. As of October 2026 the Keystone 3 Pro, SeedSigner, Krux and Coldcard take dice rolls on the device; BitBox and Foundation document procedures for choosing the words yourself; on the Trezor Safe and Jade you make the seed with dice and restore it. Bitkey shows no seed phrase, so none of these is possible with it. Fifty rolls protect a 12-word seed even if the device's generator is completely broken, and 99 cover a 24-word seed, which is exactly what kept dice-generated Coldcard seeds safe.
 
 ## What habits keep a hardware wallet safe?
 

@@ -22,27 +22,27 @@ Prices are the makers' own store prices in US dollars, checked on 26 October 202
 
 | Wallet | Price | Air-gapped | Open source | Secure element | Your own dice entropy | Best for |
 |--------|-------|---------|-------------|----------------|---------------------|----------|
-| Trezor Safe 5 | $129 | No | Yes | Yes, EAL6+ | Yes | Beginners |
-| Trezor Safe 7 | $249 | No | Yes | Yes, two (including the auditable TROPIC01) | Yes | Transparency with polish |
-| BitBox02 Nova | €175 (Aug) | No | Yes | Yes, EAL6+ | Yes | Simplicity |
-| Jade | $79 | Yes, QR with the optional camera | Yes | No: virtual, "blind oracle" | Yes | Budget |
-| Jade Plus | $149 ($169 metal) | Yes, QR | Yes | No: virtual, "blind oracle" | Yes | Verifiable security |
-| Passport Prime | $565 | Yes, QR, plus encrypted Bluetooth | Yes | Yes | Yes | Premium air-gap |
-| Keystone 3 Pro | $149 (Aug) | Yes, QR only | Yes | Yes, three chips | Yes | QR air-gap value |
-| SeedSigner or Krux | About $50-80 in parts | Yes, stateless QR | Yes | None: stateless | Required | Building your own |
-| Coldcard Mk5 or Q | $219 or $319 | Yes, microSD (and QR on the Q) | Source visible, not open licence | Yes, two | Yes | Not recommended for new purchases |
-| Ledger (Nano, Flex, Stax) | $79-399 (Aug) | No | No: secure element firmware is closed | Yes | No | Not recommended |
+| Trezor Safe 5 | $129 | No | Yes | Yes, EAL6+ | Import only | Beginners |
+| Trezor Safe 7 | $249 | No | Yes | Yes, two (including the auditable TROPIC01) | Import only | Transparency with polish |
+| BitBox02 Nova | €175 (Aug) | No | Yes | Yes, EAL6+ | Vendor procedure | Simplicity |
+| Jade | $79 | Yes, QR with the optional camera | Yes | No: virtual, "blind oracle" | Import only | Budget |
+| Jade Plus | $149 ($169 metal) | Yes, QR | Yes | No: virtual, "blind oracle" | Import only | Verifiable security |
+| Passport Prime | $565 | Yes, QR, plus encrypted Bluetooth | Yes | Yes | Vendor procedure | Premium air-gap |
+| Keystone 3 Pro | $149 (Aug) | Yes, QR only | Yes | Yes, three chips | On the device | QR air-gap value |
+| SeedSigner or Krux | About $50-80 in parts | Yes, stateless QR | Yes | None: stateless | On the device | Building your own |
+| Coldcard Mk5 or Q | $219 or $319 | Yes, microSD (and QR on the Q) | Source visible, not open licence | Yes, two | On the device | Not recommended for new purchases |
+| Ledger (Nano, Flex, Stax) | $79-399 (Aug) | No | No: secure element firmware is closed | Yes | Import only | Not recommended |
 | Bitkey | $250 (Aug) | No | Partly: source published, not reproducible | Yes, secure enclave | No | Not recommended |
 
 </div>
 
-The Coldcard prices are the store's reduced prices on 26 October 2026; the list prices are $269 and $369.
+The Coldcard prices are the store's reduced prices on 26 October 2026; the list prices are $269 and $369. In the dice column, "on the device" means you enter dice rolls on the device itself; "vendor procedure" means the maker documents a way to choose the words yourself and enter them; "import only" means you make the seed with [dice](/docs/learn/keys/random/) yourself and restore it onto the device, which works on every device here except Bitkey.
 
 ## How should you choose? Practices before devices
 
 The 2026 incident made one thing measurable: the practices around a device protected people better than the device itself. Coldcard owners who had used dice entropy, a strong passphrase or multisig lost nothing; owners who trusted the device's defaults lost everything. Decide on the practices first:
 
-1. Supply or verify your entropy. Every device we recommend can mix your own dice rolls into seed creation. Use it, or [generate the seed yourself](/docs/learn/keys/random/). This one habit removes the exact failure that cost Coldcard users $116 million.
+1. Supply your own entropy. A seed you [make yourself with dice](/docs/learn/keys/random/) and then restore onto the device works with every device we recommend, and it removes the exact failure that cost Coldcard users $116 million. The Keystone 3 Pro and SeedSigner also take dice rolls on the device, and BitBox and Foundation document procedures of their own; the entropy table below lists each.
 2. Add a [passphrase](/docs/learn/keys/passphrase/) for any balance you would miss. In July 2026 it was the difference between drained and untouched.
 3. Use [multisig](/docs/learn/wallets/multisig/) across vendors for significant holdings, so that no single vendor's mistake can reach your funds.
 
@@ -61,7 +61,7 @@ The Trezor Safe 5 is the beginner default: a polished, open-source device with a
 | Connectivity | USB-C |
 | Open source | Yes: firmware and hardware designs |
 | Secure element | Yes, EAL6+ (Infineon Optiga) |
-| Dice entropy | Supported at setup |
+| Dice entropy | Not on the device as of October 2026: restore a seed you made with [dice](/docs/learn/keys/random/). Trezor Suite's entropy check confirms the device used the computer's randomness too |
 | Bitcoin-only firmware | Available |
 | Strengths | Polished setup and documentation, good Sparrow support, a secure element under open firmware, a security team with a long disclosure record |
 | Weaknesses | No air-gap option (USB only); Trezor Suite nudges you toward its own ecosystem; a shipping provider's breach, disclosed in 2026, leaked customers' shipping details (choose a pickup point where you can) |
@@ -78,7 +78,7 @@ The Trezor Safe 7 is Trezor's flagship, built around a secure element whose desi
 | Connectivity | USB-C and encrypted Bluetooth |
 | Open source | Yes, including the design of the TROPIC01 secure element |
 | Secure element | Two: TROPIC01 (auditable) and an EAL6+ Optiga |
-| Dice entropy | Supported at setup |
+| Dice entropy | Not on the device as of October 2026: restore a seed you made with [dice](/docs/learn/keys/random/) |
 | Bitcoin-only firmware | Available |
 | Strengths | Auditable secure chip, a large screen for checking addresses, quantum-resistant firmware signing, a Bitcoin-only variant |
 | Weaknesses | Premium price; Bluetooth is a radio you may not want (it can stay off); no QR air-gap mode |
@@ -97,7 +97,7 @@ The BitBox02 Nova is the Swiss-made BitBox02 with an EAL6+ secure chip and the s
 | Connectivity | USB-C, and Bluetooth for iPhone and iPad |
 | Open source | Yes, fully |
 | Secure element | Yes, EAL6+, in a two-chip design |
-| Dice entropy | Supported at setup |
+| Dice entropy | BitBox's own diceware procedure (documented for the BitBox02), or restore a seed you made with dice |
 | Bitcoin-only edition | Available |
 | Strengths | Backup to microSD as well as on paper; the open main chip cross-checks the secure chip; fast, open communication during the 2026 crisis, followed by expanded audits |
 | Weaknesses | No air-gap mode; the small screen means more scrolling to check an address; the touch sliders divide opinion |
@@ -114,7 +114,7 @@ The Jade and Jade Plus are the verifiable-security pick: fully open source, able
 | Connectivity | USB, Bluetooth, and a camera for QR air-gapping |
 | Open source | Yes, fully |
 | Secure element | No: a virtual "blind oracle" model |
-| Dice entropy | Supported; mixes several entropy sources by default |
+| Dice entropy | Not on the device: restore a seed you made with dice. By default it mixes several entropy sources, and wallet apps can add their own |
 | Coins | Bitcoin and Liquid |
 | Strengths | A real QR air-gap at a low price, anti-exfiltration signing, several entropy sources, an exemplary response to the 2026 incident |
 | Weaknesses | No hardware secure element, so the oracle model needs understanding; the camera workflow is slower than USB |
@@ -137,7 +137,7 @@ The Passport Prime is the premium air-gapped device, and the most expensive one 
 | Connectivity | QR codes, and QuantumLink encrypted Bluetooth |
 | Open source | Yes, fully (KeyOS, with sandboxed apps) |
 | Secure element | Yes |
-| Dice entropy | Supported; ships an app for testing the device's entropy |
+| Dice entropy | Supported by drawing seed words yourself and importing them; ships an app for testing the device's entropy |
 | Bitcoin-only | Yes, by design |
 | Strengths | A verification-first interface, US assembly, sandboxed apps, entropy you can test yourself |
 | Weaknesses | Far the most expensive device here; more device than most people need; the extra features (2FA codes, file storage) widen what it has to protect |
@@ -156,7 +156,7 @@ The Keystone 3 Pro is a QR-only air-gapped device at a mid-range price.
 | Connectivity | QR codes and microSD only |
 | Open source | Yes, fully |
 | Secure element | Three chips |
-| Dice entropy | Supported at setup |
+| Dice entropy | Dice rolls on the device (firmware 1.2.6 or later); 99 rolls for a 24-word seed |
 | Bitcoin-only firmware | Available |
 | Strengths | A true air-gap with a big screen for checking addresses, three secure elements, good Sparrow multisig support, erases itself if tampered with |
 | Weaknesses | Multi-coin firmware by default (install the Bitcoin-only build); a younger company than Trezor or Blockstream; a battery to keep charged |
@@ -228,19 +228,19 @@ Bitkey's fair niche is someone leaving an exchange who would otherwise never hol
 
 ### Entropy: who lets you verify?
 
-This table is the lesson of 2026. "Dice support" means the device can mix rolls you supply into seed generation; "how to verify" is how you can check independently that it actually used them.
+This table is the lesson of 2026: where the randomness in your seed comes from, and how you can check it. As of October 2026 only a few devices take dice rolls on the device; every device except Bitkey can take a seed you made yourself from dice, by restoring it.
 
-| Wallet | Dice support | How to verify |
+| Wallet | Your own entropy | How to verify |
 |--------|-------------|---------------|
-| SeedSigner and Krux | Required: you bring the entropy | Re-derive on a second device; stateless by design |
-| Jade and Jade Plus | Yes, plus several entropy sources by default | Open firmware; cross-check the words against a [manual derivation](/docs/learn/keys/random/) |
-| Passport Prime | Yes, plus an entropy-testing app | Probe the generator on the device, and cross-check manually |
-| Trezor Safe 5 and 7 | Yes | Cross-check the words against a manual derivation |
-| BitBox02 Nova | Yes | Cross-check the words against a manual derivation |
-| Keystone 3 Pro | Yes | Cross-check the words against a manual derivation |
-| Coldcard Mk5 and Q | Yes (the dice path was never affected) | Cross-check the words against a manual derivation |
-| Ledger | No | Trust the certification |
-| Bitkey | No (no seed phrase shown) | Cannot be verified; you trust Block's 2-of-3 design |
+| SeedSigner and Krux | Dice rolls on the device | Re-derive on a second device; stateless by design |
+| Keystone 3 Pro | Dice rolls on the device, firmware 1.2.6 or later | Enter the same rolls in a second tool and compare the words |
+| BitBox02 and Nova | BitBox's diceware procedure: dice pick 23 words from a table, the device offers valid last words | You chose the words; documented for the BitBox02 |
+| Passport Prime | Draw words yourself and import them; an app tests the device's own generator | You chose the words |
+| Jade and Jade Plus | Restore a seed you made with dice; by default several internal sources are mixed | Your dice seed is checked by the [dice guide](/docs/learn/keys/random/); the firmware is open |
+| Trezor Safe 5 and 7 | Restore a seed you made with dice; no dice entry on the device | Trezor Suite's entropy check confirms the device mixed in the computer's randomness |
+| Coldcard Mk5 and Q | Dice rolls on the device (the dice path was never affected) | Compare against a manual derivation |
+| Ledger | Restore a seed you made with dice | Otherwise, trust the certification |
+| Bitkey | None (no seed phrase is shown) | Cannot be verified; you trust Block's 2-of-3 design |
 
 Whatever you buy, a device could in theory ignore your dice. The check that catches it is re-deriving the seed from the same rolls independently, which the [dice guide](/docs/learn/keys/random/) shows how to do.
 
@@ -253,7 +253,7 @@ When the Coldcard news broke, the speed and honesty of each vendor's response va
 | Blockstream (Jade) | Entropy design documented the same night, with a migration guide | Clean |
 | Foundation (Passport) | Confirmation the same night; entropy-testing app afterwards | Clean |
 | Block (Bitkey) | Technical analysis the same night | Clean |
-| Trezor | Statement the next day, sustained follow-ups, discussing better dice entry | A third-party shipping provider's data breach (disclosed 2026); glitch attacks on older models, addressed with the secure element |
+| Trezor | Published statement on 5 August, sustained follow-ups; considering support for user-supplied entropy, with no commitment yet | A third-party shipping provider's data breach (disclosed 2026); glitch attacks on older models, addressed with the secure element |
 | BitBox | Statement the next day; announced expanded audits | Clean |
 | Keystone | Confirmed it was unaffected | Clean |
 | Coinkite (Coldcard) | Fast patch and advisory, but see the [dismissed 2025 warning](/docs/learn/wallets/coldcard-entropy-incident/) | The incident itself |
@@ -263,7 +263,7 @@ When the Coldcard news broke, the speed and honesty of each vendor's response va
 
 | Use case | Our pick | Why |
 |---|---|---|
-| First hardware wallet | BitBox02 Nova (Bitcoin-only) or Trezor Safe 5 | Polished, open source, secure element, dice support for when you want it |
+| First hardware wallet | BitBox02 Nova (Bitcoin-only) or Trezor Safe 5 | Polished, open source, secure element; both restore a seed you made with dice |
 | Verifiable security | Jade Plus or Passport Prime, seeded with [dice](/docs/learn/keys/random/) | Air-gapped workflows from vendors that treat verification, including of their own randomness, as a feature |
 | Budget | Blockstream Jade ($79) | Nothing else at this price is open source, air-gap capable and backed by this response record |
 | Building your own, maximum verification | [SeedSigner](/docs/seedsigner/) (our favourite) or Krux | Stateless, assembled from commodity parts, with the entropy fully in your hands; see the [build guide](/docs/seedsigner/build-guide/) |
@@ -308,4 +308,4 @@ Not necessarily. A secure element resists someone physically extracting the seed
 
 ### Should you use dice to generate your Bitcoin seed phrase?
 
-Yes, for any amount you would be upset to lose. Every hardware wallet we recommend can mix your own dice rolls into seed creation. Coldcard owners who used dice lost nothing in the 2026 incident, while owners who trusted the device's default lost everything. Dice remove your dependence on the vendor's random number generator being correct.
+Yes, for any amount you would be upset to lose. Every hardware wallet we recommend can take a seed you made from dice, by restoring it, and a few take the rolls directly. Coldcard owners who used dice lost nothing in the 2026 incident, while owners who trusted the device's default lost everything. Dice remove your dependence on the vendor's random number generator being correct.
