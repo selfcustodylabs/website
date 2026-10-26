@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Content checks for docs/: the rules in CLAUDE.md that used to be manual.
+ * Content checks for docs/ and notes/: the rules in CLAUDE.md that used to be
+ * manual.
  *
  * Errors fail the run (and the deploy). Warnings are printed with a count, so
  * a rewrite can drive them to zero; once a warning rule reaches zero it is
@@ -18,6 +19,7 @@ import yaml from "js-yaml";
 
 const ROOT = process.cwd();
 const DOCS = join(ROOT, "docs");
+const NOTES = join(ROOT, "notes");
 const args = new Set(process.argv.slice(2));
 
 /** Phrases that read as generated filler. Each is a regex and a reason. */
@@ -112,10 +114,16 @@ const warn = (rule, msg) => {
 
 const manifest = JSON.parse(readFileSync(join(ROOT, "src/data/ogManifest.json"), "utf8"));
 const docFiles = walk(DOCS, [".md", ".mdx"]).sort();
+const noteFiles = existsSync(NOTES) ? walk(NOTES, [".md", ".mdx"]).sort() : [];
 const seenUrls = new Set();
 
-for (const file of docFiles) {
+const DOC_KEYS = ["title", "description", "keywords", "tags", "sidebar_position", "date"];
+// A note's title is its H1 (the theme renders it), and it has no sidebar or tags.
+const NOTE_KEYS = ["title", "description", "date"];
+
+for (const file of [...docFiles, ...noteFiles]) {
   const rel = relative(ROOT, file);
+  const isNote = file.startsWith(NOTES + sep);
   const text = readFileSync(file, "utf8");
   const m = text.match(/^---\n([\s\S]*?)\n---\n/);
   if (!m) {
@@ -126,8 +134,19 @@ for (const file of docFiles) {
   const fmLines = m[0].split("\n").length - 1;
   const body = text.slice(m[0].length);
 
-  for (const key of ["title", "description", "keywords", "tags", "sidebar_position", "date"]) {
+  for (const key of isNote ? NOTE_KEYS : DOC_KEYS) {
     if (fm[key] === undefined) errors.push(`${rel}: frontmatter is missing "${key}"`);
+  }
+  if (isNote) {
+    // The note's URL is /notes/<file name>/, which the OG generator derives from
+    // the path. A slug or a date-prefixed file name would move it elsewhere.
+    if (fm.slug !== undefined) errors.push(`${rel}: notes take their URL from the file name; remove "slug"`);
+    if (/^\d{4}-\d{2}-\d{2}-/.test(file.split(sep).pop())) {
+      errors.push(`${rel}: a dated file name puts the date in the URL; use the date: field`);
+    }
+    if (fm.tags !== undefined || fm.authors !== undefined) {
+      errors.push(`${rel}: notes have no tags or authors (they would create thin tag and author pages)`);
+    }
   }
   // date: is the day the page was first published, emitted as datePublished.
   // Quoted "YYYY-MM-DD", so YAML keeps it a string rather than a Date.
@@ -141,16 +160,18 @@ for (const file of docFiles) {
     errors.push(`${rel}: description is ${desc.length} chars (want 120-160)`);
   }
 
-  const url = urlFor(file);
+  const url = isNote ? `/notes/${file.split(sep).pop().replace(/\.mdx?$/, "")}/` : urlFor(file);
   seenUrls.add(url);
   const card = manifest[url];
   if (!card) errors.push(`${rel}: no OG card in src/data/ogManifest.json for ${url} (run scripts/generate-og-images.py)`);
   else if (!existsSync(join(ROOT, "static", card))) errors.push(`${rel}: OG card ${card} is missing`);
 
-  // Rule 7: the first thing after the H1 is the answer, not a box.
+  // Rule 7: the first thing after the H1 is the answer, not a box. A note's H1
+  // is its frontmatter title, so its body starts straight after it.
   const lines = proseLines(body);
-  const h1 = lines.findIndex(([, l]) => /^# /.test(l));
-  if (h1 >= 0) {
+  const h1 = isNote ? -1 : lines.findIndex(([, l]) => /^# /.test(l));
+  if (isNote && lines.some(([, l]) => /^# /.test(l))) errors.push(`${rel}: a note has no H1 in its body (the title is its H1)`);
+  if (h1 >= 0 || isNote) {
     const next = lines.slice(h1 + 1).find(([, l]) => l.trim() !== "" && !/^import\s/.test(l.trim()));
     if (next && /^(:::|<(?!br))/.test(next[1].trim())) {
       warn("box-before-answer", `${rel}:${next[0] + fmLines}: ${next[1].trim().slice(0, 60)}`);
@@ -177,7 +198,7 @@ for (const file of docFiles) {
 }
 
 for (const url of Object.keys(manifest)) {
-  if (!seenUrls.has(url)) errors.push(`src/data/ogManifest.json: ${url} has no doc (stale card)`);
+  if (!seenUrls.has(url)) errors.push(`src/data/ogManifest.json: ${url} has no doc or note (stale card)`);
 }
 
 // Em dashes outside docs too: CLAUDE.md bans them repo-wide.
@@ -204,7 +225,9 @@ if (!args.has("--summary")) {
     for (const msg of list) console.log(`  ${msg}`);
   }
 }
-console.log(`\ncheck-content: ${docFiles.length} docs, ${errors.length} error(s), ${total} warning(s)`);
+console.log(
+  `\ncheck-content: ${docFiles.length} docs, ${noteFiles.length} notes, ${errors.length} error(s), ${total} warning(s)`,
+);
 for (const [rule, list] of warnings) console.log(`  ${rule}: ${list.length}`);
 if (errors.length > 0) {
   console.error(`\n${errors.join("\n")}`);

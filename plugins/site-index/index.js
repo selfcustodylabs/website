@@ -14,6 +14,8 @@
  * Shape:
  *   docs:     { [permalink]: { title, label, description, sidebar, order, guide, updated } }
  *   sidebars: { [sidebarId]: [{ label, link, items: [permalink] }] }
+ *   notes:    [{ permalink, title, description, date }], newest first (field notes,
+ *             from the blog plugin, for the homepage)
  *
  * Permalinks always end in a slash (trailingSlash: true), so they can be used
  * as links and as JSON-LD URLs as they are. `updated` is "YYYY-MM-DD" from git,
@@ -114,7 +116,17 @@ export default function siteIndexPlugin() {
       const groups = {};
       for (const [id, items] of Object.entries(sidebars)) groups[id] = sidebarGroups(items, permalinkById);
 
-      await actions.createData("site-index.json", JSON.stringify({ docs, sidebars: groups }));
+      const posts = allContent["docusaurus-plugin-content-blog"]?.default?.blogPosts ?? [];
+      const notes = posts
+        .filter((post) => !post.metadata.unlisted && !post.metadata.frontMatter?.draft)
+        .map(({ metadata }) => ({
+          permalink: withSlash(metadata.permalink),
+          title: metadata.title,
+          description: metadata.description ?? "",
+          date: new Date(metadata.date).toISOString().slice(0, 10),
+        }));
+
+      await actions.createData("site-index.json", JSON.stringify({ docs, sidebars: groups, notes }));
     },
   };
 }

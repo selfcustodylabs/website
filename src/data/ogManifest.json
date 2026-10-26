@@ -95,5 +95,8 @@
   "/docs/wallet-setup/": "/img/og/wallet-setup.png",
   "/docs/wallet-setup/backup-verification/": "/img/og/wallet-setup-backup-verification.png",
   "/docs/wallet-setup/before-you-deposit/": "/img/og/wallet-setup-before-you-deposit.png",
-  "/docs/wallet-setup/hardware-wallet/": "/img/og/wallet-setup-hardware-wallet.png"
+  "/docs/wallet-setup/hardware-wallet/": "/img/og/wallet-setup-hardware-wallet.png",
+  "/notes/coinjoin-recommendation/": "/img/og/notes-coinjoin-recommendation.png",
+  "/notes/coldcard-no-longer-recommended/": "/img/og/notes-coldcard-no-longer-recommended.png",
+  "/notes/site-rebuild-2026/": "/img/og/notes-site-rebuild-2026.png"
 }

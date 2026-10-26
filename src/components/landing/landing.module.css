@@ -562,3 +562,20 @@
   text-decoration-color: var(--scl-amber);
   text-underline-offset: 0.22em;
 }
+
+/* Notes table on /notes/ and the homepage: date, then the note. */
+.notesTable {
+  table-layout: fixed;
+}
+
+.notesTable thead th:first-child {
+  width: 9rem;
+}
+
+.notesTable td:first-child {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}

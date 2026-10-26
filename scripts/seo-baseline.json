@@ -4111,6 +4111,74 @@
         "https://selfcustodylabs.com/#organization"
       ]
     },
+    "/notes/": {
+      "title": "Field notes | Self Custody Labs",
+      "description": "Dated notes from Self Custody Labs on what changed on the site and why: recommendations we dropped, guides we rewrote, and how the site is built.",
+      "canonical": "https://selfcustodylabs.com/notes/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Blog",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/notes/coinjoin-recommendation/": {
+      "title": "Our CoinJoin recommendation is now JoinMarket NG | Self Custody Labs",
+      "description": "On 22 August 2026 we rewrote the CoinJoin guide for the tools that survived 2024 to 2026: JoinMarket NG with Jam recommended, Wasabi and Whirlpool covered.",
+      "canonical": "https://selfcustodylabs.com/notes/coinjoin-recommendation/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/notes-coinjoin-recommendation.png",
+      "jsonLd": [
+        "BlogPosting",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/notes/coldcard-no-longer-recommended/": {
+      "title": "Why we stopped recommending Coldcard | Self Custody Labs",
+      "description": "On 21 August 2026 we took Coldcard out of every recommendation on the site after its entropy flaw, and made dice the default way to create a seed.",
+      "canonical": "https://selfcustodylabs.com/notes/coldcard-no-longer-recommended/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/notes-coldcard-no-longer-recommended.png",
+      "jsonLd": [
+        "BlogPosting",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/notes/site-rebuild-2026/": {
+      "title": "What changed in the October 2026 rebuild | Self Custody Labs",
+      "description": "In October 2026 we rebuilt the site: Google Analytics removed, every guide rewritten and dated, a design that matches our diagrams, and lighter pages.",
+      "canonical": "https://selfcustodylabs.com/notes/site-rebuild-2026/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/notes-site-rebuild-2026.png",
+      "jsonLd": [
+        "BlogPosting",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
     "/podcasts/": {
       "title": "Bitcoin Podcasts | Self Custody Labs",
       "description": "Must-listen podcasts about Bitcoin and the disgrace of fiat money.",
@@ -4388,6 +4456,10 @@
     "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/",
     "https://selfcustodylabs.com/guides/",
     "https://selfcustodylabs.com/learn/",
+    "https://selfcustodylabs.com/notes/",
+    "https://selfcustodylabs.com/notes/coinjoin-recommendation/",
+    "https://selfcustodylabs.com/notes/coldcard-no-longer-recommended/",
+    "https://selfcustodylabs.com/notes/site-rebuild-2026/",
     "https://selfcustodylabs.com/podcasts/",
     "https://selfcustodylabs.com/privacy/"
   ]

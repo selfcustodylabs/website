@@ -274,8 +274,36 @@ const config = {
           breadcrumbs: true,
         },
         
-        // Blog disabled
-        blog: false,
+        // Field notes: dated posts about what changed on the site and why.
+        // Files are named by slug with `date:` in frontmatter, so a note's URL
+        // is /notes/<file name>/, which scripts/generate-og-images.py derives
+        // the same way. No authors.yml (the plugin would build a thin
+        // /notes/authors/ page; the byline is in src/theme/BlogPostItem/Header),
+        // no tags and no archive, so the only routes are the list, the posts
+        // and the feeds.
+        blog: {
+          path: "notes",
+          routeBasePath: "notes",
+          blogTitle: "Field notes",
+          blogDescription:
+            "Dated notes from Self Custody Labs on what changed on the site and why: recommendations we dropped, guides we rewrote, and how the site is built.",
+          postsPerPage: "ALL",
+          blogSidebarCount: 0,
+          showReadingTime: false,
+          showLastUpdateTime: true,
+          archiveBasePath: null,
+          onInlineTags: "throw",
+          onInlineAuthors: "ignore",
+          onUntruncatedBlogPosts: "ignore",
+          feedOptions: {
+            type: ["rss", "atom"],
+            title: "Self Custody Labs: field notes",
+            description: "What changed on selfcustodylabs.com and why.",
+            copyright: `Self Custody Labs, ${new Date().getFullYear()}`,
+            language: "en",
+            limit: false,
+          },
+        },
         
         // Theme
         theme: {
@@ -338,6 +366,7 @@ const config = {
         items: [
           { label: 'Learn', to: '/learn/', position: 'left' },
           { label: 'Guides', to: '/guides/', position: 'left' },
+          { label: 'Notes', to: '/notes/', position: 'left' },
           {
             label: 'Resources',
             type: 'dropdown',
@@ -420,6 +449,10 @@ const config = {
           {
             title: 'Resources',
             items: [
+              {
+                label: 'Field Notes',
+                to: '/notes/',
+              },
               {
                 label: 'Books',
                 to: '/books/',

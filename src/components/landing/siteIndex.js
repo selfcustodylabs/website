@@ -7,6 +7,9 @@ import index from "@generated/site-index/default/site-index.json";
 export const docs = index.docs;
 export const sidebars = index.sidebars;
 
+/** Field notes, newest first, as the blog plugin orders them. */
+export const notes = index.notes;
+
 /**
  * One doc by permalink. Throws rather than rendering a hole: a landing page
  * that names a moved or deleted doc should fail the build.

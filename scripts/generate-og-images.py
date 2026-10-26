@@ -32,6 +32,7 @@ from og_theme import (  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
+NOTES = ROOT / "notes"
 IMG_DIR = ROOT / "static" / "img"
 OG_DIR = IMG_DIR / "og"
 MANIFEST = ROOT / "src" / "data" / "ogManifest.json"
@@ -128,6 +129,8 @@ def url_to_image_name(url: str) -> str:
 
 def breadcrumb(url: str) -> str:
     """Section trail for the eyebrow: /docs/learn/keys/seed/ -> LEARN / KEYS."""
+    if url.startswith("/notes/"):
+        return "FIELD NOTES"
     parts = [p for p in url.strip("/").split("/") if p][1:]
     if not parts:
         return "GUIDES"
@@ -422,6 +425,17 @@ def main():
         if not title:
             continue
         url = doc_path_to_url(md)
+        image_name = url_to_image_name(url)
+        render_card(title, url, OG_DIR / image_name)
+        manifest[url] = f"/img/og/{image_name}"
+        count += 1
+    # Field notes: the blog plugin routes notes/<name>.md to /notes/<name>/
+    # (no date in the file name, no slug), so the URL comes from the path here too.
+    for md in sorted(NOTES.glob("*.md")):
+        title, _slug = parse_frontmatter(md.read_text(encoding="utf-8"))
+        if not title:
+            continue
+        url = f"/notes/{md.stem}/"
         image_name = url_to_image_name(url)
         render_card(title, url, OG_DIR / image_name)
         manifest[url] = f"/img/og/{image_name}"

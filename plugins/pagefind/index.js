@@ -7,8 +7,8 @@
  * search costs tens of kilobytes. Everything is served from this domain and the
  * query never leaves the browser.
  *
- * What gets indexed: every doc page except tag listings, plus the editorial
- * standalone pages. Only the page's <article> is read, minus breadcrumbs, the
+ * What gets indexed: every doc page except tag listings, every field note
+ * (not the /notes/ list itself), plus the editorial standalone pages. Only the page's <article> is read, minus breadcrumbs, the
  * mobile table of contents, the doc footer and anything marked
  * data-pagefind-ignore (navigation components). Redirect pages, the homepage,
  * landing pages, 404 and the search page are left out on purpose: they would
@@ -31,6 +31,7 @@ const STANDALONE = new Set(["/about/", "/books/", "/podcasts/", "/privacy/"]);
 /** @param {string} route */
 export function isSearchable(route) {
   if (STANDALONE.has(route)) return true;
+  if (route.startsWith("/notes/") && route !== "/notes/") return true;
   return route.startsWith("/docs/") && !route.startsWith("/docs/tags/");
 }
 

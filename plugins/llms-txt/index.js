@@ -4,9 +4,10 @@
  * Emits three things into the build output, for AI agents and assistants that
  * fetch pages directly rather than through a search index:
  *
- *   /llms.txt                  curated index, grouped by sidebar
+ *   /llms.txt                  curated index, grouped by sidebar, then field notes
  *   /llms-full.txt             the whole corpus in one file
  *   /docs/<path>.md            per-page Markdown mirror beside each index.html
+ *   /notes/<slug>.md           the same for each field note (blog plugin)
  *
  * Why Markdown mirrors: an assistant reading the HTML pays roughly 5x the
  * tokens for the same words. The source is already Markdown, so the mirror
@@ -190,6 +191,9 @@ function normalize(raw, permalink, facts = "") {
       continue;
     }
 
+    // The blog's excerpt marker (field notes): a page break for the list, not content.
+    if (/^(<!--\s*truncate\s*-->|\{\/\*\s*truncate\s*\*\/\})$/.test(trimmed)) continue;
+
     // ESM imports only. `from` keeps Python `import hashlib,sys` safe even in
     // the unlikely case it appears outside a fence.
     if (/^import\s+.+\s+from\s+/.test(trimmed)) continue;
@@ -232,6 +236,9 @@ function normalize(raw, permalink, facts = "") {
     // A file read on its own has no base URL, so every link must be absolute.
     // Markdown links first, then src/href on the raw HTML the docs mix in:
     // an <img src="/img/..."> is unreachable from a standalone .md otherwise.
+    // `pathname:///x` is Docusaurus's escape for a static file outside the
+    // router (the notes feed); outside the site it is just /x.
+    text = text.replace(/\]\(pathname:\/\/(\/[^)]*)\)/g, (_m, href) => `](${SITE_URL}${href})`);
     text = text.replace(/\]\((\/[^)]*)\)/g, (_m, href) => `](${SITE_URL}${href})`);
     text = text.replace(/\]\((\.{1,2}\/[^)]*)\)/g, (_m, href) => {
       try {
@@ -278,6 +285,7 @@ function assertClean(markdown, permalink) {
 
   if (/<[A-Z][A-Za-z0-9]*/.test(outsideFences)) problems.push("residual JSX component tag");
   if (/^:::/m.test(outsideFences)) problems.push("residual admonition marker");
+  if (/<!--|\]\(pathname:/.test(outsideFences)) problems.push("residual HTML comment or pathname: link");
   if (/^#{1,6} .*\{#[\w-]+\}\s*$/m.test(outsideFences)) problems.push("residual heading id");
   if (/\]\(\.{0,2}\//.test(outsideFences.replace(/\]\(https?:\/\//g, "](")))
     problems.push("unresolved relative or root-relative link");
@@ -335,6 +343,8 @@ module.exports = function llmsTxtPlugin(context) {
   let docs = [];
   /** @type {Record<string, any[]>} */
   let sidebars = {};
+  /** @type {any[]} */
+  let notes = [];
 
   return {
     name: "llms-txt",
@@ -348,6 +358,11 @@ module.exports = function llmsTxtPlugin(context) {
       const version = instance?.loadedVersions?.[0];
       docs = (version?.docs ?? []).filter((doc) => !doc.draft && !doc.unlisted);
       sidebars = version?.sidebars ?? {};
+      // Field notes: same fields as a doc where it matters (permalink, title,
+      // description, source, frontMatter), plus the post date.
+      notes = (allContent["docusaurus-plugin-content-blog"]?.default?.blogPosts ?? [])
+        .map((post) => post.metadata)
+        .filter((m) => !m.unlisted && !m.frontMatter?.draft);
     },
 
     async postBuild({ outDir, routesPaths }) {
@@ -359,7 +374,7 @@ module.exports = function llmsTxtPlugin(context) {
       }
 
       const knownRoutes = new Set(routesPaths.map(withSlash));
-      const drifted = docs.filter((doc) => !knownRoutes.has(withSlash(doc.permalink)));
+      const drifted = [...docs, ...notes].filter((doc) => !knownRoutes.has(withSlash(doc.permalink)));
       if (drifted.length > 0) {
         throw new Error(
           `[llms-txt] ${drifted.length} doc permalink(s) are not built routes: ` +
@@ -368,30 +383,36 @@ module.exports = function llmsTxtPlugin(context) {
         );
       }
 
-      const entries = [];
-
-      for (const doc of docs) {
+      /**
+       * Write one page's mirror at <route>.md and return its Markdown.
+       *
+       * @param {any} page - doc or blog post metadata
+       * @param {string} facts - guide facts sentence, or ""
+       * @param {string|null} published - "YYYY-MM-DD" for a note, else null
+       */
+      const writeMirror = async (page, facts, published) => {
         const sourcePath = path.join(
           context.siteDir,
-          doc.source.replace(/^@site\//, ""),
+          page.source.replace(/^@site\//, ""),
         );
         const raw = await fs.readFile(sourcePath, "utf8");
-        const body = normalize(raw, doc.permalink, guideFactsSentence(doc.frontMatter?.guide, doc.lastUpdatedAt));
-        assertClean(body, doc.permalink);
+        const body = normalize(raw, page.permalink, facts);
+        assertClean(body, page.permalink);
 
-        const canonical = `${SITE_URL}${withSlash(doc.permalink)}`;
-        const updated = doc.lastUpdatedAt
-          ? new Date(doc.lastUpdatedAt).toISOString().slice(0, 10)
+        const canonical = `${SITE_URL}${withSlash(page.permalink)}`;
+        const updated = page.lastUpdatedAt
+          ? new Date(page.lastUpdatedAt).toISOString().slice(0, 10)
           : null;
 
         // Provenance travels with the file: a mirror gets read far from the
         // site that produced it.
         const header = [
-          `# ${doc.title}`,
+          `# ${page.title}`,
           "",
-          `> ${doc.description ?? ""}`,
+          `> ${page.description ?? ""}`,
           "",
           `Source: ${canonical}`,
+          published ? `Published: ${published}` : null,
           updated ? `Last updated: ${updated}` : null,
           "Publisher: Self Custody Labs (https://selfcustodylabs.com)",
           "",
@@ -402,24 +423,48 @@ module.exports = function llmsTxtPlugin(context) {
           .filter((l) => l !== null)
           .join("\n");
 
-        // The body opens with its own H1; the provenance header supplies one.
+        // A doc body opens with its own H1; the provenance header supplies one.
         const withoutDuplicateH1 = body.replace(/^#\s+.*\n+/, "");
         const markdown = `${header}${withoutDuplicateH1}`;
 
         // Mirror lives at <route>.md, the convention agents probe for.
         const mirrorPath = path.join(
           outDir,
-          `${doc.permalink.replace(/^\//, "").replace(/\/$/, "")}.md`,
+          `${page.permalink.replace(/^\//, "").replace(/\/$/, "")}.md`,
         );
         await fs.mkdir(path.dirname(mirrorPath), { recursive: true });
         await fs.writeFile(mirrorPath, markdown, "utf8");
+        return markdown;
+      };
 
+      const entries = [];
+
+      for (const doc of docs) {
+        const markdown = await writeMirror(
+          doc,
+          guideFactsSentence(doc.frontMatter?.guide, doc.lastUpdatedAt),
+          null,
+        );
         entries.push({
           id: doc.id,
           sidebar: doc.sidebar,
           title: doc.title,
           description: doc.description ?? "",
-          mirrorUrl: `${SITE_URL}${doc.permalink}.md`,
+          mirrorUrl: `${SITE_URL}${doc.permalink.replace(/\/$/, "")}.md`,
+          markdown,
+        });
+      }
+
+      // Field notes, newest first as the blog plugin orders them.
+      const noteEntries = [];
+      for (const note of notes) {
+        const published = new Date(note.date).toISOString().slice(0, 10);
+        const markdown = await writeMirror(note, "", published);
+        noteEntries.push({
+          title: note.title,
+          description: note.description ?? "",
+          published,
+          mirrorUrl: `${SITE_URL}${note.permalink.replace(/\/$/, "")}.md`,
           markdown,
         });
       }
@@ -478,6 +523,17 @@ module.exports = function llmsTxtPlugin(context) {
         );
       }
 
+      if (noteEntries.length > 0) {
+        sections.push(
+          "## Field notes",
+          "",
+          "Dated notes on what changed on the site and why.",
+          "",
+          ...noteEntries.map((e) => `- [${e.title}](${e.mirrorUrl}) (${e.published}): ${e.description}`),
+          "",
+        );
+      }
+
       const orphans = entries.filter((e) => !seen.has(e));
       if (orphans.length > 0) {
         sections.push(
@@ -498,7 +554,7 @@ module.exports = function llmsTxtPlugin(context) {
 
       await fs.writeFile(
         path.join(outDir, "llms-full.txt"),
-        `${intro}${entries.map((e) => e.markdown).join("\n\n---\n\n")}\n`,
+        `${intro}${[...entries, ...noteEntries].map((e) => e.markdown).join("\n\n---\n\n")}\n`,
         "utf8",
       );
 
@@ -507,7 +563,7 @@ module.exports = function llmsTxtPlugin(context) {
       // written here so the deploy workflow never has to re-derive a route from
       // a file path, which is the drift bug this plugin exists to avoid.
       const urlMap = Object.fromEntries(
-        docs.map((doc) => [
+        [...docs, ...notes].map((doc) => [
           doc.source.replace(/^@site\//, ""),
           `${SITE_URL}${withSlash(doc.permalink)}`,
         ]),
@@ -519,7 +575,8 @@ module.exports = function llmsTxtPlugin(context) {
       );
 
       console.log(
-        `[llms-txt] wrote llms.txt, llms-full.txt and ${entries.length} Markdown mirrors`,
+        `[llms-txt] wrote llms.txt, llms-full.txt and ${entries.length + noteEntries.length} Markdown mirrors ` +
+          `(${noteEntries.length} field notes)`,
       );
     },
   };

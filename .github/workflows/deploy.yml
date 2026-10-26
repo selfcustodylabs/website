@@ -102,9 +102,9 @@ jobs:
             echo "no previous commit to diff against, skipping"
             exit 0
           fi
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- docs/)
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- docs/ notes/)
           if [ -z "$CHANGED" ]; then
-            echo "no doc changes in this push, skipping"
+            echo "no doc or note changes in this push, skipping"
             exit 0
           fi
           echo "$CHANGED" | xargs node scripts/indexnow-submit.mjs

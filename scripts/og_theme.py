@@ -885,6 +885,10 @@ MOTIF_BY_URL = {
     "/docs/reference/faq/": "checklist",
     "/docs/reference/faq/recovery-scams/": "alert",
     "/docs/reference/faq/recovery-troubleshooting/": "checklist",
+    # Field notes
+    "/notes/coldcard-no-longer-recommended/": "stuck-dice",
+    "/notes/coinjoin-recommendation/": "mix",
+    "/notes/site-rebuild-2026/": "index",
 }
 
 

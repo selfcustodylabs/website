@@ -4,8 +4,9 @@ import Link from "@docusaurus/Link";
 
 import Section from "@site/src/components/landing/Section";
 import GuideTable from "@site/src/components/landing/GuideTable";
+import NotesTable from "@site/src/components/landing/NotesTable";
 import InlineLinks from "@site/src/components/InlineLinks";
-import { docs, getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
+import { docs, notes, getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
 import { currentAdvisory } from "@site/src/data/advisories";
 import { positions } from "@site/src/data/positions";
 import { formatDate } from "@site/src/data/guideFacts";
@@ -207,6 +208,16 @@ export default function Home() {
             ))}
           </dl>
         </Section>
+
+        {notes.length > 0 ? (
+          <Section
+            id="notes"
+            title="Field notes"
+            aside={<Link to="/notes/">All {notes.length} notes</Link>}
+          >
+            <NotesTable notes={notes.slice(0, 3)} />
+          </Section>
+        ) : null}
 
         <Section id="hardware" title="Hardware in the guides">
           <div className={styles.figures}>
