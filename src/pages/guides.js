@@ -17,12 +17,18 @@ const DESCRIPTION =
  * Every doc with a `guide:` facts block is listed here, grouped by the first
  * prefix it matches. A guide that matches none fails the build: add it to a
  * group rather than letting it fall off the page.
+ *
+ * Within a group guides follow sidebar reading order, except the ones named in
+ * `first`, which lead in the order given (a stale entry fails the build).
  */
 const GROUPS = [
   {
     id: "keys",
     label: "Keys, wallets and backups",
     prefixes: ["/docs/learn/keys/", "/docs/wallet-setup/", "/docs/learn/wallets/"],
+    // You make the seed before you protect it with a passphrase; the keys
+    // sidebar lists the passphrase page first.
+    first: ["/docs/learn/keys/random/"],
   },
   { id: "privacy", label: "Privacy", prefixes: ["/docs/learn/privacy/"] },
   {
@@ -58,6 +64,17 @@ function groupGuides(guides) {
       throw new Error(`[guides] ${guide.permalink} has guide facts but no group in src/pages/guides.js`);
     }
     group.guides.push(guide);
+  }
+  for (const group of groups) {
+    const first = group.first ?? [];
+    for (const permalink of first) {
+      if (!group.guides.some((g) => g.permalink === permalink)) {
+        throw new Error(`[guides] ${permalink} is in "first" for ${group.id} but is not a guide in that group`);
+      }
+    }
+    const rank = (g) => (first.includes(g.permalink) ? first.indexOf(g.permalink) : first.length);
+    // Array.prototype.sort is stable, so the rest keep their sidebar order.
+    group.guides.sort((a, b) => rank(a) - rank(b));
   }
   return groups.filter((g) => g.guides.length > 0);
 }
