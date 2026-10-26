@@ -129,35 +129,6 @@ export const faqSchemas = {
     ],
   },
 
-  // Pages that carry no FAQ section on the page itself yet. These pairs
-  // exist because a question-and-answer is the most directly retrievable shape
-  // there is, and these are the queries assistants actually get asked about
-  // this site's subject matter. Answers must stay in sync with the page.
-  "/docs/learn/privacy/coinjoin/": {
-    questions: [
-      {
-        question: "What is a Bitcoin CoinJoin?",
-        answer:
-          "A CoinJoin is a single Bitcoin transaction in which several users combine their inputs and each receives an equal-sized output, so an outside observer cannot match inputs to outputs. Think of ten people each dropping an identical note into a hat, shaking it, and each taking one back out: everyone leaves with what they put in, but nobody watching can say which note went to whom.",
-      },
-      {
-        question: "Does Whirlpool still work in 2026?",
-        answer:
-          "The original Whirlpool is dead and a revival exists under new management. US authorities seized Samourai Wallet's coordinator in April 2024 and every Whirlpool client stopped mixing the same day; Sparrow Wallet removed its integration shortly after. In June 2025 Ashigaru, an open-source fork run by anonymous maintainers, launched an independent Whirlpool coordinator reachable over Tor. Self Custody Labs covers it but does not recommend it, because it reintroduces the coordinator risk that caused the original failure.",
-      },
-      {
-        question: "Which CoinJoin implementation should I use in 2026?",
-        answer:
-          "Self Custody Labs recommends JoinMarket NG with the Jam web interface. JoinMarket NG has no coordinator at all: it is a peer-to-peer market where takers pay a fee to mix on demand and makers earn those fees, so there is nothing to seize and nobody to subpoena. Jam turns what used to be a command-line tool into a point-and-click app that ships on most node-in-a-box platforms. It requires your own Bitcoin node, and per-round anonymity sets are typically 4 to 20 participants, so plan on several rounds.",
-      },
-      {
-        question: "Is CoinJoin legal?",
-        answer:
-          "CoinJoin is a privacy technique, not an offence in itself, and financial privacy is a normal expectation in every other part of life. That said, the 2024 to 2026 period saw operators of custodial and coordinated mixing services prosecuted in the United States, and some exchanges flag deposits with CoinJoin history. Understand your own jurisdiction and the policies of any exchange you use before mixing.",
-      },
-    ],
-  },
-
 };
 
 /**

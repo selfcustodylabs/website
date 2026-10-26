@@ -8,18 +8,18 @@ tags: ["privacy", "bitcoin", "self custody"]
 slug: /learn/privacy
 ---
 
-# Bitcoin Privacy
+# Bitcoin privacy
 
-Bitcoin's blockchain is public. Every transaction, every address, every amount: all permanently visible to anyone who looks. Privacy on Bitcoin is not automatic; it is something you actively design for.
+Bitcoin's blockchain is public: every transaction, address and amount is permanently visible to anyone who looks, so privacy is something you design for rather than something you get by default. This section covers what the blockchain reveals, how surveillance firms link addresses to people, and the habits and tools that keep your finances your own: your own node, UTXO management, CoinJoin and PayJoin.
 
-This section covers what the chain reveals, how surveillance firms link addresses to identities, and the tools and habits that keep your financial life your own.
+## What does this section cover?
 
-## In this section
-
-- **[Why Privacy Matters](./why-privacy-matters)**: the case for financial privacy, even if you have nothing to hide
-- **[Chain Analysis](./chain-analysis)**: how surveillance firms cluster addresses and trace flows
-- **[Protecting Privacy](./protecting-privacy)**: practical habits that limit what the chain reveals
-- **[CoinJoin](./coinjoin)**: collaborative transactions that break heuristics
-- **[CoinJoin Tutorial](./coinjoin-tutorial)**: hands-on mixing with JoinMarket NG and Jam
-- **[PayJoin](./payjoin)**: cooperative payments that hide the true sender
-- **[UTXO Management](./utxo-management)**: coin control, consolidation, and source separation
+| Page | What it explains |
+|---|---|
+| [Why privacy matters](/docs/learn/privacy/why-privacy-matters/) | What the blockchain records, and why financial privacy matters even with nothing to hide |
+| [Chain analysis](/docs/learn/privacy/chain-analysis/) | How analysis firms group addresses and follow coins |
+| [Protecting your privacy](/docs/learn/privacy/protecting-privacy/) | The habits and tools, and where to start |
+| [UTXO management](/docs/learn/privacy/utxo-management/) | Coin control, labelling, consolidation and dusting attacks |
+| [CoinJoin](/docs/learn/privacy/coinjoin/) | How collaborative transactions cut a coin's history, and which tools work in 2026 |
+| [CoinJoin tutorial](/docs/learn/privacy/coinjoin-tutorial/) | Mixing with JoinMarket NG and Jam, step by step |
+| [PayJoin](/docs/learn/privacy/payjoin/) | Payments in which the receiver adds an input, breaking the analysts' main assumption |
