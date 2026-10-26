@@ -3,160 +3,80 @@
 > Connect Sparrow Wallet to your own Bitcoin node and Electrum server so transactions stay private and verified by your own infrastructure.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/connect-sparrow-wallet/
-Last updated: 2026-08-02
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-This is the moment everything comes together. You've set up Bitcoin Core. You've indexed the blockchain with an Electrum server. Now you'll connect your wallet, and from this point forward, your Bitcoin activity stays between you and your own infrastructure.
+If you installed Sparrow through Parmanode, it is already connected to your node: open it, and the connection toggle at the bottom right turns blue, Sparrow's colour for a private Electrum server. Otherwise, open Sparrow's server settings, choose Private Electrum, enter your Electrum server's address and port (50002 with SSL, or 50001), test the connection, and switch it on. Away from home, connect to the server's Tor onion address through a Tor proxy. From then on, your balance checks and broadcasts go only to your own node.
 
-## If You Used Parmanode
+## What if you used Parmanode?
 
-Here's the beautiful part: **if you installed Sparrow through Parmanode, it's already configured**. Launch Sparrow and it will automatically connect to your local Electrum server. No manual configuration needed.
+Sparrow installed through Parmanode connects automatically. If the toggle does not turn blue, check that the Electrum server (Fulcrum or electrs) is running, that Bitcoin Core has fully synced, and that the Electrum server has finished its first index.
 
-The connection indicator in the bottom-right corner should turn blue, indicating a successful private connection to your own server.
+## Step 1: Open Sparrow's server settings
 
-If it's not connecting, check that:
-- Your Electrum server (Fulcrum or electrs) is running
-- Bitcoin Core is fully synced
-- The Electrum server has finished its initial indexing
+Step 1 finds the settings for a Sparrow you installed yourself. Open `File`, `Settings` (called `Preferences` on some versions and on macOS), choose `Server` in the sidebar, and pick Private Electrum as the server type.
 
-## Manual Configuration
+## Step 2: Enter your server's details
 
-If you installed Sparrow separately, or need to reconfigure the connection, follow these steps:
-
-### Step 1: Open Server Settings
-
-In Sparrow Wallet:
-1. Go to **File** → **Preferences** (or **Settings** on some versions)
-2. Click **Server** in the left sidebar
-
-### Step 2: Enter Your Server Details
-
-You need three pieces of information:
+Step 2 points Sparrow at your server.
 
 <div class="fixed-width-table">
 
 | Field | Value | Notes |
 |-------|-------|-------|
-| **URL** | Your server's IP address | e.g., `192.168.1.100` or `127.0.0.1` |
-| **Port** | `50002` (SSL) or `50001` (non-SSL) | 50002 recommended |
-| **SSL** | Enabled (for port 50002) | Toggle on |
+| URL | Your server's address | `127.0.0.1` on the node itself; its local IP, such as `192.168.1.100`, elsewhere on your network |
+| Port | `50002` with SSL, or `50001` without | 50002 is recommended |
+| SSL | On, for port 50002 | |
 
 </div>
 
-### Finding Your Server Address
+Parmanode's Electrum server menu shows these details. Otherwise, find the node's local IP in your router's admin page or by running `ip addr` on the node.
 
-**If using Parmanode:** Check the Electrum server menu; connection details are displayed there.
+## Step 3: Test the connection
 
-**If on the same computer as your node:** Use `127.0.0.1` (localhost).
+Step 3 checks it works. Click `Test Connection`: a successful test shows the server's version and the current block height. If it fails, see [what if it does not connect](#what-if-it-does-not-connect).
 
-**If on a different computer on your home network:** Use your node's local IP address (like `192.168.1.100`). You can find this in your router's admin panel or by running `ip addr` on your node.
+## Step 4: Switch the connection on
 
-**If connecting remotely via Tor:** Use your onion address.
+Step 4 makes it live. Close the settings and turn on the toggle at the bottom right of the main window. It turns blue for a private Electrum server (green would mean Bitcoin Core directly, yellow a public server).
 
-### Step 3: Test the Connection
+![Sparrow Wallet's main window with the server toggle at the bottom right showing blue, connected to a private Electrum server](https://selfcustodylabs.com/img/node/sparrow.webp)
 
-Click **Test Connection**. You should see:
-- ✅ Connection successful
-- Server version information
-- Block height matching the current blockchain
+## How do you connect from outside your home?
 
-If the test fails, see [Troubleshooting](#troubleshooting) below.
+### Through Tor (recommended)
 
-### Step 4: Enable the Connection
+If your Electrum server has a Tor onion address:
 
-Toggle the switch in the bottom-right to enable the connection. The indicator should turn **blue**, showing an active private connection.
+1. Open Sparrow's server settings.
+2. Turn on `Use Proxy`, set to `127.0.0.1:9050` for the Tor service or `127.0.0.1:9150` for Tor Browser.
+3. Enter the onion address as the URL, with port `50001` and SSL off; Tor already encrypts the connection.
 
-![Sparrow connected to private node](https://selfcustodylabs.com/img/node/sparrow.webp)
+### Through a VPN
 
-## Connecting from Outside Your Home
+If you have a VPN into your home network, connect to it first and use the node's local address as usual.
 
-When you're away from home, your local IP address won't work. You have two options:
+## How do you check you are using your own node?
 
-### Option 1: Tor (Recommended)
+The server shown in Sparrow is your own address or onion address, not a public server; the block height matches your node's; and lookups in a new wallet come back quickly. Your addresses are no longer going to strangers' servers.
 
-If your Electrum server has a Tor hidden service configured, use the onion address:
+## Can other wallets use the same server?
 
-1. In Sparrow, go to **File** → **Preferences** → **Server**
-2. Enable **Use Proxy**
-3. Set proxy to `127.0.0.1:9150` (Tor Browser) or `127.0.0.1:9050` (Tor daemon)
-4. Enter your onion address as the URL (e.g., `abc123xyz.onion`)
-5. Port: `50001`
-6. SSL: Off (Tor already encrypts)
+Yes. One Electrum server can serve many wallets:
 
-### Option 2: VPN to Home Network
+| Wallet | Where to set the server |
+|---|---|
+| Electrum | `Tools`, `Network`, `Server` |
+| BlueWallet | `Settings`, `Network`, `Electrum Server`; use the onion address away from home |
+| Nunchuk | `Settings`, `Network Settings` |
 
-If you have a VPN configured to your home network, connect to the VPN first, then use your node's local IP address as usual.
+## What if it does not connect?
 
-## Verifying Your Privacy
-
-Once connected, you can verify you're using your own node:
-
-1. **Check the server indicator:** Should show your IP or onion address, not a public server
-2. **Look at the block height:** Should match your node's sync status
-3. **Create a new wallet:** Address queries should complete quickly (your server is local)
-
-You're no longer leaking your addresses to random public servers. Every query goes to your own infrastructure.
-
-## Connecting Other Wallets
-
-The same Electrum server can serve multiple wallets:
-
-**Electrum Wallet:**
-- Tools → Network → Server
-- Enter your server address and port
-
-**BlueWallet (mobile):**
-- Settings → Network → Electrum Server
-- Enter your server address (use Tor for remote access)
-
-**Nunchuk:**
-- Settings → Network Settings
-- Configure Electrum server connection
-
-## Troubleshooting
-
-### "Connection refused"
-
-- Is your Electrum server running? Check in Parmanode or via process manager.
-- Is Bitcoin Core fully synced? The Electrum server waits for Core.
-- Has the Electrum server finished indexing? Initial index takes 12-48 hours.
-- Are you using the correct port? Try both 50001 and 50002.
-
-### "Connection timed out"
-
-- Is the IP address correct? Verify your node's address.
-- Are you on the same network? Local IPs don't work remotely.
-- Is a firewall blocking the connection? Check your node's firewall settings.
-
-### Connection works but wallet shows wrong balance
-
-- Wait for the wallet to fully sync with the server
-- Check if the Electrum server has finished indexing
-- Try rescanning the wallet (Wallet → Settings → Rescan)
-
-### Tor connection not working
-
-- Is Tor running on your device? Verify the proxy is available.
-- Is the onion address correct? Check your node's Tor configuration.
-- Is the port correct? Tor connections typically use 50001 (non-SSL).
-
-## Key Takeaways
-
-- **Parmanode users:** Sparrow auto-connects; no manual setup needed
-- **Manual setup:** Server IP + port 50002 + SSL enabled
-- **Remote access:** Use Tor onion address with proxy configured
-- **Blue indicator:** Confirms private connection to your own server
-
----
-
-## Next Steps
-
-You're done! Your wallet now connects privately to your own node. Every balance check, every transaction broadcast: all verified by your own infrastructure.
-
-→ **Learn more:** [Why Run Your Own Node](https://selfcustodylabs.com/docs/learn/nodes/why-run-node)
-
-→ **Privacy:** [Why Privacy Matters](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters)
-
-→ **Back:** [Bitcoin Node Guide](https://selfcustodylabs.com/docs/bitcoin-node/) (complete guide overview)
+| Problem | What to check |
+|---|---|
+| "Connection refused" | Whether the Electrum server is running, whether Bitcoin Core has fully synced, whether indexing (12 to 48 hours) has finished, and which port you used; try both 50001 and 50002 |
+| "Connection timed out" | The IP address, whether you are on the same network (local addresses do not work from outside), and whether a firewall on the node blocks the port |
+| Connected, but the balance looks wrong | Let the wallet finish syncing, check the server has finished indexing, and try a rescan from the wallet's settings |
+| Tor does not connect | Whether Tor is running on your computer, the onion address, and the port (usually 50001, without SSL) |

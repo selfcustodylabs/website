@@ -3,256 +3,89 @@
 > Prepare your hardware wallets for multisig. Learn how to initialize signing devices from different manufacturers for maximum security.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/multisig/hardware-setup/
-Last updated: 2026-08-21
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Before creating your multisig wallet, you need to set up each hardware wallet (signing device) individually. This page guides you through preparing your devices.
+Before building a multisig wallet, each of its hardware wallets is set up on its own, as if it were a single-signature wallet: three devices, ideally from three manufacturers, each with current firmware, its own PIN and its own seed made with dice. For each one you record the master fingerprint, back the seed up on metal, store that backup somewhere different from the other two, and test it. Only then do the devices go into [the Sparrow setup](https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/).
 
-## Recommended Hardware Combinations
+## Step 1: Choose three devices from different makers
 
-For a **2-of-3 multisig**, using different manufacturers eliminates single-vendor risk:
+Step 1 picks the devices. Mixing manufacturers means one vendor's firmware flaw, like the [2026 Coldcard entropy bug](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/), reaches only one key, which a 2-of-3 wallet survives.
 
-### Option A: Maximum Security (Air-Gapped)
+| Combination | Key 1 | Key 2 | Key 3 |
+|---|---|---|---|
+| Most isolated | Jade Plus (QR) | Keystone 3 Pro (QR) | Trezor Safe 5 or 7 (USB) |
+| Easiest to use | Trezor Safe 5 (USB) | BitBox02 Nova (USB) | Blockstream Jade (USB or QR) |
+| Lowest cost | Blockstream Jade (USB or QR) | Trezor Safe 3 (USB) | [SeedSigner](https://selfcustodylabs.com/docs/seedsigner/), built yourself (QR) |
 
-<div class="fixed-width-table">
+As of October 2026 three devices cost about $200 to $750 depending on the combination; the [comparison](https://selfcustodylabs.com/docs/reference/hardware-wallet-comparison/) has current prices. A Coldcard you already own can still serve as one key, after you [check whether its seed needs replacing](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/#am-i-affected) and make a new one with dice on fixed firmware; we just do not recommend buying one new.
 
-| Device | Role | Communication |
-|--------|------|---------------|
-| **Jade Plus** | Key 1 | QR codes (air-gapped) |
-| **Keystone 3 Pro** | Key 2 | QR codes (air-gapped) |
-| **Trezor Safe 5/7** | Key 3 | USB |
+## Step 2: Check each device and update its firmware
 
-</div>
+Step 2 makes sure each device is genuine and current before any seed exists on it. Buy from the manufacturer or a reseller it lists, check the packaging for tampering, run the maker's authenticity check, update to the latest firmware, and read the vendor's security advisories. A seed generated on flawed firmware stays weak after the firmware is updated, so update first.
 
-### Option B: Balanced (User-Friendly)
+## Step 3: Create a separate seed on each device, with dice
 
-<div class="fixed-width-table">
+Step 3 gives every device its own key. Each device gets a fresh seed that has never existed anywhere else: never reuse a seed from another wallet, never put the same seed on two devices. Make each seed with dice: [by hand](https://selfcustodylabs.com/docs/learn/keys/random/), then restore it onto the device, or with the device's own dice entry where it has one (the Keystone 3 Pro and SeedSigner; 99 rolls for 24 words). Independent entropy for each key is what keeps one vendor's silent failure from mattering. Choose 24 words, and give each device its own PIN of at least 6 to 8 digits, with no obvious patterns and none reused between devices.
 
-| Device | Role | Communication |
-|--------|------|---------------|
-| **Trezor Safe 5** | Key 1 | USB |
-| **BitBox02 Nova** | Key 2 | USB |
-| **Blockstream Jade** | Key 3 | USB or QR |
+## Step 4: Record each device
 
-</div>
+Step 4 writes down what you will need to identify each key later. For every device, record:
 
-### Option C: Budget-Conscious
+| Field | Example |
+|---|---|
+| Label | Device 1 |
+| Make and model | Jade Plus |
+| Master fingerprint (8 characters) | `7c8a9b2d` |
+| Firmware version | As shown on the device |
+| Seed length | 24 words |
+| Where the device is kept | Home safe |
+| Where its seed backup is kept | Bank safe deposit box |
 
-<div class="fixed-width-table">
+The master fingerprint identifies the key without revealing it; Sparrow shows it when the device connects, and it appears in the wallet descriptor. Store these records separately from the seed phrases, and label each device (1, 2, 3). The [multisig record sheet](https://selfcustodylabs.com/worksheets/multisig-record/) has these fields for all three keys, plus the wallet details Sparrow gives you later.
 
-| Device | Role | Communication |
-|--------|------|---------------|
-| **Blockstream Jade** | Key 1 | USB or QR |
-| **Trezor Safe 3** | Key 2 | USB |
-| **[SeedSigner](https://selfcustodylabs.com/docs/seedsigner/) (DIY)** | Key 3 | QR codes (stateless) |
+## Step 5: Back up each seed on metal, in separate places
 
-</div>
+Step 5 makes each seed survive fire, water and time. Paper burns, gets wet, fades and gets thrown away by mistake, so stamp or engrave each seed onto a metal backup (Blockplate, Cryptosteel, Seedplate and Billfodl are common makes), read it back against the paper, and destroy the paper.
 
-**Tip: Cost Consideration**
-A complete 3-device setup costs $200–500 depending on models chosen. This is a one-time investment to protect potentially much larger holdings.
+Then spread the backups out so that no single place holds two keys, and no seed is stored with its own device:
 
-If you already own a Coldcard, it can still serve as a quorum member, after you [check whether its seed needs migration](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/#am-i-affected) and regenerate with dice on fixed firmware. We just don't recommend buying one new right now.
+| | Device | Seed backup |
+|---|---|---|
+| Key 1 | Home safe | Bank safe deposit box |
+| Key 2 | Home, somewhere separate from key 1 | A trusted family member's home |
+| Key 3 | A different city: a second property, an office or a trusted person | A third location, such as a second deposit box |
 
-## General Setup Principles
+With this layout a burglary at home reaches devices but no seed; a lost deposit box costs one seed, and the other two keys still spend.
 
-### 1. Give Each Device Its Own Independent Seed
+## Step 6: Test each seed backup
 
-**Each device gets a fresh seed that has never existed anywhere else.** Never:
-- Reuse a seed from a software wallet or another device
-- Share seeds between devices
-- Let one backup location hold more than one seed
+Step 6 proves each backup restores its device before the multisig depends on it. For each device in turn: reset it, restore it from its metal backup, and check the master fingerprint matches your record. The [backup verification guide](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/) covers the method.
 
-Each device = Unique seed = Independent key
+Before going on to [Sparrow](https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/), check that all three devices have unique seeds backed up on metal in different places, recorded fingerprints, unique PINs, current firmware and labels.
 
-Generate each seed on its device **using the dice-roll option** where available, or import a seed you [generated yourself with dice](https://selfcustodylabs.com/docs/learn/keys/random/). The 2026 Coldcard incident was caused by trusting on-device RNG blindly. In a multisig, independent entropy per key is exactly what keeps one vendor's silent failure from mattering.
+## How do you set up each device?
 
-### 2. Verify Device Authenticity
+The menus differ by maker. These notes cover what matters for multisig; follow the maker's own guide for the rest.
 
-Before setup:
-- Purchase directly from manufacturers or authorized resellers
-- Check tamper-evident packaging
-- Verify firmware signatures where possible
+### Trezor
 
-### 3. Update Firmware First
+Connect by USB and set the device up in Trezor Suite. Trezor has no dice entry on the device as of October 2026, so choose to recover a wallet and enter the 24 words you made with dice, rather than letting it create one. Trezor PINs can be up to 50 digits. For multisig, Sparrow reads the key directly from the device over USB; no export file is needed.
 
-Before generating seeds:
-- Connect to manufacturer's official software
-- Update to latest firmware
-- Skim the vendor's security advisories page while you're there
+### BitBox02
 
-Seeds generated on flawed firmware stay weak forever, and [updating later doesn't repair them](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/), so patch *before* you generate, not after.
+Connect by USB and set the wallet up in the BitBoxApp: restore the 24 words you made with dice, or follow BitBox's own diceware procedure, then set the device password. For multisig, Sparrow reads the key directly over USB and shows the fingerprint.
 
-### 4. Create Strong PINs
+### Jade and Jade Plus
 
-Each device needs a PIN:
-- Use 6-8 digits minimum
-- Don't use obvious patterns (123456, 000000)
-- Don't reuse PINs across devices
-- Consider writing PINs down separately from seeds (stored in different locations)
+The Jade has no dice entry on the device: restore the 24 words you made with dice, or choose 23 words with Blockstream's dice method and let the Jade calculate the last, then choose QR mode for air-gapped use. For multisig, export the key to Sparrow by scanning the QR code the Jade displays.
 
-## Device-Specific Setup
+### Keystone
 
-### Coldcard Setup
+Create the wallet on the device with a password and 24 words, using its dice roll option (firmware 1.2.6 or later). For multisig, export the extended public key from the device's multisig menu as a QR code or to a microSD card.
 
-Coldcard is Bitcoin-only and supports excellent air-gapped operation. (These steps remain here for existing owners; for new purchases, see [why Coldcard currently isn't recommended](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/). Make sure the firmware is fixed (Mk4/Mk5: 5.6.0+, Q: 1.5.0Q+) before generating anything.)
+### Coldcard (existing owners)
 
-**Initial Setup:**
-1. Power on with battery pack or USB power adapter (not computer)
-2. Accept terms and create a PIN
-   - Prefix PIN (shown before words)
-   - Main PIN (required to access)
-3. Select "New Seed Words", and use the **dice roll option** (99 rolls) rather than plain device RNG
-4. Choose 24 words
-5. **Write down all 24 words on paper/metal**
-6. Verify by re-entering selected words
-7. Record the **master fingerprint** (8 characters, e.g., `7C8A9B2D`)
-
-**Export Public Key for Multisig:**
-1. Insert MicroSD card
-2. Go to: `Advanced/Tools` → `Export Wallet` → `Generic JSON`
-3. This creates a file with your xpub for the coordinator software
-
-**Label your Coldcard** with a number (1, 2, or 3) using the included stickers.
-
-### Trezor Setup
-
-Trezor offers excellent software integration with Sparrow.
-
-**Initial Setup:**
-1. Connect to computer via USB
-2. Open Trezor Suite or Sparrow Wallet
-3. Select "Create new wallet"
-4. Choose 12 or 24 words (24 recommended for multisig)
-5. **Write down all words on paper/metal**
-6. Verify by re-entering words
-7. Create a PIN (up to 50 digits)
-8. Note the **master fingerprint** (visible in Sparrow after connecting)
-
-**For Multisig:**
-- Trezor works via USB connection with Sparrow
-- No export file needed; Sparrow reads directly from device
-
-### Keystone Setup
-
-Keystone uses QR codes for fully air-gapped operation.
-
-**Initial Setup:**
-1. Power on and select language
-2. Create a password (device access)
-3. Select "Create New Wallet"
-4. Choose 24 words
-5. **Write down all words on paper/metal**
-6. Verify the seed phrase
-7. Note the **master fingerprint** from wallet info
-
-**Export for Multisig:**
-1. Go to: `Menu` → `Multisig Wallet` → three dots → `Show/Export XPUB`
-2. Can export via QR code or to MicroSD
-
-### BitBox02 Setup
-
-BitBox02 offers simple setup with strong security.
-
-**Initial Setup:**
-1. Connect via USB
-2. Open BitBox App
-3. Select "Create wallet"
-4. Device generates 24-word seed
-5. **Write down all words on paper/metal**
-6. Verify on device
-7. Set device password
-
-**For Multisig:**
-- BitBox02 works directly with Sparrow via USB
-- Note the fingerprint shown in Sparrow
-
-### Ledger Setup
-
-Ledger devices work with most multisig coordinators.
-
-**Initial Setup:**
-1. Connect via USB
-2. Set up PIN (4-8 digits)
-3. Select "Set up as new device"
-4. Write down the 24-word recovery phrase
-5. Confirm words on device
-6. Install Bitcoin app via Ledger Live
-
-**For Multisig:**
-- Works with Sparrow via USB
-- Note: Ledger uses closed-source firmware
-
-## Recording Device Information
-
-For each device, create a record card:
-
-![Example record card showing device label, fingerprint, and firmware version for multisig tracking](https://selfcustodylabs.com/img/multisig/record-card.webp)
-
-**Important:** Store this record SEPARATELY from the seed phrases.
-
-## Seed Phrase Backup
-
-### Why Metal Backups Matter
-
-Paper can be destroyed by:
-- Fire
-- Water/flooding
-- Ink fading over time
-- Accidental disposal
-
-**Metal seed backups** survive these disasters.
-
-### Recommended Metal Backup Options
-
-<div class="fixed-width-table">
-
-| Product | Type | Price Range |
-|---------|------|-------------|
-| Blockplate | Punch plates | $80-100 |
-| Cryptosteel | Letter tiles | $80-100 |
-| Seedplate | Stamp/punch | $50-80 |
-| Billfodl | Letter tiles | $80-100 |
-
-</div>
-
-### Backup Process
-
-1. Set up hardware wallet and verify seed works
-2. Transfer seed to metal backup carefully
-3. Verify metal backup by reading it back
-4. Store metal backup in secure location (NOT with the device)
-
-### Seed Backup Locations for 2-of-3
-
-![Diagram showing recommended separate storage locations for each seed phrase backup in a 2-of-3 multisig setup](https://selfcustodylabs.com/img/multisig/seed-backup-locations.webp)
-
-**Never store a seed phrase with its corresponding device!**
-
-## Pre-Multisig Checklist
-
-Before proceeding to create your multisig wallet, verify:
-
-- [ ] All 3 devices are set up with unique seed phrases
-- [ ] All 3 seed phrases are backed up on metal
-- [ ] Each seed backup is in a different physical location
-- [ ] You've recorded the master fingerprint for each device
-- [ ] Each device has a unique PIN you can remember
-- [ ] Firmware is up to date on all devices
-- [ ] You've labeled each device (1, 2, 3) for easy identification
-
-**Warning: Double-Check Seeds**
-Before creating the multisig, verify each seed works:
-1. Reset one device to factory
-2. Restore from its seed backup
-3. Confirm the fingerprint matches
-4. Repeat for each device
-
-This confirms your backups are correct BEFORE you deposit funds.
-
-## Next Steps
-
-With your hardware wallets prepared:
-
-→ Continue to [Sparrow Wallet Setup](https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup) to create your 2-of-3 multisig wallet.
+Update first (Mk4 and Mk5 to 5.6.0 or later, Q to 1.5.0Q or later). Power the device from a battery pack or USB power adapter rather than a computer, set the prefix and main PIN, and create new seed words with the dice option (99 rolls), 24 words. For multisig, insert a microSD card and export the key from `Advanced/Tools`, `Export Wallet`, `Generic JSON`.

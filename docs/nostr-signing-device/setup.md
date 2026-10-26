@@ -3,46 +3,35 @@
 > Clone the NSD repository and flash the firmware to your LILYGO device. Step-by-step instructions to prepare your Nostr Signing Device.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/setup/
-Last updated: 2026-04-14
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-## Clone the GitHub repository:
+Flashing the signing device means downloading LNbits' nostr-signing-device code, copying its libraries into Arduino's, and uploading its `snsd.ino` sketch to the board from the Arduino IDE. When it works, the board shows the LNbits welcome screen.
 
-Open a terminal and run:
+## Step 1: Get the code and its libraries
+
+Step 1 downloads the firmware and the libraries it needs:
 
 ```bash
 git clone https://github.com/lnbits/nostr-signing-device.git
-```
-
-## Copy Required Libraries
-
-Navigate to the `libraries` folder:
-
-```bash
 cd nostr-signing-device/libraries
-```
-
-Copy all the files in this folder and paste them into the `Arduino/libraries` directory (which should be empty if you just installed Arduino).
-
-```bash
 cp -r . ~/Arduino/libraries
 ```
 
-## Connect Your Nostr Signing Device (NSD)
+The `~/Arduino/libraries` folder should be empty if you have just installed Arduino.
 
-Plug in your device via USB.
+## Step 2: Upload the firmware
 
-## Upload the Firmware Using Arduino IDE
+Step 2 puts it on the board. Plug the device in by USB, then in the Arduino IDE:
 
-- Open Arduino IDE.
-- Go to `Tools → Port` and select the correct serial port (e.g., `/dev/ttyACM0`).
-- Click `File → Open`, then select `snsd.ino` from the `nostr-signing-device/snsd/` folder.
-- Click the Upload button (right-facing arrow in the toolbar).
+1. Choose the device's serial port under `Tools`, `Port` (for example `/dev/ttyACM0`).
+2. Open `snsd.ino` from the `nostr-signing-device/snsd/` folder with `File`, `Open`.
+3. Click the Upload button, the right-facing arrow in the toolbar.
 
-## Verify Installation
+## Step 3: Check it started
 
-If the upload completes without errors, your NSD is ready! You should see the LNbits welcome screen on the display.
+Step 3 confirms it worked. If the upload finishes without errors, the display shows the LNbits welcome screen.
 
-![Nsd](https://selfcustodylabs.com/img/nsd/nsd.webp)
+![The LILYGO T-Display board plugged in by USB, showing the LNbits logo on its screen](https://selfcustodylabs.com/img/nsd/nsd.webp)

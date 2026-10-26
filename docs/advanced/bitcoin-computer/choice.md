@@ -3,25 +3,25 @@
 > How to choose the right laptop for Bitcoin self-custody. Hardware recommendations and security precautions for your dedicated Bitcoin machine.
 
 Source: https://selfcustodylabs.com/docs/advanced/bitcoin-computer/choice/
-Last updated: 2026-05-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-I recommend getting a laptop that suits the size of your Bitcoin stack. The most basic models available today are more than capable of handling what you'll need. The processor and RAM specifications aren’t a big concern, as even entry-level setups will do the job just fine.
+Any modest laptop is powerful enough to be a Bitcoin computer, so choose by firmware rather than speed: we recommend a ThinkPad that [Libreboot](https://selfcustodylabs.com/docs/libreboot/) supports, so that the proprietary BIOS can be replaced with open-source firmware. The ThinkPad X230 or T430 suits a small budget, and the T480s a medium one. Second-hand is fine, with a new SSD and new USB sticks.
 
-## My Recommendation
+## Why choose a laptop Libreboot supports?
 
-Some people suggest buying a brand-new laptop for security reasons, but what about the BIOS? A factory-installed BIOS is often proprietary and may not be fully trustworthy. That’s why I recommend a laptop that allows you to flash a custom open-source BIOS. My preferred choice is Libreboot (see the guide here). Flashing it isn’t the easiest process, but the security benefits are well worth the effort.
+Some people suggest buying a brand-new laptop for security, but a new laptop still ships with proprietary firmware that you cannot inspect. That is why we recommend a laptop on which you can install open-source firmware, and our choice is [Libreboot](https://selfcustodylabs.com/docs/libreboot/). Flashing it is not the easiest process, but it is worth the effort.
 
-### Budget Options
+## Which laptop fits your budget?
 
-- **Low Budget** – The Lenovo ThinkPad [X230](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) or [T430](https://psref.lenovo.com/syspool/sys/pdf/withdrawnbook/thinkpad_t430.pdf). These are legendary laptops, possibly among the best ever made!
-- **Medium Budget** – The Lenovo ThinkPad [T480s](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480s/ThinkPad_T480s_Spec.pdf). Recently supported by Libreboot, it’s easy to flash, supports NVMe SSDs, and can handle up to 24GB of RAM. This is an amazing laptop that can also be used for everyday tasks or other Bitcoin-related activities.
+- Low budget: the Lenovo ThinkPad [X230](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) or [T430](https://psref.lenovo.com/syspool/sys/pdf/withdrawnbook/thinkpad_t430.pdf). Both are cheap second-hand, sturdy and easy to work on.
+- Medium budget: the Lenovo ThinkPad [T480s](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480s/ThinkPad_T480s_Spec.pdf). Supported by Libreboot since its December 2024 release, it takes NVMe SSDs and up to 24 GB of memory, and is fast enough for other bitcoin work too. It needs Lenovo's firmware updated before flashing; see the [requirements](https://selfcustodylabs.com/docs/libreboot/requirements/).
 
-## Hardware Precautions
+## What precautions does a second-hand laptop need?
 
-Since these laptops are often purchased second-hand on eBay, Gumtree, or Marketplace, it's important to take a few precautions before turning them into a Bitcoin computer:
+These laptops are usually bought second-hand, so before turning one into a Bitcoin computer:
 
-- **Use a brand-new SSD** – If possible, replace the old storage drive with a new SSD. If you can’t afford one, at the very least, format the existing drive twice and encrypt it using LUKS.
-- **Use new USB drives** – Avoid using old or unknown USB sticks for installation and backups. Start fresh with brand-new USB keys.
+- Fit a new SSD. If you cannot, at least wipe the existing drive and encrypt it with LUKS during installation.
+- Use new USB sticks for installation and backups, not old or unknown ones.

@@ -3,254 +3,94 @@
 > Overview of Bitcoin privacy techniques. Learn the principles and methods for protecting your financial privacy when using Bitcoin.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/protecting-privacy/
-Last updated: 2026-08-02
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Now that you understand [why privacy matters](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters) and [how chain analysis works](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis), let's look at what you can do about it.
+Protecting bitcoin privacy comes down to a few habits and three tools. The habits: never reuse an address, keep coins from different sources apart, do not post addresses or discuss your holdings, and think before each transaction about what it links. The tools: your own node, so no server learns your addresses; UTXO management and coin control, so payments do not tie your coins together; and CoinJoin or PayJoin, which break the links chain analysis relies on. Start with the habits and your own node, and add the rest as your [threat model](https://selfcustodylabs.com/docs/learn/fundamentals/threat-models/) requires.
 
-This page provides an overview of privacy techniques. Each has dedicated guides for implementation.
+This page is the overview; [why privacy matters](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/) and [chain analysis explained](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/) cover the problem.
 
-## The Privacy Mindset
+## Which principles come first?
 
-Before diving into techniques, adopt these principles:
+- Think before you act. Every transaction leaves a permanent trace, so ask whether it links your identity to an address, reveals more than it needs to, or could be done more privately.
+- Keep identities separate. Do not mix KYC bitcoin (bought with ID) with non-KYC bitcoin, work payments with personal ones, or public donation addresses with private savings.
+- Leak as little as possible. Use a new address for every payment, do not post addresses publicly unless you must, and consider who can see each transaction.
 
-### 1. Think Before You Act
+## Which techniques help, and how hard are they?
 
-Every transaction leaves permanent traces. Ask yourself:
-- Does this link my identity to this address?
-- Am I revealing information unnecessarily?
-- Could I do this more privately?
+| Technique | What it does | Effort | Guide |
+|-----------|--------------|------------|---|
+| Never reuse addresses | Stops payments being linked through one address | Easy | |
+| Keep coin sources separate | Keeps identities apart | Easy | [UTXO management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/) |
+| Do not post addresses | Prevents scraping | Easy | |
+| Run your own node | Stops your addresses leaking to servers | Medium | [Node guide](https://selfcustodylabs.com/docs/bitcoin-node/) |
+| Coin control and labels | Decide which coins each payment spends | Medium | [Coin control](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/#what-is-coin-control) |
+| CoinJoin | Mixes coins with others to cut their history | Harder | [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) |
+| PayJoin | Hides a payment inside an ordinary-looking transaction | Medium | [PayJoin](https://selfcustodylabs.com/docs/learn/privacy/payjoin/) |
 
-### 2. Separate Your Identities
+## Why run your own node?
 
-Don't mix:
-- **KYC bitcoin** (bought from exchanges with ID) with **non-KYC bitcoin**
-- **Work-related** transactions with **personal** ones
-- **Public** donation addresses with **private** savings
+A wallet that uses someone else's node or a public server reveals all your addresses, your transaction history and possibly your IP address to whoever runs it. With your own node the wallet's questions stay on your hardware, nobody else sees your addresses, and you verify everything yourself. [What is a Bitcoin node](https://selfcustodylabs.com/docs/learn/nodes/what-is-node/) and [why run your own](https://selfcustodylabs.com/docs/learn/nodes/why-run-node/) explain it, and the [node guide](https://selfcustodylabs.com/docs/bitcoin-node/) sets one up.
 
-### 3. Minimize Data Leakage
+## Why manage your UTXOs?
 
-Share only what's necessary:
-- Use new addresses for each transaction
-- Don't post addresses publicly unless required
-- Consider who can see your transaction
+Your bitcoin is a set of separate coins, and how you spend them decides what observers can link. Combining coins from different sources ties them together, more coins mean higher fees, and careless spending reveals your activity. Label where every coin came from, never combine KYC and non-KYC coins, choose inputs with coin control, and consolidate only coins from the same source. The [UTXO management guide](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/) covers it.
 
-## Privacy Techniques Overview
+## What does CoinJoin add?
 
-### Level 1: Basic Hygiene
+CoinJoin combines inputs from several people into equal outputs, which defeats the common-input-ownership heuristic and hides which output belongs to whom. After a good CoinJoin, analysts cannot tell which output is yours, and the coins' history is cut: they gain forward privacy. The mixed coins then need careful handling, and some exchanges flag CoinJoin history. The [CoinJoin page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) covers both.
 
-These require no special tools, just awareness.
+## How can you acquire bitcoin more privately?
 
-<div class="fixed-width-table">
+Bitcoin bought on a KYC exchange is linked to your identity from the start, and no later technique fully undoes that. Other ways to acquire it:
 
-| Technique | What It Does | Difficulty |
-|-----------|--------------|------------|
-| **Never reuse addresses** | Prevents linking transactions | Easy |
-| **Use your own node** | Stops leaking addresses to third parties | Medium |
-| **Avoid address posting** | Prevents web scraping | Easy |
-| **Separate coin sources** | Keeps identities apart | Easy |
-
-</div>
-
-### Level 2: Active Protection
-
-These require learning specific tools.
-
-<div class="fixed-width-table">
-
-| Technique | What It Does | Guide |
-|-----------|--------------|-------|
-| **UTXO management** | Control which coins you spend | [UTXO Guide](https://selfcustodylabs.com/docs/learn/privacy/utxo-management) |
-| **Coin control** | Choose specific inputs for transactions | [Coin Control](https://selfcustodylabs.com/docs/learn/privacy/utxo-management#coin-control-choosing-your-utxos) |
-| **Labeling** | Track coin sources and privacy levels | [UTXO Guide](https://selfcustodylabs.com/docs/learn/privacy/utxo-management) |
-
-</div>
-
-### Level 3: Breaking the Chain
-
-These actively defeat chain analysis.
-
-<div class="fixed-width-table">
-
-| Technique | What It Does | Guide |
-|-----------|--------------|-------|
-| **CoinJoin** | Mix coins with others to break history | [CoinJoin Guide](https://selfcustodylabs.com/docs/learn/privacy/coinjoin) |
-| **PayJoin** | Hide payments in normal-looking transactions | [PayJoin Guide](https://selfcustodylabs.com/docs/learn/privacy/payjoin) |
-
-</div>
-
-## Run Your Own Node
-
-**Why it matters:**
-
-When you use someone else's node (or a public server), you reveal:
-- All your addresses
-- Your transaction history
-- Your IP address (potentially)
-
-With your own node:
-- Your wallet queries stay local
-- No third party sees your addresses
-- You verify everything yourself
-
-→ **Learn:** [What is a Bitcoin Node](https://selfcustodylabs.com/docs/learn/nodes/what-is-node) | [Why Run Your Own](https://selfcustodylabs.com/docs/learn/nodes/why-run-node)
-
-→ **Guide:** [Bitcoin Node Setup](https://selfcustodylabs.com/docs/bitcoin-node)
-
-## UTXO Management
-
-**Why it matters:**
-
-UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you own. How you manage them affects:
-
-- **Privacy:** Combining UTXOs from different sources links them
-- **Fees:** More UTXOs = higher transaction fees
-- **Traceability:** Careless spending reveals your activity
-
-**Key practices:**
-
-1. **Label everything:** Know where each UTXO came from
-2. **Keep sources separate:** Never combine KYC and non-KYC coins
-3. **Use coin control:** Manually select which UTXOs to spend
-4. **Consolidate carefully:** Only combine same-source UTXOs
-
-→ **Guide:** [UTXO Management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management)
-
-## CoinJoin
-
-**Why it matters:**
-
-CoinJoin directly breaks the chain analysis heuristics by:
-- Combining inputs from multiple people (breaks common input ownership)
-- Creating equal outputs (hides which output belongs to whom)
-- Adding ambiguity to transaction graphs
-
-**After a CoinJoin:**
-- Analysts cannot determine which output is yours
-- Your transaction history is "broken"
-- Coins gain **forward privacy**
-
-**Important considerations:**
-- Mixed coins must be handled carefully after
-- Some exchanges flag CoinJoin transactions
-- Proper post-mix behavior is essential
-
-→ **Guide:** [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin)
-
-## Acquiring Bitcoin Privately
-
-**The acquisition problem:**
-
-If you buy bitcoin through a KYC exchange, your identity is linked from the start. Even the best privacy techniques cannot fully undo this.
-
-**More private acquisition methods:**
-
-<div class="fixed-width-table">
-
-| Method | Privacy Level | Tradeoffs |
+| Method | Privacy | Trade-offs |
 |--------|---------------|-----------|
-| **Peer-to-peer (P2P)** | Higher | Requires more effort, potential scams |
-| **Bitcoin ATMs** (some) | Medium | Often have cameras, some require ID |
-| **Earning bitcoin** | Higher | Employer/client knows your address |
-| **Mining** | Highest | Expensive equipment, technical knowledge |
+| Peer to peer | Higher | More effort, and a risk of scams |
+| Some bitcoin ATMs | Medium | Often filmed, and many now require ID |
+| Being paid in bitcoin | Higher | The payer knows your address |
+| Mining | Highest | Expensive equipment and technical knowledge |
 
-</div>
+## What about privacy at the network level?
 
-→ **Guide:** Coming soon
+A transaction that looks private on chain can still leak your IP address when it is broadcast, when you come online, and who you connect to.
 
-## Network-Level Privacy
-
-**The problem beyond blockchain:**
-
-Even if your transactions look private on-chain, you might leak information at the network level:
-
-- **IP address:** When you broadcast a transaction
-- **Timing:** When you come online
-- **Connections:** Who you connect to
-
-**Solutions:**
-
-<div class="fixed-width-table">
-
-| Tool | What It Does |
+| Tool | What it does |
 |------|--------------|
-| **Tor** | Hides your IP address |
-| **VPN** | Hides your IP (but VPN provider sees it) |
-| **Own node** | Broadcast transactions through your node |
-| **Own node over Tor** | Best combination |
+| Tor | Hides your IP address |
+| A VPN | Hides your IP address from everyone except the VPN provider |
+| Your own node | Broadcasts your transactions without a third-party server |
+| Your own node over Tor | The best combination |
 
-</div>
+The [Tor guide](https://selfcustodylabs.com/docs/bitcoin-node/tor/) sets it up.
 
-→ **Guide:** [Tor Setup](https://selfcustodylabs.com/docs/bitcoin-node/tor)
+## What can't be fixed afterwards?
 
-## What You Cannot Fix
-
-Some privacy losses are permanent:
-
-<div class="fixed-width-table">
-
-| Situation | Why It Can't Be Undone |
+| Situation | Why it cannot be undone |
 |-----------|----------------------|
-| KYC exchange withdrawal | Exchange has your identity forever |
-| Posted address online | May be archived, scraped, saved |
-| Sent to identified address | That transaction is permanent |
-| Blockchain history | The past cannot be changed |
+| A withdrawal from a KYC exchange | The exchange keeps your identity on record |
+| An address posted online | It may be archived, scraped or saved |
+| A payment to an identified address | The transaction is permanent |
+| Blockchain history in general | The past cannot be changed |
 
-</div>
+What you can do is start fresh with new coins, CoinJoin existing coins for forward privacy, and be more careful from now on.
 
-**What you can do:**
+## What does each technique cost?
 
-- Start fresh with new coins
-- CoinJoin existing coins for forward privacy
-- Be more careful going forward
-
-## Privacy and Tradeoffs
-
-Every technique has tradeoffs:
-
-<div class="fixed-width-table">
-
-| Technique | Privacy Benefit | Cost/Risk |
+| Technique | Privacy benefit | Cost or risk |
 |-----------|----------------|-----------|
-| Own node | No address leakage | Disk space, setup time |
-| CoinJoin | Breaks transaction links | Fees, time, potential exchange issues |
-| P2P buying | No KYC link | Premium price, counterparty risk |
-| Coin control | Better UTXO privacy | Manual effort, learning curve |
+| Your own node | No address leakage | Disk space and setup time |
+| CoinJoin | Cuts transaction links | Fees, time, and possible questions from exchanges |
+| Buying peer to peer | No KYC link | A price premium and counterparty risk |
+| Coin control | Better privacy for each payment | Manual effort and a learning curve |
 
-</div>
+## Where should you start?
 
-Choose based on your threat model and resources.
+1. Run your own node, with the [node guide](https://selfcustodylabs.com/docs/bitcoin-node/).
+2. Learn [UTXO management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/).
+3. Use [coin control](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/#what-is-coin-control) on every payment.
+4. Consider [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) for coins you already hold.
 
-## Building Your Privacy Practice
-
-**Start here:**
-
-1. ✅ Understand the risks (you've done this)
-2. ⬜ Run your own node → [Bitcoin Node Guide](https://selfcustodylabs.com/docs/bitcoin-node)
-3. ⬜ Learn UTXO management → [UTXO Guide](https://selfcustodylabs.com/docs/learn/privacy/utxo-management)
-4. ⬜ Practice coin control → [Coin Control Guide](https://selfcustodylabs.com/docs/learn/privacy/utxo-management#coin-control-choosing-your-utxos)
-5. ⬜ Consider CoinJoin for existing coins → [CoinJoin Guide](https://selfcustodylabs.com/docs/learn/privacy/coinjoin)
-
-**Ongoing habits:**
-
-- Never reuse addresses
-- Label all incoming transactions
-- Keep different sources separate
-- Think before each transaction
-
-## Key Takeaways
-
-- **Run your own node** to stop leaking addresses
-- **Manage UTXOs carefully** to prevent linking
-- **CoinJoin** breaks chain analysis heuristics
-- **Acquisition method** determines starting privacy
-- **Some losses are permanent:** prevention is best
-- **Build habits:** privacy is ongoing, not one-time
-
----
-
-## You've Completed the Privacy Section
-
-You now understand why privacy matters, how blockchain surveillance works, and the techniques available to protect yourself. Next, learn about running your own Bitcoin node for maximum sovereignty.
+And keep the habits: a new address every time, labels on every incoming payment, sources kept apart, and a moment's thought before each transaction.

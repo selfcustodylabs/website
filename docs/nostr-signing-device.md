@@ -3,43 +3,28 @@
 > Build your own Nostr Signing Device to keep your private key secure. Hardware-based signing for Nostr using LILYGO T-Display and Horse extension.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/
-Last updated: 2026-08-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-**Note: Bonus Project**
-This guide is a bonus project for Bitcoiners interested in Nostr. The same security principles that apply to Bitcoin private keys - keeping them offline and isolated - apply to your Nostr identity.
+A Nostr signing device is a small piece of hardware, here a LILYGO T-Display board running LNbits' open-source firmware, that holds your Nostr private key and signs your posts itself, so the key never sits in a browser or app where malware could copy it. A browser extension called Horse passes signing requests from a Nostr client to the device. It applies the rule this site teaches for bitcoin keys (keep them offline and isolated) to your Nostr identity, and it is a bonus project: an hour or two and about $15 of parts.
 
-**Info: What You'll Do**
-In this guide, you will:
-- Set up Arduino IDE for ESP32 development
-- Flash firmware to a LILYGO T-Display
-- Install the Horse browser extension
-- Connect to Nostr clients securely
+Time: 1-2 hours. Cost: $10-15 (LILYGO T-Display). Level: Intermediate. Updated: 26 Oct 2026. You need: LILYGO T-Display, USB cable, Chrome-based browser.
 
-**Time required:** 1-2 hours  
-**Difficulty:** Intermediate  
-**Estimated cost:** $10-15 (LILYGO T-Display)  
-**Prerequisites:** LILYGO T-Display, USB cable, Chrome-based browser
-
-## Why Use a Hardware Signing Device?
-
-A Nostr Signing Device (NSD) keeps your private key isolated from your computer:
+## Why use a hardware signing device for Nostr?
 
 <div class="fixed-width-table">
 
-| Without NSD | With NSD |
+| Without a signing device | With one |
 |-------------|----------|
-| Private key stored in browser/software | Private key stored on hardware device |
-| Exposed to malware, keyloggers | Isolated from computer threats |
-| Key could be extracted | Key never leaves device |
-
-The NSD signs messages directly on the device - your private key never touches your computer.
+| The private key is stored in a browser or app | The private key is stored on the device |
+| Exposed to malware and keyloggers | Out of reach of the computer |
+| Can be copied | Never leaves the device |
 
 </div>
 
-## How It Works
+## How does it work?
 
 <div class="doc-diagram">
 
@@ -47,22 +32,27 @@ The NSD signs messages directly on the device - your private key never touches y
 
 </div>
 
-**Components:**
-- **LILYGO T-Display** - The physical signing device
-- **Horse Extension** - Browser extension that connects NSD to clients
-- **Nostr Client** - Where you interact with Nostr (e.g., Coracle)
+The LILYGO T-Display is the signing hardware, the Horse extension connects it to the browser, and the Nostr client (Coracle, for example) is where you read and post. The client only ever sees signatures.
 
-## What You'll Need
+## What do you need?
 
 <div class="fixed-width-table">
 
-| Component | Description | Source |
+| Part | What it is for | Where to get it |
 |-----------|-------------|--------|
 | LILYGO T-Display 1.14 | The signing hardware | [AliExpress](https://www.aliexpress.com/item/33048962331.html) |
-| USB Cable | To connect and flash | Usually included |
-| Arduino IDE | To build and upload firmware | Free download |
-| Horse Extension | Browser bridge | Chrome Web Store |
+| USB cable | Connecting and flashing the board | Usually included |
+| Arduino IDE | Building and uploading the firmware | Free download |
+| Horse extension | The bridge between the browser and the device | Built from source, for Chromium |
 
 </div>
 
-Let's proceed with the setup.
+## What are the steps?
+
+| Step | Page |
+|---|---|
+| 1 | [Install the Arduino IDE](https://selfcustodylabs.com/docs/nostr-signing-device/arduino-ide/) |
+| 2 | [Add ESP32 board support](https://selfcustodylabs.com/docs/nostr-signing-device/esp32-module/) |
+| 3 | [Flash the signing device firmware](https://selfcustodylabs.com/docs/nostr-signing-device/setup/) |
+| 4 | [Build the Horse extension](https://selfcustodylabs.com/docs/nostr-signing-device/horse-extension/) |
+| 5 | [Connect to a Nostr client](https://selfcustodylabs.com/docs/nostr-signing-device/client-connect/) |

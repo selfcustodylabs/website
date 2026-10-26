@@ -3,34 +3,25 @@
 > Add ESP32 board support to Arduino IDE so you can compile and flash firmware for the LILYGO T-Display module used by the Nostr Signing Device.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/esp32-module/
-Last updated: 2026-04-15
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-These steps are based on the [here](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing)
+The T-Display is an ESP32 board, so the Arduino IDE needs Espressif's ESP32 board package before it can build for it: add the package's address in the preferences, install the package from the board manager, and select the board. The steps follow [Espressif's installation guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing).
 
-## Add ESP32 Board URL
+## Step 1: Add the ESP32 board address
 
-- Open Arduino IDE Application
-- Go to `File → Preferences`.
-- In the `Additional Boards Manager` URLs field, add the following link:
+Step 1 tells the IDE where to find the package. Open the Arduino IDE, go to `File`, `Preferences`, and in the `Additional Boards Manager URLs` field add:
 
 ```bash
 https://espressif.github.io/arduino-esp32/package_esp32_index.json
 ```
 
-## Install the ESP32 Platform
+## Step 2: Install the ESP32 platform
 
-- Open `Tools → Board → Board Manager`.
-- In the search bar, type `esp32`.
-- Click on the result named **esp32** (by Espressif Systems), then click the Install button in the bottom-right corner.
-- The installation may take some time as it downloads all necessary files.
+Step 2 downloads it. Open `Tools`, `Board`, `Board Manager`, search for `esp32`, and install the result named esp32 by Espressif Systems. It takes a while.
 
-## Select the Correct Board
+## Step 3: Select the board
 
-Once installed, go to `Tools → Board → ESP32 Arduino` and select **TTGO LoRa32-OLED**.
-
-## Restart Arduino IDE
-
-Now your ESP32 board is ready to use
+Step 3 chooses the target. Go to `Tools`, `Board`, `ESP32 Arduino` and select TTGO LoRa32-OLED, then restart the Arduino IDE.

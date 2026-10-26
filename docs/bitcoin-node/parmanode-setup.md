@@ -3,122 +3,67 @@
 > Step-by-step guide to setting up a Bitcoin node with Parmanode. Easy installation for Linux, Mac, and Raspberry Pi with automatic wallet configuration.
 
 Source: https://selfcustodylabs.com/docs/bitcoin-node/parmanode-setup/
-Last updated: 2026-08-22
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-If the idea of setting up a Bitcoin node sounds intimidating, Parmanode is about to change your mind. It's an open-source Bitcoin node installer that takes the complexity out of running your own node, without taking away your control.
+Parmanode is an open-source installer, run from the terminal, that sets up a Bitcoin node on an ordinary Linux or Mac computer: one command installs it, typing `rp` opens its menus, and from there it installs Bitcoin Core, an Electrum server such as Fulcrum, and Sparrow Wallet already connected to your node. It downloads each program, checks its PGP signature and SHA256 hash, and configures it, while leaving you with a normal system you can inspect and troubleshoot. Expect an hour or two of work, then one to seven days for Bitcoin Core to sync and another half to two days for the Electrum server to index.
 
-Created by Arman the Parman (a well-known Bitcoin educator), Parmanode is a terminal-based wizard that guides you through installing Bitcoin Core and related software. It handles the tedious parts automatically (downloading, verifying signatures, configuring settings) while giving you full access to everything under the hood.
+Parmanode was created by Arman the Parman, a bitcoin educator. Unlike Umbrel or Start9 it hides nothing: you run real software on a real system, so you can fix it when something goes wrong and change it when you want to.
 
-**Tip: Why Parmanode?**
-Unlike GUI-based solutions like Umbrel or Start9, Parmanode doesn't hide anything from you. You're running real software on a real Linux (or Mac) system. When something goes wrong, you can actually troubleshoot it. When you want to customize something, you can. It's training wheels that come off gracefully.
+## What can Parmanode install?
 
-## What Parmanode Does
+| Category | Software |
+|---|---|
+| Node | Bitcoin Core or Bitcoin Knots; the Electrum servers electrs, Fulcrum and Electrum X; Mempool (a block explorer); LND (Lightning); BTCPay Server |
+| Wallets | Sparrow, Electrum, Specter Desktop, Green, Trezor Suite, Ledger Live |
+| Other | Tor, Tor Browser, JoinMarket, a Nostr relay and more |
 
-Parmanode is a package installer wizard that makes it easy to:
+Install only what you need. The feature that sets Parmanode apart is that wallets installed through it, such as Sparrow or Electrum, come configured to use your own Electrum server, with no connection details to copy.
 
-- **Download software securely:** Automatic PGP signature and SHA256 verification
-- **Install Bitcoin Core:** The reference Bitcoin implementation
-- **Set up Electrum servers:** Fulcrum, Electrs, or Electrum X
-- **Install wallet software:** Sparrow, Electrum, Specter, and more
-- **Configure everything automatically:** Wallets connect to your node without manual setup
-- **Add privacy tools:** Tor, JoinMarket
-
-The key feature that sets Parmanode apart: **it connects your wallet to your node automatically**. Install Sparrow or Electrum through Parmanode, and they'll be pre-configured to use your local Electrum server. No copying connection strings or fumbling with settings.
-
-## Supported Platforms
+## Which systems does it run on?
 
 <div class="fixed-width-table">
 
-| Platform | Support Level |
+| Platform | Support |
 |----------|---------------|
-| **Linux (Debian/Ubuntu)** | Full support (recommended) |
-| **Mac (Intel & Apple Silicon)** | Most features work |
-| **Raspberry Pi** | Full support with ParmanodL OS |
-| **Windows** | Not supported (use Linux VM) |
+| Linux (Debian and Ubuntu family) | Full support; recommended |
+| Mac (Intel and Apple Silicon) | Most features |
+| Raspberry Pi | Full support, with the ParmanodL operating system |
+| Windows | Not supported; use a Linux virtual machine |
 
 </div>
 
-Parmanode works best on Linux. If you're on Mac, most node-related software will work, but some advanced features are Linux-only.
+## What do you need first?
 
-## What You Can Install
+- A computer running Linux (Debian or Ubuntu family) or macOS.
+- A 2 TB SSD: the blockchain alone was about 770 GB in September 2026, and the Electrum server index needs more.
+- A stable internet connection; the blockchain download is about 770 GB.
+- Basic comfort with a terminal.
 
-Parmanode organizes software into categories. You pick what you need:
+**Warning: Use an SSD, not a hard disk**
+On a spinning hard disk the initial sync takes weeks instead of days, and the node stays slow afterwards.
 
-### Node Software
-- Bitcoin Core / Bitcoin Knots
-- Electrs (Electrum Server)
-- Fulcrum (faster Electrum Server)
-- Electrum X
-- Mempool (block explorer)
-- LND (Lightning)
-- BTCPay Server
+## Step 1: Install Parmanode
 
-### Wallet Software
-- Sparrow Wallet
-- Electrum
-- Specter Desktop
-- Green Wallet
-- Trezor Suite
-- Ledger Live
-
-### Other Tools
-- Tor
-- Tor Browser
-- JoinMarket (CoinJoin)
-- Nostr Relay
-- And more...
-
-You don't have to install everything. Tailor it to your needs.
-
----
-
-## Installation
-
-### Prerequisites
-
-Before you begin:
-
-- A computer running **Linux (Debian/Ubuntu family)** or **Mac**
-- At least **1 TB SSD** storage (2 TB recommended)
-- **Stable internet connection** (blockchain download is ~600 GB)
-- Basic comfort with the terminal
-
-**Warning: Storage Warning**
-Do not attempt to run a Bitcoin node on a traditional hard drive (HDD). The initial sync will take weeks instead of days, and ongoing performance will be frustrating. An SSD is essential.
-
-### Step 1: Open Terminal
-
-On Linux, open your terminal application. On Mac, open Terminal from Applications → Utilities.
-
-### Step 2: Install Parmanode
-
-Copy and paste this single command:
+Step 1 installs the installer. Open a terminal (on a Mac, Terminal is in Applications, Utilities) and run:
 
 ```bash
 curl https://parmanode.com/install.sh | sh
 ```
 
-This downloads and runs the Parmanode installer. The script is short and simple: if you want to inspect it first, run the command without `| sh` to print it to your screen.
+The script is short; to read it first, run the command without `| sh`, which prints it instead. On a Mac you may be asked to install the Command Line Developer Tools, which git needs: click Install and wait a few minutes.
 
-**Note: Mac Users**
-You may be prompted to install Command Line Developer Tools. A popup window will appear: click "Install" and wait a few minutes. This is required for git to work.
+## Step 2: Open Parmanode
 
-### Step 3: Run Parmanode
-
-After installation completes, start Parmanode by typing:
+Step 2 starts it. Type:
 
 ```bash
 rp
 ```
 
-That's it, just two characters. The Parmanode menu will appear.
-
-### Step 4: Navigate the Menus
-
-Parmanode uses a simple menu system:
+Parmanode's menus appear. Each option has a short code in brackets; type the code and press Enter:
 
 ```
 PARMANODE --> Main Menu --> Install Menu --> Node Install
@@ -132,84 +77,27 @@ PARMANODE --> Main Menu --> Install Menu --> Node Install
     (f)           Fulcrum (an Electrum Server)
     ...
 
-# Installed...
-    
-    Bitcoin Core/Knots
-    electrs
-
 ═══════════════════════════════════════════════════════════
 Type your choice from above options, or: (p) for previous,
 (m) for main, (q) to quit.
 Then <enter>:
 ```
 
-Type the code in parentheses (like `core` or `f`) and press Enter to install that software.
+## Step 3: Install Bitcoin Core
 
----
+Step 3 installs the node itself. Go to the install menu, then node install, type `core` and follow the prompts. Parmanode downloads Bitcoin Core, checks its signatures, installs and configures it, and starts the initial sync, which takes one to seven days depending on your hardware and connection and only happens once. The Bitcoin Core menu shows the sync's progress.
 
-## Installing Bitcoin Core
+## Step 4: Install an Electrum server
 
-From the main menu:
+Step 4 adds the index your wallet will query. In the node install menu, type `f` for Fulcrum, which is faster but uses more memory, or `ersd` for electrs, which suits computers with 4 GB of memory or less, and follow the prompts. The server cannot index until Bitcoin Core has finished syncing, and indexing then takes another 12 to 48 hours. The [Electrum server page](https://selfcustodylabs.com/docs/bitcoin-node/electrum-server/) compares the options.
 
-1. Navigate to **Install Menu** → **Node Install**
-2. Type `core` and press Enter
-3. Follow the prompts
+## Step 5: Install Sparrow
 
-Parmanode will:
-- Download Bitcoin Core from bitcoin.org
-- Verify the PGP signatures automatically
-- Install and configure Bitcoin Core
-- Start the initial blockchain sync
+Step 5 installs your wallet already connected. Go to the install menu, then wallet install, type `sparrow` and follow the prompts. Sparrow is configured to use your own Electrum server, so when you open it, your balances and transactions are already private and checked by your own node.
 
-**Info: Sync Time**
-The initial blockchain download takes **1-7 days** depending on your hardware and internet speed. This only happens once; after that, your node stays current automatically.
+## How do you see the connection details?
 
-### Checking Sync Progress
-
-Parmanode provides status information for installed software. You can monitor your sync progress through the Bitcoin Core menu.
-
----
-
-## Installing an Electrum Server
-
-An Electrum server indexes the blockchain so your wallet can query it efficiently. Without one, your wallet would need to scan the entire blockchain for your transactions.
-
-### Recommended: Fulcrum
-
-Fulcrum is faster than electrs, though it requires more RAM. From the Node Install menu:
-
-1. Type `f` and press Enter
-2. Follow the prompts
-
-### Alternative: Electrs
-
-If you have limited RAM (4 GB or less), electrs is lighter:
-
-1. Type `ersd` and press Enter
-2. Follow the prompts
-
-**Warning: Wait for Bitcoin Core**
-Your Electrum server needs Bitcoin Core to be fully synced before it can index the blockchain. The indexing process takes an additional 12-48 hours after Bitcoin Core finishes syncing.
-
----
-
-## Installing Sparrow Wallet
-
-Here's where Parmanode shines. From the main menu:
-
-1. Navigate to **Install Menu** → **Wallet Install**
-2. Type `sparrow` and press Enter
-3. Follow the prompts
-
-When installation completes, **Sparrow will automatically be configured to connect to your local Electrum server**. No manual configuration needed.
-
-Launch Sparrow and it will already be talking to your node. Your transactions, your addresses, your balance queries: all private, all verified by your own infrastructure.
-
----
-
-## Connection Information
-
-Even though Parmanode configures wallets automatically, you can view your connection settings anytime. From the Electrum server menu, you'll see something like:
+Parmanode configures its own wallets, but the Electrum server's menu shows the addresses for connecting wallets on other devices:
 
 ```
 ═══════════════════════ Electrs v0.10.3 Menu ══════════════
@@ -226,118 +114,31 @@ TOR:        [onion address for remote access]
 ═══════════════════════════════════════════════════════════
 ```
 
-Use these addresses to connect wallets on other devices to your node.
+[Connect Sparrow to your node](https://selfcustodylabs.com/docs/bitcoin-node/connect-sparrow-wallet/) covers connecting another computer.
 
----
+## How do you update Parmanode?
 
-## Updating Parmanode
-
-Parmanode can update itself from within the software. Look for the update option in the main menu.
-
-**Important:** Updating Parmanode does not automatically update the apps it installed. To get newer versions of Bitcoin Core or other software:
-
-1. Uninstall the app using Parmanode's remove tools
-2. Reinstall it (the new version of Parmanode will install the newer version)
-
-If the built-in update is giving you trouble, you can force a refresh:
+Parmanode updates itself from its main menu. Updating Parmanode does not update the programs it installed: to move to a newer Bitcoin Core, for example, uninstall it with Parmanode's remove option and install it again, and the updated Parmanode installs the newer version. If the built-in update fails, this forces a refresh:
 
 ```bash
 curl https://parmanode.com/refresh_parmanode | sh
 ```
 
----
+## How do you run it on a Raspberry Pi?
 
-## Running on a Raspberry Pi
-
-Parmanode offers **ParmanodL OS**, a complete operating system image for Raspberry Pi 4 or 5. This is the easiest way to set up a dedicated Bitcoin node.
-
-### Getting ParmanodL
-
-Download options:
-
-1. **Direct download** from parmanode.com
-2. **Torrent** (helps distribute the file to others)
-3. **Tor hidden service** for maximum privacy
-
-### Default Credentials
-
-When you boot ParmanodL:
-- **Username:** `parman`
-- **Password:** `parmanodl`
-
-### SSH Access
-
-To access your node remotely:
+ParmanodL is a complete operating system image for the Raspberry Pi 4 or 5, and the easiest way to build a dedicated node. Download it from parmanode.com directly, by torrent or through its Tor address. It boots with the username `parman` and the password `parmanodl`; change the password at first login. To reach it from another computer:
 
 ```bash
 ssh parman@parmanodl.local
 ```
 
-**Note: Graphical Applications via SSH**
-Some Parmanode features launch graphical applications (like wallets). To see these over SSH, use the `-Y` flag and ensure X11 forwarding is enabled:
+Some Parmanode features open graphical programs such as wallets. To see them over SSH, connect with `ssh -Y parman@parmanodl.local` and make sure X11 forwarding is enabled; a Mac needs an X11 viewer such as XQuartz.
 
-```bash
-ssh -Y parman@parmanodl.local
-```
+## What else is worth knowing?
 
-On Mac, you'll need an X11 viewer like XQuartz.
+- When Parmanode asks for a password, it means your computer's own login (sudo) password, which it needs for tasks such as mounting drives.
+- Run it as a normal user, not as root, or it will fail.
+- It can run on a rented virtual server, but storing the blockchain there gets expensive unless Bitcoin Core is pruned.
+- The code is open source and heavily commented. To learn how it works, open `~/parman_programs/parmanode/` in an editor and follow `run_parmanode.sh`; every command in it is one you could run by hand.
 
----
-
-## Tips and Troubleshooting
-
-### Password Prompts
-
-When Parmanode asks for a password, it's asking for your computer's **sudo password** (your login password). This is needed to access system functions like mounting drives.
-
-### Don't Run as Root
-
-Parmanode is designed to run as a normal user, not root. If you try to run it as root, you'll get errors.
-
-### VPS Hosting
-
-You can run Parmanode on a Virtual Private Server, but be aware that blockchain storage can get expensive unless you run Bitcoin Core in pruned mode.
-
-### Learning from the Code
-
-Parmanode is fully open source with extensive comments. If you want to learn how things work:
-
-1. Open `~/parman_programs/parmanode/` in a code editor
-2. Start with `run_parmanode.sh` and follow the logic
-3. Every command is something you could run manually in the terminal
-
-This is a great way to learn Linux and Bitcoin infrastructure.
-
----
-
-## Key Takeaways
-
-Parmanode makes running a Bitcoin node accessible without dumbing it down:
-
-- **One-line installation:** `curl https://parmanode.com/install.sh | sh`
-- **Automatic verification:** PGP and SHA256 checks happen automatically
-- **Automatic wallet configuration:** Sparrow and Electrum connect to your node without manual setup
-- **Full control:** You're running real software on a real system, nothing hidden
-- **Educational:** The code is commented and readable
-
-Whether you're setting up your first node or your fifth, Parmanode removes friction without removing understanding.
-
----
-
-## Next Steps
-
-Once your node is running:
-
-→ **Next:** [Electrum Server Details](https://selfcustodylabs.com/docs/bitcoin-node/electrum-server) (understand your indexing options)
-
-→ **Privacy:** [Tor Configuration](https://selfcustodylabs.com/docs/bitcoin-node/tor) (add network-level privacy)
-
-→ **Connect:** [Connect Sparrow Wallet](https://selfcustodylabs.com/docs/bitcoin-node/connect-sparrow-wallet) (link your wallet to your node)
-
----
-
-## Resources
-
-- [Parmanode Website](https://parmanode.com): Official site and downloads
-- [Parmanode GitHub](https://github.com/ArmanTheParman/parmanode): Source code
-- [Arman the Parman's Website](https://armantheparman.com): Educational articles on Bitcoin
+The [Parmanode website](https://parmanode.com), its [source code](https://github.com/ArmanTheParman/parmanode) and [Arman the Parman's articles](https://armantheparman.com) go further.

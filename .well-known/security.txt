@@ -2,6 +2,7 @@
 # https://selfcustodylabs.com
 
 Contact: mailto:selfcustodylabs@proton.me
+Expires: 2027-10-25T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://selfcustodylabs.com/.well-known/security.txt
 

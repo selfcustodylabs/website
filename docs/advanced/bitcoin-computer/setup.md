@@ -3,33 +3,26 @@
 > Set up your dedicated Bitcoin computer with Libreboot BIOS, Linux Mint, and LUKS encryption for maximum security and privacy.
 
 Source: https://selfcustodylabs.com/docs/advanced/bitcoin-computer/setup/
-Last updated: 2026-05-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-When setting up your Bitcoin computer, it’s essential to focus on three key areas: BIOS firmware, Operating System, and Disk Encryption.
+Setting up a Bitcoin computer takes four steps: replace the BIOS with Libreboot, install Linux Mint, encrypt the whole disk with LUKS during installation, and route the computer's bitcoin traffic through Tor. Then install only the wallet software you need, such as Sparrow, and nothing else.
 
-## BIOS: Libreboot
+## Step 1: Replace the BIOS with Libreboot
 
-Libreboot ([see my guide here](https://selfcustodylabs.com/docs/libreboot)) is an open-source BIOS/firmware replacement that offers significant security advantages for any computer, particularly for an Bitcoin computer. By removing proprietary firmware like Intel Management Engine (ME) or AMD Platform Security Processor (PSP), Libreboot eliminates potential backdoors that could compromise the security of your device. In an Bitcoin computer setup, where the primary concern is creating and broadcasting Bitcoin transactions in a protected, malware-free environment, using Libreboot ensures that no hidden code is running on your hardware, minimizing the risk of attacks. Libreboot is fully transparent, meaning its source code is available for review, making it an ideal choice for those who prioritize control over their system and its security.
+Step 1 replaces the firmware. 
+[Libreboot](https://selfcustodylabs.com/docs/libreboot/) replaces the laptop's proprietary BIOS with open-source firmware built on coreboot. On the ThinkPads it supports, it strips the Intel Management Engine down with me_cleaner and disables it, and keeps the remaining vendor code to what the board needs to boot. That does not make the machine free of closed code, but it removes most of the proprietary software that runs before your operating system, and what is left of the firmware is source you can read and rebuild. For a Bitcoin computer, whose job is to create and broadcast transactions in an environment you trust, that is a much smaller base to trust.
 
-## OS: Linux Mint
+## Step 2: Install Linux Mint
 
-Linux Mint is a great choice for a Bitcoin Laptop due to its balance of ease of use and stability. It offers a lightweight, user-friendly experience, ideal for minimizing unnecessary services and applications in an offline setup. Built on Ubuntu, Linux Mint benefits from a reputation for reliability and compatibility with various hardware, making it a solid foundation for a secure, online environment. Its default desktop environment is straightforward and easy to navigate, even for users who aren't deeply familiar with Linux.
+Step 2 installs the operating system. Linux Mint balances ease of use and stability: it is light, runs few unnecessary services, inherits Ubuntu's broad hardware support, and its desktop is easy to find your way around even if you are new to Linux. Check the installer's checksum and signature before writing it to a USB stick.
 
-## Hard Drive: LUKS Encryption
+## Step 3: Encrypt the disk with LUKS
 
-Linux Mint offers full disk encryption through LUKS (Linux Unified Key Setup), which ensures that all data on the device remains encrypted at rest. During installation, you must select LUKS to encrypt the entire drive, protecting sensitive data even if the device is stolen or accessed without authorization. LUKS is widely regarded as one of the most reliable encryption standards on Linux, offering both strong security and flexibility. The system uses a passphrase to unlock the encryption, and it supports additional layers of protection, such as multiple key slots for different passphrases. With LUKS, your Bitcoin computer can operate securely online, with all data fully protected from unauthorized access, making it a perfect solution for safeguarding critical Bitcoin data and other sensitive files.
+Step 3 protects what is stored on the laptop if it is stolen. During installation, choose to encrypt the whole drive; Linux Mint uses LUKS (Linux Unified Key Setup), which keeps everything encrypted at rest behind a passphrase you type at start-up and supports several passphrases in separate key slots. Encryption protects the data when the laptop is off or stolen; it does not protect a running system from malware, which is what the rest of this setup is for.
 
-## TOR
+## Step 4: Route bitcoin traffic through Tor
 
-Tor (The Onion Router) protects your privacy by encrypting your internet traffic and routing it through multiple servers, making it difficult for anyone to track your IP address or link your online activity to your identity.  
-
-Since you'll be setting up a Bitcoin node on a separate device that runs over Tor, it's not strictly necessary to route all internet traffic from your Bitcoin laptop through Tor. However, because the laptop is connected to the internet, routing all Bitcoin-related activity through Tor ensures maximum privacy.
-
-### Why Use Tor?
-
-- **Hides Your IP Address** – Prevents blockchain surveillance from linking your node or wallet activity to your location.
-- **Bypasses Censorship** – Some ISPs or governments restrict Bitcoin traffic; Tor helps bypass these blocks.
-- **Enhances Privacy** – Even if you’re running a full node, Tor ensures your connections remain anonymous.
+Step 4 hides where your bitcoin activity comes from. Tor encrypts your internet traffic and routes it through several relays, so nobody watching can tie your IP address to what you do. If your [node](https://selfcustodylabs.com/docs/bitcoin-node/) already runs over [Tor](https://selfcustodylabs.com/docs/bitcoin-node/tor/) on a separate device, the laptop does not strictly need to send everything through Tor, but because it is online, routing its bitcoin activity through Tor gives the most privacy. It hides your IP address from anyone trying to link your wallet or node to your location, gets around ISPs or governments that block bitcoin traffic, and keeps your connections private even when you run your own node.

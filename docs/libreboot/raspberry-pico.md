@@ -3,16 +3,14 @@
 > Set up a Raspberry Pi Pico H as an SPI programmer for flashing Libreboot: build the serprog firmware and wire the Pico to your laptop's BIOS chip.
 
 Source: https://selfcustodylabs.com/docs/libreboot/raspberry-pico/
-Last updated: 2026-08-02
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-To flash Libreboot externally you need an SPI programmer. A Raspberry Pi Pico H, loaded with the open-source `serprog` firmware, is one of the cheapest and most reliable options.
+To flash Libreboot externally you need an SPI programmer, and a Raspberry Pi Pico H running the open-source serprog firmware is the cheapest reliable one: about $5, and the programmer Libreboot itself recommends. Getting it ready takes two steps: build serprog and copy it onto the Pico, then wire the Pico to a SOIC-8 clip for your laptop's flash chip.
 
-This section walks through getting the Pico ready: building and flashing the serprog firmware, then connecting it to the SOIC8 BIOS chip on your laptop.
+## What are the steps?
 
-## In this section
-
-- **[Build Serprog](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog)**: compile and flash serprog onto the Pico
-- **[Wire the Connection](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection)**: connect the Pico to your laptop's BIOS chip with a SOIC8 clip
+1. [Build serprog](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog/): compile serprog and copy it onto the Pico
+2. [Connect the Pico](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection/): wire the Pico to the clip, pin for pin

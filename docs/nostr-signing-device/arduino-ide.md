@@ -3,38 +3,28 @@
 > Install and configure Arduino IDE to flash your Nostr Signing Device. Download the legacy version and set up ESP32 board support.
 
 Source: https://selfcustodylabs.com/docs/nostr-signing-device/arduino-ide/
-Last updated: 2026-04-14
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-## Download the Arduino IDE
+The signing device's firmware is built and uploaded with the Arduino IDE. This guide uses the legacy Arduino IDE 1.8.19 on Linux: download it, extract it, run its install script, and add it to your panel.
 
-Visit the [Arduino Website](https://www.arduino.cc/en/software/) and download the [Legacy Arduino IDE 1.8.19](https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz)
+## Step 1: Download the Arduino IDE
 
-## Extract the downloaded file
+Step 1 gets the installer. From the [Arduino website](https://www.arduino.cc/en/software/), download the [legacy Arduino IDE 1.8.19](https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz).
 
-Open a terminal and run:
+## Step 2: Extract and install it
+
+Step 2 unpacks and installs it. In a terminal:
 
 ```bash
 tar -xvf arduino-1.8.19-linux64.tar.xz
-```
-
-## Navigate to the extracted folder
-
-```bash
 cd arduino-1.8.19
-```
-
-## Install Arduino IDE
-
-Run the installation script:
-
-```bash
 sudo sh install.sh
 ```
 
-You should see the following output:
+The script ends with:
 
 ```bash
 Adding desktop shortcut, menu item and file associations for Arduino IDE...
@@ -43,14 +33,6 @@ Adding desktop shortcut, menu item and file associations for Arduino IDE...
 done!
 ```
 
-## Accessing Arduino IDE
+## Step 3: Add it to your panel
 
-A new Arduino icon will be created.
-
-To add Arduino to your panel (Linux Mint):
-
-- Click the `Menu` button (bottom left).
-- Type `Arduino` in the search bar.
-- When the Arduino icon appears, right-click it and select `Add to Panel`.
-
-Now you can easily access Arduino IDE from your panel!
+Step 3 makes it easy to open. On Linux Mint, open the menu, type `Arduino`, right-click the Arduino icon and choose `Add to Panel`.

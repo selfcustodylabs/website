@@ -3,40 +3,55 @@
 > Generate Libreboot ROM images for your specific laptop model. Compile custom BIOS firmware using the lbmk build system, ready to flash.
 
 Source: https://selfcustodylabs.com/docs/libreboot/roms/
-Last updated: 2026-04-15
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Generate the roms list
+A Libreboot ROM is the firmware image written to the laptop's flash chip. Build it with `./mk -b coreboot` followed by your laptop's target name, then pick the right image from `bin/<target>/`: as of Libreboot 26.10 the recommended one starts with `uefi_edk2_grub_seabios_`, which boots like a normal UEFI computer and still offers GRUB and SeaBIOS.
+
+## Step 1: Find your laptop's target
+
+Step 1 finds the lbmk target name for your laptop. List every board lbmk can build:
 
 ```bash
 ./mk -b coreboot list
 ```
 
-Take note of your laptop model and BIOS chip (e.g., `x230_12mb` or `t430_12mb` or `t480s_vfsp_16mb`).
-
-If your model has multiple chips, determine the size of your chip by running:
+The ThinkPads in this guide are `lenovo_thinkpad_x230_12mb`, `lenovo_thinkpad_t420_8mb`, `lenovo_thinkpad_t430_12mb`, `lenovo_thinkpad_t440p_12mb`, `lenovo_thinkpad_t480s_16mb`, `lenovo_thinkpad_t530_12mb` and `lenovo_thinkpad_w530_12mb`. The number at the end is the total flash size. Where a model is listed with two sizes (the X230 has `_12mb` and `_16mb` targets), check which chip your board has; on a running Linux system this shows the ROM size the firmware reports:
 
 ```bash
 sudo dmidecode | grep ROM
 ```
 
-Build your ROM (this process may take some time):
+## Step 2: Build the ROM
+
+Step 2 builds the images for your target. It takes a while the first time, because lbmk downloads and compiles coreboot and its toolchain:
 
 ```bash
-./mk -b coreboot <your_laptop_model>
+./mk -b coreboot lenovo_thinkpad_t480s_16mb
 ```
 
-Once the ROM has been compiled, navigate to the directory:
+Replace the target with yours.
+
+## Step 3: Choose the image
+
+Step 3 picks the one image to flash from the set lbmk built, which are in `bin/` under your target's name:
 
 ```bash
-cd lbmk/bin/<your_laptop_model>
+ls bin/lenovo_thinkpad_t480s_16mb/
 ```
 
-You'll find a comprehensive list of BIOS options available for flashing into the BIOS chip. Ensure to select the one corresponding to the keyboard configuration of your device.
-As example, select SEABIOS and copy it to a easily accessible location:
+| Image name starts with | What it boots | Use it if |
+|---|---|---|
+| `uefi_edk2_grub_seabios_` | EDK2 (UEFI) by default, with GRUB and SeaBIOS in its menu | You want the default; current Linux installers boot from it normally |
+| `bios_seabios_` | SeaBIOS, a legacy BIOS | You want the old BIOS-style boot |
+| `bios_seagrub_` | SeaBIOS with GRUB first | You want GRUB first; it comes in one file per keyboard layout, so pick yours |
+
+The rest of the name records the graphics set-up (for example `libgfxinit_corebootfb`). Copy the image you chose somewhere easy to reach:
 
 ```bash
-cp seabios_<your_laptop_model>_libgfxinit_corebootfb.rom /home/$USER
+cp bin/lenovo_thinkpad_t480s_16mb/uefi_edk2_grub_seabios_lenovo_thinkpad_t480s_16mb_*.rom ~/libreboot.rom
 ```
+
+If more than one file matches, copy the one you want by its full name. The [flashing page](https://selfcustodylabs.com/docs/libreboot/flashing-bios/) calls this file `libreboot.rom`.

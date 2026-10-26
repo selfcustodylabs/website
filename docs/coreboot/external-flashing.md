@@ -1,52 +1,51 @@
 # External Flashing
 
-> Practical guide: External Flashing. Covers Detect the Chip, Backup the Factory Bios, Neutralize Intel ME.
+> Flash Coreboot with an external SPI programmer: detect the chip, back up the factory BIOS, neutralise Intel ME, write the image and confirm ME is disabled.
 
 Source: https://selfcustodylabs.com/docs/coreboot/external-flashing/
-Last updated: 2026-01-16
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-External flashing is sometimes necessary instead of internal flashing. The main reasons are:
+External flashing writes coreboot with a programmer, such as a Raspberry Pi Pico, clipped onto the laptop's flash chip, and it is the only route that can neutralise the Intel Management Engine: detect the chip, back up the whole factory image, run me_cleaner on its ME region and flash the result, flash coreboot to the BIOS region, and check with intelmetool that the ME is disabled.
 
-- **Neutralizing Intel ME**: Internal flashing can’t access the ME region on stock firmware, so an external flash is required the first time if you want to disable or neutralize Intel ME.
-- **Recovery**: If an internal flash fails and the laptop no longer boots, an external programmer is the only way to restore the system.
-- **Hardware restrictions**: Some motherboards simply don’t allow internal flashing at all, so external flashing is the only option.
+External flashing is needed in three cases. The stock firmware locks the ME region against internal access, so neutralising the ME takes an external flash the first time. If an internal flash fails and the laptop no longer boots, an external programmer is the only way to restore it. And some boards do not allow internal flashing at all.
 
-## Detect the Chip
+## Step 1: Detect the chip
 
-Now, you need to detect the chip model using flashrom. To ensure accurate detection, follow these steps for the BIOS chip:
+Step 1 connects the programmer to the laptop's flash chip and checks that flashrom can identify the chip. With the laptop switched off and its battery removed:
 
-- Prepare your Raspberry Pi Pico with Serprog as [explained](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog) in the Libreboot guide
-- Based on your BIOS Chip type (`SOIC` or `WSON`) Connect the Raspberry Pico to your Pomona Clip (1st photo) or Pogo Pin Adapter (2nd photo) using Dupont cables, as [explained](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection) in Libreboot guide.
-- Attach the clip firmly onto the BIOS chip, ensuring proper contact with all pins
-- Plug the Raspberry Pico into the laptop using a USB cable
+1. Flash the Raspberry Pi Pico with serprog, as the [Libreboot serprog guide](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/build-serprog/) describes.
+2. Wire the Pico with Dupont cables to a Pomona clip for a SOIC chip (first photo) or a pogo-pin adapter for a WSON chip (second photo), following the [Libreboot wiring guide](https://selfcustodylabs.com/docs/libreboot/raspberry-pico/connection/).
+3. Attach the clip firmly to the chip, so every pin makes contact.
+4. Plug the Pico into the computer you are flashing from with a USB cable.
 
-<img src="https://selfcustodylabs.com/img/libreboot/connection.webp" alt="Connection Setup" className="mdx-grid-image" />
+<div className="photo-pair">
 
-<img src="https://selfcustodylabs.com/img/coreboot/connection.webp" alt="Connection Clip" className="mdx-grid-image" />
+![A Raspberry Pi Pico wired with six coloured Dupont cables to a blue Pomona SOIC-8 test clip, the setup for chips in an 8-pin SOIC package](https://selfcustodylabs.com/img/libreboot/connection.webp)
 
-Execute the following command to detect the chip
+![The same Raspberry Pi Pico wired instead to a pogo-pin adapter, used for WSON chips that a clip cannot grip](https://selfcustodylabs.com/img/coreboot/connection.webp)
+
+</div>
+
+Then detect the chip:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M
 ```
 
-If multiple chips are detected, identify the correct BIOS chip based on prior photos or markings. Subsequently, re-run the command, making sure to specify the name of the pertinent chip.
+If flashrom reports several possible chip types, identify the right one from the markings on the chip and run the command again with its name:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
 ```
 
-If the Raspberry Pico detects the chip, you may proceed by creating a backup.
+Once flashrom names one chip, go on to the backup.
 
-## Backup the Factory Bios
+## Step 2: Back up the factory BIOS
 
-**Note**
-If you are coming from a unsuccessful internal flashing, you can skip this part as there is no point to dump a bios that does not work.
-
-To create a reliable backup of the BIOS chip(s), it's advisable to perform a triple dump of them
+Step 2 reads the whole chip three times and compares the reads, so you have a factory image you can trust. If you are recovering from a failed internal flash, skip this step: an image that does not boot is not worth keeping.
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory.bin
@@ -54,29 +53,29 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory3.bin
 ```
 
-Next, use `sha1sum` to compare the dumped BIOS images
+Compare the three reads:
 
 ```bash
 sha1sum factory.bin factory2.bin factory3.bin
 ```
 
-If the hashes match, you should see something like this:
+All three hashes must match:
 
-```bash
+```text
 6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory.bin
 6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory2.bin
 6cf9bfc90df1ed01336872cd159a00c101d0a7b0  factory3.bin
 ```
 
-Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
+If they do, keep `factory.bin` somewhere safe and delete the other two. If they differ, reseat the clip and read again.
 
 ```bash
-rm -fr factory2.bin factory3.bin
+rm factory2.bin factory3.bin
 ```
 
-## Neutralize Intel ME
+## Step 3: Neutralise the Intel ME
 
-Check if the dumped image has the correct structure by using `ifdtool`:
+Step 3 checks the factory image and runs me_cleaner on its ME region. First confirm the image has the expected layout with `ifdtool`, from the coreboot source tree:
 
 ```bash
 cd coreboot/util/ifdtool
@@ -84,11 +83,10 @@ make
 ./ifdtool -d factory.bin
 ```
 
-It should print a long output, including the section related to Intel ME:
+It prints a long description of the flash descriptor, including the ME region:
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Warning: No platform specified. Output may be incomplete
@@ -341,20 +339,18 @@ Found Processor Strap Section
 ????:      0xffffffff
 ```
 
-</p>
 </details>
 
-Now to check if the dumped ME image is valid just run:
+Then check that the ME firmware in the image is valid with [me_cleaner](https://github.com/corna/me_cleaner), which ships in the coreboot tree at `util/me_cleaner`:
 
 ```bash
 python me_cleaner.py -c factory.bin
 ```
 
-You should get an output like the one below:
+The output should look like this:
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Full image detected
@@ -368,22 +364,18 @@ The AltMeDisable bit is NOT SET
 Checking the FTPR RSA signature... VALID
 ```
 
-</p>
 </details>
 
-Apply `me_cleaner`
-
-To neutralize Intel ME you can just use `me_cleaner` on it:
+Then neutralise the ME. `-S` also sets the AltMeDisable bit, which asks the ME to switch itself off after hardware initialisation, and `-O` writes the result to a new file, leaving `factory.bin` untouched:
 
 ```bash
 python me_cleaner.py -S -O factory_me_neutralized.bin factory.bin
 ```
 
-You should get an output like the one below:
+The output should look like this:
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Full image detected
@@ -442,72 +434,64 @@ Checking the FTPR RSA signature... VALID
 Done! Good luck!
 ```
 
-</p>
 </details>
 
-## Flash the Neutralized Intel ME
+## Step 4: Flash the neutralised image
 
-Now flash the full factory image with the neutralized Intel ME:
+Step 4 writes the whole neutralised image back to the chip:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w factory_me_neutralized.bin
 ```
 
-To double-check, you can dump the newly flashed image
+Read the chip back and compare it with the file you wrote:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r flashed.bin
 ```
 
-Next, use sha1sum to compare the dumped BIOS image with the original libreboot_bottom.rom file
-
 ```bash
 sha1sum factory_me_neutralized.bin flashed.bin
 ```
 
-If the hashes match, you should see something like this:
+The two hashes must match:
 
-```bash
+```text
 4b9f06ccd2ce11dad757e337829a450a05df7929  factory_me_neutralized.bin
 4b9f06ccd2ce11dad757e337829a450a05df7929  flashed.bin
 ```
 
-Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
+If they do, delete `flashed.bin`. If they differ, write the image again before going on.
 
 ```bash
-rm -fr flashed.bin
+rm flashed.bin
 ```
 
-## Flash the Coreboot BIOS Region
+## Step 5: Flash the coreboot BIOS region
 
-Before flashing the BIOS, remove the CMOS battery. Some laptops use CMOS/EC settings to protect the SPI chip, and removing the battery also adds a layer of safety.
-
-**Note**
-If you’ve already flashed Coreboot internally, you can skip this section as you’re all set and ready to go.
-
-Make sure the writing protection is disabled:
+Step 5 writes coreboot to the BIOS region of the chip. Skip it if you have already flashed coreboot internally. Remove the CMOS battery first: some laptops keep settings that protect the SPI chip in CMOS or the embedded controller. Then disable the chip's write protection:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" --wp-disable
 ```
 
-You will get the below output:
+flashrom confirms it:
 
 ```text
 Disabled hardware protection
 ```
 
-Now flash ONLY the BIOS region from your Coreboot image by doing:
+Write only the BIOS region of your coreboot image, leaving the descriptor and the neutralised ME as they are:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w coreboot.rom --ifd -i bios -N
 ```
 
-Finally, [verify](https://selfcustodylabs.com/docs/coreboot/internal/flashing-bios#verify-the-flashed-image) the flashed bios region.
+Then [verify the flashed BIOS region](https://selfcustodylabs.com/docs/coreboot/internal/flashing-bios/#verify-the-flashed-image), reading it back with this same programmer in place of `-p internal`.
 
-## Verify Intel ME Neutralization
+## Step 6: Verify the Intel ME is neutralised
 
-To check whether Intel ME has been successfully neutralized, you can use `intelmetool`:
+Step 6 boots the laptop and checks the ME's state with `intelmetool`, from the coreboot source tree:
 
 ```bash
 cd coreboot/util/intelmetool
@@ -515,11 +499,10 @@ make
 sudo ./intelmetool -m
 ```
 
-The output you want to see should look similar to this:
+On a neutralised ME the output looks like this:
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 Bad news, you have a `QM77 Express Chipset LPC Controller` so you have ME hardware on board and you can't control or disable it, continuing...
@@ -550,7 +533,6 @@ ME: failed to become ready
 ME: GET FW VERSION message failed
 ```
 
-</p>
 </details>
 
-In this output, Intel ME remains in the initializing state and fails to become fully ready. This is exactly what you expect when ME has been neutralized: the hardware is present, but the ME firmware is disabled and cannot initialize.
+In this output, Intel ME remains in the initializing state and fails to become fully ready. This is what a neutralised ME looks like: the hardware is present, but the ME firmware is disabled and cannot initialize.

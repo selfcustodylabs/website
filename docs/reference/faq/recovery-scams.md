@@ -3,245 +3,87 @@
 > Why almost every 'Bitcoin recovery service' is a scam. Learn to recognize fraud and understand what legitimate recovery actually looks like.
 
 Source: https://selfcustodylabs.com/docs/reference/faq/recovery-scams/
-Last updated: 2026-08-02
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-**Danger: Scam Alert**
-If someone has contacted you about recovering your Bitcoin, there is a 99%+ chance they are trying to steal from you.
+A bitcoin recovery scam is an offer, usually unsolicited, to recover lost or stolen bitcoin for a fee or in exchange for your seed phrase. Nobody can recover bitcoin from a lost seed phrase, reverse a confirmed transaction or take coins back from a thief's address, so the offer is a fraud: the scammer takes the fee and disappears, or takes the seed phrase and empties whatever is left. If someone contacts you about recovering bitcoin, treat them as a scammer, do not send money or information, and block them.
 
-This page explains how these scams work and how to protect yourself.
+## Why are recovery scams so common?
 
-## Why Recovery Scams Are So Common
+People who have just lost bitcoin are distressed and want to believe it can be undone, and scammers look for them deliberately: they watch social media, Reddit and bitcoin forums for posts about lost coins, run advertisements for "recovery services", build convincing websites, and impersonate real companies. Their approach is professional, sympathetic and full of false hope.
 
-People who have lost access to their Bitcoin are desperate and vulnerable. Scammers know this. They actively search for victims by:
+## What forms do recovery scams take?
 
-- Monitoring social media for posts about lost Bitcoin
-- Monitoring Reddit, Twitter, and Bitcoin forums
-- Running fake "recovery service" advertisements
-- Creating fraudulent websites that look legitimate
-- Impersonating legitimate companies
+| Scam | How it works | Warning signs |
+|---|---|---|
+| Upfront payment | They claim they can recover your bitcoin, take a fee (often in crypto or gift cards), show fake "progress", then disappear or demand more | Any payment before recovery; vague explanations of their "technology"; pressure to act quickly; untraceable payment methods |
+| Seed phrase theft | They say they need your partial seed phrase "to help", then take any funds they can reach, or brute-force the gaps faster than you | Any request for your seed phrase or part of it; offers to "check whether your seed is valid"; requests for remote access |
+| Fake software or websites | A "recovery tool" or site asks you to enter your seed phrase, sends it to the scammer and sweeps the wallet | Any website asking for a seed phrase; downloads from unofficial sources; promises of "instant recovery" |
+| Impersonation | Someone posing as Ledger, Trezor or another company reports a "security breach" and asks you to "verify" your seed | Unexpected contact from a wallet company; urgent security warnings; any request for a seed phrase, which real companies never make |
 
-**The target:** Someone who has lost their seed phrase and is emotionally compromised.
+Common stories follow these patterns: a victim shown screenshots of other "recovered" wallets pays a fee and hears nothing more; another is told twelve of their twenty-four words are needed "to verify the format" and finds the wallet empty the next day; another receives an email that looks exactly like their wallet maker's and enters the seed phrase to "protect" it; another pays a first fee, then a second, then a third for "mining fees", and loses everything.
 
-**The approach:** Professional, sympathetic, and full of false hope.
+## Why is recovery impossible?
 
-## How Recovery Scams Work
+A 24-word seed phrase holds 256 bits of randomness, about 10^77 possible seeds, more than the number of atoms in the observable universe. Guessing one with no information would take longer than the age of the universe on any computer, and no technique for "hacking the blockchain" exists.
 
-### Scam Type 1: Upfront Payment Fraud
+What is possible is narrower, and you can do it yourself with open-source tools: finding a few missing words from a seed you mostly have (one or two easily, three with days of graphics-card time when the positions are known), or a partly remembered passphrase. [What if you lose your seed phrase](https://selfcustodylabs.com/docs/reference/faq/lost-seed/#some-words-are-missing-or-unreadable) sets out the limits.
 
-**How it works:**
-1. Scammer claims they can recover your Bitcoin
-2. They request payment upfront (often in Bitcoin or crypto)
-3. They may show "progress" or fake screenshots
-4. Eventually they disappear or demand more money
-5. You lose both your Bitcoin AND the "recovery fee"
+## What does legitimate help look like?
 
-**Red flags:**
-- Any request for payment before recovery
-- Vague explanations of their "technology"
-- Pressure to act quickly
-- Untraceable payment methods (crypto, gift cards)
+| Legitimate | Fraudulent |
+|---|---|
+| Open-source tools you download and run yourself, such as [BTCRecover](https://github.com/3rdIteration/btcrecover); nobody else sees your seed | Claims to recover any seed phrase |
+| Clear about the limits: a fully lost seed cannot be recovered | Asks for payment up front |
+| Free, or paid only for a defined result | Needs your seed phrase or part of it |
+| Explains the process so you understand it | Vague "proprietary technology" |
+| You go to it | It contacts you first, often with urgency |
 
----
+## What should you do if you have lost access?
 
-### Scam Type 2: Seed Phrase Theft
+If you are thinking about using a recovery service: stop, and do not act while upset. A fully lost seed cannot be recovered; use only open-source tools that you run yourself; never share your seed phrase; and accept that some losses are permanent.
 
-**How it works:**
-1. Scammer offers to help recover your wallet
-2. They claim they need your partial seed phrase "to help"
-3. With even partial seed information, they may be able to:
-   - Steal funds immediately (if enough words provided)
-   - Attempt brute-force recovery faster than you can
-4. Any recovered funds go to them, not you
+If you have part of the seed: write down everything you remember, including possible variations; download BTCRecover from its official GitHub page; run it on an offline computer if you can; be patient; and never share the partial seed with "helpers".
 
-**Red flags:**
-- ANY request for your seed phrase or partial seed
-- Offers to "check if your seed is valid"
-- Remote access requests to your computer
+If someone has contacted you: assume they are a scammer, do not engage, send nothing, and block and report them.
 
----
+## What if you have already been scammed?
 
-### Scam Type 3: Fake Software/Websites
+1. Stop all contact, and send no more money, even if they promise to return the first payment.
+2. Record everything: messages, addresses, amounts.
+3. Report it to your local police, and in the US to the FBI's Internet Crime Complaint Center ([ic3.gov](https://www.ic3.gov/)), or your country's fraud reporting body.
+4. Report the scammer on the platform where you found them, and warn others.
 
-**How it works:**
-1. Scammer creates fake "recovery tool" or website
-2. You're asked to enter your seed phrase to "check" it
-3. The seed phrase is transmitted to the scammer
-4. They immediately sweep any funds from your wallet
+Recovering money lost to scammers is rare; reporting helps stop them reaching others. Do not hire a second "recovery" service to get back what the first one took: those are scams too.
 
-**Red flags:**
-- Websites asking you to enter your seed phrase
-- Software downloads from unofficial sources
-- Tools that promise "instant recovery"
+## How do you protect yourself in future?
 
----
-
-### Scam Type 4: Impersonation
-
-**How it works:**
-1. Scammer impersonates legitimate company (Ledger, Trezor, etc.)
-2. They claim there's been a security breach
-3. They ask you to "verify" your seed for your protection
-4. Your seed goes directly to the scammer
-
-**Red flags:**
-- Unsolicited contact claiming to be from hardware wallet company
-- Urgency about "security threats"
-- Request for seed phrase (legitimate companies NEVER ask for this)
-
-## The Mathematics of Why Recovery Is Impossible
-
-Scammers rely on you not understanding why recovery is impossible:
-
-**A 24-word seed phrase has:**
-- 2048^24 possible combinations
-- That's approximately 10^79 combinations
-- More than the number of atoms in the observable universe
-
-**Even with the fastest supercomputers:**
-- Brute-forcing a full 24-word seed would take longer than the age of the universe
-- This is not an exaggeration: it's mathematics
-
-**What IS possible:**
-- Recovering 1-2 missing words (2,048 to ~4 million combinations)
-- Using known partial information to narrow search space
-- This is something you can do yourself with open-source tools
-
-**What is NOT possible:**
-- Recovering a seed with no information
-- "Hacking the blockchain" to recover funds
-- Any magic technology that bypasses mathematics
-
-## Legitimate vs Fraudulent Recovery
-
-### Legitimate Recovery Looks Like:
-
-✅ **Open-source tools** you download and run yourself:
-- BTCRecover (https://github.com/3rdIteration/btcrecover)
-- SeedRecover
-- You maintain full control; no one else sees your seed
-
-✅ **Transparent limitations:**
-- Will clearly state that full seed loss is unrecoverable
-- Will explain that only 1-2 missing words are feasible
-- Won't promise guaranteed results
-
-✅ **No upfront payment:**
-- Legitimate help doesn't require payment before recovery
-- Open-source tools are free
-
-✅ **Technical education:**
-- Explains the process so you understand it
-- Empowers you rather than creating dependency
-
-### Fraudulent Recovery Looks Like:
-
-❌ **Claims to recover any seed phrase**
-- Mathematically impossible
-
-❌ **Requests payment upfront**
-- Scam pattern
-
-❌ **Needs your seed phrase or partial seed**
-- If they have it, they can steal from you
-
-❌ **Uses urgency or pressure**
-- Legitimate help doesn't pressure you
-
-❌ **Vague about methodology**
-- "Proprietary technology" = scam
-
-❌ **Unsolicited contact**
-- They found you by monitoring for vulnerable targets
-
-## What To Do If You've Lost Access
-
-### If You're Considering "Recovery Services":
-
-1. **Stop.** Take a breath. Don't act while emotional.
-2. **Understand the mathematics.** Full seed loss = no recovery.
-3. **Use only open-source tools** you run yourself.
-4. **Never share your seed** with anyone for any reason.
-5. **Accept that some losses are permanent.**
-
-### If You Have Partial Information:
-
-1. **Document what you know** (words you remember, possible variations)
-2. **Download BTCRecover** from the official GitHub
-3. **Run it on an air-gapped computer** if possible
-4. **Be patient**: recovery takes time
-5. **Do not share your partial seed** with "helpers"
-
-### If Someone Has Contacted You:
-
-1. **Assume they are a scammer** until proven otherwise
-2. **Do not engage** with them
-3. **Do not send any money or information**
-4. **Block and report** the account
-5. **Warn others** if appropriate
-
-## Stories From Victims
-
-These are real patterns reported by scam victims:
-
-> "They showed me screenshots of 'recovering' other people's wallets. Looked so professional. I paid $2,000 and never heard from them again."
-
-> "They said they just needed 12 of my 24 words to 'verify' the format. The next day my wallet was empty."
-
-> "I got an email that looked exactly like it was from Ledger saying my wallet was compromised. I entered my seed to 'protect' it."
-
-> "They kept asking for more money: first $500, then $1000, then $5000 for 'mining fees.' I lost everything."
-
-## If You've Been Scammed
-
-If you've already fallen victim:
-
-1. **Stop all contact** with the scammer
-2. **Do not send more money** even if they promise your first payment back
-3. **Document everything** (conversations, addresses, amounts)
-4. **Report to authorities:**
-   - Local police
-   - FBI IC3 (ic3.gov) for US residents
-   - National fraud reporting in your country
-5. **Report the scam** on platforms where you found them
-6. **Warn others** on Reddit, Twitter, forums
-
-**Be aware:** Recovery of scammed funds is extremely rare. The purpose of reporting is to potentially stop the scammer from hurting others.
-
-## Protecting Yourself Going Forward
-
-The best protection is prevention:
-
-1. **Proper backups**: Multiple copies, tested recovery
-2. **Never share your seed**: For any reason, with anyone
-3. **Healthy skepticism**: If it sounds too good to be true, it is
-4. **Verify everything**: Check official sources, not Google ads
-5. **Understand the limits**: Know what's mathematically possible
-
-→ See: [Backup Verification Guide](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/)
-→ See: [Before You Deposit Checklist](https://selfcustodylabs.com/docs/wallet-setup/before-you-deposit)
-
-## Summary
+Keep proper backups, with several copies and a tested recovery; never share your seed phrase with anyone, for any reason; distrust anything that sounds too good; check official sources rather than search adverts; and know what is and is not possible. The [backup verification guide](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/) and the [before you deposit checklist](https://selfcustodylabs.com/docs/wallet-setup/before-you-deposit/) cover the practice.
 
 | Claim | Reality |
 |-------|---------|
-| "We can recover any lost Bitcoin" | Mathematically impossible |
+| "We can recover any lost bitcoin" | Impossible |
 | "We have special technology" | No such technology exists |
-| "Just send us your seed to verify" | They will steal your funds |
-| "Pay upfront and we'll recover" | You'll lose the payment too |
-| "We recovered $X million for clients" | Fake testimonials |
+| "Send us your seed to verify it" | They will empty the wallet |
+| "Pay up front and we will recover it" | You will lose the fee too |
+| "We have recovered millions for clients" | Invented testimonials |
 
-**The only legitimate recovery:**
-- 1-2 missing words using open-source tools
-- Running those tools yourself
-- Never sharing your seed with anyone
+## Common questions
 
----
+### How do bitcoin recovery scams work?
 
-## Related Guides
+Scammers reach victims through search adverts, social media and forums, claiming they can recover lost or stolen bitcoin. They charge fees up front, or ask for sensitive information such as seed phrases or wallet files, then disappear or demand more. No legitimate service can recover bitcoin from a lost seed phrase.
 
-- [What Happens If You Lose Your Seed?](https://selfcustodylabs.com/docs/reference/faq/lost-seed): Understanding seed loss
-- [Backup Verification](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/): Prevent loss in the first place
-- [Hardware Wallet Setup](https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/): Start with good practices
+### Can a hacker recover your stolen bitcoin?
+
+No. Once bitcoin has moved to an address a thief controls, only the thief's private key can move it again. No hacker, government agency or recovery service can reverse a confirmed transaction or extract keys from an address.
+
+### Are there any legitimate bitcoin recovery services?
+
+A few help with narrow problems: guessing a forgotten passphrase you partly remember, brute-forcing a weak password on an encrypted wallet file, or repairing a physically damaged device that still holds the keys. They never claim to recover funds from a lost seed phrase, and they work openly, with references you can check.
+
+### What should you do if a recovery service has scammed you?
+
+Stop all contact, pay nothing more, record everything, and report it to your local cybercrime authority and the platform where you found the scammer. Do not hire a second recovery service to get back what the first took; those are scams too.

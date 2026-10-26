@@ -1,18 +1,18 @@
 # Build Coreboot
 
-> Practical guide: Build Coreboot. Covers Step 1: Install tools and libraries needed for coreboot, Step 2: Download Coreboot Source Tree, Step 3: Build the.
+> Build Coreboot from source on Linux: install the dependencies, clone the source tree, build the cross-compiler toolchain, configure your ThinkPad and compile.
 
 Source: https://selfcustodylabs.com/docs/coreboot/build/
-Last updated: 2026-01-11
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Now we will walk through building Coreboot from scratch. We will first install the required tools, then download Coreboot’s source code, build its toolchain, configure it for your mainboard, and finally compile it into a ROM file you can flash.
+Building coreboot from source takes five steps on a Linux computer: install the build dependencies, download the coreboot source, build its cross-compiler toolchain (the slowest part), configure the build for your mainboard and payload, and compile it into a ROM image to flash.
 
-## Step 1: Install tools and libraries needed for coreboot
+## Step 1: Install the build tools and libraries
 
-Coreboot needs several development tools and libraries to compile successfully.
+Step 1 installs the development tools and libraries coreboot needs to compile.
 The packages you need depend on your Linux distribution. Run the command that matches your system:
 
 Debian-based distros (e.g., Ubuntu, Linux Mint):
@@ -35,9 +35,9 @@ sudo dnf install git make gcc-gnat flex bison xz bzip2 gcc g++ ncurses-devel wge
 
 If any package is missing, Coreboot may fail to build, so make sure the installation finishes without errors.
 
-## Step 2: Download Coreboot Source Tree
+## Step 2: Download the coreboot source
 
-We will now download Coreboot’s source code from the official repository and move into its directory:
+Step 2 downloads the coreboot source from the official repository and moves into its directory:
 
 ```bash
 git clone https://review.coreboot.org/coreboot
@@ -47,9 +47,9 @@ cd coreboot
 This will give you the latest development version of Coreboot.
 If you want to build a specific version, you can check out the corresponding branch or tag after cloning.
 
-## Step 3: Build the Coreboot Toolchain
+## Step 3: Build the coreboot toolchain
 
-Coreboot uses its own toolchain to ensure that builds are reproducible and work on all supported boards.
+Step 3 builds coreboot's own cross-compiler toolchain, which keeps builds reproducible and working on every supported board.
 You must build this toolchain before compiling Coreboot itself.
 
 First, see which toolchains are available:
@@ -60,7 +60,6 @@ make help_toolchain
 
 <details>
 <summary>Output</summary>
-<p>
 
 ```text
 *** Toolchain targets ***
@@ -77,7 +76,6 @@ make help_toolchain
   Use "make [target] BUILDGCC_OPTIONS="-m" to get packages from coreboot mirror"
 ```
 
-</p>
 </details>
 
 Choose the one that matches your target architecture.
@@ -96,9 +94,9 @@ make crossgcc-riscv CPUS=$(nproc)      # build RISC-V toolchain
 - The `i386` toolchain works for all x86 and x86_64 boards.
 - You can try building with your system’s compiler, but this often causes build errors. The Coreboot toolchain is strongly recommended.
 
-## Step 4: Configure the Build
+## Step 4: Configure the build
 
-In this step, we configure Coreboot for your specific computer, in this example, the Lenovo ThinkPad T430s. Coreboot is highly modular, and the configuration determines how it initializes your hardware and what additional software (“payloads”) it will run after startup.
+Step 4 configures coreboot for your computer, here a Lenovo ThinkPad T430s. The configuration decides how coreboot initialises the hardware and which payload, the software it hands over to after startup, it runs.
 
 Run the interactive configuration menu:
 
@@ -179,7 +177,6 @@ Create a basic `grub.cfg` to define the boot behavior and include it in the “I
 
 <details>
 <summary>grub.cfg</summary>
-<p>
 
 ```text
 # Coreboot GRUB2: auto-boot with ESC menu and user instructions
@@ -206,10 +203,9 @@ menuentry "Boot USB" {
 }
 ```
 
-</p>
 </details>
 
-#### (Optional) Save your configuration to a file:
+#### Save the configuration to a file (optional)
 
 ```bash
 make savedefconfig
@@ -233,12 +229,11 @@ CONFIG_GRUB2_EXTRA_MODULES="cryptodisk nativedisk ehci ohci usb usbms usbserial_
 CONFIG_GRUB2_INCLUDE_RUNTIME_CONFIG_FILE=y
 ```
 
-**Note**
-This may vary depending on your Coreboot source version. Do not worry if there are more or fewer lines.
+The exact lines depend on the coreboot version, so more or fewer lines than these is normal.
 
-## Step 5: Build Coreboot
+## Step 5: Build coreboot
 
-With everything set up, you can now build Coreboot:
+Step 5 compiles the coreboot image:
 
 ```bash
 make
@@ -260,4 +255,4 @@ make distclean
 
 This will reset the build environment so you can reconfigure and rebuild from scratch.
 
-You now have a Coreboot ROM ready to flash to your device!
+You now have a coreboot ROM to flash, [internally](https://selfcustodylabs.com/docs/coreboot/internal/) or [externally](https://selfcustodylabs.com/docs/coreboot/external-flashing/).

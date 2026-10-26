@@ -3,81 +3,47 @@
 > Bitcoin UTXO management for lower fees and better privacy. Coin control in Sparrow, consolidation strategies, dusting attacks, and source separation rules.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/utxo-management/
-Last updated: 2026-08-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Most Bitcoin users never think about UTXOs. They see a balance in their wallet and assume that is all there is to know. That is a costly mistake, both for fees and for privacy.
+UTXO management means deciding which of your coins (UTXOs) each transaction spends, instead of leaving it to the wallet: keeping coins from different sources apart, labelling where each came from, merging small coins from the same source when fees are low, and freezing unexpected tiny deposits. Done well, it keeps fees down, stops payments from revealing your whole balance, and avoids linking your KYC coins to your private ones. The tool for it is coin control, which Sparrow and Electrum both offer.
 
-**Info: What You'll Learn**
-**Time:** 40 minutes  
-**Difficulty:** Intermediate  
-**Prerequisites:** Understanding of [UTXOs](https://selfcustodylabs.com/docs/learn/transactions/utxos), [transactions](https://selfcustodylabs.com/docs/learn/transactions/understanding), and [why privacy matters](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters).
+Time: 40 minutes. Level: Intermediate. Updated: 26 Oct 2026.
 
-**UTXO management** is the practice of being intentional about:
+[UTXOs](https://selfcustodylabs.com/docs/learn/transactions/utxos/), [how transactions work](https://selfcustodylabs.com/docs/learn/transactions/understanding/) and [why privacy matters](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters/) are useful background.
 
-- How many UTXOs you have
-- What size they are
-- Where they came from
-- How you spend them
+## What goes wrong without UTXO management?
 
-Poor UTXO management leads to:
+Leaving coin selection to the wallet leads to fees higher than they need be, privacy leaks that tie coins from different sources together (see [chain analysis](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/)), small coins that cost more to spend than they are worth, and exposure to tracking attacks that rely on you spending what you were sent.
 
-- 💸 Unnecessarily high transaction fees
-- 🔍 Privacy leaks that expose your wealth (see [Chain Analysis](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis))
-- 🚫 Unspendable "dust" trapped in your wallet
-- ⚠️ Vulnerability to tracking attacks
-
-This guide teaches you to manage UTXOs like a pro.
-
-## Quick UTXO Recap
-
-UTXOs (Unspent Transaction Outputs) are the individual "pieces" of bitcoin you own. Your wallet balance is the sum of all your UTXOs.
-
-<div class="fixed-width-table">
-
-| Property | Management Implication |
+| UTXO property | What it means for management |
 |----------|------------------------|
-| UTXOs are indivisible | You spend entire UTXOs, creating change |
-| Each UTXO adds transaction bytes | More UTXOs = higher fees |
-| UTXOs have traceable history | Combining UTXOs links their histories |
-| UTXOs are locked to addresses | Labels help track sources |
+| A UTXO is spent whole | Payments create change |
+| Each UTXO spent adds bytes | More inputs mean higher fees |
+| Each UTXO has a public history | Spending UTXOs together links their histories |
+| Each UTXO is locked to an address | Labels are how you remember where it came from |
 
-</div>
+## Why do many small UTXOs cost more?
 
-## Why UTXO Management Matters
-
-### 1. Fees Are Based on Data Size, Not Value
-
-**Warning: Critical Concept**
-Bitcoin fees are based on transaction **size** (in bytes), not the **value** being sent. Sending $10 or $10,000,000 costs the same if the transaction has the same structure.
-
-Transaction size is determined by:
-
-- **Number of inputs (UTXOs being spent):** each input adds ~57-148 bytes
-- **Number of outputs:** each output adds ~31-43 bytes
-- **Address type:** SegWit / Taproot are smaller than legacy
-
-**More UTXOs = more inputs = higher fees.**
-
-Sending 0.1 BTC at 50 sat/vB:
+Fees depend on a transaction's size, not its value, and each input adds 57 to 148 vB depending on address type, against 31 to 43 vB per output. Sending 0.1 BTC at 50 sat/vB:
 
 <div class="fixed-width-table">
 
-| Scenario | Inputs | Approx. Size | Fee |
+| Coins spent | Inputs | Size | Fee |
 |----------|--------|--------------|-----|
-| 1 UTXO of 0.1 BTC | 1 | ~140 vB | ~7,000 sats |
-| 10 UTXOs of 0.01 BTC each | 10 | ~680 vB | ~34,000 sats |
-| 100 UTXOs of 0.001 BTC each | 100 | ~5,800 vB | ~290,000 sats |
+| One 0.1 BTC UTXO | 1 | About 140 vB | About 7,000 sats |
+| Ten 0.01 BTC UTXOs | 10 | About 750 vB | About 37,500 sats |
+| A hundred 0.001 BTC UTXOs | 100 | About 6,900 vB | About 345,000 sats |
 
 </div>
 
-Same amount sent. Wildly different fees.
+The same amount sent, at fees that differ fiftyfold.
 
-### 2. Privacy Depends on UTXO Separation
+## How does spending coins together hurt privacy?
 
-When you spend multiple UTXOs in one transaction, you reveal they belong to the same person:
+Spending several UTXOs in one transaction tells everyone they belong to the same person. Analysts call this the **common-input-ownership heuristic**, and it is one of their main tools.
 
 <div class="doc-diagram">
 
@@ -85,34 +51,30 @@ When you spend multiple UTXOs in one transaction, you reveal they belong to the 
 
 </div>
 
-This is the **common-input-ownership heuristic**, one of the primary tools blockchain analysts use to track people.
+## When does a small UTXO become dust?
 
-### 3. Small UTXOs Can Become Unspendable
+A UTXO worth less than the fee to spend it is economic **dust**. At 100 sat/vB one native segwit input costs about 6,800 sats to spend, so a 5,000-sat UTXO costs more to move than it holds, and the higher fees go, the more small coins fall below the line.
 
-If a UTXO is worth less than the fee to spend it, it is effectively **dust**: trapped forever.
+## What are the rules of UTXO management?
 
-At 100 sat/vB, spending one SegWit input costs ~6,800 sats. A UTXO of 5,000 sats costs more to spend than it is worth. As fees rise, more small UTXOs become uneconomical.
+### Keep UTXOs above about 0.01 BTC
 
-## The Golden Rules of UTXO Management
-
-### Rule 1: Keep UTXOs Above Minimum Size
-
-Recommended minimum: **0.01 BTC (1,000,000 sats).** This keeps your UTXOs spendable across a wide range of fee environments.
+A coin of 0.01 BTC (1,000,000 sats) or more stays worth spending across most fee conditions. The cost of spending one native segwit input, as a share of the coin:
 
 <div class="fixed-width-table">
 
-| Fee Environment | 0.001 BTC UTXO | 0.01 BTC UTXO | 0.1 BTC UTXO |
+| Fee rate | 0.001 BTC coin | 0.01 BTC coin | 0.1 BTC coin |
 |-----------------|----------------|---------------|--------------|
-| Low (10 sat/vB) | ✅ Spendable | ✅ Spendable | ✅ Spendable |
-| Medium (50 sat/vB) | ⚠️ ~3% fee | ✅ ~0.3% fee | ✅ ~0.03% fee |
-| High (200 sat/vB) | ❌ ~14% fee | ⚠️ ~1.4% fee | ✅ ~0.14% fee |
-| Extreme (500 sat/vB) | ❌ ~34% fee | ❌ ~3.4% fee | ✅ ~0.34% fee |
+| Low (10 sat/vB) | 0.7% | 0.07% | 0.007% |
+| Medium (50 sat/vB) | 3.4% | 0.34% | 0.03% |
+| High (200 sat/vB) | 13.6% | 1.4% | 0.14% |
+| Extreme (500 sat/vB) | 34% | 3.4% | 0.34% |
 
 </div>
 
-### Rule 2: Don't Consolidate Everything Into One UTXO
+### Do not put everything in one UTXO
 
-Having all your bitcoin in a single UTXO is bad for privacy. Any payment you make reveals your entire holdings to the recipient.
+With all your bitcoin in one coin, every payment shows the recipient your whole holding through the change.
 
 <div class="doc-diagram">
 
@@ -120,28 +82,17 @@ Having all your bitcoin in a single UTXO is bad for privacy. Any payment you mak
 
 </div>
 
-### Rule 3: Keep UTXOs from Different Sources Separate
+### Keep coins from different sources apart
 
-Never mix:
+Never spend together coins from an exchange that has your ID (KYC coins) and coins without it, coins from different exchanges, or [mixed](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) and unmixed coins. Each combination creates a link that stays on the blockchain for good.
 
-- **KYC coins** (from exchanges with your ID) with **non-KYC coins**
-- Coins from **different exchanges** in the same transaction
-- **Mixed (CoinJoin) coins** with **unmixed coins**
+### Label everything
 
-Each mix creates a link that can be traced forever.
+Without labels you will forget which coins came from where, which carry your identity and which have been mixed. Label each one when it arrives, for example "Exchange withdrawal, January 2026", "Repayment from a friend, no KYC", "Mixed with Jam, round 3".
 
-### Rule 4: Label Everything
+## What is coin control?
 
-Without labels you will forget where each UTXO came from, which are KYC vs. non-KYC, and which have been through [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin). Use descriptive labels:
-
-- "Coinbase withdrawal 2024-01"
-- "Friend repayment (no KYC)"
-- "CoinJoined via Jam, round 3"
-- "Strike DCA, weekly buy"
-
-## Coin Control: Choosing Your UTXOs
-
-**Coin control** is the ability to select exactly which UTXOs you spend in a transaction. Without it, your wallet makes these decisions for you, often poorly.
+**Coin control** is choosing exactly which UTXOs a transaction spends. Without it the wallet decides, often badly.
 
 <div class="doc-diagram">
 
@@ -149,107 +100,31 @@ Without labels you will forget where each UTXO came from, which are KYC vs. non-
 
 </div>
 
-### Coin Control in Sparrow Wallet
+### How do you use coin control in Sparrow?
 
-Sparrow has the best coin control interface available.
+Sparrow's coin control is the most complete:
 
-**Viewing your UTXOs**
+- To see your coins, open the wallet's `UTXOs` tab, which lists every UTXO with its amount, address, label, date and transaction.
+- To spend particular coins, tick them in the `UTXOs` tab, click `Send Selected`, and enter the destination and amount.
+- To label a coin, double-click it and type the label; labels are kept between sessions.
+- To freeze a coin, such as unexpected dust, right-click it and choose `Freeze UTXO`; it is then left out of every transaction until you unfreeze it.
 
-1. Open your wallet in Sparrow
-2. Click the **UTXOs** tab
-3. You see every UTXO with amount, address, label, date, and transaction ID
+### How do you use coin control in Electrum?
 
-**Sending from specific UTXOs**
+Choose `View`, `Show Coins` to add a `Coins` tab. In it, right-click a coin and choose `Spend From` to build a transaction from that coin only, or `Freeze` to exclude it.
 
-1. Go to the **UTXOs** tab
-2. Check the boxes next to the UTXOs you want to spend
-3. Click **Send Selected**
-4. Enter destination and amount
-5. Complete the transaction
+### How do you choose which coins to spend?
 
-**Labeling**
+- Match the amount: pick a coin close to the payment so that little change is created. For a 0.048 BTC payment from coins of 0.1, 0.05 and 0.02 BTC, the 0.05 BTC coin leaves only 0.002 BTC of change.
+- Combine only coins from one source: for a 0.15 BTC payment, two coins of 0.1 and 0.08 BTC from the same exchange are better than any combination that mixes in a coin from another exchange or a non-KYC coin.
+- Spend older coins first: they are less likely to be linked by timing to your recent activity.
 
-1. Double-click any UTXO in the UTXOs tab
-2. Enter a descriptive label (source, KYC status, date, purpose)
-3. Labels persist across sessions
+## How do you consolidate UTXOs without losing privacy?
 
-**Freezing a UTXO** (for suspicious dust)
+**Consolidation** is combining several UTXOs into one larger one, so future payments need fewer inputs. Done well it saves fees; done badly it ties your coins' histories together for good.
 
-1. Right-click the UTXO in the UTXOs tab
-2. Select **Freeze UTXO**
-3. The UTXO is excluded from all transactions until unfrozen
-
-### Coin Control in Electrum
-
-**Enable coin view:** `View → Show Coins` adds a **Coins** tab.
-
-**Spend from a specific UTXO:** In the Coins tab, right-click the UTXO and select **Spend From**. Only that UTXO is used in the transaction.
-
-**Freeze a UTXO:** Right-click in the Coins tab and select **Freeze**.
-
-### Coin Control Strategies
-
-**Exact match:** find a UTXO close to your payment amount to minimize change:
-
-```
-Payment needed: 0.048 BTC
-
-Available UTXOs:
-- 0.1 BTC   ← Too big (lots of change)
-- 0.05 BTC  ← Good match (0.002 BTC change)
-- 0.02 BTC  ← Too small (would need 3)
-
-Best choice: 0.05 BTC UTXO.
-```
-
-**Combine same-source:** when you must use multiple UTXOs, keep them from the same source:
-
-```
-Payment needed: 0.15 BTC
-
-- 0.1  BTC (Coinbase)
-- 0.08 BTC (Coinbase)
-- 0.05 BTC (Kraken)
-- 0.03 BTC (Non-KYC)
-
-Best choice: 0.1 + 0.08 from Coinbase.
-Avoid: mixing Coinbase with Kraken or Non-KYC.
-```
-
-**Spend oldest first:** older UTXOs have had more time to "settle" and are less likely to correlate with recent activity.
-
-## Consolidation Strategies
-
-Consolidation is combining multiple UTXOs into fewer, larger ones. Done correctly, it reduces future transaction costs. Done incorrectly, it destroys privacy.
-
-### When to Consolidate
-
-Check current fee rates at [mempool.space](https://mempool.space):
-
-<div class="fixed-width-table">
-
-| Fee Rate | Recommendation |
-|----------|----------------|
-| **1-10 sat/vB** | 🟢 Excellent time to consolidate |
-| **10-30 sat/vB** | 🟡 Good, proceed if needed |
-| **30-100 sat/vB** | 🟠 Wait if possible |
-| **100+ sat/vB** | 🔴 Do not consolidate |
-
-</div>
-
-Signs you need consolidation:
-
-- Many UTXOs under 0.01 BTC
-- Your last transaction used 5+ inputs
-- You're paying high fees for simple sends
-- You've been dollar-cost averaging in small amounts
-
-### The Privacy-Preserving Consolidation Rule
-
-**Danger: Critical Rule**
-**Only consolidate UTXOs from the SAME source.** Never combine KYC with non-KYC, different exchanges, or mixed with unmixed coins.
-
-When you consolidate, you create an on-chain record that says "all these UTXOs belong to the same person":
+**Danger: Consolidate coins from one source at a time**
+A consolidation tells the world that every coin in it belongs to the same person. Never combine KYC with non-KYC coins, coins from different exchanges, or mixed with unmixed coins.
 
 <div class="doc-diagram">
 
@@ -257,127 +132,105 @@ When you consolidate, you create an on-chain record that says "all these UTXOs b
 
 </div>
 
-### Step-by-Step Consolidation
+Consolidate when you have many coins under 0.01 BTC, when recent payments have needed five or more inputs, when simple payments cost more than they should, or after months of small regular purchases. Check the fee rate at [mempool.space](https://mempool.space) first:
 
-**Step 1: Sort your UTXOs by source.** Group every UTXO by where it came from.
+<div class="fixed-width-table">
 
-**Step 2: Plan each consolidation separately.** One transaction per source:
+| Fee rate | Consolidate? |
+|----------|----------------|
+| 1 to 10 sat/vB | Yes: an ideal time |
+| 10 to 30 sat/vB | If you need to |
+| 30 to 100 sat/vB | Wait if you can |
+| Over 100 sat/vB | No |
 
+</div>
+
+## Step 1: Sort your UTXOs by source
+
+Step 1 groups every coin by where it came from: each exchange, each non-KYC source, mixed coins. Labels make this quick; without them, go through your transaction history and label as you go.
+
+## Step 2: Plan one consolidation per source
+
+Step 2 decides which coins go together. Make a separate transaction for each source, for example:
+
+```text
+Transaction 1, coins from exchange A: 0.005 + 0.003 + 0.007 + 0.002 → 0.017 BTC, less the fee
+Transaction 2, coins from exchange B: 0.008 + 0.012 + 0.004 → 0.024 BTC, less the fee
+Transaction 3, non-KYC coins: 0.05 + 0.02 → 0.07 BTC, less the fee
 ```
-Tx 1: Coinbase UTXOs
-  0.005 + 0.003 + 0.007 + 0.002 → 0.017 BTC (minus fee)
 
-Tx 2: Kraken UTXOs
-  0.008 + 0.012 + 0.004 → 0.024 BTC (minus fee)
+## Step 3: Send each consolidation when fees are low
 
-Tx 3: Non-KYC UTXOs
-  0.05 + 0.02 → 0.07 BTC (minus fee)
-```
+Step 3 makes the transactions. Wait for a low fee rate, select the coins of one source with coin control, send them to a new address in your own wallet, and set a low fee, since there is no hurry.
 
-**Step 3: Execute during low fees.** Wait for rates below 15 sat/vB, use coin control to select same-source UTXOs, send to a fresh address in your own wallet, and set a low fee (timing isn't critical).
+## Step 4: Check and label the result
 
-**Step 4: Verify and label.** Confirm the new UTXO appears, label it with its source, and check that old UTXOs are gone.
+Step 4 confirms the new coin arrived and the old ones are gone, and labels the new coin with its source so it is not mixed with others later.
 
-### Is Consolidation Worth It?
+## Is consolidation worth the fee?
 
-Cost to consolidate 10 UTXOs now at 10 sat/vB:
+Consolidating ten native segwit coins now, at 10 sat/vB:
 
-```
+```text
 Inputs:   10 × 68 vB = 680 vB
-Outputs:  1  × 34 vB =  34 vB
-Overhead:            ~ 10 vB
-────────────────────────────
-Total:               ~724 vB  →  7,240 sats
+Output:    1 × 31 vB =  31 vB
+Overhead:              ~11 vB
+Total:                ~722 vB  →  about 7,200 sats
 ```
 
-Future cost if you spend those same 10 UTXOs later at 100 sat/vB:
+Spending the same ten coins later at 100 sat/vB would cost about 72,200 sats, so consolidating saves about 65,000 sats. The bigger the gap between today's fees and future fees, the more it pays.
 
-```
-724 vB × 100 sat/vB = 72,400 sats.
-```
+It is not worth it when the coins come from different sources, when they are already large (combining 0.5 BTC coins gains little), when fees are high, or when you are about to mix them anyway; [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) does its own combining.
 
-**Savings: ~65,000 sats.** The higher the gap between today's fees and future fees, the more consolidation pays off.
-
-### When NOT to Consolidate
-
-- The privacy cost is too high (different sources)
-- UTXOs are already large (no benefit to combining 0.5 BTC UTXOs)
-- Fees are high; wait for a better window
-- You're mixing soon; let [CoinJoin](https://selfcustodylabs.com/docs/learn/privacy/coinjoin) handle it
-
-### Target UTXO Sizes
+## What sizes should your UTXOs be?
 
 <div class="fixed-width-table">
 
-| Purpose | Target Size | Reasoning |
+| Purpose | Target size | Why |
 |---------|-------------|-----------|
-| Long-term holding | 0.1 – 1.0 BTC | Efficient for large future spends |
-| Regular spending | 0.01 – 0.1 BTC | Flexible without revealing full stack |
-| Minimum viable | 0.01 BTC | Stays economical in most fee environments |
+| Long-term holding | 0.1 to 1 BTC | Cheap to spend later, even in large payments |
+| Regular spending | 0.01 to 0.1 BTC | Flexible, without showing your whole holding |
+| Smallest worth keeping | 0.01 BTC | Stays economical in most fee conditions |
 
 </div>
 
-An ideal portfolio might be `1 × 0.5 BTC + 3 × 0.1 BTC + 5 × 0.02 BTC`.
+A mix of sizes, for example one coin of 0.5 BTC, three of 0.1 BTC and five of 0.02 BTC, lets you pay most amounts without large change or revealing everything.
 
-## Practical Strategies
+When withdrawing from an exchange, withdraw at least 0.01 BTC at a time, and ideally 0.05 to 0.1 BTC; many tiny withdrawals become expensive to spend. Balance that against how long coins sit on the exchange, which carries its own [risk](https://selfcustodylabs.com/docs/learn/fundamentals/holding-bitcoin/).
 
-### Strategy 1: Consolidate During Low Fees
-
-When fees drop to 5-15 sat/vB, combine small same-source UTXOs into larger ones. Never mix sources in the same consolidation transaction.
-
-### Strategy 2: Plan Withdrawals for Good UTXO Sizes
-
-When withdrawing from exchanges:
-
-- **0.01 BTC minimum:** stays economical in most fee environments
-- **0.05-0.1 BTC:** good balance of flexibility and efficiency
-- **Avoid many tiny withdrawals:** they become expensive to spend later
-
-### Strategy 3: Use Coin Control for Every Transaction
-
-Never let your wallet auto-select UTXOs. Always choose deliberately based on source, size, and privacy implications.
-
-### Strategy 4: Maintain a Mix of UTXO Sizes
-
-Varied sizes give you flexibility to make payments without revealing your full balance or creating excessive change.
-
-## Wallets with Good UTXO Management
+## Which wallets support UTXO management?
 
 <div class="fixed-width-table">
 
-| Wallet | Coin Control | Labeling | UTXO View | Platform |
+| Wallet | Coin control | Labels | UTXO list | Platform |
 |--------|--------------|----------|-----------|----------|
-| **Sparrow** | ✅ Excellent | ✅ Yes | ✅ Detailed | Desktop |
-| **Electrum** | ✅ Good | ✅ Yes | ✅ Yes | Desktop |
-| **Wasabi** | ✅ Good | ✅ Yes | ✅ Yes | Desktop |
-| **BlueWallet** | ✅ Yes | ✅ Yes | ✅ Yes | Mobile |
+| Sparrow | Yes, the most complete | Yes | Yes, detailed | Desktop |
+| Electrum | Yes | Yes | Yes | Desktop |
+| Wasabi | Yes | Yes | Yes | Desktop |
+| BlueWallet | Yes | Yes | Yes | Mobile |
 
 </div>
 
-Avoid wallets that hide UTXOs behind a simple "balance" view; they make UTXO management impossible.
+Avoid wallets that show only a balance and hide the coins behind it; they make UTXO management impossible.
 
-## Common UTXO Mistakes
+## What mistakes do people make with UTXOs?
 
-**1. Automatic coin selection:** the wallet picks UTXOs randomly, potentially mixing sources. Always use coin control.
+| Mistake | What goes wrong | What to do instead |
+|---|---|---|
+| Letting the wallet choose coins | It combines sources | Use coin control every time |
+| Receiving many small payments | Each becomes a small coin that is costly to spend | Use Lightning for small amounts, and consolidate when fees are low |
+| Consolidating KYC with non-KYC coins | Your private coins become linked to your identity | Keep separate wallets for each kind |
+| Ignoring change | Change carries part of the payment's privacy loss | Minimise change, and label it |
+| Buying tiny amounts every week and withdrawing each | Dozens of small coins | Withdraw less often, in larger amounts, and consolidate when fees are low |
 
-**2. Receiving many small payments:** each payment creates a UTXO. Batch incoming payments when possible, use Lightning for small amounts, and consolidate during low fees.
+## What is a dusting attack?
 
-**3. Consolidating KYC with non-KYC:** links your private coins to your identified ones. Keep completely separate wallets for each source type.
+A **dusting attack** is sending tiny amounts of bitcoin to many addresses in the hope that recipients later spend them alongside their other coins, revealing which addresses belong together:
 
-**4. Ignoring change outputs:** change from transactions creates new UTXOs with partial privacy. Plan transactions to minimize change, or label the change appropriately.
-
-**5. Dollar-cost averaging tiny amounts:** weekly $20 buys create many small UTXOs over time. Stack on-exchange and withdraw monthly in larger amounts, or use Lightning for small frequent purchases, then consolidate on the main chain during low fees.
-
-## Dusting Attacks
-
-A **dusting attack** is when someone sends tiny amounts of bitcoin to many addresses, hoping to track the recipients.
-
-### How Dusting Works
-
-1. Attacker sends 546 sats (the minimum relay amount) to thousands of addresses.
-2. Recipients spend these tiny UTXOs alongside their other coins.
-3. The attacker sees which other UTXOs now co-spent with the dust, and links them all to the same owner.
-4. Combined with other analysis, the attacker may identify you.
+1. The attacker sends a few hundred sats (546 is the smallest standard amount for a legacy address, 294 for a native segwit one) to thousands of addresses.
+2. A recipient later spends the dust together with their other coins.
+3. The attacker sees which coins moved with the dust, and links them to one owner.
+4. Combined with other analysis, that can identify the owner.
 
 <div class="doc-diagram">
 
@@ -385,44 +238,13 @@ A **dusting attack** is when someone sends tiny amounts of bitcoin to many addre
 
 </div>
 
-### How to Protect Yourself
+Protect yourself by freezing small coins you did not expect, never consolidating unknown dust, using coin control, and labelling incoming transactions so that unexpected tiny amounts stand out.
 
-- **Freeze suspicious small UTXOs:** mark them "do not spend"
-- **Never consolidate unknown dust:** it is exactly what attackers want
-- **Use coin control:** always know what you are spending
-- **Label incoming transactions:** identify unexpected tiny amounts
+## What should you check before every transaction?
 
-Most wallets (Sparrow, Electrum) let you freeze UTXOs to prevent accidental spending.
-
-## UTXO Management Checklist
-
-Before every transaction:
-
-- [ ] Am I using coin control?
-- [ ] Are all inputs from the same source category (KYC / non-KYC / mixed)?
-- [ ] Is the change output going to an appropriate address?
-- [ ] Have I labeled this transaction and its outputs?
-- [ ] Am I avoiding unnecessary consolidation of different sources?
-- [ ] Is this the most efficient UTXO selection for fees?
-
-### Quick Reference
-
-<div class="fixed-width-table">
-
-| Situation | Action |
-|-----------|--------|
-| Fees under 20 sat/vB | Consolidate same-source small UTXOs |
-| Fees over 100 sat/vB | Avoid transactions, wait if possible |
-| Receiving regular payments | Consider Lightning, or batch and consolidate |
-| Spending from wallet | Use coin control, minimize inputs |
-| Privacy is critical | Keep sources separated, consider CoinJoin |
-| Unknown small deposits | Freeze them, don't spend |
-
-</div>
-
-## Next Steps
-
-1. **Audit your current UTXOs:** open your wallet's UTXO view and see what you have
-2. **Label everything:** identify sources for all existing UTXOs
-3. **Plan consolidation:** wait for low fees and consolidate same-source UTXOs
-4. **Use coin control:** make it a habit for every transaction
+- You chose the coins yourself.
+- Every input comes from the same kind of source: KYC, non-KYC or mixed.
+- The change goes to an address in the right wallet.
+- The transaction and its outputs are labelled.
+- You are not consolidating coins from different sources.
+- The selection is the cheapest that meets the rules above.

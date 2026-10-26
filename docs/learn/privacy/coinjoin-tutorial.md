@@ -3,27 +3,23 @@
 > Step-by-step Bitcoin coinjoin with JoinMarket NG and Jam: your own node, a dedicated hot wallet, funding, mixing rounds, and sweeping out cleanly.
 
 Source: https://selfcustodylabs.com/docs/learn/privacy/coinjoin-tutorial/
-Last updated: 2026-08-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-**Info: What You'll Do**
-**Time:** 1-2 hours of setup, then mixing runs on its own  
-**Difficulty:** Advanced  
-**Cost:** Maker fees (a small fraction of a percent) plus mining fees  
-**Prerequisites:** The [CoinJoin theory page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) and a [Bitcoin node](https://selfcustodylabs.com/docs/bitcoin-node/), or the willingness to set one up in Step 1.
+To run a CoinJoin without trusting a coordinator, use JoinMarket NG, a peer-to-peer CoinJoin engine, through Jam, its web interface, on top of your own Bitcoin node: install Jam (most node-in-a-box platforms offer it as an app), create a separate hot wallet for mixing, fund it with the amount to mix, run collaborative transactions or Jam's scheduler, and sweep the mixed coins to fresh addresses in your cold storage. It takes one to two hours to set up, then the mixing runs on its own, and costs maker fees of a fraction of a percent plus mining fees. The [theory page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) explains why it works.
 
-The [theory page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/) explains why CoinJoin works. This page is the practice: by the end you will have run real coinjoins through your own node, with no coordinator and no third-party server involved.
+Time: 1-2 hours of setup, then mixing runs on its own. Cost: Maker fees (a small fraction of a percent) plus mining fees. Level: Advanced. Updated: 26 Oct 2026.
 
-The stack has four pieces, and you will set them up in this order:
+You need a [Bitcoin node](https://selfcustodylabs.com/docs/bitcoin-node/), or the time to set one up in step 1. The setup has four parts, built in this order:
 
-1. **Your own Bitcoin node**: the backend everything else talks to
-2. **A dedicated hot wallet with a passphrase**: a temporary wallet that exists only to run coinjoin rounds
-3. **[JoinMarket NG](https://github.com/joinmarket-ng/joinmarket-ng)**: the engine that finds counterparties and builds the coinjoins
-4. **[Jam](https://github.com/joinmarket-webui/jam)**: the web interface that makes the engine pleasant to use
+1. Your own Bitcoin node, which everything else talks to.
+2. A separate hot wallet, which exists only to run CoinJoin rounds.
+3. [JoinMarket NG](https://github.com/joinmarket-ng/joinmarket-ng), the engine that finds counterparties and builds the CoinJoins.
+4. [Jam](https://github.com/joinmarket-webui/jam), the web interface for it.
 
-## What You're Building
+## What are you building?
 
 <div class="doc-diagram">
 
@@ -33,35 +29,33 @@ The stack has four pieces, and you will set them up in this order:
 
 Jam is the control panel, JoinMarket NG does the mixing, and your node keeps everything private and verified. Counterparty traffic runs over Tor.
 
-## Before You Start: This Is a Hot Wallet
+## Why is the mixing wallet a hot wallet?
 
-**Danger: Understand what "hot" means here**
-Coinjoining requires keys that are online while rounds run. The mixing wallet you create below is a **hot wallet**: less secure than your hardware wallet or cold storage by definition. Handle it accordingly:
+**Danger: The mixing wallet's keys are online**
+Running CoinJoin rounds needs keys that stay online while the rounds run, so the mixing wallet is a hot wallet, less secure than your hardware wallet by design. Treat it as a temporary working wallet, not savings: fund it only with the amount you are mixing (start with an amount you could bear to lose while learning), give it its own new seed, and never import your cold storage or hardware wallet seed into it.
 
-- Treat it as a **temporary working wallet**, not savings. Coins go in, get mixed, and get swept out.
-- Fund it with **only the amount you are actively mixing**. Start small: an amount you could tolerate losing while you learn.
-- It gets its **own brand-new seed**. Never import your cold storage or hardware wallet seed into it.
+The separation also makes the privacy rules easy to follow. With mixing funds in their own wallet, your KYC coins and your mixed coins physically cannot end up in the same transaction by accident.
 
-This separation is not just damage control; it is also what makes the privacy rules easy to follow. With mixing funds in their own wallet, your KYC coins and your mixed coins physically cannot end up in the same transaction by accident.
+## Step 1: Run your own Bitcoin node
 
-## Step 1: Run Your Own Bitcoin Node
-
-JoinMarket NG needs a backend to check balances and broadcast transactions, and for privacy that backend must be **your** node. If your setup asked someone else's server, that server would see every address you are trying to unlink, before, during, and after the mix.
+Step 1 gives JoinMarket NG a backend to check balances and broadcast transactions, and for privacy that backend must be your own node. If your setup asked someone else's server, that server would see every address you are trying to unlink, before, during, and after the mix.
 
 Two ways to get there:
 
-- **Node-in-a-box** (easiest): platforms like Umbrel, Start9, RaspiBlitz, Citadel, and MyNode run Bitcoin Core for you and offer Jam as an installable app. If this is you, Step 2 takes five minutes.
-- **Manual node**: Bitcoin Core on your own hardware. Follow the [Bitcoin Node guide](https://selfcustodylabs.com/docs/bitcoin-node/) first, then come back.
+- A node-in-a-box platform, the easiest: Umbrel, Start9 and RaspiBlitz run Bitcoin Core for you and offer Jam as an app, so step 2 takes five minutes.
+- Your own Bitcoin Core on your own hardware: follow the [node guide](https://selfcustodylabs.com/docs/bitcoin-node/) first, then come back.
 
 Either way, wait until the node is fully synced before mixing.
 
 ## Step 2: Install JoinMarket NG and Jam
 
-### The Easy Path: Node-in-a-Box App Store
+Step 2 installs the mixing software.
 
-If you run Umbrel, Start9, RaspiBlitz, Citadel, or MyNode, open its app store and **install Jam**. The app bundles the JoinMarket backend and wires it to your node automatically. When Jam opens in your browser, skip to Step 3.
+### On a node-in-a-box
 
-### The Manual Path: Your Own Server
+If you run Umbrel, Start9 or RaspiBlitz, open its app store and install Jam. The app bundles the JoinMarket backend and wires it to your node automatically. When Jam opens in your browser, skip to Step 3.
+
+### On your own Linux server
 
 On your own Linux machine, install JoinMarket NG with its installer:
 
@@ -70,8 +64,7 @@ curl -sSL https://raw.githubusercontent.com/joinmarket-ng/joinmarket-ng/main/ins
 source ~/.joinmarket-ng/activate.sh
 ```
 
-**Tip: Verify before you run**
-Piping a script from the internet into your shell deserves a look first. Download `install.sh`, read it, then run it; being able to do that is the point of open source.
+Piping a script from the internet into your shell deserves a look first: download `install.sh`, read it, then run it.
 
 Then point it at your node. The configuration lives in `~/.joinmarket-ng/config.toml`; set the backend to Bitcoin Core and fill in your node's RPC credentials:
 
@@ -82,74 +75,63 @@ backend_type = "descriptor_wallet"   # use Bitcoin Core as the backend
 
 Start the wallet daemon (`jmwalletd`), which exposes the API that Jam connects to. Finally install Jam itself and point it at the daemon; the [Jam installation docs](https://jamdocs.org/software/installation/) cover the supported setups, including Docker.
 
-**Note: Commands drift**
-Installer flags, config options, and daemon names evolve faster than guide pages. If anything here disagrees with the [JoinMarket NG documentation](https://joinmarket-ng.github.io/joinmarket-ng/) or the [Jam docs](https://jamdocs.org/), trust the official docs.
+Installer options and daemon names change faster than guides do. If anything here disagrees with the [JoinMarket NG documentation](https://joinmarket-ng.github.io/joinmarket-ng/) or the [Jam documentation](https://jamdocs.org/), follow theirs.
 
-## Step 3: Create the Mixing Wallet
+## Step 3: Create the mixing wallet
 
-In Jam, create a **new wallet**. This is the temporary hot wallet from the warning above.
+Step 3 creates the temporary hot wallet in Jam.
 
-1. **Give it an obvious name** like `mixing`, so it can never be confused with anything long-term.
-2. **Set a strong password.** Jam encrypts the wallet with it; anyone with access to the machine and this password can spend the funds.
-3. **Write down the seed phrase.** Yes, even for a temporary wallet: coins may sit here for days while rounds run, and a crashed disk should not cost you them. If Jam offers an additional passphrase on top of the seed (a mnemonic extension), you can add one; write it down too, because the seed alone will not restore the wallet without it.
-4. **Never put your cold storage seed here.** The mixing wallet gets its own fresh seed, full stop.
+1. Give it an obvious name, such as `mixing`, so it is never mistaken for anything long-term.
+2. Set a strong password. Jam encrypts the wallet with it, and anyone with the machine and the password can spend the funds.
+3. Write down the seed phrase, even for a temporary wallet: coins may sit here for days while rounds run, and a failed disk should not cost them. If Jam offers an extra passphrase on top of the seed (a mnemonic extension), you can add one; write it down too, because the seed alone will not restore the wallet without it.
+4. Never put your cold storage seed here.
 
 When the wallet opens, Jam shows a receive address. That is where your coins to be mixed will go.
 
-## Step 4: Fund the Wallet
+## Step 4: Fund the wallet
 
-Send the amount you want to mix from wherever it currently lives (exchange withdrawal, your existing wallet) to the mixing wallet's receive address.
-
-- **Start small** for your first session: something in the 0.001 to 0.01 BTC range is enough to watch full rounds complete without meaningful risk.
-- **The funding transaction is visible.** Whoever knew your coins before (the exchange, anyone watching that wallet) can see they moved into a wallet that then coinjoins. That is expected: CoinJoin gives your coins a private *future*, it does not hide their past.
-- Wait for a confirmation before mixing.
+Step 4 moves the coins to be mixed into the mixing wallet's receive address, from an exchange withdrawal or your existing wallet. For a first session, 0.001 to 0.01 BTC is enough to watch full rounds complete without meaningful risk. The funding transaction is visible to whoever knew your coins before, such as the exchange, and they can see the coins went to a wallet that then joins CoinJoins; that is expected, since CoinJoin gives coins a private future, not a hidden past. Wait for a confirmation before mixing.
 
 ## Step 5: Mix
 
-Jam gives you two ways to coinjoin, visible as soon as the wallet is funded.
+Step 5 runs the CoinJoins. Jam offers two ways, both available once the wallet is funded.
 
-**A single collaborative transaction.** In the send screen, toggle the collaborative option, pick the number of counterparties, and send, either to one of your own fresh addresses or straight to a payment destination. You pay each maker its advertised fee plus mining fees; even with many counterparties the total is normally a small fraction of one percent. This is the taker role: your mix happens on your schedule, usually within minutes.
+A single collaborative transaction: in the send screen, toggle the collaborative option, pick the number of counterparties, and send, either to one of your own fresh addresses or straight to a payment destination. You pay each maker its advertised fee plus mining fees; even with many counterparties the total is normally a small fraction of one percent. This is the taker role: your mix happens on your schedule, usually within minutes.
 
-**The scheduler.** Jam's flagship feature runs a full mixing session for you: it splits your balance and executes a sequence of collaborative transactions over several hours or days with randomized timing, ending by sweeping the wallet. This is the closest thing to "press play, come back to mixed coins". Use it when you are mixing a meaningful amount rather than experimenting.
+The scheduler: Jam's main feature runs a full mixing session for you: it splits your balance and executes a sequence of collaborative transactions over several hours or days with randomized timing, ending by sweeping the wallet. This is the closest thing to "press play, come back to mixed coins". Use it when you are mixing a meaningful amount rather than experimenting.
 
-A few things while rounds run:
+While rounds run, keep the machine on, since rounds cannot complete with the daemon offline (always-on node-in-a-box setups suit this). If nothing seems to happen, check the order book Jam shows, which lists the makers offering liquidity and their fees. And remember that rounds compound: one join gives one round's anonymity set, and the scheduler's chain of joins is what builds real privacy, as the [theory page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/#how-coinjoin-works) explains.
 
-- **Keep the machine on.** Rounds cannot complete with the daemon offline; node-in-a-box setups shine here because they are always on.
-- **Check the orderbook** (Jam shows it) if nothing seems to happen; it lists the makers currently offering liquidity and their fees.
-- **Remember rounds compound.** One join gives you one round's anonymity set; the scheduler's chain of joins is what builds real privacy, as covered in the [theory page](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/#how-coinjoin-works).
+## Step 6: Sweep out and wind down
 
-## Step 6: Sweep Out and Wind Down
+Step 6 moves the mixed coins to long-term storage; the mixing wallet is a waypoint, not a destination.
 
-The mixing wallet is a waypoint, not a destination. When mixing is done:
+1. Send the mixed coins to fresh addresses of your long-term wallet (your hardware wallet or cold storage), one UTXO per address, never to an address that has been used before. If you used the scheduler, you can give it destination addresses so the final sweep lands there directly.
+2. Follow the post-mix rules from the theory page: [never merge with KYC coins, never consolidate, coin control always](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/#best-practices-after-coinjoin). The mixing is the cheap part; the discipline afterwards is what keeps the privacy.
+3. Once the wallet is swept, the wallet can sit empty until your next batch, or be retired entirely. Keep the seed backup until the balance is zero and confirmed elsewhere.
 
-1. **Send mixed coins to fresh addresses** of your long-term wallet (your hardware wallet or cold storage), one UTXO per address, never to an address that has been used before. If you used the scheduler, you can give it destination addresses so the final sweep lands there directly.
-2. **Follow the post-mix rules** from the theory page: [never merge with KYC coins, never consolidate, coin control always](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/#best-practices-after-coinjoin). The mixing was the cheap part; the discipline afterward is the actual product.
-3. **Empty means done.** Once swept, the wallet can sit empty until your next batch, or be retired entirely. Keep the seed backup until the balance is zero and confirmed elsewhere.
+## Should you stay on as a maker?
 
-## Optional: Stay On as a Maker
-
-So far you acted as a taker: you paid small fees to mix on demand. Jam's earn tab lets you switch sides and run as a **maker**: your wallet offers liquidity, other people's coinjoins include your coins, and you collect fees while your coins get remixed over and over for free.
+So far you have been a taker, paying small fees to mix on demand. Jam's earn tab lets you switch sides and run as a maker: your wallet offers liquidity, other people's coinjoins include your coins, and you collect fees while your coins get remixed over and over for free.
 
 - Your keys stay online the whole time; this is a long-running hot wallet by design, so size the balance accordingly.
 - Earnings are modest; think of them as offsetting your costs while your privacy keeps compounding.
-- Serious makers can lock a **fidelity bond** (timelocked coins) to rank higher in taker selections; read the [JoinMarket NG docs](https://joinmarket-ng.github.io/joinmarket-ng/) before locking anything.
+- Committed makers can lock a fidelity bond (timelocked coins) to rank higher in taker selections; read the [JoinMarket NG docs](https://joinmarket-ng.github.io/joinmarket-ng/) before locking anything.
 
-## Troubleshooting
+## What if something does not work?
 
-- **Jam cannot reach the backend:** the wallet daemon is not running, or (manual path) Jam is pointed at the wrong host or port.
-- **Backend cannot reach the node:** RPC credentials in `config.toml` do not match your Bitcoin Core settings, or the node is still syncing.
-- **No collaborative transaction starts:** check the orderbook. If you see no offers, your Tor connection is likely down; if you see offers but joins fail, retry, since individual makers do drop out mid-round.
-- **Everything is slow:** normal. Tor adds latency and the scheduler adds deliberate random delays. Slow is part of the privacy.
+- Jam cannot reach the backend: the wallet daemon is not running, or (manual path) Jam is pointed at the wrong host or port.
+- The backend cannot reach the node: RPC credentials in `config.toml` do not match your Bitcoin Core settings, or the node is still syncing.
+- No collaborative transaction starts: check the orderbook. If you see no offers, your Tor connection is likely down; if you see offers but joins fail, retry, since individual makers do drop out mid-round.
+- Everything is slow: that is normal. Tor adds latency and the scheduler adds deliberate random delays. Slow is part of the privacy.
 
-## Safety Checklist
+## What should you check?
 
-- [ ] The mixing wallet has its own fresh seed, written down
-- [ ] Strong wallet password set
-- [ ] Funded with a small, tolerable amount for the first session
-- [ ] Node fully synced, daemon running through your own node only
-- [ ] Mixed coins swept to fresh cold storage addresses when done
-- [ ] Post-mix rules followed: no merging, no consolidation, coin control
+- The mixing wallet has its own new seed, written down.
+- It has a strong password.
+- The first session uses a small amount you could bear to lose.
+- The node is fully synced, and the daemon talks only to your own node.
+- The mixed coins were swept to fresh cold storage addresses.
+- The post-mix rules are followed: no merging, no consolidation, coin control on every spend.
 
-## Where to Go Next
-
-You now have a working, coordinator-free privacy pipeline: node, JoinMarket NG, Jam, and a disciplined wallet routine around it. Keep the [post-mix rules](https://selfcustodylabs.com/docs/learn/privacy/coinjoin/#best-practices-after-coinjoin) close, manage the results with [UTXO management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/), and consider [PayJoin](https://selfcustodylabs.com/docs/learn/privacy/payjoin/) for the payments themselves.
+Afterwards, manage the mixed coins with [UTXO management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/), and consider [PayJoin](https://selfcustodylabs.com/docs/learn/privacy/payjoin/) for the payments themselves.

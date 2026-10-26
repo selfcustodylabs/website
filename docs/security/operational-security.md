@@ -3,226 +3,76 @@
 > Essential operational security practices for Bitcoin holders. Learn how your behavior affects your security and how to minimize your attack surface.
 
 Source: https://selfcustodylabs.com/docs/security/operational-security/
-Last updated: 2026-08-02
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Your behavior matters as much as your technical setup.
+**Operational security** (opsec) is protecting your bitcoin through behaviour rather than technology: not telling people what you own, checking everything yourself before acting on it, assuming any device may be compromised, keeping your bitcoin life separate from the rest, and treating every unexpected contact as a possible scam. Bitcoin's cryptography has never been broken; people lose bitcoin through phishing links, oversharing, misplaced trust and manipulation, and the best hardware wallet cannot stop someone from talking themselves out of it.
 
-**Info: What is OpSec?**
-**Operational Security (OpSec)** is about protecting sensitive information through careful behavior. The best hardware wallet in the world won't help if you tell everyone about your Bitcoin or fall for a phishing attack.
+## What are the principles?
 
-## The Human Element
+### Don't talk about your holdings
 
-Most Bitcoin losses aren't from sophisticated hacks; they're from human error:
+**Danger: Telling people you own bitcoin is the most common way to become a target**
+Everyone who knows is a possible route for social engineering, a possible physical threat and the start of a chain of gossip you cannot control.
 
-- Clicking phishing links
-- Sharing too much information
-- Trusting the wrong people
-- Not verifying before acting
-- Social engineering attacks
+Avoid posting about bitcoin under your real name, telling colleagues, acquaintances or extended family, wearing bitcoin merchandise or putting stickers on your laptop or car, and mentioning amounts to anyone. Discussing bitcoin as an idea without revealing ownership is fine, as is telling close family who need to know for inheritance, and taking part in bitcoin communities without your real identity.
 
-**Your security is only as strong as your weakest moment.**
+### Verify everything
 
-## Core OpSec Principles
-
-### 1. Don't Talk About Your Holdings
-
-**Danger: The #1 Rule**
-The single most important OpSec rule: **don't tell people you own Bitcoin**.
-
-Every person who knows is a potential:
-- Social engineering vector
-- Physical threat source
-- Gossip chain starting point
-
-**What to avoid:**
-- Posting about Bitcoin on social media with your real identity
-- Telling coworkers, acquaintances, or extended family
-- Wearing Bitcoin merchandise
-- Having Bitcoin stickers on your laptop/car
-- Discussing specific amounts with anyone
-
-**What's acceptable:**
-- Discussing Bitcoin conceptually without revealing ownership
-- Talking with close, trusted family who need to know (inheritance)
-- Anonymous participation in Bitcoin communities
-
-### 2. Verify Everything
-
-**Trust no one. Verify everything.**
-
-| Scenario | What to Verify |
+| Situation | What to check |
 |----------|----------------|
-| Receiving address | Confirm on hardware wallet screen |
-| Software download | Check official website, verify signatures |
-| Firmware update | Verify on manufacturer's website first |
-| "Support" contact | Companies never DM you first |
-| Investment opportunity | If it sounds too good, it's a scam |
+| A receive address | That it matches on the hardware wallet's own screen |
+| A software download | That it came from the official website, and that its signature verifies |
+| A firmware update | That the manufacturer's website announces it |
+| A "support" message | Nothing: real companies never message you first |
+| An investment opportunity | If it sounds too good to be true, it is a scam |
 
-**Common verification failures:**
-- Trusting addresses shown only on computer screen
-- Downloading wallet software from Google ads
-- Responding to "support" messages on social media
-- Clicking links in emails claiming to be from exchanges
+The usual failures are trusting an address shown only on a computer, downloading wallet software from a search advert, answering "support" messages on social media, and clicking links in emails that claim to be from an exchange.
 
-### 3. Assume Compromise
+### Assume any device can be compromised
 
-Operate as if every device could be compromised:
+Act as if your computer could be showing fake addresses, your phone could be SIM-swapped or carry spyware, your email could be read by an attacker, public Wi-Fi could be monitored and cloud storage could be breached. So: check addresses on the hardware wallet, protect important accounts with hardware security keys, never store a seed phrase digitally, use a VPN on public networks, and turn on two-factor authentication everywhere, hardware-based where possible.
 
-- **Your computer**: Could have malware showing fake addresses
-- **Your phone** (could be SIM-swapped or have spyware)
-- **Your email**: Could be accessed by attackers
-- **Public WiFi**: Could be monitored
-- **Cloud storage** (could be breached)
+### Keep things separate
 
-**Mitigations:**
-- Verify addresses on hardware wallet, not computer
-- Use hardware security keys for important accounts
-- Don't store seeds digitally anywhere
-- Use a VPN on public networks
-- Enable 2FA everywhere (preferably hardware-based)
+Use different wallets for different purposes, a separate email address for bitcoin accounts, separate identities for bitcoin and personal life, backups in different places, and ideally a dedicated computer for bitcoin.
 
-### 4. Compartmentalize
+### Keep your exposure small
 
-Don't put all your eggs in one basket:
+Fewer accounts mean fewer breaches, fewer people who know mean fewer routes for social engineering, fewer devices mean fewer to compromise, and less public presence means less reason to be targeted.
 
-- **Multiple wallets** for different purposes
-- **Separate email** for Bitcoin-related accounts
-- **Different identities** for Bitcoin vs. personal life
-- **Geographic distribution** of backups
-- **Multiple devices** (dedicated Bitcoin computer if possible)
+## What habits does good opsec need?
 
-### 5. Minimize Your Attack Surface
+| Area | Habits |
+|---|---|
+| Daily | Never discuss amounts; check addresses on the device before sending; go to websites directly instead of clicking email links; use a unique password everywhere; distrust unexpected contact |
+| Communication | Use encrypted messaging such as Signal for anything sensitive; keep bitcoin off SMS and ordinary email; stay vague when asked about bitcoin; never share your seed phrase with anyone, for any reason |
+| Devices | Keep operating systems updated; install nothing unnecessary; consider a dedicated bitcoin-only computer; use hardware security keys |
+| Accounts | Two-factor authentication everywhere (hardware key first, then an authenticator app, SMS last); unique strong passwords in a password manager; a separate email for financial accounts, ideally with a privacy-focused provider; watch for logins you did not make |
 
-Every connection is a potential vulnerability:
+## How does social engineering work?
 
-- Fewer accounts = fewer breach points
-- Fewer people who know = fewer social engineering vectors
-- Fewer devices = fewer compromise points
-- Less public presence = less targeting
+**Social engineering** is manipulating people into handing over information or access, and it is the most common way in.
 
-## Practical OpSec Checklist
+| Attack | What it looks like |
+|---|---|
+| Phishing | Fake emails, websites, wallet apps and browser extensions: "your account has been compromised, click here" |
+| Impersonation | "Tech support" offering help, someone claiming to be from your exchange, "moderators" in Telegram or Discord groups |
+| Romance and trust scams | A relationship built over weeks that ends in a request for funds, an "investment opportunity" from a new friend, a fake job that involves bitcoin transfers |
+| Urgency and fear | "Act now or lose your funds", "your account will be locked", pressure to decide quickly |
 
-### Daily Habits
+The defence: slow down, because urgency is the warning sign; check independently, using your own route to the company rather than any link you were sent; ask why they are contacting you at all; and never share a seed phrase, which no legitimate person or company ever needs.
 
-- [ ] Never discuss specific holdings
-- [ ] Verify addresses on hardware device before sending
-- [ ] Don't click links in emails; navigate directly to sites
-- [ ] Use unique passwords for every account
-- [ ] Be suspicious of unsolicited contact
+## How much opsec do you need?
 
-### Communication Security
+| Profile | Practices |
+|---|---|
+| Casual holder | Do not discuss holdings publicly; use a hardware wallet; strong passwords and two-factor authentication; basic checking habits |
+| Serious holder | All of the above, plus a dedicated email for bitcoin, more care about who knows, your own node, and a VPN where useful |
+| High-value holder | All of the above, plus a dedicated bitcoin computer, strict separation, backups spread across places, legal structures where appropriate, and a professional security review |
 
-- [ ] Use encrypted messaging (Signal) for sensitive discussions
-- [ ] Don't discuss Bitcoin on SMS or regular email
-- [ ] Be vague if asked about Bitcoin ownership
-- [ ] Never share your seed phrase with anyone for any reason
+## Which warning signs mean stop?
 
-### Device Security
-
-- [ ] Keep operating systems updated
-- [ ] Use reputable antivirus/anti-malware
-- [ ] Don't install unnecessary software
-- [ ] Consider a dedicated Bitcoin-only device
-- [ ] Use hardware security keys where possible
-
-### Account Security
-
-- [ ] Enable 2FA on all accounts (hardware key > authenticator app > SMS)
-- [ ] Use unique, strong passwords (password manager)
-- [ ] Separate email for financial/Bitcoin accounts
-- [ ] Monitor accounts for unauthorized access
-- [ ] Use privacy-focused email provider
-
-## Social Engineering Awareness
-
-**Social engineering** is manipulating people into giving up information or access. It's the most common attack vector.
-
-### Common Attacks
-
-**Phishing**
-- Fake emails/websites that look legitimate
-- "Your account has been compromised, click here"
-- Fake wallet software or browser extensions
-
-**Impersonation**
-- "Tech support" reaching out to help
-- Someone claiming to be from your exchange
-- "Moderators" in Telegram/Discord groups
-
-**Romance/Trust Scams**
-- Building relationship to eventually request funds
-- "Investment opportunities" from new friends
-- Fake job offers requiring Bitcoin transactions
-
-**Urgency/Fear**
-- "Act now or lose your funds"
-- "Your account will be locked"
-- Pressure to make quick decisions
-
-### Defense
-
-- **Slow down**: Urgency is a red flag
-- **Verify independently**: Don't use links provided; navigate directly
-- **Question everything** (why would they contact you?)
-- **Never share seeds** (no legitimate entity ever needs this)
-- **Confirm through other channels**: Call the company directly
-
-## OpSec for Different Threat Levels
-
-### Casual Holder
-- Don't discuss holdings publicly
-- Use hardware wallet
-- Strong passwords + 2FA
-- Basic verification habits
-
-### Serious Holder
-- All of above, plus:
-- Dedicated email for Bitcoin
-- More careful about who knows
-- Run your own node
-- Consider VPN usage
-
-### High-Value Holder
-- All of above, plus:
-- Dedicated Bitcoin device
-- Strict compartmentalization
-- Geographic distribution
-- Consider legal structures
-- Professional security review
-
-## Red Flags Checklist
-
-**Immediate danger signs:**
-
-🚩 Anyone asking for your seed phrase
-🚩 "Support" contacting you first
-🚩 Urgency pressure ("act now!")
-🚩 Requests for remote access
-🚩 Investment opportunities that seem too good
-🚩 Links in emails or DMs
-🚩 Requests to "verify" your wallet
-🚩 Anyone claiming they can "recover" lost Bitcoin
-
-## Summary
-
-Good OpSec is about:
-
-1. **Silence**: Don't reveal you own Bitcoin
-2. **Verification** (confirm everything independently)
-3. **Assumption**: Treat all devices as potentially compromised
-4. **Compartmentalization**: Separate concerns and identities
-5. **Minimization**: Reduce your attack surface
-6. **Skepticism** (question unsolicited contact)
-
-The technical security of Bitcoin is excellent. The weak point is always human behavior.
-
----
-
-## Related Guides
-
-- [Physical Security](https://selfcustodylabs.com/docs/security/physical-security/): Real-world threat protection
-- [Threat Model Assessment](https://selfcustodylabs.com/docs/learn/fundamentals/threat-models) (what level do you need?)
-- [Recovery Scam Warning](https://selfcustodylabs.com/docs/reference/faq/recovery-scams): Common fraud tactics
+Stop immediately if anyone asks for your seed phrase, if "support" contacts you first, if you are pressed to act now, if someone asks for remote access to your computer, if an investment seems too good, if you are sent a link in an email or direct message, if you are asked to "verify" your wallet, or if anyone claims they can recover lost bitcoin. The [recovery scams](https://selfcustodylabs.com/docs/reference/faq/recovery-scams/) page covers the last one in detail.

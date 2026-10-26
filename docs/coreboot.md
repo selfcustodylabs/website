@@ -3,59 +3,43 @@
 > Install Coreboot open-source firmware for a fast, secure, and transparent boot process. Perfect for Bitcoin nodes and security-focused setups.
 
 Source: https://selfcustodylabs.com/docs/coreboot/
-Last updated: 2026-04-14
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-**Info: What You'll Do**
-In this guide, you will:
-- Choose between internal and external flashing methods
-- Build Coreboot from source for your laptop
-- Flash Coreboot to replace your stock BIOS
-- Configure your bootloader payload
+Coreboot is open-source firmware that replaces a laptop's proprietary BIOS or UEFI: it starts the hardware and hands over to a payload such as SeaBIOS or GRUB, which boots your operating system. This guide installs it on Ivy Bridge ThinkPads (the X230, T430, T430s, T530 and W530), either internally from Linux after downgrading and unlocking the stock BIOS, or externally with a Raspberry Pi Pico clipped to the flash chip, which also lets you neutralise the Intel Management Engine with me_cleaner. It supports more hardware than [Libreboot](https://selfcustodylabs.com/docs/libreboot/), at the cost of more vendor code left in place.
 
-**Time required:** 2-4 hours  
-**Difficulty:** Advanced  
-**Estimated cost:** $0 (internal flash) or $15-30 (external flash hardware)  
-**Prerequisites:** Supported laptop, Linux system for building
+![A ThinkPad T430s running Coreboot with the SeaBIOS payload, its boot menu listing the DVD drive and the internal SSD](https://selfcustodylabs.com/img/coreboot/t430s.webp)
 
-**Tip: Background Reading**
-This guide assumes you're building a [Bitcoin Computer](https://selfcustodylabs.com/docs/advanced/bitcoin-computer) or [Air-Gapped Computer](https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets). If you're not sure why open-source firmware matters, see those guides first.
+Time: 2-4 hours. Cost: $0 (internal flash) or $15-30 (external flash hardware). Level: Advanced. Updated: 26 Oct 2026. You need: Supported laptop, Linux system for building.
 
-## Why Coreboot?
+## Why use coreboot?
 
-Most computers use proprietary BIOS/UEFI firmware that is closed-source and potentially insecure. Coreboot is a fast, minimal, open-source alternative.
+Most computers run proprietary BIOS or UEFI firmware that nobody outside the vendor can inspect. Coreboot replaces it with open source:
 
 <div class="fixed-width-table">
 
-| Benefit | Description |
+| Benefit | What it means |
 |---------|-------------|
-| **Open source** | Fully auditable boot process |
-| **Minimal** | Does only what's necessary |
-| **Fast** | Quicker boot times |
-| **Wide support** | More hardware than Libreboot |
+| Open source | The boot code can be audited and rebuilt |
+| Minimal | It initialises only what is needed, then hands over |
+| Fast | Boots quicker than the stock firmware |
+| Wide support | Runs on more machines than Libreboot |
 
 </div>
 
-For Bitcoiners running nodes or signing transactions, Coreboot ensures your machine starts with clean, transparent code.
+What it does not do is remove all closed code. On these ThinkPads the Intel Management Engine firmware stays in the flash chip; the [external flashing guide](https://selfcustodylabs.com/docs/coreboot/external-flashing/) neutralises it with me_cleaner, which strips most of it and disables the rest. Some boards also need other vendor code, such as CPU microcode.
 
-## What is Coreboot?
+## How does coreboot start a computer?
 
-Coreboot is a free and open-source replacement for traditional BIOS/UEFI. It initializes your hardware just enough to launch a "payload", like GRUB, SeaBIOS, or a Linux kernel. It’s lightweight, secure, and designed to do only what’s necessary, nothing more.
+Coreboot runs in stages: a tiny bootblock, then romstage, which sets up memory, then ramstage, which initialises the rest of the hardware, and finally the payload you chose (GRUB, SeaBIOS or a Linux kernel), which boots the operating system. Doing only what is necessary keeps it small, fast and easier to audit.
 
-## How Coreboot Works
+## Which route should you take?
 
-Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (which sets up memory), then ramstage (which initializes the rest of the hardware). Finally, it launches the chosen payload. This structure makes the boot process faster, simpler, and easier to audit, perfect for anyone who values system integrity.
+| Route | When | Pages |
+|---|---|---|
+| Internal flashing | Your Ivy Bridge ThinkPad's BIOS can be downgraded and unlocked; no disassembly or programmer | [Downgrade](https://selfcustodylabs.com/docs/coreboot/internal/downgrading-bios/), [unlock](https://selfcustodylabs.com/docs/coreboot/internal/unlocking-bios/), [flash](https://selfcustodylabs.com/docs/coreboot/internal/flashing-bios/) |
+| External flashing | You want to neutralise the Intel ME, the board does not allow internal flashing, or an internal flash failed | [External flashing](https://selfcustodylabs.com/docs/coreboot/external-flashing/) |
 
----
-
-## Related Guides
-
-**Info: Libreboot Alternative**
-For even more freedom, check out **[Libreboot](https://selfcustodylabs.com/docs/libreboot)** – a Coreboot distribution that removes additional proprietary blobs like Intel ME. It supports fewer devices but offers maximum openness.
-
-**Tip: Use Cases**
-Once you have Coreboot installed, use your laptop as a:
-- **[Bitcoin Computer](https://selfcustodylabs.com/docs/advanced/bitcoin-computer)** – For secure transaction creation and broadcasting
-- **[Air-Gapped Computer](https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets)** – For offline seed generation and signing
+Both start from the [requirements](https://selfcustodylabs.com/docs/coreboot/requirements/) and [building coreboot](https://selfcustodylabs.com/docs/coreboot/build/). Once it is installed, use the laptop as a [Bitcoin computer](https://selfcustodylabs.com/docs/advanced/bitcoin-computer/) or an [air-gapped computer](https://selfcustodylabs.com/docs/learn/wallets/air-gapped-wallets/).

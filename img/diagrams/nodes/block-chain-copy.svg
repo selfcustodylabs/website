@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800" height="290" role="img" aria-label="A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800" height="290" role="img" aria-label="A full node stores the complete chain of blocks from block 1 in January 2009 to block 970,000 and beyond, about 770 GB in September 2026, so it can verify any claim about any transaction locally.">
   <style>
     .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
     .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
@@ -40,7 +40,7 @@
   <path class="flow" d="M592,132 L618,132"/>
   <path d="M618,132 L611,127.9 M618,132 L611,136.1" stroke="#F59E0B" stroke-width="2" fill="none"/>
   <rect class="box" x="624" y="110" width="150" height="44" rx="6"/>
-  <text class="mono amt" x="699" y="137" text-anchor="middle">BLOCK 850,000+</text>
+  <text class="mono amt" x="699" y="137" text-anchor="middle">BLOCK 970,000+</text>
   <text class="mono cap" x="40" y="200" fill="#767C8A">EVERY TRANSACTION SINCE JANUARY 2009, STORED AND VERIFIED LOCALLY</text>
-  <text class="mono note" x="40" y="250">~600 GB TODAY, GROWING 50-100 GB PER YEAR &#183; NO CLAIM GOES UNCHECKED</text>
+  <text class="mono note" x="40" y="250">~770 GB IN SEPT 2026, GROWING ~75 GB A YEAR &#183; NO CLAIM GOES UNCHECKED</text>
 </svg>

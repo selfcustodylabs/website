@@ -3,39 +3,16 @@
 > Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy.
 
 Source: https://selfcustodylabs.com/docs/learn/transactions/utxos/
-Last updated: 2026-08-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Most people think of their Bitcoin wallet like a bank account, a single balance that goes up and down. This mental model is wrong, and misunderstanding it leads to costly mistakes.
+A **UTXO** (unspent transaction output) is a separate amount of bitcoin, created by an earlier transaction and locked to one of your addresses, that has not been spent yet. A bitcoin wallet has no single balance: it holds a collection of UTXOs and shows you their total, and every payment spends whole UTXOs and creates new ones. That is why fees depend on how many coins a payment uses, why change comes back to you, and why spending coins together can reveal that they belong to the same person.
 
-Bitcoin uses the **UTXO model**: Unspent Transaction Outputs. Understanding UTXOs is fundamental to understanding Bitcoin.
+## How is a wallet like a purse full of notes?
 
-## What is a UTXO?
-
-A UTXO is an **Unspent Transaction Output**, a discrete chunk of bitcoin that you can spend.
-
-Think of UTXOs as **digital coins** or **digital bills** in your wallet. You don't have a "balance" in the traditional sense. You have a collection of individual UTXOs, and your wallet displays their sum.
-
-## The Cash Analogy
-
-Imagine your physical wallet contains:
-
-<div class="fixed-width-table">
-
-| Bills | Value |
-|-------|-------|
-| One $50 bill | $50 |
-| Two $20 bills | $40 |
-| Three $5 bills | $15 |
-| **Total** | **$105** |
-
-</div>
-
-You don't have "$105 of balance." You have **six physical bills** that add up to $105.
-
-Your Bitcoin wallet works the same way:
+A purse holding one $50 note, two $20 notes and three $5 notes contains six notes worth $105, not "$105 of balance". A bitcoin wallet works the same way:
 
 <div class="fixed-width-table">
 
@@ -50,28 +27,11 @@ Your Bitcoin wallet works the same way:
 
 </div>
 
-You don't have "0.1 BTC of balance." You have **five UTXOs** that add up to 0.1 BTC.
+That is five UTXOs that add up to 0.1 BTC.
 
-## How UTXOs Are Created and Destroyed
+## How are UTXOs created and destroyed?
 
-UTXOs follow a simple lifecycle:
-
-```
-CREATION:
-  When someone sends you bitcoin, a new UTXO is created.
-  This UTXO is "locked" to your address; only you can spend it.
-
-DESTRUCTION:
-  When you spend a UTXO, it is completely consumed.
-  It no longer exists. New UTXOs are created from its value.
-```
-
-### Every Transaction Destroys and Creates UTXOs
-
-When you send bitcoin:
-
-1. **Inputs**: Existing UTXOs you own are consumed (destroyed)
-2. **Outputs**: New UTXOs are created for recipients (and change for you)
+A UTXO is created when someone sends you bitcoin, locked so that only your key can spend it, and destroyed when you spend it, at which point new UTXOs are created from its value. Every transaction does both. Its inputs are existing UTXOs you own, which it consumes; its outputs are new UTXOs, for the recipient and as change for you.
 
 <div class="doc-diagram">
 
@@ -79,22 +39,15 @@ When you send bitcoin:
 
 </div>
 
-## Key Properties of UTXOs
+## What are the properties of a UTXO?
 
-### 1. UTXOs Are Indivisible
+### A UTXO is spent whole
 
-You cannot spend "part" of a UTXO. When you use a UTXO as a transaction input, the **entire UTXO** is consumed.
+A UTXO cannot be partly spent: used as an input, the whole of it is consumed. To pay 0.03 BTC from a 0.1 BTC UTXO, the transaction spends all 0.1 BTC, sends 0.03 BTC to the recipient, and returns about 0.07 BTC to you as a new change UTXO, less the fee.
 
-**Example:**  
-You have a 0.1 BTC UTXO and want to pay 0.03 BTC.
+### UTXOs can be combined
 
-- You must spend the whole 0.1 BTC UTXO
-- 0.03 BTC goes to the recipient
-- ~0.07 BTC comes back to you as a new UTXO (change)
-
-### 2. UTXOs Can Be Combined
-
-You can spend multiple UTXOs in a single transaction. They all get consumed, and their combined value creates new outputs.
+One transaction can spend several UTXOs. They are all consumed, and their combined value funds the new outputs.
 
 <div class="doc-diagram">
 
@@ -102,9 +55,9 @@ You can spend multiple UTXOs in a single transaction. They all get consumed, and
 
 </div>
 
-### 3. Each UTXO Has a History
+### Every UTXO has a history
 
-Every UTXO can be traced back through the blockchain to its creation. This history is permanent and public.
+Every UTXO can be traced back through the blockchain, transaction by transaction, to the block reward that first created its coins. The history is permanent and public.
 
 <div class="doc-diagram">
 
@@ -114,19 +67,15 @@ Every UTXO can be traced back through the blockchain to its creation. This histo
 
 This traceable history has important implications for [privacy](https://selfcustodylabs.com/docs/learn/privacy/why-privacy-matters).
 
-### 4. UTXOs Are Locked by Addresses
+### Every UTXO is locked to an address
 
-Each UTXO is "locked" to a specific Bitcoin address. Only someone with the private key for that address can "unlock" and spend it.
+Each UTXO is locked to a bitcoin address, and only the holder of that address's private key can spend it. Your wallet manages many addresses and their UTXOs, and the balance it shows is the sum of every UTXO locked to an address it controls.
 
-Your wallet manages many addresses and their UTXOs automatically. When you see a "balance," your wallet is summing all UTXOs locked to addresses it controls.
+## Why does the UTXO model matter?
 
-## Why the UTXO Model Matters
+### Fees depend on how many UTXOs you spend
 
-### Transaction Fees Depend on UTXOs
-
-Bitcoin fees are based on **transaction size in bytes**, not the **value** being sent.
-
-Each UTXO input adds bytes to your transaction:
+Bitcoin fees are based on a transaction's size in bytes, not the amount sent, and each input adds bytes:
 
 <div class="fixed-width-table">
 
@@ -138,7 +87,7 @@ Each UTXO input adds bytes to your transaction:
 
 </div>
 
-**More UTXOs = Larger transaction = Higher fees**
+More inputs make a larger transaction, and a larger transaction costs more:
 
 ```
 SAME VALUE, DIFFERENT FEES:
@@ -153,9 +102,9 @@ Sending 0.1 BTC using 50 UTXOs:
   ~3,400 vbytes → ~25x higher fee
 ```
 
-### Privacy Depends on UTXO Handling
+### Privacy depends on which UTXOs you combine
 
-When you combine UTXOs from different sources, you reveal they belong to the same owner:
+Spending UTXOs from different sources together reveals that they belong to the same owner:
 
 ```
 PRIVACY LEAK:
@@ -169,20 +118,13 @@ Chain analysis conclusion:
   "All three inputs belong to the same person"
 ```
 
-This is called the **common-input-ownership heuristic**. See [Chain Analysis Explained](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis) for more details.
+This is the **common-input-ownership heuristic**, the most important rule chain analysis uses; see [chain analysis](https://selfcustodylabs.com/docs/learn/privacy/chain-analysis/).
 
-### Small UTXOs Can Become Unspendable
+### Small UTXOs can become unspendable
 
-If a UTXO is worth less than the fee required to spend it, it becomes **economic dust**, trapped forever.
+A UTXO worth less than the fee needed to spend it is **economic dust**: it costs more to move than it is worth. At 100 sat/vB, spending one native segwit input costs about 6,800 sats, so a 5,000-sat UTXO is worthless until fees fall.
 
-**Example during high fees (100 sat/vB):**
-- Spending one SegWit input costs ~6,800 sats in fees
-- A UTXO worth 5,000 sats costs more to spend than it's worth
-- This UTXO is effectively worthless until fees drop significantly
-
-## UTXOs in Your Wallet
-
-Your wallet software handles UTXOs automatically:
+## How does your wallet handle UTXOs?
 
 <div class="fixed-width-table">
 
@@ -195,11 +137,9 @@ Your wallet software handles UTXOs automatically:
 
 </div>
 
-### Coin Selection
+### What is coin selection?
 
-When you send bitcoin, your wallet must choose which UTXOs to spend. This is called **coin selection**.
-
-Different wallets use different strategies:
+**Coin selection** is how a wallet chooses which UTXOs to spend for a payment. Wallets use different strategies:
 
 <div class="fixed-width-table">
 
@@ -212,11 +152,9 @@ Different wallets use different strategies:
 
 </div>
 
-Advanced users use **coin control** to manually select UTXOs. This is important for privacy and fee optimization.
+Choosing the UTXOs yourself is called coin control, and it matters for both privacy and fees; see [UTXO management](https://selfcustodylabs.com/docs/learn/privacy/utxo-management/).
 
-## UTXO Visualization
-
-Here's how to think about your wallet:
+## What does a wallet balance really contain?
 
 <div class="doc-diagram">
 
@@ -224,36 +162,13 @@ Here's how to think about your wallet:
 
 </div>
 
-Each UTXO:
-- Has a specific value
-- Is locked to a specific address
-- Has a history on the blockchain
-- Must be spent entirely when used
+Each UTXO has its own value, address and history, and is spent whole or not at all.
 
-## Common Misconceptions
+## What do people get wrong about UTXOs?
 
-### ❌ "I can send part of my balance"
-
-**Reality:** You can only spend whole UTXOs. Your wallet creates change automatically, but behind the scenes, entire UTXOs are being consumed.
-
-### ❌ "Fees depend on how much I'm sending"
-
-**Reality:** Fees depend on transaction **size** (bytes), which depends on how many UTXOs you're spending, not their value.
-
-### ❌ "All my bitcoin is the same"
-
-**Reality:** Each UTXO has different history, came from different sources, and may have different privacy implications.
-
-### ❌ "My wallet balance is one number"
-
-**Reality:** Your balance is a sum of discrete UTXOs. Understanding which UTXOs you have and where they came from is important for fees and privacy.
-
-## Key Takeaways
-
-- Bitcoin uses **UTXOs** (Unspent Transaction Outputs), not account balances
-- Your wallet balance is the **sum of individual UTXOs** you control
-- UTXOs are **indivisible**: you spend them entirely or not at all
-- **More UTXOs = higher fees** because each adds bytes to transactions
-- **Combining UTXOs reveals common ownership** (privacy implication)
-- Each UTXO has a **traceable history** on the blockchain
-- Small UTXOs can become **unspendable dust** during high fees
+| Belief | What actually happens |
+|---|---|
+| "I can send part of my balance" | Only whole UTXOs are spent; the wallet creates change so it looks like part of a balance |
+| "Fees depend on how much I send" | Fees depend on size in bytes, which depends on how many UTXOs are spent, not on their value |
+| "All my bitcoin is the same" | Each UTXO has its own history and sources, with different privacy consequences |
+| "My balance is one number" | It is the sum of separate UTXOs, and knowing which you hold matters for fees and privacy |

@@ -3,218 +3,93 @@
 > The hard truth about losing your Bitcoin seed phrase. What you can do, what you can't do, and how to prevent this from happening to you.
 
 Source: https://selfcustodylabs.com/docs/reference/faq/lost-seed/
-Last updated: 2026-08-03
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-**Danger: The Hard Truth**
-If you've lost your seed phrase and your hardware wallet/device is also lost or broken, your Bitcoin is almost certainly gone forever.
+If you lose your seed phrase but your wallet device still works, nothing is lost yet: create a new wallet with a new seed, back it up properly, and move everything to it now. If you have lost the seed phrase and the device is also lost, broken or wiped, the bitcoin is almost certainly gone for good. There is no backdoor, support line or recovery service that can bring it back, and anyone who offers to is very likely a scammer. A few words missing from a seed you still mostly have is the one case that can sometimes be recovered, with open-source tools on your own computer.
 
-There is no backdoor. No customer support. No recovery service that can help.
+## Why can't a lost seed phrase be recovered?
 
-This page explains why, and what (little) you can do.
+A seed phrase is not a password to an account held somewhere; it is the source of the private keys themselves. Those keys are the only thing that can sign a transaction moving your bitcoin, and nobody else has them: not Trezor, not Ledger, not an exchange. The network does not know who you are, only whether a signature is valid. The property that stops anyone taking your bitcoin without your keys is the same one that stops anyone recovering it for you.
 
-## Understanding Why Recovery Is Impossible
+## What can you do in each situation?
 
-Your seed phrase isn't like a password that unlocks an account somewhere. It **is** your Bitcoin in a very real sense.
+### The seed is lost, but the device still works
 
-**How it works:**
-- Your seed phrase generates your private keys through mathematical derivation
-- Your private keys are the only thing that can sign transactions moving your Bitcoin
-- No one else has these keys: not Trezor, not Ledger, not Coinbase, not anyone
-- The Bitcoin network doesn't know or care who you are; only valid signatures matter
+1. Create a new wallet with a new seed phrase straight away.
+2. Back the new seed up properly, and test it.
+3. Move all the bitcoin from the old wallet to the new one.
+4. Never use the old seed again, even if you find it later; while it was lost, someone else may have found it.
 
-**This is a feature, not a bug.** The same property that prevents anyone from taking your Bitcoin (without your keys) also prevents anyone from recovering it (without your keys).
+Do it now, because the device could fail at any time.
 
-## Scenarios and Options
+### The seed and the device are both lost
 
-### Scenario 1: Lost Seed, Device Still Works
+The bitcoin is almost certainly unrecoverable. Before accepting that:
 
-**Situation:** You've lost your written seed backup, but your hardware wallet (or software wallet) still functions.
+1. Search thoroughly: other copies you may have made, a safe deposit box, family, another property.
+2. Look for partial backups: do you have some of the words (see below)? Did you ever type the seed somewhere you should not have, on an old device or in notes?
+3. Check software wallet backups: some software wallets keep encrypted backups, sometimes in cloud storage. This does not apply to hardware wallets.
 
-**What to do:**
-1. **Immediately create a new wallet** with a new seed phrase
-2. **Properly back up the new seed** (write it down, test the backup)
-3. **Transfer all Bitcoin** from the old wallet to the new one
-4. **Never use the old seed again** (even if you find it later, it's been "compromised" by the loss)
+If none of that works, the loss is permanent.
 
-**Time is critical.** Your device could break at any moment. Don't delay.
+### Some words are missing or unreadable
 
----
+A partly remembered seed can sometimes be recovered by trying every possible word in the gaps. How feasible that is depends on how many words are missing, whether you know their positions, and whether you know one of the wallet's addresses to test candidates against:
 
-### Scenario 2: Lost Seed, Device Broken/Lost
-
-**Situation:** No seed backup AND no working device.
-
-**The reality:** Your Bitcoin is almost certainly unrecoverable.
-
-**Limited options to explore:**
-
-1. **Search thoroughly** for your backup
-   - Did you make multiple copies?
-   - Could it be in a safety deposit box, with family, at another property?
-   - Check everywhere before giving up
-
-2. **Check for partial backups**
-   - Do you have some of the words? (See "Partial Recovery" below)
-   - Did you ever type it somewhere you shouldn't have? (Check old devices, notes)
-   
-3. **Check wallet software**
-   - Some software wallets store encrypted backups
-   - Check cloud backups (not recommended, but check if desperate)
-   - This applies to software wallets only, not hardware wallets
-
-4. **Accept the loss**
-   - If truly unrecoverable, there's nothing more to do
-   - Learn from this for the future
-
----
-
-### Scenario 3: Partial Seed Recovery
-
-**Situation:** You have most of your seed phrase but some words are missing or unreadable.
-
-**Possibility of recovery depends on how many words are missing:**
-
-| Missing Words | Difficulty | Realistic? |
+| Missing words (positions known) | Candidates | Realistic? |
 |---------------|------------|------------|
-| 1 word | 2,048 combinations | Yes, recoverable |
-| 2 words | 4+ million combinations | Maybe, with specialized tools |
-| 3 words | 8+ billion combinations | Extremely difficult |
-| 4+ words | Practically impossible | No |
+| 1 | 2,048 | Yes, in seconds |
+| 2 | About 4.2 million | Yes, in minutes to hours on a home computer |
+| 3 | About 8.6 billion | Possibly, with days of graphics-card time |
+| 4 or more | 17.6 trillion and up | Not for most people |
 
-**For 1-2 missing words:**
-- Tools exist that can brute-force the missing words
-- Requires technical knowledge or hiring help
-- BTCRecover is one open-source option
-- Be extremely careful about who you share partial seeds with (see scam warnings below)
+The checksum cuts the candidates that need full testing by 16 times for a 12-word phrase and 256 times for a 24-word one. Unknown positions, or no known address to test against, make each row much harder. BTCRecover is an open-source tool for this, run on your own computer. Never give a partial seed to anyone offering to do it for you.
 
-**For 3+ missing words:**
-- Recovery is essentially impossible with current technology
-- Anyone who says otherwise is likely a scammer
+### You forgot the passphrase
 
----
+A passphrase opens a completely different wallet, and one wrong character gives a different one. If you remember roughly what it was, trying variations (with BTCRecover, for example) can work; if you have no idea, recovery is effectively impossible, for the same reason guessing missing words is.
 
-### Scenario 4: Wrong Passphrase
+## How do recovery scams work?
 
-**Situation:** You have your seed phrase, but used a passphrase (25th word) that you can't remember.
+**Danger: Almost every bitcoin "recovery service" is a scam**
+They ask for your partial seed phrase and take whatever is left, or ask for a fee up front and vanish. They claim special technology they do not have and show testimonials they invented. No service can recover a fully lost seed phrase.
 
-**The problem:** A passphrase creates a completely different wallet. Even being off by one character generates different addresses.
+If someone contacts you offering recovery, they found you because you posted about your loss, which scammers watch for, and they will sound professional and sympathetic. Legitimate help looks different: open-source tools that you run yourself, honesty about the limits, and no request for your seed phrase. [Recovery scams](https://selfcustodylabs.com/docs/reference/faq/recovery-scams/) covers the tactics.
 
-**Options:**
-- If you remember roughly what it might be, brute-forcing variations is possible
-- If you have no idea, recovery is essentially impossible
-- The math is the same as losing seed words (astronomical combinations)
+## How do people lose seed phrases?
 
----
+| Cause | Examples |
+|---|---|
+| Poor backups | Paper that was damaged or thrown away, a single copy, a backup never tested, a photo on a phone that was later lost |
+| Life events | A fire or flood, theft, moving house and losing track, the death of a relative who held a copy |
+| Habits of mind | "I'll remember where I put it", "I'll make a proper backup later", too many wallets to keep track of |
 
-## Scam Warning: "Recovery Services"
+## What should you do now to avoid it?
 
-**Danger: Critical Warning**
-Almost every "Bitcoin recovery service" is a scam.
+1. Find your seed backup today, check it is complete and legible, and [test a recovery](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/) on a separate device.
+2. Make copies, on [metal](https://selfcustodylabs.com/docs/learn/keys/random/#step-6-back-up-on-metal), and keep them in separate places.
+3. Keep a secure record of where the backups are, plan for [inheritance](https://selfcustodylabs.com/docs/advanced/inheritance-planning/), and do not hide them so well that you forget them.
+4. Keep the setup simple enough to manage; complexity creates its own ways to fail.
 
-They will:
-- Ask for your partial seed phrase (then steal any remaining funds)
-- Ask for money upfront (then disappear)
-- Claim they have special technology (they don't)
-- Show fake testimonials (fabricated)
+If you have already lost bitcoin, do not chase it through "recovery" services. Many early bitcoiners lost coins to poor backups; it is a hard lesson, and the practices above stop it happening again.
 
-**Legitimate recovery is only possible for:**
-- 1-2 missing words (using open-source tools yourself)
-- Some specific software wallet issues
+## Common questions
 
-**There is no service that can recover a fully lost seed phrase.** The math makes it impossible.
+### Can you recover your bitcoin if you lost your seed phrase?
 
-**If someone contacts you offering recovery:**
-- They found you because you posted about your loss (scammers monitor these posts)
-- They will sound professional and sympathetic
-- They are trying to steal from you
+If your seed phrase is lost and your hardware wallet is also lost, broken or wiped, your bitcoin is permanently inaccessible. There is no backdoor, no customer support and no recovery service that can recover funds without the seed phrase. The only routes are finding the original backup, or an unwiped device that still holds the keys.
 
-**Legitimate help looks like:**
-- Open-source tools you run yourself
-- Transparent about limitations
-- Doesn't require you to share your seed with anyone
+### Why is it impossible to guess a lost seed phrase?
 
-## How This Happens
+A 24-word BIP39 seed holds 256 bits of entropy, so guessing it means trying up to 2^256 combinations, more than the number of atoms in the observable universe. No computer can do that in any practical time, and quantum computers would at best halve the effective bits, which still leaves an impossible search.
 
-Understanding common scenarios helps prevent them:
+### Are seed phrase recovery services legitimate?
 
-### Poor Backup Practices
-- Writing seed on paper that got damaged/lost
-- Storing in only one location
-- Not testing backup before trusting it
-- Taking a photo (then losing the phone)
+No. Any service claiming to recover a lost seed phrase from a hardware wallet, an exchange or an address is a scam, because recovery without the seed is impossible. Legitimate help is limited to cases such as finding a few missing words or a partly remembered passphrase with open-source tools you run yourself, or repairing a damaged device that still holds the keys.
 
-### Life Events
-- House fire or flood
-- Theft
-- Moving homes and losing track of backup
-- Death of family member who held backup
+### What should you do now to avoid losing your seed phrase?
 
-### Mental Factors
-- Overconfidence ("I'll remember where I put it")
-- Procrastination ("I'll make a proper backup later")
-- Complexity overload (too many wallets, forgot which is which)
-
-## Preventing Loss: Do This Now
-
-If you're reading this and still have access to your Bitcoin:
-
-### 1. Verify Your Backup Today
-- [ ] Locate your seed backup right now
-- [ ] Verify it's legible and complete
-- [ ] Test recovery on a separate device
-- [ ] See: [Backup Verification Guide](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/)
-
-### 2. Create Redundancy
-- [ ] Make multiple copies of your seed
-- [ ] Store in geographically separate locations
-- [ ] Consider metal backup (fire/water resistant)
-- [ ] See: [Seed Backup Guide](https://selfcustodylabs.com/docs/learn/keys/random/#step-6-back-up-on-metal)
-
-### 3. Document and Communicate
-- [ ] Record (securely) where backups are stored
-- [ ] Consider inheritance planning: what happens if you die?
-- [ ] Don't make backup so secret that you forget about them
-
-### 4. Don't Over-Complicate
-- [ ] Complexity creates failure modes
-- [ ] Use security appropriate to your threat model
-- [ ] If you can't manage your setup, simplify it
-
-## If You've Lost Funds
-
-Losing Bitcoin is painful. If you're in this situation:
-
-1. **Don't chase losses** by falling for scam "recovery" services
-2. **Learn from the experience** for any future holdings
-3. **Don't beat yourself up.** This has happened to many people
-4. **Consider it a lesson** in the importance of proper backups
-
-Many early Bitcoiners lost coins to poor backup practices. It's a hard lesson, but you can do better going forward.
-
-## Summary
-
-| Situation | Outcome |
-|-----------|---------|
-| Lost seed, device works | Recover by transferring to new wallet NOW |
-| Lost seed, device lost | Likely permanent loss |
-| 1-2 missing words | Recoverable with effort |
-| 3+ missing words | Not recoverable |
-| Forgot passphrase | Likely not recoverable |
-
-**The solution is prevention:**
-- Multiple backup copies
-- Geographic distribution
-- Tested recovery
-- Appropriate simplicity
-
----
-
-## Related Guides
-
-- [Backup Verification](https://selfcustodylabs.com/docs/wallet-setup/backup-verification/): Test your backup before you need it
-- [DIY Seed Generation](https://selfcustodylabs.com/docs/learn/keys/random/): Create a secure seed properly
-- [Hardware Wallet Setup](https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/): Start with good practices
-- [Recovery Scams Warning](https://selfcustodylabs.com/docs/reference/faq/recovery-scams): Protect yourself from fraud
+Write it on metal rather than paper, keep copies in at least two separate places, test a recovery before depositing significant funds, and never store it digitally. If you cannot afford to lose access through a single lost backup, consider a 2-of-3 multisig.

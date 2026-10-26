@@ -3,27 +3,20 @@
 > Understand and set up a Bitcoin multisig wallet. Concepts, 2-of-3 configurations, hardware devices, and a full step-by-step setup guide.
 
 Source: https://selfcustodylabs.com/docs/learn/wallets/multisig/
-Last updated: 2026-08-23
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-A **multisig** (multi-signature) wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. The usual choice for an individual is 2-of-3, where any two of three keys can move the funds, so losing one key does not lose your bitcoin and stealing one key does not steal it.
+A **multisig** (multi-signature) wallet is a bitcoin wallet that needs more than one key to spend, written as M-of-N: M signatures out of N keys. For an individual the usual choice is 2-of-3, where any two of three keys can move the funds, so losing one key does not lose your bitcoin and stealing one key does not steal it. Each key lives on a separate hardware wallet, ideally from a different manufacturer and in a different place. The cost is complexity: besides the seed phrases you must back up the wallet descriptor, and recovery has to be rehearsed before the wallet holds anything significant.
 
-A standard Bitcoin wallet has a single point of failure instead: one seed phrase controls everything. If it's stolen, your bitcoin is gone. If it's lost, your bitcoin is gone. Multisig eliminates that vulnerability by distributing control across several keys.
+Time: 2-3 hours. Cost: $200-450 (3 hardware wallets) + $30-60 (metal seed backups). Level: Intermediate to advanced. Updated: 26 Oct 2026.
 
-## What is Multisig?
+An ordinary wallet has a single point of failure: one seed phrase controls everything, so if it is stolen or lost, so is the bitcoin. Multisig removes that by spreading control across several keys, none of which can spend alone.
 
-A multisig wallet requires **multiple private keys** to authorize a transaction. Instead of one key having complete control, you distribute control across several keys.
+## How does M-of-N work?
 
-Think of it like a bank vault that requires two managers to turn their keys simultaneously; neither can open it alone.
-
-## The M-of-N Model
-
-Multisig uses an "M-of-N" structure:
-
-- **N** = Total number of keys in the setup
-- **M** = Number of keys required to sign
+N is the total number of keys in the wallet and M is the number of signatures needed to spend.
 
 <div class="doc-diagram">
 
@@ -31,34 +24,32 @@ Multisig uses an "M-of-N" structure:
 
 </div>
 
-### Common Configurations
-
 <div class="fixed-width-table">
 
-| Setup | Required | Total | Use Case |
+| Setup | Signatures needed | Keys | Use |
 |-------|----------|-------|----------|
-| **2-of-3** | 2 | 3 | Individual self-custody (most popular) |
-| **3-of-5** | 3 | 5 | High-value holdings, organizations |
-| **2-of-2** | 2 | 2 | Shared control (no fault tolerance) |
-| **1-of-2** | 1 | 2 | Easy access from multiple locations |
+| 2-of-3 | 2 | 3 | Individual self-custody, the most common choice |
+| 3-of-5 | 3 | 5 | Very large holdings, organisations, families |
+| 2-of-2 | 2 | 2 | Shared control, with no room for losing a key |
+| 1-of-2 | 1 | 2 | Easy access from two places, with no theft protection |
 
 </div>
 
-## How It Works
+## How is a multisig wallet created and spent from?
 
-### Creating a Multisig Wallet
+To create one:
 
-1. Generate 3 separate private keys (usually on 3 hardware wallets)
-2. Extract the public key (xpub) from each device
-3. Combine the xpubs in coordinator software to create the multisig wallet
-4. The wallet can now receive bitcoin
+1. Generate three separate seeds, usually one on each of three hardware wallets.
+2. Export the extended public key (xpub) from each device.
+3. Combine the three xpubs in coordinator software such as Sparrow, which creates the multisig wallet and its descriptor.
+4. Register the wallet on each hardware wallet, so each device can check addresses and change itself.
 
-### Spending from a Multisig Wallet
+To spend:
 
-1. Create an unsigned transaction (called a PSBT)
-2. Sign with Device 1 → Transaction is still incomplete
-3. Sign with Device 2 → Transaction is now valid
-4. Broadcast the fully-signed transaction
+1. The coordinator creates an unsigned transaction, a PSBT (partially signed bitcoin transaction).
+2. Device 1 signs it; the transaction is still incomplete.
+3. Device 2 signs it; it now has the two signatures it needs.
+4. The coordinator broadcasts the complete transaction.
 
 <div class="doc-diagram">
 
@@ -66,24 +57,19 @@ Multisig uses an "M-of-N" structure:
 
 </div>
 
-## Why Use Multisig?
-
-### Eliminates Single Points of Failure
+## What does multisig protect against?
 
 <div class="fixed-width-table">
 
-| Scenario | Single-Sig | 2-of-3 Multisig |
+| What happens | Single-signature wallet | 2-of-3 multisig |
 |----------|------------|-----------------|
-| One key stolen | **Funds lost** | Safe (thief needs 2 keys) |
-| One key lost | **Funds lost forever** | Safe (2 remaining keys work) |
-| House fire destroys backup | **Funds lost** | Safe (other locations have keys) |
-| Coerced to hand over key | **Funds lost** | Safe (can't access other keys) |
+| One key is stolen | Funds lost | Safe: the thief needs a second key |
+| One key is lost | Funds lost for good | Safe: the other two keys still spend |
+| A fire destroys one backup | Funds lost, if it was the only backup | Safe: the other keys are elsewhere |
+| You are forced to hand over a key | Funds lost | Safe: one key cannot spend, and the others are not in the room |
+| One hardware wallet's firmware is flawed | Funds at risk | Safe: the other vendors' keys still hold |
 
 </div>
-
-### Security Through Distribution
-
-With multisig, your bitcoin security doesn't depend on any single thing:
 
 <div class="doc-diagram">
 
@@ -91,234 +77,115 @@ With multisig, your bitcoin security doesn't depend on any single thing:
 
 </div>
 
-## The Tradeoffs
+The last row stopped being hypothetical in July 2026. The [Coldcard entropy flaw](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/) made single-signature Coldcard wallets brute-forceable and about $116 million was drained, while multisig wallets with one weak Coldcard key lost nothing, because the other vendors' keys held.
 
-### Advantages
+## What does multisig cost you?
 
-- **Theft protection**: attacker needs multiple keys
-- **Loss protection**: can lose one key and still recover
-- **Inheritance**: can distribute keys to family
-- **Shared control**: multiple parties must agree to spend
+| Advantages | Disadvantages |
+|---|---|
+| A thief needs more than one key | More to back up and look after: several seeds plus the descriptor |
+| One key can be lost without losing the funds | Larger transactions, so higher fees |
+| Keys can be placed for inheritance | Spending needs two devices, so it is slower |
+| Several people can be required to agree on a spend | Recovery needs the descriptor as well as the seeds |
 
-### Disadvantages
+**Danger: Multisig can lose funds if it is mismanaged**
+Back up the wallet descriptor, not only the seed phrases, and test a full recovery before depositing anything significant. If you are not yet comfortable with a single-signature hardware wallet, master that first.
 
-- **More complexity**: more things to back up and manage
-- **Higher fees**: multisig transactions are larger
-- **More points of failure**: must back up descriptor AND seeds
-- **Slower transactions**: need multiple devices to sign
+## When is multisig worth it?
 
-### The Complexity Warning
+Multisig suits significant holdings you would be devastated to lose, long-term storage you rarely spend from, business funds that need several approvals, and inheritance planning, and it assumes you have several secure places to keep keys. It is unnecessary for amounts under roughly $10,000, for spending money, and for anyone still learning basic self-custody, where the added complexity is itself a risk. [Choose your setup](https://selfcustodylabs.com/docs/learn/fundamentals/choosing-your-path/) puts the threshold for recommending it at about $100,000.
 
-**Danger: Before Using Multisig**
-Multisig adds complexity that can lead to permanent fund loss if mismanaged:
-- You must back up the **wallet descriptor** (not just seed phrases)
-- You must test recovery **before** depositing significant funds
-- You need secure storage for multiple seeds in different locations
+## What are the parts of a multisig setup?
 
-If you're not comfortable with single-sig hardware wallets yet, master that first.
+### Hardware wallets
 
-## When to Consider Multisig
+Each key lives on its own hardware wallet. Use devices from different manufacturers (for example Jade Plus, Keystone 3 Pro and Trezor Safe 5) so that one vendor's flaw cannot reach the funds; the [comparison](https://selfcustodylabs.com/docs/reference/hardware-wallet-comparison/) covers which devices suit multisig.
 
-### Good Candidates
+### Coordinator software
 
-- ✅ Significant holdings you'd be devastated to lose
-- ✅ Long-term "vault" storage (not daily spending)
-- ✅ Business funds requiring multiple approvals
-- ✅ Inheritance planning scenarios
-- ✅ Access to multiple secure storage locations
+Coordinator software, such as [Sparrow](https://sparrowwallet.com/) or Nunchuk, holds no private keys. It creates the multisig wallet from the devices' xpubs, generates receive addresses, builds unsigned transactions and combines the signatures.
 
-### Not Necessary For
+### The wallet descriptor
 
-- Small amounts (under ~$10,000)
-- Daily spending funds
-- Users still learning basic self-custody
-- Those without multiple secure storage locations
+The **wallet descriptor** is a line of text that defines the multisig wallet: every key's xpub and fingerprint, the M-of-N rule, the script type and the derivation paths. Without it, recovering from two of the three seeds is impossible, because the third key's xpub is recorded in the descriptor and nowhere else; even with all three seeds you would need to know the threshold, script type and paths it records. Store a copy of the descriptor with each seed backup; it is not secret enough to spend with, but it does reveal your balance and history to whoever reads it.
 
-## Key Components
+## Which configuration should you choose?
 
-### Hardware Wallets
+For most individuals, 2-of-3 is the right balance: any one key can be lost or stolen without losing the funds, there are three devices and three backups to manage, and fees are lower than for larger quorums.
 
-Each key lives on a separate hardware wallet. Recommended: use devices from **different manufacturers** to avoid single-vendor vulnerabilities.
+3-of-5 suits very large holdings, organisations and families spread across places. Two keys can be lost or stolen without losing the funds, but there are five devices to buy, five seed phrases to secure, higher fees and more coordination for every spend.
 
-### Coordinator Software
+2-of-2 is not recommended for most people. It has no redundancy: lose one key and the funds are gone. Use it only for specific shared-control arrangements where both parties will always be available.
 
-Software like Sparrow, Nunchuk, or Specter:
-- Creates the multisig configuration
-- Generates receive addresses
-- Creates unsigned transactions
-- Combines signatures
+## Should you run multisig yourself or use collaborative custody?
 
-### Wallet Descriptor
-
-A text string containing:
-- All public keys (xpubs)
-- The M-of-N policy
-- Script type and derivation paths
-
-**Danger: Critical**
-**The wallet descriptor is as important as your seed phrases.** Without it, you cannot reconstruct your multisig wallet, even with all seeds.
-
-## Collaborative Custody
-
-Some services offer "assisted" multisig where they hold one key:
+Collaborative custody services hold one key of a multisig for you, while you hold the others, so they cannot spend without you but can help you recover or pass the funds on.
 
 <div class="fixed-width-table">
 
-| Service | Model | You Hold | They Hold |
+| Service | Model | You hold | They hold |
 |---------|-------|----------|-----------|
 | Unchained | 2-of-3 | 2 keys | 1 key |
-| Casa | 2-of-3 or 3-of-5 | 2+ keys | 1 key |
+| Casa | 2-of-3 or 3-of-5 | 2 or more keys | 1 key |
 | Nunchuk | Flexible | Your choice | Optional |
 
 </div>
 
-**Benefits:** Professional backup, inheritance support, recovery assistance
-
-**Tradeoff:** Third party involved (though they can't spend without you)
-
-## Key Takeaways
-
-- Multisig requires **multiple keys** to spend bitcoin
-- **2-of-3** is the most popular individual setup
-- Eliminates **single points of failure** for both theft and loss
-- Adds **complexity**: more things can go wrong
-- **Wallet descriptor** backup is critical (not just seeds)
-- Best for **significant, long-term holdings**
-- Master single-sig first before attempting multisig
-
----
-
-## Ready to Build It? Step-by-Step Setup
-
-If you understand the concepts above and want to implement a 2-of-3 multisig, the following sections walk you through the full DIY setup with Sparrow Wallet.
-
-**Info: What You'll Do**
-- Set up 3 hardware wallets for multisig
-- Create a 2-of-3 multisig wallet in Sparrow
-- Properly back up seed phrases and wallet descriptor
-- Test your recovery procedure
-
-**⏱️ Time required:** 2-3 hours
-**📊 Difficulty:** Intermediate to Advanced
-**💰 Estimated cost:** $200-450 (3 hardware wallets) + $30-60 (metal seed backups)
-
-## Choosing Your Configuration
-
-### 2-of-3: The Sweet Spot
-
-For most individuals, **2-of-3 multisig** offers the best balance:
-
-**Advantages:**
-- Lose 1 key → Still have access (fault tolerance)
-- 1 key stolen → Funds still safe (theft protection)
-- Manageable complexity (3 backups, 3 devices)
-- Lower transaction fees than 3-of-5
-
-### 3-of-5: Maximum Security
-
-For very large holdings or organizations:
-
-**Advantages:**
-- Can lose 2 keys and still access funds
-- 2 keys can be stolen without fund loss
-- Good for distributed teams/families
-
-**Disadvantages:**
-- 5 devices to purchase and manage
-- 5 seed phrases to secure (10 locations if you separate!)
-- Higher transaction fees
-- More coordination for signing
-
-### 2-of-2: Shared Control (Use Carefully)
-
-**⚠️ Not recommended for most users**
-
-- No redundancy: lose 1 key, lose everything
-- Both parties must be available to spend
-- Use only for specific shared-custody scenarios
-
-## DIY vs. Collaborative Custody
-
-Don't want to manage all keys yourself? **Collaborative custody** providers hold one key while you hold the majority.
+All three charge for their services; check their current pricing.
 
 <div class="fixed-width-table">
 
-| Service | Free Tier | Paid Plans | Best For |
-|---------|-----------|------------|----------|
-| **Unchained** | Yes (2-of-3) | From $0 + per-sign fee | Financial services, loans |
-| **Casa** | Basic wallet | From $30/month | Beginners, inheritance |
-| **Nunchuk** | Yes | From $15/month | Privacy, flexibility |
-
-</div>
-
-<div class="fixed-width-table">
-
-| Factor | DIY Multisig | Collaborative Custody |
+| | Running it yourself | Collaborative custody |
 |--------|--------------|----------------------|
-| **Technical skill needed** | High | Low-Medium |
-| **Privacy** | Maximum | Provider sees balances |
-| **Support available** | Community only | Professional help |
-| **Ongoing cost** | One-time (hardware) | Monthly subscription |
-| **Recovery assistance** | You're on your own | Help available |
-| **Best for** | Technical users | Beginners, busy people |
+| Technical skill needed | High | Low to medium |
+| Privacy | Full | The provider sees your balances |
+| Help available | Community forums | Professional support |
+| Cost | The hardware, once | A subscription |
+| Recovery | Entirely on you | The provider can help |
+| Suits | Technical users | Beginners and busy people |
 
 </div>
 
-**Recommendation:**
-- **New to multisig?** Start with collaborative custody to learn the concepts
-- **Technical and privacy-focused?** DIY with Sparrow Wallet
-- **Significant holdings but not technical?** Collaborative custody is worth the cost
+If you are new to multisig, collaborative custody is a reasonable way to learn it. If you are technical and value privacy, run it yourself with Sparrow. If the holdings are significant and you are not technical, collaborative custody is worth what it costs.
 
-## Common Multisig Mistakes
+## What mistakes do people make with multisig?
 
-### Mistake 1: Not Backing Up the Wallet Descriptor
+| Mistake | What goes wrong | What to do instead |
+|---|---|---|
+| Not backing up the wallet descriptor | Two seed phrases survive, but without the third key's xpub the wallet cannot be rebuilt | Keep a copy of the descriptor, printed or on a file, with each seed backup |
+| Storing several seeds together | One theft or fire reaches two keys | Keep each seed in a different place |
+| Using one hardware wallet brand for every key | One firmware flaw affects every key | Mix manufacturers, for example Jade, Trezor and Keystone |
+| Not testing recovery | The backup turns out to be incomplete when it is needed | Rehearse a full recovery with a small amount first |
+| Overcomplicating it | A 5-of-7 across three continents with timelocks that nobody can operate | Start with 2-of-3 |
+| Not checking addresses on the devices | Malware shows a fake address on the computer | Check every receive address on at least two hardware wallets' screens |
 
-**Problem:** You have all 3 seed phrases but can't reconstruct the wallet.
+## What should you check before depositing?
 
-**Solution:** Store the wallet descriptor (as PDF, file, or printed) with each seed phrase backup.
+- Each hardware wallet is from a different manufacturer (recommended).
+- Each seed phrase is backed up on metal.
+- The seed phrases are stored in separate places.
+- The wallet descriptor is backed up, with copies in different places.
+- A receive address has been checked on at least two of the hardware wallets.
+- A test transaction has been received and sent.
+- A full recovery from the backups has been rehearsed.
+- Every hardware wallet has the multisig wallet registered.
 
-### Mistake 2: Storing Multiple Seeds Together
+The setup itself is covered in three guides: [hardware setup](https://selfcustodylabs.com/docs/learn/wallets/multisig/hardware-setup/), [the Sparrow setup](https://selfcustodylabs.com/docs/learn/wallets/multisig/sparrow-setup/) and [backup and recovery](https://selfcustodylabs.com/docs/learn/wallets/multisig/backup-recovery/).
 
-**Problem:** A single theft or disaster compromises multiple keys.
+## Common questions
 
-**Solution:** Geographic distribution, each seed in a different location.
+### What is a Bitcoin multisig wallet?
 
-### Mistake 3: Using the Same Hardware Wallet Brand
+A multisig wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. A 2-of-3 wallet has three keys and any two can authorise a spend, so losing one key does not lose the funds and stealing one key does not steal them. Each key normally lives on a separate hardware wallet in a separate location.
 
-**Problem:** A firmware vulnerability affects all your signing devices.
+### Do you need multisig for your bitcoin?
 
-**Solution:** Mix manufacturers (e.g., Jade + Trezor + Keystone).
+Not for everything. Multisig suits significant holdings you would be devastated to lose, long-term storage, business funds needing several approvals and inheritance planning, and it assumes you have several secure storage locations. It is unnecessary for amounts under roughly $10,000, for spending money and for anyone still learning basic self-custody, where the added complexity is itself a risk of loss.
 
-This stopped being hypothetical in July 2026. The [Coldcard entropy flaw](https://selfcustodylabs.com/docs/learn/wallets/coldcard-entropy-incident/) made single-sig Coldcard wallets brute-forceable and ~$116M was drained, while multisig quorums containing one weak Coldcard key lost nothing, because the other vendors' keys held. One silent firmware failure, two completely different outcomes.
+### What multisig configuration should you use?
 
-### Mistake 4: Not Testing Recovery
+2-of-3 is the most popular choice for individual self-custody: it tolerates the loss of any single key while requiring an attacker to compromise two. 3-of-5 suits very large holdings and organisations. 2-of-2 gives shared control with no fault tolerance, so a single lost key is fatal. Use hardware wallets from different manufacturers so that no single vendor's mistake can reach your funds.
 
-**Problem:** You think your backup works but haven't verified it.
+### Does multisig protect against a hardware wallet vulnerability?
 
-**Solution:** Practice recovery with a small amount before depositing significant funds.
-
-### Mistake 5: Overcomplicating the Setup
-
-**Problem:** 5-of-7 multisig across 3 continents with time locks...
-
-**Solution:** Start simple. 2-of-3 is sufficient for most individuals.
-
-### Mistake 6: Not Verifying Addresses on Devices
-
-**Problem:** Malware could show you a fake address on your computer.
-
-**Solution:** **Always verify receive addresses on your hardware wallet screens** before depositing.
-
-## Security Checklist
-
-Before depositing significant funds, verify:
-
-- [ ] Each hardware wallet is from a different manufacturer (recommended)
-- [ ] Each seed phrase is backed up on metal (fire/water resistant)
-- [ ] Seed phrases are stored in separate physical locations
-- [ ] Wallet descriptor is backed up (multiple copies in different locations)
-- [ ] You've verified a receive address matches on at least 2 hardware wallets
-- [ ] You've successfully completed a test transaction (send and receive)
-- [ ] You've practiced full wallet recovery from backups
-- [ ] You understand you need M keys to spend (not just one)
-- [ ] Hardware wallets are registered with the multisig configuration
+Yes, and the 2026 Coldcard entropy incident demonstrated it. Where one key in a 2-of-3 wallet was a weak Coldcard seed, the attacker still could not spend, because a second signature was needed. This is the failure multisig exists for. The weak key should still be replaced, but the funds were never at risk.

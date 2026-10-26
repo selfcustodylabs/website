@@ -3,87 +3,64 @@
 > Downgrade your laptop's stock BIOS to a version with an unlocked Intel ME region, a prerequisite for internal Coreboot flashing.
 
 Source: https://selfcustodylabs.com/docs/coreboot/internal/downgrading-bios/
-Last updated: 2026-04-15
+Last updated: 2026-10-26
 Publisher: Self Custody Labs (https://selfcustodylabs.com)
 
 ---
 
-Before we can flash Coreboot internally on a ThinkPad, we need to make sure the BIOS version is vulnerable enough to be overwritten.
-Some newer BIOS versions patch the vulnerabilities that make internal flashing possible, so downgrading may be required.
+Internal flashing relies on vulnerabilities in older Lenovo BIOS versions, which later updates patched, so a ThinkPad running a newer BIOS has to be downgraded first: download Lenovo's BIOS update ISO for the version in the table below, change its boot script so it allows installing an older version, write it to a USB stick, and boot from it to flash the older BIOS.
 
-# Supported BIOS Versions
+## Which BIOS versions still allow internal flashing?
 
-The table below lists the latest BIOS versions that still allow internal flashing.
-If your BIOS is newer than the version shown, you’ll need to downgrade to that version or an earlier one before installing Coreboot.
+The table lists, for each model, the newest BIOS version that still allows internal flashing. If your BIOS is newer, downgrade to that version or an earlier one before installing coreboot.
 
 <div class="fixed-width-table">
 
-|Model|BIOS Version|
+| Model | Newest BIOS that can be flashed internally |
 |-|-|
-|X230|2.60|
-|X230T|2.58|
-|T430|2.64|
-|T430s|2.59|
-|T530|2.60|
-|W530|2.58|
+| X230 | 2.60 |
+| X230T | 2.58 |
+| T430 | 2.64 |
+| T430s | 2.59 |
+| T530 | 2.60 |
+| W530 | 2.58 |
 
 </div>
 
-## Why Downgrade is Possible
+## Why is a downgrade possible?
 
-Lenovo claims their BIOS has “security rollback prevention,” meaning once you update to a newer version, you can’t go back to an older one.
-In reality, this restriction is entirely client-side, it’s enforced by Lenovo’s flashing utilities (both the Windows version and the Bootable CD), not the BIOS itself.
+Lenovo describes its BIOS as having security rollback prevention: once updated, it cannot go back to an older version. The check is made by Lenovo's flashing tools (the Windows utility and the bootable CD), not by the BIOS itself, so running the flashing program (`winflash.exe` or `dosflash.exe`) directly skips it. That takes a small change to the bootable CD image Lenovo publishes.
 
-If you run the flashing program (winflash.exe or dosflash.exe) directly, you can bypass the block. This requires slightly modifying the Bootable CD image you download from Lenovo.
+## Step 1: Download the BIOS ISO
 
-## Performing Downgrade
+Step 1 downloads Lenovo's bootable BIOS update image for the version in the table. This guide uses a T430s on a BIOS newer than 2.59 as the example. Open the [Lenovo support page for the T430s](https://support.lenovo.com/us/en/downloads/ds029724-bios-update-utility-bootable-cd-for-windows-10-81-8-7-64-bit-81-8-7-32-bit-xp-thinkpad-t430s-t430si), find the "Release (BIOS Bootable)" column, and download `g7uj13us.iso`, which contains BIOS 2.59 (an older version also works). For another model, use that model's support page and the version in the table.
 
-We’ll assume your T430s is running a BIOS newer than 2.59. In that case, we’ll downgrade to version 2.59.
+## Step 2: Extract and mount the boot image
 
-### Download the BIOS ISO
-
-Visit the [Lenovo support page for the T430s](https://support.lenovo.com/us/en/downloads/ds029724-bios-update-utility-bootable-cd-for-windows-10-81-8-7-64-bit-81-8-7-32-bit-xp-thinkpad-t430s-t430si) and find the “`Release (BIOS Bootable)`” column.
-Download `g7uj13us.iso`, which contains BIOS version 2.59 (you can also choose an even older version if you prefer).
-
-### Extract and Modify the Bootable Image
-
-Extract the El Torito image:
+Step 2 extracts the El Torito boot image from the ISO and mounts it so its files can be edited. `geteltorito` comes with the `genisoimage` package on Debian and Ubuntu.
 
 ```bash
-geteltorito -o ./bios.img g1uj41us.iso
-```
-
-Mount the image:
-
-```bash
+geteltorito -o ./bios.img g7uj13us.iso
 sudo mount -t vfat ./bios.img /mnt -o loop,offset=16384
-```
-
-List the contents:
-
-```bash
 ls /mnt
 ls /mnt/FLASH
 ```
 
-Inside `FLASH`, you’ll see a directory such as `G1ET93WW` (the name depends on your model and BIOS version).
-Check what’s inside:
+Inside `FLASH` is one directory named after the BIOS build. The commands below show `G1ET93WW`, from a T430 image; use the name you see. List it and look for a `.FL1` file, something like `$01D2000.FL1`:
 
 ```bash
 ls /mnt/FLASH/G1ET93WW
 ```
 
-Look for a `.FL1` file, something like `$01D2000.FL1`.
+## Step 3: Make the boot script run the flasher directly
 
-### Modify the Boot Script
-
-Open `AUTOEXEC.BAT`:
+Step 3 edits `AUTOEXEC.BAT` so the image starts `dosflash.exe` itself instead of Lenovo's wrapper, which is what enforces the rollback block:
 
 ```bash
 sudo nano /mnt/AUTOEXEC.BAT
 ```
 
-You’ll see something like:
+The file looks like this:
 
 ```bash
 @ECHO OFF
@@ -92,35 +69,32 @@ cd c:\flash
 command.com
 ```
 
-Replace the last line (`command.com`) with this (adjust the path to match your `.FL1` file):
+Replace the last line, `command.com`, with this, adjusting the path to your `.FL1` file:
 
 ```bash
 dosflash.exe /sd /file G1ET93WW\$01D2000.FL1
 ```
 
-Save and unmount:
+Save the file and unmount the image:
 
 ```bash
 sudo umount /mnt
 ```
 
-### Write to a USB Drive
+## Step 4: Write the image to a USB drive
 
-Flash the modified image to USB:
+Step 4 writes the modified image to a USB drive. Replace `/dev/sdX` with your USB device, and check it with `lsblk` first: `dd` overwrites whatever disk you name.
 
 ```bash
 sudo dd if=./bios.img of=/dev/sdX bs=1M
 ```
 
-(Replace /dev/sdX with your actual USB device).
+## Step 5: Flash the older BIOS
 
-### Flashing the BIOS
+Step 5 boots the laptop from the USB drive, which flashes the older BIOS automatically:
 
-- Enter BIOS settings: Reboot and press `F1`.
-- In the Startup tab, set Startup Mode to Legacy (or Both/Legacy First).
-- Save and reboot: Press `F10`.
-- Connect AC power: Do not attempt flashing on battery power. If the system loses power during flashing, you’ll likely need an external programmer to recover.
-- Boot from USB: Press `F12` during startup, choose the USB drive, and the BIOS flashing will begin automatically.
-- The process may reboot your laptop several times, do not interrupt it.
-- After completion: Enter BIOS again and set Startup Mode back to UEFI (or Both/UEFI First). This is required for the Coreboot vulnerability to be usable.
-- Check in your OS: Boot into your operating system and verify that `/sys/firmware/efi` or `/sys/firmware/efivars` exists.
+1. Reboot and press `F1` to enter the BIOS settings. In the Startup tab, set Startup Mode to Legacy (or Both, Legacy first), then save and reboot with `F10`.
+2. Connect AC power. Do not flash on battery: if power is lost during the flash, recovering the laptop needs an external programmer.
+3. Press `F12` during startup and choose the USB drive. Flashing starts on its own, and the laptop may reboot several times; do not interrupt it.
+4. When it has finished, enter the BIOS settings again and set Startup Mode back to UEFI (or Both, UEFI first). The S3 boot script flaw used on the [next page](https://selfcustodylabs.com/docs/coreboot/internal/unlocking-bios/) is in the UEFI firmware, so the laptop has to boot in UEFI mode.
+5. Boot your operating system and check that `/sys/firmware/efi` exists, which confirms it booted in UEFI mode.
