@@ -4,67 +4,58 @@ title: "What is a Bitcoin Node"
 description: "Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network. Essential knowledge before running your own node."
 keywords: ["bitcoin node", "full node", "bitcoin core", "blockchain", "verification", "mempool"]
 tags: ["node", "bitcoin", "basics", "network"]
+date: "2026-01-13"
 ---
 
-# What is a Bitcoin Node?
+# What is a Bitcoin node?
 
-Every time you check your wallet balance, someone is answering your question. Every time you broadcast a transaction, someone is relaying it to the network. That "someone" is a Bitcoin node, and unless you're running your own, you're trusting a stranger with intimate details of your financial life.
+A **Bitcoin node** is a computer running software, usually Bitcoin Core, that keeps a copy of the blockchain, checks every block and transaction against bitcoin's rules, relays them to other nodes, and answers wallets' questions. Every wallet depends on a node to see its balance and send transactions; the only question is whose. With someone else's node, its operator learns your addresses and you trust its answers. With your own, you verify everything yourself and your queries go nowhere.
 
-A Bitcoin node is software that participates in the Bitcoin network. It maintains a complete copy of the blockchain, verifies every transaction against Bitcoin's rules, and helps keep the entire system running. Nodes are the backbone of Bitcoin's trustless architecture: they're what make "don't trust, verify" possible.
+## What does a node do?
 
-Understanding nodes is important because **your wallet depends on a node to function**, whether you realize it or not. The question isn't whether you'll use a node; it's whether you'll use your own or someone else's.
+### It stores the blockchain
 
-## What a Node Does
-
-A Bitcoin node performs several critical functions, each one essential to the network's operation and your security.
-
-### 1. Stores the Blockchain
-
-A full node downloads and stores the complete Bitcoin blockchain: every transaction since Satoshi mined the genesis block in January 2009. This currently requires around 600+ GB of storage, and it grows by roughly 50-100 GB per year.
+A full node downloads and keeps the complete blockchain: every transaction since the first block was mined in January 2009. That was about 770 GB in September 2026, growing by roughly 75 GB a year.
 
 <div class="doc-diagram">
 
-![A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally](/img/diagrams/nodes/block-chain-copy.svg)
+![A full node stores the complete chain of blocks from block 1 in January 2009 to block 970,000 and beyond, about 770 GB in September 2026, so it can verify any claim about any transaction locally](/img/diagrams/nodes/block-chain-copy.svg)
 
 </div>
 
-This might seem excessive, but there's a reason for it. Having the complete history means your node can independently verify any claim about any transaction. No trust required.
+Having the complete history means the node can verify any claim about any transaction itself, without trusting anyone.
 
-### 2. Verifies Everything
+### It verifies everything
 
-Here's where nodes become powerful: your node doesn't believe anything it's told. When it receives a new block or transaction, it independently verifies that every rule is followed. Did this transaction actually have valid signatures? Does the sender actually have the coins they're trying to spend? Does this block follow the consensus rules?
+A node believes nothing it is told. For every new block and transaction it checks every rule itself: whether the signatures are valid, whether the coins being spent exist and are unspent, whether the block follows the consensus rules. A block that breaks any rule, even by one satoshi, is rejected, whatever other nodes do. Your node enforces the rules you chose to run.
 
-If a block breaks any rule (even by a single satoshi), your node rejects it. It doesn't matter if every other node in the world accepts it. Your node enforces the rules you agreed to run.
-
-### 3. Connects to the Network
+### It relays transactions and blocks
 
 Nodes communicate with each other in a peer-to-peer mesh, sharing new transactions as they're created, propagating new blocks as they're mined, and helping new nodes synchronize with the current state. When you broadcast a transaction, your node sends it to its peers, who send it to their peers, until it reaches miners who can include it in a block.
 
-### 4. Maintains the Mempool
+### It keeps a mempool
 
-Before transactions are confirmed in blocks, they wait in the **mempool**, a holding area of pending transactions. Each node maintains its own mempool, deciding which unconfirmed transactions to keep based on factors like fee rates and validity.
+Before transactions are confirmed in blocks, they wait in the **mempool**, a holding area of pending transactions. Each node keeps its own, deciding which unconfirmed transactions to hold on the basis of validity and fee rate.
 
-### 5. Responds to Wallet Queries
+### It answers wallets
 
-This is where it gets personal. When your wallet needs to check your balance, see if a payment arrived, or broadcast a transaction you've signed, it asks a node. That node sees exactly what your wallet is asking about: your addresses, your transactions, your financial activity.
+When your wallet needs to check your balance, see if a payment arrived, or broadcast a transaction you've signed, it asks a node. That node sees exactly what your wallet is asking about: your addresses, your transactions, your financial activity.
 
-## Nodes vs. Wallets
-
-This distinction is critical:
+## How is a node different from a wallet?
 
 <div class="fixed-width-table">
 
 | Node | Wallet |
 |------|--------|
-| Stores full blockchain | Stores only your keys |
-| Verifies all transactions | Creates your transactions |
+| Stores the full blockchain | Stores only your keys |
+| Verifies every transaction | Creates your transactions |
 | Serves data to wallets | Needs a node to function |
 | No private keys | Contains private keys |
 | Anyone can run one | Personal to you |
 
 </div>
 
-**Your wallet needs a node to work.** The question is: whose node?
+A wallet cannot work without a node; the question is whose.
 
 <div class="doc-diagram">
 
@@ -72,15 +63,13 @@ This distinction is critical:
 
 </div>
 
-## Why the Node Matters
+## Why does it matter whose node your wallet uses?
 
-Here's the privacy problem most Bitcoin users don't think about: when your wallet queries a node, it necessarily reveals information. Your addresses, your transaction history, your current balance, when you're online: all of this flows to whatever node your wallet connects to.
+A wallet's questions reveal your addresses, your transaction history, your balance and when you are online to whichever node answers them. Someone else's node learns all of it, and "someone else" could be a careful volunteer, a chain analysis company or anything in between.
 
-If you use **someone else's node**, they learn all of this. And "someone else" could be anyone: a privacy-respecting node operator, a chain analysis company, or something in between.
+### Random public nodes
 
-### Random Public Nodes
-
-Many wallets default to connecting to random public nodes. From the user's perspective, this just works: you open your wallet, see your balance, send transactions. Behind the scenes, however, your wallet is having a very revealing conversation:
+Many wallets connect to public servers by default. It works without any setup, but every query tells an unknown operator which addresses belong to your wallet:
 
 <div class="doc-diagram">
 
@@ -88,96 +77,64 @@ Many wallets default to connecting to random public nodes. From the user's persp
 
 </div>
 
-The node operator now knows that these addresses belong to the same wallet. Combined with timing information and transaction patterns, this builds a comprehensive profile.
+Combined with timing and transaction patterns, that builds a detailed profile.
 
-### Your Own Node
+### Your own node
 
-When you run your own node, this privacy leak disappears. Your wallet queries your node, and those queries never leave your control.
+With your own node, the leak disappears: the wallet asks your node, and the questions never leave your control. That makes running a node a basic privacy measure, not a hobby for enthusiasts.
 
-This is why running a node isn't just for technical enthusiasts; it's a fundamental privacy measure.
+## What kinds of node are there?
 
-## Types of Nodes
+### Full node
 
-Not all nodes are the same. Different configurations offer different tradeoffs between storage requirements, verification depth, and functionality.
+A **full node** downloads and verifies the whole blockchain, every block and transaction from the first to the latest, and is what people usually mean by running a node. It gives full verification and the best privacy, since queries stay local. The cost is storage (about 770 GB as of September 2026, growing by roughly 75 GB a year) plus an initial sync that can take hours to days depending on your hardware.
 
-### Full Node
+### Pruned node
 
-The gold standard. A full node downloads and verifies the complete blockchain: every block, every transaction, from the beginning of time to right now.
+A **pruned node** is a full node that deletes old block data once it has verified it. It still checks everything, but needs only about 10 GB of storage; in exchange it cannot serve old blocks to other nodes or run an Electrum server, which needs the full history.
 
-This is what most people mean by "running a node." It provides maximum verification (you're trusting no one) and best privacy (queries stay local). The cost is storage (currently around 600 GB and growing) plus an initial sync that can take hours to days depending on your hardware.
+### Light client (SPV)
 
-### Pruned Node
-
-A pruned node is a full node that deletes old block data after verification. It still validates everything, but it doesn't keep the historical data around afterward.
-
-- **Pros:** Less storage needed (~10 GB minimum)
-- **Cons:** Can't serve historical data to other nodes
-
-### Light Client / SPV
-
-Light clients take a different approach. Instead of downloading and verifying everything, they only download block headers, tiny summaries that let them check whether a transaction is included in a block. For the actual transaction data, they ask full nodes.
-
-This is fast and requires minimal storage, but it comes at a cost: you're trusting that the nodes you query are honest. For small amounts and convenience, this tradeoff can be acceptable. For serious holdings or privacy-sensitive use, it's not.
+A **light client** downloads only block headers, small summaries that show whether a transaction is in a block, and asks full nodes for everything else. It is fast and needs almost no storage, but it trusts the nodes it asks, which is acceptable for small amounts and not for serious holdings or privacy.
 
 ### Bitcoin Core
 
 Bitcoin Core is the reference implementation, the original Bitcoin software maintained by the community since Satoshi's initial release. When people say "run a node," they usually mean running Bitcoin Core.
 
-It's not the only option (alternatives like Bitcoin Knots exist), but it's the most widely used and the default choice for most node operators.
+Alternatives such as Bitcoin Knots exist, but Bitcoin Core is the most widely used and the usual choice.
 
-## The Verification Principle
+## What does "don't trust, verify" mean?
 
-Bitcoin's core philosophy can be summarized in three words: **Don't trust, verify.**
-
-This isn't just a slogan. It's a fundamental architectural principle that distinguishes Bitcoin from every financial system that came before it. Traditional finance requires trust at every layer: trust that banks are solvent, trust that ledgers are accurate, trust that institutions follow the rules. Bitcoin replaces that trust with verification.
+"Don't trust, verify" is the design principle that separates bitcoin from earlier financial systems. Traditional finance requires trust at every layer: trust that banks are solvent, trust that ledgers are accurate, trust that institutions follow the rules. Bitcoin replaces that trust with verification.
 
 Without your own node, you're reintroducing trust. You trust someone else to tell you your correct balance. You trust them to accurately report whether transactions are valid. You trust them not to lie about the blockchain state.
 
 With your own node, that trust becomes unnecessary. You verify everything yourself. You can't be deceived about your balance because you've independently confirmed it. You enforce Bitcoin's rules directly because you check every rule on every transaction.
 
-## Why Running Your Own Node Matters
+## What does running your own node give you?
 
-The benefits of running a node aren't abstract; they're practical improvements to your security, privacy, and relationship with the Bitcoin network.
+**Privacy.** When your wallet talks to your node, no third party learns which addresses belong to you, what your balance is, or what transactions you're making. This is the single biggest privacy upgrade most Bitcoiners can make.
 
-**Privacy:** When your wallet talks to your node, no third party learns which addresses belong to you, what your balance is, or what transactions you're making. This is the single biggest privacy upgrade most Bitcoiners can make.
+**Security.** You verify your own transactions against your own copy of the blockchain. No one can fool you with fake confirmations or misleading balance information. What your node says is what's true, because your node has verified it independently.
 
-**Security:** You verify your own transactions against your own copy of the blockchain. No one can fool you with fake confirmations or misleading balance information. What your node says is what's true, because your node has verified it independently.
+**Sovereignty.** You're not just using Bitcoin. You're participating in it. Your node validates the consensus rules, and by running it, you're part of the decentralized enforcement mechanism that keeps Bitcoin working.
 
-**Sovereignty:** You're not just using Bitcoin. You're participating in it. Your node validates the consensus rules, and by running it, you're part of the decentralized enforcement mechanism that keeps Bitcoin working.
+**Network health.** Every node makes Bitcoin stronger. The more nodes exist, the more copies of the blockchain exist, the harder it becomes to attack or censor the network. Running a node isn't just self-interested: it's a contribution to Bitcoin's resilience.
 
-**Network Health:** Every node makes Bitcoin stronger. The more nodes exist, the more copies of the blockchain exist, the harder it becomes to attack or censor the network. Running a node isn't just self-interested: it's a contribution to Bitcoin's resilience.
+## What do people get wrong about nodes?
 
-## Common Misconceptions
+### Do you need a node to hold bitcoin?
 
-Even experienced Bitcoiners sometimes misunderstand what nodes do (and don't do).
+No. Your wallet holds bitcoin via private keys. A node is for verification and privacy. You can absolutely hold bitcoin without running a node; you'll just be trusting someone else's node for information about your holdings.
 
-**"I need a node to hold bitcoin"**: Your wallet holds bitcoin via private keys. A node is for verification and privacy. You can absolutely hold bitcoin without running a node; you'll just be trusting someone else's node for information about your holdings.
+### Does running a node earn bitcoin?
 
-**"Running a node earns me bitcoin"**: Nodes don't earn rewards. Mining earns rewards. Nodes verify transactions and propagate blocks, but this service is provided for free. The reward is the security and privacy benefits to the node operator.
+No. Nodes don't earn rewards. Mining earns rewards. Nodes verify transactions and propagate blocks, but this service is provided for free. The reward is the security and privacy benefits to the node operator.
 
-**"I need technical skills to run a node"**: This was true years ago; it's much less true today. Modern node software (especially user-friendly distributions like Umbrel or RaspiBlitz) has made running a node accessible to anyone who can follow basic instructions. If you can set up a Raspberry Pi or install software on a computer, you can run a node.
+### Do you need technical skills to run a node?
 
-**"My hardware wallet is my node"**: Hardware wallets store keys and sign transactions. That's it. They have no blockchain data and can't verify anything independently. When you check your balance on a hardware wallet setup, that information is coming from a node somewhere, either yours or someone else's.
+Much less than you used to. Modern node software (especially user-friendly distributions like Umbrel or RaspiBlitz) has made running a node accessible to anyone who can follow basic instructions. If you can set up a Raspberry Pi or install software on a computer, you can run a node.
 
-## Key Takeaways
+### Is your hardware wallet a node?
 
-The relationship between nodes and wallets is fundamental to understanding Bitcoin. Remember:
-
-- A **node** stores the blockchain and verifies transactions
-- A **wallet** stores your keys and creates transactions  
-- Wallets **depend on nodes** to function: the question is whose node
-- Using someone else's node **exposes your privacy**
-- Running your own node means you **verify everything yourself**
-- The principle: **Don't trust, verify**
-
----
-
-## Continue Learning
-
-Understanding what nodes do is the first step. The next is understanding why running your own is worth the effort.
-
-→ **Next:** [Why Run Your Own Node](/docs/learn/nodes/why-run-node): The benefits explained in depth
-
-→ **Practical Guide:** [Bitcoin Node Setup](/docs/bitcoin-node): Ready to run your own node
-
-→ **Related:** [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters): The privacy implications
+No. Hardware wallets store keys and sign transactions. That's it. They have no blockchain data and can't verify anything independently. When you check your balance on a hardware wallet setup, that information is coming from a node somewhere, either yours or someone else's.

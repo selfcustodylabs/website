@@ -1,117 +1,73 @@
 ---
 sidebar_position: 2
 title: "Pico-Pomona Clip Connection"
-description: "Practical guide: Pico-Pomona Clip Connection. Covers The Bios Chip, PIN Map on Raspberry Pico, Models X230, T420, T430, T440p and T480s."
+description: "Wire a Raspberry Pi Pico to a Pomona SOIC-8 clip for flashing Libreboot: find pin 1, follow the pin map, and handle the dual-chip T530 and W530 boards."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "pico", "pomona", "clip", "connection"]
 tags: ["libreboot", "raspberry", "pico"]
+date: "2025-04-07"
 ---
-# Pico-Pomona Clip Connection
+# Pico-Pomona clip connection
 
-To begin flashing the BIOS, you'll need to connect your Pico to the Pomona clip, which will then attach to the BIOS chip on your ThinkPad.
+The Pico connects to the laptop's flash chip through the Pomona clip: six jumper wires run from the Pico to the clip, matching each chip pin to its Pico pin, and the clip then grips the chip on the motherboard. Two pins of the chip stay unconnected. The T530 and W530 need one extra part, which holds the second chip quiet while you work on the first.
 
+## How do you find pin 1 on the chip?
 
-## The Bios Chip
+The flash chips on these ThinkPads are SOIC-8 packages: eight legs, four on each side. Pin 1 is marked with a small dot or dimple on the chip's top. From pin 1, count anticlockwise around the chip: pins 1 to 4 down one side, 5 to 8 back up the other.
 
-The BIOS chip in your ThinkPad models is an SOIC-8 type with 8 pins.
+![Close-up of a SOIC-8 flash chip on a ThinkPad motherboard with its pins numbered 1 to 4 down one side and 5 to 8 up the other](/img/libreboot/soic8.webp)
 
-In these specific models, you’ll likely find two BIOS chips positioned next to each other. Both of these chips will need to be flashed. Don’t worry, though ,  the process is straightforward and will be explained in detail later in this guide.
+The X230, T430, T440p, T530 and W530 have two chips side by side (4 MB and 8 MB), and both are flashed, one at a time. The T420 and T480s have one main chip. [Flashing](/docs/libreboot/flashing-bios/) covers each case.
 
-**IMPORTANT**: Be sure to identify `pin 1` (which is marked with a small dot) and then count the pins counterclockwise from there.
+## Which Pico pin goes to which chip pin?
 
-![Soic8](/img/libreboot/soic8.webp)
+| Chip pin | Function | Pico pin |
+|---|---|---|
+| 1 | CS (chip select) | 7 (GP5) |
+| 2 | MISO (data out of the chip) | 6 (GP4) |
+| 3 | WP (write protect) | Not connected |
+| 4 | GND | 38 (GND) |
+| 5 | MOSI (data into the chip) | 5 (GP3) |
+| 6 | CLK (clock) | 4 (GP2, labelled SCK) |
+| 7 | HOLD | Not connected |
+| 8 | VCC | 36 (3V3) |
 
-Here are the functions of each pin. You don't necessarily need to understand the purpose of each individual pin. Instead, you simply need to match the corresponding pin on your BIOS chip with the appropriate pin on your Raspberry Pico and connect them using Dupont cables.
+![Pin map of the Raspberry Pi Pico for serprog: SCK on pin 4, MOSI on pin 5, MISO on pin 6, CS on pin 7, GND on pin 38 and 3V3 on pin 36](/img/libreboot/serprog-pins.webp)
 
-<b>
-- 1 CS
-- 2 MISO
-- <s>3 WP (this is NOT going to be used)</s>
-- 4 GND
-- 5 MOSI
-- 6 CLK (this is actually SCK on your Raspberry Pico)
-- <s>7 HOLD (this is NOT going to be used)</s>
-- 8 VCC - 3V3 (this is actually 3V3 on your Raspberry Pico)
-</b>
+## How do you wire the X230, T420, T430, T440p and T480s?
 
+Wire the clip straight to the Pico following the table; nothing else is needed. The finished wiring looks like this:
 
-## PIN Map on Raspberry Pico
+![The Pico wired to the blue Pomona clip with six short jumper wires](/img/libreboot/connection.webp)
 
-The below diagram shows the corresponding pins on the Pico board where the Dupont cables should be connected
+## What do the T530 and W530 need?
 
-![Serprog Pins](/img/libreboot/serprog-pins.webp)
+The T530 and W530 have two flash chips on the same SPI bus. They share the data and clock lines, and each has its own chip select (CS) line deciding which one is listening. With the laptop unpowered, the CS line of the chip you are not flashing floats: nothing holds it high or low, so that chip can switch on at random and talk over the one you are reading. The symptoms are read and write errors and dumps that differ every time you read the chip, which shows up as a different `sha1sum` on each read.
 
+The fix is to hold the other chip's CS pin at 3.3 V, which keeps it switched off while you work on the first.
 
-## Models X230, T420, T430, T440p and T480s
+### What extra parts do you need?
 
-For these models, you can start wiring your Dupont cables directly from pin 1 of the BIOS chip ,  no extra tricks or workarounds are needed.
+- One more female-to-female jumper wire
+- A test hook clip ([example](https://www.ebay.com.au/itm/165822939855))
+- An AMS1117 3.3 V regulator module ([example](https://www.ebay.com.au/itm/134721404746))
+- A plug-in power adapter with selectable output voltage, set to 5 V ([example](https://www.amazon.com.au/dp/B0C16PS3D7))
 
-Once everything is connected properly, your setup should look like this:
+### How do you connect them?
 
-![Connection](/img/libreboot/connection.webp)
+1. Attach the extra jumper wire to the test hook.
+2. Hook it onto the CS pin (pin 1) of the chip you are not flashing.
+3. Connect the other end to the 3.3 V output of the AMS1117 module.
+4. Connect a GND pin on the Pico to GND on the AMS1117, so the two share a ground.
+5. Set the adapter to 5 V and plug it into the AMS1117's input. The AMS1117 is a regulator: it needs about 5 V in to produce a steady 3.3 V out.
+6. Clip the Pomona onto the chip you are flashing, wired to the Pico as above.
+7. Switch on the adapter. The AMS1117's red LED lights.
 
+The inactive chip is now held off, reads match each other, and you can go on to [flashing](/docs/libreboot/flashing-bios/).
 
-## Models T530 and W530
+<div className="photo-pair">
 
-These ThinkPad models can be a bit tricky when it comes to BIOS flashing. They require a few extra tools and a small workaround to make the process reliable.
+![The bench setup for the T530 and W530: the Pico wired to the Pomona clip, plus an AMS1117 3.3V regulator board powered from a 5V adapter, with a red test hook on its output lead](/img/libreboot/floating-setup.webp)
 
-Both the T530 and W530 have two SOIC-8 flash chips connected to the same SPI bus. They share the data lines (MISO, MOSI, CLK), but each chip has its own Chip Select (CS#) line, which controls which chip is active at any time.
+![The same setup on a ThinkPad motherboard: the Pomona clip on the chip being flashed and the red test hook holding the other chip's CS# pin at 3.3V](/img/libreboot/floating-clip.webp)
 
-### The Problem
-
-When the Southbridge (the part of the motherboard that controls I/O) isn't powered, the CS# line of the inactive chip is left floating, meaning it's not pulled high or low, so it can randomly activate. This can lead to:
-
-- Flash read/write errors
-- Both chips responding at the same time
-- Inconsistent BIOS dumps
-
-You’ll notice this if you use a Pomona clip and read the BIOS multiple times: running something like sha1sum on the dumps will give different results each time.
-
-This happens because there are no pull-up resistors on the CS# lines by default. So when the Southbridge is off, the chip you don’t want can still partly interfere with the bus.
-
-### The Solution
-
-To stop the unused chip from interfering, you need to force its CS# pin HIGH (3.3V) so it stays inactive. This makes sure only the chip you want to access is talking on the SPI bus.
-
-### Requirements
-
-Here’s a list of the extra tools required:
-
-- Dupont cable (female-to-female)
-- Test Hook Clip Grabber ([link](https://www.ebay.com.au/itm/165822939855))
-- AMS1117-3.3V Power Supply Module ([link](https://www.ebay.com.au/itm/134721404746?var=434225565399))
-- Universal Adapter with Selectable Output Voltage ([link](https://www.amazon.com.au/GTGUGR-Adjustable-Surveillance-Equipment-Selectable/dp/B0C16PS3D7?crid=27ZZJQOOLYUTJ&dib=eyJ2IjoiMSJ9.l0E7BXv_93x-WhbFrictbFdSMDqTN4lKQlGUgRFl9P7JJ2CjJQn9qU9JDHnROEhdfnq2qYRV_wrET0AOHCBsaU7XdfhhVO2MkUJwNQom_vq5JkyySx_JFrZ8i2Q21_UL_EWp97pTSMbZ4amTQENm1rl0CIiQIxjlYktza7lF-gDH9j1uAxiVlC50vv5w6na8Mig1BZMnIRWPi9PHqnBSbUDjSvja4sd_pYxlN39HA_FNoddFhNvbGHRQCXhpRDmaOWMQNDHZk9omJxiRM_zRDWx_h15KAmfdQizpI810Z8U.mK8NA7joAGhXFlsBW9DYx_0nLgNeyvZXgN0gfO8Dq-g&dib_tag=se&keywords=GTGUGR+2m+Universal+Adapter+Power+Supply+30W+AU+2A%2C100-240V+to+3V%2C4.5V%2C5V%2C6V%2C7.5V%2C9V%2C12V&qid=1743991916&sprefix=gtgugr+2m+universal+adapter+power+supply+30w+au+2a+100-240v+to+3v+4.5v+5v+6v+7.5v+9v+12v%2Caps%2C369&sr=8-1))
-
-### Connection Steps
-
-Here’s how to connect everything:
-
-- Connect the dupont cable to the test hook clip.
-- Use the hook clip to grab the CS# pin of the flash chip that’s not being used (the one you’re not flashing).
-- Connect the other end of the dupont cable to the VCC (3.3V output) on the AMS1117 power module.
-- Connect GND from your Raspberry Pi Pico to the GND of the AMS1117.
-- Set the Universal Adapter to 5V output and plug it into the AMS1117 module. The reason for this is that the AMS1117 is a voltage regulator. It needs a higher input of 5V to convert it into the lower 3.3V output that your circuit requires.
-- Clip the Pomona to the chip you want to flash and connect it to your flasher (e.g., Raspberry Pi Pico).
-- Power on the Universal Adapter. You should see a red LED light up on the AMS1117 module.
-- Power on the AMS1117 module. You should see a red LED light up on the module.
-
-Now the inactive chip is fully disabled, and you’re ready to flash the BIOS reliably.
-
-### Setup Photos
-
-Here’s what the setup looks like:
-
-import Grid from '@mui/material/Grid';
-
-<Grid container spacing={2}>
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/floating-setup.webp" alt="Connection Setup" className="mdx-grid-image" />
-  </Grid>
-  
-  <Grid item xs={12} sm={6} md={6} className="mdx-grid-item-center">
-    <img src="/img/libreboot/floating-clip.webp" alt="Connection Clip" className="mdx-grid-image" />
-  </Grid>
-</Grid>
-
-## Conclusion
-
-Now you're ready to clip onto the chip and start flashing the BIOS ,  with stable and consistent reads and writes!
+</div>

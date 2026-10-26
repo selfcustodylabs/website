@@ -4,53 +4,44 @@ title: "How Bitcoin Transaction Signing Works"
 description: "How Bitcoin transaction signing works: what signing means, online vs offline signing flows, and single-sig versus multisig signing."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "signing"]
 tags: ["bitcoin", "transactions", "signing"]
+date: "2025-05-01"
 ---
-# Signing Transactions
 
-Before a Bitcoin transaction can be broadcast to the network, it must first be signed using a private key. This signature acts as proof that you control the coins you’re trying to spend.
+# Signing transactions
 
-## What Is Signing?
+Signing a bitcoin transaction means using the private key for each input to produce a digital signature, which proves to every node that the holder of that key authorised this exact spend; change anything in the transaction and the signature no longer matches. Signing can happen on the same online device that builds the transaction, or on an offline device that receives the unsigned transaction as a PSBT file or QR code, which keeps the private key away from the internet entirely.
 
-Think of signing as placing a digital signature on your transaction. It tells the Bitcoin network, “Yes, I’m authorized to move these funds.” To do this, you need your **private key**, a secret piece of data that should never be shared. If anyone else gets access to your private key, they can steal your Bitcoin.
+## What does a signature prove?
 
-## Online vs. Offline Signing
+A signature shows that whoever made it holds the private key matching the input's public key, without revealing the key. Anyone can check it; nobody without the key can produce it. That is the whole of bitcoin's permission system: no account, password or identity, only a valid signature. Anyone who gets the private key can therefore sign, and spend.
 
-In **online signing**, the wallet that builds and signs the transaction is connected to the internet. This method is convenient and fast but carries more risk, if your device is compromised, your private key could be exposed.
+## What is the difference between online and offline signing?
 
-**Offline signing**, often referred to as air-gapped signing, offers stronger security. The transaction is first built on a watch-only wallet connected to the internet (which has no access to your private keys). It’s then transferred to a completely offline device for signing. This air-gapped computer holds your private key and never touches the internet, making it highly resistant to remote attacks. Once the transaction is signed, it’s transferred back online to be broadcast.
+| | Online signing | Offline signing |
+|---|---|---|
+| Where the key is | On the internet-connected device that builds the transaction | On a separate device that never connects |
+| How the transaction moves | It does not; build and sign happen in one place | As a PSBT, by USB, QR code or SD card |
+| Risk | Malware on the device can reach the key | Malware on the online device cannot reach the key |
+| Suits | Small spending wallets | Savings, cold storage, multisig |
 
-This approach is popular in cold storage and high-security setups.
+In offline signing, a watch-only wallet on the online computer (which has no private keys) builds the transaction, the offline device signs it, and the signed transaction comes back for broadcast. A hardware wallet connected by USB is in between: the transaction travels over the cable, but the key never leaves the device.
 
-## Single-Sig vs. Multisig Signing
+## How does multisig signing differ?
 
-With **single-signature** (single-sig) wallets, only one private key is required to sign a transaction. This setup is common for personal use and simpler wallets.
+A single-signature wallet needs one signature per input. A multisig wallet needs several: in a 2-of-3 wallet, two of the three keys must sign before the transaction is valid. Multisig is common in business wallets, collaborative custody and personal setups for larger amounts, and it relies on PSBTs to carry the transaction from one signer to the next.
 
-In contrast, **multi-signature** (multisig) wallets require multiple keys to sign. For example, a “2-of-3” configuration means two out of three keys must sign the transaction before it’s valid. This method is often used in business wallets, collaborative custody, or more secure personal setups.
+## What is a PSBT?
 
-Multisig is frequently combined with **PSBTs** and air-gapped workflows for added flexibility and safety.
+A **PSBT** (partially signed bitcoin transaction, defined in BIP174) is a standard file format for a transaction that is not yet fully signed, along with the information each signer needs to check and sign it. It lets a transaction be built on one device and signed on others, one signature at a time, until it is complete. PSBTs are what make air-gapped signing and multisig work across devices from different makers.
 
-## What Is PSBT? (Partially Signed Bitcoin Transaction)
-
-A Partially Signed Bitcoin Transaction (PSBT) is a special file format designed to safely move transactions between devices that sign in stages.
-
-It’s particularly useful when:
-
-- You want to build a transaction on an online device.
-- Then sign it gradually using one or more offline devices.
-- Each signer adds their signature until the transaction is complete.
-
-PSBTs are a key tool for multisig arrangements and air-gapped environments, where no single device handles every step of the process.
-
-## Air-Gapped Signing Workflow (Example)
-
-Here’s how a typical air-gapped signing setup works:
+## What does air-gapped signing look like?
 
 1. Build the transaction on an online, watch-only wallet.
-2. Export it as a PSBT file.
-3. Transfer the file to an offline (air-gapped) computer using USB, QR code, or SD card.
-4. Sign the transaction with the private key on the offline device.
-5. Move the signed transaction back to the online device.
-6. Broadcast it to the Bitcoin network.
+2. Export it as a PSBT.
+3. Carry it to the offline device by QR code or SD card (or USB, with care).
+4. Check and sign it on the offline device.
+5. Carry the signed transaction back to the online device.
+6. Broadcast it.
 
 <div class="doc-diagram">
 
@@ -58,15 +49,4 @@ Here’s how a typical air-gapped signing setup works:
 
 </div>
 
-This layered approach keeps your private key isolated from internet exposure while allowing secure transaction signing.
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Broadcasting Transactions", href: "/docs/learn/transactions/broadcast/", tag: "Next" },
-    { title: "Creating Transactions", href: "/docs/learn/transactions/create/", tag: "Learn" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Air-Gapped Computers", href: "/docs/learn/wallets/air-gapped-wallets/", tag: "Advanced" },
-  ]}
-/>
+The private key stays on the offline device throughout.

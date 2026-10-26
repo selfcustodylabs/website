@@ -5,157 +5,122 @@ description: "Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow
 keywords: ["bitcoin", "multisig", "sparrow wallet", "2-of-3", "setup", "tutorial"]
 tags: ["multisig", "sparrow", "security", "bitcoin", "tutorial"]
 slug: /learn/wallets/multisig/sparrow-setup
+date: "2026-01-13"
 ---
 
-# Creating Your Multisig in Sparrow Wallet
+# Creating your multisig in Sparrow Wallet
 
-Sparrow Wallet is the best free option for managing multisig wallets. This guide walks through creating a **2-of-3 multisig** step by step.
+A 2-of-3 multisig is created in Sparrow by making a new wallet with the Multi Signature policy, adding each of the three hardware wallets as a keystore, saving it, registering the wallet on each device, checking that every device shows the same first receive address, and backing up the wallet descriptor. Sparrow is free, works with every major hardware wallet over USB, QR codes or microSD, and holds no private keys: it coordinates, and the devices sign.
 
-## Prerequisites
+Before starting, you need [Sparrow](https://sparrowwallet.com/download/) installed (with its download signature checked), three hardware wallets [set up with their own seeds](/docs/learn/wallets/multisig/hardware-setup/) and the master fingerprint of each recorded, and ideally your own [Bitcoin node](/docs/bitcoin-node/).
 
-Before starting:
-- [ ] [Sparrow Wallet](https://sparrowwallet.com/download/) installed
-- [ ] 3 hardware wallets set up with unique seeds ([Hardware Setup](/docs/learn/wallets/multisig/hardware-setup))
-- [ ] Master fingerprint recorded for each device
-- [ ] Ideally: Your own [Bitcoin node](/docs/bitcoin-node) running
+## Step 1: Connect Sparrow to a server
 
-## Step 1: Connect Sparrow to a Server
-
-For maximum privacy, connect Sparrow to your own Bitcoin node. If you don't have one yet, you can use a public server to start (but plan to run your own for privacy).
+Step 1 decides who Sparrow asks about your wallet's addresses. Your own node keeps that private; a public server works for a first test, but it sees your addresses, so plan to move to your own.
 
 1. Open Sparrow Wallet
 2. Go to `File` → `Preferences` → `Server`
 3. Choose your connection type:
-   - **Bitcoin Core**: if running your own node
-   - **Private Electrum**: your own Electrum server
-   - **Public Server**: acceptable for testing (less private)
+   - Bitcoin Core, if you run your own node
+   - Private Electrum, for your own Electrum server
+   - Public Server, acceptable for testing but less private
 4. Click `Test Connection` then `Close`
 
-## Step 2: Create New Multisig Wallet
+## Step 2: Create a new wallet
+
+Step 2 creates the empty wallet.
 
 1. Go to `File` → `New Wallet`
-2. Enter a name (e.g., "My Multisig Vault")
+2. Enter a name, for example "Vault"
 3. Click `Create Wallet`
 
 You'll see the **Settings** screen with configuration options.
 
-## Step 3: Configure Multisig Settings
+## Step 3: Set the multisig policy
 
-### Policy Type
-1. Change `Policy Type` from "Single Signature" to **"Multi Signature"**
+Step 3 makes the wallet a 2-of-3 multisig:
 
-### Signature Settings
-2. Set the signature requirement:
-   - **M (Cosigners required):** 2
-   - **N (Total cosigners):** 3
-
-This creates a **2-of-3 multisig**.
-
-### Script Type
-3. Leave as **Native Segwit (P2WSH)**: most efficient and recommended
+1. Change `Policy Type` from Single Signature to Multi Signature.
+2. Set the cosigners required (M) to 2 and the total cosigners (N) to 3.
+3. Leave the script type as Native Segwit (P2WSH), the most efficient and the usual choice.
 
 Your settings should show: `2 of 3 Multi Signature (Sorted Multi, Native Segwit)`
 
-## Step 4: Add Keystore 1 (First Hardware Wallet)
+## Step 4: Add the first hardware wallet
 
-Below the settings, you'll see tabs for `Keystore 1`, `Keystore 2`, and `Keystore 3`.
+Step 4 adds keystore 1. Below the settings are tabs for `Keystore 1`, `Keystore 2` and `Keystore 3`.
 
-### For USB-Connected Devices (Trezor, Ledger, BitBox)
+### USB devices (Trezor, BitBox02)
 
 1. Click on `Keystore 1` tab
-2. Click **"Connected Hardware Wallet"**
+2. Click `Connected Hardware Wallet`
 3. Connect your first hardware wallet via USB
-4. Click **"Scan..."** in the dialog
-5. Your device should appear. Click on it
+4. Click `Scan...` in the dialog
+5. Click your device when it appears
 6. Unlock the device with your PIN
-7. Click **"Import Keystore"**
+7. Click `Import Keystore`
 
-The keystore details will populate:
-- **Label:** (Rename to identify this device, e.g., "Trezor - Home")
-- **Master fingerprint:** Should match what you recorded
-- **Derivation:** `m/48'/0'/0'/2'` (standard for multisig)
-- **xpub:** Extended public key
+Sparrow fills in the keystore: rename its label to identify the device (for example "Trezor, key 1"), and check that the master fingerprint matches your record. The derivation path is `m/48'/0'/0'/2'`, the usual one for each key of a native segwit multisig, and the xpub is the device's extended public key for it.
 
-### For Air-Gapped Devices (Jade, Keystone, Coldcard)
+### Air-gapped devices (Jade, Keystone, SeedSigner, Coldcard)
 
-1. Click on `Keystore 1` tab
-2. Click **"Airgapped Hardware Wallet"**
-3. Select your device type (e.g., "Coldcard Multisig")
-4. Choose import method:
-   - **Import File:** Insert MicroSD with exported JSON
-   - **Scan QR:** Use camera to scan device's QR code
-5. Select the file or complete the scan
-6. The keystore details will populate
+1. Click the `Keystore 1` tab
+2. Click `Airgapped Hardware Wallet`
+3. Select your device type
+4. Import the key from the device's microSD export file, or scan the QR code it displays
+5. Rename the label to identify the device, and check the fingerprint
 
-**Rename the label** to identify which device (e.g., "Coldcard - Key #1")
+## Step 5: Add the second hardware wallet
 
-## Step 5: Add Keystore 2
+Step 5 repeats step 4 on the `Keystore 2` tab with the second device, by USB or air-gapped as it requires. Label it (for example "Keystone, key 2") and check its fingerprint against your record.
 
-1. Click the `Keystore 2` tab
-2. Repeat the process for your second hardware wallet
-3. Use the appropriate method (USB or air-gapped)
-4. Label appropriately (e.g., "Keystone - Key #2")
-5. **Verify the fingerprint matches your records**
+## Step 6: Add the third hardware wallet
 
-## Step 6: Add Keystore 3
+Step 6 does the same on the `Keystore 3` tab with the third device. Label it (for example "BitBox02, key 3") and check its fingerprint.
 
-1. Click the `Keystore 3` tab
-2. Repeat the process for your third hardware wallet
-3. Label appropriately (e.g., "BitBox02 - Key #3")
-4. **Verify the fingerprint matches your records**
+## Step 7: Apply and save
 
-## Step 7: Apply and Save
+Step 7 creates the wallet. Check that the three keystores have different fingerprints and clear labels, click `Apply`, set a password for the wallet file when asked (optional, but recommended), and save.
 
-1. Review all three keystores:
-   - Each should have a unique fingerprint
-   - Labels should clearly identify each device
-2. Click **"Apply"**
-3. You'll be asked to set a password (optional but recommended)
-4. Click **"Save"**
+## Step 8: Register the multisig on each hardware wallet
 
-Your wallet is now created!
+Step 8 tells each device which wallet it belongs to. A device that knows the other keys and the 2-of-3 rule can check receive and change addresses itself; one that does not would have to trust the computer.
 
-## Step 8: Register Multisig on Hardware Wallets
-
-**Critical step!** Your hardware wallets need to know about the multisig to verify addresses.
-
-### Coldcard Registration
+### Coldcard
 
 1. In Sparrow, go to `Settings` tab
 2. Click `Export...` at the bottom
-3. Select **"Coldcard Multisig"** and save to MicroSD
+3. Select Coldcard Multisig and save it to a microSD card
 4. Insert MicroSD into Coldcard
-5. On Coldcard: `Settings` → `Multisig Wallets` → `Import from SD`
+5. On the Coldcard: `Settings`, `Multisig Wallets`, `Import from SD`
 6. Review and confirm the wallet details
 7. Coldcard will now verify multisig addresses
 
-### Keystone Registration
+### Keystone
 
 1. In Sparrow, click `Export...`
-2. Select **"Keystone Multisig"** and choose "Show QR"
-3. On Keystone: `Menu` → `Multisig Wallet` → `Import Multisig`
+2. Select Keystone Multisig and choose Show QR
+3. On the Keystone, open the multisig wallet menu and choose to import a multisig wallet
 4. Scan the QR code displayed by Sparrow
 5. Confirm the wallet details
 
-### Trezor / Ledger / BitBox
+### Trezor, BitBox02 and Jade over USB
 
-These devices register automatically when you verify an address:
+These devices receive the multisig details from Sparrow when you display an address over USB, and show them for you to confirm:
 1. Go to `Receive` tab in Sparrow
 2. Click `Display Address` on the hardware wallet
 3. The device will show the multisig configuration for confirmation
 4. Verify and confirm
 
-## Step 9: Verify Your First Address
+## Step 9: Check the first address on every device
 
-**Never deposit to an address without verifying it!**
+Step 9 proves Sparrow and all three devices agree on the wallet before any money goes in.
 
-1. Go to the `Receive` tab
-2. You'll see your first multisig receive address
-3. Click **"Display Address"** for each hardware wallet
-4. Each device should display the **exact same address**
-5. Confirm on each device
+1. Go to the `Receive` tab, which shows the first multisig receive address
+2. Click `Display Address` for each hardware wallet in turn
+3. Check that every device shows exactly the same address, and confirm on each
 
-If addresses don't match on all devices, **STOP**: something is wrong.
+If any device shows a different address, stop: something is wrong, and nothing should be deposited until you find it.
 
 <div class="doc-diagram">
 
@@ -163,72 +128,65 @@ If addresses don't match on all devices, **STOP**: something is wrong.
 
 </div>
 
-## Step 10: Backup Your Wallet Descriptor
+## Step 10: Back up the wallet descriptor
 
-**Essential!** Without this, you cannot recreate your multisig even with all seeds.
+Step 10 saves the one thing, besides the seeds, that recovery needs. Without the wallet descriptor you cannot rebuild the multisig from two of its three seed phrases, because the third key's xpub is recorded only there.
 
 ### Export as PDF
 1. Go to `Settings` tab
 2. Click the QR code icon (top right of settings)
-3. Click **"Save PDF..."**
+3. Click `Save PDF...`
 4. Save and print this document
 5. Store copies with each seed phrase backup
 
 ### Export as File
 1. Click `Export...` at bottom of Settings
-2. Select **"Sparrow"** to export wallet file
+2. Select Sparrow to export the wallet file
 3. Save the `.json` file to multiple locations
 
-The PDF contains:
-- QR code of your wallet descriptor
-- All three xpubs with fingerprints
-- Derivation paths
-- Script type
+The PDF contains the descriptor as a QR code, all three xpubs with their fingerprints, the derivation paths and the script type. Store a copy with each seed backup.
 
-**Store this with your seed backups.** You'll need it for recovery.
+## How do you receive and send from the multisig?
 
-## Making Your First Transaction
-
-### Receiving Bitcoin
+### Receiving
 
 1. Go to `Receive` tab
 2. Click `Get Next Address` for a new address
-3. **Verify on at least 2 hardware wallets**
+3. Check it on at least two of the hardware wallets
 4. Send a small test amount first
 5. Wait for confirmation
 
-### Sending Bitcoin
+### Sending
 
 1. Go to `Send` tab
 2. Enter recipient address
 3. Enter amount
 4. Set fee (check [mempool.space](https://mempool.space) for current rates)
-5. Click **"Create Transaction"**
-6. Click **"Finalize Transaction for Signing"**
+5. Click `Create Transaction`
+6. Click `Finalize Transaction for Signing`
 
-### Signing the Transaction
+### Signing
 
-You need **2 of 3** signatures. Here's the process:
+The transaction needs two of the three signatures.
 
-**With USB devices:**
+With USB devices:
 1. Connect first hardware wallet
-2. Click **"Sign"**
+2. Click `Sign`
 3. Verify transaction details on device
 4. Confirm on device
 5. Disconnect, connect second device
-6. Click **"Sign"** again
+6. Click `Sign` again
 7. Verify and confirm on second device
 
-**With air-gapped devices:**
-1. Click **"Save PSBT"** to MicroSD (or show QR)
+With air-gapped devices:
+
+1. Click `Save PSBT` to a microSD card, or show it as a QR code
 2. Load PSBT on first device and sign
 3. Export signed PSBT back to computer
 4. Load into Sparrow
 5. Repeat with second device
 
-**Broadcast:**
-1. After 2 signatures, click **"Broadcast Transaction"**
-2. Your transaction is sent to the network
+When it has two signatures, click `Broadcast Transaction`.
 
 <div class="doc-diagram">
 
@@ -236,62 +194,18 @@ You need **2 of 3** signatures. Here's the process:
 
 </div>
 
-## Important Tips
+## What habits keep it safe?
 
-### Address Verification
+- Check addresses on the devices before the first deposit, after software updates, and from time to time afterwards.
+- Before depositing a large amount, send a small test amount in, then send it back out, which proves the wallet can spend.
+- Keep Sparrow updated, checking each download's signature.
 
-**Always verify on devices before depositing significant amounts:**
-- First deposit to a new wallet
-- After software updates
-- Periodically for ongoing deposits
+## What if something does not work?
 
-### Test Transaction First
+| Problem | What to check |
+|---|---|
+| The device is not detected | Try another USB cable and port, and make sure the device is unlocked |
+| The addresses do not match | That you imported the right xpubs, that the derivation paths are `m/48'/0'/0'/2'`, and that every device is registered with the same multisig; re-export and re-import the wallet to the devices if needed |
+| The transaction will not sign | That the PSBT belongs to this wallet, that the device has the multisig registered, and that it holds one of this wallet's keys |
 
-Before depositing large amounts:
-1. Send a small test amount (e.g., $10)
-2. Verify it appears in your wallet
-3. Send it back out (proves you can spend)
-4. Now you know everything works
-
-### Keep Sparrow Updated
-
-Sparrow receives security updates:
-1. Check for updates regularly
-2. Verify download signatures
-3. Update promptly for security fixes
-
-## Troubleshooting
-
-### Device Not Detected
-
-- Check USB cable (try a different one)
-- Try a different USB port
-- Ensure device is unlocked
-- Check that Bitcoin app is open (Ledger)
-
-### Addresses Don't Match
-
-- Verify you imported the correct xpubs
-- Check derivation paths match (should be `m/48'/0'/0'/2'`)
-- Ensure all devices are registered with the same multisig
-- Try re-exporting and re-importing the wallet to devices
-
-### Transaction Won't Sign
-
-- Ensure PSBT is for the correct wallet
-- Verify device has the multisig registered
-- Check that you're signing with a key from this multisig
-
-## Summary
-
-You now have a working 2-of-3 multisig wallet:
-
-1. ✅ Three hardware wallets initialized
-2. ✅ Multisig created in Sparrow
-3. ✅ All devices registered with the multisig
-4. ✅ Addresses verified on multiple devices
-5. ✅ Wallet descriptor backed up
-
-**Next step:** Ensure your backups are properly secured.
-
-→ Continue to [Backup & Recovery](/docs/learn/wallets/multisig/backup-recovery)
+The next guide, [backup and recovery](/docs/learn/wallets/multisig/backup-recovery/), covers storing the backups and rehearsing a recovery.

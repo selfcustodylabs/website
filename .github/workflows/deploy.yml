@@ -1,21 +1,22 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches:
       - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  # "Run workflow" on the Actions tab: redeploys main without a new commit, for
+  # example right after the Cloudflare token and account ID are added.
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      # All three actions below are pinned to versions whose own runtime is
+      # All actions below are pinned to versions whose own runtime is
       # node24. The v4 line targeted node20, which GitHub deprecated and was
       # force-running on node24 anyway, with a warning on every deploy.
       # fetch-depth: 0 is load-bearing twice over: showLastUpdateTime reads git
@@ -37,8 +38,17 @@ jobs:
         # a deploy could resolve different versions than a local build. npm ci
         # installs strictly from package-lock.json and fails if the two drift.
         run: npm ci
+      # The rules in CLAUDE.md that a build alone does not enforce: frontmatter
+      # limits, no em dashes, OG card parity, no hydration-breaking <p> wrappers.
+      - name: Check content
+        run: npm run lint && npm run check
       - name: Build website
         run: npm run build
+      # Title, description, canonical, robots and JSON-LD of every page, plus the
+      # sitemap URL set, against the committed baseline. An intended change is
+      # accepted with `npm run seo:accept` and committed with the change itself.
+      - name: Check SEO snapshot
+        run: npm run seo:check
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
@@ -57,6 +67,24 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
 
+      # Cloudflare Pages is the primary host once DNS points there. The build
+      # already contains _redirects (real 301s) and _headers (CSP, HSTS,
+      # caching), both written by plugins/cloudflare. GitHub Pages above keeps
+      # deploying the same build as the rollback target until the rollback
+      # window closes; see "Deploy & hosting boundaries" in CLAUDE.md.
+      #
+      # Gated on the CLOUDFLARE_ACCOUNT_ID repository *variable* (not a secret:
+      # an account ID grants nothing), so the step is skipped until the move is
+      # set up. The API token is a secret handed to this step only; putting it
+      # in job-level env would expose it to every npm install script above.
+      - name: Deploy to Cloudflare Pages
+        if: ${{ vars.CLOUDFLARE_ACCOUNT_ID != '' }}
+        uses: cloudflare/wrangler-action@v4.1.3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy build --project-name=selfcustodylabs --branch=main
+
       # Bing's index is the retrieval layer for ChatGPT search and Copilot, so a
       # page it has not crawled cannot be cited by either. IndexNow shortens that
       # from weeks to about a day. Only changed docs are submitted; resubmitting
@@ -65,6 +93,8 @@ jobs:
       # Runs after the deploy so the URLs are live when Bing comes to fetch them,
       # and never fails the job: the pages are already published either way.
       - name: Ping IndexNow with changed docs
+        # A manual run redeploys what is already live and indexed.
+        if: ${{ github.event_name == 'push' }}
         continue-on-error: true
         env:
           # Public by design: IndexNow verifies ownership by fetching this key
@@ -75,9 +105,9 @@ jobs:
             echo "no previous commit to diff against, skipping"
             exit 0
           fi
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- docs/)
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- docs/ notes/)
           if [ -z "$CHANGED" ]; then
-            echo "no doc changes in this push, skipping"
+            echo "no doc or note changes in this push, skipping"
             exit 0
           fi
           echo "$CHANGED" | xargs node scripts/indexnow-submit.mjs

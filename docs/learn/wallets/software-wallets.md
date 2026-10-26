@@ -4,23 +4,16 @@ title: "Software Wallets Explained"
 description: "Understand software wallets for Bitcoin: what they are, when to use them, recommended options, and security best practices."
 keywords: ["bitcoin", "self custody", "security", "privacy", "software wallet", "hot wallet", "mobile wallet", "desktop wallet"]
 tags: ["bitcoin", "software", "wallet", "hot wallet"]
+date: "2025-12-29"
 ---
 
-# Software Wallets
+# Software wallets
 
-Remember the first time you downloaded a banking app on your phone? A software wallet feels similar, except there's no bank on the other end. It's just you, your device, and the Bitcoin network.
+A software wallet is an app on your phone or computer that creates your bitcoin keys, stores them on that device and signs transactions with them. It is free and convenient, which makes it the right tool for learning and for spending money, but the keys sit on an internet-connected device that also runs a browser, email and other apps, so malware or a fake app can reach them. Keep in a software wallet only what you would carry as cash, about $100 to $1,000, and move savings to a [hardware wallet](/docs/learn/wallets/hardware-wallets/).
 
-A software wallet is an app on your phone or computer that lets you hold and use Bitcoin. It creates and stores your private keys on the same device where the app runs. For most people, this is their first real taste of financial sovereignty, the moment you realize you're holding actual Bitcoin that no company or government controls.
+## How does a software wallet work?
 
-That said, software wallets come with an important trade-off. They're incredibly convenient, but because they live on devices connected to the internet, they're also more vulnerable than dedicated hardware solutions. Think of it this way: a software wallet is your Bitcoin checking account, not your savings vault.
-
-Let's understand how they work, when to use them, and how to use them safely.
-
-## How Software Wallets Work
-
-The mechanics are straightforward, even if the implications are profound. When you install a software wallet, you're essentially creating a tiny, personal bank inside your phone or computer, one that only you control.
-
-Here's what happens behind the scenes: the app generates a seed phrase (those 12 or 24 words you'll need to protect carefully), derives your private keys from that seed, and stores everything on your device. When you want to send Bitcoin, the wallet uses those keys to sign the transaction, proving to the network that you're the rightful owner.
+The app generates a seed phrase (the 12 or 24 words you back up), derives your private keys from it and stores them on the device. To send bitcoin, it signs the transaction with those keys and broadcasts it. Because the keys live on a connected device, software wallets are also called hot wallets.
 
 <div class="doc-diagram">
 
@@ -28,184 +21,101 @@ Here's what happens behind the scenes: the app generates a seed phrase (those 12
 
 </div>
 
-The key difference from hardware wallets: **your private keys exist on an internet-connected device**, which is why software wallets are also called "hot wallets."
-
-## When to Use a Software Wallet
-
-Software wallets shine in situations where convenience matters more than Fort Knox-level security. If you're just starting your Bitcoin journey, there's no better way to learn. You'll make small mistakes (sending to wrong addresses, fumbling with fees), and it's far better to learn these lessons with $50 than with your life savings.
+## When is a software wallet the right choice?
 
 <div class="fixed-width-table">
 
-| Use Case | Why Software Wallet Works |
+| Use | Why a software wallet suits it |
 |----------|---------------------------|
-| **Learning Bitcoin** | Low barrier to entry, free to use |
-| **Small amounts** | Acceptable risk for pocket money |
-| **Daily spending** | Convenient for frequent transactions |
-| **Receiving payments** | Quick access to addresses |
-| **Lightning Network** | Many Lightning wallets are software-based |
+| Learning bitcoin | Free, and mistakes with $50 teach as much as mistakes with $50,000 |
+| Small amounts | An acceptable risk for pocket money |
+| Everyday spending | Quick to open and pay from |
+| Receiving payments | A new address is always to hand |
+| Lightning payments | Most self-custodial Lightning wallets are phone apps |
 
 </div>
 
-Here's a mental model that helps: think of a software wallet like **cash in your pocket**. You wouldn't walk around with $10,000 in your jeans, but having $100 for coffee and emergencies makes perfect sense. The same logic applies here.
+Treat it like the cash in your pocket: carrying $100 makes sense, carrying $10,000 does not.
 
-## Security Considerations
+## What are the risks?
 
-### The Uncomfortable Truth About Software Wallets
+A phone or computer runs dozens of apps, visits countless websites and opens files from anywhere, and each of those is a way in. The main threats are:
 
-Let's be honest about what you're dealing with. Your phone or computer is a busy place. It runs dozens of apps, connects to countless websites, and processes files from who-knows-where. Every one of those interactions is a potential doorway for someone who wants your Bitcoin.
+- Malware that logs keystrokes, records the screen, reads the wallet's storage, or swaps a bitcoin address you have copied for the attacker's.
+- Fake wallet apps with the right name and logo, which send the seed phrase to the attacker the moment it is created; the bitcoin vanishes weeks later, after the victim has deposited more.
+- Phishing sites and messages that ask you to "verify" or "restore" your seed phrase.
+- Theft of an unlocked phone.
+- Bugs in the wallet app or the operating system.
 
-This isn't meant to scare you; it's meant to help you make informed decisions. The threats are real but manageable:
-
-- **Malware** can log your keystrokes, hijack your clipboard, or record your screen
-- **Phishing** tricks you into downloading fake wallet apps or entering your seed on fraudulent websites
-- **Physical theft** means someone walks away with your unlocked phone
-- **Software bugs** in the wallet itself could expose your keys
-- **Operating system exploits** give attackers access at the deepest level
-
-### When Things Go Wrong
-
-Here's a scenario that plays out more often than anyone likes to admit: someone downloads what they think is a legitimate wallet app. They create a wallet, write down their seed, and deposit some Bitcoin. Weeks later, the Bitcoin vanishes.
-
-What happened? The app was a counterfeit. It looked perfect (same logo, same interface), but it was designed to steal. The moment that seed phrase was generated, it was also sent to the attacker.
-
-If malware gains access to your device, it can read your seed phrase from storage, intercept your PIN or password, replace destination addresses when you copy and paste, and even sign transactions without your knowledge.
-
-:::warning Rule of Thumb
-Never store more Bitcoin in a software wallet than you'd be willing to carry as cash in your pocket. For most people, that's somewhere between $100 and $1,000, not their retirement savings.
+:::warning Keep only spending money in a software wallet
+Never hold more in a software wallet than you would be willing to carry as cash. For most people that is between $100 and $1,000, not savings.
 :::
 
-## Recommended Software Wallets
+## Which software wallets do we recommend?
 
-Not all software wallets are created equal. Some prioritize simplicity, others focus on advanced features, and a few put privacy above everything else. After testing dozens of options, here are the ones worth your time.
-
-### Mobile Wallets
-
-For most beginners, a mobile wallet is the natural starting point. Your phone is always with you, and these apps make Bitcoin feel as natural as sending a text message.
+### Phone wallets
 
 <div class="fixed-width-table">
 
-| Wallet | Platform | Best For | Key Features |
+| Wallet | Platform | Suits | Notes |
 |--------|----------|----------|--------------|
-| **BlueWallet** | iOS, Android | Beginners | Simple, supports hardware wallets, Lightning |
-| **Nunchuk** | iOS, Android | Security-focused | Multisig support, hardware wallet integration |
-| **Green (Blockstream)** | iOS, Android | Privacy | Tor support, 2FA option, multisig |
-| **Phoenix** | iOS, Android | Lightning | Self-custodial Lightning, simple UX |
-| **Muun** | iOS, Android | Unified balance | Combines on-chain and Lightning |
+| BlueWallet | iOS, Android | Beginners | Simple; works with hardware wallets and watch-only wallets. Its hosted Lightning service closed in 2023 |
+| Nunchuk | iOS, Android | Security-minded users | Multisig, and hardware wallet support |
+| Blockstream app (formerly Green) | iOS, Android | Privacy | Tor support, optional two-factor multisig, Liquid |
+| Phoenix | iOS, Android | Lightning | Self-custodial Lightning with a simple interface; withdrawn from US app stores in May 2024 |
+| Muun | iOS, Android | One balance | Combines on-chain bitcoin and Lightning |
 
 </div>
 
-**My recommendation for mobile:** Start with BlueWallet if you're new: it strikes the perfect balance between simplicity and capability. Once you're comfortable and want more security features, Nunchuk is an excellent step up.
+For a first phone wallet, BlueWallet balances simplicity and capability; Nunchuk is the step up when you want multisig or hardware wallet support.
 
-### Desktop Wallets
-
-Desktop wallets typically offer more features and better visibility into what's happening with your Bitcoin. If you want to understand the technical details (like coin control, fee estimation, and transaction structure), a desktop wallet is invaluable.
+### Desktop wallets
 
 <div class="fixed-width-table">
 
-| Wallet | Platform | Best For | Key Features |
+| Wallet | Platform | Suits | Notes |
 |--------|----------|----------|--------------|
-| **Sparrow** | Win/Mac/Linux | Power users | Coin control, full node support, PSBT |
-| **Electrum** | Win/Mac/Linux | Technical users | Advanced features, long track record |
-| **Wasabi** | Win/Mac/Linux | Privacy | Built-in CoinJoin, Tor by default |
-| **Specter** | Win/Mac/Linux | Node operators | Designed for node integration |
+| [Sparrow](https://sparrowwallet.com/) | Windows, macOS, Linux | Everyone, beginners to experts | Coin control, connects to your own node, works with every major hardware wallet |
+| Electrum | Windows, macOS, Linux | Technical users | The longest track record of any desktop wallet |
+| Wasabi | Windows, macOS, Linux | Privacy | Built-in CoinJoin through independent coordinators, Tor by default |
 
 </div>
 
-**My recommendation for desktop:** Sparrow Wallet, hands down. It's what I use for teaching and what I recommend to everyone from curious beginners to experienced Bitcoiners. The interface reveals exactly what Bitcoin is doing under the hood, which makes it an incredible learning tool, and it scales beautifully as your needs grow.
+We recommend Sparrow. Its interface shows what each transaction actually does, which makes it a good teacher, and it grows with you to hardware wallets, your own node and multisig. For CoinJoin we recommend [JoinMarket with Jam](/docs/learn/privacy/coinjoin-tutorial/) rather than Wasabi; the [CoinJoin page](/docs/learn/privacy/coinjoin/) explains why.
 
-## Setting Up a Software Wallet
+## How do you set up a software wallet safely?
 
-Setting up a software wallet takes about ten minutes, but those ten minutes deserve your full attention. Find a quiet moment, put your phone on do-not-disturb, and follow these steps carefully.
+1. Download from the official source only: the app store listing published by the developer, or links on the developer's own website. Fake apps copy names and logos. If the developer publishes signatures or checksums for desktop downloads, check them.
+2. Create a new wallet and write the seed phrase on paper as it appears, in order. Never screenshot it, copy and paste it, or type it anywhere except the wallet itself.
+3. Store the paper away from the device, so one theft does not take both, and consider a [metal backup](/docs/learn/keys/random/#step-6-back-up-on-metal) for the long term.
+4. Set a PIN or password you use nowhere else.
+5. Send a small test amount in, then a little back out, before trusting the wallet with more.
 
-### The Setup Process
+## What habits keep a software wallet safe?
 
-**First, download from official sources only.** This is worth repeating: only download wallet apps from official app stores or the developer's website. Scammers create convincing fake apps with similar names and logos. When in doubt, navigate to the wallet's official website and use the links there. If the wallet provides checksums, verify them: it takes two minutes and could save you everything.
+- Keep the app and the operating system updated; old versions have known holes.
+- Use the simplest wallet that does what you need, since more features mean more code.
+- Turn on every protection the app offers: PIN, biometrics, two-factor where available.
+- Check the first and last several characters of every address before sending, because clipboard malware swaps addresses.
+- Never use a wallet on a rooted or jailbroken phone, and never enter the seed phrase on a computer except when restoring into that same wallet app.
 
-**Next, create your wallet.** Let the app generate a new seed phrase. The moment those words appear on your screen, write them down immediately: on paper, with a pen, in the exact order shown. Never screenshot your seed. Never copy and paste it. Never type it into anything except the wallet app itself. These words are the keys to your Bitcoin; treat them accordingly.
+## Should a software wallet use your own node?
 
-**Secure the backup properly.** Your seed phrase written on paper is vulnerable to fire, water, and curious eyes. Store it somewhere safe, and consider a [metal backup](/docs/learn/keys/random/#step-6-back-up-on-metal) for long-term durability. Whatever you do, keep the backup separate from your device. If someone steals your phone and your seed backup is in the same bag, you've lost everything.
-
-**Set a strong PIN or password.** Most wallets let you add an extra layer of protection. Use it. Don't reuse passwords from other services: if your email password leaks, you don't want it to also unlock your Bitcoin.
-
-**Finally, verify everything works.** Send a small test amount to your new wallet. Watch it arrive. Send a tiny bit back. This confirms your setup is correct before you trust it with anything meaningful.
-
-## Software Wallet Best Practices
-
-Once your wallet is running, these habits will keep you safe:
-
-**Keep the app updated.** Security vulnerabilities are discovered regularly, and updates patch them. An outdated wallet is a vulnerable wallet.
-
-**Simpler is safer.** Use the simplest wallet that meets your needs. More features mean more code, and more code means more potential bugs. You don't need advanced trading features for basic self-custody.
-
-**Enable all available security features.** PIN, biometrics, 2FA if the app offers it: turn it all on. These layers won't stop sophisticated attackers, but they'll stop opportunistic theft.
-
-**Run your own node when possible.** This sounds advanced, but it's increasingly accessible. When your wallet connects to someone else's server, they learn your addresses and balance. Connecting to your own node keeps that information private. (See our [Bitcoin Node Guide](/docs/bitcoin-node) when you're ready.)
-
-**Verify addresses before every transaction.** Clipboard malware can replace the address you copied with an attacker's address. Always double-check the first and last several characters before sending.
-
-And the things to avoid:
-
-**Never store large amounts in a software wallet.** That's what hardware wallets are for.
-
-**Never enter your seed phrase on a computer** unless you're recovering your wallet on that specific wallet app.
-
-**Never use wallets on rooted or jailbroken devices.** The security modifications that allow rooting also create vulnerabilities.
-
-**Never skip updates.** Old versions have known vulnerabilities that attackers actively exploit.
-
-## Connecting to Your Own Node
-
-Here's something most beginners don't realize: when you use a software wallet, it needs to talk to the Bitcoin network somehow. By default, most wallets connect to servers run by the wallet developer or random public nodes scattered around the internet.
-
-This works, but it comes at a cost. Every time your wallet checks your balance or broadcasts a transaction, the server on the other end learns something about you: your addresses, your transaction history, your balance, when you're online. You're trading privacy for convenience.
-
-The solution is running your own Bitcoin node and connecting your wallet to it. Then those queries stay between you and your own infrastructure. It's like the difference between asking a stranger to check your bank balance versus checking it yourself.
+By default most wallets ask servers run by the wallet's developer, or public servers, for your balance and history, and each query tells that server your addresses, balance and when you are online. Connecting the wallet to your own node keeps those queries on your own hardware.
 
 <div class="fixed-width-table">
 
-| Wallet | Node Connection |
+| Wallet | How it connects to your node |
 |--------|-----------------|
-| Sparrow | Built-in Electrum server support |
-| Electrum | Electrum server connection |
-| BlueWallet | Electrum server or Umbrel |
-| Green | Personal Electrum server |
+| Sparrow | Your own Electrum server, or Bitcoin Core directly |
+| Electrum | Your own Electrum server |
+| BlueWallet | Your own Electrum server |
+| Blockstream app | Your own Electrum server |
 
 </div>
 
-Don't worry if this sounds complicated right now. Running a node is a project for later, once you're comfortable with the basics. When you're ready, our [Bitcoin Node Guide](/docs/bitcoin-node) will walk you through it.
+Running a node is a project for later; the [node guide](/docs/bitcoin-node/) covers it.
 
-## When to Graduate to a Hardware Wallet
+## When should you move to a hardware wallet?
 
-A software wallet is a fantastic starting point, but at some point, you'll feel the pull toward something more secure. Here are the signs you're ready to upgrade:
-
-**Your Bitcoin holdings exceed a month's expenses.** When the amount at stake becomes meaningful, the inconvenience of a hardware wallet becomes worthwhile.
-
-**You're holding for the long term.** If you're not planning to spend this Bitcoin anytime soon, it deserves better protection than a software wallet provides.
-
-**You want peace of mind.** There's something deeply reassuring about knowing your keys are stored on a device that can't be hacked remotely. Once you experience that peace of mind, it's hard to go back.
-
-**You're ready for more responsibility.** Hardware wallets require more care: maintaining the device, protecting additional backups, following proper security procedures. If that sounds appealing rather than annoying, you're ready.
-
-A software wallet is a great learning tool and a perfectly reasonable choice for everyday spending money. But for significant savings (the Bitcoin you're holding for years or decades), a [hardware wallet](/docs/learn/wallets/hardware-wallets) is essential.
-
----
-
-## Key Takeaways
-
-Software wallets occupy an important place in your Bitcoin toolkit. They're your on-ramp to self-custody, your spending wallet, and your learning laboratory. Just remember their limitations:
-
-- They're **convenient but less secure** than hardware alternatives
-- Use them for **small amounts and daily spending**
-- Your keys exist on an **internet-connected device**: that's an inherent risk
-- **Never store more than you'd carry as cash** in your pocket
-- When your holdings grow, **graduate to hardware wallets** for long-term savings
-
----
-
-## Continue Learning
-
-→ **Next:** [Hardware Wallets](/docs/learn/wallets/hardware-wallets) (for serious savings)
-
-→ **Setup Guide:** [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet) (get started with hardware)
-
-→ **Privacy:** [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) (understand the risks)
+Move to a [hardware wallet](/docs/learn/wallets/hardware-wallets/) when the balance is more than you would carry as cash, roughly a month's expenses or over $1,000, or when you are holding for the long term rather than spending. A hardware wallet asks a little more care (a device to look after, a backup to protect), and in return no malware on your phone or computer can reach the keys. Keep the software wallet as the spending wallet alongside it.

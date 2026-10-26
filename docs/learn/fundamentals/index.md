@@ -5,206 +5,129 @@ description: "New to Bitcoin self-custody? Start here. Learn what self-custody m
 keywords: ["bitcoin self custody", "getting started", "beginner bitcoin", "start here", "bitcoin basics"]
 tags: ["getting started", "beginner", "self custody"]
 slug: /learn/fundamentals
+sidebar_position: 1
+date: "2026-01-15"
 ---
 
-<SectionBadge section="fundamentals" />
+# Start here: Bitcoin self-custody
 
-# Start Here: Your Bitcoin Self-Custody Journey
+Self-custody means holding the private keys to your own bitcoin, so that no exchange, bank or company can freeze it, lose it or spend it. This site shows how to do that safely: understanding what you are protecting against, making a seed phrase, setting up a hardware wallet, testing the backup, and then adding a passphrase, multisig or your own node when the amount justifies it. If your bitcoin is on an exchange today, the [hardware wallet setup guide](/docs/wallet-setup/hardware-wallet/) is the step that matters most; if you are new to bitcoin, read the pages below in order.
 
-:::tip Welcome
-You're about to learn how to truly own your Bitcoin. Not a balance on someone else's computer, actual, sovereign ownership that no one can take from you.
+## What is self-custody?
 
-This is both powerful and serious. Take your time.
-:::
+Self-custody is holding bitcoin by controlling its private keys yourself, instead of holding a claim on bitcoin that an exchange keeps for you. An exchange balance is the company's promise to pay you bitcoin when you ask. On the blockchain, the bitcoin belongs to whoever controls the keys, and on an exchange that is the exchange.
 
-## What is Self-Custody?
+| | Exchange account | Self-custody |
+|---|---|---|
+| Who holds the keys | The exchange | You |
+| Can the funds be frozen? | Yes, by the company or by a court order served on it | No |
+| Withdrawing or sending | Needs the company's approval | Needs nobody's approval |
+| If the company fails or is hacked | You become one of its creditors | Your bitcoin is unaffected |
+| If you lose your password or backup | Support can reset the password | The bitcoin is gone |
 
-When you buy Bitcoin on an exchange, you don't actually *own* it yet. You own a promise, an IOU from a company that says they'll give you Bitcoin when you ask.
+The last row is the price of self-custody: there is no password reset and no way to reverse a payment. [What is self-custody?](/docs/learn/fundamentals/what-is-self-custody/) covers it in full, including the exchange failures that made the case for it.
 
-**Self-custody** means taking possession of your Bitcoin by controlling your own private keys. It's the difference between:
+## What can go wrong with self-custody?
 
-| Exchange Account | Self-Custody |
-|------------------|--------------|
-| Company holds your Bitcoin | You hold your Bitcoin |
-| They can freeze your account | No one can freeze your funds |
-| You need their permission to withdraw | You don't need anyone's permission |
-| If they get hacked, you lose funds | Your security is in your hands |
-| "Not your keys, not your coins" | Your keys, your coins |
+Self-custody moves the risk from a company to the way you handle your seed phrase, the 12 or 24 words that back up the wallet. The mistakes that lose bitcoin are permanent:
 
-Self-custody is how Bitcoin was designed to work. It's also a responsibility: there's no customer support, no password reset, and no reversing mistakes.
+- Losing the seed phrase and the device together. Nobody can restore the wallet.
+- Showing the seed phrase to anyone, including "support staff" or a website that asks for it. Whoever has the words can spend the bitcoin.
+- Trusting a backup that was never tested. A miswritten word is discovered only when the device fails, which is too late.
 
-→ **Deep dive:** [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody) explains this in full detail.
+The setup guides are written to prevent all three, and [backup verification](/docs/wallet-setup/backup-verification/) exists for the last one.
 
+## Where should you start?
 
-## Before You Continue: A Word of Caution
+| Your situation | Start with |
+|---|---|
+| New to bitcoin | [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin/) |
+| Your bitcoin is on an exchange | [What is self-custody?](/docs/learn/fundamentals/what-is-self-custody/), then [set up a hardware wallet](/docs/wallet-setup/hardware-wallet/) |
+| You already use a hardware wallet | [Verify your backup](/docs/wallet-setup/backup-verification/), then consider [running a node](/docs/bitcoin-node/) |
+| You hold a life-changing amount | [Multisig](/docs/learn/wallets/multisig/) and [air-gapped signing](/docs/learn/wallets/air-gapped-wallets/) |
+| You need privacy, or face a higher risk | [Why privacy matters](/docs/learn/privacy/why-privacy-matters/) |
 
-:::danger This is Serious
-Self-custody means **you are responsible** for your Bitcoin. If you:
+## How much security do you need?
 
-- Lose your seed phrase → Your Bitcoin is gone forever
-- Show your seed phrase to someone → They can steal everything
-- Make a backup mistake → You might not be able to recover
+The right setup depends on how much you hold, who might come after it, and how much technical work you are willing to do. Most people need one hardware wallet with a tested backup; the rest is for larger amounts or specific threats.
 
-There is no "forgot password" button. No customer support. No second chances.
+| If you are protecting | Start with |
+|---|---|
+| An amount you could lose without real harm | A software wallet on your phone |
+| Savings you would miss | A hardware wallet |
+| A life-changing amount | Multisig, with keys on two or three devices kept in different places |
 
-**This isn't meant to scare you away; it's meant to make you take this seriously.**
-:::
+| If the threat is | Add |
+|---|---|
+| Malware, phishing or an exchange failing | Nothing: a hardware wallet covers these |
+| Someone targeting you personally | Air-gapped signing, multisig, and not telling people what you hold |
+| A government or an attacker with similar resources | All of the above, plus [operational security](/docs/security/operational-security/) |
 
-The good news: millions of people successfully self-custody their Bitcoin. With the right knowledge and care, you can too.
+If you are not technical, start with one hardware wallet and add layers as you learn; nothing on the advanced pages needs doing on the first day. [Assess your threat model](/docs/learn/fundamentals/threat-models/) works through these questions in detail.
 
+## Which reading path fits you?
 
-## Who Is This Site For?
+Each path is a short list of pages in order. Pick the one that matches where you are now.
 
-Self Custody Labs is for anyone serious about Bitcoin security:
+### Path 1: new to bitcoin
 
-| Your Situation | Where to Start |
-|----------------|----------------|
-| **Brand new to Bitcoin** | Read [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin) first |
-| **Own Bitcoin on an exchange** | Learn [what self-custody is](/docs/learn/fundamentals/what-is-self-custody), then [set up a hardware wallet](/docs/wallet-setup/hardware-wallet/) |
-| **Already have a hardware wallet** | [Verify your backup](/docs/wallet-setup/backup-verification/), consider [running a node](/docs/bitcoin-node/) |
-| **Significant holdings** | Explore [multisig](/docs/learn/wallets/multisig/) and [advanced setups](/docs/learn/wallets/air-gapped-wallets/) |
-| **Privacy-focused / high-risk** | Start with [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters) |
+For someone who wants to understand bitcoin before holding any. About two to three hours of reading.
 
+1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin/): what it is and why it works without a company behind it
+2. [What is self-custody?](/docs/learn/fundamentals/what-is-self-custody/): why the keys are what you own
+3. [Why holding your own bitcoin matters](/docs/learn/fundamentals/holding-bitcoin/): the risks of leaving it on an exchange
+4. [Private keys explained](/docs/learn/keys/intro/): the number that controls the bitcoin
+5. [Seed phrases](/docs/learn/keys/seed/): how that number becomes words you can write down
 
-## Assess Your Threat Model
+### Path 2: your first wallet
 
-Not everyone needs the same level of security. A good setup depends on:
+For someone who understands the basics and is setting up a first wallet. Two to four hours, including the setup.
 
-1. **How much Bitcoin are you protecting?**
-   - Small amounts → Software wallet may be fine
-   - Meaningful savings → Hardware wallet recommended
-   - Life-changing amounts → Consider multisig
+1. [Hardware wallets explained](/docs/learn/wallets/hardware-wallets/): what the device protects you from
+2. [Hardware wallet setup](/docs/wallet-setup/hardware-wallet/): the setup, step by step
+3. [Backup verification](/docs/wallet-setup/backup-verification/): prove the backup restores the wallet
+4. [Before you deposit](/docs/wallet-setup/before-you-deposit/): the checks to run before sending real money
 
-2. **What are you protecting against?**
-   - Casual hackers → Hardware wallet handles this
-   - Targeted attackers → Air-gapped setups, multisig
-   - State-level threats → Maximum operational security
+### Path 3: stronger security
 
-3. **What's your technical comfort?**
-   - Non-technical → Start simple, learn gradually
-   - Technical → Can jump to advanced setups
+For someone already holding their own keys who wants to take more trust out of the setup. One to two days of projects.
 
-→ **Deep dive:** [Assess Your Threat Model](/docs/learn/fundamentals/threat-models) - A guide to help you decide what level of security you need.
+1. [Seed generation with dice](/docs/learn/keys/random/): make a seed whose randomness you can check
+2. [Passphrases](/docs/learn/keys/passphrase/): protect the seed phrase against being found
+3. [Run your own node](/docs/bitcoin-node/): check your own transactions instead of asking someone else's server
+4. [UTXO management](/docs/learn/privacy/utxo-management/): keep fees and address links under control
 
+### Path 4: maximum security
 
-## Choose Your Path
+For large holdings or a higher threat level. Several days to a few weeks.
 
-### 🌱 Path 1: Complete Beginner
+1. [Why privacy matters](/docs/learn/privacy/why-privacy-matters/): what an observer can learn from the blockchain
+2. [Multisig](/docs/learn/wallets/multisig/): remove the single point of failure
+3. [Air-gapped wallets](/docs/learn/wallets/air-gapped-wallets/): sign on a device that never touches a network
+4. [CoinJoin](/docs/learn/privacy/coinjoin/): break the link between your coins' past and present
 
-You're new to Bitcoin and want to understand it before holding any.
+## What principles hold across every guide?
 
-**Your journey:**
-1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): The fundamentals
-2. [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody): Why keys matter
-3. [Why Holding Your Own Bitcoin Matters](/docs/learn/fundamentals/holding-bitcoin): Exchange risks
-4. [Private Keys Explained](/docs/learn/keys/intro): The foundation
-5. [Seed Phrases](/docs/learn/keys/seed): How keys become words
+### Verify instead of trusting
 
-**Time investment:** 2-3 hours of reading
+Check every receive address on the hardware wallet's own screen, not on the computer's. Check firmware signatures before installing. Compare what this site says with the vendor's documentation and other sources; we get things wrong too.
 
----
+### Go slowly
 
-### 🔐 Path 2: Ready to Self-Custody
+Mistakes with bitcoin are usually permanent, and the deadlines that push people into them are usually invented. Read a guide through before starting it, send a small test amount first, and treat anyone hurrying you as a warning sign.
 
-You understand the basics and want to set up your first secure wallet.
+### Assume your computer is compromised
 
-**Your journey:**
-1. [Hardware Wallets Explained](/docs/learn/wallets/hardware-wallets): Why they're important
-2. [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/): Step-by-step setup
-3. [Backup Verification](/docs/wallet-setup/backup-verification/): Test before you trust
-4. **[Before You Deposit](/docs/wallet-setup/before-you-deposit)**: Critical checklist
+A hardware wallet is designed for the case where the computer or phone it connects to is controlled by an attacker: the device shows the transaction on its own screen and signs it there. That protection only holds if the seed phrase never touches a connected device, so never type it, photograph it or store it in a password manager.
 
-**Time investment:** 2-4 hours (including setup)
+### Avoid single points of failure
 
----
+One backup in one place can burn, flood or be found. Backups in separate places, and for larger amounts [multisig](/docs/learn/wallets/multisig/), mean that no single loss empties the wallet.
 
-### 🛡️ Path 3: Security Enhancement
+### Practise recovery
 
-You're already self-custodying but want stronger security.
+A backup you have never restored from is untested. Restore it once before depositing anything significant, using the [backup verification guide](/docs/wallet-setup/backup-verification/).
 
-**Your journey:**
-1. [DIY Seed Generation](/docs/learn/keys/random/): Create verifiable randomness
-2. [Passphrase Security](/docs/learn/keys/passphrase/): Add another layer
-3. [Run Your Own Node](/docs/bitcoin-node/): Don't trust, verify
-4. [UTXO Management](/docs/learn/privacy/utxo-management/): Privacy and fee optimization
+## Where can you ask a question?
 
-**Time investment:** 1-2 days of projects
-
----
-
-### 🏰 Path 4: Maximum Security
-
-You have significant holdings or elevated threat concerns.
-
-**Your journey:**
-1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters): Understand the stakes
-2. [Multisig Setup](/docs/learn/wallets/multisig/): Eliminate single points of failure
-3. [Air-Gapped Computing](/docs/learn/wallets/air-gapped-wallets/): Offline signing
-4. [CoinJoin](/docs/learn/privacy/coinjoin/): Break transaction history links
-
-**Time investment:** Multiple days/weeks
-
----
-
-## The Self-Custody Mindset
-
-Before you dive into guides, internalize these principles:
-
-### 1. Verify, Don't Trust
-
-Don't take anyone's word for it (including this site). Verify addresses on your hardware wallet screen. Run your own node. Check multiple sources.
-
-### 2. Move Slowly
-
-There's no rush. A mistake with Bitcoin can be permanent. Read guides twice. Test with small amounts. Ask questions before acting.
-
-### 3. Assume Compromise
-
-Treat every device as potentially compromised. Air-gap when possible. Verify firmware. Don't trust, verify.
-
-### 4. Separate Concerns
-
-Don't keep all your eggs in one basket. Geographic distribution. Different wallet types for different purposes. Backup redundancy.
-
-### 5. Practice Recovery
-
-A backup you've never tested isn't a backup. Verify your seed restores correctly *before* depositing significant funds.
-
-
-## Ready to Begin?
-
-<div class="button-group">
-
-**New to Bitcoin?**
-→ [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin)
-
-**Ready to set up a wallet?**
-→ [Hardware Wallet Setup Guide](/docs/wallet-setup/hardware-wallet/)
-
-**Want to browse all guides?**
-→ [View All Guides](/guides/)
-
-</div>
-
----
-
-## Questions?
-
-Self-custody can feel overwhelming at first. That's normal. Take it one step at a time.
-
-If something in our guides is unclear, you can:
-- Check the [Glossary](/docs/reference/glossary) for term definitions
-- Review the [FAQ](/docs/reference/faq/) for common questions
-- Reach out via [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs)
-
-Your questions help us improve these guides for everyone.
-
-<RelatedArticles 
-  title="Explore Topics"
-  articles={[
-    { title: "What is Bitcoin?", href: "/docs/learn/fundamentals/what-is-bitcoin/", tag: "Start Here" },
-    { title: "Private Keys", href: "/docs/learn/keys/intro/", tag: "Learn" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Hardware Wallet Setup", href: "/docs/wallet-setup/hardware-wallet/", tag: "Guide" },
-  ]}
-/>
+The [glossary](/docs/reference/glossary/) defines the terms used across the site, and the [FAQ](/docs/reference/faq/) answers the common questions about seed phrases and recovery. If a guide is unclear or wrong, tell us on [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs) and the page gets corrected.

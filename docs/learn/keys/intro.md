@@ -4,57 +4,29 @@ title: "Understanding Bitcoin Private Keys"
 description: "Learn what Bitcoin private keys are, how they work, and why they're essential for controlling your Bitcoin. The foundation of self-custody explained."
 keywords: ["bitcoin private key", "public key", "cryptography", "bitcoin security", "key management"]
 tags: ["private keys", "bitcoin", "security"]
+date: "2025-03-31"
 ---
 
-# Private Keys
+# Private keys
 
-:::warning
-Private keys are essential because they give you full control over your funds, and losing or exposing them can result in loss of access or theft. I recommend following this section step by step, as it's a foundational concept, and doing so will give you a much clearer understanding.
-:::
+A Bitcoin private key is a randomly chosen 256-bit number that authorises spending the bitcoin sent to the addresses derived from it. Whoever knows the number can spend those coins, and nobody who lacks it can, so keeping the private key secret and backed up is what self-custody consists of. Modern wallets do not make you handle private keys directly: they derive them all from a [seed phrase](/docs/learn/keys/seed/), which is the thing you actually write down.
 
-Now, take a look at this image before and while you read each section.
+## How does a private key relate to a public key and an address?
 
-![Diagram](/img/basics/diagram.webp)
+| | What it is | Who sees it |
+|---|---|---|
+| Private key | A secret number between 1 and about 1.16 × 10<sup>77</sup> | Nobody but you, ever |
+| Public key | A point on the secp256k1 elliptic curve, computed from the private key | Revealed when you spend (or, for Taproot addresses, already part of the address) |
+| Address | A short encoding of the public key, or of its hash, that people send bitcoin to | Anyone you give it to |
 
+Each step goes one way only. Computing the public key from the private key, and the address from the public key, is quick; going backwards is not feasible with any known method, which is why an address and even a public key can be shared without exposing the private key.
 
-## What is a Private Key?
+## What does a private key do?
 
-A private key is a secret code that allows you to access and control the Bitcoin stored in a specific address. Bitcoin addresses have two keys:
+When you spend, your wallet uses the private key to sign the transaction: it produces a digital signature that anyone can check against the public key, but that only the holder of the private key could have made. Nodes accept the transaction only if the signature is valid. Nothing else (no account name, password or identity) is involved.
 
-- **Public Key:** This is like your bank account number, shared openly to receive Bitcoin.
-- **Private Key:** This is the secret counterpart. It acts like a password to access and spend your Bitcoin.
+## Why is storing a private key hard?
 
-Your private key proves ownership of your funds. If you lose it, you lose access to your Bitcoin, so it's critical to keep it safe and secure.
+A private key must be secret and must also survive. Stored on an online device, it can be copied by malware; stored offline, it can be lost, burned or misread. A raw key is also a 64-character hexadecimal string that is easy to copy wrongly by hand.
 
-
-## How Does a Private Key Work?
-
-The private key signs transactions, confirming your ownership of the Bitcoin you're trying to spend. The public key is derived from the private key, but it’s virtually impossible to reverse-engineer, ensuring your private key stays secret.
-
-
-## Storing Private Keys – A Challenge
-
-Storing private keys securely is tricky. If stored online, they can be stolen. If kept offline, they could be lost or damaged. This is why managing private keys can be difficult for many users.
-
-This is where the [seed phrase](/docs/learn/keys/seed) comes in (a human-readable way to store and recover your private key). We'll explore this in the next section.
-
-
-## Key Takeaways
-
-- A **private key** is the secret that controls your Bitcoin
-- The **public key** (and address) is derived from your private key
-- **Losing your private key** means losing your Bitcoin forever
-- **Exposing your private key** means anyone can steal your funds
-- Modern wallets use [seed phrases](/docs/learn/keys/seed) to make key management easier
-
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Seed Phrases Explained", href: "/docs/learn/keys/seed/", tag: "Next" },
-    { title: "Extended Private Keys", href: "/docs/learn/keys/xprv/", tag: "Learn" },
-    { title: "Hardware Wallets", href: "/docs/learn/wallets/hardware-wallets/", tag: "Learn" },
-    { title: "Keys Overview", href: "/docs/learn/keys/", tag: "Overview" },
-  ]}
-/>
+[Seed phrases](/docs/learn/keys/seed/) solve the copying problem: 12 or 24 words from a fixed list, with a built-in checksum, that regenerate every private key in the wallet. Hardware wallets solve the online problem by keeping the keys on a device that never exposes them. Losing the private keys, or the seed phrase they come from, loses the bitcoin; exposing them lets anyone take it.

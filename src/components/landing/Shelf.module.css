@@ -1,0 +1,72 @@
+/* Selectors start at .shelf: inside an MDX page the prose rules (.mdx-page article p, a, h2) would otherwise win. */
+
+.shelf {
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--scl-dim2);
+  list-style: none;
+}
+
+.shelf .item {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin: 0;
+  padding: 1.5rem 0;
+  border-bottom: var(--scl-rule);
+}
+
+.shelf .cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--scl-rule);
+  border-radius: 3px;
+  background: var(--scl-band);
+}
+
+.shelf .title {
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.shelf .title a {
+  color: var(--scl-ink);
+  text-decoration: none;
+}
+
+.shelf .title a:hover {
+  color: var(--scl-amber-lit);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.shelf .description {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--scl-ink-2);
+  line-height: 1.6;
+}
+
+.shelf .host {
+  margin: 0.6rem 0 0;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .shelf .item {
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+  }
+}

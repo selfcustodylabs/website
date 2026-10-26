@@ -5,17 +5,17 @@ description: "Complete glossary of Bitcoin and self-custody terminology. Definit
 keywords: ["bitcoin glossary", "bitcoin terms", "bitcoin definitions", "cryptocurrency terminology", "utxo", "seed phrase", "self custody"]
 tags: ["glossary", "reference"]
 slug: /reference/glossary
+date: "2026-01-14"
 ---
 
-<SectionBadge section="reference" />
 
 # Bitcoin Glossary
 
-Plain-language definitions of the Bitcoin and self-custody terms used across this site, from address types and air-gapping through to UTXOs, xpubs, and derivation paths. Over 100 entries, listed alphabetically.
+Plain-language definitions of the Bitcoin and self-custody terms used across this site, from address types and air-gapping through to UTXOs, xpubs, and derivation paths. Over 100 entries, listed alphabetically. If a term you need is missing, [email us](mailto:selfcustodylabs@proton.me) and we will add it.
 
 ---
 
-## Quick Navigation
+## Jump to a letter
 
 [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w) · [X](#x)
 
@@ -176,7 +176,7 @@ A wallet connected to the internet. More convenient but less secure than cold st
 A reference to a previous transaction output being spent in a new transaction. Transactions consume inputs and create outputs.
 
 ### Intel ME (Management Engine)
-A subsystem in Intel processors that operates independently and can pose security risks. See [Libreboot Guide](/docs/libreboot).
+The Intel Management Engine is a separate processor in Intel chipsets that runs its own closed firmware, with access to memory and the network, independently of the operating system. On most Intel machines it cannot be removed, only cut down and disabled, as Libreboot and coreboot do with me_cleaner. See the [Libreboot guide](/docs/libreboot/).
 
 ---
 
@@ -203,7 +203,7 @@ The original Bitcoin address format, starting with `1`. Higher transaction fees 
 A "Layer 2" payment network built on top of Bitcoin, enabling fast, low-fee transactions.
 
 ### Libreboot
-Open-source firmware replacement for computer BIOS that removes proprietary code and potential backdoors. See [Libreboot Guide](/docs/libreboot).
+Libreboot is an open-source replacement for a computer's BIOS or UEFI firmware, built on coreboot, that keeps proprietary vendor code to the minimum a board needs and disables the Intel ME where it can. See the [Libreboot guide](/docs/libreboot/).
 
 ---
 
@@ -267,13 +267,10 @@ The technical name for Taproot addresses (starting with `bc1p`).
 The technical name for Native SegWit addresses (starting with `bc1q`).
 
 ### Passphrase
-An optional additional word added to a seed phrase to create a separate wallet. Sometimes called the "25th word." See [Passphrases](/docs/learn/keys/passphrase).
+An optional extra secret, which can be any text, combined with a seed phrase to open a separate wallet. Sometimes called the "25th word", though it is not a word from the BIP39 list. See [Passphrases](/docs/learn/keys/passphrase/).
 
 ### PayJoin
 A privacy-enhancing transaction where both sender and receiver contribute inputs, breaking blockchain analysis heuristics.
-
-### PBST
-See PSBT.
 
 ### Private Key
 A secret number that controls Bitcoin at a specific address. Must be kept secret. See [Private Keys](/docs/learn/keys/intro).
@@ -330,7 +327,7 @@ A sequence of 12 or 24 words that encodes your wallet's master seed. The backup 
 A 2017 Bitcoin upgrade that separates transaction signatures ("witness" data) from transaction data, enabling more efficient transactions and fixing transaction malleability.
 
 ### Self-Custody
-Holding your own Bitcoin private keys, rather than trusting a third party. See [What is Self-Custody](/docs/learn).
+Holding your own Bitcoin private keys, rather than trusting a third party. See [What is self-custody](/docs/learn/fundamentals/what-is-self-custody/).
 
 ### Signature
 Cryptographic proof that a transaction was authorized by the private key owner.
@@ -436,17 +433,3 @@ The maximum supply of Bitcoin that will ever exist, enforced by Bitcoin's consen
 
 ### 51% Attack
 A theoretical attack where an entity controlling more than half the network's hash rate could double-spend or censor transactions.
-
----
-
-## Didn't Find What You're Looking For?
-
-If a term is missing, [let us know](mailto:selfcustodylabs@proton.me) and we'll add it.
-
----
-
-## Continue Learning
-
-- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): Start from the beginning
-- [Learn Section](/learn): Comprehensive Bitcoin education
-- [Guides](/guides): Hands-on tutorials

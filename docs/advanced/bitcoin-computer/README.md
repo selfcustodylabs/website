@@ -5,86 +5,47 @@ description: "Build a dedicated Bitcoin computer for secure transactions. Learn 
 keywords: ["bitcoin computer", "dedicated computer", "malware protection", "secure transactions", "self custody"]
 tags: ["bitcoin", "computer", "security", "malware", "advanced"]
 slug: /advanced/bitcoin-computer
+guide:
+  time: "1-2 hours"
+  level: "Beginner to intermediate"
+  cost: "$50-150 (used laptop) or $0 (repurpose old computer)"
+  needs: "Spare laptop or desktop, USB drive"
+date: "2025-03-29"
 ---
 
-# Dedicated Bitcoin Computer
+# Dedicated Bitcoin computer
 
-:::info What You'll Do
-In this guide, you will:
-- Understand why a dedicated Bitcoin computer is important
-- Choose hardware for your Bitcoin-only machine
-- Set up a secure environment for transactions
+A dedicated Bitcoin computer is a laptop used for nothing but bitcoin: it runs your wallet software, builds and broadcasts transactions, and never browses the web, opens email or installs anything else. Keeping wallet software off your everyday machine means malware picked up from websites, downloads and attachments cannot watch your balance or swap the addresses you paste. It still connects to the internet, unlike an [air-gapped computer](/docs/learn/wallets/air-gapped-wallets/), and the signing stays on your hardware wallet. Setting one up takes one to two hours on a second-hand ThinkPad.
 
-**Time required:** 1-2 hours  
-**Difficulty:** Beginner to Intermediate  
-**Estimated cost:** $50-150 (used laptop) or $0 (repurpose old computer)  
-**Prerequisites:** Spare laptop or desktop, USB drive
-:::
+<GuideFacts />
 
-:::tip Background Reading
-Before starting, make sure you understand:
-- [Hardware wallets](/docs/learn/wallets/hardware-wallets) and how they protect your keys
-- [Why privacy matters](/docs/learn/privacy/why-privacy-matters) when transacting
-:::
+[Hardware wallets](/docs/learn/wallets/hardware-wallets/) and [why privacy matters](/docs/learn/privacy/why-privacy-matters/) are useful background.
 
-:::danger Important
-**Never use your regular computer for Bitcoin transactions!** Malware on your everyday machine can compromise your security even if you use a hardware wallet.
-:::
+## Why not use your everyday computer?
 
-
-## What is a Bitcoin Computer?
-
-A Bitcoin computer is a dedicated device for securely creating and broadcasting Bitcoin transactions. It runs minimal software in a clean environment, reducing attack surface.
-
-Transaction signing should still be handled by:
-- A hardware wallet, or
-- An [air-gapped computer](/docs/learn/wallets/air-gapped-wallets) for maximum security
-
-
-## Why Your Regular Computer is Dangerous
-
-Your everyday computer is exposed to:
-- Websites, downloads, and email attachments
-- Browser extensions and plugins
-- Various software with potential vulnerabilities
-
-If malware infects your regular computer, attackers could:
+An everyday computer is exposed to websites, downloads, email attachments, browser extensions and all the software you install, and a hardware wallet protects the keys but not everything else. Malware on that computer can:
 
 <div class="fixed-width-table">
 
-| Risk | Impact |
+| Risk | What it leads to |
 |------|--------|
-| **View your balances** | Know how much you have (targeting risk) |
-| **Modify clipboard** | Change destination addresses when you paste |
-| **Monitor activity** | Track when you transact |
-| **Physical threat** | Target you if they see large holdings |
+| Reading your balances | The attacker learns how much you hold, and may target you |
+| Changing the clipboard | Addresses you paste are swapped for the attacker's |
+| Watching your activity | The attacker learns when you transact |
 
 </div>
 
-A dedicated Bitcoin computer isolates your Bitcoin activity from these risks.
+A hardware wallet's screen still protects each payment, as long as you check the address on it. A dedicated computer removes these risks at the source and keeps your bitcoin activity apart from the rest of your digital life, which is worth it once the amounts justify a second machine.
 
-
-## Guide Overview
+## What are the steps?
 
 <div class="fixed-width-table">
 
-| Step | What You'll Do |
+| Step | What you do |
 |------|----------------|
-| 1. [Choosing Hardware](/docs/advanced/bitcoin-computer/choice) | Select appropriate hardware |
-| 2. [Setup](/docs/advanced/bitcoin-computer/setup) | Install and configure your Bitcoin computer |
+| 1. [Choose the hardware](/docs/advanced/bitcoin-computer/choice/) | Pick a laptop, ideally one Libreboot supports |
+| 2. [Set it up](/docs/advanced/bitcoin-computer/setup/) | Libreboot, Linux Mint, full-disk encryption and Tor |
 
 </div>
 
----
-
-## Related Guides
-
-:::tip Want Maximum Security?
-For the highest level of protection, consider an **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets)** - a device that never connects to the internet and handles all signing offline.
-:::
-
-:::info Firmware Security
-Enhance your Bitcoin computer's security with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)** - Maximum openness, removes Intel ME
-- **[Coreboot Guide](/docs/coreboot)** - Supports more hardware models
-:::
+For the most protection, sign on an [air-gapped computer](/docs/learn/wallets/air-gapped-wallets/), which never connects at all. For the firmware, see [Libreboot](/docs/libreboot/), the most open option for supported ThinkPads, or [coreboot](/docs/coreboot/), which supports more models.

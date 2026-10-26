@@ -4,49 +4,33 @@ title: "Install Horse Browser Extension"
 description: "Install the Horse Chromium browser extension to connect your Nostr Signing Device to web clients and sign Nostr events from your browser."
 keywords: ["horse extension", "nostr browser extension", "chromium extension", "NSD connection"]
 tags: ["nostr", "horse", "extension", "browser"]
+date: "2025-03-29"
 ---
-# Installing the Horse Extension (Chromium Browser Only)
+# Installing the Horse extension (Chromium only)
 
-This works only with Chromium Browser
+Horse is LNbits' browser extension that passes signing requests from Nostr websites to the signing device. It works only in Chromium-based browsers and is built from source: clone it, install its dependencies, build it, and load it as an unpacked extension.
 
-## Clone the repository:
+## Step 1: Build the extension
 
-Open a terminal and run:
+Step 1 builds it from source, which needs git and Node.js:
 
 ```bash
 git clone https://github.com/lnbits/horse.git
-```
-
-## Navigate to the project folder:
-
-```bash
 cd horse
-```
-
-## Install dependencies
-
-Run the following command (the `--force` flag is required to ensure successful installation):
-
-```bash
 npm install --force
-```
-
-## Build the extension:
-
-```bash
 npm run build
 ```
 
-## Load the extension in your browser
+The `--force` flag is needed for the dependencies to install.
 
-- Open Chromium.
-- Type `chrome://extensions/` in the address bar and press Enter.
-- Enable `Developer mode` (toggle in the top right corner).
-- Click `Load unpacked` (top left).
-- Select the `horse/extension` folder.
+## Step 2: Load it in the browser
 
-Once installed, the Horse extension should appear among your extensions.
+Step 2 installs it:
 
-![Horse](/img/nsd/horse.webp)
+1. Open Chromium and go to `chrome://extensions/`.
+2. Turn on `Developer mode`, top right.
+3. Click `Load unpacked`, top left, and select the `horse/extension` folder.
 
-You're now ready to securely sign offline transactions with your NSD and dive into the world of Nostr!
+Horse then appears among your extensions.
+
+![The Horse 0.0.2 extension in Chromium's extensions page, described as "Hardware Remote Signer of Events"](/img/nsd/horse.webp)

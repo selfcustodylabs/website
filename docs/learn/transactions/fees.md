@@ -5,26 +5,20 @@ description: "Understand how Bitcoin transaction fees work, why they vary, and h
 keywords: ["bitcoin fees", "transaction fees", "sat/vB", "fee estimation", "RBF", "CPFP", "mempool"]
 tags: ["fees", "transactions", "bitcoin", "optimization"]
 slug: /learn/transactions/fees
+date: "2026-01-15"
 ---
 
-# Bitcoin Transaction Fees
+# Bitcoin transaction fees
 
-Every Bitcoin transaction requires a fee to be processed. Understanding how fees work helps you avoid overpaying during normal times and ensures your transactions confirm when you need them to.
+A bitcoin transaction fee is the amount a transaction leaves unclaimed between its inputs and outputs, which the miner who includes it in a block collects. It is set by size, not value: the fee is the transaction's size in virtual bytes (vB) times a fee rate in satoshis per virtual byte (sat/vB), so sending 0.001 BTC costs the same as sending 100 BTC in a transaction of the same size. Rates rise and fall with demand for block space; check a mempool viewer before sending, use native segwit or Taproot addresses, and if a transaction gets stuck, bump its fee.
 
-## How Fees Work
+## How is the fee calculated?
 
-Bitcoin fees are paid to miners for including your transaction in a block. Unlike traditional payment systems with fixed percentages, Bitcoin fees are based on **data size, not transaction value**.
-
-### Fee Basics
-
-```
-FEE = TRANSACTION SIZE (vBytes) × FEE RATE (sats/vB)
+```text
+fee = transaction size (vB) × fee rate (sat/vB)
 ```
 
-This means:
-- Sending 0.001 BTC costs the same as sending 100 BTC
-- Complex transactions (more inputs/outputs) cost more
-- Simple transactions are cheapest
+So the amount sent does not matter; the number of inputs and outputs does, because each adds size.
 
 <div class="doc-diagram">
 
@@ -32,120 +26,68 @@ This means:
 
 </div>
 
-### Why Fees Vary
+A **satoshi** (sat) is 0.00000001 BTC, and a **virtual byte** (vB) is the unit of transaction size the fee market uses, which counts segwit signature data at a discount. A typical payment from one native segwit input to two outputs (the recipient and your change) is about 140 vB.
 
-Bitcoin blocks have limited space (~4MB, or ~2,000-3,000 transactions). When more people want to transact than blocks can hold, a market forms:
+| Transaction | Size | Fee at 2 sat/vB | Fee at 10 sat/vB | Fee at 50 sat/vB |
+|------------------|------|---------------|---------------|---------------|
+| 1 input, 2 outputs | About 140 vB | 280 sats | 1,400 sats | 7,000 sats |
+| 3 inputs, 2 outputs | About 380 vB | 760 sats | 3,800 sats | 19,000 sats |
+| 10 inputs, 2 outputs | About 1,100 vB | 2,200 sats | 11,000 sats | 55,000 sats |
 
-| Demand | Typical Fee Rate | Confirmation Time |
+To turn sats into money: 1,000 sats is $1 when bitcoin is worth $100,000, and twice that when it is worth $200,000.
+
+## Why do fees change?
+
+Each block has room for a limited amount of data (4 million weight units, in practice a few thousand transactions), and a new block comes about every ten minutes. When more people want to transact than the next blocks can hold, they bid against each other with higher fee rates, and miners take the highest-paying transactions first.
+
+| Demand | Typical fee rate | Typical wait |
 |--------|------------------|-------------------|
-| Low | 1-5 sats/vB | Next block - hours |
-| Normal | 5-20 sats/vB | 10 min - 1 hour |
-| High | 20-100 sats/vB | 10-30 minutes |
-| Extreme | 100-500+ sats/vB | Priority inclusion |
+| Low | Under 1 to 5 sat/vB | The next block, or a few hours at the very lowest rates |
+| Normal | 5 to 20 sat/vB | 10 minutes to an hour |
+| High | 20 to 100 sat/vB | 10 to 30 minutes |
+| Extreme | 100 sat/vB and more | Priority inclusion |
 
-Fees fluctuate constantly based on network demand.
+The floor has moved. Since Bitcoin Core 30.0 (October 2025), nodes by default relay transactions paying as little as 0.1 sat/vB, down from 1 sat/vB, though such transactions confirm only when miners have room for them.
 
-## Understanding Fee Rates
+## How does address type affect size?
 
-### sats/vB (Satoshis per Virtual Byte)
-
-The standard unit for Bitcoin fees:
-- **sat** = satoshi (0.00000001 BTC)
-- **vB** = virtual byte (measure of transaction size)
-
-A typical single-input, single-output transaction is ~140 vB.
-
-### Example Calculations
-
-| Transaction Type | Size | At 10 sats/vB | At 50 sats/vB |
-|------------------|------|---------------|---------------|
-| Simple (1 input → 2 outputs) | ~140 vB | 1,400 sats (~$0.60) | 7,000 sats (~$3) |
-| Medium (3 inputs → 2 outputs) | ~380 vB | 3,800 sats (~$1.60) | 19,000 sats (~$8) |
-| Complex (10 inputs → 2 outputs) | ~1,100 vB | 11,000 sats (~$4.70) | 55,000 sats (~$24) |
-
-*Prices assume ~$43,000/BTC*
-
-## What Affects Transaction Size
-
-### Inputs vs Outputs
-
-Every transaction has:
-- **Inputs**: UTXOs you're spending (where funds come from)
-- **Outputs**: Where funds are going (recipients + change)
-
-**More inputs = larger transaction = higher fee**
-
-This is why [UTXO management](/docs/learn/transactions/utxos) matters.
-
-### Address Types
-
-Different address types have different sizes:
-
-| Address Type | Input Size | Output Size | Notes |
+| Address type | Input size | Output size | Addresses start with |
 |--------------|------------|-------------|-------|
-| P2PKH (Legacy) | ~148 vB | ~34 vB | Starts with `1` |
-| P2SH-P2WPKH (Nested SegWit) | ~91 vB | ~32 vB | Starts with `3` |
-| P2WPKH (Native SegWit) | ~68 vB | ~31 vB | Starts with `bc1q` |
-| P2TR (Taproot) | ~57 vB | ~43 vB | Starts with `bc1p` |
+| Legacy (P2PKH) | About 148 vB | About 34 vB | `1` |
+| Nested segwit (P2SH-P2WPKH) | About 91 vB | About 32 vB | `3` |
+| Native segwit (P2WPKH) | About 68 vB | About 31 vB | `bc1q` |
+| Taproot (P2TR) | About 57 vB | About 43 vB | `bc1p` |
 
-**Recommendation**: Use Native SegWit (`bc1q`) or Taproot (`bc1p`) addresses for lowest fees.
+Spending from native segwit or Taproot addresses costs much less than from legacy ones; moving from legacy to segwit cuts the fee for a typical payment by roughly 30 to 40%.
 
-## Fee Estimation
+## How do you choose a fee?
 
-### Mempool Analysis
+Look at what the mempool, the queue of unconfirmed transactions, is currently accepting: [mempool.space](https://mempool.space) shows it, as do Sparrow's fee estimates and your own node. Then decide how urgent the payment is, and allow for spikes, which can come suddenly.
 
-The **mempool** is the waiting room for unconfirmed transactions. Analyzing it helps estimate appropriate fees:
+| What you need | What to pay |
+|-----------|---------------------|
+| Confirmation in the next block | The current high-priority rate |
+| Confirmation within a few hours | The medium-priority rate |
+| Confirmation within a day | The low-priority rate |
+| Consolidating UTXOs | Wait for rates under 5 sat/vB |
 
-- [mempool.space](https://mempool.space): Visual fee estimation
-- Sparrow Wallet's built-in fee estimation
-- Your node's mempool data
+The common mistakes are overpaying when demand is low because nobody checked, underpaying when demand is high so the transaction sticks, and trusting wallet defaults, which are often set high.
 
-### Fee Estimation Strategy
+## What if a transaction is stuck?
 
-1. **Check current mempool.** What fee rate is clearing?
-2. **Consider urgency.** Do you need next block or can you wait?
-3. **Account for volatility.** Fees can spike suddenly
+### Replace-by-fee (RBF)
 
-### Common Mistakes
+**Replace-by-fee** broadcasts a new version of your transaction, spending the same inputs, with a higher fee. Since Bitcoin Core 28.0 (October 2024) nodes accept a replacement for any unconfirmed transaction by default, whether or not the original was marked replaceable, so only the sender's wallet needs to support it. In Sparrow: find the unconfirmed transaction, right-click it, choose to increase the fee, set the new rate, and broadcast the replacement.
 
-❌ **Overpaying during low demand**: checking fees saves money  
-❌ **Underpaying during high demand**: transaction gets stuck  
-❌ **Using wallet defaults blindly**: often set too high
+### Child pays for parent (CPFP)
 
-## Stuck Transactions
+**Child pays for parent** creates a new transaction that spends an output of the stuck one, with a fee high enough to make the pair worth mining together. It is the receiver's option, since the receiver cannot replace a transaction the sender signed. The child's fee has to cover the parent's shortfall as well as its own size.
 
-If your transaction isn't confirming, you have options:
+## How can you pay less in fees?
 
-### RBF (Replace-By-Fee)
+### Consolidate when fees are low
 
-Replace your unconfirmed transaction with a higher-fee version.
-
-**Requirements:**
-- Original transaction must have RBF enabled (Sparrow enables by default)
-- You control at least one input
-
-**How to use in Sparrow:**
-1. Find the unconfirmed transaction
-2. Right-click → "Increase Fee"
-3. Set new fee rate
-4. Broadcast replacement
-
-### CPFP (Child-Pays-For-Parent)
-
-Create a new transaction that spends the unconfirmed output with a high enough fee to incentivize mining both.
-
-**When to use:**
-- RBF not available
-- You're the recipient (can't RBF sender's transaction)
-
-**How it works:**
-The new transaction's fee must cover the "deficit" of the parent transaction to make the combined package attractive to miners.
-
-## Fee Optimization Strategies
-
-### 1. Consolidate During Low Fees
-
-When fees are cheap (1-5 sats/vB), combine small UTXOs:
+Combining many small UTXOs into one, at a time when fees are 1 to 5 sat/vB, means future payments need one input instead of many.
 
 <div class="doc-diagram">
 
@@ -153,11 +95,11 @@ When fees are cheap (1-5 sats/vB), combine small UTXOs:
 
 </div>
 
-See [UTXO Consolidation](/docs/learn/privacy/utxo-management#consolidation-strategies) for details.
+Consolidation links the histories of the coins combined, so only consolidate coins from the same source; [UTXO management](/docs/learn/privacy/utxo-management/) covers when it is safe.
 
-### 2. Batch Transactions
+### Batch payments
 
-If sending to multiple recipients, batch them:
+Paying several people in one transaction costs far less than separate transactions, because the inputs and change are shared.
 
 <div class="doc-diagram">
 
@@ -165,73 +107,14 @@ If sending to multiple recipients, batch them:
 
 </div>
 
-### 3. Time Your Transactions
+### Send when demand is low
 
-Fee patterns by time:
-- **Weekends**: Often lower fees
-- **US business hours**: Often higher fees
-- **After difficulty adjustments**: Variable
+Fees are often lower at weekends and higher during US business hours, though there is no reliable schedule.
 
-### 4. Use Appropriate Address Types
+### Use modern address types
 
-Switching from Legacy to SegWit addresses can save 30-40% on fees.
+Receive to native segwit (`bc1q`) or Taproot (`bc1p`) addresses, so the coins are cheaper to spend later.
 
-### 5. Enable RBF
+## Where does Lightning fit?
 
-Always enable RBF (Replace-By-Fee) so you can bump fees if needed. Sparrow Wallet enables this by default.
-
-## Lightning Network
-
-For small, frequent transactions, the [Lightning Network](https://lightning.network) offers:
-- Near-instant confirmation
-- Fees of ~1 sat or less
-- No on-chain footprint per transaction
-
-**Tradeoff**: Requires channel management and isn't suitable for cold storage.
-
-## Fee Calculator
-
-Quick reference for planning:
-
-| Your Goal | Recommended Strategy |
-|-----------|---------------------|
-| Send immediately | Pay current "high priority" rate |
-| Send within hours | Pay "medium priority" rate |
-| Send within a day | Pay "low priority" rate |
-| Consolidate UTXOs | Wait for under 5 sats/vB |
-| Large cold storage deposit | Use batching, wait for low fees |
-
-## Summary
-
-- Fees are based on **transaction size**, not value
-- Use **SegWit or Taproot** addresses for lower fees
-- **Check the mempool** before setting fees
-- **Consolidate UTXOs** during low-fee periods
-- Enable **RBF** on all transactions
-- **Batch** when sending to multiple recipients
-
-Understanding fees helps you save money and ensures your transactions confirm when you need them.
-
-<NextSteps 
-  title="Related Topics"
-  items={[
-    { 
-      label: "Essential", 
-      title: "UTXOs Explained", 
-      href: "/docs/learn/transactions/utxos/", 
-      description: "Understand how UTXOs affect your transaction fees" 
-    },
-    { 
-      label: "Optimize", 
-      title: "UTXO Management", 
-      href: "/docs/learn/privacy/utxo-management/", 
-      description: "Strategies to minimize fees and improve privacy" 
-    },
-    { 
-      label: "Tools", 
-      title: "Run Your Own Node", 
-      href: "/docs/bitcoin-node/", 
-      description: "Get accurate fee estimation from your own mempool" 
-    }
-  ]}
-/>
+For small, frequent payments, the [Lightning Network](https://lightning.network) settles almost instantly for fees often of a few sats, with no on-chain transaction per payment. It needs payment channels, which have their own on-chain costs to open and close, and it is a spending tool, not cold storage.

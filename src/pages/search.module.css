@@ -1,0 +1,38 @@
+.page {
+  width: min(46rem, 100% - 2rem);
+  margin: 3rem auto 6rem;
+}
+
+.title {
+  margin: 0.25rem 0 1.5rem;
+  color: var(--scl-ink);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 0.9rem;
+  border: var(--scl-rule-strong);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
+  color: var(--scl-ink);
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--scl-amber);
+  outline-offset: 1px;
+}
+
+.status {
+  margin: 1rem 0 0.5rem;
+  color: var(--scl-muted);
+  font-family: var(--scl-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -1,12 +1,7 @@
 /**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
+ * One sidebar per top-level docs directory. Labels are plain text: an emoji in
+ * a label leaks into the breadcrumbs and their JSON-LD (npm run check warns).
+ * Adding a sidebar also needs a heading in SIDEBAR_LABELS in plugins/llms-txt.
  */
 
 // @ts-check
@@ -20,11 +15,11 @@ const sidebars = {
     {
       type: 'doc',
       id: 'learn/README',
-      label: '📚 Learn Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: '🌱 Start Here',
+      label: 'Start Here',
       link: {
         type: 'doc',
         id: 'learn/fundamentals/index',
@@ -39,7 +34,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🔑 Keys & Seeds',
+      label: 'Keys & Seeds',
       link: {
         type: 'doc',
         id: 'learn/keys/index',
@@ -50,7 +45,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '👛 Wallets',
+      label: 'Wallets',
       link: {
         type: 'doc',
         id: 'learn/wallets/index',
@@ -61,7 +56,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '💸 Transactions',
+      label: 'Transactions',
       link: {
         type: 'doc',
         id: 'learn/transactions/index',
@@ -72,7 +67,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🕵️ Privacy',
+      label: 'Privacy',
       link: {
         type: 'doc',
         id: 'learn/privacy/index',
@@ -83,7 +78,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🖥️ Nodes',
+      label: 'Nodes',
       link: {
         type: 'doc',
         id: 'learn/nodes/index',
@@ -94,16 +89,17 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '🛠️ View All Guides',
+      label: 'All guides',
       href: '/guides/',
     },
     {
       type: 'link',
-      label: '📖 Glossary',
+      label: 'Glossary',
       href: '/docs/reference/glossary/',
     },
   ],
@@ -120,11 +116,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -137,11 +134,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -154,11 +152,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -171,11 +170,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -192,11 +192,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -209,11 +210,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -225,11 +227,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -245,11 +248,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],
@@ -261,11 +265,12 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: '<hr style="margin: 16px 0; border-color: rgba(245, 158, 11, 0.3);">',
+      value: '<hr />',
+      defaultStyle: false,
     },
     {
       type: 'link',
-      label: '📚 Learn the Basics',
+      label: 'Learn the basics',
       href: '/docs/learn/',
     },
   ],

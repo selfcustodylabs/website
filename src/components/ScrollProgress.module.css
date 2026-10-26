@@ -1,0 +1,28 @@
+.bar {
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  left: 0;
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+  width: 100%;
+  height: 2px;
+  background: var(--scl-amber);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .bar {
+    animation: grow linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}

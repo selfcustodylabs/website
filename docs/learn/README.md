@@ -5,127 +5,33 @@ description: "Comprehensive educational content about Bitcoin self-custody. From
 keywords: ["bitcoin education", "learn bitcoin", "bitcoin fundamentals", "cryptocurrency basics", "bitcoin concepts", "self custody"]
 tags: ["learn", "fundamentals"]
 slug: /learn
+date: "2026-01-15"
 ---
 
-# Learn Bitcoin Self-Custody
+# Learn Bitcoin self-custody
 
-Welcome to the complete learning resource for Bitcoin self-custody. Whether you're just getting started or deepening your knowledge, this section covers everything you need.
+The Learn section explains the ideas the hands-on guides rely on, in six parts: the fundamentals of bitcoin and self-custody, keys and seed phrases, wallets, transactions, privacy, and nodes. If you are new, start with [Start here](/docs/learn/fundamentals/) and read in order; every page also stands on its own, so you can go straight to the one you need.
 
----
+## What does each part cover?
 
-## 🌱 New to Bitcoin? Start Here
+| Part | Start with | What it explains |
+|---|---|---|
+| Fundamentals | [Start here](/docs/learn/fundamentals/) | What bitcoin and self-custody are, exchange risk, threat models, choosing a setup |
+| Keys and seed phrases | [Private keys](/docs/learn/keys/intro/) | How a random number becomes 24 words, extended keys, derivation paths, passphrases, making a seed with dice |
+| Wallets | [Hardware wallets](/docs/learn/wallets/hardware-wallets/) | Hardware, software and air-gapped wallets, multisig, and the 2026 Coldcard incident |
+| Transactions | [How transactions work](/docs/learn/transactions/understanding/) | UTXOs, creating, signing and broadcasting a transaction, and fees |
+| Privacy | [Why privacy matters](/docs/learn/privacy/why-privacy-matters/) | What the blockchain reveals, chain analysis, UTXO management, CoinJoin and PayJoin |
+| Nodes | [What is a node](/docs/learn/nodes/what-is-node/) | What a node does and why running your own changes what you have to trust |
 
-<div class="guide-card">
+## Which order should you read in?
 
-### [Start Here: Your Self-Custody Journey](/docs/learn/fundamentals)
+[Start here](/docs/learn/fundamentals/#which-reading-path-fits-you) sets out four reading paths: new to bitcoin, your first wallet, stronger security, and maximum security. Each is a short ordered list of pages. Once the concepts are clear, the [hands-on guides](/guides/) cover the setups step by step.
 
-Begin with the fundamentals. Understand what Bitcoin is, why self-custody matters, and find the right path for your situation.
+## Where are the reference pages?
 
-**What you'll learn:**
-- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): The basics of digital money
-- [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody): Why keys matter
-- [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path): Find the right approach for you
-- [Before You Deposit](/docs/wallet-setup/before-you-deposit): Critical safety checklist
-
-**Time:** 1-2 hours of reading to build a solid foundation
-
-</div>
-
----
-
-## 📚 Core Concepts
-
-Once you understand the basics, dive deeper into how Bitcoin actually works:
-
-### 🔑 [Keys & Cryptography](/docs/learn/keys/intro)
-
-The foundation of Bitcoin ownership. Learn how private keys, seed phrases, and derivation paths work together to secure your Bitcoin.
-
-- What makes a key "random enough"
-- How 12/24 words become your master key
-- Extended keys (xpub/xprv) and derivation paths
-- The role of passphrases
-
-### 👛 [Wallets](/docs/learn/wallets/hardware-wallets)
-
-Wallets don't hold Bitcoin; they hold keys. Understand the different types and their trade-offs.
-
-- Hardware wallets and their security model
-- Software wallets: hot vs. cold
-- Air-gapped wallets for maximum security
-- Multisig: multiple keys for one wallet
-
-### 💸 [Transactions](/docs/learn/transactions/understanding)
-
-How Bitcoin actually moves. From UTXOs to broadcast, understand the transaction lifecycle.
-
-- What is a UTXO?
-- Creating and signing transactions
-- Transaction types and fees
-- Broadcasting to the network
-
-### 🕵️ [Privacy](/docs/learn/privacy/why-privacy-matters)
-
-Privacy isn't optional. It's essential security. Learn how Bitcoin transactions can be traced and how to protect yourself.
-
-- Why privacy matters for security
-- How chain analysis works
-- Practical privacy protection
-
-### 🖥️ [Nodes](/docs/learn/nodes/what-is-node)
-
-Running your own node means trusting no one. Understand what nodes do and why they matter.
-
-- What is a Bitcoin node?
-- Why run your own node
-- Node vs. SPV wallets
-
----
-
-## 🎯 Learning Paths
-
-Choose your path based on where you are:
-
-### Complete Beginner
-1. [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin)
-2. [What is Self-Custody?](/docs/learn/fundamentals/what-is-self-custody)
-3. [Private Keys](/docs/learn/keys/intro)
-4. [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)
-
-### Ready for Self-Custody
-1. [Choose Your Setup](/docs/learn/fundamentals/choosing-your-path)
-2. [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)
-3. [Backup Verification](/docs/wallet-setup/backup-verification/)
-4. [Before You Deposit](/docs/wallet-setup/before-you-deposit)
-
-### Enhancing Security
-1. [DIY Seed Generation](/docs/learn/keys/random/)
-2. [Passphrase Security](/docs/learn/keys/passphrase/)
-3. [Run Your Own Node](/docs/bitcoin-node/)
-4. [UTXO Management](/docs/learn/privacy/utxo-management/)
-
-### Maximum Security
-1. [Why Privacy Matters](/docs/learn/privacy/why-privacy-matters)
-2. [Multisig Setup](/docs/learn/wallets/multisig/)
-3. [Air-Gapped Computing](/docs/learn/wallets/air-gapped-wallets/)
-4. [Operational Security](/docs/security/operational-security/)
-
----
-
-## 📖 Quick Reference
-
-| Resource | Description |
+| Page | What it is |
 |----------|-------------|
-| [Glossary](/docs/reference/glossary/) | 100+ Bitcoin terms defined |
-| [Address Types](/docs/reference/address-types/) | Legacy, SegWit, Taproot explained |
-| [FAQ](/docs/reference/faq/) | Common questions answered |
-
----
-
-## Ready for Hands-On?
-
-Once you've built your knowledge foundation:
-
-→ **[View All Guides](/guides/)**: Step-by-step tutorials for wallet setup, security, privacy, and more
-
-→ **[Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/)**: Get started with self-custody today
+| [Glossary](/docs/reference/glossary/) | Definitions of the terms used across the site |
+| [Address types](/docs/reference/address-types/) | Legacy, nested segwit, native segwit and Taproot addresses compared |
+| [FAQ](/docs/reference/faq/) | Common questions about seed phrases, recovery and scams |
+| [Hardware wallet comparison](/docs/reference/hardware-wallet-comparison/) | Every device we cover, with prices and our recommendations |

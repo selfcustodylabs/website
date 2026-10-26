@@ -3,9 +3,24 @@
 // (when paired with `@ts-check`).
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from "prism-react-renderer";
-import tailwindcss from "tailwindcss";
-import autoprefixer from "autoprefixer";
+import { execSync } from "node:child_process";
+
+import { redirects, createRedirects } from "./src/data/redirects.js";
+import { contentSecurityPolicy } from "./src/data/securityHeaders.js";
+import { prismLab } from "./src/data/prismTheme.js";
+import { currentAdvisory } from "./src/data/advisories.js";
+import { parseFrontMatter } from "./plugins/revision-history/index.js";
+
+/** Short hash of the commit being built, printed in the footer as the build mark. */
+function buildCommit() {
+  try {
+    return execSync("git rev-parse --short=7 HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+  } catch {
+    return "";
+  }
+}
+const COMMIT = buildCommit();
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // @type {import('@docusaurus/types').Config}
 const config = {
@@ -31,9 +46,6 @@ const config = {
     { tagName: "link", attributes: { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192x192.png" } },
     { tagName: "link", attributes: { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" } },
 
-    // Preconnect for performance
-    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.googletagmanager.com" } },
-    { tagName: "link", attributes: { rel: "preconnect", href: "https://www.google-analytics.com" } },
 
     // ===========================================
     // Open Graph Meta Tags (Facebook, LinkedIn, etc.)
@@ -70,17 +82,20 @@ const config = {
     // ===========================================
     // Content Security Policy
     // ===========================================
+    // Defined once in src/data/securityHeaders.js and shared with the real
+    // response headers that plugins/cloudflare writes to build/_headers. The
+    // meta copy leaves out frame-ancestors, which browsers ignore in a meta tag.
+    // `docusaurus start` sets NODE_ENV to development; only then is eval allowed.
     {
       tagName: "meta",
       attributes: {
         "http-equiv": "Content-Security-Policy",
-        content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
-      }
+        content: contentSecurityPolicy({
+          forMeta: true,
+          dev: process.env.NODE_ENV === "development",
+        }),
+      },
     },
-
-    // Additional security headers via meta tags
-    { tagName: "meta", attributes: { "http-equiv": "X-Content-Type-Options", content: "nosniff" } },
-    { tagName: "meta", attributes: { "http-equiv": "X-Frame-Options", content: "DENY" } },
 
     // ===========================================
     // Structured Data - Organization Schema
@@ -90,7 +105,9 @@ const config = {
       attributes: { type: "application/ld+json" },
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Organization",
+        // One entity, two types: a separate EducationalOrganization block with
+        // its own @id made the graph describe two publishers.
+        "@type": ["Organization", "EducationalOrganization"],
         "@id": "https://selfcustodylabs.com/#organization",
         "name": "Self Custody Labs",
         "url": "https://selfcustodylabs.com",
@@ -107,7 +124,9 @@ const config = {
           "Bitcoin privacy and CoinJoin",
           "Running a Bitcoin node",
           "Coreboot and Libreboot",
+          "Bitcoin inheritance planning",
         ],
+        "areaServed": "Worldwide",
         "logo": {
           "@type": "ImageObject",
           "url": "https://selfcustodylabs.com/img/logo.svg",
@@ -123,7 +142,7 @@ const config = {
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "selfcustodylabs@proton.me",
-          "contactType": "customer support"
+          "contactType": "editorial"
         }
       }),
     },
@@ -147,38 +166,45 @@ const config = {
         "inLanguage": "en-US"
       }),
     },
-    
-    // ===========================================
-    // Structured Data - Educational Organization
-    // ===========================================
-    {
-      tagName: "script",
-      attributes: { type: "application/ld+json" },
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "@id": "https://selfcustodylabs.com/#educationalorg",
-        "name": "Self Custody Labs",
-        "description": "Free educational resources for Bitcoin self-custody",
-        "url": "https://selfcustodylabs.com",
-        "sameAs": [
-          "https://x.com/selfcustodylabs",
-          "https://github.com/selfcustodylabs"
-        ],
-        "areaServed": "Worldwide",
-        "knowsAbout": [
-          "Bitcoin",
-          "Self-custody",
-          "Hardware wallets",
-          "Cold storage",
-          "Cryptocurrency security",
-          "Private keys",
-          "Seed phrases",
-          "Multisig wallets"
-        ]
-      }),
-    },
   ],
+
+  // ===========================================
+  // FUTURE FLAGS (Docusaurus v4 behaviour, opted into one by one)
+  // ===========================================
+  future: {
+    v4: {
+      // postBuild no longer receives the legacy `head` attribute; no plugin
+      // here reads it. Required by the faster SSG worker threads.
+      removeLegacyPostBuildHeadAttribute: true,
+      // Infima and theme CSS go into cascade layers, so site CSS (unlayered)
+      // always wins. This retires the Infima `a:hover` specificity trap.
+      useCssCascadeLayers: true,
+      // Off on purpose: namespacing would rename every localStorage key and
+      // re-show the dismissed announcement bar to everyone, for no gain on a
+      // site that owns its whole domain.
+      siteStorageNamespacing: false,
+      // Rspack, SWC and Lightning CSS (package @docusaurus/faster).
+      fasterByDefault: true,
+      // Off on purpose: MDX 1 compat keeps `:::tip Title` admonitions and
+      // `<!-- -->` comments working, which the docs and llms-txt rely on.
+      mdx1CompatDisabledByDefault: false,
+    },
+    // Everything Docusaurus Faster offers except the SWC HTML minifier, which
+    // strips the quotes from <meta> attribute values. That is valid HTML, but the
+    // head is what search engines and social-card scrapers parse, so it keeps the
+    // previous minifier's output shape. Build time is dominated by the bundler.
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: false,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      ssgWorkerThreads: true,
+      gitEagerVcs: true,
+    },
+  },
 
   // ===========================================
   // SITE URLS - Critical for canonical tags
@@ -202,10 +228,15 @@ const config = {
   // Link/Build Checking
   // ===========================================
   onBrokenLinks: "throw",
-  onBrokenAnchors: "warn",
+  // Throws since Oct 2026: the content pass rewords headings, and an anchor
+  // link that silently stops matching is a broken link.
+  onBrokenAnchors: "throw",
   onDuplicateRoutes: "warn",
   
   markdown: {
+    // Adds each doc's and note's recent commits as `revisions`, read by
+    // src/components/RevisionHistory (see plugins/revision-history).
+    parseFrontMatter,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
@@ -227,12 +258,6 @@ const config = {
       "classic",
       // @type {import('@docusaurus/preset-classic').Options}
       ({
-        // Google Analytics
-        gtag: {
-          trackingID: "G-DB4LHSKK4J",
-          anonymizeIP: true,
-        },
-        
         // Sitemap Configuration
         sitemap: {
           lastmod: 'date',
@@ -255,16 +280,42 @@ const config = {
           showLastUpdateTime: true,
           // Breadcrumbs help with SEO and navigation
           breadcrumbs: true,
-          // Internal planning docs live here but are not published
-          exclude: ["superpowers/**"],
         },
         
-        // Blog disabled
-        blog: false,
+        // Field notes: dated posts about what changed on the site and why.
+        // Files are named by slug with `date:` in frontmatter, so a note's URL
+        // is /notes/<file name>/, which scripts/generate-og-images.py derives
+        // the same way. No authors.yml (the plugin would build a thin
+        // /notes/authors/ page; the byline is in src/theme/BlogPostItem/Header),
+        // no tags and no archive, so the only routes are the list, the posts
+        // and the feeds.
+        blog: {
+          path: "notes",
+          routeBasePath: "notes",
+          blogTitle: "Field notes",
+          blogDescription:
+            "Dated notes from Self Custody Labs on what changed on the site and why: recommendations we dropped, guides we rewrote, and how the site is built.",
+          postsPerPage: "ALL",
+          blogSidebarCount: 0,
+          showReadingTime: false,
+          showLastUpdateTime: true,
+          archiveBasePath: null,
+          onInlineTags: "throw",
+          onInlineAuthors: "ignore",
+          onUntruncatedBlogPosts: "ignore",
+          feedOptions: {
+            type: ["rss", "atom"],
+            title: "Self Custody Labs: field notes",
+            description: "What changed on selfcustodylabs.com and why.",
+            copyright: `Self Custody Labs, ${new Date().getFullYear()}`,
+            language: "en",
+            limit: false,
+          },
+        },
         
         // Theme
         theme: {
-          customCss: ["./src/css/custom.css", "./src/css/tailwind.css"],
+          customCss: ["./src/css/custom.css"],
         },
       }),
     ],
@@ -301,18 +352,15 @@ const config = {
       // NOTE: hrefs below are NOT covered by onBrokenLinks. The link checker only
       // walks Markdown/MDX. Verify these routes by hand after any edit.
       // Bump `id` to re-show the bar to visitors who already dismissed it.
-      announcementBar: {
-        id: 'coldcard_rng_2026',
-        content:
-          '⚠️ <strong>Coldcard RNG flaw:</strong> seeds generated 2021–2026 may be ' +
-          'brute-forceable, and new firmware does <strong>not</strong> fix an existing seed. ' +
-          '<a href="/docs/learn/wallets/coldcard-entropy-incident/">Am I affected?</a> · ' +
-          'Generate your own: <a href="/docs/learn/keys/random/">dice seed</a> + ' +
-          '<a href="/docs/learn/keys/passphrase/">passphrase</a>.',
-        backgroundColor: '#f59e0b',
-        textColor: '#000',
-        isCloseable: true,
-      },
+      // From the current advisory in src/data/advisories.js, which is also the
+      // homepage bulletin (src/theme/AnnouncementBar hides the bar on "/").
+      ...(currentAdvisory && {
+        announcementBar: {
+          id: currentAdvisory.id,
+          content: currentAdvisory.bar,
+          isCloseable: true,
+        },
+      }),
       
       // ===========================================
       // Navigation
@@ -324,110 +372,27 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            label: 'Learn',
-            to: '/learn/',
-            position: 'left',
-          },
-          {
-            label: 'Guides',
-            to: '/guides/',
-            position: 'left',
-          },
+          { label: 'Learn', to: '/learn/', position: 'left' },
+          { label: 'Guides', to: '/guides/', position: 'left' },
+          { label: 'Notes', to: '/notes/', position: 'left' },
+          { label: 'Worksheets', to: '/worksheets/', position: 'left' },
           {
             label: 'Resources',
             type: 'dropdown',
             position: 'left',
             items: [
-              {
-                to: '/books/',
-                label: 'Books',
-              },
-              {
-                to: '/podcasts/',
-                label: 'Podcasts',
-              },
-              {
-                type: 'html',
-                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
-              },
-              {
-                href: 'https://timechainstats.com/',
-                label: 'TimechainStats',
-              },
-              {
-                href: 'https://kycnot.me/',
-                label: 'No KYC'
-              },
-              {
-                href: 'https://mempool.space/',
-                label: 'Mempool',
-              },
-              {
-                href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
-                label: 'BIP39 Word List'
-              },
+              { to: '/books/', label: 'Books' },
+              { to: '/podcasts/', label: 'Podcasts' },
+              { type: 'html', value: '<hr class="scl-menu-sep" />' },
+              { href: 'https://mempool.space/', label: 'Mempool' },
+              { href: 'https://timechainstats.com/', label: 'TimechainStats' },
+              { href: 'https://kycnot.me/', label: 'No KYC' },
+              { href: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt', label: 'BIP39 word list' },
             ],
           },
-          {
-            label: 'About',
-            type: 'dropdown',
-            position: 'right',
-            items: [
-              // NOTE: onBrokenLinks does not walk themeConfig, so this internal
-              // route is not link-checked by the build. Verify it by hand.
-              {
-                to: '/about/',
-                label: 'About Self Custody Labs',
-              },
-              {
-                type: 'html',
-                value: '<hr style="margin: 8px 0; border-color: rgba(245, 158, 11, 0.2);">',
-              },
-              {
-                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-                label: 'Nostr',
-              },
-              {
-                href: 'https://x.com/selfcustodylabs',
-                label: 'X (Twitter)',
-              },
-              {
-                href: 'mailto:selfcustodylabs@proton.me',
-                label: 'E-mail'
-              },
-              {
-                href: 'https://app.cluborange.org/selfcustodylabs',
-                label: 'Club Orange App',
-              },
-              {
-                href: 'https://github.com/selfcustodylabs',
-                label: 'GitHub',
-              },
-              {
-                href: 'https://keybase.io/selfcustodylabs',
-                label: 'Keybase'
-              },
-            ],
-          },
-          {
-            href: 'https://github.com/selfcustodylabs',
-            position: 'right',
-            className: "header--github-link",
-            "aria-label": "GitHub repository",
-          },
-          {
-            href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-            position: 'right',
-            className: "header--nostr-link",
-            "aria-label": "Nostr profile",
-          },
-          {
-            href: 'https://app.cluborange.org/selfcustodylabs',
-            position: 'right',
-            className: "header--cluborange-link",
-            "aria-label": "Club Orange App",
-          },
+          // NOTE: onBrokenLinks does not walk themeConfig, so internal routes here
+          // are not link-checked by the build. Verify them by hand.
+          { label: 'About', to: '/about/', position: 'right' },
         ],
       },
       
@@ -494,6 +459,14 @@ const config = {
             title: 'Resources',
             items: [
               {
+                label: 'Field Notes',
+                to: '/notes/',
+              },
+              {
+                label: 'Worksheets',
+                to: '/worksheets/',
+              },
+              {
                 label: 'Books',
                 to: '/books/',
               },
@@ -522,467 +495,61 @@ const config = {
           {
             title: 'Connect',
             items: [
-              {
-                label: 'Nostr',
-                href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5',
-              },
-              {
-                label: 'X (Twitter)',
-                href: 'https://x.com/selfcustodylabs',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/selfcustodylabs',
-              },
-              {
-                label: 'Keybase',
-                href: 'https://keybase.io/selfcustodylabs',
-              },
+              { label: 'Nostr', href: 'https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5' },
+              { label: 'X', href: 'https://x.com/selfcustodylabs' },
+              { label: 'GitHub', href: 'https://github.com/selfcustodylabs' },
+              { label: 'Keybase', href: 'https://keybase.io/selfcustodylabs' },
+              { label: 'Club Orange', href: 'https://app.cluborange.org/selfcustodylabs' },
+              { label: 'Email', href: 'mailto:selfcustodylabs@proton.me' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Self Custody Labs. Built with Docusaurus.`,
+        // The build mark is the commit the site was built from, like the plate
+        // hash on the OG cards: anyone can check what changed and when.
+        copyright:
+          `© ${new Date().getFullYear()} Self Custody Labs · ` +
+          (COMMIT
+            ? `build <a href="https://github.com/selfcustodylabs/website/commit/${COMMIT}">${COMMIT}</a>, ${BUILD_DATE} · `
+            : "") +
+          'Nostr <a href="https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5">selfcustodylabs@selfcustodylabs.com</a> · ' +
+          '<a href="https://keybase.io/selfcustodylabs">Keybase</a>',
       },
       
       // ===========================================
       // Code Highlighting
       // ===========================================
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismLab,
+        darkTheme: prismLab,
         additionalLanguages: ['bash', 'json'],
       },
     }),
     
   // ===========================================
-  // THEMES (Search)
-  // ===========================================
-  themes: [
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      // @type {import("@easyops-cn/docusaurus-search-local").PluginOptions}
-      ({
-        hashed: true,
-        language: ["en"],
-        indexDocs: true,
-        indexPages: true,
-        indexBlog: false,
-        docsRouteBasePath: "/docs",
-        // Improve search result quality
-        searchResultLimits: 8,
-        searchResultContextMaxLength: 50,
-        // Highlight search terms
-        highlightSearchTermsOnTargetPage: true,
-      }),
-    ],
-  ],
-  
-  // ===========================================
   // PLUGINS
   // ===========================================
   plugins: [
-    function tailwindPlugin() {
-      return {
-        name: 'docusaurus-tailwind',
-        configurePostCss(postcssOptions) {
-          postcssOptions.plugins.push(tailwindcss);
-          postcssOptions.plugins.push(autoprefixer);
-          return postcssOptions;
-        },
-      };
-    },
     // Machine-readable mirrors for AI agents: /llms.txt, /llms-full.txt and a
     // per-doc <route>.md beside each index.html. See plugins/llms-txt/index.js.
     './plugins/llms-txt',
+    // Title, description, guide facts and git date of every doc, as a data
+    // module for the pages that list docs (/, /learn/, /guides/).
+    './plugins/site-index',
+    // HowTo steps and FAQ entries read from each doc's own "Step N" headings and
+    // "Common questions" section, for the JSON-LD in src/theme/DocItem/Layout.
+    './plugins/structured-data',
+    // Cloudflare Pages: _redirects (real 301s from the same redirect list as
+    // below) and _headers (CSP, HSTS, caching). See plugins/cloudflare/index.js.
+    './plugins/cloudflare',
+    // Static search index (build/pagefind/), loaded by src/theme/SearchBar and
+    // src/pages/search.jsx. See plugins/pagefind/index.js.
+    './plugins/pagefind',
 
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          // =============================================
-          // GETTING-STARTED → LEARN/FUNDAMENTALS migration
-          // =============================================
-          {
-            from: '/docs/getting-started',
-            to: '/docs/learn/fundamentals',
-          },
-          {
-            from: '/docs/getting-started/what-is-bitcoin',
-            to: '/docs/learn/fundamentals/what-is-bitcoin',
-          },
-          {
-            from: '/docs/getting-started/what-is-self-custody',
-            to: '/docs/learn/fundamentals/what-is-self-custody',
-          },
-          {
-            from: '/docs/getting-started/holding-bitcoin',
-            to: '/docs/learn/fundamentals/holding-bitcoin',
-          },
-          {
-            from: '/docs/getting-started/choosing-your-path',
-            to: '/docs/learn/fundamentals/choosing-your-path',
-          },
-          {
-            from: '/docs/getting-started/threat-models',
-            to: '/docs/learn/fundamentals/threat-models',
-          },
-          {
-            from: '/docs/getting-started/before-you-deposit',
-            to: '/docs/wallet-setup/before-you-deposit',
-          },
-          // =============================================
-          // LEARN/FUNDAMENTALS → WALLET-SETUP migration
-          // =============================================
-          {
-            from: '/docs/learn/fundamentals/before-you-deposit',
-            to: '/docs/wallet-setup/before-you-deposit',
-          },
-          // =============================================
-          // CONTENT MERGES - Phase 3
-          // =============================================
-          {
-            from: '/docs/learn/transactions/lifecycle',
-            to: '/docs/learn/transactions/understanding',
-          },
-          // Legacy /docs/basics/ redirects
-          {
-            from: '/docs/basics/what-is-bitcoin',
-            to: '/docs/learn/fundamentals/what-is-bitcoin',
-          },
-          {
-            from: '/docs/basics/holding',
-            to: '/docs/learn/fundamentals/holding-bitcoin',
-          },
-          // Top-level legacy path (no docs prefix) → closest topic
-          {
-            from: '/bitcoin-devices',
-            to: '/docs/reference/hardware-wallet-comparison',
-          },
-          // =============================================
-          // CATEGORY ROUTES → DOC-BACKED INDEX PAGES (Phase 4b)
-          // Generated-index category pages were replaced with
-          // real index.md files so the sitemap can carry lastmod.
-          // =============================================
-          {
-            from: '/docs/category/internal-flashing',
-            to: '/docs/coreboot/internal',
-          },
-          {
-            from: '/docs/category/nodes',
-            to: '/docs/learn/nodes',
-          },
-          {
-            from: '/docs/category/privacy',
-            to: '/docs/learn/privacy',
-          },
-          {
-            from: '/docs/category/transactions',
-            to: '/docs/learn/transactions',
-          },
-          {
-            from: '/docs/category/wallets',
-            to: '/docs/learn/wallets',
-          },
-          {
-            from: '/docs/category/raspberry-pico',
-            to: '/docs/libreboot/raspberry-pico',
-          },
-          // =============================================
-          // SEED GENERATION MERGE → /docs/learn/keys/random
-          // The old /docs/security/seed-generation/* tree and its
-          // bare /docs/seed/* aliases were merged into a single
-          // canonical page at /docs/learn/keys/random/.
-          // =============================================
-          {
-            from: '/docs/security/seed-generation',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/requirements',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/dice-roll',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/binary-decimal',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/checksum',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/bip39',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/security/seed-generation/backup',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/requirements',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/dice-roll',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/binary-decimal',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/checksum',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/bip39',
-            to: '/docs/learn/keys/random',
-          },
-          {
-            from: '/docs/seed/backup',
-            to: '/docs/learn/keys/random',
-          },
-          // =============================================
-          // PASSPHRASE MERGE → /docs/learn/keys/passphrase
-          // The old /docs/security/passphrase/* tree and its
-          // bare /docs/passphrase/* aliases were merged into
-          // a single canonical page at /docs/learn/keys/passphrase/.
-          // =============================================
-          {
-            from: '/docs/security/passphrase',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/security/passphrase/word-lists',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/security/passphrase/dice-roll',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/security/passphrase/backup',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/passphrase',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/passphrase/word-lists',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/passphrase/dice-roll',
-            to: '/docs/learn/keys/passphrase',
-          },
-          {
-            from: '/docs/passphrase/backup',
-            to: '/docs/learn/keys/passphrase',
-          },
-          // =============================================
-          // PRIVACY TRIO MERGE → /docs/learn/privacy/*
-          // The old /docs/privacy/* tree and its bare
-          // /docs/{coinjoin,payjoin,utxo-management}/*
-          // aliases were merged into three canonical pages:
-          //   /docs/learn/privacy/coinjoin
-          //   /docs/learn/privacy/payjoin
-          //   /docs/learn/privacy/utxo-management
-          // =============================================
-          // Old /docs/privacy/* hub
-          {
-            from: '/docs/privacy',
-            to: '/docs/learn/privacy',
-          },
-          // CoinJoin
-          {
-            from: '/docs/privacy/coinjoin',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/privacy/coinjoin/how-it-works',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/privacy/coinjoin/services',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/privacy/coinjoin/best-practices',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/coinjoin',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/coinjoin/how-it-works',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/coinjoin/services',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          {
-            from: '/docs/coinjoin/best-practices',
-            to: '/docs/learn/privacy/coinjoin',
-          },
-          // PayJoin
-          {
-            from: '/docs/privacy/payjoin',
-            to: '/docs/learn/privacy/payjoin',
-          },
-          {
-            from: '/docs/payjoin',
-            to: '/docs/learn/privacy/payjoin',
-          },
-          // UTXO Management
-          {
-            from: '/docs/privacy/utxo-management',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          {
-            from: '/docs/privacy/utxo-management/coin-control',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          {
-            from: '/docs/privacy/utxo-management/consolidation',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          {
-            from: '/docs/utxo-management',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          {
-            from: '/docs/utxo-management/coin-control',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          {
-            from: '/docs/utxo-management/consolidation',
-            to: '/docs/learn/privacy/utxo-management',
-          },
-          // ---------------------------------------------------
-          // Topic 4: Multisig (merged into learn/wallets/multisig)
-          // ---------------------------------------------------
-          {
-            from: '/docs/advanced/multisig',
-            to: '/docs/learn/wallets/multisig',
-          },
-          {
-            from: '/docs/advanced/multisig/hardware-setup',
-            to: '/docs/learn/wallets/multisig/hardware-setup',
-          },
-          {
-            from: '/docs/advanced/multisig/sparrow-setup',
-            to: '/docs/learn/wallets/multisig/sparrow-setup',
-          },
-          {
-            from: '/docs/advanced/multisig/backup-recovery',
-            to: '/docs/learn/wallets/multisig/backup-recovery',
-          },
-          {
-            from: '/docs/multisig',
-            to: '/docs/learn/wallets/multisig',
-          },
-          {
-            from: '/docs/multisig/hardware-setup',
-            to: '/docs/learn/wallets/multisig/hardware-setup',
-          },
-          {
-            from: '/docs/multisig/sparrow-setup',
-            to: '/docs/learn/wallets/multisig/sparrow-setup',
-          },
-          {
-            from: '/docs/multisig/backup-recovery',
-            to: '/docs/learn/wallets/multisig/backup-recovery',
-          },
-          // ---------------------------------------------------
-          // Topic 5: Air-gapped computer (merged into learn/wallets/air-gapped-wallets)
-          // ---------------------------------------------------
-          {
-            from: '/docs/advanced/air-gapped-computer',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          {
-            from: '/docs/advanced/air-gapped-computer/types',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          {
-            from: '/docs/advanced/air-gapped-computer/setup',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          {
-            from: '/docs/air-gapped-computer',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          {
-            from: '/docs/air-gapped-computer/types',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          {
-            from: '/docs/air-gapped-computer/setup',
-            to: '/docs/learn/wallets/air-gapped-wallets',
-          },
-          // =============================================
-          // RENAMED PAGES → current slugs (GSC "Not found (404)")
-          // Old URLs Google still remembers that were renamed,
-          // not merged. Redirect to preserve their link equity.
-          // =============================================
-          {
-            from: '/docs/libreboot/build-libreboot',
-            to: '/docs/libreboot/build',
-          },
-          {
-            from: '/docs/libreboot/update',
-            to: '/docs/libreboot/update-bios',
-          },
-          {
-            from: '/docs/bitcoin-node/node-setup',
-            to: '/docs/bitcoin-node',
-          },
-          {
-            from: '/docs/category/keys-and-seeds',
-            to: '/docs/learn/keys',
-          },
-        ],
-        /** @param {string} existingPath */
-        createRedirects(existingPath) {
-          // trailingSlash: true means existingPath arrives WITH a trailing slash
-          // (e.g. '/docs/reference/glossary/'). Normalize it away so the exact
-          // '===' matches below fire. Without this, those redirects are silently
-          // never generated and the old URLs 404.
-          const path = existingPath.replace(/\/$/, '');
-          // Catch-all for any /docs/learn/ path - create redirect from /docs/basics/
-          if (path.includes('/docs/learn/') && !path.includes('/docs/learn/fundamentals/')) {
-            return [path.replace('/docs/learn/', '/docs/basics/')];
-          }
-          // Catch-all for reference paths (glossary and address-types moved from learn)
-          if (path === '/docs/reference/glossary') {
-            return ['/docs/learn/glossary', '/docs/basics/glossary'];
-          }
-          if (path === '/docs/reference/address-types') {
-            return ['/docs/learn/address-types', '/docs/basics/address-types'];
-          }
-          // Catch-all for wallet-setup paths
-          if (path.includes('/docs/wallet-setup/hardware-wallet')) {
-            return [path.replace('/docs/wallet-setup/hardware-wallet', '/docs/hardware-wallet-setup')];
-          }
-          if (path.includes('/docs/wallet-setup/backup-verification')) {
-            return [path.replace('/docs/wallet-setup/backup-verification', '/docs/backup-verification')];
-          }
-          // Catch-all for advanced paths
-          if (path.includes('/docs/advanced/bitcoin-computer')) {
-            return [path.replace('/docs/advanced/bitcoin-computer', '/docs/bitcoin-computer')];
-          }
-          return undefined;
-        },
+        redirects,
+        createRedirects,
       },
     ],
   ],

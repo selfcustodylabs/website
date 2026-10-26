@@ -1,21 +1,21 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import VerifiedRoundedIcon from "@mui/icons-material/VerifiedRounded";
 
+import styles from "./doc/AuthorByline.module.css";
+
+/**
+ * The colophon under every doc: who publishes it, the independence claim, and
+ * where corrections go. Plain text; the Organization itself is described once,
+ * in the site-wide JSON-LD.
+ */
 export default function AuthorByline() {
   return (
-    <aside
-      className="mt-10 flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white/70"
-      itemScope
-      itemType="https://schema.org/Organization"
-    >
-      <VerifiedRoundedIcon sx={{ fontSize: 18 }} className="text-amber-400" />
+    <aside className={styles.colophon} data-pagefind-ignore="all">
+      <span className={styles.mark}>Self Custody Labs</span>
       <span>
-        Published by{" "}
-        <Link to="/" className="font-semibold text-white hover:text-amber-300" itemProp="url">
-          <span itemProp="name">Self Custody Labs</span>
-        </Link>
-        {", "}independent, open-source Bitcoin self-custody guides.
+        Independent: no affiliate links, no sponsors. Found a mistake?{" "}
+        <a href="mailto:selfcustodylabs@proton.me">Tell us</a> and we will fix it and say what
+        changed. <Link to="/about/">How we work</Link>.
       </span>
     </aside>
   );

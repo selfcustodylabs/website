@@ -1,34 +1,42 @@
-import React from 'react';
+import React, { useEffect, useRef } from "react";
 
-import useScrollProgress from '@site/src/hooks/useScrollProgress';
+import styles from "./ScrollProgress.module.css";
 
 /**
- * A hairline reading-progress bar pinned under the navbar.
+ * A 2px reading-progress line under the navbar.
  *
- * The gradient is sized to the viewport rather than to the bar, so scrolling
- * reveals it left to right instead of stretching it; the colour under any given
- * pixel stays put. Hidden at the very top of the page, which keeps it out of the
- * hero and also means it is only ever invisible during the brief window where
- * the announcement bar is still pushing the navbar down.
+ * Where the browser supports scroll-driven animations the bar is pure CSS
+ * (animation-timeline: scroll()); otherwise a requestAnimationFrame-throttled
+ * scroll listener sets the same transform. On a page too short to scroll it
+ * stays at zero width, which is invisible.
  */
 export default function ScrollProgress() {
-  const progress = useScrollProgress();
+  const ref = useRef(null);
 
-  return (
-    <div
-      aria-hidden="true"
-      data-scroll-progress=""
-      className="pointer-events-none fixed inset-x-0 z-[calc(var(--ifm-z-index-fixed)+1)] h-[3px]"
-      style={{ top: 'var(--ifm-navbar-height)' }}
-    >
-      <div
-        className="h-full origin-left bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-[length:100vw_100%] transition-opacity duration-300"
-        style={{
-          width: `${progress * 100}%`,
-          opacity: progress > 0.001 ? 1 : 0,
-          boxShadow: progress > 0.001 ? '0 0 12px 0 rgba(245, 158, 11, 0.55)' : 'none',
-        }}
-      />
-    </div>
-  );
+  useEffect(() => {
+    if (typeof CSS !== "undefined" && CSS.supports?.("animation-timeline: scroll()"))
+      return undefined;
+    const bar = ref.current;
+    if (!bar) return undefined;
+    let frame = null;
+    const measure = () => {
+      frame = null;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max <= 0 ? 0 : Math.min(1, Math.max(0, window.scrollY / max));
+      bar.style.transform = `scaleX(${p})`;
+    };
+    const schedule = () => {
+      if (frame === null) frame = window.requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, []);
+
+  return <div ref={ref} aria-hidden="true" className={styles.bar} />;
 }

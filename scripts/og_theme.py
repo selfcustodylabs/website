@@ -16,6 +16,7 @@ card renders byte-identically on every run.
 import hashlib
 import math
 from functools import lru_cache
+from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -41,7 +42,11 @@ DIM = (32, 38, 48)
 DIM2 = (46, 54, 67)
 MID = (96, 76, 42)
 
+# The exact faces live in the repo (scripts/assets/fonts/, OFL, Inter 4.1 and
+# JetBrains Mono 2.304), so cards render identically on any machine and in CI.
+# The system paths remain as fallbacks; Noto last, which changes every card.
 FONT_DIRS = [
+    str(Path(__file__).resolve().parent / "assets" / "fonts"),
     "/usr/share/fonts/opentype/inter",
     "/usr/share/fonts/truetype/jetbrains-mono",
     "/usr/share/fonts/truetype/noto",
@@ -72,8 +77,6 @@ CY = IY + IH // 2
 
 @lru_cache(maxsize=None)
 def find_font(names):
-    from pathlib import Path
-
     for name in names:
         for d in FONT_DIRS:
             p = Path(d) / name
@@ -830,6 +833,7 @@ MOTIF_BY_URL = {
     "/docs/learn/fundamentals/threat-models/": "shield",
     "/docs/learn/fundamentals/choosing-your-path/": "fork",
     "/docs/learn/keys/intro/": "derivation",
+    "/docs/learn/keys/derivation-path/": "derivation",
     "/docs/learn/keys/number-systems/": "bits",
     "/docs/learn/keys/xprv/": "sign",
     "/docs/learn/keys/xpub/": "derivation",
@@ -872,15 +876,24 @@ MOTIF_BY_URL = {
     "/docs/wallet-setup/": "checklist",
     "/docs/wallet-setup/before-you-deposit/": "checklist",
     "/docs/wallet-setup/hardware-wallet/": "device",
+    "/docs/wallet-setup/hardware-wallet/trezor-safe-5/": "device",
+    "/docs/wallet-setup/hardware-wallet/bitbox02-nova/": "device",
+    "/docs/wallet-setup/hardware-wallet/jade-plus/": "airgap",
     "/docs/security/operational-security/": "redact",
     "/docs/security/physical-security/": "vault",
     "/docs/reference/": "index",
     "/docs/reference/glossary/": "index",
     "/docs/reference/address-types/": "address",
+    "/docs/reference/advisories/": "alert",
     "/docs/reference/hardware-wallet-comparison/": "device",
     "/docs/reference/faq/": "checklist",
     "/docs/reference/faq/recovery-scams/": "alert",
     "/docs/reference/faq/recovery-troubleshooting/": "checklist",
+    # Field notes
+    "/notes/coldcard-no-longer-recommended/": "stuck-dice",
+    "/notes/coinjoin-recommendation/": "mix",
+    "/notes/site-rebuild-2026/": "index",
+    "/notes/correction-device-dice-entry/": "dice",
 }
 
 

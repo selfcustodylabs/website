@@ -1,138 +1,85 @@
 ---
 sidebar_position: 7
 title: "Update Libreboot Firmware"
-description: "Practical guide: Update. Covers Disable security protections before flashing, Flash Chip Size, Read the Current Chip Contents."
+description: "Update an existing Libreboot install from inside Linux without opening the laptop: relax /dev/mem access, back up the chip, write the new ROM and verify it."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "update"]
 tags: ["libreboot", "update", "flashprog", "bios"]
+date: "2025-03-29"
 ---
-# Update (internal)
+# Update Libreboot (internal flashing)
 
-Once Libreboot is already installed, you can update to new releases through internal flashing, without needing to disassemble your laptop again.
+Once Libreboot is installed, newer releases can be written from Linux on the laptop itself, without opening it: build the new image as in [build ROMs](/docs/libreboot/roms/), allow flashprog to reach the flash chip (which may need the `iomem=relaxed` kernel option), read the current chip three times and keep a matching backup, then write the new image with `flashprog -p internal` and check it before rebooting. If you instead download a pre-built release from libreboot.org, it ships without the vendor files your board needs; insert them first with `./mk inject`, following Libreboot's instructions for your board.
 
+## Step 1: Let flashprog reach the chip
 
-## Disable security protections before flashing
-
-Before performing an internal flash, you need to disable the /dev/mem protections. Remember to re-enable them once you’re done.
-
-To check if there are any issues, run:
+Step 1 checks that the kernel lets flashprog access the flash. Run:
 
 ```bash
 sudo flashprog -p internal
 ```
 
-If you don’t get any errors, you can proceed to the Flash Chip Size part.
-
-If you see an error related to `/dev/mem` access, you should restart your system with the `iomem=relaxed` kernel parameter.
-
-To do this just type:
+If it reports the chip without errors, go to step 2. If it reports an error about `/dev/mem`, restart with the `iomem=relaxed` kernel option. Open GRUB's settings:
 
 ```bash
 sudo nano /etc/default/grub
 ```
 
-Find the line starting with `GRUB_CMDLINE_LINUX_DEFAULT` and add `iomem=relaxed`:
+add `iomem=relaxed` to the line starting `GRUB_CMDLINE_LINUX_DEFAULT`:
 
 ```bash
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash iomem=relaxed"
 ```
 
-Save the file and update grub:
+then save, update GRUB and reboot:
 
 ```bash
 sudo update-grub
-```
-
-Reboot the system:
-
-```bash
 sudo reboot
 ```
 
-Additionally, use a kernel that does not have the `CONFIG_STRICT_DEVMEM` option enabled. For more detailed instructions, refer to the original guide on the Libreboot website.
+Some kernels are built with `CONFIG_STRICT_DEVMEM`, which blocks this access even then; Libreboot's documentation covers that case. Remove `iomem=relaxed` again once the update is done, because it loosens a protection the kernel normally enforces.
 
+## Step 2: Check the chip size
 
-## Flash Chip Size
+Step 2 confirms the image you built matches the chip. The output of `sudo flashprog -p internal` includes the flash chip and its size; it should match the size in your board target's name (for example 12 MB for `lenovo_thinkpad_x230_12mb`).
 
-To determine the size of your boot flash chip, use the following command:
+## Step 3: Back up what is on the chip now
 
-```bash
-sudo flashprog -p internal
-```
-
-This will display information about your boot flash in the output.
-
-
-## Read the Current Chip Contents
-
-To read the current contents of the flash chip, run the below command three times:
+Step 3 reads the current firmware three times and keeps it only if the reads match:
 
 ```bash
 sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
 sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump2.bin
 sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump3.bin
+sha1sum dump*.bin
 ```
 
-Next, use `sha1sum` to compare the dumped BIOS images
+All three hashes must be the same. Keep `dump.bin` somewhere other than this laptop and delete the other two:
 
 ```bash
-sha1sum dump.bin dump2.bin dump3.bin
+rm dump2.bin dump3.bin
 ```
 
-If the hashes match, you should see something like this:
+## Step 4: Write the new image
 
-```bash
-f79eac66c119da200460153019d3d2d5b2c22839  dump.bin
-f79eac66c119da200460153019d3d2d5b2c22839  dump2.bin
-f79eac66c119da200460153019d3d2d5b2c22839  dump3.bin
-```
-
-Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
-
-```bash
-rm -fr dump2.bin dump3.bin
-```
-
-## Write the Rom to the Chip
-
-To erase and write a new ROM to the flash chip, run:
+Step 4 writes the update:
 
 ```bash
 sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
 ```
 
-Note: The force_I_want_a_brick option disables safety checks in flashprog. This is necessary in some cases due to changes in flashrom and coreboot over time. If you prefer to avoid this option, try the following:
+`laptop=force_I_want_a_brick` and `boardmismatch=force` switch off safety checks that otherwise refuse to flash laptops or boards flashprog does not recognise; with the correct image for your machine, Libreboot's documentation describes them as safe. To use as few overrides as possible, try plain `-p internal` first, then `-p internal:boardmismatch=force`, and add `laptop=force_I_want_a_brick` only if needed.
 
-1. Start with -p internal.
-2. If that doesn’t work, use -p internal:boardmismatch=force.
-3. If it still doesn't work, use -p internal:boardmismatch=force,laptop=force_I_want_a_brick.
+flashprog verifies the write and prints `VERIFIED` (or reports that the chip already matched) on success.
 
-As long as you are using the correct ROM for your machine, it is safe to run these commands. These options simply disable safety checks and are not inherently dangerous.
+## Step 5: Check the result before rebooting
 
-If the flashing is successful, the tool will display "VERIFIED" or indicate that the chip contents are identical to the requested image.
-
-To double-check, you can dump the newly flashed BIOS image by running:
+Step 5 reads the chip back and compares it with the image:
 
 ```bash
 sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r new_dump.bin
-```
-
-Next, use `sha1sum` to compare the dumped BIOS image with the original Libreboot ROM file
-
-```bash
 sha1sum libreboot.rom new_dump.bin
+rm new_dump.bin
 ```
 
-If the hashes match, you should see something like this:
-
-```bash
-3019da54cea33d2d5b2c228393c009ad20046015  libreboot.rom
-3019da54cea33d2d5b2c228393c009ad20046015  new_dump.bin
-```
-
-Once you've confirmed that the hashes are the same, you can clean up any temporary dump files:
-
-```bash
-rm -fr new_dump.bin
-```
-
-Now you can reboot your laptop with the updated bios!
+If the two hashes match, reboot into the updated firmware. If they do not, do not reboot: write the image again, or write `dump.bin` back, until a read matches.

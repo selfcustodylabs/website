@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate per-page Open Graph images for all docs.
 
-Walks docs/**/*.md, parses the frontmatter title, and renders a 1200x630 PNG
+Walks docs/**/*.md and *.mdx, parses the frontmatter title, and renders a 1200x630 PNG
 to static/img/og/ following the URL slug structure. Writes a manifest file
 at src/data/ogManifest.json mapping doc URL paths to image paths.
 
@@ -32,6 +32,7 @@ from og_theme import (  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
+NOTES = ROOT / "notes"
 IMG_DIR = ROOT / "static" / "img"
 OG_DIR = IMG_DIR / "og"
 MANIFEST = ROOT / "src" / "data" / "ogManifest.json"
@@ -80,6 +81,9 @@ PHOTO_EXACT = {
     "/docs/libreboot/raspberry-pico/": "libreboot/pico.webp",
     "/docs/libreboot/raspberry-pico/build-serprog/": "libreboot/connection.webp",
     "/docs/coreboot/build/": "coreboot/connection.webp",
+    "/docs/coreboot/requirements/": "coreboot/connection.webp",
+    "/docs/coreboot/external-flashing/": "libreboot/connection.webp",
+    "/docs/libreboot/raspberry-pico/connection/": "libreboot/floating-setup.webp",
     "/docs/coreboot/internal/flashing-bios/": "coreboot/connection.webp",
 }
 
@@ -125,6 +129,8 @@ def url_to_image_name(url: str) -> str:
 
 def breadcrumb(url: str) -> str:
     """Section trail for the eyebrow: /docs/learn/keys/seed/ -> LEARN / KEYS."""
+    if url.startswith("/notes/"):
+        return "FIELD NOTES"
     parts = [p for p in url.strip("/").split("/") if p][1:]
     if not parts:
         return "GUIDES"
@@ -411,12 +417,25 @@ def main():
     OG_DIR.mkdir(parents=True, exist_ok=True)
     manifest = {}
     count = 0
-    for md in sorted(DOCS.rglob("*.md")):
+    # .mdx too: four docs are MDX, and until Oct 2026 this loop missed them,
+    # so they silently shipped the generic social card.
+    for md in sorted([*DOCS.rglob("*.md"), *DOCS.rglob("*.mdx")]):
         text = md.read_text(encoding="utf-8")
         title, _slug = parse_frontmatter(text)
         if not title:
             continue
         url = doc_path_to_url(md)
+        image_name = url_to_image_name(url)
+        render_card(title, url, OG_DIR / image_name)
+        manifest[url] = f"/img/og/{image_name}"
+        count += 1
+    # Field notes: the blog plugin routes notes/<name>.md to /notes/<name>/
+    # (no date in the file name, no slug), so the URL comes from the path here too.
+    for md in sorted(NOTES.glob("*.md")):
+        title, _slug = parse_frontmatter(md.read_text(encoding="utf-8"))
+        if not title:
+            continue
+        url = f"/notes/{md.stem}/"
         image_name = url_to_image_name(url)
         render_card(title, url, OG_DIR / image_name)
         manifest[url] = f"/img/og/{image_name}"

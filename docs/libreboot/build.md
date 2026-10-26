@@ -4,58 +4,50 @@ title: "Build Libreboot"
 description: "Build a Libreboot ROM from source on Linux: install dependencies, clone the lbmk repository, and run a multi-threaded compile."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build"]
 tags: ["libreboot", "repository", "lbmk", "build"]
+date: "2025-03-29"
 ---
 # Build Libreboot
 
-Building Libreboot and the rom for your ThinkPad
+Libreboot is built with its own build system, lbmk, on a Linux computer: install git, set a git identity (lbmk refuses to run without one), clone lbmk from Codeberg, and let it install the rest of its dependencies for your distribution. This page prepares the build system; [build ROMs](/docs/libreboot/roms/) builds the image for your laptop. Commands are for Libreboot 26.10 (October 2026).
 
+## Step 1: Install git and set a git identity
 
-## Install Dependencies
-
-Before installing Libreboot, let's gather the necessary dependencies.
+Step 1 installs git and gives it a name and email. lbmk uses git to download and patch coreboot, and git refuses to commit patches without a name and email. Any values work; they never leave your machine.
 
 ```bash
 sudo apt install git python-is-python3
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
 ```
 
-You will need to set user.name and user.email before proceeding further; otherwise, you won't be able to proceed. If you prefer, you can simply fill them with random values.
+## Step 2: Clone lbmk
+
+Step 2 downloads lbmk, the Libreboot build system, from Libreboot's Codeberg repository and moves into its directory:
 
 ```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+git clone https://codeberg.org/libreboot/lbmk.git
+cd lbmk
 ```
 
+## Step 3: Install the build dependencies
 
-## Enable Multi-threaded Build Mode
+Step 3 has lbmk install the packages your distribution needs. Run the one line that matches yours (the names are files in `config/dependencies/`, so check there if yours is not listed):
 
-Libreboot’s build system uses a single thread by default, but you can change this to use multiple threads. For example, you can run:
+```bash
+sudo ./mk dependencies debian
+sudo ./mk dependencies ubuntu
+sudo ./mk dependencies fedora41
+sudo ./mk dependencies arch
+```
+
+## Step 4: Use every CPU core
+
+Step 4 makes the build use every CPU core: lbmk builds on one thread by default, and setting `XBMK_THREADS` to the number of cores your computer has makes the build several times faster:
 
 ```bash
 export XBMK_THREADS=$(nproc)
 ```
 
-This command will make Libreboot's build system use 4 threads, speeding up the build process.
+`nproc` prints the number of available cores, so this uses all of them. The setting lasts until you close the terminal.
 
-
-## Build Libreboot
-
-Clone the Libreboot repository
-
-```bash
-git clone https://codeberg.org/libreboot/lbmk.git
-```
-
-Navigate to the libreboot directory
-
-```bash
-cd lbmk
-```
-
-Download the necessary dependencies. Depending on your distribution, choose the appropriate command:
-
-```bash
-sudo ./mk dependencies arch
-sudo ./mk dependencies ubuntu
-sudo ./mk dependencies debian
-sudo ./mk dependencies fedora
-```
+When you build a ROM from source, lbmk downloads the vendor files your laptop needs (such as the Intel ME image, which it then cuts down with me_cleaner) and inserts them during the build. Pre-built release images from libreboot.org ship without them, which is why those need an extra `./mk inject` step that building from source does not.

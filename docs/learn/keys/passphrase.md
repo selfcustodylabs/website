@@ -1,37 +1,60 @@
 ---
 sidebar_position: 6
 title: "Bitcoin Passphrase (25th Word): Diceware Generation"
-description: "Learn what a Bitcoin passphrase is, when to use it, and how to generate a strong one with dice and the EFF word list. Full 3-step DIY guide."
+description: "What a Bitcoin passphrase (the 25th word) is, when to use one, and how to make a strong one with dice and the EFF word list, then test and back it up."
 keywords: ["bitcoin passphrase", "25th word", "diceware", "EFF word list", "hidden wallet", "seed security", "plausible deniability"]
 tags: ["passphrase", "seed", "security", "entropy", "dice"]
+guide:
+  time: "30 minutes"
+  level: "Beginner"
+  cost: "$5-10 (casino dice) or $0 (use any dice)"
+  needs: "5 six-sided dice, pen and paper"
+date: "2025-04-01"
 ---
-# Bitcoin Passphrase (25th Word)
+# Bitcoin passphrase (the "25th word")
 
-A passphrase is an additional security layer. Unlike your seed phrase (which consists of predefined words from the [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) word list), a passphrase can be any combination of characters.
+A BIP39 passphrase is an extra secret, chosen by you, that is combined with your seed phrase to produce a different wallet. The seed phrase alone opens one wallet; the seed phrase plus the passphrase opens another, so someone who finds your 24 words but not the passphrase finds only the first. It is called the "25th word", but it is not a word from the BIP39 list: it can be any text, and the strongest kind is six words chosen with dice from the EFF word list. A passphrase also adds a way to lose everything, because it cannot be recovered and a single wrong character opens an empty wallet.
 
-Your wallet (collection of addresses) is derived from both the seed phrase and passphrase. Without the passphrase, an attacker who finds your seed will generate the wrong wallet.
+<GuideFacts />
 
-For example, if you use the seed with the passphrase `Martha`, the attacker will only see Wallet A (which has no funds) when accessing the seed without the passphrase. However, you store your Bitcoin in `Wallet B`, which is only accessible with the passphrase Martha.
+## How does a passphrase change the wallet?
 
-![Passphrase](/img/basics/passphrase.webp)
+BIP39 turns your seed phrase into the binary seed every key comes from by running PBKDF2-HMAC-SHA512 for 2048 rounds, with the seed phrase as the password and the text `mnemonic` followed by your passphrase as the salt. Without a passphrase the salt is just `mnemonic`. Any change to the passphrase therefore produces a different seed and an unrelated set of addresses, and because there is no checksum on the passphrase, no wallet can tell you it is wrong: a mistyped passphrase opens a valid, empty wallet.
 
-You can also use `Wallet A` without a passphrase as a **decoy wallet**, storing a small amount of Bitcoin in it. If you're ever forced to reveal your wallet under pressure, you can show this decoy without exposing your main holdings. And remember, never share the full extent of your Bitcoin holdings with anyone, even those you trust, as accidental leaks can make you a target.
+<div class="doc-diagram">
 
+![A passphrase splits one seed into two wallets: the 24 words alone derive the decoy wallet at one address, and the words plus your passphrase derive your real wallet at a different address; the passphrase is part of the backup](/img/diagrams/wallet-setup/passphrase-wallets.svg)
 
-## Risks of Using a Passphrase
+</div>
 
-Adding a passphrase to your seed offers strong security benefits, especially if you're storing a significant amount of Bitcoin. However, it also comes with risk:
+The wallet the seed phrase opens on its own can serve as a decoy: keep a small amount there, and if you are ever forced to open your wallet, that is the one you show. It only works if nobody knows you use a passphrase, which is one more reason not to discuss your holdings with anyone.
 
-- **Risk of Losing Access** – If you forget or mistype your passphrase, there's no way to recover it, and you'll lose access to your funds.
-- **More Complexity** – Managing and securely storing an extra secret can be tricky, increasing the chance of mistakes.
-- **Potential for Mistakes** – Even a small typo creates an entirely new wallet, making it easy to lock yourself out.
-- **Not All Wallets Support It** – Some hardware and software wallets don't support passphrases, limiting compatibility.
-- **Social Engineering Risk** – If someone knows you use a passphrase, they may assume you have hidden funds and pressure you to reveal them.
+## What exactly counts as a different passphrase?
 
+Every character counts, and so does how the characters are encoded:
 
-## How Much Security?
+| Difference | Same wallet? |
+|---|---|
+| `Martha` and `martha` | No: passphrases are case-sensitive |
+| `running cope` and `running  cope` (two spaces) | No |
+| `running cope` and `running cope ` (trailing space) | No |
+| `café` typed on two keyboards that encode the accent differently | Yes in principle, because BIP39 normalises the passphrase to Unicode NFKD before use, but devices that accept only ASCII cannot type it at all |
 
-Human-chosen passwords are predictable. Even when we try to be random, we follow patterns that attackers can exploit.
+Use lowercase letters and single spaces only. That avoids the case and spacing traps, and every device can type it.
+
+## What are the risks of using a passphrase?
+
+- Losing it loses the bitcoin. There is no recovery and no reset.
+- A typo is silent. A wrong passphrase opens a valid empty wallet rather than giving an error, which is easy to mistake for a missing balance.
+- It is one more secret to store, separately from the seed phrase, for as long as you hold the bitcoin.
+- Your heirs need it too. An inheritance plan that passes on the seed phrase without the passphrase passes on an empty wallet; see [inheritance planning](/docs/advanced/inheritance-planning/).
+- Someone who knows you use one may assume there is a hidden wallet and pressure you to reveal it.
+
+For amounts small enough that a [threat model](/docs/learn/fundamentals/threat-models/) puts you at level 1, the risk of locking yourself out can outweigh the protection. From around $10,000 upwards, or when the seed phrase could be found, it is worth the extra care.
+
+## How strong does a passphrase need to be?
+
+As strong as a password that can be attacked without limits. A passphrase only matters once someone has your seed phrase, and they can then test guesses offline as fast as their hardware allows, with no lockout. Human-chosen passwords follow patterns that guessing tools try first, so the passphrase should come from dice.
 
 <div class="fixed-width-table">
 
@@ -39,114 +62,78 @@ Human-chosen passwords are predictable. Even when we try to be random, we follow
 |--------------|----------------|
 | `Bitcoin2024!` | `cruelty postal clammy plasma` |
 | `MyD0g$Name` | `stardust article corrode unmasked` |
-| Predictable patterns | True randomness |
-| Vulnerable to guessing | Measurable security |
+| Follows predictable patterns | Every word equally likely |
+| Strength unknown | Strength can be calculated |
 
 </div>
 
-With dice, every word is equally likely. No patterns. No bias. Just math. Each word from the EFF list (7,776 words) adds **~12.9 bits of entropy**:
+The EFF long word list has 7,776 words (6 to the power 5), so each word chosen with five dice adds about 12.9 bits of entropy:
 
 <div class="fixed-width-table">
 
-| Words | Entropy | Attempts to Crack |
+| Words | Entropy | Possible passphrases |
 |-------|---------|-------------------|
-| 4 words | ~51 bits | 2.3 quadrillion |
-| 5 words | ~64 bits | 18 quintillion |
-| 6 words | ~77 bits | 151 sextillion |
+| 4 | 51.7 bits | 3.7 quadrillion |
+| 5 | 64.6 bits | 28 quintillion |
+| 6 | 77.5 bits | 221 sextillion |
+| 7 | 90.5 bits | 1.7 octillion |
 
 </div>
 
-For Bitcoin passphrases, **4-6 words** provides excellent security while remaining memorable.
+Use six words, which is what the EFF recommends for this word list. Four words is within reach of a well-funded attacker who already holds your seed phrase.
 
-:::info What You'll Do
-The rest of this guide walks you through generating a cryptographically strong passphrase using dice rolls and the EFF word list.
+## Step 1: Get the EFF word list and check your device's limit
 
-**Time required:** 30 minutes  
-**Difficulty:** Beginner  
-**Estimated cost:** $5-10 (casino dice) or $0 (use any dice)  
-**Requirements:** 5 six-sided dice, pen and paper
-:::
+Step 1 prepares the two things you need before rolling. Download the [EFF long word list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) and print it, or copy it to the offline computer you will use; you will look up words in it, so it must not be a page you search online.
 
+The EFF built the list in 2016 for dice passphrases: words of 3 to 9 letters, common and easy to spell, with offensive words, homophones and hard-to-spell words removed. Its words average 7 characters, against 4.3 in Arnold Reinhold's original Diceware list, so they are easier to remember at the same strength per word.
 
-## Step 1: Choose Your Word List
+Then check how long a passphrase your hardware wallet accepts, because six EFF words average about 47 characters and can reach 59:
 
-:::tip Word List
-You can find the word list here: [eff_large_wordlist.txt](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt).
-:::
+| Device | Maximum passphrase length (vendor documentation, October 2026) |
+|---|---|
+| Trezor Safe 3, Safe 5, Safe 7, Model T | 128 ASCII characters |
+| Trezor Model One | 50 characters |
+| BitBox02 | 149 ASCII characters |
 
-The EFF list is the same size as the original Diceware list, with **7,776 words (6⁵)**. It provides the same level of security for each word you choose but improves usability, making it easier to type and remember.
+For any other device, find the limit in its manual before you roll.
 
-To create this list, EFF:
+## Step 2: Roll dice for your words
 
-- Selected words between 3 and 9 characters long, prioritizing common and easy-to-recognize words.
-- Removed offensive, sensitive, or emotionally charged words using public filter lists (e.g., one by Luis von Ahn).
-- Eliminated hard-to-spell words and homophones (words that sound the same but have different meanings).
-- Made sure no word is a prefix of another, reducing typing errors.
+Step 2 picks each word with five dice. Casino dice are the most even, but any six-sided dice will do here: a small bias in a die costs a negligible amount of entropy over six words.
 
-The final result is a 7,776-word list suitable for dice-generated passphrases. On average, words in the list are 7.0 characters long, compared to 4.3 characters in Reinhold's original Diceware list. EFF prioritized familiar, meaningful words over very short ones.
+![Blue and green translucent casino dice on a grey surface](/img/seed/dice.webp)
 
-The security of passphrases generated with this list is identical to those made with Diceware; the difference is in usability, not security. For most cases, EFF recommends generating a **six word passphrase**, which provides 77 bits of entropy. Each additional word increases security by 12.9 bits; one extra bit doubles the number of guesses required to brute-force the passphrase.
+1. Roll five dice at once and read them left to right as a five-digit number, such as `52465`.
+2. Find that number in the EFF list: `52465` is `running`.
+3. Repeat until you have six words. Do not reroll a word because you dislike it; that removes entropy.
 
+The [diceware passphrase worksheet](/worksheets/diceware-passphrase/) has a row of five dice boxes for each word and space to record the test in step 3.
 
-## Step 2: Roll Dice for Your Words
-
-Now it's time to generate your own passphrase using real dice. Using casino-grade dice ensures the highest level of randomness (entropy). If you want to save money, any standard six-sided dice will work. Even slight imperfections wash out when you roll multiple times.
-
-For this method, **five dice** are enough to generate each word.
-
-![Dice](/img/seed/dice.webp)
-
-Before rolling, remember that:
-
-- Each word is generated by rolling one die five times or five dice once, providing **12.9 bits of entropy** per word.
-- A six-word passphrase gives **77 bits of entropy**, which is strong security.
-- For even stronger security, consider **seven or eight words** (90.3 or 103.2 bits of entropy, respectively).
-
-### How to Generate Your Passphrase
-
-- Roll five dice at once.
-- Record the five-digit number they form (e.g., `52465`).
-- Look up the matching word in the EFF Long Word List (e.g., **52465 = running**).
-- Repeat this process until you have **at least six words** for a secure passphrase.
-
-Your final numbers might look like this:
+Six rolls might give:
 
 ```text
 52465 16663 55321 66621 22166 23234
 ```
 
-Which translates to your final passphrase:
+which is the passphrase:
 
 ```text
 running cope snowfield yippee darling diaphragm
 ```
 
-Your passphrase is now ready to use.
+That example is 47 characters. Write yours down exactly, in lowercase, with single spaces.
 
+## Step 3: Test the passphrase before you use it
 
-## Step 3: Back Up Your Passphrase
+Step 3 proves you can open the passphrase wallet again before any bitcoin goes into it. On your hardware wallet, open the passphrase wallet and note its first receive address. Disconnect, open it again by typing the passphrase from your written copy, and check the address is identical. Then send a small amount, and confirm you can see it after re-entering the passphrase once more. [Backup verification](/docs/wallet-setup/backup-verification/) covers the full test.
 
-Just like your Bitcoin seed phrase, your passphrase is a critical key to your funds. If you lose it or it gets compromised, your Bitcoin is gone forever. That's why proper storage is essential.
+## Step 4: Back up the passphrase
 
-While paper and digital backups can degrade, get lost, or be destroyed, metal seed storage provides a durable, fireproof, and waterproof solution for long-term security.
+Step 4 stores the passphrase as carefully as the seed phrase, because losing either one loses the bitcoin.
 
-:::danger Never co-locate
-Never store your passphrase in the same place as your seed phrase. If both are found together, a thief can access your Bitcoin instantly. Keep them separate to ensure defense in depth.
+:::danger Never store the passphrase with the seed phrase
+A thief who finds both together can spend everything at once. Keep them in different places, so that finding one does not reveal the other.
 :::
 
-### Memorize Your Passphrase
-
-:::warning
-This method is only recommended if you have multiple secure backups.
-:::
-
-You can also memorize your passphrase. Try writing your passphrase down several times and gradually commit it to memory. If needed, use a **mnemonic technique** (e.g., creating a mental story from the words) to make it easier to remember.
-
-
-## Important Warnings
-
-:::danger Critical
-- **Never lose your passphrase**: Without it, your Bitcoin is gone forever.
-- **A passphrase creates a completely different wallet**: Even a typo generates different addresses.
-- **Store separately from your seed**: Different locations for defense in depth.
-:::
+Metal survives the fire and water that destroy paper, so a stamped or engraved copy is the durable option. You can also memorise the passphrase, by writing it out several times or making a short story from the words, but only in addition to a written backup, never instead of one: memory fails, and so do people.

@@ -1,19 +1,17 @@
 ---
 sidebar_position: 6
 title: "How to Broadcast a Bitcoin Transaction"
-description: "Practical guide: Broadcasting. Covers Broadcasting via Your Own Node vs. Third-Party Servers, Privacy Considerations, bitcoin."
+description: "How a signed Bitcoin transaction reaches the network, and why broadcasting through your own node instead of a public server keeps your IP and addresses private."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "broadcasting"]
 tags: ["bitcoin", "transactions", "broadcasting"]
+date: "2025-05-01"
 ---
-# Broadcasting Transactions
 
-Once your Bitcoin transaction is fully signed, it's ready to be **broadcasted**, meaning sent out to the peer-to-peer (P2P) network. Other nodes receive it and temporarily store it in their **mempool**, essentially a waiting room for transactions. From there, miners select transactions from the mempool to include in the next block.
+# Broadcasting transactions
 
-In short, broadcasting is how your transaction gets announced to the network for confirmation.
+Broadcasting is sending a fully signed transaction to the bitcoin network: the first node to receive it checks it and relays it to its peers, and within seconds it sits in nodes' mempools, where miners pick it up. Broadcasting through your own node reveals nothing to anyone else; broadcasting through a wallet company's or a public server tells that server your IP address and the transaction, and lets it log, delay or refuse to relay it. Your own node, ideally over Tor, is the private choice.
 
-## Broadcasting via Your Own Node vs. Third-Party Servers
-
-You have two main ways to broadcast a transaction: through your own full node or via third-party servers.
+## Should you broadcast through your own node or a third-party server?
 
 <div class="doc-diagram">
 
@@ -21,33 +19,17 @@ You have two main ways to broadcast a transaction: through your own full node or
 
 </div>
 
-### Using Your Own Node
+| | Your own node | Third-party server |
+|---|---|---|
+| Examples | Bitcoin Core, or a node package such as Umbrel or Parmanode | Public Electrum servers, a block explorer, the wallet company's servers |
+| Who sees the transaction first | Only your node | The server operator, with your IP address |
+| Can it be delayed or refused? | No | Yes, by the operator |
+| Setup | A node to run and maintain; see the [node guide](/docs/bitcoin-node/) | None |
 
-When your wallet connects to your personal full node, the transaction is sent directly from your machine, no intermediaries involved.
+Many phone wallets broadcast through their developer's servers by default. That is convenient, but it is a trade of privacy and control for no setup.
 
-This method offers **maximum privacy and control**. It’s trustless, meaning you independently verify everything without relying on a third party. However, it does require you to run and maintain a full node (e.g., Bitcoin Core or Umbrel), which can be a technical or resource commitment.
+## How do you broadcast more privately?
 
-### Using Third-Party Servers
-
-Many wallets, especially mobile apps, broadcast transactions through external servers such as Electrum public servers, Blockstream.info, or the wallet provider’s backend.
-
-This approach is much more convenient. It’s fast, with no setup required. But there’s a tradeoff: you’re trusting that server not to log your IP, delay, censor, or snoop on your transaction. This method offers less privacy, and you lose some control over how your transaction is relayed.
-
-## Privacy Considerations
-
-Broadcasting can reveal information about you if not done carefully. To improve your privacy:
-
-- Use Tor: Whether you're using your own node or a third-party server, routing through Tor helps conceal your IP address.
-- Be cautious with mobile wallets: Many rely on centralized servers. Understand what you're giving up in terms of privacy.
-- Run your own node whenever possible. It's the best way to retain sovereignty and keep your broadcast private.
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Transaction Fees", href: "/docs/learn/transactions/fees/", tag: "Next" },
-    { title: "Signing Transactions", href: "/docs/learn/transactions/sign/", tag: "Learn" },
-    { title: "Run Your Own Node", href: "/docs/learn/nodes/why-run-node/", tag: "Learn" },
-    { title: "Bitcoin Node Setup", href: "/docs/bitcoin-node/", tag: "Guide" },
-  ]}
-/>
+- Route the wallet's connection through Tor, whether it talks to your own node or a public server, so the IP address it reveals is not yours.
+- Know what your phone wallet connects to by default, and point it at your own server if it allows.
+- Run your own node: it is the one arrangement in which nobody else sees your transaction before the network does.

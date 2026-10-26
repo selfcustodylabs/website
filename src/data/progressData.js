@@ -58,6 +58,7 @@ const GUIDES = {
         title: "Software Options",
         path: "/docs/bitcoin-node/node-software-options/",
       },
+      { title: "Parmanode Setup", path: "/docs/bitcoin-node/parmanode-setup/" },
       { title: "Electrum Server", path: "/docs/bitcoin-node/electrum-server/" },
       { title: "Tor Setup", path: "/docs/bitcoin-node/tor/" },
       {
@@ -79,6 +80,10 @@ const GUIDES = {
         title: "Pico Setup",
         path: "/docs/libreboot/raspberry-pico/build-serprog/",
       },
+      {
+        title: "Connect the Pico",
+        path: "/docs/libreboot/raspberry-pico/connection/",
+      },
       { title: "Flash BIOS", path: "/docs/libreboot/flashing-bios/" },
     ],
   },
@@ -89,6 +94,27 @@ const GUIDES = {
       { title: "Why SeedSigner", path: "/docs/seedsigner/" },
       { title: "Build Guide", path: "/docs/seedsigner/build-guide/" },
       { title: "Using SeedSigner", path: "/docs/seedsigner/using-seedsigner/" },
+    ],
+  },
+
+  "bitcoin-computer": {
+    name: "Bitcoin Computer",
+    steps: [
+      { title: "Overview", path: "/docs/advanced/bitcoin-computer/" },
+      { title: "Choose the Hardware", path: "/docs/advanced/bitcoin-computer/choice/" },
+      { title: "Set It Up", path: "/docs/advanced/bitcoin-computer/setup/" },
+    ],
+  },
+
+  "nostr-signing-device": {
+    name: "Nostr Signing Device",
+    steps: [
+      { title: "Overview", path: "/docs/nostr-signing-device/" },
+      { title: "Arduino IDE", path: "/docs/nostr-signing-device/arduino-ide/" },
+      { title: "ESP32 Support", path: "/docs/nostr-signing-device/esp32-module/" },
+      { title: "Flash the Firmware", path: "/docs/nostr-signing-device/setup/" },
+      { title: "Horse Extension", path: "/docs/nostr-signing-device/horse-extension/" },
+      { title: "Connect a Client", path: "/docs/nostr-signing-device/client-connect/" },
     ],
   },
 
@@ -111,7 +137,6 @@ const GUIDES = {
       },
     ],
   },
-
 };
 
 // ===========================================
@@ -151,27 +176,6 @@ export const guideProgress = buildGuideProgress();
 // ===========================================
 
 /**
- * Section mapping based on URL path
- */
-export function getSectionFromPath(path) {
-  if (path.includes("/learn/fundamentals")) return "fundamentals";
-  if (path.includes("/learn/keys")) return "keys";
-  if (path.includes("/learn/wallets")) return "wallets";
-  if (path.includes("/learn/transactions")) return "transactions";
-  if (path.includes("/learn/privacy")) return "privacy";
-  if (path.includes("/learn/nodes")) return "nodes";
-  if (path.includes("/security/")) return "security";
-  if (path.includes("/advanced/")) return "advanced";
-  if (path.includes("/reference/")) return "reference";
-  if (path.includes("/wallet-setup/")) return "wallets";
-  if (path.includes("/bitcoin-node/")) return "nodes";
-  if (path.includes("/libreboot/")) return "advanced";
-  if (path.includes("/coreboot/")) return "advanced";
-  if (path.includes("/seedsigner/")) return "seedsigner";
-  return null;
-}
-
-/**
  * Get progress data for a given path
  */
 export function getProgressData(path) {
@@ -207,7 +211,6 @@ export function getGuidePaths(slug) {
 
 export default {
   guideProgress,
-  getSectionFromPath,
   getProgressData,
   getAllGuides,
   getGuideBySlug,

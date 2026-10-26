@@ -1,0 +1,47 @@
+.header {
+  margin-bottom: 1.5rem;
+}
+
+/* Same grammar as the doc eyebrow (src/theme/DocBreadcrumbs). */
+.eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0.9rem;
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--scl-muted);
+}
+
+.eyebrow a {
+  color: var(--scl-amber);
+  text-decoration: none;
+}
+
+.eyebrow a:hover {
+  color: var(--scl-amber-lit);
+}
+
+.eyebrow time::before {
+  content: "/";
+  margin: 0 0.6em;
+  color: var(--scl-faint);
+}
+
+/* Sized like a doc H1, so it reads above the note's own H2s. */
+.title {
+  margin: 0;
+  color: var(--scl-ink);
+  font-size: clamp(2.1rem, 3.8vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.title a {
+  color: inherit;
+  text-decoration: none;
+}

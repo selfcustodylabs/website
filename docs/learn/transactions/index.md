@@ -1,23 +1,26 @@
 ---
 sidebar_position: 0
 sidebar_label: "Overview"
-title: "Bitcoin Transactions: How They Work"
+title: "Bitcoin Transactions: UTXOs, Signing and Fees"
 description: "How Bitcoin transactions work end to end: UTXOs, transaction creation, signing, broadcasting, fees, and the transaction types you will actually encounter."
 keywords: ["bitcoin transactions", "utxo", "psbt", "signing", "broadcasting", "fees", "self custody"]
 tags: ["transactions", "bitcoin", "self custody"]
 slug: /learn/transactions
+date: "2026-04-15"
 ---
 
-# Bitcoin Transactions
+# Bitcoin transactions
 
-A Bitcoin transaction is not a debit from an account. It is a chain of cryptographic claims: you prove you control some unspent outputs (UTXOs), you spend them, and you create new outputs locked to whoever you are paying. Understanding this changes how you think about wallets, fees, and privacy.
+A bitcoin transaction is not a debit from an account. It spends specific unspent outputs (UTXOs) that you prove you control, destroys them, and creates new outputs locked to whoever you are paying, with any remainder returned to you as change and the difference left as the miner's fee. That model explains why fees depend on size rather than amount, why change addresses exist, and why combining coins can reveal what you own.
 
-## In this section
+## What does this section cover?
 
-- **[Understanding Transactions](./understanding)**: the mental model you need before anything else
-- **[UTXOs](./utxos)**: the building blocks every transaction consumes and produces
-- **[Creating Transactions](./create)**: how a wallet actually assembles a transaction
-- **[Signing Transactions](./sign)**: what signing means and how online vs offline signing differ
-- **[Broadcasting Transactions](./broadcast)**: getting your signed transaction onto the network
-- **[Fees](./fees)**: how miners pick which transactions to include
-- **[Transaction Types](./types)**: pre-signed, fully signed, and partially signed (PSBT)
+| Page | What it explains |
+|---|---|
+| [How transactions work](/docs/learn/transactions/understanding/) | Inputs, outputs, change and fees, and a transaction's path from wallet to block |
+| [UTXOs](/docs/learn/transactions/utxos/) | The coins every transaction consumes and creates, and why they matter for fees and privacy |
+| [Creating transactions](/docs/learn/transactions/create/) | How a wallet assembles one, coin control, and how to speed up a stuck one |
+| [Signing transactions](/docs/learn/transactions/sign/) | What a signature proves, online and offline signing, and PSBTs |
+| [Broadcasting transactions](/docs/learn/transactions/broadcast/) | Getting a signed transaction to the network, and what that reveals |
+| [Fees](/docs/learn/transactions/fees/) | How fees are set, estimated and reduced |
+| [Transaction types](/docs/learn/transactions/types/) | Unsigned, partially signed, fully signed and pre-signed transactions |

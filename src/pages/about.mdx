@@ -5,6 +5,8 @@ keywords: [about self custody labs, bitcoin education, editorial policy, indepen
 ---
 
 import Head from '@docusaurus/Head';
+import InlineLinks from '@site/src/components/InlineLinks';
+import { positions } from '@site/src/data/positions';
 
 <Head>
   <script type="application/ld+json">
@@ -46,11 +48,13 @@ We try to be explicit about which of those a page is written for, because the ho
 
 These positions are stated up front so you can discount them if you disagree:
 
-- **Coldcard: warned, not recommended.** The [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) drained roughly 1,816 BTC from more than 5,200 addresses through a seed-generation flaw that went undetected for 1,978 days, after a developer's warning about the same code was dismissed in 2025. Coinkite fixed it quickly once draining began. We still point new buyers elsewhere.
-- **SeedSigner: our favourite, with a caveat.** Stateless, air-gapped, fully verifiable, and built from commodity parts for about $50. It is also [not a beginner's device](/docs/seedsigner/), and we say so on every page that mentions it.
-- **Dice entropy first.** For any holding you would be upset to lose, [generate the seed yourself](/docs/learn/keys/random/) rather than trusting a vendor's random number generator.
-- **Bitkey: covered, not recommended.** It is a real product that people ask about, so it appears in the [comparison](/docs/reference/hardware-wallet-comparison/). It is not what we would set up.
-- **CoinJoin: JoinMarket NG with Jam.** After the 2024 to 2026 shakeout, the [coordinator-free option](/docs/learn/privacy/coinjoin/) is the one with nothing to seize. Whirlpool's Ashigaru revival is covered but not recommended.
+<ul>
+  {positions.map((p) => (
+    <li key={p.subject}>
+      <strong>{p.subject}: {p.stance}.</strong> <InlineLinks text={p.text} />
+    </li>
+  ))}
+</ul>
 
 ## Independence
 

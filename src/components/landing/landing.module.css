@@ -1,0 +1,581 @@
+/*
+ * Landing pages (/, /learn/, /guides/, /404): the contents pages of the lab
+ * manual. Same grammar as the docs: hairlines, mono caps structure, amber only
+ * for the subject (the advisory, the one primary action).
+ */
+
+.page {
+  width: min(72rem, 100% - 2rem);
+  margin: 0 auto;
+  padding: 2.5rem 0 6rem;
+}
+
+/* ---------- intro ---------- */
+
+.eyebrow {
+  margin: 0;
+}
+
+.title {
+  max-width: 22ch;
+  margin: 0.5rem 0 1rem;
+  color: var(--scl-ink);
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--scl-ink-2);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+
+.primary {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--scl-radius);
+  background: var(--scl-amber);
+  color: var(--scl-bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primary:hover {
+  background: var(--scl-amber-lit);
+  color: var(--scl-bg);
+  text-decoration: none;
+}
+
+.link {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.link:hover {
+  color: var(--scl-amber-lit);
+}
+
+/* The plate line under the intro: same shape as a guide's facts line. */
+.spec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+  margin: 2rem 0 0;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--scl-dim2);
+  border-bottom: var(--scl-rule);
+}
+
+.spec div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.spec dt {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.spec dd {
+  margin: 0;
+  color: var(--scl-ink);
+  font-size: 0.875rem;
+}
+
+.spec a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+/* ---------- advisory bulletin ---------- */
+
+.bulletin {
+  margin: 0 0 3rem;
+  padding: 1rem 1.25rem 1.1rem;
+  border: var(--scl-rule);
+  border-left: 3px solid var(--scl-amber);
+  border-radius: 0 var(--scl-radius) var(--scl-radius) 0;
+  background: var(--scl-band);
+}
+
+.bulletinLabel {
+  margin: 0;
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bulletinTitle {
+  margin: 0.35rem 0 0.4rem;
+  color: var(--scl-ink);
+  font-size: 1.1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.bulletinText {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--scl-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.bulletinLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.4rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.bulletinLinks a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+/* ---------- sections ---------- */
+
+.section {
+  margin-top: 4rem;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--scl-dim2);
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--scl-ink);
+  font-family: var(--scl-font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sectionAside {
+  color: var(--scl-muted);
+  font-size: 0.9rem;
+}
+
+.sectionAside a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.sectionNote {
+  max-width: 68ch;
+  margin: 0.9rem 0 0;
+  color: var(--scl-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ---------- tables ---------- */
+
+/* Infima styles every <table>; it sits in a cascade layer, so these win. */
+.table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.table thead,
+.table tr,
+.table tbody tr:nth-child(2n) {
+  border: 0;
+  background: none;
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 1rem 0.85rem 0;
+  border: 0;
+  border-bottom: var(--scl-rule);
+  color: var(--scl-ink-2);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 0;
+}
+
+.table thead th {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.table tbody th {
+  font-weight: 400;
+}
+
+.rowLink {
+  color: var(--scl-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rowLink:hover {
+  color: var(--scl-amber-lit);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.rowNote {
+  display: block;
+  max-width: 60ch;
+  margin-top: 0.25rem;
+  color: var(--scl-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.rowMeta {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.none {
+  color: var(--scl-faint);
+}
+
+.date {
+  white-space: nowrap;
+}
+
+.check {
+  display: block;
+  color: var(--scl-ok);
+  font-size: 0.8rem;
+}
+
+/* Fixed layout so the columns line up across the grouped tables on /guides/. */
+.guideTable {
+  table-layout: fixed;
+}
+
+.guideTable th:nth-child(1) {
+  width: 34%;
+}
+
+.guideTable th:nth-child(2) {
+  width: 19%;
+}
+
+.guideTable th:nth-child(3) {
+  width: 22%;
+}
+
+.guideTable th:nth-child(4) {
+  width: 14%;
+}
+
+/* Router: situation, then two links. */
+.routerTable th[scope="row"] {
+  width: 38%;
+  color: var(--scl-ink);
+}
+
+.routerTable td a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.routerTable td a:hover {
+  color: var(--scl-amber-lit);
+}
+
+/* Contents table on /learn/: title, then what the page answers. */
+.contentsTable {
+  table-layout: fixed;
+}
+
+.contentsTable thead th:first-child {
+  width: 36%;
+}
+
+.contentsTable td {
+  color: var(--scl-muted);
+}
+
+/* Phone: rows become blocks, header cells become inline labels. */
+@media (max-width: 720px) {
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+    width: auto !important;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr,
+  .table tbody tr:nth-child(2n) {
+    padding: 0.85rem 0;
+    border-bottom: var(--scl-rule);
+  }
+
+  .table th,
+  .table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .table td {
+    margin-top: 0.3rem;
+  }
+
+  /* The label sits in its own gutter so a wrapped value stays aligned. */
+  .table td[data-label] {
+    position: relative;
+    padding-left: 5.5rem;
+  }
+
+  .table td[data-label]::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    color: var(--scl-faint);
+    font-family: var(--scl-font-mono);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .date {
+    white-space: normal;
+  }
+
+  .check {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+}
+
+/* ---------- positions ---------- */
+
+.positions {
+  margin: 0;
+}
+
+.position {
+  display: grid;
+  grid-template-columns: minmax(12rem, 18rem) 1fr;
+  gap: 0.4rem 2rem;
+  padding: 1rem 0;
+  border-bottom: var(--scl-rule);
+}
+
+.position dt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.subject {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stance {
+  color: var(--scl-ink);
+  font-weight: 600;
+}
+
+/* positions.js keeps stances lower case for /about/, where they follow a colon. */
+.stance::first-letter {
+  text-transform: uppercase;
+}
+
+.position dd {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--scl-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.position dd a {
+  color: var(--scl-ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+@media (max-width: 720px) {
+  .position {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- figures ---------- */
+
+.figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.figure {
+  margin: 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: var(--scl-rule);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
+}
+
+.figure figcaption {
+  margin-top: 0.6rem;
+  color: var(--scl-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.figNo {
+  margin-right: 0.45rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.figure figcaption a {
+  color: var(--scl-ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+@media (max-width: 900px) {
+  .figures {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .figures {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- closing line ---------- */
+
+.closing {
+  max-width: 68ch;
+  margin: 3.5rem 0 0;
+  color: var(--scl-muted);
+  font-size: 0.95rem;
+}
+
+.closing a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.lede a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+/* Notes table on /notes/ and the homepage: date, then the note. */
+.notesTable {
+  table-layout: fixed;
+}
+
+.notesTable thead th:first-child {
+  width: 9rem;
+}
+
+.notesTable td:first-child {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}

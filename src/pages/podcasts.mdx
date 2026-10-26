@@ -6,8 +6,7 @@ tags: [bitcoin, podcasts, self custody, money]
 hide_table_of_contents: true
 ---
 
-import Layout from "@theme/Layout";
-import PageHeader from "@site/src/components/homepage/PageHeader";
+import Shelf from "@site/src/components/landing/Shelf";
 
 export const podcasts = [
   {
@@ -40,49 +39,8 @@ export const podcasts = [
   },
 ];
 
-<main className="homepage relative bg-neutral-950 text-white">
-  <PageHeader
-    eyebrow="LISTENING LIST"
-    title={
-      <>
-        Bitcoin{" "}
-        <span
-          className="inline-block bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 bg-clip-text text-transparent animate-gradient-shift"
-          style={{ backgroundSize: "200% 200%" }}
-        >
-          Podcasts
-        </span>
-      </>
-    }
-    subtitle="Must-listen podcasts about Bitcoin and the disgrace of fiat money."
-  />
+# Bitcoin podcasts
 
-  <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-14 md:pb-32 md:pt-16">
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-      {podcasts.map((podcast) => (
-        <a
-          key={podcast.title}
-          href={podcast.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-amber-500/35 hover:bg-white/[0.04] sm:flex-row sm:items-start"
-        >
-          <div className="mx-auto flex-shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] sm:mx-0">
-            <img
-              src={podcast.image}
-              alt={podcast.title}
-              className="block h-44 w-44 object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div className="flex flex-col">
-            <h3 className="font-display text-lg font-bold tracking-tight text-white">
-              {podcast.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/65">{podcast.description}</p>
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</main>
+Four shows about bitcoin and money. The links go to each show on Spotify; all four are on the other podcast apps too.
+
+<Shelf items={podcasts} width={320} height={320} />

@@ -1,0 +1,72 @@
+.wrap {
+  margin-bottom: 1.25rem;
+}
+
+.label {
+  margin: 0 0 0.45rem;
+  color: var(--scl-muted);
+  font-family: var(--scl-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dot {
+  color: var(--scl-faint);
+}
+
+.steps {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1;
+}
+
+.segment {
+  display: block;
+  height: 3px;
+  /* A taller hit area than the visible bar. */
+  padding: 6px 0;
+  background-clip: content-box;
+}
+
+.done {
+  background-color: var(--scl-ink-2);
+}
+
+.here {
+  background-color: var(--scl-amber);
+}
+
+.todo {
+  background-color: var(--scl-dim2);
+}
+
+.segment:hover {
+  background-color: var(--scl-amber-lit);
+}
+
+.next {
+  margin: 0.2rem 0 0;
+  color: var(--scl-faint);
+  font-size: 0.8rem;
+}
+
+.next a {
+  color: var(--scl-muted);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -1,70 +1,50 @@
 ---
 sidebar_position: 3
 title: "Extended Private Key (XPRV)"
-description: "Practical guide: Extended Private Key (XPRV). Covers Why the Extended Private Key Matters, Security Considerations, Generating and Testing an Extended Private."
+description: "What a Bitcoin extended private key (xprv) is, why it can spend from every address in a wallet, how to keep it offline, and what its prefix tells you."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "private", "xprv"]
 tags: ["private keys", "xprv", "bip39", "seed"]
+date: "2025-04-02"
 ---
-# Extended Private Key (XPRV)
 
-![Diagram](/img/basics/diagram.webp)
+# Extended private key (xprv)
 
-The extended private key is derived from the binary private key (along with an optional passphrase) using mathematical functions that most users don’t need to understand in detail.
+An extended private key, or xprv, is a private key paired with a 32-byte chain code, which together can generate an unlimited tree of child private keys. The master xprv of a wallet is computed from the BIP39 seed (the seed phrase plus any passphrase), and every private key and address in the wallet descends from it, so whoever holds an xprv can spend from every address beneath it. It never needs to leave a hardware wallet, and it should not.
 
-:::warning
-Adding a passphrase significantly changes the resulting extended private key. Likewise, modifying the derivation path alters the generated keys and addresses. It’s generally best to stick with the default derivation path provided by your wallet software, but make sure to write it down for future reference.
-:::
+## How is the extended private key made?
 
+Under BIP32, the wallet runs the 512-bit BIP39 seed through HMAC-SHA512 with the fixed key "Bitcoin seed". The first half of the result is the master private key and the second half is the chain code. Because a passphrase changes the BIP39 seed, it also changes the master xprv and every key below it; so does choosing a different [derivation path](/docs/learn/keys/derivation-path/). Use your wallet's default path, and write down which one it is.
 
-## Why the Extended Private Key Matters
+## What does the extended private key control?
 
-The extended private key is responsible for generating all Bitcoin addresses in a wallet and granting the ability to spend from them. The key structure works as follows:
+From the master xprv, the wallet derives a child key for each step of the derivation path, ending in the account's extended private key and then in individual keys:
 
-- The extended private key produces multiple individual private keys (standard private keys).
-- Each individual private key generates a public key.
-- Each public key creates a unique Bitcoin address.
+1. The account xprv produces individual private keys, one per address.
+2. Each private key produces a public key.
+3. Each public key produces an address.
 
-Additionally, the extended private key is used to derive the extended public key, which we’ll cover next.
+The xprv also produces the matching [extended public key (xpub)](/docs/learn/keys/xpub/), which can generate all the same addresses but cannot spend.
 
+## Can one leaked private key expose the others?
 
-## Security Considerations
+Sometimes, and this is the subtle part. With ordinary (non-hardened) derivation, a single child private key combined with the parent's xpub is enough to compute the parent xprv, and with it every other key in that account. That is why the account levels of a derivation path use hardened derivation (the `'` in `m/84'/0'/0'`), which breaks that link, and why you should never export or share a single private key from an HD wallet whose xpub anyone else might have. A public key, on its own, reveals no private key at all.
 
-Each individual private key does not reveal the extended private key. While I’m not a cryptography expert, my understanding is that an individual private key might theoretically reveal the next private key in sequence, though this is uncertain. To stay safe, never share any private key with anyone.
-
-However, it is certain that a public key cannot reveal its corresponding private key, nor can it reveal any other private key in the wallet. This is crucial to understand for security.
-
-
-## Generating and Testing an Extended Private Key
-
-You can generat a test wallet using [Ian Coleman’s BIP39 tool](https://iancoleman.io/bip39/), a great resource for experimenting with dummy wallets.
-
-:::danger
-Never use Ian Coleman’s BIP39 tool to generate a real wallet on an internet-connected computer!
-:::
-
-Here’s an example of an extended private key:
+## What does an xprv look like?
 
 ```text
 xprv9yVYaFXM2uUDeaj3STkiHS8svtqoASkVZ8hdTYuBdgVQGKjr76ks922e4r6826YvdQtQdu71ZA2qK8fYE85jXvTPdBFwgQ2d8rk7hhXV5wu
 ```
 
-## Understanding Prefixes and Address Types
+[Ian Coleman's BIP39 tool](https://iancoleman.io/bip39/) shows the xprv and xpub for a seed phrase, which makes it useful for learning with a made-up test phrase. Never type a real seed phrase into it, or into any page, on a computer that is or has been online.
 
-- Keys starting with `“x”` generate **legacy** (P2PKH) addresses, which begin with `“1”`.
-- Keys starting with `“y”` generate **P2SH** (Pay to Script Hash) addresses, which begin with `“3”`.
-- Keys starting with `“z”` generate **native SegWit** (Bech32) addresses, which begin with `“bc1q”`.
-- Keys starting with uppercase “X”, “Y”, or “Z” are used for multisignature wallets.
+## What do the prefixes mean?
 
-Understanding the extended private key is essential because it underpins all wallet addresses and transactions. Proper handling ensures security and smooth Bitcoin management.
+The first four letters record which kind of addresses the key was meant for. They come from the SLIP-132 convention, which wallets increasingly replace with [output descriptors](/docs/learn/wallets/multisig/#the-wallet-descriptor) that state the script type explicitly.
 
----
-
-<RelatedArticles 
-  title="Continue Learning"
-  articles={[
-    { title: "Extended Public Keys (xpub)", href: "/docs/learn/keys/xpub/", tag: "Next" },
-    { title: "Derivation Paths", href: "/docs/learn/keys/derivation-path/", tag: "Learn" },
-    { title: "Seed Phrases", href: "/docs/learn/keys/seed/", tag: "Learn" },
-    { title: "Passphrases", href: "/docs/learn/keys/passphrase/", tag: "Learn" },
-  ]}
-/>
+| Prefix | Address type | Addresses start with |
+|---|---|---|
+| `xprv` | Legacy (BIP44), and also used for Taproot (BIP86) | `1`, or `bc1p` for Taproot |
+| `yprv` | Nested segwit (BIP49) | `3` |
+| `zprv` | Native segwit (BIP84) | `bc1q` |
+| `Yprv`, `Zprv` | Multisig, nested or native segwit | `3`, `bc1q` |
+| `tprv` | Any type, on testnet | Testnet addresses |

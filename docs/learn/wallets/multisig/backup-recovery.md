@@ -5,42 +5,36 @@ description: "How to properly backup your multisig wallet and recover it if need
 keywords: ["bitcoin", "multisig", "backup", "recovery", "seed phrase", "wallet descriptor"]
 tags: ["multisig", "backup", "recovery", "security", "bitcoin"]
 slug: /learn/wallets/multisig/backup-recovery
+date: "2026-01-13"
 ---
 
-# Multisig Backup & Recovery
+# Multisig backup and recovery
 
-Proper backup is **critical** for multisig. The complexity that provides security can also lead to permanent loss if backups aren't done correctly.
+A 2-of-3 multisig is recoverable from any two of its three seed phrases plus the wallet descriptor, so the backup plan is: each seed phrase on metal in its own location, never stored with its own device, and a copy of the descriptor with every seed. Then rehearse the recovery before the wallet holds anything significant: restore a device from its seed, rebuild the wallet in Sparrow from the descriptor alone, and sign a test transaction. The same complexity that protects a multisig loses it if the backups are wrong.
 
-
-## What You Must Back Up
-
-For a 2-of-3 multisig, you need to secure:
+## What do you have to back up?
 
 <div class="fixed-width-table">
 
-| Item | Copies | Purpose |
+| Item | Copies | What it is for |
 |------|--------|---------|
-| **Seed Phrase #1** | 1 | Recover Key 1 |
-| **Seed Phrase #2** | 1 | Recover Key 2 |
-| **Seed Phrase #3** | 1 | Recover Key 3 |
-| **Wallet Descriptor** | 3+ | Reconstruct multisig structure |
-| **Device PINs** | 3 | Access hardware wallets |
+| Seed phrase 1 | 1, on metal | Restores key 1 |
+| Seed phrase 2 | 1, on metal | Restores key 2 |
+| Seed phrase 3 | 1, on metal | Restores key 3 |
+| Wallet descriptor | 3 or more | Rebuilds the multisig from its keys |
+| Device PINs | 3 | Unlock the hardware wallets |
 
 </div>
 
-:::danger Critical
-**The wallet descriptor is as important as your seed phrases!**
-
-Without it, having all three seeds won't help you; you won't know how to combine them into the multisig.
+:::danger Back up the wallet descriptor as carefully as the seeds
+Recovery usually means rebuilding the wallet from two of the three seeds. Two seeds do not reveal the third key's xpub, so without the descriptor, which contains it, the wallet cannot be rebuilt.
 :::
 
+## What is in the wallet descriptor?
 
-## Understanding the Wallet Descriptor
+A **wallet descriptor** is the text that defines a multisig wallet:
 
-The wallet descriptor contains:
-
-```
-Example (simplified):
+```text
 wsh(sortedmulti(2,
   [73c5da0a/48h/0h/0h/2h]xpub6...ABC,
   [8f3a2b1c/48h/0h/0h/2h]xpub6...DEF,
@@ -48,301 +42,98 @@ wsh(sortedmulti(2,
 ))#checksum
 ```
 
-This tells wallet software:
-- **wsh**: native SegWit script type
-- **sortedmulti(2,...)**: 2-of-3 multisig with sorted keys
-- **[fingerprint/path]**: which device and derivation for each key
-- **xpub...**: the extended public key for each signer
-- **#checksum**: verification that descriptor is correct
+| Part | Meaning |
+|---|---|
+| `wsh` | Native segwit script type |
+| `sortedmulti(2, ...)` | Two signatures needed, with the keys sorted |
+| `[73c5da0a/48h/0h/0h/2h]` | Each key's master fingerprint and derivation path |
+| `xpub...` | Each signer's extended public key |
+| `#checksum` | A check that the descriptor was copied correctly |
 
-**From seed phrases alone, you get xpubs, but you don't know:**
-- Which xpubs belong together
-- What the M-of-N requirement is
-- The correct derivation paths
-- The script type used
+The seed phrases alone do not say which keys belong together, how many signatures are needed, which paths were used or which script type. With all three seeds and those facts you could rebuild the wallet; with two seeds, the descriptor is the only place the third key's xpub exists. It cannot spend anything, but it reveals the wallet's balance and history to whoever reads it, so store it as privately as the seeds.
 
+## Where should the backups be kept?
 
-## Backup Storage Strategy
+Four rules:
 
-### The Cardinal Rules
+1. Never store two seed phrases together.
+2. Never store a seed phrase with its own device.
+3. Store a copy of the descriptor with each seed backup.
+4. Use different buildings, and ideally different cities.
 
-1. **Never store multiple seed phrases together**
-2. **Never store a seed with its corresponding device**
-3. **Store wallet descriptor copies with seed backups**
-4. **Geographic separation**: different buildings, ideally different cities
+A layout that follows them, the same as in [hardware setup](/docs/learn/wallets/multisig/hardware-setup/#step-5-back-up-each-seed-on-metal-in-separate-places):
 
-### Recommended 2-of-3 Storage Layout
+| | Device kept at | Seed backup kept at |
+|---|---|---|
+| Key 1 | Home safe | Bank safe deposit box |
+| Key 2 | Home, separately from key 1 | A trusted family member's home |
+| Key 3 | Another city: a second property or an office | A third location, such as a second deposit box |
 
-![Recommended 2-of-3 multisig storage layout showing geographic separation of seed backups across multiple locations](/img/multisig/storage-locations.webp)
+A descriptor copy goes with each seed backup. A burglary at home finds two PIN-protected devices but no seed; losing any one seed location costs one key, which a 2-of-3 wallet survives; and any two seed locations, with their descriptor copies, are enough to recover.
 
-**Notice:**
-- Each seed is in a different location
-- No seed is stored with its own device
-- Wallet descriptor has multiple copies
-- Any two locations provide enough to recover
+## How do you make the backups?
 
+### Seed phrases on metal
 
-## Creating Your Backups
+Metal survives the fires, floods and fading that destroy paper. For each seed: after confirming it restores its device, stamp or engrave it onto a metal plate, read the plate back letter by letter against the seed, and store it in its own location. One wrong letter is a wrong seed.
 
-### Seed Phrase Backups (Metal)
+### The wallet descriptor
 
-**Why metal:**
-- Survives house fires (paper burns)
-- Survives flooding (paper disintegrates)
-- Doesn't fade over time (ink fades)
-- Resistant to physical damage
+In Sparrow, open the `Settings` tab, click the QR code icon at the top right, click `Save PDF...` and print several copies. The PDF holds the descriptor as a QR code for recovery, every xpub as text, and the fingerprints and derivation paths. Print on acid-free paper and keep one copy with each seed backup. An encrypted copy on a USB stick in a safe is a reasonable extra.
 
-**Process:**
-1. Purchase 3 metal backup devices
-2. After verifying each seed works, stamp/engrave onto metal
-3. Double-check every word is correct
-4. Store in separate locations
+## What do you do if something is lost?
 
-**Verification:**
-- Read back what you stamped
-- Compare letter-by-letter with the seed
-- One wrong letter = wrong seed = lost funds
+### One device is lost or broken
 
-### Wallet Descriptor Backup
+If device 2 is lost but you have its seed backup: buy a new hardware wallet, restore seed 2 onto it, register the multisig on it, and check its addresses match the other devices. The wallet never stopped working, since two keys remained. Moving the funds to a fresh multisig afterwards is optional.
 
-**Export from Sparrow:**
-1. Go to `Settings` tab
-2. Click QR code icon (top right)
-3. Click **"Save PDF..."**
-4. Print multiple copies
+### One seed backup is lost
 
-**The PDF includes:**
-- QR code (scannable for recovery)
-- All xpubs in text form
-- Fingerprints and derivation paths
-- Human-readable format
+If seed backup 1 is destroyed but device 1 still works, the wallet still spends, but key 1 now exists only on one device. Act promptly: use device 1 and one other device to move the funds to a new multisig with three new seeds, and back those up properly.
 
-**Storage:**
-- Print on acid-free paper
-- Laminate if possible
-- Store one copy with each seed backup
-- Consider an encrypted digital backup (USB drive in safe)
+### One device is stolen
 
+If device 3 is stolen, the thief has one key and needs two. Use devices 1 and 2 to move the funds to a new multisig straight away, before the thief can try for another key; the stolen device is then worthless.
 
-## Recovery Scenarios
+### Every device is destroyed
 
-### Scenario 1: Lost One Hardware Wallet
+If all three devices are gone but you have two seed backups and the descriptor:
 
-**Situation:** Device #2 is lost or broken, but you have its seed backup.
+1. Get two new hardware wallets.
+2. Restore seed 1 onto one and seed 2 onto the other.
+3. In Sparrow, create a new wallet and import the descriptor, by scanning the QR code on the PDF (the scan icon next to the wallet name) or with `File`, `Import Wallet`.
+4. Check that the fingerprints match your records and that the expected addresses and balance appear.
+5. Sign a small test transaction with the two restored devices.
+6. Then move everything to a new multisig with three new seeds on three new devices, and back that up.
 
-**Solution:**
-1. Purchase new hardware wallet
-2. Restore seed #2 onto new device
-3. Re-register the multisig on the new device
-4. Verify addresses match the other devices
-5. Move funds to a fresh multisig (recommended, not required)
+## How do you test the recovery before relying on it?
 
-**Why it works:** You still have 3 working keys (2 devices + 1 restored).
+Run these before depositing a significant amount:
 
-### Scenario 2: Lost One Seed Phrase
+1. Single device: wipe device 1, restore seed 1 onto it, register the multisig again, and check the fingerprint and addresses match. Sign a small test transaction.
+2. Whole wallet: delete the wallet from Sparrow, import it again from the descriptor alone, check the addresses and balance, and sign a transaction with the devices.
+3. Disaster: pretend every device is lost. Using only two seed backups and the descriptor, restore onto other devices, import the descriptor, and sign and broadcast a transaction.
 
-**Situation:** Seed backup #1 was destroyed, but Device #1 still works.
+If all three work, the backup plan works.
 
-**Solution:**
-1. Device #1 still holds Key #1; you can still sign
-2. Use Device #1 + one other device to move funds
-3. Create a NEW multisig wallet with 3 fresh seeds
-4. Transfer all funds to the new wallet
-5. Properly backup all 3 new seeds
+## Recovery checklist
 
-**Why immediate action:** If Device #1 breaks now, you've lost Key #1 forever.
+- Each seed phrase is on metal, in its own location, not with its device, and has passed a restore test.
+- The descriptor is exported as a PDF with a QR code, printed, stored with each seed backup, and has passed an import test.
+- Every device has its own PIN, recorded away from the seeds, and has the multisig registered.
+- Addresses have been checked on every device.
+- Each device's fingerprint is recorded, the locations of everything are written down, and someone you trust knows where to find that record.
 
-### Scenario 3: One Device Stolen
+## How does multisig affect inheritance?
 
-**Situation:** Thief took Hardware Wallet #3.
+Your heirs need to know the multisig exists, to reach two of the three seed backups and the descriptor, and to have instructions for recovering it. You can do this yourself, with written instructions held by a lawyer or in a safe place; through a collaborative custody service (Unchained, Casa and Nunchuk offer inheritance features and help heirs recover); or by giving one key to a trusted person or lawyer, who can then help your heirs without being able to spend alone. [Inheritance planning](/docs/advanced/inheritance-planning/) covers the options in detail.
 
-**Solution:**
-1. **Don't panic**: the thief needs 2 keys, they only have 1
-2. Use Device #1 + Device #2 to move funds immediately
-3. Create a NEW multisig wallet with fresh seeds
-4. Transfer all funds to the new wallet
-5. The stolen device is now worthless
+## What mistakes do people make with multisig backups?
 
-**Time sensitivity:** Move funds before thief can potentially compromise another key.
-
-### Scenario 4: Complete Recovery (Worst Case)
-
-**Situation:** All three hardware wallets are destroyed. You have 2 seed backups and the wallet descriptor.
-
-**Recovery Steps:**
-
-1. **Obtain new hardware wallets** (2 minimum)
-
-2. **Restore seeds onto new devices:**
-   - Device A: Restore Seed #1
-   - Device B: Restore Seed #2
-
-3. **Import wallet descriptor into Sparrow:**
-   - Open Sparrow Wallet
-   - `File` → `New Wallet`
-   - Click the scan icon next to wallet name
-   - Scan the QR code from your descriptor PDF
-   - Or: `File` → `Import Wallet` → Select Sparrow format
-
-4. **Verify recovery:**
-   - Check that addresses match what you expected
-   - Confirm fingerprints match your records
-   - Verify balance appears correctly
-
-5. **Sign a test transaction:**
-   - Send a small amount to confirm signing works
-   - Use both restored devices
-
-6. **Create fresh multisig (recommended):**
-   - Generate 3 new seeds on 3 new devices
-   - Create new multisig wallet
-   - Transfer all funds from recovered wallet
-   - Properly backup everything
-
-
-## Testing Your Recovery
-
-**Before depositing significant funds, test recovery:**
-
-### Test 1: Single Device Recovery
-
-1. Wipe Device #1 to factory settings
-2. Restore Seed #1 onto it
-3. Re-register the multisig
-4. Verify the fingerprint matches
-5. Verify addresses match other devices
-6. Sign a small test transaction
-
-### Test 2: Full Wallet Recovery
-
-1. Delete the wallet from Sparrow
-2. Re-import using only the wallet descriptor
-3. Verify balances and addresses appear
-4. Connect restored devices
-5. Sign a transaction successfully
-
-### Test 3: Simulate Disaster
-
-1. Pretend you lost all hardware wallets
-2. Using only 2 seed backups + descriptor:
-   - Restore seeds to new/different devices
-   - Import descriptor into Sparrow
-   - Verify you can see your balance
-   - Sign and broadcast a transaction
-
-If all tests pass, your backup strategy works.
-
-
-## Recovery Checklist
-
-Use this checklist to verify your backup status:
-
-### Seed Phrases
-- [ ] Seed #1 backed up on metal
-- [ ] Seed #2 backed up on metal  
-- [ ] Seed #3 backed up on metal
-- [ ] Each seed stored in separate location
-- [ ] No seed stored with its device
-- [ ] All seeds verified (restore test passed)
-
-### Wallet Descriptor
-- [ ] Exported as PDF with QR code
-- [ ] Printed multiple copies
-- [ ] Copy stored with each seed backup
-- [ ] Digital backup on encrypted USB (optional)
-- [ ] Import test successful
-
-### Hardware Wallets
-- [ ] All devices have unique PINs
-- [ ] PINs recorded separately from seeds
-- [ ] Multisig registered on all devices
-- [ ] Addresses verified on all devices
-- [ ] Stored in different locations from seeds
-
-### Documentation
-- [ ] Fingerprint recorded for each device
-- [ ] Locations documented (where is what)
-- [ ] Trusted person knows where to find info (if needed)
-
-
-## Inheritance Considerations
-
-Multisig adds complexity for inheritance. Your heirs need:
-
-1. **Knowledge that the multisig exists**
-2. **Access to 2 of 3 seed backups**
-3. **The wallet descriptor**
-4. **Instructions on how to recover**
-
-### Options:
-
-**DIY Inheritance:**
-- Write clear instructions
-- Store with a lawyer or in a safe place
-- Consider a time-locked letter service
-
-**Collaborative Custody:**
-- Services like Unchained, Casa, Nunchuk offer inheritance features
-- They can help heirs recover funds
-- Removes technical burden from family
-
-**Trusted Third Party:**
-- Give one key to a trusted person/lawyer
-- They can assist heirs but can't steal funds alone
-
-
-## Common Backup Mistakes
-
-### Mistake: Storing Seeds Digitally
-
-**Problem:** Screenshots, cloud storage, email = hackable
-
-**Solution:** Metal backups only, never digital for seeds
-
-### Mistake: All Backups in One Location
-
-**Problem:** Single fire/flood/theft destroys everything
-
-**Solution:** Geographic distribution across multiple locations
-
-### Mistake: No Wallet Descriptor Backup
-
-**Problem:** Can't reconstruct multisig even with all seeds
-
-**Solution:** Multiple printed copies stored with seeds
-
-### Mistake: Never Testing Recovery
-
-**Problem:** Discover backup doesn't work when you need it
-
-**Solution:** Test recovery before depositing significant funds
-
-### Mistake: Forgetting PIN Codes
-
-**Problem:** Can't access device, need to restore (delays)
-
-**Solution:** Write PINs down, store separately from seeds
-
-
-## Summary
-
-Multisig backup is more complex but follows clear rules:
-
-1. **Separate everything**: seeds, devices, locations
-2. **Back up the descriptor**: as critical as seeds
-3. **Test your recovery**: before you need it
-4. **Plan for inheritance**: others may need access someday
-
-Your backup strategy should ensure that:
-- Any single loss (fire, theft, failure) doesn't compromise funds
-- You can recover with 2 seeds + descriptor
-- Someone you trust can help your family if needed
-
----
-
-## Related Guides
-
-- [Multisig Overview](/docs/learn/wallets/multisig) (understanding multisig fundamentals)
-- [Hardware Setup](/docs/learn/wallets/multisig/hardware-setup) (setting up signing devices)
-- [Sparrow Setup](/docs/learn/wallets/multisig/sparrow-setup) (creating the wallet)
-- [Seed Phrase Backup](/docs/learn/keys/random/#step-6-back-up-on-metal) (metal backup options)
+| Mistake | What goes wrong | What to do instead |
+|---|---|---|
+| Storing seeds digitally | Screenshots, cloud storage and email can be breached | Metal only for seed phrases |
+| Keeping all backups in one place | One fire, flood or theft takes everything | Spread them across locations |
+| No descriptor backup | Two seeds cannot rebuild the wallet | Printed copies with each seed |
+| Never testing recovery | The backup fails when it is needed | Rehearse recovery before depositing |
+| Forgetting PINs | A device has to be restored from its seed before you can sign | Write PINs down, away from the seeds |

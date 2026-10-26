@@ -5,205 +5,53 @@ description: "Advanced Bitcoin security: generate seeds with dice, add passphras
 keywords: ["bitcoin security", "seed generation", "diy seed", "passphrase", "operational security", "self custody security", "dice roll seed"]
 tags: ["security", "seed", "passphrase", "opsec"]
 slug: /security
+date: "2026-01-15"
 ---
 
-# Security Hardening Guides
+# Security hardening guides
 
-Take your Bitcoin security beyond the basics.
+Bitcoin security works in layers, added in order as your holdings and threats grow: a hardware wallet with a tested backup first, then a seed you made with dice, a passphrase, operational security (how you behave and what you say), physical security (where things are kept and what happens under threat), and finally multisig. Most people need only the first few; match the layers to your [threat model](/docs/learn/fundamentals/threat-models/). These guides assume you already have a working hardware wallet; if not, start with [wallet setup](/docs/wallet-setup/).
 
-:::info Who Is This For?
-These guides are for users who already have a working hardware wallet setup and want to enhance their security. If you haven't set up a wallet yet, start with [Wallet Setup](/docs/wallet-setup/) first.
-:::
+## What are the layers?
 
-## Security Layers
+| Layer | What it adds | Guide |
+|---|---|---|
+| 1. Hardware wallet | Keys stay on a device that signs; most people stop here | [Hardware wallet setup](/docs/wallet-setup/hardware-wallet/) |
+| 2. A seed made with dice | Randomness you can verify instead of trusting the device | [Seed generation with dice](/docs/learn/keys/random/) |
+| 3. Passphrase | A second secret, so a found seed phrase is not enough | [Passphrases](/docs/learn/keys/passphrase/) |
+| 4. Operational security | Habits that stop you giving yourself away | [Operational security](/docs/security/operational-security/) |
+| 5. Physical security | Protection against theft, disaster and threats to you | [Physical security](/docs/security/physical-security/) |
+| 6. Multisig | No single key, device or place can lose or spend everything | [Multisig](/docs/learn/wallets/multisig/) |
 
-Bitcoin security works in layers. Each layer you add makes your setup more resilient:
+## What does each guide cover?
 
-```
-SECURITY LAYERS
-═══════════════════════════════════════════════════════════════
+| Guide | Time | Covers |
+|---|---|---|
+| [Seed generation with dice](/docs/learn/keys/random/) | 2-4 hours | Rolling dice for entropy, converting rolls to bits, calculating the BIP39 checksum, backing up on metal. Why: a device's random number generator can fail silently, as Coldcard's did until 2026, and dice-generated seeds were untouched |
+| [Passphrases](/docs/learn/keys/passphrase/) | 30 minutes | How a passphrase changes the wallet, making a strong one with dice, testing and backing it up. A forgotten passphrase cannot be reset |
+| [Operational security](/docs/security/operational-security/) | 30 minutes to read | Not discussing holdings, verifying before trusting, assuming devices are compromised, safe communication, social engineering |
+| [Physical security](/docs/security/physical-security/) | 30 minutes to read | The "$5 wrench attack", home security, backup locations, travelling with bitcoin, decoy wallets |
 
-Layer 1: Hardware Wallet           ← Most people stop here
-         └─ Keys offline, device signs
+## In what order should you add them?
 
-Layer 2: DIY Seed Generation       ← Verify your randomness
-         └─ Dice-generated entropy
-
-Layer 3: Passphrase                ← Hidden wallet protection
-         └─ 25th word adds second factor
-
-Layer 4: Operational Security      ← Behavior and habits
-         └─ How you act matters
-
-Layer 5: Physical Security         ← Real-world protection
-         └─ Protect against physical threats
-
-Layer 6: Multisig                  ← Eliminate single points of failure
-         └─ Multiple keys required
-```
-
-**You don't need all layers.** Match your security to your [threat model](/docs/learn/fundamentals/threat-models).
-
----
-
-## 🎲 DIY Seed Generation
-
-<div class="guide-card">
-
-### [DIY Seed Generation Guide](/docs/learn/keys/random/)
-
-**Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $30-80
-
-Generate your own seed phrase using dice for verifiable randomness. Don't trust, verify.
-
-**Why do this?**
-- Hardware wallet RNG could be compromised, and [it happened in 2026](/docs/learn/wallets/coldcard-entropy-incident/): a Coldcard firmware flaw made seeds guessable and ~$116M was stolen; dice-generated seeds were untouched
-- Verify your entropy source
-- Educational: understand how seeds work
-
-**What you'll learn:**
-- Rolling dice for true randomness
-- Converting rolls to binary
-- Calculating BIP39 checksum
-- Proper backup procedures
-
-**Prerequisites:** Understanding of [seed phrases](/docs/learn/keys/seed) and [private keys](/docs/learn/keys/intro).
-
-</div>
-
----
-
-## 🔐 Passphrase Security
-
-<div class="guide-card">
-
-### [DIY Passphrase Guide](/docs/learn/keys/passphrase/)
-
-**Time:** 1-2 hours | **Difficulty:** Beginner | **Cost:** Free-$10
-
-Add a passphrase (25th word) to create a hidden wallet that requires both seed AND passphrase.
-
-**Why do this?**
-- Creates plausible deniability (decoy wallet)
-- Adds second factor to seed
-- Protects against seed-only compromise
-
-**What you'll learn:**
-- How passphrases work
-- Generating strong passphrases
-- Backup strategies for passphrases
-- Common passphrase mistakes
-
-**Prerequisites:** Working hardware wallet with seed backup.
-
-:::danger Critical Understanding
-A passphrase creates a **completely different wallet**. If you forget your passphrase, funds in that wallet are **unrecoverable**. This is not like a password: there's no reset.
-:::
-
-</div>
-
----
-
-## 🕵️ Operational Security
-
-<div class="guide-card">
-
-### [Operational Security Guide](/docs/security/operational-security/)
-
-**Time:** 30 min read | **Difficulty:** Beginner | **Cost:** Free
-
-How you behave matters as much as your technical setup. OpSec covers the human element.
-
-**Key topics:**
-- Don't talk about your holdings
-- Verify before you trust
-- Assume devices are compromised
-- Secure communication practices
-- Social engineering awareness
-
-**Why it matters:** The best technical security fails if you tell the wrong person or click the wrong link.
-
-</div>
-
----
-
-## 🏠 Physical Security
-
-<div class="guide-card">
-
-### [Physical Security Guide](/docs/security/physical-security/)
-
-**Time:** 30 min read | **Difficulty:** Beginner | **Cost:** Varies
-
-Protect yourself and your Bitcoin from real-world threats.
-
-**Key topics:**
-- The $5 wrench attack
-- Home security considerations
-- Backup storage locations
-- Travel with Bitcoin
-- Duress wallets and plausible deniability
-
-**Why it matters:** All the cryptography in the world won't help if someone threatens you physically.
-
-</div>
-
----
-
-## Security Progression
-
-Here's a recommended order for implementing security layers:
-
-| Stage | What to Do | When |
+| Stage | What to do | Who |
 |-------|------------|------|
-| **1. Foundation** | Hardware wallet + proper backup | Everyone |
-| **2. Verification** | Test backup recovery | Everyone |
-| **3. OpSec Basics** | Don't discuss holdings publicly | Everyone |
-| **4. Passphrase** | Add 25th word | Meaningful holdings |
-| **5. DIY Seed** | Generate your own entropy | High security needs |
-| **6. Physical Security** | Secure storage, home security | Significant holdings |
-| **7. Multisig** | Multiple keys required | Large holdings |
+| 1 | A hardware wallet with a proper backup | Everyone |
+| 2 | Test the backup by restoring from it | Everyone |
+| 3 | Stop discussing your holdings publicly | Everyone |
+| 4 | Add a passphrase | Meaningful holdings |
+| 5 | Make your own seed with dice | High security needs |
+| 6 | Secure storage and home security | Significant holdings |
+| 7 | Multisig | Large holdings |
 
----
+## What mistakes undermine security?
 
-## Common Security Mistakes
+| Mistake | What it looks like |
+|---|---|
+| Security theatre | Worrying about exotic threats while ignoring the real ones, which are phishing, malware and social engineering |
+| Complexity beyond competence | A setup you could not recover yourself, which is a trap rather than security |
+| Single points of failure | One seed, one place, one device |
+| Trusting without verifying | Believing a website instead of checking the address on your device and the signature on the software |
+| Talking too much | Every person who knows you hold bitcoin widens your exposure |
 
-### 1. Security Theater
-Focusing on exotic threats while ignoring basics. Your threat isn't the NSA; it's phishing, malware, and social engineering.
-
-### 2. Complexity Beyond Competence
-Implementing security you don't understand. If you can't recover your own setup, it's not secure. It's a trap.
-
-### 3. Single Points of Failure
-One seed, one location, one device. Redundancy matters.
-
-### 4. Trusting Without Verifying
-"The website said it was safe." Verify addresses on your device. Verify software signatures. Verify everything.
-
-### 5. Talking Too Much
-The more people know you have Bitcoin, the larger your attack surface.
-
----
-
-## Related Guides
-
-After hardening your security:
-
-- **[Run Your Own Node](/docs/bitcoin-node/)**: Verify transactions yourself
-- **[UTXO Management](/docs/learn/privacy/utxo-management/)** (privacy through coin control)
-- **[Multisig Setup](/docs/learn/wallets/multisig/)**: Eliminate single points of failure
-- **[Air-Gapped Computer](/docs/learn/wallets/air-gapped-wallets/)** (maximum isolation)
-
----
-
-## Security Resources
-
-### Threat Modeling
-- [Assess Your Threat Model](/docs/learn/fundamentals/threat-models): What level do you need?
-
-### Recovery Planning
-- [What If You Lose Your Seed?](/docs/reference/faq/lost-seed) (understanding the stakes)
-- [Recovery Scam Warning](/docs/reference/faq/recovery-scams): Protect yourself from fraud
-
-### Pre-Deposit Checklist
-- [Before You Deposit](/docs/wallet-setup/before-you-deposit): Final verification steps
+Related reading: [what happens if you lose your seed](/docs/reference/faq/lost-seed/), [recovery scams](/docs/reference/faq/recovery-scams/), and the [before you deposit checklist](/docs/wallet-setup/before-you-deposit/).

@@ -4,23 +4,16 @@ title: "Hardware Wallets Explained"
 description: "Understand hardware wallets for Bitcoin self-custody: how they work, why they're secure, popular options compared, and how to choose the right one."
 keywords: ["bitcoin", "hardware wallet", "cold storage", "coldcard", "trezor", "ledger", "self custody", "security"]
 tags: ["bitcoin", "hardware wallet", "cold storage", "security"]
+date: "2025-12-29"
 ---
 
-# Hardware Wallets
+# Hardware wallets
 
-There's a moment in every Bitcoiner's journey when the stakes get real. Maybe your holdings crossed a threshold that makes you nervous. Maybe you read about another exchange hack or software wallet exploit. Whatever the trigger, you've arrived at the same conclusion millions have reached before you: it's time for a hardware wallet.
+A hardware wallet is a small dedicated device that creates your bitcoin private keys, stores them and signs transactions with them, without the keys ever leaving it. Because it shows each payment on its own screen and needs a button press to sign, malware on the computer it connects to can neither steal the keys nor change a payment unseen. It is a facilitator rather than a requirement: a computer that never goes online can hold the same keys and sign the same transactions, with more work. What it cannot do is prove that the keys it created were unpredictable: the 2026 Coldcard incident drained $116 million from working, air-gapped devices whose seeds were guessable. So use one with your own dice entropy, and check addresses on its screen.
 
-A hardware wallet is a dedicated physical device designed specifically to protect your Bitcoin private keys. Unlike the phone in your pocket or the laptop on your desk, it does exactly one thing, and it does that thing extraordinarily well. Your keys are generated inside the device, stored inside the device, and never leave the device. Even when you connect it to a compromised computer crawling with malware, your keys remain safe.
+## Why do hardware wallets exist?
 
-This isn't security theater. It's a fundamental architectural difference that eliminates entire categories of attacks. But 2026 added an asterisk the industry can no longer ignore: a hardware wallet protects whatever key it holds, but it cannot prove to you that the key was born unpredictable. The [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) made that distinction worth $116 million. Let's understand why hardware wallets exist, how they work, where their guarantees actually end, and how to choose the right one for your situation.
-
-## Why Hardware Wallets Exist
-
-Think about your computer or phone for a moment. How many apps are installed? How many websites have you visited? How many email attachments have you opened? Each of those interactions is a potential entry point for malicious software.
-
-General-purpose devices are designed to do everything, which means they're optimized for nothing in particular, certainly not for protecting secrets worth potentially life-changing amounts of money.
-
-A hardware wallet takes the opposite approach. It does **one job only**: protect your keys and sign transactions securely. No web browser. No email client. No app store. No attack surface.
+A phone or laptop runs a browser, email, an app store and whatever you have downloaded, and every one of those is a way in for malicious software. A device built to do everything is not built to protect a secret worth a life-changing sum. A hardware wallet does one job, holding keys and signing with them, and has no browser, email or app store to attack.
 
 <div class="doc-diagram">
 
@@ -28,13 +21,22 @@ A hardware wallet takes the opposite approach. It does **one job only**: protect
 
 </div>
 
-## How Hardware Wallets Work
+## Do you need a hardware wallet to hold bitcoin?
 
-The magic of a hardware wallet lies in a simple but profound principle: **your private key never leaves the device**.
+No. A hardware wallet is a facilitator: it makes keeping keys offline and checking payments easy, and nothing in bitcoin requires one. A transaction is data that any wallet software can build, any device holding the private key can sign, and any node can broadcast; the network checks only that the signature is valid, never what produced it. Every step can be done by hand with general-purpose computers:
 
-When you want to send Bitcoin, here's what actually happens. Your computer (running wallet software like Sparrow) creates an unsigned transaction, essentially a request that says "move X bitcoin from address A to address B." This unsigned transaction is sent to your hardware wallet, which displays the details on its own screen.
+1. A watch-only wallet on an online computer, which holds only public keys, builds the unsigned transaction as a [PSBT](/docs/learn/transactions/sign/#what-is-a-psbt). In Sparrow that is **Create Transaction**, **Finalize Transaction for Signing**, then **Save Transaction** or **Show QR**; in Bitcoin Core, the `walletcreatefundedpsbt` command.
+2. The PSBT is carried on an SD card, or as a QR code, to a computer that has never been online and holds the private keys.
+3. That computer shows the address and amount, you check them, and it signs: Sparrow running offline, or `walletprocesspsbt` and then `finalizepsbt` in Bitcoin Core.
+4. The signed transaction is carried back and broadcast from any node: your own with `sendrawtransaction`, or Sparrow's **Broadcast Transaction**.
 
-This is the critical moment. You look at the hardware wallet's screen (not your computer's screen) and verify the recipient address and amount. If everything looks correct, you press a physical button on the device. The hardware wallet then uses your private key to sign the transaction internally, and sends back only the signature, never the key itself.
+Bitcoin Core's [PSBT documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md) describes each of those commands, and the [air-gapped wallets guide](/docs/learn/wallets/air-gapped-wallets/) sets up the offline computer.
+
+What a hardware wallet adds is convenience and a smaller attack surface: a device that does nothing but sign, a screen that malware on the computer cannot redraw, a PIN, and on most models a chip that resists someone holding the device. Without one, those jobs are yours: keeping a computer offline for its whole life, checking every address on its screen, carrying every transaction across by hand, and updating its software without connecting it. That trade is why we suggest a hardware wallet to most people, while the keys themselves belong to no device: the same seed phrase restores them in any wallet.
+
+## How does a hardware wallet sign a transaction?
+
+Your wallet software (Sparrow, for example) builds an unsigned transaction, which says "move this much bitcoin to this address", and sends it to the hardware wallet. The device shows the recipient and amount on its own screen. You check them there, not on the computer, and press the button. The device signs internally and returns only the signature; the private key never leaves it.
 
 <div class="doc-diagram">
 
@@ -42,253 +44,108 @@ This is the critical moment. You look at the hardware wallet's screen (not your 
 
 </div>
 
-Here's why this matters: even if your computer is completely compromised (keyloggers recording everything, malware watching your screen, attackers with full access), they still can't steal your Bitcoin. They cannot extract your private key from the hardware wallet. They cannot sign transactions without you physically pressing the button. And they cannot change what you see on the hardware wallet's screen.
+So even if the computer is fully compromised, with a keylogger and an attacker watching the screen, the attacker cannot extract the key, cannot sign without your button press, and cannot change what the device's screen shows.
 
-The hardware wallet is your last line of defense, and it's a strong one.
+## What can't a hardware wallet protect against?
 
-## The Randomness Problem
+A hardware wallet protects whatever key it holds, but the key is only safe if nobody can predict it. If a key can be guessed, the attacker needs neither the device, the PIN nor the computer: the blockchain is enough.
 
-Everything above rests on an assumption so foundational it's easy to miss: **the private key must be unpredictable**. If anyone can guess your key, none of the isolation matters: they don't need your device, your PIN, or your computer. They just need the blockchain.
+When a device creates a seed, it draws randomness from its own generator, and you have no way to see whether the words came from good hardware randomness or from something an attacker could reproduce. For more than five years, a firmware bug made Coldcard devices use a predictable software generator instead of their hardware one, and in July 2026 attackers brute-forced those seeds and drained roughly $116 million from devices that were air-gapped and working exactly as intended. The [incident write-up](/docs/learn/wallets/coldcard-entropy-incident/) has the details.
 
-When a hardware wallet creates a new seed, it pulls randomness from an onboard generator. You press "new wallet," words appear, and you have no way to see whether those words came from high-quality hardware randomness or from something an attacker could reproduce. This is the one moment in a hardware wallet's life where you are trusting it completely and verifying nothing.
+Two habits close the gap:
 
-That trust failed in practice. For over five years, a firmware bug made Coldcard devices generate seeds from a predictable software generator instead of the hardware one. In July 2026, attackers brute-forced those seeds and drained roughly $116 million from devices that were air-gapped, physically secure, and working exactly as their owners expected. The full story is in our [incident write-up](/docs/learn/wallets/coldcard-entropy-incident/).
+- Supply the randomness yourself. Every device we recommend can take a seed you [made by hand from dice](/docs/learn/keys/random/), by restoring it, and a few take the rolls on the device (99 rolls cover a 24-word seed even if the device's generator is broken).
+- Check what the device did with it. A buggy or malicious device could ignore your rolls; re-deriving the seed from the same rolls on an independent device and comparing the words catches that, as the dice guide explains.
 
-Two habits close this gap:
+A [passphrase](/docs/learn/keys/passphrase/) on top means no single secret has to be perfect. In July 2026 that layering was the line between drained and untouched.
 
-- **Supply the randomness yourself.** Every device we currently recommend can mix your own dice rolls into seed generation, or skip the device entirely and [generate your seed manually with dice](/docs/learn/keys/random/), where every bit is yours and every step is checkable.
-- **Verify what the device did with it.** A buggy or malicious device could ignore your rolls. Re-deriving the seed from the same rolls on an independent device (or by hand) and comparing the words catches that; it's covered at the end of the dice guide.
+## What is the difference between connected and air-gapped hardware wallets?
 
-Add a [passphrase](/docs/learn/keys/passphrase/) on top and your funds no longer depend on any single secret being perfect. In July 2026, that layering was precisely the line between drained and untouched.
+| | Connected | Air-gapped |
+|---|---|---|
+| How it talks to the computer | USB cable or Bluetooth | QR codes or a microSD card carried between devices |
+| Examples | Trezor Safe 5 and 7, BitBox02 Nova | Jade Plus, Passport Prime, Keystone 3 Pro, [SeedSigner](/docs/seedsigner/), Krux |
+| Convenience | Close to a software wallet | Slower: data is carried across by hand |
+| What it removes | Nothing beyond the device's own isolation | Any cable or radio path between the device and an infected computer |
 
-## Types of Hardware Wallets
+For most people a connected hardware wallet is plenty. An air gap removes the last physical path between the device and a compromised computer, which suits larger holdings. Be precise about what that buys, though: an air gap stops malware reaching the device and key material leaking out, and it does nothing about a key that was predictable from the start. The Coldcards drained in 2026 belonged disproportionately to air-gap enthusiasts, and their discipline was irrelevant because the seeds were guessable.
 
-Not all hardware wallets are created equal. They fall into two broad categories, each with distinct tradeoffs.
+## Which features actually matter?
 
-### Standard Hardware Wallets
+The [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/) lists every device we cover with prices and our recommendations. These are the features worth understanding before reading it.
 
-These devices connect directly to your computer or phone via USB or Bluetooth. You plug them in, your wallet software recognizes them, and you're ready to go.
+### Secure element
 
-**Examples:** Trezor, Ledger, BitBox02
+A **secure element** is a tamper-resistant chip designed to keep secrets from someone who has the device in their hands; a thief cannot simply desolder a memory chip and read the key. Trezor's Safe series, the BitBox02 Nova, Passport Prime, Keystone and Coldcard have one. The Jade uses a "blind oracle" instead, in which a server (Blockstream's or your own) limits PIN guesses, and SeedSigner and Krux store nothing, so there is nothing to extract. The Trezor Safe 7's TROPIC01 is the first secure element whose design anyone can audit. Keep it in proportion: the 2026 Coldcard incident happened on devices with two secure elements, because the firmware never asked them for randomness.
 
-The user experience is smooth, almost as convenient as a software wallet. The tradeoff? Your hardware wallet is physically connected to a device that could potentially be compromised. While the security architecture still protects your keys, purists argue that any physical connection is a potential attack vector.
+### Open source
 
-### Air-Gapped Hardware Wallets
+**Open-source** firmware can be read and audited by anyone; closed firmware has to be taken on the company's word. Trezor, BitBox02, Jade, Passport, Keystone, SeedSigner and Krux are open source; Coldcard's code is visible under a restrictive licence; Ledger's secure element firmware is closed. 2026 added a correction: open source means someone can check, not that someone did. The Coldcard bug sat in readable code for five years, and the researcher who questioned it in 2025 was dismissed. Reproducible builds, independent audits of what actually ships, and how a vendor responds to a report matter as much as the licence.
 
-These devices never directly connect to anything. Instead, they communicate through alternative channels: QR codes displayed on screen and scanned by cameras, MicroSD cards physically carried between devices, or occasionally NFC.
+### Bitcoin-only firmware
 
-**Examples:** Jade Plus (QR), Passport Prime (QR), Keystone 3 Pro (QR), Coldcard (SD/QR), [SeedSigner](/docs/seedsigner/) and Krux (DIY)
+Firmware that supports only bitcoin has less code, and so fewer places for bugs. Passport, Coldcard and SeedSigner are bitcoin-only by design; BitBox02, Trezor and Keystone offer a bitcoin-only edition; the Jade supports bitcoin and Liquid.
 
-The workflow is slightly slower. You're literally sneaker-netting data between devices. But the security model is compelling: there's no cable, no Bluetooth radio, no USB port that malware could potentially exploit. The device is truly isolated.
+### Your own dice entropy
 
-Be precise about what that isolation buys you, though. An air gap stops malware from reaching the device and stops key material from leaking out. It does **nothing** about a key that was predictable from birth: the Coldcard wallets drained in 2026 belonged disproportionately to air-gap enthusiasts, and their discipline was irrelevant because [the seeds themselves were guessable](/docs/learn/wallets/coldcard-entropy-incident/). Air-gapping narrows the attack surface; it doesn't verify the randomness underneath.
+After 2026, supplying your own randomness is a requirement rather than a feature. As of October 2026 the Keystone 3 Pro, SeedSigner, Krux and Coldcard take dice rolls on the device; BitBox, Blockstream (Jade) and Foundation document procedures for choosing the words yourself; on the Trezor Safe you make the seed with dice and restore it. Bitkey shows no seed phrase, so none of these is possible with it. Fifty rolls protect a 12-word seed even if the device's generator is completely broken, and 99 cover a 24-word seed, which is exactly what kept dice-generated Coldcard seeds safe.
 
-For most people, standard hardware wallets provide excellent security. Air-gapped devices are for those who want to eliminate every possible attack vector. Just don't mistake the air gap for a guarantee about entropy.
+## What habits keep a hardware wallet safe?
 
-## Comparing Popular Hardware Wallets
+| Do | Why |
+|---|---|
+| Buy from the manufacturer or a reseller listed on its site | Tampered devices have been sold on eBay, Amazon and look-alike shops |
+| Run the maker's authenticity check | It confirms the device is genuine before you trust it |
+| Create the seed with your own dice | It removes the failure that cost Coldcard owners $116 million |
+| Follow the vendor's security advisories and update firmware | Updates fix flaws, though no update can repair a seed that was made weak |
+| Check every address on the device's screen | Malware can change an address on the computer, not on the device |
+| Use a random PIN, kept separately from the device and seed | A guessable PIN makes a stolen device a stolen wallet |
+| Keep the seed backup somewhere other than the device | A thief or fire should not get both |
 
-The hardware wallet market has matured significantly and been stress-tested. Here's the August 2026 lineup at a glance (full details, including why some entries carry warnings, in the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/)):
+| Never | Why |
+|---|---|
+| Buy a used hardware wallet | You cannot know what the previous owner did to it |
+| Type the seed phrase into a computer, website or app | The only place it is ever entered is the hardware wallet itself, during recovery |
+| Store the device and the seed backup together | One theft or fire would take both |
+
+## Where do hardware wallets fit among the options?
 
 <div class="fixed-width-table">
 
-| Device | Price | Open Source | Air-Gap | Secure Element | Best For |
-|--------|-------|-------------|---------|----------------|----------|
-| **Trezor Safe 5** | $169 | Full | No | Yes (EAL6+) | Beginners |
-| **Trezor Safe 7** | $249 | Full (incl. SE) | No | Dual, auditable | Transparency + UX |
-| **BitBox02 Nova** | ~$185 | Full | No | Yes (EAL6+) | Simplicity |
-| **Jade / Jade Plus** | $79 / $149 | Full | Yes (QR) | No* | Budget air-gap |
-| **Passport Prime** | $556 | Full | Yes (QR) | Yes | Premium air-gap |
-| **Keystone 3 Pro** | $149 | Full | Yes (QR) | Yes (3 chips) | QR workflow |
-| **[SeedSigner](/docs/seedsigner/) / Krux** | ~$50–80 | Full | Yes (stateless) | No | DIY verification (our favourite) |
-| **Coldcard Mk5 / Q** | $189 / $289 | Source-visible | Yes (SD/QR) | Dual | ⚠️ [See incident](/docs/learn/wallets/coldcard-entropy-incident/) |
-| **Ledger Nano/Flex/Stax** | $79–399 | SE firmware closed | No | Yes | Not recommended |
-
-</div>
-
-*Jade uses a "virtual secure element": a blind oracle server (Blockstream's or self-hosted) rate-limits PIN attempts instead of a dedicated chip.
-
-## Key Features Explained
-
-Reading hardware wallet specifications can feel like comparing cars by their engine displacement, technically accurate but not particularly helpful for making decisions. Here's what actually matters:
-
-### Secure Element
-
-A secure element is a tamper-resistant chip specifically designed to protect secrets. Think of it as a tiny vault inside your hardware wallet. If someone physically steals your device, a secure element makes it dramatically harder to extract your keys; they can't just desolder a memory chip and read it.
-
-**Has secure element:** Trezor Safe series, BitBox02 Nova, Passport Prime, Keystone, Coldcard, Ledger  
-**No secure element:** Jade (oracle model instead), SeedSigner and Krux (stateless: nothing stored to protect)
-
-Does this matter? For most threat models, yes. If you're worried about sophisticated physical attacks (the kind involving labs and electron microscopes), a secure element adds meaningful protection. Notably, the Trezor Safe 7's TROPIC01 is the first *auditable* secure element (open design, no NDA), closing the old gap between "certified" and "verifiable." Keep it in perspective, though: the 2026 Coldcard incident happened on devices with **two** secure elements. The chips did their job; the firmware never asked them for randomness. A secure element protects stored keys; it can't save a key that was predictable at creation.
-
-### Open Source
-
-Can independent security researchers examine the code running on your device? Open source firmware means anyone can audit it, find bugs, and verify there are no backdoors. Closed source means you're trusting the company's word.
-
-**Fully open source:** Trezor, BitBox02, Jade, Passport, Keystone, SeedSigner, Krux  
-**Source-visible (restrictive license):** Coldcard  
-**Closed source where it counts:** Ledger (secure element firmware)
-
-The Bitcoin community generally prefers open source, and for good reason, but 2026 taught the necessary correction: **open source means someone *can* check, not that someone *did*.** The Coldcard entropy bug sat in publicly readable code for over five years, and a researcher who did question it in 2025 was dismissed. Source availability is the entry ticket; what separates vendors now is reproducible builds, independent audits of what actually ships, and how they respond when someone finds something.
-
-### Bitcoin-Only Option
-
-Some devices offer firmware that only supports Bitcoin: no Ethereum, no altcoins, no tokens. Why does this matter? Less code means fewer potential bugs. Every feature is a potential attack surface, and many Bitcoiners prefer devices that do one thing exceptionally well rather than many things adequately.
-
-**Bitcoin-only by design:** Passport, Coldcard, SeedSigner  
-**Bitcoin-only firmware available:** BitBox02, Trezor Safe series, Keystone, Jade (Bitcoin + Liquid)
-
-### User-Supplied Entropy
-
-Can you mix your own randomness, typically dice rolls, into seed generation, so you're not trusting the device's generator alone? After 2026, treat this as a required feature, and happily every current recommendation supports it (Ledger is the holdout). Fifty rolls contribute enough entropy to protect a 12-word seed even if the device's generator is completely broken; 99 rolls fully cover a 24-word seed. That math is exactly what kept dice-generated Coldcard seeds safe through the incident.
-
-The feature has one blind spot: you can't see whether the device honestly used your rolls. The fix is cheap: re-derive the seed from the same rolls independently and compare words. Our [dice guide](/docs/learn/keys/random/) covers both the full manual process and this cross-check.
-
-## Choosing Your Hardware Wallet
-
-With so many options, analysis paralysis is real. Here's how to cut through the noise based on what actually matters to different types of users.
-
-### For Beginners
-
-**Recommendation: BitBox02 Nova (Bitcoin-only) or Trezor Safe 5**
-
-If this is your first hardware wallet, you want something that won't frustrate you. Both devices have intuitive setup processes, good security (including EAL6+ secure elements), fully open source firmware, and, importantly now, dice-roll support for when you're ready to supply your own entropy.
-
-The learning curve is gentle. You'll be up and running in under an hour, and you won't feel like you need a computer science degree to operate your own wallet.
-
-### For Verifiable Security
-
-**Recommendation: Jade Plus or Passport Prime, seeded with dice**
-
-If you lie awake at night thinking about attack vectors, 2026 clarified which vectors deserve the insomnia. Jade Plus pairs QR air-gap operation with anti-exfiltration signing and multi-source entropy. Blockstream's same-night, show-the-details response to the Coldcard crisis is the vendor behavior you want backing your device. Passport Prime adds a sandboxed OS and an entropy-testing app that lets you probe the randomness yourself, at a much higher price.
-
-Whichever you pick, generate the seed with [your own dice entropy](/docs/learn/keys/random/). The device handles isolation; you handle unpredictability.
-
-### For Full Transparency
-
-**Recommendation: Trezor Safe 7, or build a SeedSigner/Krux**
-
-If verifiability matters more to you than any single feature, the Safe 7 is the first device where even the secure element (TROPIC01) has an auditable design, with no NDA between you and the chip. The DIY route goes further still: SeedSigner and Krux are stateless signers you assemble from commodity parts, running firmware you can build yourself, holding your seed only while you use it. SeedSigner is our favourite signing solution overall, enough that it has its [own section](/docs/seedsigner/) with a full [build guide](/docs/seedsigner/build-guide/). If you enjoyed our [coreboot](/docs/coreboot/) and [libreboot](/docs/libreboot/) guides, this is your category.
-
-### For Mobile Users
-
-**Recommendation: Keystone 3 Pro**
-
-If you primarily use your phone for Bitcoin, Keystone's QR code approach works beautifully with mobile wallets: no cables, no adapters, just point and scan, and the air gap holds the whole time. BitBox02 Nova's Bluetooth support is the convenient wired-free alternative if you're an iPhone user who prefers a pocketable device.
-
-## Security Best Practices
-
-A hardware wallet is only as secure as how you use it. These practices separate "pretty safe" from "actually safe."
-
-**Buy from official sources only.** This is non-negotiable. Pre-compromised hardware wallets have been sold on eBay, Amazon third-party sellers, and crypto-themed websites. The savings aren't worth the risk. Buy directly from the manufacturer or from explicitly authorized resellers.
-
-**Verify your device is genuine.** Every reputable manufacturer includes an authenticity check. Run it. If the device fails or the check doesn't exist, return it immediately.
-
-**Own your entropy.** Use the device's dice-roll option when creating your seed (99 rolls for a 24-word seed), or [generate the seed yourself](/docs/learn/keys/random/) and import it. This is the practice that separated the untouched from the drained in 2026, and it costs twenty minutes.
-
-**Watch your vendor's security advisories.** Update firmware promptly, and know that a firmware update can never repair a seed that was generated weak; only migration to a new seed can. Subscribe to the vendor's advisory channel; the Coldcard victims' first warning was their balance hitting zero.
-
-**Always verify addresses on the device screen.** This is the single most important habit. Malware can display fake addresses on your computer screen, but it can't change what your hardware wallet displays. Before you send Bitcoin anywhere, verify the address on your hardware wallet matches what you intended.
-
-**Use a strong PIN.** Not 1234. Not your birthday. Not your anniversary. A random PIN that you memorize, or better yet, write down and store separately from both the device and your seed backup.
-
-**Keep your seed backup in a different location than your device.** If someone steals your hardware wallet and finds your seed backup in the same drawer, your security model has failed completely.
-
-The things to avoid are equally important:
-
-**Never buy used hardware wallets.** You cannot verify they haven't been compromised. The previous owner could have extracted the keys or modified the firmware. Just don't.
-
-**Never enter your seed phrase on a computer.** The only place your seed phrase should ever be entered is directly into your hardware wallet during recovery. Not in a web form. Not in an app. Not in a "verification tool."
-
-**Never store your device with your seed backup.** Redundancy is the point. If fire destroys your home, you want either the device or the backup to survive, ideally in different locations.
-
-## Hardware Wallet vs. Other Methods
-
-Where do hardware wallets fit in the broader self-custody landscape? Here's an honest comparison:
-
-<div class="fixed-width-table">
-
-| Method | Security | Convenience | Cost | Best For |
+| Method | Security | Convenience | Cost | Suits |
 |--------|----------|-------------|------|----------|
-| **Exchange custody** | Low | High | Free | Not self-custody |
-| **Software wallet** | Medium | High | Free | Small amounts |
-| **Hardware wallet** | High | Medium | $80-200 | Most people |
-| **Air-gapped computer** | Very High | Low | $50-200 | Advanced users |
-| **Multisig** | Highest | Low | $200-500 | Large holdings |
+| Exchange account | Low | High | Free | Not self-custody |
+| Software wallet | Medium | High | Free | Small amounts |
+| Hardware wallet | High | Medium | About $80 to $250 | Most people |
+| Air-gapped computer | Very high | Low | $50 to $200 | Advanced users |
+| Multisig | Highest | Low | $200 to $750 | Large holdings |
 
 </div>
 
-For most people serious about self-custody, **a hardware wallet hits the sweet spot**. It's dramatically more secure than software wallets, far more practical than air-gapped computers, and doesn't require the complexity of multisig. You get 90% of the security with 30% of the hassle.
+For most people a hardware wallet is the right balance: far safer than a software wallet, far more practical than an air-gapped computer, and without the coordination multisig needs.
 
-## Common Misconceptions
+## What do people get wrong about hardware wallets?
 
-Even experienced Bitcoiners sometimes misunderstand hardware wallets. Let's clear up the most dangerous myths.
+### Does losing the device lose the bitcoin?
 
-### "If I lose my hardware wallet, I lose my Bitcoin"
+No. The bitcoin is on the blockchain, not in the device. With the seed phrase you can restore the wallet on a new device of the same brand, a different brand, or even a software wallet in an emergency. The device is replaceable; the seed phrase is what matters.
 
-This is the most common misconception, and it's completely wrong. Your Bitcoin exists on the blockchain, not inside any physical device. The hardware wallet is just a secure container for the keys that control that Bitcoin.
+### Are hardware wallets hackproof?
 
-If you have your seed phrase backup, you can recover your wallet on a new device: same brand, different brand, even a software wallet in an emergency. The device is replaceable. The seed phrase is what matters.
+No. Physical attacks, tampered supply chains and firmware flaws have all happened, and the 2026 Coldcard incident showed a hardware wallet can be emptied without anyone touching it, because the keys it created were guessable. Hence the layers: your own entropy, a passphrase, a strong PIN, current firmware, addresses checked on the device, and a backup stored separately.
 
-### "Hardware wallets are hackproof"
+### Do you need to check addresses on the device?
 
-They're highly secure, but "hackproof" doesn't exist in security. Physical attacks, supply chain compromises, and firmware vulnerabilities have all happened, and in 2026 the [Coldcard entropy flaw](/docs/learn/wallets/coldcard-entropy-incident/) proved a hardware wallet can be "hacked" without anyone ever touching it, connecting to it, or infecting anything: the keys it created were simply guessable.
+Yes, every time. Malware can show one address on the computer while the software sends to another that the attacker controls. The device's screen is the one to believe, and checking it takes seconds.
 
-This is why defense in depth matters: your own entropy, a passphrase, strong PINs, verified firmware, addresses verified on device, seed backups stored securely and separately. Each layer compensates for potential failures in others.
+### Does air-gapped mean it cannot be hacked?
 
-### "I don't need to verify addresses on the device"
+No. An air gap blocks malware and key leakage, but says nothing about the device's internals. The 2026 victims kept fully air-gapped devices in safes, and lost their bitcoin through the blockchain because their keys were predictable. Isolation and unpredictability are separate properties, and you need both.
 
-This misconception has cost people their Bitcoin. Your computer could be compromised by malware that displays one address on screen while your wallet software actually sends to a different address, controlled by the attacker.
+### Are all hardware wallets equally secure?
 
-The hardware wallet's screen is your source of truth. **Always verify the recipient address on your hardware wallet before confirming any transaction.** This takes five seconds and eliminates an entire category of attacks.
+No. Design and firmware transparency differ, and so does how vendors behave: Coinkite was warned about its random number generator fourteen months before the exploit and dismissed it. Compare vendors on their disclosure history and crisis response as well as their specifications; the [comparison page](/docs/reference/hardware-wallet-comparison/#how-did-each-vendor-respond-in-2026) tracks both.
 
-### "Air-gapped means it can't be hacked"
+## When should you move to multisig?
 
-An air gap is a strong defense against malware and key exfiltration. It is not a verdict on the device's internals. The 2026 victims held fully air-gapped devices in safes; their keys were stolen through the blockchain, because weak entropy made them guessable. Isolation and unpredictability are separate properties; you need both.
-
-### "Any hardware wallet is equally secure"
-
-Architecture matters. Firmware transparency matters. And here is 2026's addition: **how a vendor responds to warnings matters most of all**. Coinkite was told about its RNG concern fourteen months before the exploit and dismissed it. Compare vendors on their disclosure history and crisis behavior, not just their spec sheets; our [comparison page](/docs/reference/hardware-wallet-comparison/) now tracks exactly that.
-
-Do your research. Read independent reviews. Check if security researchers have examined the device. The price difference between options is trivial compared to what you're protecting.
-
-## When to Consider Multisig Instead
-
-A single hardware wallet, properly used, is excellent security. But it's still a single point of failure. If your device is compromised, your seed backup is stolen, or you're physically coerced, a single-signature setup can't protect you.
-
-**Consider [multisig](/docs/learn/wallets/multisig) if:**
-
-- **You're storing significant wealth**: think six months of expenses or more
-- **You want protection against physical theft**: no single location contains enough keys to spend
-- **You want protection against device compromise**: even if one hardware wallet is hacked, attackers still need more keys
-- **You're planning for inheritance**: multisig makes it possible for heirs to access funds without giving any single person full control
-
-Multisig is more complex to set up and use, but for substantial holdings you plan to keep long-term, that complexity buys meaningful peace of mind.
-
----
-
-## Key Takeaways
-
-Hardware wallets represent the single biggest security upgrade most Bitcoiners can make. They isolate your keys from internet threats, require physical confirmation for every transaction, and give you a trusted screen that malware can't compromise.
-
-Remember:
-
-- Your private key **never leaves the device**: only signatures do
-- **A device can't prove its own randomness**: supply your entropy with dice, or verify it ([2026 showed why](/docs/learn/wallets/coldcard-entropy-incident/))
-- **Verify everything on the device screen**: never trust your computer alone
-- **Buy from official sources only**: the few dollars saved aren't worth the risk
-- Air-gap for isolation, but know **it says nothing about entropy**
-- For significant holdings, **multisig eliminates single points of failure**
-
----
-
-## Next Steps
-
-Ready to set up your hardware wallet?
-
-→ **Do This First:** [DIY Seed Guide](/docs/learn/keys/random/) (own your entropy, the lesson of 2026)
-
-→ **Practical Guide:** [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet) (step-by-step instructions)
-
-→ **Context:** [The Coldcard Entropy Incident](/docs/learn/wallets/coldcard-entropy-incident/) (what happened, who's affected)
-
-→ **Advanced:** [Multisig Wallets](/docs/learn/wallets/multisig) (eliminate single points of failure)
+A single hardware wallet used well is strong security, but it is still a single point of failure: a compromised device, a stolen seed backup or physical coercion can each reach everything. [Multisig](/docs/learn/wallets/multisig/) removes that by requiring several keys on separate devices. Consider it when the amount is significant for you, when you want protection against theft from one location or one compromised device, or when you are planning for inheritance. It is more complex to set up and use, which is a fair price for long-term holdings of that size.

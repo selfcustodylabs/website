@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Submit changed doc URLs to IndexNow.
+ * Submit changed doc and field note URLs to IndexNow.
  *
  * Bing's index is the retrieval layer behind ChatGPT search and Copilot, so a
  * page Bing has not crawled cannot be cited by either of them no matter how

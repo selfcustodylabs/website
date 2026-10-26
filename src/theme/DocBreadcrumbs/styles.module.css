@@ -1,0 +1,41 @@
+.crumbs {
+  margin-bottom: 0.9rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.item {
+  color: var(--scl-muted);
+}
+
+.item + .item::before {
+  content: "/";
+  margin: 0 0.6em;
+  color: var(--scl-faint);
+}
+
+.item a {
+  color: var(--scl-muted);
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: var(--scl-ink);
+}
+
+/* The section the page belongs to is its subject: amber, like the OG eyebrow. */
+.item:last-child,
+.item:last-child a {
+  color: var(--scl-amber);
+}
