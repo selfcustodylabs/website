@@ -11,21 +11,8 @@
  * whose links are raw strings the build's link checker never sees: check them
  * by hand after an edit.
  */
-export const advisories = [
-  {
-    id: "coldcard_rng_2026",
-    date: "2026-08-01",
-    title: "Coldcard seeds made between March 2021 and July 2026 may be guessable",
-    summary:
-      "A firmware build error made Coldcard seeds guessable for 1,978 days. Between 30 July and 4 August 2026 attackers swept about 1,816 BTC from more than 5,200 addresses. Updating the firmware does not repair a seed that already exists: if a Coldcard generated yours in that window, move the funds to a new seed.",
-    links: [
-      { to: "/docs/learn/wallets/coldcard-entropy-incident/", label: "Am I affected?" },
-      { to: "/docs/learn/keys/random/", label: "Make a seed with dice" },
-      { to: "/docs/learn/keys/passphrase/", label: "Add a passphrase" },
-    ],
-    bar:
-      '<span class="scl-advisory">Advisory · 1 Aug 2026</span><strong>Coldcard seeds made 2021 to 2026 may be guessable</strong>, and new firmware does <strong>not</strong> fix an existing seed. <a href="/docs/learn/wallets/coldcard-entropy-incident/">Am I affected?</a> · Make your own: <a href="/docs/learn/keys/random/">dice seed</a> and <a href="/docs/learn/keys/passphrase/">passphrase</a>.',
-  },
-];
+// The Coldcard advisory of 1 August 2026 was retired on 26 October 2026; its
+// canonical page is /docs/learn/wallets/coldcard-entropy-incident/.
+export const advisories = [];
 
 export const currentAdvisory = advisories[0] ?? null;
