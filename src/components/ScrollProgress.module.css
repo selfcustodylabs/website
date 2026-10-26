@@ -1,11 +1,14 @@
+/* Anchored to the sticky .navbar and laid exactly over its 1px rule, so the
+   line is the rule turning amber and page text never shows around it. It
+   stays 1px and at 55% amber so the active nav link's full 2px amber
+   underline, the subject, keeps the stronger stroke. */
 .bar {
-  position: fixed;
-  top: var(--ifm-navbar-height);
+  position: absolute;
+  right: 0;
+  bottom: -1px;
   left: 0;
-  z-index: calc(var(--ifm-z-index-fixed) + 1);
-  width: 100%;
-  height: 2px;
-  background: var(--scl-amber);
+  height: 1px;
+  background: rgba(245, 158, 11, 0.55);
   transform: scaleX(0);
   transform-origin: 0 50%;
   pointer-events: none;

@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import Layout from "@theme-original/Layout";
 
-import ScrollProgress from "@site/src/components/ScrollProgress";
-
 /**
- * Wraps the stock Layout to add the reading-progress line, and to open every
- * collapsed <details> before printing so a printed guide carries every step
- * (src/css/print.css cannot reveal closed <details> on its own).
+ * Wraps the stock Layout to open every collapsed <details> before printing so
+ * a printed guide carries every step (src/css/print.css cannot reveal closed
+ * <details> on its own).
  *
  * @param {object} props - forwarded verbatim to the original Layout
  */
@@ -30,10 +28,5 @@ export default function LayoutWrapper(props) {
     };
   }, []);
 
-  return (
-    <>
-      <ScrollProgress />
-      <Layout {...props} />
-    </>
-  );
+  return <Layout {...props} />;
 }
