@@ -86,8 +86,8 @@ You don't have to install everything. Tailor it to your needs.
 Before you begin:
 
 - A computer running **Linux (Debian/Ubuntu family)** or **Mac**
-- At least **1 TB SSD** storage (2 TB recommended)
-- **Stable internet connection** (blockchain download is ~600 GB)
+- A **2 TB SSD**: the blockchain alone was about 770 GB in September 2026, and the Electrum server index needs more
+- **Stable internet connection** (the blockchain download is about 770 GB)
 - Basic comfort with the terminal
 
 :::warning Storage Warning

@@ -172,7 +172,7 @@ Most node software works on similar hardware:
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
 | **Device** | Raspberry Pi 4 (4GB) | Raspberry Pi 5 (8GB) or mini PC |
-| **Storage** | 1 TB SSD | 2 TB SSD |
+| **Storage** | 2 TB SSD | 2 TB SSD or larger |
 | **RAM** | 4 GB | 8+ GB |
 | **Internet** | Stable connection | Unlimited data |
 

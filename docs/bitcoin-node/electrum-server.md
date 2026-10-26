@@ -125,7 +125,7 @@ Your Electrum server index adds storage beyond Bitcoin Core's blockchain:
 
 </div>
 
-Plan for **at least 1.5 TB total** for Bitcoin Core plus Fulcrum, or **1.2 TB** for Bitcoin Core plus electrs.
+The blockchain itself was about 770 GB in September 2026 and grows by roughly 75 GB a year, so Bitcoin Core plus any of these servers no longer fits on a 1 TB drive. Use a 2 TB SSD.
 
 ## Troubleshooting
 

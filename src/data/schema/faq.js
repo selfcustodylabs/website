@@ -129,7 +129,8 @@ export const faqSchemas = {
     ],
   },
 
-  // The four pages below carry no FAQ section on the page itself; these pairs
+  // The comparison page shows these questions in its Common questions section;
+  // the three pages after it carry no FAQ section on the page itself. These pairs
   // exist because a question-and-answer is the most directly retrievable shape
   // there is, and these are the queries assistants actually get asked about
   // this site's subject matter. Answers must stay in sync with the page.
@@ -138,22 +139,22 @@ export const faqSchemas = {
       {
         question: "What is the best Bitcoin hardware wallet in 2026?",
         answer:
-          "There is no single best device, and after the 2026 Coldcard entropy incident the practices matter more than the hardware. For beginners the Trezor Safe 5 ($169) or BitBox02 Nova (~$185) are the easiest to use safely. For verifiable security on a budget, the Blockstream Jade Plus ($149) offers QR air-gapping. SeedSigner is our favourite for people comfortable building their own device, though it is explicitly not for beginners. Whichever you pick, supply your own dice entropy at seed creation, add a passphrase, and use multisig across vendors for significant holdings.",
+          "There is no single best device, and after the 2026 Coldcard entropy incident the practices matter more than the hardware. For beginners, the Trezor Safe 5 ($129) or the BitBox02 Nova (€175) is the easiest to use safely. For verifiable security on a budget, the Blockstream Jade Plus ($149) signs over QR codes. SeedSigner is our favourite for people comfortable building their own device, though it is not for beginners. Whichever you choose, supply your own dice entropy when the seed is created, add a passphrase, and use multisig across vendors for significant holdings.",
       },
       {
         question: "Is Coldcard still safe to use in 2026?",
         answer:
-          "Self Custody Labs does not currently recommend Coldcard. A build-system error meant Coldcards generated seeds with a software pseudo-random generator instead of the hardware TRNG between March 2021 and July 2026, and roughly 1,816 BTC was drained from more than 5,200 addresses. Coinkite shipped fixes quickly once draining began, but it had dismissed a developer's warning about the same code in May 2025. Devices are safe to use with an externally generated or dice-generated seed, but we point new buyers elsewhere.",
+          "We do not currently recommend Coldcard. A build error meant Coldcards generated seeds with a software pseudo-random generator instead of the hardware random number generator between March 2021 and July 2026, and roughly 1,816 BTC was drained from more than 5,200 addresses. Coinkite shipped fixes quickly once the draining began, but it had dismissed a developer's warning about the same code in May 2025. The devices are safe to use with a seed generated from dice or elsewhere, but we point new buyers to other devices.",
       },
       {
-        question: "Do I need a secure element in a hardware wallet?",
+        question: "Do you need a secure element in a hardware wallet?",
         answer:
-          "Not necessarily. A secure element resists physical extraction of your seed if someone steals the device, which matters if physical theft is in your threat model. Devices without one, such as the Blockstream Jade Plus, use a blind oracle design instead and are fully open source and verifiable. The 2026 Coldcard incident is the reminder that a secure element does not help if the seed was weak to begin with.",
+          "Not necessarily. A secure element resists someone physically extracting the seed from a stolen device, which matters if theft is part of your threat model. Devices without one, such as the Blockstream Jade Plus, use a blind oracle design instead and are fully open source and verifiable. The 2026 Coldcard incident is the reminder that a secure element does not help if the seed was weak to begin with.",
       },
       {
-        question: "Should I use dice to generate my Bitcoin seed phrase?",
+        question: "Should you use dice to generate your Bitcoin seed phrase?",
         answer:
-          "Yes, for any holding you would be upset to lose. Every current hardware wallet supports mixing in your own dice rolls at seed creation. Coldcard owners who used dice entropy lost nothing in the 2026 incident, while owners who trusted the device default lost everything. Dice entropy removes your dependence on the vendor's random number generator being correct.",
+          "Yes, for any amount you would be upset to lose. Every hardware wallet we recommend can mix your own dice rolls into seed creation. Coldcard owners who used dice lost nothing in the 2026 incident, while owners who trusted the device's default lost everything. Dice remove your dependence on the vendor's random number generator being correct.",
       },
     ],
   },
@@ -216,22 +217,23 @@ export const faqSchemas = {
           "A multisig wallet requires more than one key to spend, written as M-of-N: M signatures out of N total keys. A 2-of-3 wallet has three keys and any two can authorise a spend, so losing one key does not lose the funds and stealing one key does not steal them. Each key normally lives on a separate hardware wallet in a separate location.",
       },
       {
-        question: "Do I need multisig for my Bitcoin?",
+        question: "Do you need multisig for your bitcoin?",
         answer:
-          "Not for everything. Multisig suits significant holdings you would be devastated to lose, long-term vault storage, business funds needing multiple approvals, and inheritance planning, and it assumes you have several secure storage locations. It is unnecessary for amounts under roughly $10,000, for daily spending funds, and for anyone still learning basic self-custody, where the added complexity is itself a risk of loss.",
+          "Not for everything. Multisig suits significant holdings you would be devastated to lose, long-term storage, business funds needing several approvals and inheritance planning, and it assumes you have several secure storage locations. It is unnecessary for amounts under roughly $10,000, for spending money and for anyone still learning basic self-custody, where the added complexity is itself a risk of loss.",
       },
       {
-        question: "What multisig configuration should I use?",
+        question: "What multisig configuration should you use?",
         answer:
-          "2-of-3 is the most popular choice for individual self-custody: it tolerates the loss of any single key while requiring an attacker to compromise two. 3-of-5 suits high-value holdings and organizations. 2-of-2 gives shared control with no fault tolerance, so a single lost key is fatal. Use hardware wallets from different manufacturers so no single vendor's mistake can reach your funds.",
+          "2-of-3 is the most popular choice for individual self-custody: it tolerates the loss of any single key while requiring an attacker to compromise two. 3-of-5 suits very large holdings and organisations. 2-of-2 gives shared control with no fault tolerance, so a single lost key is fatal. Use hardware wallets from different manufacturers so that no single vendor's mistake can reach your funds.",
       },
       {
         question: "Does multisig protect against a hardware wallet vulnerability?",
         answer:
-          "Yes, and the 2026 Coldcard entropy incident demonstrated it. Where one key in a 2-of-3 quorum was a weak Coldcard seed, the attacker still could not spend, because they needed a second signature. This is precisely the failure mode multisig exists for. The weak key should still be replaced, but the funds were never at risk.",
+          "Yes, and the 2026 Coldcard entropy incident demonstrated it. Where one key in a 2-of-3 wallet was a weak Coldcard seed, the attacker still could not spend, because a second signature was needed. This is the failure multisig exists for. The weak key should still be replaced, but the funds were never at risk.",
       },
     ],
   },
+
 };
 
 /**

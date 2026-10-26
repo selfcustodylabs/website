@@ -204,6 +204,10 @@ function normalize(raw, permalink, facts = "") {
 
     let text = line;
 
+    // An explicit heading id ("## Title {#anchor}") is Docusaurus syntax, not
+    // Markdown: drop it so the mirror's heading reads as the page's does.
+    text = text.replace(/^(#{1,6} .*?)\s*\{#[\w-]+\}\s*$/, "$1");
+
     // Layout wrappers: keep the content, surface a TabItem's label as a heading
     // so the tab's meaning survives losing its tab.
     text = text.replace(
@@ -274,6 +278,7 @@ function assertClean(markdown, permalink) {
 
   if (/<[A-Z][A-Za-z0-9]*/.test(outsideFences)) problems.push("residual JSX component tag");
   if (/^:::/m.test(outsideFences)) problems.push("residual admonition marker");
+  if (/^#{1,6} .*\{#[\w-]+\}\s*$/m.test(outsideFences)) problems.push("residual heading id");
   if (/\]\(\.{0,2}\//.test(outsideFences.replace(/\]\(https?:\/\//g, "](")))
     problems.push("unresolved relative or root-relative link");
   if (/^---\s*$/m.test(outsideFences.split("\n").slice(0, 3).join("\n")))

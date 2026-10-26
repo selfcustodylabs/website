@@ -58,6 +58,7 @@ const GUIDES = {
         title: "Software Options",
         path: "/docs/bitcoin-node/node-software-options/",
       },
+      { title: "Parmanode Setup", path: "/docs/bitcoin-node/parmanode-setup/" },
       { title: "Electrum Server", path: "/docs/bitcoin-node/electrum-server/" },
       { title: "Tor Setup", path: "/docs/bitcoin-node/tor/" },
       {
@@ -78,6 +79,10 @@ const GUIDES = {
       {
         title: "Pico Setup",
         path: "/docs/libreboot/raspberry-pico/build-serprog/",
+      },
+      {
+        title: "Connect the Pico",
+        path: "/docs/libreboot/raspberry-pico/connection/",
       },
       { title: "Flash BIOS", path: "/docs/libreboot/flashing-bios/" },
     ],

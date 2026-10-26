@@ -113,7 +113,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -168,7 +167,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -315,6 +313,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -478,6 +477,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "FAQPage",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -631,7 +631,7 @@
     },
     "/docs/learn/keys/passphrase/": {
       "title": "Bitcoin Passphrase (25th Word): Diceware Generation | Self Custody Labs",
-      "description": "Learn what a Bitcoin passphrase is, when to use it, and how to generate a strong one with dice and the EFF word list. Full 3-step DIY guide.",
+      "description": "What a Bitcoin passphrase (the 25th word) is, when to use one, and how to make a strong one with dice and the EFF word list, then test and back it up.",
       "canonical": "https://selfcustodylabs.com/docs/learn/keys/passphrase/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -842,7 +842,6 @@
         "Article",
         "BreadcrumbList",
         "FAQPage",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -897,7 +896,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1096,7 +1094,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1208,6 +1205,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1425,7 +1423,6 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
-        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1553,6 +1550,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "FAQPage",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1739,6 +1737,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "ItemList",
         "Organization+EducationalOrganization",
         "WebSite"
@@ -3987,6 +3986,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "FAQPage",
         "ItemList",
         "Organization+EducationalOrganization",
         "WebSite"

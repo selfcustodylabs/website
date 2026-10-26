@@ -161,7 +161,7 @@ Modern node software is user-friendly. If you can install an app and wait for it
 
 ### "I don't have the storage space"
 
-A pruned node requires only ~10 GB. A full node needs ~600 GB, but external drives are cheap.
+A pruned node needs only about 10 GB. A full node needs about 770 GB as of September 2026, and a 2 TB SSD costs far less than the bitcoin it protects.
 
 ### "I don't leave my computer on"
 

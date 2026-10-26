@@ -24,7 +24,7 @@ A full node downloads and stores the complete Bitcoin blockchain: every transact
 
 <div class="doc-diagram">
 
-![A full node stores the complete chain of blocks from block 1 in January 2009 to block 850,000 and beyond, about 600 GB, so it can verify any claim about any transaction locally](/img/diagrams/nodes/block-chain-copy.svg)
+![A full node stores the complete chain of blocks from block 1 in January 2009 to block 970,000 and beyond, about 770 GB in September 2026, so it can verify any claim about any transaction locally](/img/diagrams/nodes/block-chain-copy.svg)
 
 </div>
 
@@ -104,7 +104,7 @@ Not all nodes are the same. Different configurations offer different tradeoffs b
 
 The gold standard. A full node downloads and verifies the complete blockchain: every block, every transaction, from the beginning of time to right now.
 
-This is what most people mean by "running a node." It provides maximum verification (you're trusting no one) and best privacy (queries stay local). The cost is storage (currently around 600 GB and growing) plus an initial sync that can take hours to days depending on your hardware.
+This is what most people mean by "running a node." It provides maximum verification (you're trusting no one) and best privacy (queries stay local). The cost is storage (about 770 GB as of September 2026, growing by roughly 75 GB a year) plus an initial sync that can take hours to days depending on your hardware.
 
 ### Pruned Node
 

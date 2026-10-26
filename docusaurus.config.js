@@ -223,7 +223,9 @@ const config = {
   // Link/Build Checking
   // ===========================================
   onBrokenLinks: "throw",
-  onBrokenAnchors: "warn",
+  // Throws since Oct 2026: the content pass rewords headings, and an anchor
+  // link that silently stops matching is a broken link.
+  onBrokenAnchors: "throw",
   onDuplicateRoutes: "warn",
   
   markdown: {
@@ -487,6 +489,9 @@ const config = {
     // Title, description, guide facts and git date of every doc, as a data
     // module for the pages that list docs (/, /learn/, /guides/).
     './plugins/site-index',
+    // HowTo steps and FAQ entries read from each doc's own "Step N" headings and
+    // "Common questions" section, for the JSON-LD in src/theme/DocItem/Layout.
+    './plugins/structured-data',
     // Cloudflare Pages: _redirects (real 301s from the same redirect list as
     // below) and _headers (CSP, HSTS, caching). See plugins/cloudflare/index.js.
     './plugins/cloudflare',
