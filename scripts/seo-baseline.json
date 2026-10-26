@@ -4180,6 +4180,23 @@
         "https://selfcustodylabs.com/#organization"
       ]
     },
+    "/notes/correction-device-dice-entry/": {
+      "title": "Correction: which hardware wallets take dice rolls | Self Custody Labs",
+      "description": "We said every device we recommend lets you mix in your own dice rolls. The Trezor Safe and Jade do not. What is true as of October 2026, and what changed.",
+      "canonical": "https://selfcustodylabs.com/notes/correction-device-dice-entry/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/notes-correction-device-dice-entry.png",
+      "jsonLd": [
+        "BlogPosting",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
     "/notes/site-rebuild-2026/": {
       "title": "What changed in the October 2026 rebuild | Self Custody Labs",
       "description": "In October 2026 we rebuilt the site: Google Analytics removed, every guide rewritten and dated, a design that matches our diagrams, and lighter pages.",
@@ -4591,6 +4608,7 @@
     "https://selfcustodylabs.com/notes/",
     "https://selfcustodylabs.com/notes/coinjoin-recommendation/",
     "https://selfcustodylabs.com/notes/coldcard-no-longer-recommended/",
+    "https://selfcustodylabs.com/notes/correction-device-dice-entry/",
     "https://selfcustodylabs.com/notes/site-rebuild-2026/",
     "https://selfcustodylabs.com/podcasts/",
     "https://selfcustodylabs.com/privacy/",

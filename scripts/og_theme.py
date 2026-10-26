@@ -890,6 +890,7 @@ MOTIF_BY_URL = {
     "/notes/coldcard-no-longer-recommended/": "stuck-dice",
     "/notes/coinjoin-recommendation/": "mix",
     "/notes/site-rebuild-2026/": "index",
+    "/notes/correction-device-dice-entry/": "dice",
 }
 
 
