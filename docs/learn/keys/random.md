@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 title: "Generate Your Own Bitcoin Seed Phrase with Dice"
 description: "Generate a BIP39 Bitcoin seed phrase from dice rolls. True randomness, verifiable checksum, fully offline, no need to trust the wallet RNG."
 keywords: ["bitcoin seed", "DIY seed", "dice entropy", "BIP39", "seed phrase generation", "air-gapped", "true randomness", "entropy"]

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: "Bitcoin Passphrase (25th Word): Diceware Generation"
 description: "What a Bitcoin passphrase (the 25th word) is, when to use one, and how to make a strong one with dice and the EFF word list, then test and back it up."
 keywords: ["bitcoin passphrase", "25th word", "diceware", "EFF word list", "hidden wallet", "seed security", "plausible deniability"]
