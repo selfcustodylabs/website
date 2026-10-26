@@ -91,6 +91,12 @@ function proseLines(body) {
 const PROMOTED = new Set([
   "what-youll-box", // Oct 2026: replaced by <GuideFacts /> and guide: frontmatter
   "emoji-sidebar", // Oct 2026: emoji leaked into breadcrumbs and their JSON-LD
+  // Oct 2026: the content pass took all 97 docs to zero on these.
+  "banned-phrase",
+  "emoji-heading",
+  "emoji-prose",
+  "box-before-answer",
+  "task-list",
 ]);
 
 const errors = [];
@@ -153,6 +159,9 @@ for (const file of docFiles) {
       errors.push(`${at}: <p> wrapper line (breaks hydration around code blocks; see CLAUDE.md)`);
     }
     if (WHAT_YOULL.test(line.trim())) warn("what-youll-box", `${at}: ${line.trim()}`);
+    // GFM task-list checkboxes render as unlabelled inputs (an accessibility
+    // failure) and read as a form to tick; checklists are plain lists.
+    if (/^\s*[-*] \[[ xX]\] /.test(line)) warn("task-list", `${at}: ${line.trim().slice(0, 60)}`);
     if (/^#{1,6} /.test(line) && EMOJI.test(line)) warn("emoji-heading", `${at}: ${line.trim()}`);
     else if (EMOJI.test(line)) warn("emoji-prose", `${at}`);
     for (const [re, why] of BANNED) {

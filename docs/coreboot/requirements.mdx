@@ -7,18 +7,11 @@ tags: ["coreboot", "requirements", "bios"]
 ---
 # Requirements
 
-Coreboot supports a range of Lenovo ThinkPad models. In most cases, it has to be installed externally, which means opening the laptop and using a hardware flashing tool. However, some models allow internal installation, making the process much simpler since it can be done entirely through software.
+To install coreboot you need a supported laptop, a Linux system to run the tools, the coreboot source and flashrom, the program that reads and writes flash chips. Flashing internally also needs CHIPSEC and, possibly, a USB stick to downgrade the BIOS; flashing externally needs an SPI programmer such as a Raspberry Pi Pico, with a Pomona clip or a pogo-pin adapter depending on the chip.
 
-Whether you’re flashing internally or externally, you’ll need the following tools:
-- A Laptop that is currently supported by Coreboot
-- Linux distribution: The operating system used to run the flashing tools and commands.
-- Coreboot: The open-source firmware you’ll be installing.
-- Flashrom: The utility used to read, write, and erase flash chips (required for flashing Coreboot).
+## What do you need to flash internally?
 
-
-## Internal Flashing
-
-To flash internally, you’ll need a Lenovo ThinkPad from the Ivy Bridge series (one of the models listed below):
+Internal flashing works on these Ivy Bridge ThinkPads:
 
 <div class="fixed-width-table">
 
@@ -33,15 +26,12 @@ To flash internally, you’ll need a Lenovo ThinkPad from the Ivy Bridge series 
 
 </div>
 
-You’ll also need the following tools:
-
-- CHIPSEC: a security tool for checking if your BIOS is vulnerable to internal flashing
-- USB flash drive (Optional): can be used to create a bootable image if you need to downgrade the BIOS
+You also need CHIPSEC, a security tool that checks whether the BIOS can be flashed internally, and possibly a USB stick, to boot Lenovo's BIOS updater if you need to [downgrade](/docs/coreboot/internal/downgrading-bios/).
 
 
-## External Flashing
+## What do you need to flash externally?
 
-If you’re flashing the BIOS externally, you’ll need an SPI flasher such as a Raspberry Pi Pico. Depending on the type of BIOS chip (e.g., SOIC or WSON), you’ll also need either a Pomona Clip or Pogo Pins Adapter, connected with Dupont cables to the RPi.
+An SPI programmer, such as a Raspberry Pi Pico, wired with jumper cables to a Pomona clip for chips in an 8-pin SOIC package, or to a pogo-pin adapter for WSON chips, which a clip cannot grip.
 
 <div className="photo-pair">
 

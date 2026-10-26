@@ -338,6 +338,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -374,6 +375,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -392,6 +394,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],

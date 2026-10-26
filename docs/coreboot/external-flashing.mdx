@@ -5,16 +5,16 @@ description: "Flash Coreboot with an external SPI programmer: detect the chip, b
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "external", "flashing"]
 tags: ["coreboot", "chipsec", "bios", "external", "flashing"]
 ---
-# External Flashing
+# External flashing
 
-External flashing is sometimes necessary instead of internal flashing. The main reasons are:
+External flashing writes coreboot with a programmer, such as a Raspberry Pi Pico, clipped onto the laptop's flash chip, and it is the only route that can neutralise the Intel Management Engine: detect the chip, back up the whole factory image, run me_cleaner on its ME region and flash the result, flash coreboot to the BIOS region, and check with intelmetool that the ME is disabled. External flashing is needed for three reasons:
 
 - **Neutralizing Intel ME**: Internal flashing can’t access the ME region on stock firmware, so an external flash is required the first time if you want to disable or neutralize Intel ME.
 - **Recovery**: If an internal flash fails and the laptop no longer boots, an external programmer is the only way to restore the system.
 - **Hardware restrictions**: Some motherboards simply don’t allow internal flashing at all, so external flashing is the only option.
 
 
-## Detect the Chip
+## Step 1: Detect the chip
 
 Now, you need to detect the chip model using flashrom. To ensure accurate detection, follow these steps for the BIOS chip:
 
@@ -47,7 +47,7 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
 If the Raspberry Pico detects the chip, you may proceed by creating a backup.
 
 
-## Backup the Factory Bios
+## Step 2: Back up the factory BIOS
 
 :::note
 If you are coming from a unsuccessful internal flashing, you can skip this part as there is no point to dump a bios that does not work.
@@ -81,7 +81,7 @@ Once you've confirmed that the hashes are the same, you can clean up any tempora
 rm -fr factory2.bin factory3.bin
 ```
 
-## Neutralize Intel ME
+## Step 3: Neutralise the Intel ME
 
 Check if the dumped image has the correct structure by using `ifdtool`:
 
@@ -451,7 +451,7 @@ Done! Good luck!
 </details>
 
 
-## Flash the Neutralized Intel ME
+## Step 4: Flash the neutralised image
 
 Now flash the full factory image with the neutralized Intel ME:
 
@@ -484,12 +484,12 @@ Once you've confirmed that the hashes are the same, you can clean up any tempora
 rm -fr flashed.bin
 ```
 
-## Flash the Coreboot BIOS Region
+## Step 5: Flash the coreboot BIOS region
 
 Before flashing the BIOS, remove the CMOS battery. Some laptops use CMOS/EC settings to protect the SPI chip, and removing the battery also adds a layer of safety.
 
 :::note
-If you’ve already flashed Coreboot internally, you can skip this section as you’re all set and ready to go.
+If you have already flashed coreboot internally, skip this step.
 :::
 
 Make sure the writing protection is disabled:
@@ -513,7 +513,7 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w coreboo
 Finally, [verify](/docs/coreboot/internal/flashing-bios#verify-the-flashed-image) the flashed bios region.
 
 
-## Verify Intel ME Neutralization
+## Step 6: Verify the Intel ME is neutralised
 
 To check whether Intel ME has been successfully neutralized, you can use `intelmetool`:
 

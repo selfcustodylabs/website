@@ -7,11 +7,9 @@ tags: ["coreboot", "downgrading", "bios"]
 ---
 # Downgrading BIOS
 
-Before we can flash Coreboot internally on a ThinkPad, we need to make sure the BIOS version is vulnerable enough to be overwritten.
-Some newer BIOS versions patch the vulnerabilities that make internal flashing possible, so downgrading may be required.
+Internal flashing relies on vulnerabilities in older Lenovo BIOS versions, which later updates patched, so a ThinkPad running a newer BIOS has to be downgraded first: download Lenovo's BIOS update ISO for the version in the table below, change its boot script so it allows installing an older version, write it to a USB stick, and boot from it to flash the older BIOS.
 
-
-# Supported BIOS Versions
+## Which BIOS versions still allow internal flashing?
 
 The table below lists the latest BIOS versions that still allow internal flashing.
 If your BIOS is newer than the version shown, you’ll need to downgrade to that version or an earlier one before installing Coreboot.
@@ -30,24 +28,24 @@ If your BIOS is newer than the version shown, you’ll need to downgrade to that
 </div>
 
 
-## Why Downgrade is Possible
+## Why is a downgrade possible?
 
 Lenovo claims their BIOS has “security rollback prevention,” meaning once you update to a newer version, you can’t go back to an older one.
 In reality, this restriction is entirely client-side, it’s enforced by Lenovo’s flashing utilities (both the Windows version and the Bootable CD), not the BIOS itself.
 
 If you run the flashing program (winflash.exe or dosflash.exe) directly, you can bypass the block. This requires slightly modifying the Bootable CD image you download from Lenovo.
 
-## Performing Downgrade
+## How do you downgrade?
 
 We’ll assume your T430s is running a BIOS newer than 2.59. In that case, we’ll downgrade to version 2.59.
 
-### Download the BIOS ISO
+## Step 1: Download the BIOS ISO
 
 Visit the [Lenovo support page for the T430s](https://support.lenovo.com/us/en/downloads/ds029724-bios-update-utility-bootable-cd-for-windows-10-81-8-7-64-bit-81-8-7-32-bit-xp-thinkpad-t430s-t430si) and find the “`Release (BIOS Bootable)`” column.
 Download `g7uj13us.iso`, which contains BIOS version 2.59 (you can also choose an even older version if you prefer).
 
 
-### Extract and Modify the Bootable Image
+## Step 2: Extract and modify the bootable image
 
 Extract the El Torito image:
 
@@ -78,7 +76,7 @@ ls /mnt/FLASH/G1ET93WW
 Look for a `.FL1` file, something like `$01D2000.FL1`.
 
 
-### Modify the Boot Script
+## Step 3: Modify the boot script
 
 Open `AUTOEXEC.BAT`:
 
@@ -107,7 +105,7 @@ Save and unmount:
 sudo umount /mnt
 ```
 
-### Write to a USB Drive
+## Step 4: Write it to a USB drive
 
 Flash the modified image to USB:
 
@@ -118,7 +116,7 @@ sudo dd if=./bios.img of=/dev/sdX bs=1M
 (Replace /dev/sdX with your actual USB device).
 
 
-### Flashing the BIOS
+## Step 5: Flash the older BIOS
 
 - Enter BIOS settings: Reboot and press `F1`.
 - In the Startup tab, set Startup Mode to Legacy (or Both/Legacy First).

@@ -35,7 +35,7 @@ When Maya in Mexico City sends 0.1 BTC to her cousin Daniel in Buenos Aires, her
 
 <div class="doc-diagram">
 
-![The path of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself](/img/diagrams/fundamentals/tx-journey.svg)
+![The path of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself](/img/diagrams/fundamentals/tx-path.svg)
 
 </div>
 

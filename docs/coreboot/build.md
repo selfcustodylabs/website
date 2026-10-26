@@ -5,9 +5,9 @@ description: "Build Coreboot from source on Linux: install the dependencies, clo
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "build"]
 tags: ["coreboot", "build", "bios"]
 ---
-# Build Coreboot
+# Build coreboot
 
-Now we will walk through building Coreboot from scratch. We will first install the required tools, then download Coreboot’s source code, build its toolchain, configure it for your mainboard, and finally compile it into a ROM file you can flash.
+Building coreboot from source takes five steps on a Linux computer: install the build dependencies, download the coreboot source, build its cross-compiler toolchain (the slowest part), configure the build for your mainboard and payload, and compile it into a ROM image to flash.
 
 
 ## Step 1: Install tools and libraries needed for coreboot
@@ -262,4 +262,4 @@ make distclean
 
 This will reset the build environment so you can reconfigure and rebuild from scratch.
 
-You now have a Coreboot ROM ready to flash to your device!
+You now have a coreboot ROM to flash, [internally](/docs/coreboot/internal/) or [externally](/docs/coreboot/external-flashing/).

@@ -5,19 +5,14 @@ description: "Flash Coreboot from inside a running system after the BIOS region 
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "flashing"]
 tags: ["coreboot", "chipsec", "bios", "internal", "flashing"]
 ---
-# Internal Flashing
+# Internal flashing
 
-Flashing firmware always carries some risk.
-If something goes wrong, your device may fail to boot and will require recovery with an external programmer.
-Always make a full backup of your current BIOS before attempting to flash Coreboot.
+With the BIOS region unlocked, flashing coreboot internally takes three steps: back up the current BIOS region, write the coreboot image to it with flashrom, and verify the result before rebooting. If something goes wrong the laptop may not boot, and recovering it needs an external programmer, so make the backup first.
 
-:::note
-Note that **internal flashing cannot be used to disable Intel ME**, because the ME region is locked and cannot be read or written from the host.
-If your goal is to neutralize or disable Intel ME, the only reliable method is to use an **external programmer** to dump, modify, and reflash the entire firmware image (see the External Flashing section).
-:::
+Internal flashing cannot neutralise the Intel ME, because the ME region is locked and cannot be read or written from the running system. To neutralise it, use an external programmer to dump, modify and rewrite the whole firmware image, as [external flashing](/docs/coreboot/external-flashing/) describes.
 
 
-## Back Up Your Existing BIOS Region
+## Step 1: Back up the existing BIOS region
 
 Before doing anything else, make a full backup of your current BIOS.
 This is your recovery point if you need to restore the original firmware.
@@ -31,7 +26,7 @@ This does not back up the entire firmware, only the BIOS region. The Intel Manag
 :::
 
 
-## Flash the Coreboot BIOS
+## Step 2: Flash coreboot
 
 Once everything looks correct, flash the prepared Coreboot BIOS region:
 
@@ -39,7 +34,7 @@ Once everything looks correct, flash the prepared Coreboot BIOS region:
 sudo flashrom -p internal -w coreboot.rom --ifd -i bios -N
 ```
 
-## Verify the Flashed Image
+## Step 3: Verify the flashed image {#verify-the-flashed-image}
 
 After flashing, always re-read the chip and compare it against the file you wrote.
 This ensures the flash was successful and the chip contains exactly what you intended.
@@ -167,6 +162,4 @@ cbfstool flashed.bin print > cbfs_actual.txt
 diff -u cbfs_expected.txt cbfs_actual.txt
 ```
 
-### Conclusion
-
-If all comparisons match, your new Coreboot firmware has been flashed correctly and is ready to boot.
+If all three comparisons match, coreboot has been written correctly and the laptop can be rebooted.

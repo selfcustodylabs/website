@@ -7,7 +7,7 @@ tags: ["coreboot", "chipsec", "bios", "unlocking"]
 ---
 # Unlocking BIOS
 
-Before flashing Coreboot internally, it’s important to understand the security protections built into the BIOS and how older versions can be exploited to bypass them.
+The stock BIOS write-protects its own flash region, so before coreboot can be flashed internally those protections must be removed. On the older BIOS versions this guide uses, two flaws make that possible: the SMM_BWP and BLE protections are not enabled, and the S3 boot script, which restores settings after sleep, can be patched. Install CHIPSEC, check the current lock status, dump and patch the boot script, put the laptop to sleep and wake it so the patched script runs, remove the protected ranges, and verify the region is writable.
 
 
 ## Security Issues
