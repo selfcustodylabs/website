@@ -881,6 +881,7 @@ MOTIF_BY_URL = {
     "/docs/reference/": "index",
     "/docs/reference/glossary/": "index",
     "/docs/reference/address-types/": "address",
+    "/docs/reference/advisories/": "alert",
     "/docs/reference/hardware-wallet-comparison/": "device",
     "/docs/reference/faq/": "checklist",
     "/docs/reference/faq/recovery-scams/": "alert",

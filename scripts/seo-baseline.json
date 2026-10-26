@@ -1582,6 +1582,24 @@
         "https://selfcustodylabs.com/#organization"
       ]
     },
+    "/docs/reference/advisories/": {
+      "title": "Bitcoin Wallet Security Incidents, 2013 to 2026 | Self Custody Labs",
+      "description": "Every incident since 2013 in which a wallet flaw or vendor breach put self-custodied bitcoin at risk: what failed, who is affected and what to do.",
+      "canonical": "https://selfcustodylabs.com/docs/reference/advisories/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/reference-advisories.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
     "/docs/reference/faq/": {
       "title": "Frequently Asked Questions | Self Custody Labs",
       "description": "Common questions about Bitcoin self-custody, seed phrases, recovery, and security. Get answers to the questions that could save your Bitcoin.",
@@ -2727,7 +2745,7 @@
       ]
     },
     "/docs/tags/hardware-wallet/": {
-      "title": "9 docs tagged with \"hardware wallet\" | Self Custody Labs",
+      "title": "10 docs tagged with \"hardware wallet\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/hardware-wallet/",
       "robots": [
@@ -3441,7 +3459,7 @@
       ]
     },
     "/docs/tags/security/": {
-      "title": "26 docs tagged with \"security\" | Self Custody Labs",
+      "title": "27 docs tagged with \"security\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/security/",
       "robots": [
@@ -3475,7 +3493,7 @@
       ]
     },
     "/docs/tags/seed/": {
-      "title": "9 docs tagged with \"seed\" | Self Custody Labs",
+      "title": "10 docs tagged with \"seed\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/seed/",
       "robots": [
@@ -4551,6 +4569,7 @@
     "https://selfcustodylabs.com/docs/nostr-signing-device/setup/",
     "https://selfcustodylabs.com/docs/reference/",
     "https://selfcustodylabs.com/docs/reference/address-types/",
+    "https://selfcustodylabs.com/docs/reference/advisories/",
     "https://selfcustodylabs.com/docs/reference/faq/",
     "https://selfcustodylabs.com/docs/reference/faq/lost-seed/",
     "https://selfcustodylabs.com/docs/reference/faq/recovery-scams/",

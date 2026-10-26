@@ -642,6 +642,32 @@ const NEXT_STEPS = {
       description: "What to do if you've actually lost your seed phrase",
     },
   ],
+  "/docs/reference/advisories/": [
+    {
+      label: "Next",
+      title: "Generate Your Own Seed with Dice",
+      href: "/docs/learn/keys/random/",
+      description: "The one defence against weak randomness that no update can give you",
+    },
+    {
+      label: "Background",
+      title: "The Coldcard Entropy Incident",
+      href: "/docs/learn/wallets/coldcard-entropy-incident/",
+      description: "The newest incident in full: timeline, cause and migration",
+    },
+    {
+      label: "Reference",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Which devices take dice rolls and use anti-exfil signing",
+    },
+    {
+      label: "Also",
+      title: "Physical Security",
+      href: "/docs/security/physical-security/",
+      description: "When your name and address are on a leaked order list",
+    },
+  ],
   "/docs/reference/hardware-wallet-comparison/": [
     {
       label: "Next",
