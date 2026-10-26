@@ -52,7 +52,7 @@ With those in place, the choice of device comes down to how easy it makes verifi
 
 ### Trezor Safe 5
 
-The Trezor Safe 5 is the beginner default: a polished, open-source device with a certified secure chip.
+The Trezor Safe 5 is the beginner default: a polished, open-source device with a certified secure chip. Our [Trezor Safe 5 setup guide](/docs/wallet-setup/hardware-wallet/trezor-safe-5/) restores a dice seed on it.
 
 | Aspect | Details |
 |--------|---------|
@@ -88,7 +88,7 @@ The TROPIC01 is the first secure element whose design anyone can audit; until it
 
 ### BitBox02 Nova
 
-The BitBox02 Nova is the Swiss-made BitBox02 with an EAL6+ secure chip and the smoothest backup flow of any device here.
+The BitBox02 Nova is the Swiss-made BitBox02 with an EAL6+ secure chip and the smoothest backup flow of any device here. Our [BitBox02 Nova setup guide](/docs/wallet-setup/hardware-wallet/bitbox02-nova/) covers BitBox's dice procedure and restoring a dice seed.
 
 | Aspect | Details |
 |--------|---------|
@@ -105,7 +105,7 @@ The BitBox02 Nova is the Swiss-made BitBox02 with an EAL6+ secure chip and the s
 
 ### Blockstream Jade and Jade Plus
 
-The Jade and Jade Plus are the verifiable-security pick: fully open source, able to sign over QR codes, and designed so the device cannot leak key material.
+The Jade and Jade Plus are the verifiable-security pick: fully open source, able to sign over QR codes, and designed so the device cannot leak key material. Our [Jade Plus setup guide](/docs/wallet-setup/hardware-wallet/jade-plus/) sets one up air-gapped on words chosen with dice.
 
 | Aspect | Details |
 |--------|---------|

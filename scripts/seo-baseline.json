@@ -2745,7 +2745,7 @@
       ]
     },
     "/docs/tags/hardware-wallet/": {
-      "title": "10 docs tagged with \"hardware wallet\" | Self Custody Labs",
+      "title": "13 docs tagged with \"hardware wallet\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/hardware-wallet/",
       "robots": [
@@ -3459,7 +3459,7 @@
       ]
     },
     "/docs/tags/security/": {
-      "title": "27 docs tagged with \"security\" | Self Custody Labs",
+      "title": "30 docs tagged with \"security\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/security/",
       "robots": [
@@ -3493,7 +3493,7 @@
       ]
     },
     "/docs/tags/seed/": {
-      "title": "10 docs tagged with \"seed\" | Self Custody Labs",
+      "title": "13 docs tagged with \"seed\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/seed/",
       "robots": [
@@ -3595,7 +3595,7 @@
       ]
     },
     "/docs/tags/setup/": {
-      "title": "10 docs tagged with \"setup\" | Self Custody Labs",
+      "title": "13 docs tagged with \"setup\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/setup/",
       "robots": [
@@ -3680,7 +3680,7 @@
       ]
     },
     "/docs/tags/sparrow/": {
-      "title": "2 docs tagged with \"sparrow\" | Self Custody Labs",
+      "title": "3 docs tagged with \"sparrow\" | Self Custody Labs",
       "description": "Bitcoin self-custody guides and tutorials. Learn cold storage, hardware wallets, air-gapped setups, wallet security, and privacy best practices.",
       "canonical": "https://selfcustodylabs.com/docs/tags/sparrow/",
       "robots": [
@@ -4095,6 +4095,66 @@
         "https://selfcustodylabs.com/#organization"
       ]
     },
+    "/docs/wallet-setup/hardware-wallet/bitbox02-nova/": {
+      "title": "How to Set Up a BitBox02 Nova With a Dice Seed | Self Custody Labs",
+      "description": "Set up a BitBox02 Nova on 24 words chosen with dice: pairing, the genuine check, restoring the words on the device, passphrase and Sparrow, from BitBox's docs.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/bitbox02-nova/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-hardware-wallet-bitbox02-nova.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/hardware-wallet/jade-plus/": {
+      "title": "How to Set Up a Jade Plus Air-Gapped With Dice | Self Custody Labs",
+      "description": "Set up a Jade Plus over QR codes on words chosen with dice: firmware, genuine check, final-word calculation, QR PIN Unlock and Sparrow, from Blockstream's docs.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/jade-plus/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-hardware-wallet-jade-plus.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
+    "/docs/wallet-setup/hardware-wallet/trezor-safe-5/": {
+      "title": "How to Set Up a Trezor Safe 5 With a Dice Seed | Self Custody Labs",
+      "description": "Set up a Trezor Safe 5 on 24 words you made with dice: Bitcoin-only firmware, recovery on the touchscreen, PIN, passphrase and Sparrow, from Trezor's guides.",
+      "canonical": "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/trezor-safe-5/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/og/wallet-setup-hardware-wallet-trezor-safe-5.png",
+      "jsonLd": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage",
+        "HowTo",
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
     "/guides/": {
       "title": "Bitcoin Self-Custody Guides: Setup, Security & Privacy | Self Custody Labs",
       "description": "Step-by-step Bitcoin guides: hardware wallet setup, seed generation, multisig configuration, node setup, privacy tools, and security best practices.",
@@ -4455,6 +4515,9 @@
     "/docs/getting-started/what-is-bitcoin/": "/docs/learn/fundamentals/what-is-bitcoin/",
     "/docs/getting-started/what-is-self-custody/": "/docs/learn/fundamentals/what-is-self-custody/",
     "/docs/hardware-wallet-setup/": "/docs/wallet-setup/hardware-wallet/",
+    "/docs/hardware-wallet-setup/bitbox02-nova/": "/docs/wallet-setup/hardware-wallet/bitbox02-nova/",
+    "/docs/hardware-wallet-setup/jade-plus/": "/docs/wallet-setup/hardware-wallet/jade-plus/",
+    "/docs/hardware-wallet-setup/trezor-safe-5/": "/docs/wallet-setup/hardware-wallet/trezor-safe-5/",
     "/docs/learn/address-types/": "/docs/reference/address-types/",
     "/docs/learn/fundamentals/before-you-deposit/": "/docs/wallet-setup/before-you-deposit/",
     "/docs/learn/glossary/": "/docs/reference/glossary/",
@@ -4603,6 +4666,9 @@
     "https://selfcustodylabs.com/docs/wallet-setup/backup-verification/",
     "https://selfcustodylabs.com/docs/wallet-setup/before-you-deposit/",
     "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/",
+    "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/bitbox02-nova/",
+    "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/jade-plus/",
+    "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/trezor-safe-5/",
     "https://selfcustodylabs.com/guides/",
     "https://selfcustodylabs.com/learn/",
     "https://selfcustodylabs.com/notes/",

@@ -800,6 +800,84 @@ const NEXT_STEPS = {
       description: "Understand what's exposed on the blockchain and how to protect yourself",
     },
   ],
+  "/docs/wallet-setup/hardware-wallet/trezor-safe-5/": [
+    {
+      label: "Next",
+      title: "Backup Verification",
+      href: "/docs/wallet-setup/backup-verification/",
+      description: "Test the written copy before you deposit",
+    },
+    {
+      label: "Background",
+      title: "Generate a Seed With Dice",
+      href: "/docs/learn/keys/random/",
+      description: "Where the 24 words come from, and why",
+    },
+    {
+      label: "Also",
+      title: "Add a Passphrase",
+      href: "/docs/learn/keys/passphrase/",
+      description: "When a hidden wallet is worth the risk",
+    },
+    {
+      label: "Also",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Every device we cover, side by side",
+    },
+  ],
+  "/docs/wallet-setup/hardware-wallet/bitbox02-nova/": [
+    {
+      label: "Next",
+      title: "Backup Verification",
+      href: "/docs/wallet-setup/backup-verification/",
+      description: "Test the written copy before you deposit",
+    },
+    {
+      label: "Background",
+      title: "Generate a Seed With Dice",
+      href: "/docs/learn/keys/random/",
+      description: "Where the 24 words come from, and why",
+    },
+    {
+      label: "Also",
+      title: "Add a Passphrase",
+      href: "/docs/learn/keys/passphrase/",
+      description: "When a hidden wallet is worth the risk",
+    },
+    {
+      label: "Also",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Every device we cover, side by side",
+    },
+  ],
+  "/docs/wallet-setup/hardware-wallet/jade-plus/": [
+    {
+      label: "Next",
+      title: "Backup Verification",
+      href: "/docs/wallet-setup/backup-verification/",
+      description: "Test the written copy before you deposit",
+    },
+    {
+      label: "Background",
+      title: "Generate a Seed With Dice",
+      href: "/docs/learn/keys/random/",
+      description: "Where the 24 words come from, and why",
+    },
+    {
+      label: "Also",
+      title: "Multisig Hardware Setup",
+      href: "/docs/learn/wallets/multisig/hardware-setup/",
+      description: "Use the Jade Plus as one key of several",
+    },
+    {
+      label: "Also",
+      title: "Hardware Wallet Comparison",
+      href: "/docs/reference/hardware-wallet-comparison/",
+      description: "Every device we cover, side by side",
+    },
+  ],
   "/docs/wallet-setup/hardware-wallet/": [
     {
       label: "Next",
