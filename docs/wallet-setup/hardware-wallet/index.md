@@ -14,7 +14,7 @@ date: "2026-01-14"
 
 # Hardware wallet setup guide
 
-Setting up a hardware wallet takes one to two hours: buy the device from its maker, check it is genuine, update the firmware, set a PIN, create the seed phrase (ideally with your own dice rolls), write it down, test the backup, then connect the device to wallet software such as Sparrow and confirm a receive address on the device's own screen. Done this way, your private keys are created on the device and never leave it, so malware on your computer cannot reach them or change a payment without the device showing you.
+To set up a hardware wallet, buy it from its maker, check it is genuine, create the seed phrase on it (ideally from your own dice rolls), write the words down and test that backup before any bitcoin goes on it. Before making the seed you update the firmware and set a PIN, and once the backup is tested you connect the device to wallet software such as Sparrow and confirm a receive address on the device's own screen; the whole setup takes one to two hours. Done this way, your private keys are created on the device and never leave it, so malware on your computer cannot reach them or change a payment without the device showing you.
 
 <GuideFacts />
 
