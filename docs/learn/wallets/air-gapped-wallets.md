@@ -28,7 +28,7 @@ USB drives also work, but they are themselves computers with firmware, so prefer
 
 ## Who needs an air-gapped wallet?
 
-Long-term holders, people protecting significant amounts and people with a higher threat level use them, because isolation removes whole categories of attack. They take longer to learn, demand more discipline and make every transaction slower. A beginner does not need one: think of it as deep cold storage, not a daily wallet.
+Long-term holders, people protecting significant amounts and people with a higher threat level use them, because isolation removes whole categories of attack. They take longer to learn, demand more discipline and make every transaction slower. A beginner does not need one: it is deep cold storage, not a daily wallet.
 
 ## What does an air gap not protect against?
 

@@ -4,7 +4,7 @@ import Head from "@docusaurus/Head";
 import { useLocation } from "@docusaurus/router";
 import { useDoc, useSidebarBreadcrumbs } from "@docusaurus/plugin-content-docs/client";
 import structured from "@generated/structured-data/default/structured-data.json";
-import { generateFAQSchema, generateItemListSchema } from "@site/src/data/schema";
+import { generateItemListSchema } from "@site/src/data/schema";
 import { SITE_URL, DEFAULT_ORGANIZATION, DEFAULT_PUBLISHER } from "@site/src/data/schema/constants";
 import { normalizePath } from "@site/src/utils/pathUtils";
 import ogManifest from "@site/src/data/ogManifest.json";
@@ -186,9 +186,7 @@ export default function DocItemLayoutWrapper(props) {
     deriveArticleSchema(metadata, path, sidebarBreadcrumbs?.[0]?.label),
     metadata
   );
-  // Pages without a Common questions section keep their hand-written pairs
-  // in src/data/schema/faq.js until they gain one.
-  const faqSchema = deriveFAQSchema(entry) ?? generateFAQSchema(path);
+  const faqSchema = deriveFAQSchema(entry);
   const itemListSchema = generateItemListSchema(path);
   const ogImagePath = ogManifest[path];
   const ogImageUrl = ogImagePath ? `${SITE_URL}${ogImagePath}` : null;

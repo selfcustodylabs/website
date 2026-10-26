@@ -94,7 +94,6 @@ No, and believing it is has led to serious mistakes. In some ways bitcoin is les
 
 Bitcoin may actually be **less private** than traditional banking in some important ways. Your bank doesn't publish your transactions publicly; they're visible to the bank and to law enforcement with appropriate legal process, but not to the general public. Bank records can eventually be deleted; blockchain records cannot. Bank surveillance requires legal authorization; blockchain surveillance requires only an internet connection.
 
-This is not an argument against bitcoin; it is an argument for taking privacy seriously.
 
 ## Who is watching?
 

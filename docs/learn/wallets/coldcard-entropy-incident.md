@@ -132,7 +132,7 @@ Only seed generation. Coldcard signs with deterministic nonces as specified in R
 
 - [Coinkite security advisory](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/): affected versions and required actions
 - [Coinkite technical backgrounder](https://blog.coinkite.com/entropy-technical-backgrounder/): the vendor's own root-cause analysis
-- [Wizardsardine: technical autopsy of an entropy failure](https://wizardsardine.com/blog/coldcard-vuln-deep-dive/): independent deep dive, entropy math
+- [Wizardsardine: technical autopsy of an entropy failure](https://wizardsardine.com/blog/coldcard-vuln-deep-dive/): independent analysis, entropy math
 - [TRM Labs: inside the $116M Coldcard hack](https://www.trmlabs.com/resources/blog/the-largest-hardware-wallet-exploit-of-2026-inside-the-usd-116-million-coldcard-hack): on-chain analysis of the attack waves
 
 Figures on this page are as of mid-August 2026 and may be revised as investigations continue.

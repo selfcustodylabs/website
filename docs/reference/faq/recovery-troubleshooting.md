@@ -7,244 +7,92 @@ tags: ["recovery", "troubleshooting", "wallet", "faq"]
 slug: /reference/faq/recovery-troubleshooting
 ---
 
+# Wallet recovery troubleshooting
 
-# Wallet Recovery Troubleshooting
+When a wallet restored from a seed phrase shows a zero balance or unfamiliar addresses, the bitcoin is almost always still there: the restoring wallet is looking in the wrong place. Check, in this order, that it uses the same script type and derivation path as the original (the first characters of your old addresses tell you which), the same passphrase if you used one, the same account number, and a large enough gap limit, and that the seed is a BIP39 seed rather than Electrum's own format. Only if all of that fails is the seed itself likely to be wrong.
 
-Recovering a Bitcoin wallet should be straightforward, but things can go wrong. This guide covers the most common problems and their solutions.
+## Why does a restored wallet show a zero balance?
 
-:::danger Before You Panic
-Most "missing" Bitcoin isn't actually lost: it's usually a configuration issue. Work through this guide systematically before assuming the worst.
-:::
+### The derivation path or script type is different
 
-## Problem: Wallet Shows Zero Balance After Recovery
+Wallets derive addresses along a [derivation path](/docs/learn/keys/derivation-path/), and the path depends on the address type. Restoring with a different one shows a different, empty set of addresses.
 
-This is the most common recovery issue. You enter your seed phrase correctly, but the wallet shows zero balance.
+| Your old addresses started with | Script type to choose | Derivation path |
+|--------------------------------|----------------------|---|
+| `1` | Legacy (P2PKH, BIP44) | `m/44'/0'/0'` |
+| `3` | Nested segwit (P2SH-P2WPKH, BIP49) | `m/49'/0'/0'` |
+| `bc1q` | Native segwit (P2WPKH, BIP84) | `m/84'/0'/0'` |
+| `bc1p` | Taproot (P2TR, BIP86) | `m/86'/0'/0'` |
 
-### Cause 1: Wrong Derivation Path
+In Sparrow, create a new wallet, enter the seed, and choose the script type that matches; if it is still empty, try the others. Most current wallets, including Trezor Suite and Electrum (for BIP39 seeds), default to native segwit (`bc1q`); older wallets often used legacy.
 
-Different wallet software uses different derivation paths. If you recover with the wrong path, you'll see different (empty) addresses.
+### A passphrase was used
 
-**Solution:**
+If you set a passphrase, the seed phrase alone opens a different, empty wallet. Restore again with the passphrase enabled (in Sparrow, tick the passphrase option when entering the seed). Passphrases are case-sensitive and every space counts: `MyPassphrase` and `mypassphrase` open different wallets. See [what counts as a different passphrase](/docs/learn/keys/passphrase/#what-exactly-counts-as-a-different-passphrase).
 
-1. **Check your original wallet's derivation path**
-   - BIP44 (Legacy): `m/44'/0'/0'`, addresses start with `1`
-   - BIP49 (Nested SegWit): `m/49'/0'/0'`, addresses start with `3`
-   - BIP84 (Native SegWit): `m/84'/0'/0'`, addresses start with `bc1q`
-   - BIP86 (Taproot): `m/86'/0'/0'`, addresses start with `bc1p`
+### A word is wrong
 
-2. **In Sparrow Wallet:**
-   - File → New Wallet
-   - Enter your seed
-   - Choose "Native SegWit" if your addresses started with `bc1q`
-   - If still empty, try other script types
+One wrong word gives a completely different wallet, and occasionally a wrong word still passes the checksum. Check each word against the [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt). Misspellings such as "advise" for "advice" or "latter" for "letter" are easy to spot, because every word on the list is identified by its first four letters and the near-misses are not on it.
 
-3. **Common wallet defaults:**
-   | Wallet | Default Path |
-   |--------|--------------|
-   | Ledger Live | BIP84 (bc1q) |
-   | Trezor Suite | BIP84 (bc1q) |
-   | Electrum | BIP84 (bc1q) |
-   | Older wallets | BIP44 (Legacy) |
+### The wallet has not looked far enough
 
-### Cause 2: Passphrase Required
+Wallets stop scanning after a run of unused addresses, usually 20, called the gap limit. If you generated many addresses without using them, later funds may not be found. Raise the gap limit (in Sparrow, in the wallet's settings under Advanced) to 100 or more and rescan.
 
-If you set up a passphrase (25th word), the wallet will be empty without it.
+### The seed is an Electrum seed
 
-**Solution:**
-- Re-enter recovery with passphrase enabled
-- In Sparrow: Check "Use passphrase" during wallet creation
-- Try variations if you're unsure of exact passphrase
+Electrum creates its own kind of seed by default, from the same word list but with a different checksum, and it does not restore in BIP39 wallets (they reject it as invalid, or the result is empty). If the seed came from Electrum, restore it in Electrum, choosing its own seed type rather than BIP39.
 
-:::warning Case Sensitivity
-Passphrases are case-sensitive. `MyPassphrase` and `mypassphrase` create different wallets.
-:::
+## Why are the addresses different from the ones you expected?
 
-### Cause 3: Wrong Seed Phrase
+Check the script type first, using the table above. Then check the account number: some wallets use several accounts under one seed, at `m/84'/0'/0'`, `m/84'/0'/1'`, `m/84'/0'/2'` and so on, and restoring account 0 shows none of account 1's addresses. When importing, set the account number (the third number in the path) to the one you used.
 
-Even one wrong word creates a completely different (empty) wallet.
+## Why does the wallet reject the seed phrase?
 
-**Solution:**
-- Double-check each word against the [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)
-- Common mistakes:
-  - `advice` vs `advise`
-  - `letter` vs `latter`
-  - `affect` vs `effect`
-- Try reading from your backup again, carefully
+A rejected seed has failed its checksum, which means at least one word is wrong or in the wrong place. Check each word against the list, check the order, and check the number of words, which must be 12, 15, 18, 21 or 24. Check the language too: BIP39 has word lists in several languages, and a seed made in a Spanish or Japanese wallet needs the same language to restore. An Electrum seed is also rejected by BIP39 wallets (see above).
 
-### Cause 4: Not Enough Addresses Scanned
+## Why were only some of the funds found?
 
-Wallets only check a certain number of addresses. If you used many addresses with gaps, funds might not be found.
+You may have received bitcoin to more than one address type, for example some to legacy addresses and some to native segwit ones, or used more than one account. In Sparrow, create a wallet for each script type, and for accounts 0, 1 and 2, from the same seed, and check each balance. Funds from transactions that have not confirmed appear only once they confirm; check their status on [mempool.space](https://mempool.space).
 
-**Solution:**
-- Increase the "gap limit" in your wallet software
-- In Sparrow: Wallet → Settings → Script Type → Increase gap limit
-- Try scanning 100+ addresses
+## What if the hardware wallet shows a different address from the software?
 
-## Problem: Different Addresses Than Expected
+Treat it as a security problem until proven otherwise, and never send to an address the hardware wallet does not display. The cause may be malware altering the address on the computer, a different derivation path in the software, or a hardware wallet holding a different seed from the one you expect. Check you have the right wallet file, check the paths match, and pair the device with the software again. If the addresses still differ, do not transact.
 
-You recover successfully but the addresses don't match what you had before.
+## How do you recover a multisig wallet?
 
-### Check Script Type
+A multisig needs more than seed phrases: the wallet descriptor (or configuration file), which records every key's xpub and the M-of-N rule. Find your descriptor backup and import it; in Sparrow, use `File`, `Import Wallet`. The order of keys matters in older multisig setups, so rebuild from the original descriptor rather than by hand. [Multisig backup and recovery](/docs/learn/wallets/multisig/backup-recovery/) covers the whole process.
 
-Native SegWit vs Legacy vs Taproot:
+## What should you check, in order?
 
-| Your Old Addresses Started With | Script Type to Select |
-|--------------------------------|----------------------|
-| `1` | Legacy (P2PKH) |
-| `3` | Nested SegWit (P2SH-P2WPKH) |
-| `bc1q` | Native SegWit (P2WPKH) |
-| `bc1p` | Taproot (P2TR) |
+1. Every word against the BIP39 list, and the word count.
+2. Whether a passphrase was used.
+3. Each script type: legacy, nested segwit, native segwit, Taproot.
+4. Account numbers 0, 1 and 2.
+5. A gap limit of 100 or more.
+6. Whether the seed is an Electrum seed.
+7. A second wallet program, to rule out the first.
+8. For multisig, the wallet descriptor.
 
-### Check Account Number
+## When should you get help?
 
-Some wallets use multiple accounts under the same seed:
-- Account 0: `m/84'/0'/0'`
-- Account 1: `m/84'/0'/1'`
-- Account 2: `m/84'/0'/2'`
+Ask for help only after working through the checklist, and only from people and tools that never need your seed phrase: open-source tools you run yourself, or the community forums of your wallet. Most "bitcoin recovery services" are scams; read [recovery scams](/docs/reference/faq/recovery-scams/) before contacting anyone.
 
-If you used Account 1, recovering with Account 0 shows different addresses.
+To avoid all of this next time, write down which wallet software you used, which script type and derivation path, and whether you used a passphrase, keep that note with your backup, and [test the backup](/docs/wallet-setup/backup-verification/) before relying on it.
 
-**Solution in Sparrow:**
-1. When importing, click "Show Advanced"
-2. Change the account number in the derivation path
+## Common questions
 
-## Problem: Recovery Fails Completely
+### Why does a recovered wallet show a zero balance?
 
-The wallet software rejects your seed phrase.
+The usual cause is a different derivation path or address type from the original wallet. Restore with the path and script type that match your old addresses (legacy, nested segwit, native segwit or Taproot). If you used a passphrase, you must enter exactly the same one to reach the original wallet.
 
-### Invalid Checksum
+### Why does a recovered wallet show different addresses than expected?
 
-If any word is wrong, the checksum fails.
+Different wallets use different default derivation paths, so restoring a seed in another wallet can produce valid addresses you do not recognise. Check the derivation path and script type, and match them to what your original wallet used.
 
-**Solution:**
-- Verify each word exists in BIP39 word list
-- Check for similar words (see common mistakes above)
-- Ensure you have the correct number of words (12, 15, 18, 21, or 24)
+### What if a recovery finds only some of your funds?
 
-### Wrong Word List Language
+The rest may be under a different account number, derivation path or passphrase. Check every standard path, raise the gap limit above the default of 20, and make sure you have not used more than one passphrase with the same seed.
 
-BIP39 has word lists in multiple languages (English, Spanish, Japanese, etc.). You must use the same language.
+### When should you get professional help with wallet recovery?
 
-**Solution:**
-- Most wallets use English
-- If you created with non-English wallet, find matching word list
-
-## Problem: Only Some Funds Recovered
-
-You recovered some Bitcoin but not all of it.
-
-### Multiple Address Types
-
-You may have received Bitcoin to different address types:
-- Some to Legacy addresses (start with `1`)
-- Some to SegWit addresses (start with `bc1q`)
-
-**Solution:**
-1. In Sparrow, create multiple wallets from same seed
-2. One with Legacy script type
-3. One with Native SegWit
-4. Check balances in each
-
-### Multiple Accounts
-
-Similar to above, funds may be in different accounts.
-
-**Solution:**
-- Create wallets with account numbers 0, 1, 2
-- Check each for balances
-
-### Unconfirmed Transactions
-
-Funds from unconfirmed transactions won't appear until confirmed.
-
-**Solution:**
-- Wait for confirmation
-- Check transaction status on mempool.space
-
-## Problem: Hardware Wallet Shows Different Address
-
-Your hardware wallet shows a different address than your software wallet.
-
-### Verification Mismatch
-
-This is a **critical security issue**. Never send to an address your hardware wallet doesn't display.
-
-**Possible causes:**
-1. Malware modified the address in software
-2. Wrong derivation path in software
-3. Hardware wallet has different seed than expected
-
-**Solution:**
-1. Verify you're using the correct wallet file
-2. Check derivation paths match
-3. Re-pair hardware wallet with software
-4. If still mismatched, DO NOT TRANSACT until resolved
-
-## Problem: Multisig Recovery Issues
-
-Multisig wallets are more complex to recover.
-
-### Missing Wallet Descriptor
-
-You need more than just seed phrases for multisig recovery:
-- All participating public keys (xpubs)
-- The wallet descriptor or configuration file
-- Knowledge of M-of-N setup (e.g., 2-of-3)
-
-**Solution:**
-- Locate your backup of the wallet descriptor
-- In Sparrow, you can import via File → Import Wallet → Descriptor
-
-### Wrong Cosigner Order
-
-Multisig addresses depend on key ordering. Different order = different addresses.
-
-**Solution:**
-- Import using original wallet descriptor
-- If manually recreating, match exact order of cosigners
-
-## Systematic Recovery Checklist
-
-If you're stuck, work through this systematically:
-
-- [ ] Verify seed phrase words against BIP39 list
-- [ ] Check for passphrase requirement
-- [ ] Try different script types (Legacy, SegWit, Taproot)
-- [ ] Try different account numbers (0, 1, 2)
-- [ ] Increase address gap limit to 100+
-- [ ] Check multiple derivation paths
-- [ ] Verify with a different wallet software
-- [ ] If multisig, locate wallet descriptor
-
-## When to Seek Professional Help
-
-Consider professional assistance if:
-- You've exhausted all troubleshooting steps
-- Significant funds are at stake
-- You suspect hardware wallet malfunction
-- You have partial seed phrase (some words missing)
-
-:::danger Recovery Scams
-Most "Bitcoin recovery services" are scams. See our [Recovery Scams](/docs/reference/faq/recovery-scams) guide before contacting anyone. Never share your seed phrase with "helpers."
-:::
-
-## Prevention for the Future
-
-Avoid recovery problems by:
-
-1. **Document everything**
-   - Which wallet software you used
-   - Which derivation path
-   - Whether you used a passphrase
-   - Which script type (address format)
-
-2. **Test your backup**
-   - [Verify your backup works](/docs/wallet-setup/backup-verification) before trusting it
-
-3. **Keep wallet descriptor backups**
-   - Especially for multisig setups
-
-4. **Use standard settings**
-   - Stick to defaults when possible
-   - BIP84 (Native SegWit) is the current standard
-
+Only after checking derivation paths, address types, gap limits and passphrases yourself. Use reputable open-source tools, and avoid any service that asks for your seed phrase. For a multisig, use the original wallet software and your own backups before contacting anyone.

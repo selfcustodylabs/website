@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="The journey of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-label="The path of a 0.1 BTC payment from Maya to Daniel: her wallet builds and signs the transaction, the network broadcasts it, miners verify every rule and include it in a block, and Daniel verifies his money himself.">
   <style>
     .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
     .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }

@@ -7,20 +7,18 @@ tags: ["bitcoin", "addresses", "segwit", "taproot", "reference"]
 slug: /reference/address-types
 ---
 
-# Bitcoin Address Types Explained
+# Bitcoin address types explained
 
-If you've used Bitcoin, you've noticed addresses can look very different:
+Bitcoin has four address types in common use, told apart by their first characters: legacy addresses start with `1`, nested segwit with `3`, native segwit with `bc1q` and Taproot with `bc1p`. They differ in fees and features, not in security, and you can send from any type to any other. Use native segwit (`bc1q`) by default: it is cheap to spend from and every current wallet and exchange supports it. Taproot (`bc1p`) is the newer alternative, with the most to gain in multisig and complex setups.
+
+The four look like this:
 
 - `1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa` (starts with 1)
 - `3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy` (starts with 3)  
 - `bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq` (starts with bc1q)
 - `bc1p5d7rjq7g6rdk2yhzks9smlaqtedr4dekq08ge8ztwac72sfr9rusxg3297` (starts with bc1p)
 
-These aren't random: each format represents a different **address type** with different properties. Understanding them helps you save on fees and avoid compatibility issues.
-
----
-
-## The Four Address Types
+## What are the four address types?
 
 <div class="fixed-width-table">
 
@@ -28,7 +26,7 @@ These aren't random: each format represents a different **address type** with di
 |------|--------|------|------|--------|
 | Legacy | `1...` | P2PKH | 2009 | Outdated |
 | Script | `3...` | P2SH / P2SH-P2WPKH | 2012 | Transitional |
-| Native SegWit | `bc1q...` | P2WPKH / Bech32 | 2017 | **Recommended** |
+| Native SegWit | `bc1q...` | P2WPKH / Bech32 | 2017 | Recommended |
 | Taproot | `bc1p...` | P2TR / Bech32m | 2021 | Newest |
 
 </div>
@@ -130,13 +128,13 @@ If your wallet supports it and you're sending to/from Taproot-compatible service
 
 ---
 
-## Fee Comparison
+## How do the fees compare?
 
-Transaction size (and thus fees) varies by address type. Smaller = cheaper.
+The size of an input, and so the fee to spend it, depends on the address type the coin is held at:
 
 <div class="fixed-width-table">
 
-| Sending From | Approx. Size | Relative Fee |
+| Spending from | Input size | Fee, relative to legacy |
 |--------------|--------------|--------------|
 | Legacy (P2PKH) | 148 vbytes | 100% (baseline) |
 | Nested SegWit (P2SH) | 91 vbytes | ~61% |
@@ -145,13 +143,11 @@ Transaction size (and thus fees) varies by address type. Smaller = cheaper.
 
 </div>
 
-**Using Native SegWit instead of Legacy saves you ~54% on fees.**
-
-*Note: These are for simple single-input transactions. Complex transactions vary.*
+Spending a native segwit input costs about 54% less than a legacy one; for a whole typical payment, with its outputs and overhead, the saving is about 38%. Taproot inputs are the smallest, but Taproot outputs are larger (about 43 vB against 31), so a simple Taproot payment costs about the same as a native segwit one.
 
 ---
 
-## Visual Recognition Guide
+## How do you recognise each type?
 
 ```
 ADDRESS TYPE QUICK REFERENCE:
@@ -183,31 +179,20 @@ Newest, best privacy, growing support
 
 ---
 
-## Which Should You Use?
+## Which should you use?
 
-### For Most People: Native SegWit (bc1q...)
-
-**Use Native SegWit as your default.** It offers:
-- Lowest practical fees
-- Wide compatibility
-- Proven reliability since 2017
-
-### For Privacy-Focused Users: Taproot (bc1p...)
-
-If your wallet supports Taproot and you're transacting with Taproot-compatible services:
-- Better privacy (especially for multisig)
-- Slightly lower fees
-- Future-proof
-
-### Avoid: Legacy (1...)
-
-Only use Legacy addresses if absolutely required for compatibility. You're paying ~2x the fees for no benefit.
+| Type | Use it when | Why |
+|---|---|---|
+| Native segwit (`bc1q`) | By default | Low fees, universal support, in use since 2017 |
+| Taproot (`bc1p`) | Your wallet and the services you use support it, especially for multisig | A multisig or complex script spent by agreement looks like an ordinary single-signature payment, which helps privacy and saves space |
+| Nested segwit (`3`) | Only for an old service that cannot send to `bc1` addresses | A transitional format with higher fees |
+| Legacy (`1`) | Only when nothing else is accepted | Roughly twice the input fee of native segwit, for no benefit |
 
 ---
 
-## Wallet Support
+## What do wallets use by default?
 
-Most modern wallets support all address types. Here's what they typically default to:
+Most current wallets support every type and default to native segwit:
 
 <div class="fixed-width-table">
 
@@ -226,9 +211,9 @@ You can usually change the address type in wallet settings if needed.
 
 ---
 
-## Derivation Paths
+## Which derivation path goes with each type?
 
-Each address type uses a different **derivation path**, the recipe for generating addresses from your seed phrase.
+Each address type has its own **derivation path**, the route from your seed phrase to its addresses; see [derivation paths](/docs/learn/keys/derivation-path/).
 
 <div class="fixed-width-table">
 
@@ -241,52 +226,28 @@ Each address type uses a different **derivation path**, the recipe for generatin
 
 </div>
 
-**Why this matters:** When recovering a wallet, you need to use the same derivation path to see your funds. Most wallets handle this automatically, but it's good to know.
+When restoring a wallet you need the same path as the original to see your funds. Most wallets handle it automatically, but if a restored wallet is empty, the path is the first thing to check.
 
 ---
 
-## Common Questions
+## Common questions
 
-### Can I send between different address types?
+### Can you send between different address types?
 
-**Yes.** You can send from any address type to any other. The network doesn't care. It's all Bitcoin.
+Yes. You can send from any address type to any other; to the network it is all bitcoin.
 
-### Why do I see different addresses in my wallet?
+### Why does your wallet show a different address each time?
 
-Wallets generate new addresses for privacy. Each receive address is unique, but they're all derived from your seed phrase and all belong to you.
+Wallets give you a new address for every payment, for privacy. Each one is different, but all of them come from your seed phrase and all belong to you.
 
-### An exchange won't let me withdraw to bc1...
+### What if an exchange will not send to a bc1 address?
 
-Some older exchanges don't support Bech32 (bc1) addresses. Options:
-1. Use a different exchange
-2. Withdraw to a Legacy (1...) or Script (3...) address temporarily
-3. Contact their support; they should upgrade
+A few old services still cannot send to `bc1` addresses. Use a different exchange, withdraw to a nested segwit (`3`) address in your wallet for now, or ask the exchange to add support.
 
-### Does address type affect security?
+### Does the address type affect security?
 
-Not directly. All types are secure. The differences are in fees, features, and compatibility.
+Not directly. Every type is secure; the differences are in fees, features and compatibility.
 
-### I recovered my wallet but balance shows zero?
+### Why does a recovered wallet show a zero balance?
 
-You might be on the wrong derivation path. Try:
-1. Check if your wallet is set to the correct address type
-2. In Sparrow/Electrum, try different script types
-3. Your funds are safe: you just need to find the right path
-
----
-
-## Key Takeaways
-
-1. **Use Native SegWit (bc1q...)** as your default (best fees and compatibility)
-2. **Consider Taproot (bc1p...)** for enhanced privacy and future-proofing
-3. **Avoid Legacy (1...)** unless required (you're overpaying for fees)
-4. **All types are secure**: differences are mainly about efficiency
-5. **You can send between any address types**: they're all Bitcoin
-
----
-
-## Continue Learning
-
-- [Private Keys Explained](/docs/learn/keys/intro): How addresses are derived
-- [Transactions Explained](/docs/learn/transactions/understanding): How Bitcoin moves
-- [UTXO Management](/docs/learn/privacy/utxo-management): Managing your coins effectively
+Usually because it is looking at a different address type or derivation path from the original wallet, not because the funds are gone. Set the restoring wallet to the address type your old addresses used, or try each type in Sparrow or Electrum; [recovery troubleshooting](/docs/reference/faq/recovery-troubleshooting/) covers the rest.

@@ -8,7 +8,7 @@ tags: ["bitcoin", "transactions"]
 
 # Transaction types
 
-A bitcoin transaction goes through up to three states: unsigned (built, but not yet authorised), partially signed (some but not all of the needed signatures added, as in multisig), and fully signed (ready to broadcast). The standard file format for the first two is the PSBT. A pre-signed transaction is a fully signed one kept to broadcast later, for example as part of an inheritance plan.
+A bitcoin transaction goes through up to three states: unsigned (built, but not yet authorised), partially signed (some but not all of the needed signatures added, as in multisig), and fully signed (valid to broadcast). The standard file format for the first two is the PSBT. A pre-signed transaction is a fully signed one kept to broadcast later, for example as part of an inheritance plan.
 
 ## What is an unsigned transaction?
 

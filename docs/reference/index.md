@@ -7,94 +7,32 @@ tags: ["reference", "glossary", "faq"]
 slug: /reference
 ---
 
-# Reference Materials
+# Reference materials
 
-Quick-access reference materials for Bitcoin self-custody.
+The reference section is for looking things up rather than reading in order: a glossary of the terms used across the site, a comparison of bitcoin address types, the hardware wallet comparison, and answers to the questions people ask most, especially about lost seed phrases, recovery scams and wallets that restore with a zero balance.
 
----
+## What is in the reference section?
 
-## 📖 Glossary & Terminology
+| Page | What it is |
+|---|---|
+| [Glossary](/docs/reference/glossary/) | Definitions of more than a hundred terms, from UTXO to Taproot |
+| [Address types](/docs/reference/address-types/) | Legacy, nested segwit, native segwit and Taproot addresses, and which to use |
+| [Hardware wallet comparison](/docs/reference/hardware-wallet-comparison/) | Trezor, BitBox02 Nova, Jade, Passport, Keystone, SeedSigner, Coldcard, Ledger and Bitkey, with prices and our recommendations |
+| [FAQ](/docs/reference/faq/) | Short answers to common questions, with links to the full pages |
+| [What if you lose your seed phrase?](/docs/reference/faq/lost-seed/) | What can and cannot be recovered |
+| [Are recovery services legitimate?](/docs/reference/faq/recovery-scams/) | How recovery scams work, and how to recognise one |
+| [Recovered wallet shows zero](/docs/reference/faq/recovery-troubleshooting/) | Fixing a restore that shows no balance |
 
-<div class="guide-card">
+## Which outside resources do we use?
 
-### [Bitcoin Glossary](/docs/reference/glossary)
+| Resource | What it is for |
+|---|---|
+| [BIP39 word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) | The 2048 seed words |
+| [Bitcoin Improvement Proposals](https://github.com/bitcoin/bips) | The standards behind seed phrases, addresses and transactions |
+| [mempool.space](https://mempool.space/) | A block explorer and fee estimator |
+| [blockstream.info](https://blockstream.info/) | A block explorer |
+| [TimechainStats](https://timechainstats.com/) | Network statistics |
+| [KYCnot.me](https://kycnot.me/) | A directory of ways to buy bitcoin without ID |
+| [The bitcoin whitepaper](https://bitcoin.org/bitcoin.pdf) | Satoshi Nakamoto's 2008 paper |
 
-100+ terms defined, from UTXO to Taproot. A-Z reference for all Bitcoin terminology.
-
-</div>
-
----
-
-## 🏷️ Technical Reference
-
-<div class="guide-card">
-
-### [Bitcoin Address Types](/docs/reference/address-types)
-
-Understand Legacy, SegWit, Native SegWit, and Taproot addresses. Learn which to use and why it matters for fees and compatibility.
-
-</div>
-
-<div class="guide-card">
-
-### [Hardware Wallet Comparison](/docs/reference/hardware-wallet-comparison)
-
-Compare Trezor, BitBox02 Nova, Jade Plus, Passport Prime, Keystone, SeedSigner, Coldcard, Ledger, and Bitkey, updated for the post-2026 landscape. Find the right hardware wallet for your needs, budget, and security requirements.
-
-</div>
-
-<div class="guide-card">
-
-### [SeedSigner Guide](/docs/seedsigner/)
-
-Our favourite signing solution: stateless, air-gapped, and built by you from commodity parts. Why we recommend it, who it's not for, and how to build and use one.
-
-</div>
-
-### External Technical Resources
-- **[BIP39 Word List](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)**: The 2048 valid seed words (external)
-- **[BIP List](https://github.com/bitcoin/bips)**: All Bitcoin Improvement Proposals
-
----
-
-## ❓ Frequently Asked Questions
-
-Common questions about Bitcoin self-custody:
-
-### Critical Safety Questions
-
-| Question | Answer |
-|----------|--------|
-| [What if I lose my seed phrase?](/docs/reference/faq/lost-seed) | The hard truth about seed loss and what (little) you can do |
-| [Are recovery services legitimate?](/docs/reference/faq/recovery-scams) | Almost all are scams: learn to protect yourself |
-
-### More FAQs
-Browse all FAQ topics: **[FAQ Index](/docs/reference/faq/)**
-
----
-
-## 🔗 External Resources
-
-Trusted external resources for Bitcoin education:
-
-### Block Explorers
-- [Mempool.space](https://mempool.space/): Transaction explorer and fee estimator
-- [Blockstream.info](https://blockstream.info/): Clean, privacy-respecting explorer
-
-### Tools
-- [TimechainStats](https://timechainstats.com/): Bitcoin network statistics
-- [KYCnot.me](https://kycnot.me/): Find non-KYC Bitcoin sources
-
-### Further Learning
-- [Bitcoin.org](https://bitcoin.org/): Official Bitcoin resources
-- [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf): Satoshi's original paper
-
----
-
-## Missing Something?
-
-If you can't find what you're looking for:
-
-1. Check the [Glossary](/docs/reference/glossary) for term definitions
-2. Use the search function in the top navigation
-3. Reach out via [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs) with questions
+If you cannot find something, use the search at the top of the page, or ask on [Nostr](https://primal.net/p/nprofile1qqspxh8lqez8f9kt2cv7626rfax0phl8lu8tgt0jjjkwa6n8lhmt9qgxf4ey5) or [X](https://x.com/selfcustodylabs).

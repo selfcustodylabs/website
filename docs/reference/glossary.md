@@ -266,13 +266,10 @@ The technical name for Taproot addresses (starting with `bc1p`).
 The technical name for Native SegWit addresses (starting with `bc1q`).
 
 ### Passphrase
-An optional additional word added to a seed phrase to create a separate wallet. Sometimes called the "25th word." See [Passphrases](/docs/learn/keys/passphrase).
+An optional extra secret, which can be any text, combined with a seed phrase to open a separate wallet. Sometimes called the "25th word", though it is not a word from the BIP39 list. See [Passphrases](/docs/learn/keys/passphrase/).
 
 ### PayJoin
 A privacy-enhancing transaction where both sender and receiver contribute inputs, breaking blockchain analysis heuristics.
-
-### PBST
-See PSBT.
 
 ### Private Key
 A secret number that controls Bitcoin at a specific address. Must be kept secret. See [Private Keys](/docs/learn/keys/intro).
@@ -329,7 +326,7 @@ A sequence of 12 or 24 words that encodes your wallet's master seed. The backup 
 A 2017 Bitcoin upgrade that separates transaction signatures ("witness" data) from transaction data, enabling more efficient transactions and fixing transaction malleability.
 
 ### Self-Custody
-Holding your own Bitcoin private keys, rather than trusting a third party. See [What is Self-Custody](/docs/learn).
+Holding your own Bitcoin private keys, rather than trusting a third party. See [What is self-custody](/docs/learn/fundamentals/what-is-self-custody/).
 
 ### Signature
 Cryptographic proof that a transaction was authorized by the private key owner.
