@@ -76,8 +76,10 @@ function blocks(body) {
     const f = trimmed.match(/^(`{3,}|~{3,})/);
     if (f) {
       flush();
-      if (fence === null) fence = f[1][0];
-      else if (fence === f[1][0]) fence = null;
+      if (fence === null) {
+        fence = f[1][0];
+        out.push({ type: "code" });
+      } else if (fence === f[1][0]) fence = null;
       continue;
     }
     if (fence !== null) continue;
@@ -121,14 +123,21 @@ function inPageSteps(list) {
     const m = b.text.match(STEP);
     if (!m) return;
     // The first prose under the heading; a sentence ending in a colon
-    // introduces a list, so the list comes with it.
+    // introduces a list, so the list comes with it. A code block ends the
+    // run: the sentence that introduced it ("Run:") is dropped when there is
+    // one before it, otherwise its colon becomes a full stop.
     const parts = [];
     for (const x of list.slice(i + 1)) {
       if (x.type !== "text") break;
       parts.push(blockText(x.lines));
       if (!parts.at(-1).endsWith(":")) break;
     }
-    steps.push({ name: m[2], text: parts.join(" ") || m[2], anchor: b.anchor });
+    let text = parts.join(" ");
+    if (text.endsWith(":")) {
+      const cut = text.slice(0, -1).search(/[.!?]\s[^.!?]*$/);
+      text = cut > 0 ? text.slice(0, cut + 1) : text.replace(/:$/, ".");
+    }
+    steps.push({ name: m[2], text: text || m[2], anchor: b.anchor });
   });
   return steps;
 }
