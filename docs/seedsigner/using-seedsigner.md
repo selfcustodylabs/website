@@ -8,13 +8,13 @@ tags: ["seedsigner", "seedqr", "sparrow", "guide"]
 
 # Using SeedSigner
 
-Your SeedSigner is built and verified. This page covers the full working loop: create a seed from your own entropy, back it up, connect a watch-only wallet, and sign transactions over QR codes.
+Using a SeedSigner comes down to four steps and an option: generate a seed from your own dice rolls, back it up as words and as a SeedQR, connect Sparrow on your computer as a watch-only wallet, and sign transactions by passing QR codes between Sparrow and the device; it can also be one key of a multisig. The device stores nothing, so every session starts by loading your seed.
 
 :::danger The device stores nothing; you store everything
 SeedSigner is stateless. Every seed you use exists only while the device is powered, which means your physical backup is the only durable copy of your keys. Treat the backup steps below as the main event, not an afterthought.
 :::
 
-## Generate a Seed with Dice
+## Step 1: Generate a seed with dice
 
 From the home screen, choose **Tools → New seed → Dice rolls**, then roll a physical die 99 times (for 24 words) or 50 times (for 12), entering each roll. Two habits make this trustworthy:
 
@@ -23,7 +23,7 @@ From the home screen, choose **Tools → New seed → Dice rolls**, then roll a 
 
 Add a [passphrase](/docs/learn/keys/passphrase/) if the funds warrant it; SeedSigner supports entering one at load time, and it is never part of the stored backup.
 
-## Back It Up: Words and SeedQR
+## Step 2: Back it up as words and a SeedQR
 
 Record the seed words on paper first, then transfer to steel for anything long-term. Then let SeedSigner render the seed as a **SeedQR**: a compact QR encoding of the seed words you can etch or punch into metal.
 
@@ -37,7 +37,7 @@ The payoff comes at every future session: instead of typing 24 words on a joysti
 
 Before depositing anything, run the [backup verification drill](/docs/wallet-setup/backup-verification/): wipe (power-cycle) the device, restore purely from your backup, and confirm the wallet derives the same addresses.
 
-## Connect Sparrow as Watch-Only
+## Step 3: Connect Sparrow as a watch-only wallet
 
 Sparrow Wallet on your desktop tracks balances and builds transactions; SeedSigner only signs. To pair them:
 
@@ -47,7 +47,7 @@ Sparrow Wallet on your desktop tracks balances and builds transactions; SeedSign
 
 Verify a receive address on both screens before first use: display the address QR in Sparrow, scan it with SeedSigner's **Address Explorer**, and confirm the device agrees the address belongs to your seed.
 
-## Sign a Transaction
+## Step 4: Sign a transaction
 
 The signing loop is the same every time:
 
@@ -59,7 +59,7 @@ The signing loop is the same every time:
 
 Nothing but QR codes crossed the gap in either direction. When you power off, the device forgets the seed and the whole session.
 
-## SeedSigner in a Multisig
+## How does SeedSigner work in a multisig?
 
 SeedSigner shines as one key in a [multisig quorum](/docs/learn/wallets/multisig/): it contributes a key with no vendor, no supply chain, and no stored state, which is exactly the diversity multisig is for. Register the multisig descriptor on the device (SeedSigner can persist it to the microSD as a non-secret convenience, or verify it each session) so the device can confirm change addresses really belong to your quorum. The [multisig hardware setup guide](/docs/learn/wallets/multisig/hardware-setup/) walks through the full configuration.
 
