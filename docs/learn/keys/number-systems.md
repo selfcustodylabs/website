@@ -5,35 +5,26 @@ description: "Understand binary, decimal, and hexadecimal number systems used in
 keywords: ["binary", "decimal", "hexadecimal", "number systems", "bitcoin cryptography"]
 tags: ["binary", "private keys", "basics"]
 ---
-# Number Systems
 
-Before diving into Bitcoin private keys, it’s important to understand how different number systems work.
+# Number systems
 
-:::note
-If you’re already familiar with binary, decimal, and hexadecimal, feel free to skip ahead.
-:::
+Bitcoin keys are numbers, and the same number can be written in different bases: decimal (base 10) for people, binary (base 2) for the bits a seed is made of, and hexadecimal (base 16) for compact display of hashes and keys. The [dice guide](/docs/learn/keys/random/) moves between all three, so this page covers just enough to follow it.
 
-### Decimal (Base 10):
+## What is decimal?
 
-- Each digit has 10 possible values (0-9).
-- For example, in the number 4.25, the first digit is 4, the second is 2, and the third is 5.
-- We count: 0, 1, 2, ..., 9. When we reach 9, we add a new digit to the left and reset the rightmost digit to 0 (e.g., 10).
+Decimal is base 10: each digit has ten possible values, 0 to 9. Counting past 9 adds a digit on the left and resets the right one to 0, giving 10. Each position is worth ten times the one to its right (ones, tens, hundreds).
 
-### Binary (Base 2):
+## What is binary?
 
-- Each digit has only 2 possible values (0 or 1).
-- Counting in binary looks like this: 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, etc.
-- It may seem like a big jump, but that’s because we’re used to decimal counting.
+Binary is base 2: each digit, or bit, is 0 or 1. Counting goes 0, 1, 10, 11, 100, 101, 110, 111, 1000. Each position is worth twice the one to its right: 1, 2, 4, 8, 16 and so on, so `1011` is 8 + 0 + 2 + 1 = 11. A die roll in the dice guide becomes one bit, and 11 bits make one seed word, because 2<sup>11</sup> = 2048 is the length of the BIP39 word list.
 
-### Hexadecimal (Base 16):
+## What is hexadecimal?
 
-- Each digit has 16 possible values (0-9 and a-f, where a=10, b=11, ..., f=15).
-- Just like playing cards where the Jack, Queen, and King represent specific numbers, letters can be used to represent numbers in hex.
-- Hex numbers are more compact. For example, the decimal number 2047 is 11111111111 in binary (11 digits) but just 7FF in hex.
+Hexadecimal is base 16: each digit has sixteen values, written 0 to 9 and then a to f for 10 to 15. One hex digit stands for exactly four bits, which makes it a compact way to write binary: 2047 is `11111111111` in binary (11 digits) but `7ff` in hex. SHA-256 hashes, such as the one the dice guide uses for its checksum, are usually printed in hex.
 
 <div class="fixed-width-table">
 
-|Decimal|Binary|HEX|
+|Decimal|Binary|Hex|
 |-|-|-|
 |0|0000|0|
 |1|0001|1|
@@ -53,10 +44,3 @@ If you’re already familiar with binary, decimal, and hexadecimal, feel free to
 |15|1111|f|
 
 </div>
-
----
-
-## You've Completed the Keys Section
-
-You now understand the foundation of Bitcoin ownership: how private keys work, how they become seed phrases, how child keys are derived, and the number systems that underpin it all.
-

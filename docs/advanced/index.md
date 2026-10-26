@@ -221,7 +221,7 @@ For significant holdings (life-changing amounts), yes. The complexity cost is wo
 
 **"Can I use an old laptop as an air-gapped computer?"**
 
-Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if possible (remove the card). See the [air-gapped setup guide](/docs/learn/wallets/air-gapped-wallets/#building-your-air-gapped-computer).
+Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if possible (remove the card). See the [air-gapped setup guide](/docs/learn/wallets/air-gapped-wallets/#step-1-remove-the-network-hardware).
 
 **"Do I really need open-source firmware?"**
 

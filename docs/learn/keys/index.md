@@ -8,13 +8,9 @@ tags: ["keys", "seed", "bitcoin", "fundamentals"]
 slug: /learn/keys
 ---
 
-# Understanding Bitcoin Keys
+# Understanding Bitcoin keys
 
-Everything in Bitcoin self-custody comes back to one thing: **keys**. Your keys are your Bitcoin. This section explains how they work, from the ground up.
-
-## The Big Picture
-
-Here's what you need to understand: Bitcoin doesn't know who you are. It doesn't care about your name, your identity, or your bank account. The only thing that matters is whether you can prove you control the keys to a specific address.
+Owning bitcoin means controlling the private keys that can spend it: the network does not know your name, only whether a transaction is signed by the right key. In a modern wallet every key comes from one source, the seed phrase, which is turned into a master key and then, along a derivation path, into as many keys and addresses as the wallet needs. That is why the 12 or 24 words restore everything, why one backup covers unlimited addresses, and why anyone who sees them can take everything.
 
 <div class="doc-diagram">
 
@@ -22,85 +18,32 @@ Here's what you need to understand: Bitcoin doesn't know who you are. It doesn't
 
 </div>
 
-**You don't need to understand every detail.** But knowing the general flow helps you understand:
-- Why your seed phrase is so important (it's the root of everything)
-- Why you can generate unlimited addresses from one seed
-- Why losing your seed means losing everything
-- Why different wallets can restore the same Bitcoin
+## What does this section cover?
 
-## What You'll Learn
+The pages build from the simplest idea to the most technical; read them in order, or go straight to the one you need.
 
-This section covers the key concepts in order, building from simple to complex:
+| Page | What it explains |
+|---|---|
+| [Private keys](/docs/learn/keys/intro/) | The random number that controls bitcoin, and how public keys and addresses come from it |
+| [Seed phrases](/docs/learn/keys/seed/) | How that randomness becomes 12 or 24 words under the BIP39 standard, and why their order matters |
+| [Extended private keys (xprv)](/docs/learn/keys/xprv/) | How one master key produces every key in the wallet |
+| [Extended public keys (xpub)](/docs/learn/keys/xpub/) | Watch-only wallets: seeing every address and balance without being able to spend |
+| [Derivation paths](/docs/learn/keys/derivation-path/) | The route from the master key to a particular address, and why it matters at recovery |
+| [Passphrases](/docs/learn/keys/passphrase/) | An optional extra secret that turns the same seed phrase into a different wallet |
+| [Seed generation with dice](/docs/learn/keys/random/) | Making the seed's randomness yourself, step by step |
+| [Number systems](/docs/learn/keys/number-systems/) | Binary, decimal and hexadecimal, for the dice guide's arithmetic |
 
-### 1. [Private Keys](/docs/learn/keys/intro)
-The foundation. A private key is just a very large random number that gives you control over Bitcoin at a specific address. Understand this, and everything else makes sense.
+## Which principles matter most?
 
-### 2. [Seed Phrases](/docs/learn/keys/seed)
-How that random number becomes 24 memorable words. The BIP39 standard that makes backups human-friendly, and why word order matters.
+- **Keys are everything.** Your bitcoin is recorded on the blockchain; the private key is the only proof that you may move it. Without the key, there is no bitcoin.
+- **The seed phrase is the key.** It is not a backup of your key but the same secret in another form: anyone who has it controls the bitcoin.
+- **One seed, many keys.** A single seed phrase can produce billions of addresses, and the wallet uses a new one for each payment automatically.
+- **Public is not harmless.** An extended public key (xpub) cannot spend, but it reveals every address and the whole transaction history of the account.
 
-### 3. [Extended Private Keys (xprv)](/docs/learn/keys/xprv)
-How one seed generates unlimited keys. The "master key" concept that lets you create as many addresses as you need from a single backup.
+## How deep do you need to go?
 
-### 4. [Extended Public Keys (xpub)](/docs/learn/keys/xpub)
-The "watch-only" side of your wallet. How you can share the ability to *see* your Bitcoin without sharing the ability to *spend* it.
-
-### 5. [Derivation Paths](/docs/learn/keys/derivation-path)
-The roadmap your wallet follows to generate specific keys. Why `m/84'/0'/0'/0/0` matters, and when it doesn't.
-
-### 6. [Passphrases](/docs/learn/keys/passphrase)
-An optional 25th word that creates hidden wallets. Extra security, but with serious trade-offs to understand.
-
-### 7. [Randomness](/docs/learn/keys/random) *(Technical)*
-Why the quality of your random number matters enormously. The difference between "random enough" and actually random.
-
-### 8. [Number Systems](/docs/learn/keys/number-systems) *(Technical)*
-Binary, decimal, hexadecimal: the number formats you'll encounter. Reference material for when you need it.
-
-## Key Concepts to Remember
-
-Before diving in, here are the essential principles:
-
-:::tip Principle 1: Keys Are Everything
-Your Bitcoin exists on the blockchain. Your private key is the only proof that you're allowed to move it. No key = no Bitcoin.
-:::
-
-:::tip Principle 2: Seeds Are Keys
-Your seed phrase isn't a "backup" of your key. It *is* your key in a different format. Anyone with your seed phrase controls your Bitcoin completely.
-:::
-
-:::tip Principle 3: One Seed, Many Keys
-A single seed phrase can generate billions of addresses. You don't need a new seed for each transaction; your wallet handles this automatically.
-:::
-
-:::tip Principle 4: Public ≠ Private
-Extended public keys (xpubs) let others see your balances without being able to spend. Useful, but still sensitive: they reveal your entire transaction history.
-:::
-
-## How Deep Do You Need to Go?
-
-**For most users:**
-- Understand that your seed phrase IS your Bitcoin
-- Know that you can restore your wallet anywhere with the same seed
-- Learn proper seed backup practices
-
-**For serious self-custody:**
-- Understand derivation paths (matters for recovery)
-- Know the difference between xpub and xprv
-- Consider passphrases for additional security
-
-**For maximum understanding:**
-- Learn how randomness affects security
-- Understand the math behind key derivation
-- Be able to verify seed generation independently
-
----
-
-## Ready to Begin?
-
-Start with the foundation:
-
-→ **[Private Keys Explained](/docs/learn/keys/intro)**: What keys are and why they matter
-
-Or if you want the practical summary:
-
-→ **[Seed Phrases](/docs/learn/keys/seed)**: The 24 words that control your Bitcoin
+| If you are | You need to know |
+|---|---|
+| Using a wallet | That the seed phrase is the bitcoin, that it restores the wallet anywhere, and how to back it up |
+| Doing serious self-custody | Derivation paths (they matter at recovery), xpub versus xprv, and whether a passphrase suits you |
+| Verifying everything yourself | How randomness affects security, how keys are derived, and how to generate and check a seed independently |

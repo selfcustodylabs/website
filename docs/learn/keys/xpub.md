@@ -5,42 +5,42 @@ description: "What a Bitcoin extended public key (xpub) is: it lets a watch-only
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "public", "xpub"]
 tags: ["private keys", "xpub", "bip39", "seed"]
 ---
-# Extended Public Key (XPUB)
 
-![Diagram](/img/basics/diagram.webp)
+# Extended public key (xpub)
 
-The purpose of the extended public key (xpub) might not be immediately obvious. Looking at the bottom section of the diagram, you’ll see that possessing the extended public key allows wallet software to generate **all** the same Bitcoin addresses as the extended private key, **in the same order**. This means the wallet will look identical in terms of addresses and transaction history. But what’s the key difference?
+An extended public key, or xpub, is the public counterpart of an extended private key: it generates every address in an account, in the same order, but cannot sign transactions. A wallet loaded with only the xpub shows the same addresses, balance and history as the real wallet and can produce new receive addresses, but cannot spend. That makes it safe for an online computer, and also sensitive: anyone with your xpub can see everything the account has ever done.
 
-- A wallet created with the **extended private key** has the power to **spend** Bitcoin.
-- A wallet created with the **extended public key** can **only view** transactions and addresses, it **cannot spend** Bitcoin.
+## What is a watch-only wallet?
 
-:::tip Watch only Wallet
-This type of public-key-only wallet is often called a **watch-only wallet**. You can safely use it on an insecure or internet-connected computer without risking your private keys. It allows you to monitor your balance and generate addresses to receive payments.
-:::
+A watch-only wallet is a wallet loaded with an xpub instead of private keys. You can run one on an everyday computer or phone to check your balance and generate receive addresses, while the private keys stay on a hardware wallet. Sparrow uses exactly this arrangement: it holds your hardware wallet's xpub and asks the device to sign.
 
-## Security Considerations
+| | Wallet from the xprv | Wallet from the xpub |
+|---|---|---|
+| Shows every address, in order | Yes | Yes |
+| Shows balance and history | Yes | Yes |
+| Generates new receive addresses | Yes | Yes |
+| Can spend | Yes | No |
 
-Even though an extended public key cannot be used to spend Bitcoin, you should still **protect it**. Anyone who has access to your xpub can:
-- View your entire transaction history.
-- See your current Bitcoin balance.
-- Track your future transactions.
+## Why should you keep your xpub private?
 
-It’s similar to handing someone your **bank statement**, they can’t take your money, but they can see how much you have and where it moves. To maintain financial privacy, **keep your xpub secure** and only share individual addresses when necessary.
+Anyone who has your xpub can see every address in the account, your current balance, your full transaction history and every future transaction. It is like handing someone your bank statements: they cannot take your money, but they know how much you have and where it goes. Share individual receive addresses, not the xpub, unless you are deliberately setting up a watch-only wallet or a multisig with someone you trust.
 
-## Identifying Extended Public Keys
+It also matters for safety. With ordinary (non-hardened) derivation, an xpub plus any single private key from the same account is enough to compute every private key in it; see [extended private keys](/docs/learn/keys/xprv/#can-one-leaked-private-key-expose-the-others).
 
-Extended public keys look like this:
+## What does an xpub look like?
 
 ```text
 xpub6CUtym4EsH2Ws4oWYVHiea5cUvgHZuULvMdEFwJoC22P984zee57gpM7v9AhiLh3mVS4Ai5YTYxGibMUpZpdmpkrVAGjT9ydvurTtFm5Azy
 ```
 
-Instead of starting with **“xprv”**, extended public keys start with:
-- **“xpub”** for legacy (P2PKH) wallets
-- **“ypub”** for P2SH (Pay-to-Script-Hash) wallets
-- **“zpub”** for native SegWit (Bech32) wallets
-- **“Xpub”**, **“Ypub”**, and **“Zpub”** for multisignature wallets (uppercase letters indicate multisig setups)
+The prefix records the intended address type:
 
-## Final Thoughts
+| Prefix | Address type | Addresses start with |
+|---|---|---|
+| `xpub` | Legacy (BIP44), and also used for Taproot (BIP86) | `1`, or `bc1p` for Taproot |
+| `ypub` | Nested segwit (BIP49) | `3` |
+| `zpub` | Native segwit (BIP84) | `bc1q` |
+| `Ypub`, `Zpub` | Multisig, nested or native segwit | `3`, `bc1q` |
+| `tpub` | Any type, on testnet | Testnet addresses |
 
-Guard your **financial privacy** carefully, and protect your **Bitcoin private keys** even more. While an xpub alone cannot spend funds, it still reveals sensitive information about your wallet’s activity, so treat it with care.
+Newer wallets increasingly show an output descriptor instead, which wraps the xpub with the script type and derivation path so that nothing has to be inferred from the prefix.
