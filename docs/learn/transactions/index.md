@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
 sidebar_label: "Overview"
-title: "Bitcoin Transactions: How They Work"
+title: "Bitcoin Transactions: UTXOs, Signing and Fees"
 description: "How Bitcoin transactions work end to end: UTXOs, transaction creation, signing, broadcasting, fees, and the transaction types you will actually encounter."
 keywords: ["bitcoin transactions", "utxo", "psbt", "signing", "broadcasting", "fees", "self custody"]
 tags: ["transactions", "bitcoin", "self custody"]

@@ -933,7 +933,7 @@
       ]
     },
     "/docs/learn/transactions/": {
-      "title": "Bitcoin Transactions: How They Work | Self Custody Labs",
+      "title": "Bitcoin Transactions: UTXOs, Signing and Fees | Self Custody Labs",
       "description": "How Bitcoin transactions work end to end: UTXOs, transaction creation, signing, broadcasting, fees, and the transaction types you will actually encounter.",
       "canonical": "https://selfcustodylabs.com/docs/learn/transactions/",
       "robots": [
