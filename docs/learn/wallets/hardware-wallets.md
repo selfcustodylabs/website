@@ -75,7 +75,7 @@ Firmware that supports only bitcoin has less code, and so fewer places for bugs.
 
 ### Your own dice entropy
 
-After 2026, supplying your own randomness is a requirement rather than a feature. As of October 2026 the Keystone 3 Pro, SeedSigner, Krux and Coldcard take dice rolls on the device; BitBox and Foundation document procedures for choosing the words yourself; on the Trezor Safe and Jade you make the seed with dice and restore it. Bitkey shows no seed phrase, so none of these is possible with it. Fifty rolls protect a 12-word seed even if the device's generator is completely broken, and 99 cover a 24-word seed, which is exactly what kept dice-generated Coldcard seeds safe.
+After 2026, supplying your own randomness is a requirement rather than a feature. As of October 2026 the Keystone 3 Pro, SeedSigner, Krux and Coldcard take dice rolls on the device; BitBox, Blockstream (Jade) and Foundation document procedures for choosing the words yourself; on the Trezor Safe you make the seed with dice and restore it. Bitkey shows no seed phrase, so none of these is possible with it. Fifty rolls protect a 12-word seed even if the device's generator is completely broken, and 99 cover a 24-word seed, which is exactly what kept dice-generated Coldcard seeds safe.
 
 ## What habits keep a hardware wallet safe?
 

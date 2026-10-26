@@ -25,8 +25,8 @@ Prices are the makers' own store prices in US dollars, checked on 26 October 202
 | Trezor Safe 5 | $129 | No | Yes | Yes, EAL6+ | Import only | Beginners |
 | Trezor Safe 7 | $249 | No | Yes | Yes, two (including the auditable TROPIC01) | Import only | Transparency with polish |
 | BitBox02 Nova | €175 (Aug) | No | Yes | Yes, EAL6+ | Vendor procedure | Simplicity |
-| Jade | $79 | Yes, QR with the optional camera | Yes | No: virtual, "blind oracle" | Import only | Budget |
-| Jade Plus | $149 ($169 metal) | Yes, QR | Yes | No: virtual, "blind oracle" | Import only | Verifiable security |
+| Jade | $79 | Yes, QR with the optional camera | Yes | No: virtual, "blind oracle" | Vendor procedure | Budget |
+| Jade Plus | $149 ($169 metal) | Yes, QR | Yes | No: virtual, "blind oracle" | Vendor procedure | Verifiable security |
 | Passport Prime | $565 | Yes, QR, plus encrypted Bluetooth | Yes | Yes | Vendor procedure | Premium air-gap |
 | Keystone 3 Pro | $149 (Aug) | Yes, QR only | Yes | Yes, three chips | On the device | QR air-gap value |
 | SeedSigner or Krux | About $50-80 in parts | Yes, stateless QR | Yes | None: stateless | On the device | Building your own |
@@ -42,7 +42,7 @@ The Coldcard prices are the store's reduced prices on 26 October 2026; the list 
 
 The 2026 incident made one thing measurable: the practices around a device protected people better than the device itself. Coldcard owners who had used dice entropy, a strong passphrase or multisig lost nothing; owners who trusted the device's defaults lost everything. Decide on the practices first:
 
-1. Supply your own entropy. A seed you [make yourself with dice](/docs/learn/keys/random/) and then restore onto the device works with every device we recommend, and it removes the exact failure that cost Coldcard users $116 million. The Keystone 3 Pro and SeedSigner also take dice rolls on the device, and BitBox and Foundation document procedures of their own; the entropy table below lists each.
+1. Supply your own entropy. A seed you [make yourself with dice](/docs/learn/keys/random/) and then restore onto the device works with every device we recommend, and it removes the exact failure that cost Coldcard users $116 million. The Keystone 3 Pro and SeedSigner also take dice rolls on the device, and BitBox, Blockstream and Foundation document procedures of their own; the entropy table below lists each.
 2. Add a [passphrase](/docs/learn/keys/passphrase/) for any balance you would miss. In July 2026 it was the difference between drained and untouched.
 3. Use [multisig](/docs/learn/wallets/multisig/) across vendors for significant holdings, so that no single vendor's mistake can reach your funds.
 
@@ -114,7 +114,7 @@ The Jade and Jade Plus are the verifiable-security pick: fully open source, able
 | Connectivity | USB, Bluetooth, and a camera for QR air-gapping |
 | Open source | Yes, fully |
 | Secure element | No: a virtual "blind oracle" model |
-| Dice entropy | Not on the device: restore a seed you made with dice. By default it mixes several entropy sources, and wallet apps can add their own |
+| Dice entropy | Not on the device. Blockstream documents dice methods for choosing the words, and the Jade calculates valid last words; or restore a seed you made with dice. By default it mixes several entropy sources, and wallet apps can add their own |
 | Coins | Bitcoin and Liquid |
 | Strengths | A real QR air-gap at a low price, anti-exfiltration signing, several entropy sources, an exemplary response to the 2026 incident |
 | Weaknesses | No hardware secure element, so the oracle model needs understanding; the camera workflow is slower than USB |
@@ -236,7 +236,7 @@ This table is the lesson of 2026: where the randomness in your seed comes from, 
 | Keystone 3 Pro | Dice rolls on the device, firmware 1.2.6 or later | Enter the same rolls in a second tool and compare the words |
 | BitBox02 and Nova | BitBox's diceware procedure: dice pick 23 words from a table, the device offers valid last words | You chose the words; documented for the BitBox02 |
 | Passport Prime | Draw words yourself and import them; an app tests the device's own generator | You chose the words |
-| Jade and Jade Plus | Restore a seed you made with dice; by default several internal sources are mixed | Your dice seed is checked by the [dice guide](/docs/learn/keys/random/); the firmware is open |
+| Jade and Jade Plus | Blockstream's dice methods: dice pick 23 words from a table, the device calculates valid last words; by default several internal sources are mixed | You chose the words; the firmware is open |
 | Trezor Safe 5 and 7 | Restore a seed you made with dice; no dice entry on the device | Trezor Suite's entropy check confirms the device mixed in the computer's randomness |
 | Coldcard Mk5 and Q | Dice rolls on the device (the dice path was never affected) | Compare against a manual derivation |
 | Ledger | Restore a seed you made with dice | Otherwise, trust the certification |

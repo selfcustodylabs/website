@@ -82,7 +82,7 @@ Connect by USB and set the wallet up in the BitBoxApp: restore the 24 words you 
 
 ### Jade and Jade Plus
 
-The Jade has no dice entry, so restore the 24 words you made with dice on the device, and choose QR mode for air-gapped use. For multisig, export the key to Sparrow by scanning the QR code the Jade displays.
+The Jade has no dice entry on the device: restore the 24 words you made with dice, or choose 23 words with Blockstream's dice method and let the Jade calculate the last, then choose QR mode for air-gapped use. For multisig, export the key to Sparrow by scanning the QR code the Jade displays.
 
 ### Keystone
 

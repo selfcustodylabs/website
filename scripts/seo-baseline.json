@@ -4182,7 +4182,7 @@
     },
     "/notes/correction-device-dice-entry/": {
       "title": "Correction: which hardware wallets take dice rolls | Self Custody Labs",
-      "description": "We said every device we recommend lets you mix in your own dice rolls. The Trezor Safe and Jade do not. What is true as of October 2026, and what changed.",
+      "description": "We said every device we recommend takes your own dice rolls. The Trezor Safe cannot, and most others take them off the device. What is true in October 2026.",
       "canonical": "https://selfcustodylabs.com/notes/correction-device-dice-entry/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
