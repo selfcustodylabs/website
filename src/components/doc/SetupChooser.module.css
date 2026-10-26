@@ -1,0 +1,120 @@
+.chooser {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border: var(--scl-rule-strong);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
+}
+
+.question {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.question legend {
+  margin-bottom: 0.55rem;
+  padding: 0;
+  color: var(--scl-ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+/* The radio stays in the page for keyboards and screen readers; the label is
+   what you see and click. */
+.options input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.options label {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: var(--scl-radius);
+  color: var(--scl-ink-2);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.options label:hover {
+  border-color: var(--scl-muted);
+  color: var(--scl-ink);
+}
+
+.options input:checked + label {
+  border-color: var(--scl-amber);
+  background: var(--scl-amber-wash);
+  color: var(--scl-ink);
+}
+
+.options input:focus-visible + label {
+  outline: 2px solid var(--scl-amber);
+  outline-offset: 2px;
+}
+
+.results {
+  padding-top: 0.9rem;
+  border-top: var(--scl-rule);
+}
+
+.prompt,
+.result p {
+  margin: 0;
+}
+
+.prompt {
+  color: var(--scl-muted);
+  font-size: 0.875rem;
+}
+
+.result {
+  display: none;
+}
+
+.tier {
+  color: var(--scl-amber);
+  font: 600 0.72rem var(--scl-font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.setup {
+  margin-top: 0.3rem !important;
+  color: var(--scl-ink);
+  font-size: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-top: 0.5rem !important;
+  font-size: 0.9rem;
+}
+
+/* Once an amount is picked, the prompt goes and one result shows: the tier for
+   the amount, or the one above it if a risk factor applies. */
+.chooser:has([name="amount"]:checked) .prompt {
+  display: none;
+}
+
+.chooser:has(.a0:checked):has(.rNo:checked) .t0,
+.chooser:has(.a1:checked):has(.rNo:checked) .t1,
+.chooser:has(.a2:checked):has(.rNo:checked) .t2,
+.chooser:has(.a3:checked):has(.rNo:checked) .t3,
+.chooser:has(.a0:checked):has(.rYes:checked) .t1,
+.chooser:has(.a1:checked):has(.rYes:checked) .t2,
+.chooser:has(.a2:checked):has(.rYes:checked) .t3,
+.chooser:has(.a3:checked):has(.rYes:checked) .t3 {
+  display: block;
+}

@@ -44,6 +44,8 @@ const DROP_COMPONENTS = [
   "SectionBadge",
   "RelatedArticles",
   "FeaturedImage",
+  // Interactive restatement of the tier table on choosing-your-path.
+  "SetupChooser",
 ];
 
 /** Layout wrappers around real content. Tags go, the content inside stays. */

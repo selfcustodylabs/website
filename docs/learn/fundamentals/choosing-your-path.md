@@ -8,6 +8,8 @@ slug: /learn/fundamentals/choosing-your-path
 date: "2026-01-15"
 ---
 
+import SetupChooser from "@site/src/components/SetupChooser";
+
 # Choose your self-custody setup
 
 Choose the setup by how much bitcoin you hold now and expect to hold in the next year or two. Under about $1,000, a free wallet app on your phone is enough while you learn. From $1,000, use a hardware wallet with a metal backup. From $10,000, add a seed made with dice, a passphrase and your own node. Above $100,000, move to multisig, with keys on devices from different makers kept in different places. If you are unsure, the hardware wallet setup is right for most people, and the choice between reputable devices matters far less than getting off the exchange.
@@ -24,6 +26,8 @@ Choose the setup by how much bitcoin you hold now and expect to hold in the next
 </div>
 
 The bands are the same as on [assess your threat model](/docs/learn/fundamentals/threat-models/), which also covers the factors that move you up a tier regardless of amount: being publicly known to hold bitcoin, living under capital controls or an unstable government, or facing someone who has singled you out. Your technical comfort matters less than you might expect. If you are new, start at a lower tier and move up; most of these setups take a weekend of careful work, and testing each step is worth the extra time.
+
+<SetupChooser />
 
 ## What is the starter setup, for under $1,000?
 
