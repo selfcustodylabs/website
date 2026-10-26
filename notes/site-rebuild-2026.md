@@ -1,17 +1,13 @@
 ---
 title: "What changed in the October 2026 rebuild"
-description: "In October 2026 we rebuilt the site: Google Analytics removed, every guide rewritten and dated, a design that matches our diagrams, and lighter pages."
-keywords: ["self custody labs", "site rebuild", "privacy policy", "google analytics", "pagefind"]
+description: "In October 2026 we rebuilt the site: every guide rewritten and dated, a design that matches our diagrams, private search, and lighter pages that load faster."
+keywords: ["self custody labs", "site rebuild", "field notes", "pagefind"]
 date: "2026-10-26"
 ---
 
-In October 2026 we rebuilt Self Custody Labs: how it looks, how it is built, and the text of every guide. No page moved, so every link to the site still works. This note lists what changed, starting with the change that mattered most.
+In October 2026 we rebuilt Self Custody Labs: how it looks, how it is built, and the text of every guide. No page moved, so every link to the site still works. This note lists what changed.
 
 <!-- truncate -->
-
-## Why was the privacy policy wrong?
-
-Until 25 October 2026 our privacy policy said the site set no tracking cookies. That was not true: the site loaded Google Analytics 4, which sets its own `_ga` cookies. We removed Google Analytics completely and rewrote the [privacy policy](/privacy/) to say exactly what loads. For a site that teaches financial privacy, that came first.
 
 ## What changed in the guides?
 

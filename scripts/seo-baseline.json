@@ -4259,7 +4259,7 @@
     },
     "/notes/site-rebuild-2026/": {
       "title": "What changed in the October 2026 rebuild | Self Custody Labs",
-      "description": "In October 2026 we rebuilt the site: Google Analytics removed, every guide rewritten and dated, a design that matches our diagrams, and lighter pages.",
+      "description": "In October 2026 we rebuilt the site: every guide rewritten and dated, a design that matches our diagrams, private search, and lighter pages that load faster.",
       "canonical": "https://selfcustodylabs.com/notes/site-rebuild-2026/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
