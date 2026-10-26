@@ -8,8 +8,10 @@ on:
   # example right after the Cloudflare token and account ID are added.
   workflow_dispatch:
 
+# Read-only: the job only checks out the repository. Write access was needed
+# to push the gh-pages branch, which ended with the move to Cloudflare Pages.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   deploy:
@@ -50,35 +52,16 @@ jobs:
       - name: Check SEO snapshot
         run: npm run seo:check
 
-      # Popular action to deploy to GitHub Pages:
-      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4.1.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Build output to publish to the `gh-pages` branch:
-          publish_dir: ./build
-          publish_branch: gh-pages
-          # The following lines assign commit authorship to the official
-          # GH-Actions bot for deploys to `gh-pages` branch:
-          # https://github.com/actions/checkout/issues/13#issuecomment-724415212
-          # The GH actions bot is used by default if you didn't specify the two fields.
-          # You can swap them out with your own user credentials.
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
-
-      # Cloudflare Pages is the primary host once DNS points there. The build
-      # already contains _redirects (real 301s) and _headers (CSP, HSTS,
-      # caching), both written by plugins/cloudflare. GitHub Pages above keeps
-      # deploying the same build as the rollback target until the rollback
-      # window closes; see "Deploy & hosting boundaries" in CLAUDE.md.
+      # Cloudflare Pages serves the site. The build already contains _redirects
+      # (real 301s) and _headers (CSP, HSTS, caching), both written by
+      # plugins/cloudflare.
       #
-      # Gated on the CLOUDFLARE_ACCOUNT_ID repository *variable* (not a secret:
-      # an account ID grants nothing), so the step is skipped until the move is
-      # set up. The API token is a secret handed to this step only; putting it
-      # in job-level env would expose it to every npm install script above.
+      # CLOUDFLARE_ACCOUNT_ID is a repository *variable* (not a secret: an
+      # account ID grants nothing). The API token is a secret handed to this
+      # step only; putting it in job-level env would expose it to every npm
+      # install script above. If either is missing the step fails, which is
+      # the point: this is the only deploy.
       - name: Deploy to Cloudflare Pages
-        if: ${{ vars.CLOUDFLARE_ACCOUNT_ID != '' }}
         uses: cloudflare/wrangler-action@v4.1.3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

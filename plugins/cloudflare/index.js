@@ -10,7 +10,7 @@
  *
  * On Cloudflare a `_redirects` rule wins even when a static file exists at the
  * same path, so the meta-refresh pages that plugin-client-redirects still writes
- * (for GitHub Pages, during the rollback window) are never served there.
+ * (left from GitHub Pages hosting) are never served.
  *
  * The redirect list is the same one plugin-client-redirects consumes
  * (src/data/redirects.js), expanded here against the built routes. The build
