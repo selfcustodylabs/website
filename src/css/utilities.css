@@ -43,6 +43,51 @@
 }
 
 /*
+ * A photograph beside the text it shows, where the column is wide enough;
+ * below it otherwise, which is simply the source order. The text goes in a
+ * plain <div>, the photo is a plain Markdown image after it:
+ *
+ *   <div class="photo-aside">
+ *   <div>
+ *
+ *   Text...
+ *
+ *   </div>
+ *
+ *   ![alt](/img/...)
+ *
+ *   </div>
+ *
+ * 1100px is where the doc column, between sidebar and table of contents,
+ * reaches about 35rem: narrower than that, the text beside a photo wraps too
+ * tightly to read.
+ */
+.photo-aside img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1100px) {
+  .photo-aside {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(13rem, 38%);
+    gap: 1.75rem;
+    align-items: start;
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
+  }
+
+  .photo-aside > div > :last-child,
+  .photo-aside > p {
+    margin-bottom: 0;
+  }
+
+  .photo-aside > p {
+    margin-top: 0.3rem;
+  }
+}
+
+/*
  * Section-index entries on a few docs index pages: a titled block with a
  * hairline above it, not a card.
  */

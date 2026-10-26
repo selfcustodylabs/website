@@ -77,15 +77,25 @@ If any of these is not true, the seed may be exposed before you finish making it
 
 ### Casino dice
 
+<div class="photo-aside">
+<div>
+
 Casino-grade dice are precision-machined with flush, filled pips, so every face weighs the same. Ordinary dice have material drilled out for each pip, which makes some faces very slightly more likely than others.
 
 That bias is small and not dangerous here: across 256 bits, a fraction-of-a-percent bias per face costs a negligible amount of entropy. Casino dice remove the question, and they are cheap.
 
 Rolling several dice at once does not cancel out a die's bias, because each die still produces its own slightly biased bit. Throwing 5 to 10 dice at a time only makes the process faster, collecting 5 to 10 bits per throw instead of one.
 
+</div>
+
 ![Blue and green translucent casino dice on a grey surface, the kind with flush, filled pips used for seed generation](/img/seed/dice.webp)
 
+</div>
+
 ### An air-gapped computer
+
+<div class="photo-aside">
+<div>
 
 An air-gapped computer is one that has never been connected to the internet and is physically unable to connect. Two options suit this guide:
 
@@ -94,7 +104,11 @@ An air-gapped computer is one that has never been connected to the internet and 
 
 You do need a computer. Steps 1, 2 and 4 can be done with pen and paper, but step 3 computes a SHA-256 hash, which cannot practically be done by hand.
 
+</div>
+
 ![A Raspberry Pi Zero 1.3 circuit board, the model without wireless hardware](/img/seed/rpizero.webp)
+
+</div>
 
 ### Paper and pen
 
@@ -102,9 +116,16 @@ Paper is only a temporary record of the process, and every sheet is burned once 
 
 ### Metal seed storage
 
+<div class="photo-aside">
+<div>
+
 The finished seed phrase goes onto a metal plate, stamped or engraved, which survives the fire, water and slow decay that destroy paper.
 
+</div>
+
 ![A Billfodl steel seed backup with letter tiles slotted into numbered rows](/img/seed/metalseed.webp)
+
+</div>
 
 ## How do 256 dice rolls become 24 words?
 
