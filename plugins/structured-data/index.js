@@ -36,7 +36,7 @@ const STEP = /^Step\s+(\d+)\s*[:.]\s*(.+)$/;
 const FAQ_HEADING = /^(common|frequently asked) questions$/i;
 
 /** Inline Markdown to plain text: what a reader sees, without the markup. */
-function plain(md) {
+export function plain(md) {
   return md
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
@@ -61,7 +61,7 @@ function headingParts(raw) {
  *
  * @param {string} body - Markdown without frontmatter
  */
-function blocks(body) {
+export function blocks(body) {
   const slugger = new GithubSlugger();
   const out = [];
   let fence = null;

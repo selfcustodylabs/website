@@ -1,0 +1,217 @@
+/*
+ * The cover: a landing page opens as its own OG card. Words left, evidence band
+ * right, the band running to the edge of the screen like the card's does.
+ * --landing-wrap and --landing-gutter come from .landing in landing.module.css.
+ */
+
+.cover {
+  /* The words column lines up with the content wrap below it: cqw is the
+     cover's own width, so a classic scrollbar cannot push it out of line
+     the way 100vw would. */
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(40%, 38.75rem);
+  border-bottom: var(--scl-rule);
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 4rem 4rem 2.25rem max(var(--landing-gutter), calc((100cqw - var(--landing-wrap)) / 2));
+}
+
+.brand {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  margin: 0;
+  color: var(--scl-ink);
+  font-family: var(--scl-font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* The card's tally bar. */
+.brand::before {
+  content: "";
+  flex: none;
+  width: 4px;
+  height: 1.375rem;
+  background: var(--scl-amber);
+}
+
+.eyebrow {
+  margin: 3.25rem 0 0;
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 15ch;
+  margin: 1rem 0 0;
+  color: var(--scl-ink);
+  font-size: clamp(2.6rem, 5.2vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.rule {
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: 2rem 0 1.75rem;
+  background: var(--scl-amber);
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 3rem;
+  color: var(--scl-muted);
+  font-family: var(--scl-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+}
+
+.facts a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.plate {
+  color: var(--scl-faint);
+}
+
+/* ---------- band ---------- */
+
+.band {
+  position: relative;
+  min-height: 38rem;
+  overflow: hidden;
+  border-left: var(--scl-rule);
+  background: var(--scl-band);
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark img {
+  width: min(15vw, 13rem);
+  height: auto;
+}
+
+.mark p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--scl-ink-2);
+  font-family: var(--scl-font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--scl-hairline);
+}
+
+.mosaic img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+/* Phone and narrow tablet: the band goes on top, as a strip. */
+@media (max-width: 840px) {
+  .cover {
+    grid-template-columns: 1fr;
+  }
+
+  .words {
+    padding: 2.25rem var(--landing-gutter) 2rem;
+  }
+
+  /* The navbar right above already carries the name. */
+  .brand {
+    display: none;
+  }
+
+  .eyebrow {
+    margin-top: 0;
+  }
+
+  .band {
+    order: -1;
+    min-height: 15rem;
+    border-top: 0;
+    border-bottom: var(--scl-rule);
+    border-left: 0;
+  }
+
+  .mark {
+    gap: 1rem;
+  }
+
+  .mark img {
+    width: 7.5rem;
+  }
+
+  .mark p {
+    gap: 0.3rem;
+    font-size: 0.68rem;
+  }
+}
+
+@media print {
+  .cover {
+    grid-template-columns: 1fr;
+  }
+
+  .band {
+    display: none;
+  }
+}

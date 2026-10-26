@@ -2,11 +2,13 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 
+import Cover, { CoverMark } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
-import GuideTable from "@site/src/components/landing/GuideTable";
-import NotesTable from "@site/src/components/landing/NotesTable";
+import RouteFlow from "@site/src/components/landing/RouteFlow";
+import GuideCards from "@site/src/components/landing/GuideCards";
+import NoteCards from "@site/src/components/landing/NoteCards";
 import InlineLinks from "@site/src/components/InlineLinks";
-import { docs, notes, getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
+import { docs, notes, getDoc, allGuides, lastChange, plates } from "@site/src/components/landing/siteIndex";
 import { currentAdvisory } from "@site/src/data/advisories";
 import { positions } from "@site/src/data/positions";
 import { formatDate } from "@site/src/data/guideFacts";
@@ -15,6 +17,8 @@ import styles from "@site/src/components/landing/landing.module.css";
 import t480s from "@site/src/components/landing/img/t480s-libreboot.webp";
 import pico from "@site/src/components/landing/img/pico-clip.webp";
 import dice from "@site/src/components/landing/img/casino-dice.webp";
+// Written by scripts/generate-og-images.py: the share card's dice, tall.
+import coverDice from "@site/src/components/landing/img/cover-dice.webp";
 
 /** Situations and where each should start: the short form of the Start Here table. */
 const ROUTES = [
@@ -50,7 +54,7 @@ const ROUTES = [
   },
 ];
 
-/** The guides most readers need, in the order they usually need them. */
+/** The guides most readers need, in the order they usually need them. The first is set large. */
 const FEATURED = [
   "/docs/learn/keys/random/",
   "/docs/learn/keys/passphrase/",
@@ -114,133 +118,120 @@ export default function Home() {
       title="Bitcoin Self-Custody Guides & Tutorials"
       description="Learn Bitcoin self-custody: hardware wallet setup, seed phrase security, multisig configurations, privacy best practices, and running your own node. Free step-by-step guides."
     >
-      <main className={styles.page}>
-        {currentAdvisory ? <Bulletin advisory={currentAdvisory} /> : null}
-
-        <p className={`scl-label ${styles.eyebrow}`}>Self Custody Labs</p>
-        <h1 className={styles.title}>Bitcoin self-custody guides</h1>
-        <p className={styles.lede}>
-          How to hold your own bitcoin, written down step by step: making a seed with dice, setting
-          up a hardware wallet, multisig, running your own node, and flashing Libreboot onto a
-          ThinkPad. No affiliate links and no money from the companies we write about. Every page
-          shows the date it last changed.
-        </p>
-        <div className={styles.actions}>
-          <Link to="/docs/learn/fundamentals/" className={styles.primary}>
-            Start here
-          </Link>
-          <Link to="/guides/" className={styles.link}>
-            All {guides.length} guides
-          </Link>
-          <Link to="/about/" className={styles.link}>
-            How we decide what to recommend
-          </Link>
-        </div>
-        <dl className={styles.spec}>
-          <div>
-            <dt>Pages</dt>
-            <dd>{Object.keys(docs).length}</dd>
+      <main className={styles.landing}>
+        {currentAdvisory ? (
+          <div className={`${styles.wide} ${styles.bulletinWrap}`}>
+            <Bulletin advisory={currentAdvisory} />
           </div>
-          <div>
-            <dt>Guides</dt>
-            <dd>{guides.length}</dd>
-          </div>
-          {updated ? (
-            <div>
-              <dt>Last change</dt>
-              <dd>{updated}</dd>
-            </div>
-          ) : null}
-          <div>
-            <dt>Source</dt>
-            <dd>
-              <a href="https://github.com/selfcustodylabs/website">GitHub</a>
-            </dd>
-          </div>
-        </dl>
-
-        <Section id="start" title="Where are you starting from">
-          <table className={`${styles.table} ${styles.routerTable}`}>
-            <thead>
-              <tr>
-                <th scope="col">Situation</th>
-                <th scope="col">Start with</th>
-                <th scope="col">Then</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ROUTES.map((r) => (
-                <tr key={r.situation}>
-                  <th scope="row">{r.situation}</th>
-                  <td data-label="Start">
-                    <Link to={r.start[0]}>{r.start[1]}</Link>
-                  </td>
-                  <td data-label="Then">
-                    <Link to={r.then[0]}>{r.then[1]}</Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Section>
-
-        <Section
-          id="guides"
-          title="The guides"
-          aside={<Link to="/guides/">All {guides.length} guides</Link>}
-        >
-          <GuideTable guides={featured} />
-        </Section>
-
-        <Section
-          id="positions"
-          title="Where we stand"
-          aside={<Link to="/about/">Why, and how we decide</Link>}
-        >
-          <dl className={styles.positions}>
-            {positions.map((p) => (
-              <div key={p.subject} className={styles.position}>
-                <dt>
-                  <span className={styles.subject}>{p.subject}</span>
-                  <span className={styles.stance}>{p.stance}</span>
-                </dt>
-                <dd>
-                  <InlineLinks text={p.text} />
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Section>
-
-        {notes.length > 0 ? (
-          <Section
-            id="notes"
-            title="Field notes"
-            aside={<Link to="/notes/">All {notes.length} notes</Link>}
-          >
-            <NotesTable notes={notes.slice(0, 3)} />
-          </Section>
         ) : null}
 
-        <Section id="hardware" title="Hardware in the guides">
-          <div className={styles.figures}>
-            {FIGURES.map((f, i) => (
-              <figure key={f.link[0]} className={styles.figure}>
-                <img src={f.src} alt={f.alt} width="800" height="600" loading="lazy" decoding="async" />
-                <figcaption>
-                  <span className={styles.figNo}>Fig. {i + 1}</span>
-                  {f.caption} <Link to={f.link[0]}>{f.link[1]}</Link>
-                </figcaption>
-              </figure>
-            ))}
+        <Cover
+          eyebrow="Bitcoin / Self-custody"
+          title={
+            <>
+              Bitcoin <span className={styles.nowrap}>self-custody</span> guides
+            </>
+          }
+          plate={plates["/"]}
+          foot={
+            <>
+              <span>{Object.keys(docs).length} pages</span>
+              <span>{guides.length} guides</span>
+              {updated ? <span>Last change {updated}</span> : null}
+              <span>
+                Source on <a href="https://github.com/selfcustodylabs/website">GitHub</a>
+              </span>
+            </>
+          }
+          band={
+            <CoverMark
+              photo={coverDice}
+              lines={["Dice-rolled seeds", "Air-gapped signing", "Your own node"]}
+            />
+          }
+        >
+          <p className={styles.lede}>
+            How to hold your own bitcoin, written down step by step: making a seed with dice, setting
+            up a hardware wallet, multisig, running your own node, and flashing Libreboot onto a
+            ThinkPad. No affiliate links and no money from the companies we write about. Every page
+            shows the date it last changed.
+          </p>
+          <div className={styles.actions}>
+            <Link to="/docs/learn/fundamentals/" className={styles.primary}>
+              Start here
+            </Link>
+            <Link to="/guides/" className={styles.link}>
+              All {guides.length} guides
+            </Link>
+            <Link to="/about/" className={styles.link}>
+              How we decide what to recommend
+            </Link>
           </div>
-        </Section>
+        </Cover>
 
-        <p className={styles.closing}>
-          Self Custody Labs is published under a pseudonym, with the full source and history of every
-          page <a href="https://github.com/selfcustodylabs/website">on GitHub</a>. Mistakes get
-          corrected in public: <Link to="/about/">how to reach us and check who we are</Link>.
-        </p>
+        <div className={styles.wide}>
+          <Section id="start" title="Where are you starting from">
+            <RouteFlow routes={ROUTES} />
+          </Section>
+
+          <Section
+            id="guides"
+            title="The guides"
+            aside={<Link to="/guides/">All {guides.length} guides</Link>}
+          >
+            <GuideCards guides={featured} />
+          </Section>
+
+          <Section
+            id="positions"
+            title="Where we stand"
+            aside={<Link to="/about/">Why, and how we decide</Link>}
+          >
+            <dl className={styles.positions}>
+              {positions.map((p) => (
+                <div key={p.subject} className={styles.position}>
+                  <dt>
+                    <span className={styles.subject}>{p.subject}</span>
+                    <span className={styles.stance}>{p.stance}</span>
+                  </dt>
+                  <dd>
+                    <InlineLinks text={p.text} />
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Section>
+
+          {notes.length > 0 ? (
+            <Section
+              id="notes"
+              title="Field notes"
+              aside={<Link to="/notes/">All {notes.length} notes</Link>}
+            >
+              <NoteCards notes={notes.slice(0, 3)} />
+            </Section>
+          ) : null}
+
+          <Section id="hardware" title="Hardware in the guides">
+            <div className={styles.figures}>
+              {FIGURES.map((f, i) => (
+                <figure key={f.link[0]} className={styles.figure}>
+                  <img src={f.src} alt={f.alt} width="800" height="600" loading="lazy" decoding="async" />
+                  <figcaption>
+                    <span className={styles.figNo}>Fig. {i + 1}</span>
+                    {f.caption} <Link to={f.link[0]}>{f.link[1]}</Link>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </Section>
+
+          <p className={styles.closing}>
+            Self Custody Labs is published under a pseudonym, with the full source and history of every
+            page <a href="https://github.com/selfcustodylabs/website">on GitHub</a>. Mistakes get
+            corrected in public: <Link to="/about/">how to reach us and check who we are</Link>.
+          </p>
+        </div>
       </main>
     </Layout>
   );

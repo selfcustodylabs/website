@@ -10,6 +10,23 @@
   padding: 2.5rem 0 6rem;
 }
 
+/* /, /learn/ and /guides/: a full-width cover (Cover.jsx), then the content
+   in a wider wrap whose left edge the cover's words line up with. */
+.landing {
+  --landing-wrap: 82.5rem;
+  --landing-gutter: clamp(1rem, 4vw, 3rem);
+  padding-bottom: 6rem;
+}
+
+.wide {
+  width: min(var(--landing-wrap), 100% - 2 * var(--landing-gutter));
+  margin: 0 auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 /* ---------- intro ---------- */
 
 .eyebrow {
@@ -72,46 +89,12 @@
   color: var(--scl-amber-lit);
 }
 
-/* The plate line under the intro: same shape as a guide's facts line. */
-.spec {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.75rem;
-  margin: 2rem 0 0;
-  padding: 0.65rem 0;
-  border-top: 1px solid var(--scl-dim2);
-  border-bottom: var(--scl-rule);
-}
-
-.spec div {
-  display: flex;
-  gap: 0.5rem;
-  align-items: baseline;
-}
-
-.spec dt {
-  color: var(--scl-faint);
-  font-family: var(--scl-font-mono);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.spec dd {
-  margin: 0;
-  color: var(--scl-ink);
-  font-size: 0.875rem;
-}
-
-.spec a {
-  color: var(--scl-ink);
-  text-decoration: underline;
-  text-decoration-color: var(--scl-amber);
-  text-underline-offset: 0.22em;
-}
-
 /* ---------- advisory bulletin ---------- */
+
+/* Above the cover on the homepage. */
+.bulletinWrap {
+  padding-top: 2rem;
+}
 
 .bulletin {
   margin: 0 0 3rem;
@@ -182,6 +165,9 @@
 }
 
 .sectionTitle {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
   margin: 0;
   color: var(--scl-ink);
   font-family: var(--scl-font-mono);
@@ -190,6 +176,15 @@
   letter-spacing: 0.16em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+/* The OG card's tally bar, small. */
+.sectionTitle::before {
+  content: "";
+  flex: none;
+  width: 3px;
+  height: 1rem;
+  background: var(--scl-amber);
 }
 
 .sectionAside {
@@ -295,59 +290,7 @@
   text-transform: uppercase;
 }
 
-.none {
-  color: var(--scl-faint);
-}
-
-.date {
-  white-space: nowrap;
-}
-
-.check {
-  display: block;
-  color: var(--scl-ok);
-  font-size: 0.8rem;
-}
-
-/* Fixed layout so the columns line up across the grouped tables on /guides/. */
-.guideTable {
-  table-layout: fixed;
-}
-
-.guideTable th:nth-child(1) {
-  width: 34%;
-}
-
-.guideTable th:nth-child(2) {
-  width: 19%;
-}
-
-.guideTable th:nth-child(3) {
-  width: 22%;
-}
-
-.guideTable th:nth-child(4) {
-  width: 14%;
-}
-
-/* Router: situation, then two links. */
-.routerTable th[scope="row"] {
-  width: 38%;
-  color: var(--scl-ink);
-}
-
-.routerTable td a {
-  color: var(--scl-ink);
-  text-decoration: underline;
-  text-decoration-color: var(--scl-amber);
-  text-underline-offset: 0.22em;
-}
-
-.routerTable td a:hover {
-  color: var(--scl-amber-lit);
-}
-
-/* Contents table on /learn/: title, then what the page answers. */
+/* Contents table (/worksheets/): title, then what the page is for. */
 .contentsTable {
   table-layout: fixed;
 }
@@ -408,15 +351,6 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-  }
-
-  .date {
-    white-space: normal;
-  }
-
-  .check {
-    display: inline;
-    margin-left: 0.5rem;
   }
 }
 
