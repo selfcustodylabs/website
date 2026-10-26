@@ -14,9 +14,9 @@
  * printing silently write nothing, hence the copy. Output goes to static/worksheets/<slug>-a4.pdf and -letter.pdf and is
  * committed, like the OG cards; npm run check fails if one is missing.
  *
- * Reruns are quiet in git: Chromium stamps the time into every PDF, so a new
- * file whose only difference from the committed one is that stamp is
- * discarded and the committed file kept.
+ * Reruns are quiet in git: Chromium stamps the time into every PDF and numbers
+ * its accessibility tags differently each run, so a new file that differs from
+ * the committed one only in those is discarded and the committed file kept.
  *
  * Chromium comes from $CHROMIUM, or the first of chromium, chromium-browser,
  * google-chrome on PATH.
@@ -57,9 +57,17 @@ function chromium() {
   throw new Error("[worksheets] no Chromium found; set CHROMIUM to its path");
 }
 
-/** The PDF with Chromium's creation and modification stamps blanked out. */
+/**
+ * The PDF without what changes on every run: the creation and modification
+ * stamps, and the accessibility tags' element ids and the table-header
+ * references to them, which Chromium numbers from DOM nodes and which shift
+ * between runs of the same page.
+ */
 const withoutStamps = (buf) =>
-  buf.toString("latin1").replace(/\/(CreationDate|ModDate|Producer) \([^)]*\)/g, "/$1 ()");
+  buf
+    .toString("latin1")
+    .replace(/\/(CreationDate|ModDate|Producer) \([^)]*\)/g, "/$1 ()")
+    .replace(/\(node\d+\)/g, "(node)");
 
 const { worksheets } = await import(join(ROOT, "src/data/worksheets.js"));
 
