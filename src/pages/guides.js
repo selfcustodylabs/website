@@ -3,9 +3,10 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Head from "@docusaurus/Head";
 
+import Cover, { CoverMosaic } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
-import GuideTable from "@site/src/components/landing/GuideTable";
-import { allGuides, absolute } from "@site/src/components/landing/siteIndex";
+import PageRows from "@site/src/components/landing/PageRows";
+import { allGuides, getDoc, plates, absolute } from "@site/src/components/landing/siteIndex";
 import styles from "@site/src/components/landing/landing.module.css";
 
 const TITLE = "Bitcoin Self-Custody Guides: Setup, Security & Privacy";
@@ -31,6 +32,22 @@ const GROUPS = [
   },
   { id: "node", label: "Your own node", prefixes: ["/docs/bitcoin-node/"] },
   { id: "projects", label: "Side projects", prefixes: ["/docs/nostr-signing-device/"] },
+];
+
+/**
+ * The cover's band: one guide from each kind of work, so the mosaic shows the
+ * range (photographs and drawn motifs) rather than three dice in a row.
+ */
+const MOSAIC = [
+  "/docs/learn/keys/random/",
+  "/docs/learn/wallets/multisig/",
+  "/docs/seedsigner/",
+  "/docs/wallet-setup/hardware-wallet/",
+  "/docs/libreboot/",
+  "/docs/bitcoin-node/",
+  "/docs/learn/privacy/coinjoin/",
+  "/docs/wallet-setup/backup-verification/",
+  "/docs/nostr-signing-device/",
 ];
 
 function groupGuides(guides) {
@@ -73,20 +90,37 @@ export default function GuidesPage() {
       <Head>
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Head>
-      <main className={styles.page}>
-        <p className={`scl-label ${styles.eyebrow}`}>Guides</p>
-        <h1 className={styles.title}>Self-custody guides</h1>
-        <p className={styles.lede}>
-          {guides.length} hands-on guides, each with the time, cost and skill it takes. Several run
-          over more than one page, and every guide shows the date it last changed. If a term is new
-          to you, the <Link to="/learn/">Learn</Link> pages explain it first.
-        </p>
+      <main className={styles.landing}>
+        <Cover
+          eyebrow="Guides"
+          title={
+            <>
+              <span className={styles.nowrap}>Self-custody</span> guides
+            </>
+          }
+          plate={plates["/guides/"]}
+          foot={
+            <>
+              <span>{guides.length} guides</span>
+              <span>{groups.length} groups</span>
+            </>
+          }
+          band={<CoverMosaic bands={MOSAIC.map((p) => getDoc(p).band)} />}
+        >
+          <p className={styles.lede}>
+            {guides.length} hands-on guides, each with the time, cost and skill it takes. Several run
+            over more than one page, and every guide shows the date it last changed. If a term is new
+            to you, the <Link to="/learn/">Learn</Link> pages explain it first.
+          </p>
+        </Cover>
 
-        {groups.map((group) => (
-          <Section key={group.id} id={group.id} title={group.label}>
-            <GuideTable guides={group.guides} detailed />
-          </Section>
-        ))}
+        <div className={styles.wide}>
+          {groups.map((group) => (
+            <Section key={group.id} id={group.id} title={group.label}>
+              <PageRows pages={group.guides} guides />
+            </Section>
+          ))}
+        </div>
       </main>
     </Layout>
   );

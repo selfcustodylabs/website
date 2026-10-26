@@ -3,7 +3,9 @@
 
 Walks docs/**/*.md and *.mdx, parses the frontmatter title, and renders a 1200x630 PNG
 to static/img/og/ following the URL slug structure. Writes a manifest file
-at src/data/ogManifest.json mapping doc URL paths to image paths.
+at src/data/ogManifest.json mapping doc URL paths to image paths, each card's
+right band alone to static/img/og/band/ (the landing pages' guide cards), and
+the homepage cover's dice to src/components/landing/img/cover-dice.webp.
 
 Design system
 -------------
@@ -35,7 +37,11 @@ DOCS = ROOT / "docs"
 NOTES = ROOT / "notes"
 IMG_DIR = ROOT / "static" / "img"
 OG_DIR = IMG_DIR / "og"
+# Each card's right band alone, same file name as the card (.webp).
+BAND_DIR = OG_DIR / "band"
 MANIFEST = ROOT / "src" / "data" / "ogManifest.json"
+# The homepage cover's dice, imported by src/pages/index.js so the bundler hashes it.
+COVER_BAND = ROOT / "src" / "components" / "landing" / "img" / "cover-dice.webp"
 BRAND_CARD = IMG_DIR / "social-card.png"
 LOGO_MARK = Path(__file__).resolve().parent / "assets" / "logo-mark.png"
 BRAND_PHOTO = IMG_DIR / "seed" / "dice.webp"
@@ -343,17 +349,20 @@ def render_card(title, url, out_path):
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.resize((WIDTH, HEIGHT), Image.LANCZOS).save(out_path, "PNG", optimize=True)
 
+    # The band on its own, right of the hairline, for the guide cards and rows
+    # on /, /learn/ and /guides/: the page lists show the same evidence the
+    # share card does.
+    band = img.crop(((BAND_X + 1) * SCALE, 0, WIDTH * SCALE, HEIGHT * SCALE))
+    BAND_DIR.mkdir(parents=True, exist_ok=True)
+    band.resize((BAND_W - 1, HEIGHT), Image.LANCZOS).save(
+        BAND_DIR / out_path.with_suffix(".webp").name, "WEBP", quality=80, method=6
+    )
 
-def render_brand_card(out_path):
-    """The site-wide card: the logo over the dice, for every non-doc route.
 
-    This one deliberately breaks the left-words/right-evidence split the doc
-    cards use. It is the cover of the set, not a member of it, so the mark leads
-    and the dice run full bleed behind it: rolling your own entropy is the thing
-    the whole site is about.
-    """
-    w, h = WIDTH * SCALE, HEIGHT * SCALE
-
+def brand_photo(w, h, blur):
+    """The dice photograph as the brand card uses it: cover-cropped to w x h,
+    exposure-normalised, toned to the set's temperature, thrown out of focus
+    and sunk towards the background."""
     src = Image.open(BRAND_PHOTO).convert("RGB")
     k = max(w / src.width, h / src.height)
     src = src.resize((max(w, int(src.width * k)), max(h, int(src.height * k))), Image.LANCZOS)
@@ -369,10 +378,29 @@ def render_brand_card(out_path):
         grey.point(lambda p: int(p * 0.86)),
         grey.point(lambda p: int(p * 0.62))]), 0.90)
 
-    # Throw the dice out of focus. They stay recognisable as dice while the mark
-    # and the headline become the only sharp things on the card.
-    photo = photo.filter(ImageFilter.GaussianBlur(5 * SCALE))
-    photo = Image.blend(Image.new("RGB", photo.size, BG), photo, 0.42)
+    # Out of focus: the dice stay recognisable while whatever sits on top of
+    # them is the only sharp thing.
+    photo = photo.filter(ImageFilter.GaussianBlur(blur))
+    return Image.blend(Image.new("RGB", photo.size, BG), photo, 0.42)
+
+
+def render_cover_band(out_path):
+    """The homepage cover's right band: the brand card's dice, tall. The mark
+    goes on top in HTML, so it stays sharp and the image needs no text."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    brand_photo(900, 1000, 6).save(out_path, "WEBP", quality=80, method=6)
+
+
+def render_brand_card(out_path):
+    """The site-wide card: the logo over the dice, for every non-doc route.
+
+    This one deliberately breaks the left-words/right-evidence split the doc
+    cards use. It is the cover of the set, not a member of it, so the mark leads
+    and the dice run full bleed behind it: rolling your own entropy is the thing
+    the whole site is about.
+    """
+    w, h = WIDTH * SCALE, HEIGHT * SCALE
+    photo = brand_photo(w, h, 5 * SCALE)
 
     # Vignette, weighted to the centre where the type sits.
     vig = Image.new("L", photo.size, 0)
@@ -443,7 +471,9 @@ def main():
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     render_brand_card(BRAND_CARD)
-    print(f"Generated {count} OG images + social-card.png, manifest at {MANIFEST.relative_to(ROOT)}")
+    render_cover_band(COVER_BAND)
+    print(f"Generated {count} OG images and bands + social-card.png + homepage cover, "
+          f"manifest at {MANIFEST.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,632 @@
+/*
+ * What the landing pages list: guide cards, page rows, note cards and the
+ * starting-point flow. Each guide carries its OG card's band, eyebrow and
+ * plate, so the site shows the same set of cards its links do.
+ */
+
+.eyebrow {
+  margin: 0;
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.plate {
+  color: var(--scl-faint);
+  letter-spacing: 0.06em;
+}
+
+.none {
+  color: var(--scl-faint);
+}
+
+.check {
+  display: block;
+  color: var(--scl-ok);
+}
+
+.date {
+  white-space: nowrap;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- facts (time, cost, level) ---------- */
+
+.facts {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.facts > div {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.facts dt {
+  padding-top: 0.2em;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--scl-ink-2);
+}
+
+/* Level: the words, with a five-segment gauge in front. */
+.level {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.55rem;
+  align-items: center;
+}
+
+.gauge {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.gauge span {
+  width: 0.8rem;
+  height: 0.375rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: 1px;
+}
+
+.gauge .on {
+  border-color: var(--scl-ink-2);
+  background: var(--scl-ink-2);
+}
+
+/* ---------- guide cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  border: var(--scl-rule);
+  border-radius: var(--scl-radius);
+  background: var(--scl-bg);
+}
+
+.card:hover {
+  border-color: var(--scl-amber);
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-bottom: var(--scl-rule);
+  background: var(--scl-band);
+}
+
+.cardMedia img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem 1.1rem 0.9rem;
+}
+
+.cardName {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.cardName a {
+  color: var(--scl-ink);
+  text-decoration: none;
+}
+
+/* The heading link covers the whole card. */
+.cardName a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--scl-radius);
+}
+
+.card:hover .cardName a {
+  color: var(--scl-amber-lit);
+}
+
+.cardName a:focus-visible {
+  outline: none;
+}
+
+.cardName a:focus-visible::after {
+  outline: 2px solid var(--scl-amber);
+  outline-offset: -2px;
+}
+
+.cardText {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--scl-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.cardFacts {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: var(--scl-rule);
+}
+
+.cardFoot {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0.35rem 0 0;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+/* The first card: band on the left, the opening sentence in full. */
+.feature {
+  grid-column: span 2;
+  flex-direction: row;
+}
+
+.feature .cardMedia {
+  flex: none;
+  width: 46%;
+  aspect-ratio: auto;
+  border-right: var(--scl-rule);
+  border-bottom: 0;
+}
+
+.feature .cardBody {
+  gap: 0.75rem;
+  padding: 1.6rem 1.6rem 1.1rem;
+}
+
+.feature .cardName {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.feature .cardText {
+  display: block;
+  color: var(--scl-ink-2);
+  font-size: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .feature .cardMedia {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    border-right: 0;
+    border-bottom: var(--scl-rule);
+  }
+
+  .feature .cardBody {
+    padding: 1.1rem 1.1rem 0.9rem;
+  }
+}
+
+/* ---------- page rows (/learn/, /guides/) ---------- */
+
+.rows {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem 1.25rem;
+  align-items: start;
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: var(--scl-rule);
+}
+
+.guideRows .row {
+  grid-template-columns: 5.5rem minmax(0, 1fr) minmax(0, 1.45fr);
+  gap: 0.5rem 1.75rem;
+  padding: 1.25rem 0;
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 40%;
+  border: var(--scl-rule);
+  border-radius: 4px;
+  background: var(--scl-band);
+}
+
+.rowName {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.rowName a {
+  color: var(--scl-ink);
+  text-decoration: none;
+}
+
+/* The name's link covers the row, thumbnail included. */
+.rowName a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.row:hover .rowName a {
+  color: var(--scl-amber-lit);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.rowName a:focus-visible {
+  outline: none;
+}
+
+.rowName a:focus-visible::after {
+  outline: 2px solid var(--scl-amber);
+  outline-offset: 2px;
+}
+
+.rowLead {
+  max-width: 74ch;
+  margin: 0.3rem 0 0;
+  color: var(--scl-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.rowMeta {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* On /guides/ the facts sit in four columns that line up down the page. */
+.rowFacts {
+  grid-template-columns: 0.9fr 1.35fr 1fr 0.9fr;
+  gap: 1.25rem;
+}
+
+.rowFacts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Gauge above the words, so the column reads the same for every level. */
+.rowFacts .level {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .guideRows .row {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.5rem 1.25rem;
+  }
+
+  .rowFacts {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .rowFacts > div {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .rowFacts .level {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .date {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .row,
+  .guideRows .row {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 0.4rem 1rem;
+  }
+
+  .rowFacts {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- note cards (homepage) ---------- */
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  margin: 0;
+  overflow: hidden;
+  border: var(--scl-rule);
+  border-radius: var(--scl-radius);
+}
+
+.note:hover {
+  border-color: var(--scl-amber);
+}
+
+.note img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-right: var(--scl-rule);
+  background: var(--scl-band);
+}
+
+.note > div {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.noteDate {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.noteName {
+  margin: 0.35rem 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.noteName a {
+  color: var(--scl-ink);
+  text-decoration: none;
+}
+
+.noteName a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.note:hover .noteName a {
+  color: var(--scl-amber-lit);
+}
+
+.noteName a:focus-visible {
+  outline: none;
+}
+
+.noteName a:focus-visible::after {
+  outline: 2px solid var(--scl-amber);
+  outline-offset: -2px;
+}
+
+.noteText {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--scl-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+@media (max-width: 1100px) {
+  .notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- starting-point flow (homepage) ---------- */
+
+.flow {
+  margin: 1.5rem 0 0;
+}
+
+.flow ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flowHead,
+.route {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 4rem minmax(0, 1fr) 4rem minmax(0, 1fr);
+  align-items: center;
+}
+
+.flowHead {
+  margin-bottom: 0.6rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.route {
+  margin: 0;
+}
+
+.situation {
+  padding-right: 1rem;
+  color: var(--scl-ink);
+}
+
+/* A wire with an arrowhead, as in the diagrams: amber to the subject, grey after it. */
+.wire {
+  position: relative;
+  height: 1px;
+  margin: 0 0.6rem;
+  background: var(--scl-dim2);
+}
+
+.wire::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -1px;
+  border-top: 4.5px solid transparent;
+  border-bottom: 4.5px solid transparent;
+  border-left: 7px solid var(--scl-dim2);
+}
+
+.wire.hot {
+  background: var(--scl-amber);
+}
+
+.wire.hot::after {
+  border-left-color: var(--scl-amber);
+}
+
+.box {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: var(--scl-radius);
+  color: var(--scl-ink-2);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.box:hover {
+  border-color: var(--scl-muted);
+  color: var(--scl-ink);
+  text-decoration: none;
+}
+
+.box.hot {
+  border: 1.5px solid var(--scl-amber);
+  color: var(--scl-ink);
+}
+
+.box.hot:hover {
+  background: var(--scl-amber-wash);
+  color: var(--scl-ink);
+}
+
+@media (max-width: 760px) {
+  .flowHead {
+    display: none;
+  }
+
+  .flow ul {
+    gap: 0;
+  }
+
+  .route {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    border-bottom: var(--scl-rule);
+  }
+
+  .route:first-child {
+    padding-top: 0;
+  }
+
+  .wire {
+    display: none;
+  }
+}

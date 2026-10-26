@@ -201,6 +201,21 @@ for (const url of Object.keys(manifest)) {
   if (!seenUrls.has(url)) errors.push(`src/data/ogManifest.json: ${url} has no doc or note (stale card)`);
 }
 
+// Every card has its band (the landing pages' thumbnails, written by the same
+// generator run), and no band outlives its card.
+{
+  const bandOf = (card) => card.replace(/^\/img\/og\//, "").replace(/\.png$/, ".webp");
+  const expected = new Set(Object.values(manifest).map(bandOf));
+  const dir = join(ROOT, "static", "img", "og", "band");
+  const present = new Set(existsSync(dir) ? readdirSync(dir) : []);
+  for (const band of expected) {
+    if (!present.has(band)) errors.push(`static/img/og/band/${band} is missing (run scripts/generate-og-images.py)`);
+  }
+  for (const band of present) {
+    if (!expected.has(band)) errors.push(`static/img/og/band/${band} has no card (stale band)`);
+  }
+}
+
 // Every worksheet has both PDFs (scripts/build-worksheets.mjs), and no PDF is
 // left over from a sheet that no longer exists.
 {

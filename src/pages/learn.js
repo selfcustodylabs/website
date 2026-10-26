@@ -3,8 +3,10 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Head from "@docusaurus/Head";
 
+import Cover, { CoverMosaic } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
-import { sidebars, getDoc, absolute } from "@site/src/components/landing/siteIndex";
+import PageRows from "@site/src/components/landing/PageRows";
+import { sidebars, getDoc, plates, absolute } from "@site/src/components/landing/siteIndex";
 import styles from "@site/src/components/landing/landing.module.css";
 
 const TITLE = "Learn Bitcoin Self-Custody: Keys, Wallets, Transactions & Privacy";
@@ -20,34 +22,6 @@ const REFERENCE = [
 ];
 
 const slug = (label) => label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
-function ContentsTable({ permalinks }) {
-  return (
-    <table className={`${styles.table} ${styles.contentsTable}`}>
-      <thead>
-        <tr>
-          <th scope="col">Page</th>
-          <th scope="col">What it covers</th>
-        </tr>
-      </thead>
-      <tbody>
-        {permalinks.map((permalink) => {
-          const doc = getDoc(permalink);
-          return (
-            <tr key={permalink}>
-              <th scope="row">
-                <Link to={permalink} className={styles.rowLink}>
-                  {doc.title}
-                </Link>
-              </th>
-              <td>{doc.description}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-}
 
 export default function LearnPage() {
   // The learn sidebar's categories, in sidebar order: the same structure the
@@ -84,32 +58,53 @@ export default function LearnPage() {
       <Head>
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Head>
-      <main className={styles.page}>
-        <p className={`scl-label ${styles.eyebrow}`}>Learn</p>
-        <h1 className={styles.title}>Learn Bitcoin self-custody</h1>
-        <p className={styles.lede}>
-          The concepts behind the guides, in reading order: what bitcoin and self-custody are, how
-          keys and seed phrases work, the kinds of wallet, how transactions move coins, privacy, and
-          nodes. Read from the top if you are new; every page also stands on its own.
-        </p>
-        <div className={styles.actions}>
-          <Link to="/docs/learn/fundamentals/" className={styles.primary}>
-            Start here
-          </Link>
-          <Link to="/guides/" className={styles.link}>
-            Hands-on guides
-          </Link>
-        </div>
+      <main className={styles.landing}>
+        <Cover
+          eyebrow="Learn"
+          title={
+            <>
+              Learn Bitcoin <span className={styles.nowrap}>self-custody</span>
+            </>
+          }
+          plate={plates["/learn/"]}
+          foot={
+            <>
+              <span>{listed.length} pages</span>
+              <span>{sections.length} sections</span>
+            </>
+          }
+          band={<CoverMosaic bands={sections.map((s) => getDoc(s.pages[0]).band)} />}
+        >
+          <p className={styles.lede}>
+            The concepts behind the guides, in reading order: what bitcoin and self-custody are, how
+            keys and seed phrases work, the kinds of wallet, how transactions move coins, privacy, and
+            nodes. Read from the top if you are new; every page also stands on its own.
+          </p>
+          <div className={styles.actions}>
+            <Link to="/docs/learn/fundamentals/" className={styles.primary}>
+              Read from the start
+            </Link>
+            <Link to="/guides/" className={styles.link}>
+              Hands-on guides
+            </Link>
+          </div>
+        </Cover>
 
-        {sections.map((section) => (
-          <Section key={section.label} id={slug(section.label)} title={section.label}>
-            <ContentsTable permalinks={section.pages} />
+        <div className={styles.wide}>
+          {sections.map((section) => (
+            <Section key={section.label} id={slug(section.label)} title={section.label}>
+              <PageRows pages={section.pages.map(getDoc)} />
+            </Section>
+          ))}
+
+          <Section
+            id="reference"
+            title="Reference"
+            aside={<Link to="/docs/reference/">All reference pages</Link>}
+          >
+            <PageRows pages={REFERENCE.map(getDoc)} />
           </Section>
-        ))}
-
-        <Section id="reference" title="Reference" aside={<Link to="/docs/reference/">All reference pages</Link>}>
-          <ContentsTable permalinks={REFERENCE} />
-        </Section>
+        </div>
       </main>
     </Layout>
   );
