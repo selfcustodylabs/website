@@ -218,13 +218,6 @@ const config = {
   trailingSlash: true,
 
   // ===========================================
-  // GitHub Pages Deployment
-  // ===========================================
-  organizationName: "selfcustodylabs",
-  projectName: "website",
-  deploymentBranch: "gh-pages",
-
-  // ===========================================
   // Link/Build Checking
   // ===========================================
   onBrokenLinks: "throw",

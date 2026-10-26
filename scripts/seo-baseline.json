@@ -4292,7 +4292,7 @@
     },
     "/privacy/": {
       "title": "Privacy Policy | Self Custody Labs",
-      "description": "What Self Custody Labs collects when you read this site, which is no analytics, no cookies and no accounts, plus what the hosting provider sees and how to reach us.",
+      "description": "What Self Custody Labs collects when you read this site, which is cookieless page counts and no accounts, plus what the web host sees and how to reach us.",
       "canonical": "https://selfcustodylabs.com/privacy/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"

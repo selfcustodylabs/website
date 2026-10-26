@@ -24,7 +24,7 @@ selfcustodylabs.com is dedicated to empowering individuals with the knowledge to
 - **Framework**: [Docusaurus 3.x](https://docusaurus.io/) with Docusaurus Faster (Rspack, SWC)
 - **Frontend**: React 19, CSS Modules, self-hosted Inter and JetBrains Mono
 - **Search**: [Pagefind](https://pagefind.app/), built with the site; queries never leave the browser
-- **Deployment**: GitHub Pages, moving to Cloudflare Pages (the workflow deploys to both once the Cloudflare project exists)
+- **Deployment**: Cloudflare Pages, from GitHub Actions on every push to `main`
 
 ## Development
 
