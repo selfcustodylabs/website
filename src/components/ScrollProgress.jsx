@@ -3,7 +3,8 @@ import React, { useEffect, useRef } from "react";
 import styles from "./ScrollProgress.module.css";
 
 /**
- * A 2px reading-progress line under the navbar.
+ * A 1px reading-progress line drawn over the navbar's bottom rule, rendered
+ * inside the <nav> by src/theme/Navbar/Content.
  *
  * Where the browser supports scroll-driven animations the bar is pure CSS
  * (animation-timeline: scroll()); otherwise a requestAnimationFrame-throttled
