@@ -4,6 +4,7 @@ title: "Software Wallets Explained"
 description: "Understand software wallets for Bitcoin: what they are, when to use them, recommended options, and security best practices."
 keywords: ["bitcoin", "self custody", "security", "privacy", "software wallet", "hot wallet", "mobile wallet", "desktop wallet"]
 tags: ["bitcoin", "software", "wallet", "hot wallet"]
+date: "2025-12-29"
 ---
 
 # Software wallets

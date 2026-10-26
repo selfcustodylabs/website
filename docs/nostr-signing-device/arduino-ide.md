@@ -4,6 +4,7 @@ title: "Arduino IDE Setup for NSD"
 description: "Install and configure Arduino IDE to flash your Nostr Signing Device. Download the legacy version and set up ESP32 board support."
 keywords: ["arduino IDE", "ESP32 setup", "NSD flash", "LILYGO arduino", "board manager"]
 tags: ["arduino", "setup", "ESP32", "firmware"]
+date: "2025-03-29"
 ---
 # Arduino setup
 

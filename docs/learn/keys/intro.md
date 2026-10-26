@@ -4,6 +4,7 @@ title: "Understanding Bitcoin Private Keys"
 description: "Learn what Bitcoin private keys are, how they work, and why they're essential for controlling your Bitcoin. The foundation of self-custody explained."
 keywords: ["bitcoin private key", "public key", "cryptography", "bitcoin security", "key management"]
 tags: ["private keys", "bitcoin", "security"]
+date: "2025-03-31"
 ---
 
 # Private keys

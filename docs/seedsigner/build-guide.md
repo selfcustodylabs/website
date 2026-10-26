@@ -4,6 +4,7 @@ title: "Build Your Own SeedSigner"
 description: "Source the Raspberry Pi parts, verify and flash SeedSigner OS, and assemble an air-gapped Bitcoin signing device for about $50 in parts."
 keywords: ["seedsigner build", "raspberry pi zero", "seedsigner os", "flash seedsigner", "verify gpg signature", "diy bitcoin wallet"]
 tags: ["seedsigner", "diy", "hardware wallet", "guide"]
+date: "2026-08-21"
 ---
 
 # Build your own SeedSigner

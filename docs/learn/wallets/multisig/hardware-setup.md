@@ -5,6 +5,7 @@ description: "Prepare your hardware wallets for multisig. Learn how to initializ
 keywords: ["bitcoin", "multisig", "hardware wallet", "trezor", "jade", "keystone", "setup"]
 tags: ["multisig", "hardware wallet", "security", "bitcoin"]
 slug: /learn/wallets/multisig/hardware-setup
+date: "2026-01-13"
 ---
 
 # Hardware setup for multisig

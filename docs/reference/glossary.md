@@ -5,6 +5,7 @@ description: "Complete glossary of Bitcoin and self-custody terminology. Definit
 keywords: ["bitcoin glossary", "bitcoin terms", "bitcoin definitions", "cryptocurrency terminology", "utxo", "seed phrase", "self custody"]
 tags: ["glossary", "reference"]
 slug: /reference/glossary
+date: "2026-01-14"
 ---
 
 

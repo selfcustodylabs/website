@@ -4,6 +4,7 @@ title: "Tor Configuration for Bitcoin Nodes"
 description: "Configure your Bitcoin node to run over Tor for enhanced privacy. Hide your IP address and enable secure remote access to your node."
 keywords: ["bitcoin node", "tor", "privacy", "onion", "hidden service", "ip address"]
 tags: ["bitcoin node", "tor", "privacy", "self custody"]
+date: "2025-03-30"
 ---
 
 # Tor configuration

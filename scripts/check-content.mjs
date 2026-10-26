@@ -126,8 +126,13 @@ for (const file of docFiles) {
   const fmLines = m[0].split("\n").length - 1;
   const body = text.slice(m[0].length);
 
-  for (const key of ["title", "description", "keywords", "tags", "sidebar_position"]) {
+  for (const key of ["title", "description", "keywords", "tags", "sidebar_position", "date"]) {
     if (fm[key] === undefined) errors.push(`${rel}: frontmatter is missing "${key}"`);
+  }
+  // date: is the day the page was first published, emitted as datePublished.
+  // Quoted "YYYY-MM-DD", so YAML keeps it a string rather than a Date.
+  if (fm.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(fm.date))) {
+    errors.push(`${rel}: date must be a quoted "YYYY-MM-DD" (got ${JSON.stringify(fm.date)})`);
   }
   const title = String(fm.title ?? "");
   const desc = String(fm.description ?? "");

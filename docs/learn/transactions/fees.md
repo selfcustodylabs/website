@@ -5,6 +5,7 @@ description: "Understand how Bitcoin transaction fees work, why they vary, and h
 keywords: ["bitcoin fees", "transaction fees", "sat/vB", "fee estimation", "RBF", "CPFP", "mempool"]
 tags: ["fees", "transactions", "bitcoin", "optimization"]
 slug: /learn/transactions/fees
+date: "2026-01-15"
 ---
 
 # Bitcoin transaction fees

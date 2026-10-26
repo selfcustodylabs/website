@@ -10,6 +10,7 @@ guide:
   level: "Beginner to intermediate"
   cost: "$50-150 (used laptop) or $0 (repurpose old computer)"
   needs: "Spare laptop or desktop, USB drive"
+date: "2025-03-29"
 ---
 
 # Dedicated Bitcoin computer

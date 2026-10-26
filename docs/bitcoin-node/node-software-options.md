@@ -4,6 +4,7 @@ title: "Node Software Options"
 description: "Compare Bitcoin node software options: Parmanode, Umbrel, RaspiBlitz, Start9, and DIY setups. Find the right approach for your skill level and needs."
 keywords: ["bitcoin node", "umbrel", "raspiblitz", "start9", "parmanode", "raspibolt", "comparison"]
 tags: ["bitcoin node", "setup", "comparison"]
+date: "2026-01-15"
 ---
 
 # Choosing node software

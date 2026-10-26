@@ -5,6 +5,7 @@ description: "Comprehensive educational content about Bitcoin self-custody. From
 keywords: ["bitcoin education", "learn bitcoin", "bitcoin fundamentals", "cryptocurrency basics", "bitcoin concepts", "self custody"]
 tags: ["learn", "fundamentals"]
 slug: /learn
+date: "2026-01-15"
 ---
 
 # Learn Bitcoin self-custody

@@ -5,6 +5,7 @@ description: "Determine what level of Bitcoin security you actually need. Match 
 keywords: ["bitcoin threat model", "security assessment", "bitcoin security", "self custody", "risk assessment"]
 tags: ["threat model", "security", "self custody", "getting started"]
 slug: /learn/fundamentals/threat-models
+date: "2026-01-15"
 ---
 
 # Assess your threat model

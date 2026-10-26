@@ -6,6 +6,7 @@ description: "What Bitcoin nodes do, why running your own matters for self-custo
 keywords: ["bitcoin node", "full node", "self custody", "verify transactions", "trustless"]
 tags: ["nodes", "bitcoin", "self custody"]
 slug: /learn/nodes
+date: "2026-04-15"
 ---
 
 # Bitcoin nodes

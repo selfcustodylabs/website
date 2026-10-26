@@ -4,6 +4,7 @@ title: "UTXOs Explained"
 description: "Understand Bitcoin's UTXO model. Learn how Unspent Transaction Outputs work, why Bitcoin isn't an account balance, and how UTXOs affect fees and privacy."
 keywords: ["utxo", "unspent transaction output", "bitcoin transactions", "bitcoin model", "coin selection"]
 tags: ["utxo", "transactions", "bitcoin", "basics"]
+date: "2026-01-13"
 ---
 
 # UTXOs: how Bitcoin actually works

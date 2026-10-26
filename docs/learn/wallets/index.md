@@ -6,6 +6,7 @@ description: "Bitcoin wallet types compared: hardware wallets, software wallets,
 keywords: ["bitcoin wallet", "hardware wallet", "software wallet", "air gapped", "multisig", "self custody"]
 tags: ["wallet", "bitcoin", "self custody"]
 slug: /learn/wallets
+date: "2026-04-15"
 ---
 
 # Bitcoin wallets

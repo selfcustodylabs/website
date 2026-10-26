@@ -5,6 +5,7 @@ description: "Bitcoin self-custody reference: 100+ term glossary, hardware walle
 keywords: ["bitcoin reference", "bitcoin glossary", "bitcoin faq", "self custody resources", "hardware wallet comparison"]
 tags: ["reference", "glossary", "faq"]
 slug: /reference
+date: "2026-01-15"
 ---
 
 # Reference materials

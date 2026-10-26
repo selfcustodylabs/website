@@ -9,6 +9,7 @@ guide:
   time: "1-2 hours of setup, then mixing runs on its own"
   level: "Advanced"
   cost: "Maker fees (a small fraction of a percent) plus mining fees"
+date: "2026-08-22"
 ---
 
 # Run your first CoinJoin with JoinMarket NG and Jam

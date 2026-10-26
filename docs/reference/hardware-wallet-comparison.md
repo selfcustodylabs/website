@@ -5,6 +5,7 @@ description: "Compare Bitcoin hardware wallets after the 2026 Coldcard incident:
 keywords: ["hardware wallet comparison", "coldcard", "trezor safe 7", "bitbox02 nova", "jade plus", "passport prime", "keystone", "seedsigner", "bitkey", "bitcoin wallet 2026"]
 tags: ["hardware wallet", "comparison", "coldcard", "trezor", "security"]
 slug: /reference/hardware-wallet-comparison
+date: "2026-01-15"
 ---
 
 # Hardware wallet comparison

@@ -4,6 +4,7 @@ title: "Bitcoin Seed Phrases Explained (BIP39)"
 description: "Understand how BIP39 seed phrases work: converting private keys to memorable words. Learn the 2048-word list and how seeds protect your Bitcoin."
 keywords: ["seed phrase", "BIP39", "mnemonic", "recovery phrase", "24 words", "bitcoin backup"]
 tags: ["seed", "BIP39", "private keys", "backup"]
+date: "2025-04-02"
 ---
 # Seed phrases
 

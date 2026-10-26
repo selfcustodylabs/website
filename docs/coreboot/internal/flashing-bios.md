@@ -4,6 +4,7 @@ title: "Flash Coreboot to Your Laptop BIOS"
 description: "Flash Coreboot from inside a running system after the BIOS region is unlocked. Includes safety checks and verification of the flashed image."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "flashing"]
 tags: ["coreboot", "chipsec", "bios", "internal", "flashing"]
+date: "2025-08-12"
 ---
 # Internal flashing
 

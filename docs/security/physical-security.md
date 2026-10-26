@@ -4,6 +4,7 @@ title: "Physical Security for Bitcoin Holders"
 description: "Protect your Bitcoin from real-world threats. Home security, backup storage, travel considerations, and defense against physical attacks."
 keywords: ["bitcoin physical security", "bitcoin safety", "wrench attack", "seed storage", "bitcoin travel"]
 tags: ["security", "physical security", "self custody", "safety"]
+date: "2026-01-15"
 ---
 
 # Physical security for bitcoin holders

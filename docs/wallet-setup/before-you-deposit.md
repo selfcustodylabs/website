@@ -5,6 +5,7 @@ description: "Essential verification steps before sending Bitcoin to any new wal
 keywords: ["bitcoin checklist", "before deposit", "verify wallet", "self custody safety", "bitcoin security"]
 tags: ["checklist", "security", "self custody", "safety"]
 slug: /wallet-setup/before-you-deposit
+date: "2026-01-15"
 ---
 
 # Before you deposit: the checklist

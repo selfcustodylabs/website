@@ -6,6 +6,7 @@ description: "Set up a Raspberry Pi Pico H as an SPI programmer for flashing Lib
 keywords: ["libreboot", "raspberry pi pico", "serprog", "spi programmer", "flashing", "self custody"]
 tags: ["libreboot", "raspberry", "pico", "serprog"]
 slug: /libreboot/raspberry-pico
+date: "2026-04-15"
 ---
 
 # Prepare your Raspberry Pi Pico

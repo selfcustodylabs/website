@@ -9,6 +9,7 @@ guide:
   level: "Beginner"
   cost: "$5-10 (casino dice) or $0 (use any dice)"
   needs: "5 six-sided dice, pen and paper"
+date: "2025-04-01"
 ---
 # Bitcoin passphrase (the "25th word")
 

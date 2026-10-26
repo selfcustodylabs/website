@@ -6,6 +6,7 @@ description: "How Bitcoin transactions work end to end: UTXOs, transaction creat
 keywords: ["bitcoin transactions", "utxo", "psbt", "signing", "broadcasting", "fees", "self custody"]
 tags: ["transactions", "bitcoin", "self custody"]
 slug: /learn/transactions
+date: "2026-04-15"
 ---
 
 # Bitcoin transactions

@@ -9,6 +9,7 @@ guide:
   level: "Intermediate to advanced"
   cost: "$50-80 in parts"
   needs: "comfort with basic command-line verification and DIY assembly"
+date: "2026-08-21"
 ---
 
 # SeedSigner: our favourite

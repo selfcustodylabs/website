@@ -4,6 +4,7 @@ title: "Downgrading BIOS"
 description: "Downgrade your laptop's stock BIOS to a version with an unlocked Intel ME region, a prerequisite for internal Coreboot flashing."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "downgrading", "bios"]
 tags: ["coreboot", "downgrading", "bios"]
+date: "2025-08-12"
 ---
 # Downgrading BIOS
 

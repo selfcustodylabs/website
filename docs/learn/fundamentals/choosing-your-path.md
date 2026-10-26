@@ -5,6 +5,7 @@ description: "Which Bitcoin self-custody setup fits what you hold: four tiers fr
 keywords: ["bitcoin wallet choice", "self custody setup", "hardware wallet comparison", "bitcoin security decision"]
 tags: ["getting started", "wallet", "decision", "setup"]
 slug: /learn/fundamentals/choosing-your-path
+date: "2026-01-15"
 ---
 
 # Choose your self-custody setup

@@ -5,6 +5,7 @@ description: "Common problems when recovering a Bitcoin wallet and how to solve 
 keywords: ["wallet recovery", "bitcoin recovery", "empty wallet", "wrong addresses", "derivation path", "troubleshooting"]
 tags: ["recovery", "troubleshooting", "wallet", "faq"]
 slug: /reference/faq/recovery-troubleshooting
+date: "2026-01-15"
 ---
 
 # Wallet recovery troubleshooting

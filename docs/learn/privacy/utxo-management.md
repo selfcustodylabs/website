@@ -8,6 +8,7 @@ slug: /learn/privacy/utxo-management
 guide:
   time: "40 minutes"
   level: "Intermediate"
+date: "2026-04-15"
 ---
 
 # UTXO management: coin control, consolidation and privacy

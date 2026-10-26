@@ -6,6 +6,7 @@ keywords: ["bitcoin self custody", "getting started", "beginner bitcoin", "start
 tags: ["getting started", "beginner", "self custody"]
 slug: /learn/fundamentals
 sidebar_position: 1
+date: "2026-01-15"
 ---
 
 # Start here: Bitcoin self-custody

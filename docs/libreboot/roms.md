@@ -4,6 +4,7 @@ title: "Build Libreboot ROM Images"
 description: "Generate Libreboot ROM images for your specific laptop model. Compile custom BIOS firmware using the lbmk build system, ready to flash."
 keywords: ["libreboot ROM", "build ROM", "lbmk", "BIOS image", "coreboot"]
 tags: ["libreboot", "ROM", "build", "firmware"]
+date: "2025-03-29"
 ---
 # Build ROMs
 

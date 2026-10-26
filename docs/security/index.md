@@ -5,6 +5,7 @@ description: "Advanced Bitcoin security: generate seeds with dice, add passphras
 keywords: ["bitcoin security", "seed generation", "diy seed", "passphrase", "operational security", "self custody security", "dice roll seed"]
 tags: ["security", "seed", "passphrase", "opsec"]
 slug: /security
+date: "2026-01-15"
 ---
 
 # Security hardening guides

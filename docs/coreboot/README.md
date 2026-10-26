@@ -9,6 +9,7 @@ guide:
   level: "Advanced"
   cost: "$0 (internal flash) or $15-30 (external flash hardware)"
   needs: "Supported laptop, Linux system for building"
+date: "2025-08-12"
 ---
 
 # Coreboot BIOS

@@ -4,6 +4,7 @@ title: "Number Systems: Binary, Decimal, Hex"
 description: "Understand binary, decimal, and hexadecimal number systems used in Bitcoin private keys. Essential foundation for understanding seed phrases."
 keywords: ["binary", "decimal", "hexadecimal", "number systems", "bitcoin cryptography"]
 tags: ["binary", "private keys", "basics"]
+date: "2025-04-02"
 ---
 
 # Number systems

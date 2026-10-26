@@ -5,6 +5,7 @@ description: "Understand and build a Bitcoin air-gapped wallet. Concepts, hardwa
 keywords: ["bitcoin", "self custody", "security", "privacy", "air-gapped", "air-gapped computer", "offline signing", "cold storage", "AGC", "libreboot"]
 tags: ["bitcoin", "air-gapped", "wallet", "advanced"]
 slug: /learn/wallets/air-gapped-wallets
+date: "2025-12-29"
 ---
 
 # Air-gapped wallets

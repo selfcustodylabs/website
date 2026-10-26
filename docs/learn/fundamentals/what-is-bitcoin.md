@@ -5,6 +5,7 @@ description: "Understand what Bitcoin is, how it works, and why it matters. A be
 keywords: ["bitcoin", "what is bitcoin", "cryptocurrency", "digital money", "decentralized", "blockchain"]
 tags: ["bitcoin", "basics", "introduction", "getting started"]
 slug: /learn/fundamentals/what-is-bitcoin
+date: "2026-01-14"
 ---
 
 # What is Bitcoin?

@@ -4,6 +4,7 @@ title: "Update Libreboot Firmware"
 description: "Update an existing Libreboot install from inside Linux without opening the laptop: relax /dev/mem access, back up the chip, write the new ROM and verify it."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "update"]
 tags: ["libreboot", "update", "flashprog", "bios"]
+date: "2025-03-29"
 ---
 # Update Libreboot (internal flashing)
 

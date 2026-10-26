@@ -4,6 +4,7 @@ title: "Bitcoin Transaction Types Explained"
 description: "Bitcoin transaction types explained: pre-signed, fully signed, and partially signed (PSBT). When each type is used and how they differ."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "types"]
 tags: ["bitcoin", "transactions"]
+date: "2025-05-01"
 ---
 
 # Transaction types

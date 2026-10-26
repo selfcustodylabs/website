@@ -4,6 +4,7 @@ title: "Parmanode Setup Guide"
 description: "Step-by-step guide to setting up a Bitcoin node with Parmanode. Easy installation for Linux, Mac, and Raspberry Pi with automatic wallet configuration."
 keywords: ["parmanode", "bitcoin node", "bitcoin core", "electrum server", "sparrow wallet", "self custody", "raspberry pi"]
 tags: ["bitcoin node", "parmanode", "setup", "self custody"]
+date: "2026-01-15"
 ---
 
 # Parmanode setup guide

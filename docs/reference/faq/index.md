@@ -5,6 +5,7 @@ description: "Common questions about Bitcoin self-custody, seed phrases, recover
 keywords: ["bitcoin faq", "self custody questions", "bitcoin help", "seed phrase questions"]
 tags: ["faq", "questions", "help"]
 slug: /reference/faq
+date: "2026-01-15"
 ---
 
 # Frequently asked questions

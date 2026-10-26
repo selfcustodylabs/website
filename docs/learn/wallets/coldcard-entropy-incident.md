@@ -4,6 +4,7 @@ title: "Coldcard Entropy Incident: What Happened, Who's Affected"
 description: "The 2026 Coldcard entropy flaw explained: which devices and firmware are affected, how $116M was stolen, and how to migrate your funds safely."
 keywords: ["coldcard hack", "coldcard entropy", "coldcard vulnerability", "coldcard rng flaw", "hardware wallet security", "seed generation", "bitcoin"]
 tags: ["hardware wallet", "security", "entropy", "bitcoin"]
+date: "2026-08-21"
 ---
 
 # The Coldcard entropy incident

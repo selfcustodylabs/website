@@ -4,6 +4,7 @@ title: "Connect NSD to Nostr Clients"
 description: "Connect your Nostr Signing Device to clients like Coracle and NoStrudel. Final step to start using your hardware-secured Nostr identity."
 keywords: ["nostr client", "coracle", "nostrudel", "NSD connection", "horse extension"]
 tags: ["nostr", "client", "setup"]
+date: "2025-04-17"
 ---
 # Connect to a Nostr client
 

@@ -9,6 +9,7 @@ guide:
   time: "1-2 hours"
   level: "Beginner to intermediate"
   cost: "$80-250 (hardware wallet)"
+date: "2026-01-14"
 ---
 
 # Hardware wallet setup guide

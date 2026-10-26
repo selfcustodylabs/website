@@ -4,6 +4,7 @@ title: "Build Serprog"
 description: "Build serprog firmware for the Raspberry Pi Pico H so it can act as an SPI programmer for flashing Libreboot to a laptop chip."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "serprog"]
 tags: ["libreboot", "raspberry", "pico", "serprog"]
+date: "2025-03-29"
 ---
 # Build serprog
 

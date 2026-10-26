@@ -5,6 +5,7 @@ description: "Advanced Bitcoin self-custody: 2-of-3 multisig setup, inheritance 
 keywords: ["bitcoin multisig", "bitcoin inheritance", "air-gapped computer", "bitcoin computer", "advanced security", "self custody", "estate planning", "2-of-3 multisig"]
 tags: ["advanced", "multisig", "air-gapped", "security", "inheritance"]
 slug: /advanced
+date: "2026-01-15"
 ---
 
 # Advanced setup guides

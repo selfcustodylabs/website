@@ -9,6 +9,7 @@ guide:
   time: "30 minutes"
   level: "Intermediate"
   cost: "Free (just transaction fees)"
+date: "2026-04-15"
 ---
 
 # PayJoin: stealth privacy for Bitcoin payments

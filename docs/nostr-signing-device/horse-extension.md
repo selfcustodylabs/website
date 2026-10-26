@@ -4,6 +4,7 @@ title: "Install Horse Browser Extension"
 description: "Install the Horse Chromium browser extension to connect your Nostr Signing Device to web clients and sign Nostr events from your browser."
 keywords: ["horse extension", "nostr browser extension", "chromium extension", "NSD connection"]
 tags: ["nostr", "horse", "extension", "browser"]
+date: "2025-03-29"
 ---
 # Installing the Horse extension (Chromium only)
 

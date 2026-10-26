@@ -4,6 +4,7 @@ title: "Prepare the NSD Firmware"
 description: "Clone the NSD repository and flash the firmware to your LILYGO device. Step-by-step instructions to prepare your Nostr Signing Device."
 keywords: ["NSD firmware", "LILYGO flash", "nostr signing device setup", "github clone"]
 tags: ["nostr", "firmware", "setup", "github"]
+date: "2025-03-29"
 ---
 # Setting up the Nostr signing device
 

@@ -6,6 +6,7 @@ description: "Bitcoin privacy fundamentals: what is exposed on the public blockc
 keywords: ["bitcoin privacy", "chain analysis", "coinjoin", "utxo management", "self custody", "blockchain privacy"]
 tags: ["privacy", "bitcoin", "self custody"]
 slug: /learn/privacy
+date: "2026-04-15"
 ---
 
 # Bitcoin privacy

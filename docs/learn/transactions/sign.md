@@ -4,6 +4,7 @@ title: "How Bitcoin Transaction Signing Works"
 description: "How Bitcoin transaction signing works: what signing means, online vs offline signing flows, and single-sig versus multisig signing."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "signing"]
 tags: ["bitcoin", "transactions", "signing"]
+date: "2025-05-01"
 ---
 
 # Signing transactions

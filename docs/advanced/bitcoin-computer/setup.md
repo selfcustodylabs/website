@@ -4,6 +4,7 @@ title: "Bitcoin Computer Setup Guide"
 description: "Set up your dedicated Bitcoin computer with Libreboot BIOS, Linux Mint, and LUKS encryption for maximum security and privacy."
 keywords: ["bitcoin computer setup", "libreboot", "linux mint", "LUKS encryption", "secure setup"]
 tags: ["bitcoin", "computer", "setup", "libreboot"]
+date: "2025-03-29"
 ---
 # System setup and security
 

@@ -9,6 +9,7 @@ guide:
   level: "Intermediate"
   cost: "$10-15 (LILYGO T-Display)"
   needs: "LILYGO T-Display, USB cable, Chrome-based browser"
+date: "2025-03-29"
 ---
 
 # Nostr signing device (NSD)

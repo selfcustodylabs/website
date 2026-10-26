@@ -10,6 +10,7 @@ guide:
   level: "Beginner"
   cost: "Free"
   needs: "A seed phrase backup to test"
+date: "2026-01-14"
 ---
 
 # Backup verification guide

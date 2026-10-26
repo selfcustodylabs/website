@@ -4,6 +4,7 @@ title: "Chain Analysis Explained"
 description: "Learn how blockchain surveillance works. Understand the heuristics and techniques used to track Bitcoin transactions and link addresses to identities."
 keywords: ["chain analysis", "blockchain surveillance", "bitcoin tracking", "heuristics", "common input ownership"]
 tags: ["privacy", "chain analysis", "bitcoin", "surveillance"]
+date: "2026-01-13"
 ---
 
 # Chain analysis explained

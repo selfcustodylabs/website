@@ -4,6 +4,7 @@ title: "Extended Private Key (XPRV)"
 description: "What a Bitcoin extended private key (xprv) is, why it can spend from every address in a wallet, how to keep it offline, and what its prefix tells you."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "private", "xprv"]
 tags: ["private keys", "xprv", "bip39", "seed"]
+date: "2025-04-02"
 ---
 
 # Extended private key (xprv)

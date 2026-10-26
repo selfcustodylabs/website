@@ -6,6 +6,7 @@ description: "Learn how Bitcoin keys work: private keys, seed phrases (BIP39), e
 keywords: ["bitcoin keys", "private key", "seed phrase", "BIP39", "xpub", "xprv", "derivation path", "bitcoin ownership", "self custody"]
 tags: ["keys", "seed", "bitcoin", "fundamentals"]
 slug: /learn/keys
+date: "2026-01-16"
 ---
 
 # Understanding Bitcoin keys

@@ -9,6 +9,7 @@ guide:
   level: "Intermediate"
   cost: "$10-30 (casino dice) + $20-50 (metal backup plate)"
   needs: "Casino dice, an air-gapped computer or Raspberry Pi Zero, a metal backup plate"
+date: "2025-04-02"
 ---
 
 # Generate your own Bitcoin seed phrase with dice

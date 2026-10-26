@@ -4,6 +4,7 @@ title: "Using SeedSigner: Seeds, SeedQR, and Signing"
 description: "Generate a seed with dice on your SeedSigner, back it up as a SeedQR, and sign transactions with Sparrow over an air-gapped QR workflow."
 keywords: ["seedsigner usage", "seedqr", "dice seed", "sparrow wallet", "psbt signing", "air-gapped signing"]
 tags: ["seedsigner", "seedqr", "sparrow", "guide"]
+date: "2026-08-21"
 ---
 
 # Using SeedSigner

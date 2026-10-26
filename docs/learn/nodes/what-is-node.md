@@ -4,6 +4,7 @@ title: "What is a Bitcoin Node"
 description: "Understand what a Bitcoin node does, how it differs from a wallet, and its role in the network. Essential knowledge before running your own node."
 keywords: ["bitcoin node", "full node", "bitcoin core", "blockchain", "verification", "mempool"]
 tags: ["node", "bitcoin", "basics", "network"]
+date: "2026-01-13"
 ---
 
 # What is a Bitcoin node?

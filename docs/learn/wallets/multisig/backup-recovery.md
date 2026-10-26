@@ -5,6 +5,7 @@ description: "How to properly backup your multisig wallet and recover it if need
 keywords: ["bitcoin", "multisig", "backup", "recovery", "seed phrase", "wallet descriptor"]
 tags: ["multisig", "backup", "recovery", "security", "bitcoin"]
 slug: /learn/wallets/multisig/backup-recovery
+date: "2026-01-13"
 ---
 
 # Multisig backup and recovery

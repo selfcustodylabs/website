@@ -4,6 +4,7 @@ title: "Extended Public Key (XPUB)"
 description: "What a Bitcoin extended public key (xpub) is: it lets a watch-only wallet see every address and balance without spending, so it still needs protecting."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "extended", "public", "xpub"]
 tags: ["private keys", "xpub", "bip39", "seed"]
+date: "2025-04-02"
 ---
 
 # Extended public key (xpub)

@@ -5,6 +5,7 @@ description: "Understand the difference between holding Bitcoin yourself vs on a
 keywords: ["hold bitcoin", "exchange risk", "not your keys", "self custody", "bitcoin ownership"]
 tags: ["self custody", "bitcoin", "exchange", "getting started"]
 slug: /learn/fundamentals/holding-bitcoin
+date: "2026-01-15"
 ---
 
 # Why holding your own bitcoin matters

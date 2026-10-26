@@ -4,6 +4,7 @@ title: "Why Run Your Own Node"
 description: "Understand why running your own Bitcoin node matters for privacy, security, and true self-custody. Learn the risks of using third-party nodes."
 keywords: ["bitcoin node", "privacy", "security", "self custody", "verification", "third party"]
 tags: ["node", "privacy", "security", "bitcoin"]
+date: "2026-01-13"
 ---
 
 # Why run your own node

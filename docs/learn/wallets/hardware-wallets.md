@@ -4,6 +4,7 @@ title: "Hardware Wallets Explained"
 description: "Understand hardware wallets for Bitcoin self-custody: how they work, why they're secure, popular options compared, and how to choose the right one."
 keywords: ["bitcoin", "hardware wallet", "cold storage", "coldcard", "trezor", "ledger", "self custody", "security"]
 tags: ["bitcoin", "hardware wallet", "cold storage", "security"]
+date: "2025-12-29"
 ---
 
 # Hardware wallets

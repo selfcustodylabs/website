@@ -10,6 +10,7 @@ guide:
   cost: "$15-30 (Raspberry Pi Pico + SOIC8 clip + jumper wires)"
   needs: "A supported ThinkPad, a Raspberry Pi Pico H, a Pomona SOIC-8 clip, jumper wires"
   reviewed: "2026-10-26"
+date: "2025-03-29"
 ---
 
 # Libreboot BIOS

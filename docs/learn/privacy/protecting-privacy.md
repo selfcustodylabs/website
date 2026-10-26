@@ -4,6 +4,7 @@ title: "Protecting Your Privacy"
 description: "Overview of Bitcoin privacy techniques. Learn the principles and methods for protecting your financial privacy when using Bitcoin."
 keywords: ["bitcoin privacy", "privacy techniques", "coinjoin", "utxo management", "tor", "own node"]
 tags: ["privacy", "bitcoin", "security"]
+date: "2026-01-13"
 ---
 
 # Protecting your privacy

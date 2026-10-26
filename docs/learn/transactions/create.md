@@ -4,6 +4,7 @@ title: "How Bitcoin Transactions Are Created"
 description: "How a Bitcoin transaction is put together: choosing UTXOs as inputs, setting outputs and change, and unsticking a slow payment with RBF or CPFP."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "creation"]
 tags: ["bitcoin", "transactions", "creation"]
+date: "2025-05-01"
 ---
 
 # Creating transactions

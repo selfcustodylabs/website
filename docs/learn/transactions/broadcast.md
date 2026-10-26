@@ -4,6 +4,7 @@ title: "How to Broadcast a Bitcoin Transaction"
 description: "How a signed Bitcoin transaction reaches the network, and why broadcasting through your own node instead of a public server keeps your IP and addresses private."
 keywords: ["bitcoin", "self custody", "security", "privacy", "basics", "broadcasting"]
 tags: ["bitcoin", "transactions", "broadcasting"]
+date: "2025-05-01"
 ---
 
 # Broadcasting transactions

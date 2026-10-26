@@ -8,6 +8,7 @@ slug: /learn/privacy/coinjoin
 guide:
   time: "30 minutes"
   level: "Intermediate"
+date: "2026-04-15"
 ---
 
 # CoinJoin: how it works and when to use it

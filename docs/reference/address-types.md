@@ -5,6 +5,7 @@ description: "Understand the different Bitcoin address types: Legacy, SegWit, Na
 keywords: ["bitcoin address", "segwit", "taproot", "legacy", "bech32", "address types", "bc1", "P2PKH", "P2SH", "P2WPKH", "P2TR"]
 tags: ["bitcoin", "addresses", "segwit", "taproot", "reference"]
 slug: /reference/address-types
+date: "2026-01-14"
 ---
 
 # Bitcoin address types explained

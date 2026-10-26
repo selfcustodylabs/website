@@ -5,6 +5,7 @@ description: "Learn what Bitcoin self-custody means: controlling your own privat
 keywords: ["bitcoin self custody", "private keys", "seed phrase", "not your keys not your coins", "financial sovereignty"]
 tags: ["self custody", "bitcoin", "basics", "getting started"]
 slug: /learn/fundamentals/what-is-self-custody
+date: "2025-03-31"
 ---
 
 # What is Bitcoin self-custody?

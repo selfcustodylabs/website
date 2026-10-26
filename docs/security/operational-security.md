@@ -4,6 +4,7 @@ title: "Operational Security for Bitcoiners"
 description: "Essential operational security practices for Bitcoin holders. Learn how your behavior affects your security and how to minimize your attack surface."
 keywords: ["bitcoin opsec", "operational security", "bitcoin privacy", "security practices", "self custody security"]
 tags: ["security", "opsec", "privacy", "self custody"]
+date: "2026-01-15"
 ---
 
 # Operational security for bitcoiners

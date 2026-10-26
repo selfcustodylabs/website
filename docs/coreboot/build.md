@@ -4,6 +4,7 @@ title: "Build Coreboot"
 description: "Build Coreboot from source on Linux: install the dependencies, clone the source tree, build the cross-compiler toolchain, configure your ThinkPad and compile."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "build"]
 tags: ["coreboot", "build", "bios"]
+date: "2025-08-12"
 ---
 # Build coreboot
 

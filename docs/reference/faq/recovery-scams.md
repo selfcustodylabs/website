@@ -4,6 +4,7 @@ title: "Bitcoin Recovery Scams: How to Protect Yourself"
 description: "Why almost every 'Bitcoin recovery service' is a scam. Learn to recognize fraud and understand what legitimate recovery actually looks like."
 keywords: ["bitcoin recovery scam", "crypto recovery", "seed phrase scam", "bitcoin fraud", "wallet recovery scam"]
 tags: ["faq", "scam", "security", "warning"]
+date: "2026-01-15"
 ---
 
 # Bitcoin recovery scams: how to protect yourself

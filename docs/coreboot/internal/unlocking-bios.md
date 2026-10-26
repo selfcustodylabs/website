@@ -4,6 +4,7 @@ title: "Unlocking BIOS"
 description: "Unlock the Intel Flash Descriptor BIOS region with CHIPSEC so Coreboot can be flashed internally without an external SPI programmer."
 keywords: ["bitcoin", "self custody", "security", "privacy", "coreboot", "unlocking", "bios"]
 tags: ["coreboot", "chipsec", "bios", "unlocking"]
+date: "2025-08-12"
 ---
 # Unlocking BIOS
 

@@ -5,6 +5,7 @@ description: "Step-by-step guide to creating a 2-of-3 multisig wallet in Sparrow
 keywords: ["bitcoin", "multisig", "sparrow wallet", "2-of-3", "setup", "tutorial"]
 tags: ["multisig", "sparrow", "security", "bitcoin", "tutorial"]
 slug: /learn/wallets/multisig/sparrow-setup
+date: "2026-01-13"
 ---
 
 # Creating your multisig in Sparrow Wallet

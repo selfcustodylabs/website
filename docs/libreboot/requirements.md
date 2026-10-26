@@ -4,6 +4,7 @@ title: "Libreboot Hardware Requirements"
 description: "Hardware list for flashing Libreboot: supported laptops, Raspberry Pi Pico H programmer, Pomona SOIC8 clip, and required cables."
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "requirements"]
 tags: ["libreboot", "raspberry", "pico", "bios", "pomona", "clip", "usb", "cables"]
+date: "2025-03-29"
 ---
 # Hardware requirements
 

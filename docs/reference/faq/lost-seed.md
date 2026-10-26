@@ -4,6 +4,7 @@ title: "What Happens If You Lose Your Seed Phrase?"
 description: "The hard truth about losing your Bitcoin seed phrase. What you can do, what you can't do, and how to prevent this from happening to you."
 keywords: ["lost seed phrase", "lost bitcoin", "seed phrase recovery", "bitcoin recovery", "forgot seed phrase"]
 tags: ["faq", "seed phrase", "recovery", "security"]
+date: "2026-01-15"
 ---
 
 # What happens if you lose your seed phrase?

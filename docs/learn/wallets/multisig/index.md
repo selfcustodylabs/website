@@ -9,6 +9,7 @@ guide:
   time: "2-3 hours"
   level: "Intermediate to advanced"
   cost: "$200-450 (3 hardware wallets) + $30-60 (metal seed backups)"
+date: "2026-01-13"
 ---
 
 # Multisig: multi-signature wallets

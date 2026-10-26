@@ -4,6 +4,7 @@ title: "Build Flashprog for Libreboot"
 description: "Compile Flashprog from the Libreboot build system. Required tool for reading and writing BIOS chips during Libreboot installation."
 keywords: ["flashprog", "libreboot", "BIOS flash", "lbmk", "compile"]
 tags: ["libreboot", "flashprog", "build"]
+date: "2025-03-29"
 ---
 # Build flashprog
 

@@ -8,6 +8,7 @@ guide:
   time: "2-4 hours of active work (plus days of sync time)"
   level: "Intermediate"
   cost: "$150-350 (Raspberry Pi 5 + 2 TB SSD) or $100-150 (an old PC + 2 TB SSD)"
+date: "2025-03-30"
 ---
 
 # Bitcoin node guide

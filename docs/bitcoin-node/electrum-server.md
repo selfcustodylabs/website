@@ -4,6 +4,7 @@ title: "Electrum Server Explained"
 description: "Understand Electrum servers (Electrs, Fulcrum): what they do, why you need one, and how to choose between options for your Bitcoin node setup."
 keywords: ["electrum server", "electrs", "fulcrum", "bitcoin node", "sparrow wallet", "indexing", "self custody"]
 tags: ["bitcoin node", "electrum", "setup", "self custody"]
+date: "2025-03-30"
 ---
 
 # Electrum server explained

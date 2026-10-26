@@ -5,6 +5,7 @@ description: "Step-by-step Bitcoin wallet setup guides. Learn to configure hardw
 keywords: ["bitcoin wallet setup", "hardware wallet setup", "bitcoin backup", "self custody setup", "wallet security", "trezor setup", "coldcard setup"]
 tags: ["wallet", "setup", "hardware wallet", "backup"]
 slug: /wallet-setup
+date: "2026-01-15"
 ---
 
 # Wallet setup guides

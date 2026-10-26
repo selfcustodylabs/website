@@ -6,6 +6,7 @@ description: "Flash Coreboot from inside a running system: downgrade your stock 
 keywords: ["coreboot", "internal flashing", "intel me", "flash descriptor", "bios", "self custody"]
 tags: ["coreboot", "bios", "flashing"]
 slug: /coreboot/internal
+date: "2026-04-15"
 ---
 
 # Internal coreboot flashing

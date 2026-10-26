@@ -4,6 +4,7 @@ title: "How Bitcoin Transactions Work"
 description: "Understand how Bitcoin transactions work: inputs, outputs, change, fees, and the complete lifecycle from creation to confirmation."
 keywords: ["bitcoin", "transactions", "inputs", "outputs", "fees", "mempool", "confirmations", "lifecycle"]
 tags: ["bitcoin", "transactions", "understanding", "lifecycle"]
+date: "2025-05-01"
 ---
 
 # How Bitcoin transactions work
