@@ -53,7 +53,7 @@ What started as "just one withdrawal" becomes a comprehensive financial profile.
 
 ## Why should you care?
 
-"I have nothing to hide" is a common response. It's also dangerously naive. Privacy isn't about hiding wrongdoing; it's about protecting yourself from a range of threats that most people don't consider until it's too late.
+"I have nothing to hide" is a common response, but financial privacy is not about hiding wrongdoing. It protects four things: your physical safety, your access to financial services, your freedom from surveillance and your dignity.
 
 ### Security
 

@@ -15,6 +15,8 @@ Building it yourself is the point, not a way to save money: generic parts mean t
 
 ## Step 1: Buy the parts
 
+Step 1 buys the parts, about $40 to $70 in total at the prices below:
+
 <div class="fixed-width-table">
 
 | Part | Notes | Approx. price |
@@ -27,13 +29,13 @@ Building it yourself is the point, not a way to save money: generic parts mean t
 
 </div>
 
-**On the board choice:** SeedSigner OS also runs on the Pi Zero W, Pi Zero 2 W, Pi 2B, Pi 3B, and Pi 4B. The Zero v1.3 remains our recommendation because its air gap is physical: there is no radio to switch off and nothing to misconfigure. If you use a board with WiFi/Bluetooth (like the faster Zero 2 W), understand that you are trusting software to keep the radios off; SeedSigner OS never enables them, but absent hardware beats disabled hardware.
+SeedSigner OS also runs on the Pi Zero W, Pi Zero 2 W, Pi 2B, Pi 3B, and Pi 4B. The Zero v1.3 remains our recommendation because its air gap is physical: there is no radio to switch off and nothing to misconfigure. If you use a board with WiFi/Bluetooth (like the faster Zero 2 W), understand that you are trusting software to keep the radios off; SeedSigner OS never enables them, but absent hardware beats disabled hardware.
 
-**Sourcing:** buy parts from general electronics retailers (the official [seedsigner.com](https://seedsigner.com) site maintains a current parts list with links). Spreading purchases across ordinary retailers is exactly what makes the supply-chain story boring, which is what you want.
+Buy the parts from general electronics retailers (the official [seedsigner.com](https://seedsigner.com) site maintains a current parts list with links). Spreading purchases across ordinary retailers is exactly what makes the supply-chain story boring, which is what you want.
 
 ## Step 2: Download and verify SeedSigner OS
 
-Never flash an image you have not verified. This is the one step where skipping ahead defeats the purpose of the whole device.
+Step 2 downloads SeedSigner OS and checks it is the image the project signed. Never flash an image you have not verified: this is the one step where skipping ahead defeats the purpose of the whole device.
 
 1. Download the latest release image from the official GitHub repository ([github.com/SeedSigner/seedsigner/releases](https://github.com/SeedSigner/seedsigner/releases), v0.8.7 as of October 2026). Pick the file matching your board, e.g. `seedsigner_os.0.8.7.pi0.img` for the Pi Zero v1.3.
 2. Download the accompanying SHA256 hash file and its GPG signature from the same release page.
@@ -57,7 +59,7 @@ SeedSigner OS builds are reproducible: with the project's build system you can c
 
 ## Step 3: Flash the microSD card
 
-Use any flashing tool you trust. With plain `dd` on Linux (double-check the target device name with `lsblk` first; `dd` overwrites without asking):
+Step 3 writes the verified image to the microSD card. Use any flashing tool you trust; with plain `dd` on Linux (double-check the target device name with `lsblk` first; `dd` overwrites without asking):
 
 ```bash
 sudo dd if=seedsigner_os.0.8.7.pi0.img of=/dev/sdX bs=4M status=progress conv=fsync
@@ -67,14 +69,18 @@ Raspberry Pi Imager or balenaEtcher work too; if you use Raspberry Pi Imager, ch
 
 ## Step 4: Assemble the device
 
-1. **Connect the camera.** Lift the retaining clip on the Pi Zero's camera connector, insert the ribbon cable with the contacts facing the board, and press the clip closed. The Zero's connector is smaller than a full-size Pi's, which is why the Zero-specific ribbon matters.
-2. **Seat the LCD HAT.** Press the WaveShare HAT onto the Pi's 40-pin GPIO header. If your Pi Zero came without a soldered header, you will need to solder one (or buy the "WH" variant with the header pre-installed).
-3. **Insert the flashed microSD card** and close up the case if you have one.
-4. **Power it** from any USB power source: a phone charger or a power bank is fine. SeedSigner has no battery and needs none; power off between sessions is the security model working as intended.
+Step 4 puts the four parts together; no tools are needed unless your Pi Zero has no header:
+
+1. Connect the camera. Lift the retaining clip on the Pi Zero's camera connector, insert the ribbon cable with the contacts facing the board, and press the clip closed. The Zero's connector is smaller than a full-size Pi's, which is why the Zero-specific ribbon matters.
+2. Seat the LCD HAT: press the WaveShare HAT onto the Pi's 40-pin GPIO header. If your Pi Zero came without a soldered header, you will need to solder one (or buy the "WH" variant with the header pre-installed).
+3. Insert the flashed microSD card and close up the case if you have one.
+4. Power it from any USB power source: a phone charger or a power bank is fine. SeedSigner has no battery and needs none; power off between sessions is the security model working as intended.
 
 First boot takes under a minute and lands on the SeedSigner home screen. The device never needs, and never asks for, a network connection.
 
 ## Step 5: Check it before trusting it with funds
+
+Step 5 tests the device with a throwaway seed before it guards real money:
 
 - Power-cycle the device and confirm it remembers nothing: no seeds should survive a reboot.
 - Generate a throwaway test seed, load it into a hot wallet, and run one full sign-and-broadcast cycle on a small amount you can afford to lose.

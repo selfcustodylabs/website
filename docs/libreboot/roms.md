@@ -12,7 +12,7 @@ A Libreboot ROM is the firmware image written to the laptop's flash chip. Build 
 
 ## Step 1: Find your laptop's target
 
-List every board lbmk can build:
+Step 1 finds the lbmk target name for your laptop. List every board lbmk can build:
 
 ```bash
 ./mk -b coreboot list
@@ -26,7 +26,7 @@ sudo dmidecode | grep ROM
 
 ## Step 2: Build the ROM
 
-This takes a while the first time, because lbmk downloads and compiles coreboot and its toolchain:
+Step 2 builds the images for your target. It takes a while the first time, because lbmk downloads and compiles coreboot and its toolchain:
 
 ```bash
 ./mk -b coreboot lenovo_thinkpad_t480s_16mb
@@ -36,7 +36,7 @@ Replace the target with yours.
 
 ## Step 3: Choose the image
 
-The images are in `bin/` under your target's name:
+Step 3 picks the one image to flash from the set lbmk built, which are in `bin/` under your target's name:
 
 ```bash
 ls bin/lenovo_thinkpad_t480s_16mb/

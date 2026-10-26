@@ -12,13 +12,15 @@ serprog is open-source firmware that turns a Raspberry Pi Pico into an SPI progr
 
 ## Step 1: Install the Pico toolchain
 
+Step 1 installs the compiler and libraries for the Pico's ARM processor:
+
 ```bash
 sudo apt install cmake libusb-1.0-0-dev libmbedtls-dev gcc-arm-none-eabi -y
 ```
 
 ## Step 2: Build the firmware
 
-From the `lbmk` directory:
+Step 2 builds the serprog firmware with lbmk. From the `lbmk` directory:
 
 ```bash
 ./mk -b pico-serprog
@@ -40,7 +42,7 @@ To change the firmware later, hold BOOTSEL while plugging in again.
 
 ## Step 4: Check the Pico is detected
 
-Unplug the Pico, start watching the kernel log, and plug it back in:
+Step 4 confirms the computer sees the Pico as a serial device. Unplug the Pico, start watching the kernel log, and plug it back in:
 
 ```bash
 sudo dmesg -wH

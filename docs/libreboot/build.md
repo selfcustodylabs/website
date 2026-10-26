@@ -12,7 +12,7 @@ Libreboot is built with its own build system, lbmk, on a Linux computer: install
 
 ## Step 1: Install git and set a git identity
 
-lbmk uses git to download and patch coreboot, and git refuses to commit patches without a name and email. Any values work; they never leave your machine.
+Step 1 installs git and gives it a name and email. lbmk uses git to download and patch coreboot, and git refuses to commit patches without a name and email. Any values work; they never leave your machine.
 
 ```bash
 sudo apt install git python-is-python3
@@ -22,6 +22,8 @@ git config --global user.email "you@example.com"
 
 ## Step 2: Clone lbmk
 
+Step 2 downloads lbmk, the Libreboot build system, from Libreboot's Codeberg repository and moves into its directory:
+
 ```bash
 git clone https://codeberg.org/libreboot/lbmk.git
 cd lbmk
@@ -29,7 +31,7 @@ cd lbmk
 
 ## Step 3: Install the build dependencies
 
-lbmk installs what it needs for your distribution. Run the one line that matches yours (the names are files in `config/dependencies/`, so check there if yours is not listed):
+Step 3 has lbmk install the packages your distribution needs. Run the one line that matches yours (the names are files in `config/dependencies/`, so check there if yours is not listed):
 
 ```bash
 sudo ./mk dependencies debian
@@ -40,7 +42,7 @@ sudo ./mk dependencies arch
 
 ## Step 4: Use every CPU core
 
-lbmk builds on one thread by default. Setting `XBMK_THREADS` to the number of cores your computer has makes the build several times faster:
+Step 4 makes the build use every CPU core: lbmk builds on one thread by default, and setting `XBMK_THREADS` to the number of cores your computer has makes the build several times faster:
 
 ```bash
 export XBMK_THREADS=$(nproc)

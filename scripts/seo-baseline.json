@@ -413,6 +413,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],

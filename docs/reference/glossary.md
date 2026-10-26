@@ -11,11 +11,11 @@ date: "2026-01-14"
 
 # Bitcoin Glossary
 
-Plain-language definitions of the Bitcoin and self-custody terms used across this site, from address types and air-gapping through to UTXOs, xpubs, and derivation paths. Over 100 entries, listed alphabetically.
+Plain-language definitions of the Bitcoin and self-custody terms used across this site, from address types and air-gapping through to UTXOs, xpubs, and derivation paths. Over 100 entries, listed alphabetically. If a term you need is missing, [email us](mailto:selfcustodylabs@proton.me) and we will add it.
 
 ---
 
-## Quick Navigation
+## Jump to a letter
 
 [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w) · [X](#x)
 
@@ -433,17 +433,3 @@ The maximum supply of Bitcoin that will ever exist, enforced by Bitcoin's consen
 
 ### 51% Attack
 A theoretical attack where an entity controlling more than half the network's hash rate could double-spend or censor transactions.
-
----
-
-## Didn't Find What You're Looking For?
-
-If a term is missing, [let us know](mailto:selfcustodylabs@proton.me) and we'll add it.
-
----
-
-## Continue Learning
-
-- [What is Bitcoin?](/docs/learn/fundamentals/what-is-bitcoin): Start from the beginning
-- [Learn Section](/learn): Comprehensive Bitcoin education
-- [Guides](/guides): Hands-on tutorials

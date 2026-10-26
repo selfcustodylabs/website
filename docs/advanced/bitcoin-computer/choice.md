@@ -8,12 +8,12 @@ date: "2025-03-29"
 ---
 # Choosing a Bitcoin computer
 
-Any modest laptop is powerful enough to be a Bitcoin computer, so choose by firmware rather than speed: I recommend a ThinkPad that [Libreboot](/docs/libreboot/) supports, so that the proprietary BIOS can be replaced with open-source firmware. The ThinkPad X230 or T430 suits a small budget, and the T480s a medium one. Second-hand is fine, with a new SSD and new USB sticks.
+Any modest laptop is powerful enough to be a Bitcoin computer, so choose by firmware rather than speed: we recommend a ThinkPad that [Libreboot](/docs/libreboot/) supports, so that the proprietary BIOS can be replaced with open-source firmware. The ThinkPad X230 or T430 suits a small budget, and the T480s a medium one. Second-hand is fine, with a new SSD and new USB sticks.
 
 
 ## Why choose a laptop Libreboot supports?
 
-Some people suggest buying a brand-new laptop for security, but a new laptop still ships with proprietary firmware that you cannot inspect. That is why I recommend a laptop on which you can install open-source firmware, and my preferred choice is [Libreboot](/docs/libreboot/). Flashing it is not the easiest process, but it is worth the effort.
+Some people suggest buying a brand-new laptop for security, but a new laptop still ships with proprietary firmware that you cannot inspect. That is why we recommend a laptop on which you can install open-source firmware, and our choice is [Libreboot](/docs/libreboot/). Flashing it is not the easiest process, but it is worth the effort.
 
 
 ## Which laptop fits your budget?
