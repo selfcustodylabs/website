@@ -113,7 +113,7 @@ Coordinator software, such as [Sparrow](https://sparrowwallet.com/) or Nunchuk, 
 
 ### The wallet descriptor
 
-The **wallet descriptor** is a line of text that defines the multisig wallet: every key's xpub and fingerprint, the M-of-N rule, the script type and the derivation paths. Without it you cannot rebuild the wallet, even with every seed phrase, because a seed alone does not say which other keys it was combined with. Store a copy of the descriptor with each seed backup; it is not secret enough to spend with, but it does reveal your balance and history to whoever reads it.
+The **wallet descriptor** is a line of text that defines the multisig wallet: every key's xpub and fingerprint, the M-of-N rule, the script type and the derivation paths. Without it, recovering from two of the three seeds is impossible, because the third key's xpub is recorded in the descriptor and nowhere else; even with all three seeds you would need to know the threshold, script type and paths it records. Store a copy of the descriptor with each seed backup; it is not secret enough to spend with, but it does reveal your balance and history to whoever reads it.
 
 ## Which configuration should you choose? {#choosing-your-configuration}
 
@@ -158,7 +158,7 @@ If you are new to multisig, collaborative custody is a reasonable way to learn i
 
 | Mistake | What goes wrong | What to do instead |
 |---|---|---|
-| Not backing up the wallet descriptor | All three seed phrases survive, but the wallet cannot be rebuilt | Keep a copy of the descriptor, printed or on a file, with each seed backup |
+| Not backing up the wallet descriptor | Two seed phrases survive, but without the third key's xpub the wallet cannot be rebuilt | Keep a copy of the descriptor, printed or on a file, with each seed backup |
 | Storing several seeds together | One theft or fire reaches two keys | Keep each seed in a different place |
 | Using one hardware wallet brand for every key | One firmware flaw affects every key | Mix manufacturers, for example Jade, Trezor and Keystone |
 | Not testing recovery | The backup turns out to be incomplete when it is needed | Rehearse a full recovery with a small amount first |

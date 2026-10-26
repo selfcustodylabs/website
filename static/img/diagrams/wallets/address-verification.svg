@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-label="Multisig address verification: Sparrow, Coldcard, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 386" width="800" height="386" role="img" aria-label="Multisig address verification: Sparrow, Jade Plus, Keystone and Trezor each display the receive address, and all four must show the identical bc1q string; any mismatch means stop immediately.">
   <style>
     .mono { font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
     .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; fill: #767C8A; }
@@ -27,7 +27,7 @@
   <rect class="box" x="220" y="90" width="260" height="38" rx="6"/>
   <text class="mono amt" x="350" y="114" text-anchor="middle">BC1Q8N5...XYZ</text>
   <text class="mono cap" x="510" y="114" fill="#F59E0B">MATCH</text>
-  <text class="mono amt" x="60" y="168">COLDCARD</text>
+  <text class="mono amt" x="60" y="168">JADE PLUS</text>
   <rect class="box" x="220" y="144" width="260" height="38" rx="6"/>
   <text class="mono amt" x="350" y="168" text-anchor="middle">BC1Q8N5...XYZ</text>
   <text class="mono cap" x="510" y="168" fill="#F59E0B">MATCH</text>
