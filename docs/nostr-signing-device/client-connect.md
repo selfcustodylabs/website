@@ -5,19 +5,10 @@ description: "Connect your Nostr Signing Device to clients like Coracle and NoSt
 keywords: ["nostr client", "coracle", "nostrudel", "NSD connection", "horse extension"]
 tags: ["nostr", "client", "setup"]
 ---
-# Connect to a Nostr Client
+# Connect to a Nostr client
 
-Now that you’ve set up your NSD (Nostr Signing Device) and the browser extension, the last step is to connect to your favorite Nostr client. Make sure to choose one that supports the browser extension we connected the NSD to.
+The last step is logging in to a Nostr web client that can use the browser extension, so that every post and reaction is signed on the device. I have tested the device and the Horse extension with [Coracle](https://coracle.social/) and [noStrudel](https://nostrudel.ninja/). Other clients, Snort among them, have shown errors whose cause I have not found yet, so stick to those two for now.
 
-So far, I’ve tested the NSD and the Horse extension with the following Nostr clients:
+Many popular web clients, [Primal](https://primal.net/) for example, do not support external signers and ask for your private key (`nsec`) to log in instead, which defeats the purpose of a signing device. Never paste your `nsec` into one.
 
-- [Coracle](https://coracle.social/)
-- [NoStrudel](https://nostrudel.ninja/)
-
-Some other clients, like Snort, may show errors. I haven’t figured out the cause yet, so I recommend sticking to the ones above for now.
-
-You can try other web clients (like the more popular [Primal](https://primal.net/)), but keep in mind that many of them don’t support the Horse extension or external signing devices. Instead, they ask you to enter your private key (`nsec`) to log in, which is against the whole point of using a signing device to keep your private key offline.
-
-Once you're logged in, make sure to add your preferred relays. And in general, for every action (like posting or reacting), you'll be prompted to sign it using your signing device before it’s propagated to the network.
-
-Congratulations, you're now fully sovereign on Nostr!
+Once logged in, add your preferred relays. From then on, every action you take (posting, reacting, following) asks the device to sign it before it is sent to the network.

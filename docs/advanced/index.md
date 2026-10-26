@@ -7,239 +7,56 @@ tags: ["advanced", "multisig", "air-gapped", "security", "inheritance"]
 slug: /advanced
 ---
 
-# Advanced Setup Guides
+# Advanced setup guides
 
-Take your Bitcoin security to the highest level.
+The advanced guides address specific threats that a single, well-kept hardware wallet does not: multisig removes single points of failure, inheritance planning makes sure your bitcoin outlives you, an air-gapped computer signs and generates seeds with no network at all, a dedicated bitcoin computer keeps wallet software away from your everyday browsing, and open-source firmware replaces the code that runs before the operating system. Most people do not need them; they assume you already have a working hardware wallet, a tested backup and the basics from [Learn](/docs/learn/) and [wallet setup](/docs/wallet-setup/). Match them to your [threat model](/docs/learn/fundamentals/threat-models/).
 
-:::warning Prerequisites
-These guides are for users who already have:
-- A working hardware wallet setup
-- Verified backup recovery process
-- Understanding of basic Bitcoin concepts
+## Which advanced setup protects against what?
 
-If you're new, start with [Learn](/docs/learn/) and [Wallet Setup](/docs/wallet-setup/) first.
-:::
-
-## Why Go Advanced?
-
-Standard hardware wallet setups are excellent for most users. Advanced setups address specific threat models:
-
-| Setup | Protects Against | Complexity | Who Needs It |
+| Setup | Protects against | Effort | Who needs it |
 |-------|------------------|------------|--------------|
-| **Multisig** | Single point of failure, device compromise | High | Large holdings, inheritance planning |
-| **Inheritance Planning** | Loss of Bitcoin at death | Medium | Anyone with Bitcoin to pass on |
-| **Air-Gapped Computer** | Network-based attacks, malware | Medium | DIY seed generation, offline signing |
-| **Bitcoin Computer** | Compromised daily-use devices | Medium | Privacy-focused users |
-| **Open Firmware** | BIOS-level backdoors, Intel ME | Very High | Maximum security requirements |
+| [Multisig](/docs/learn/wallets/multisig/) | Single points of failure, a compromised device | High | Large holdings, inheritance plans |
+| [Inheritance planning](/docs/advanced/inheritance-planning/) | Your bitcoin being lost when you die | Medium | Anyone with bitcoin to pass on |
+| [Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/) | Network attacks and malware reaching your keys | Medium | Dice seed generation, offline signing |
+| [Bitcoin computer](/docs/advanced/bitcoin-computer/) | Compromise through everyday devices | Medium | Privacy-minded users |
+| [Libreboot](/docs/libreboot/) or [coreboot](/docs/coreboot/) | Proprietary firmware, including Intel's Management Engine | Very high | The highest security requirements |
 
-**Most people don't need these.** Match your security to your [threat model](/docs/learn/fundamentals/threat-models).
+## What does each guide involve?
 
----
+| Guide | Time | Cost | What it covers |
+|---|---|---|---|
+| [Multisig](/docs/learn/wallets/multisig/) | 4-8 hours | About $200-750 | Choosing a quorum, preparing three hardware wallets, building the wallet in Sparrow, backup and recovery |
+| [Inheritance planning](/docs/advanced/inheritance-planning/) | 2-4 hours | Varies | Why bitcoin inheritance differs, approaches from simple to multisig, legal points, common mistakes |
+| [Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/) | 2-4 hours | $50-200, or free with an old laptop | Choosing hardware, removing network cards, Libreboot, an encrypted Linux install, offline software |
+| [Bitcoin computer](/docs/advanced/bitcoin-computer/) | 1-2 hours | $50-150, or free with repurposed hardware | A computer used only for bitcoin; unlike an air-gapped one it connects, to run a node or broadcast |
+| [Libreboot](/docs/libreboot/) | 3-5 hours | $15-30 of flashing hardware | Open-source firmware on supported ThinkPads, with the Intel ME stripped and disabled |
+| [Coreboot](/docs/coreboot/) | 2-4 hours | $0-30 | Open-source firmware on more machines, with some proprietary code retained |
 
-## 🔐 Multisig Wallets
+## In what order should you build them?
 
-<div class="guide-card">
+| Stage | Steps |
+|---|---|
+| 1. Foundation | A [hardware wallet](/docs/wallet-setup/hardware-wallet/), a [verified backup](/docs/wallet-setup/backup-verification/), [your own node](/docs/bitcoin-node/) |
+| 2. Stronger security | A [dedicated bitcoin computer](/docs/advanced/bitcoin-computer/), [operational and physical security](/docs/security/), [inheritance planning](/docs/advanced/inheritance-planning/) |
+| 3. Advanced protection | An [air-gapped computer](/docs/learn/wallets/air-gapped-wallets/), a [seed made with dice](/docs/learn/keys/random/) |
+| 4. Maximum security | [Multisig](/docs/learn/wallets/multisig/), [open firmware](/docs/libreboot/) |
 
-### [Multisig Setup Guide](/docs/learn/wallets/multisig/)
+If you want to remove single points of failure, start with a 2-of-3 [multisig](/docs/learn/wallets/multisig/). If you want your family to inherit your bitcoin, start with [inheritance planning](/docs/advanced/inheritance-planning/). To generate your own seed securely, combine an [air-gapped computer](/docs/learn/wallets/air-gapped-wallets/) with the [dice guide](/docs/learn/keys/random/).
 
-**Time:** 4-8 hours | **Difficulty:** Advanced | **Cost:** $230-510
+## Common questions
 
-Eliminate single points of failure by requiring multiple keys to spend. In a 2-of-3 multisig, you need any 2 of 3 keys to move funds.
+### Is multisig worth the complexity?
 
-**Benefits:**
-- No single device compromise can steal funds
-- Geographic distribution of keys
-- Inheritance planning built-in
-- Survives loss of one key
+For life-changing amounts, yes: removing single points of failure is worth the extra work. For smaller amounts, a well-kept single-signature setup is enough.
 
-**What you'll learn:**
-- Multisig concepts and quorum selection
-- Hardware wallet configuration
-- Sparrow Wallet multisig setup
-- Backup and recovery procedures
+### Can you use an old laptop as an air-gapped computer?
 
-**Prerequisites:** Experience with single-sig hardware wallets, understanding of [private keys](/docs/learn/keys/intro).
+Yes; old laptops are ideal. Remove the Wi-Fi and Bluetooth cards rather than only disabling them in software. See [removing the network hardware](/docs/learn/wallets/air-gapped-wallets/#step-1-remove-the-network-hardware).
 
-</div>
+### Do you need open-source firmware?
 
----
+Most people do not: a good hardware wallet used well is strong security. Open firmware suits extreme threat models and people who want to be able to inspect everything. Open source is not a guarantee, though: in the 2026 Coldcard incident the bug sat in public code for five years. Openness makes verification possible; someone still has to do it.
 
-## 📜 Inheritance Planning
+### Should you choose a secure element or open source?
 
-<div class="guide-card">
-
-### [Bitcoin Inheritance Guide](/docs/advanced/inheritance-planning)
-
-**Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** Varies
-
-Ensure your Bitcoin passes to your loved ones, not lost forever. An estimated 4 million Bitcoin are permanently lost, many because owners died without sharing access.
-
-**What you'll learn:**
-- Why Bitcoin inheritance is different from traditional assets
-- Simple to advanced inheritance approaches
-- Step-by-step multisig inheritance setup
-- Common mistakes that lose family fortunes
-- Legal considerations and documentation
-
-**Best approach:** Family multisig where heirs hold keys from the start. No reconstruction needed after death.
-
-</div>
-
----
-
-## 🔌 Air-Gapped Computer
-
-<div class="guide-card">
-
-### [Air-Gapped Computer Guide](/docs/learn/wallets/air-gapped-wallets/)
-
-**Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $50-200 (or free with old hardware)
-
-A computer that has never and will never connect to any network. Used for:
-- DIY seed generation
-- Offline transaction signing
-- Secure key operations
-
-**What you'll learn:**
-- Types of air-gapped setups
-- Hardware selection and preparation
-- Software installation (Tails, etc.)
-- Secure data transfer methods
-
-**Why it matters:** Even the best hardware wallet connects to your computer. An air-gapped machine provides complete isolation.
-
-</div>
-
----
-
-## 💻 Dedicated Bitcoin Computer
-
-<div class="guide-card">
-
-### [Bitcoin Computer Guide](/docs/advanced/bitcoin-computer/)
-
-**Time:** 2-4 hours | **Difficulty:** Intermediate | **Cost:** $50-150 (or free with repurposed hardware)
-
-A computer used exclusively for Bitcoin operations, separate from your daily-use devices.
-
-**Benefits:**
-- Reduced attack surface
-- No browsing, email, or other risky activities
-- Clean environment for wallet software
-- Can be hardened specifically for Bitcoin
-
-**What you'll learn:**
-- Hardware selection and options
-- Operating system choices
-- Security hardening
-- Software installation
-
-**Difference from air-gapped:** A Bitcoin computer can connect to the network (for running a node, broadcasting transactions). An air-gapped computer never connects.
-
-</div>
-
----
-
-## 🔧 Open-Source Firmware
-
-For the highest security requirements, open-source firmware replaces the proprietary BIOS or UEFI, the code that runs before the operating system and that nothing else on the machine can inspect.
-
-<div class="guide-card">
-
-### [Libreboot Guide](/docs/libreboot/)
-
-**Difficulty:** Very Advanced | **Cost:** $15-30 (flashing hardware)
-
-Open-source firmware that replaces the proprietary BIOS on supported ThinkPads and strips and disables the Intel Management Engine. The least proprietary code you can run on these machines.
-
-**Best for:** Users who want complete control and can verify the entire software stack.
-
-</div>
-
-<div class="guide-card">
-
-### [Coreboot Guide](/docs/coreboot/)
-
-**Difficulty:** Very Advanced | **Cost:** $0-30
-
-Open-source firmware foundation. More hardware support than Libreboot but may retain some proprietary blobs.
-
-**Best for:** Users who need open firmware on hardware not supported by Libreboot.
-
-</div>
-
----
-
-## Setup Progression
-
-Build advanced capabilities in stages:
-
-### Stage 1: Foundation (Do First)
-1. **[Hardware wallet](/docs/wallet-setup/hardware-wallet/)**: Basic self-custody
-2. **[Backup verification](/docs/wallet-setup/backup-verification/)**: Confirm recovery works
-3. **[Run your own node](/docs/bitcoin-node/)**: Verify transactions yourself
-
-### Stage 2: Enhanced Security
-4. **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)**: Separate from daily use
-5. **[Security hardening](/docs/security/)**: OpSec and physical security
-6. **[Inheritance planning](/docs/advanced/inheritance-planning)**: Don't let Bitcoin die with you
-
-### Stage 3: Advanced Protection
-7. **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)**: For offline operations
-8. **[DIY seed generation](/docs/learn/keys/random/)**: Verify your entropy
-
-### Stage 4: Maximum Security
-9. **[Multisig setup](/docs/learn/wallets/multisig/)**: Eliminate single points of failure
-10. **[Open firmware](/docs/libreboot/)**: Remove BIOS-level threats
-
----
-
-## Choosing Your Path
-
-### "I want to eliminate single points of failure"
-→ **[Multisig](/docs/learn/wallets/multisig/)** is your answer. Start with 2-of-3.
-
-### "I want my family to inherit my Bitcoin"
-→ **[Inheritance Planning](/docs/advanced/inheritance-planning)**: don't let your Bitcoin die with you.
-
-### "I want to generate my own seed securely"
-→ **[Air-gapped computer](/docs/learn/wallets/air-gapped-wallets/)** + [DIY seed guide](/docs/learn/keys/random/)
-
-### "I want a clean environment for Bitcoin"
-→ **[Dedicated Bitcoin computer](/docs/advanced/bitcoin-computer/)**
-
-### "I want maximum possible security"
-→ All of the above, plus **[open firmware](/docs/libreboot/)**
-
----
-
-## Common Questions
-
-**"Is multisig worth the complexity?"**
-
-For significant holdings (life-changing amounts), yes. The complexity cost is worth eliminating single points of failure. For smaller amounts, a well-secured single-sig setup is sufficient.
-
-**"Can I use an old laptop as an air-gapped computer?"**
-
-Yes! Old laptops are ideal. Disable WiFi/Bluetooth at the hardware level if possible (remove the card). See the [air-gapped setup guide](/docs/learn/wallets/air-gapped-wallets/#step-1-remove-the-network-hardware).
-
-**"Do I really need open-source firmware?"**
-
-For most users, no. Standard hardware wallets with good practices provide excellent security. Open firmware is for users with extreme threat models or those who want complete transparency. One honest caveat from 2026: open source alone caught nothing in the [Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/): the bug sat in public code for five years. Openness enables verification; someone still has to do it.
-
-**"What about hardware wallets with secure elements vs. open source?"**
-
-Both approaches have merit. Secure elements provide tamper resistance. Open source provides auditability. It's no longer a strict trade-off: the Trezor Safe 7 pairs open firmware with an auditable secure element, and BitBox02 Nova and Passport Prime combine certified chips with fully open code. See the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison).
-
----
-
-## Related Resources
-
-### Prerequisites
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models): What level do you need?
-- [Hardware Wallet Setup](/docs/wallet-setup/hardware-wallet/): Start here if you haven't
-
-### Supporting Guides
-- [Bitcoin Node Setup](/docs/bitcoin-node/): Verify your own transactions
-- [Security Hardening](/docs/security/): OpSec and physical security
-- [Privacy Guides](/docs/learn/privacy/protecting-privacy/): Protect your transaction history
+You no longer have to choose. Secure elements resist physical extraction and open source allows auditing, and the Trezor Safe 7 pairs open firmware with an auditable secure element, while the BitBox02 Nova and Passport Prime combine certified chips with fully open code. See the [hardware wallet comparison](/docs/reference/hardware-wallet-comparison/).

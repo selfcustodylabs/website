@@ -6,168 +6,38 @@ keywords: ["bitcoin inheritance", "bitcoin estate planning", "pass bitcoin to he
 tags: ["inheritance", "estate planning", "security", "advanced", "multisig"]
 ---
 
-# Bitcoin Inheritance Planning
+# Bitcoin inheritance planning
 
-How to ensure your Bitcoin passes to your loved ones, not lost forever.
+Bitcoin has no beneficiary forms, no account a court can order opened and no password reset, so bitcoin whose owner dies without a plan is lost for good. An inheritance plan gives your heirs what they need to recover it (the keys, or enough of them, plus written instructions) without making it easier for anyone to steal while you are alive. For significant holdings, the best balance is a 2-of-3 multisig in which an heir holds one key from the start; for smaller amounts, a passphrase-protected seed with the two parts stored apart, or a sealed letter, can be enough. Whatever you choose, write instructions a non-technical person can follow, test the plan with your heir, and review it every year.
 
-:::danger The Stakes Are High
-An estimated **4 million Bitcoin** (worth hundreds of billions) are permanently lost, many because owners died without sharing access. Don't let your Bitcoin become another statistic.
-:::
+## Why is bitcoin inheritance different?
 
-## On This Page
-
-This comprehensive guide covers everything you need:
-
-1. **[Why Bitcoin Inheritance Is Different](#why-bitcoin-inheritance-is-different)**: Understanding the unique challenge
-2. **[Approaches by Complexity](#approaches-by-complexity)**: Five methods from simple to advanced
-3. **[Recommended Setup: Family Multisig](#recommended-setup-family-multisig)**: Step-by-step implementation
-4. **[For Single-Sig Wallets](#for-single-sig-wallets)**: Options if you don't use multisig
-5. **[Common Mistakes to Avoid](#common-mistakes-to-avoid)**: Eight pitfalls and how to prevent them
-6. **[Legal Considerations](#legal-considerations)**: Wills, trusts, and taxes
-7. **[Maintenance Schedule](#maintenance-schedule)**: Keeping your plan current
-8. **[Quick Start Checklist](#quick-start-checklist)**: Action items summary
-
-**Time to read:** ~20 minutes | **Time to implement:** 1-2 hours
-
----
-
-## Why Bitcoin Inheritance Is Different
-
-Traditional assets have built-in recovery mechanisms. Banks have beneficiary designations. Brokerages have transfer-on-death accounts. Courts can order access to safe deposit boxes.
-
-**Bitcoin has none of this.**
-
-| Traditional Assets | Bitcoin |
+| Traditional assets | Bitcoin |
 |-------------------|---------|
-| Banks verify identity | Math verifies ownership |
-| Courts can force access | No authority can recover keys |
-| "Forgot password" exists | Lost seed = lost forever |
-| Institutions hold records | Only you hold the keys |
+| Banks verify the heir's identity | Only the keys prove ownership |
+| Courts can order access | No authority can recover keys |
+| Forgotten passwords can be reset | A lost seed phrase is lost for good |
+| Institutions keep records | Only you know what you hold and where the keys are |
 
-If you die without a plan, your Bitcoin dies with you. There is no appeals process. No customer support. No exceptions.
+The underlying tension is that security needs secrecy, because the fewer people who can reach your keys the safer they are, while inheritance needs sharing, because someone must be able to reach them after you are gone. Every approach is a balance between the two.
 
----
+## Which approach suits you?
 
-## The Inheritance Dilemma
+| Approach | Best for | Strengths | Weaknesses |
+|----------|----------|------------|----------------|
+| A sealed letter | Small amounts, high trust | Simple; heirs need no technical knowledge | A single point of failure; whoever finds it can take the bitcoin |
+| A lawyer or executor | Moderate amounts, an existing estate plan | Fits existing planning; can include conditions | Trusts a third party; probate takes months or years; the lawyer may not understand bitcoin security |
+| Split shares (SLIP39) | Moderate to significant amounts, technical heirs | No single person or place holds everything; survives losing a share | Recombining needs technical understanding; not every wallet supports it |
+| Multisig, with an heir holding a key | Significant amounts, long-term planning | No single point of failure; heirs recover without rebuilding anything; you spend normally meanwhile | Complex to set up; needs several hardware wallets; every holder must keep the descriptor |
+| Collaborative custody (Unchained, Casa) | Very large holdings | A professional holds one key and helps heirs recover | Fees; the company could fail; less privacy |
 
-Bitcoin inheritance creates a fundamental tension:
-
-**Security requires secrecy:** The fewer people who know your seed phrase, the safer your Bitcoin from theft.
-
-**Inheritance requires sharing:** Someone must eventually access your keys after you're gone.
-
-Every inheritance solution is a balance between these competing needs. The right choice depends on your situation.
-
----
-
-## Approaches by Complexity
-
-### Level 1: Simple Letter Method
-**Best for:** Smaller amounts, high-trust family situations
-
-**What it is:** A sealed letter with instructions stored securely, to be opened only upon death.
-
-**Pros:**
-- Simple to set up
-- No technical knowledge required by heirs
-- Works today with no changes to your setup
-
-**Cons:**
-- Single point of failure (letter gets lost/found/destroyed)
-- Requires high trust (anyone who finds it can steal)
-- No verification that letter is still valid/accessible
-
----
-
-### Level 2: Lawyer/Executor Method
-**Best for:** Moderate amounts, existing estate planning
-
-**What it is:** Instructions stored with your estate attorney or in a safe deposit box accessed through probate.
-
-**Pros:**
-- Integrates with existing estate planning
-- Professional management
-- Can include conditions and delays
-
-**Cons:**
-- Requires trusting a third party
-- Probate delays (months to years)
-- Lawyer may not understand Bitcoin security
-- Physical document can still be compromised
-
----
-
-### Level 3: Split Seed Method
-**Best for:** Moderate to significant amounts, technical heirs
-
-**What it is:** Seed phrase split into parts distributed to different people/locations. Example: 3 parts, any 2 needed to reconstruct.
-
-**Pros:**
-- No single person/location has full access
-- Survives loss of one part
-- Can distribute across trusted parties
-
-**Cons:**
-- Requires technical understanding to recombine
-- Shamir's Secret Sharing adds complexity
-- Simple splits (words 1-12, 13-24) are LESS secure, not more
-
-:::warning About Simple Splits
-Never split a seed phrase by just dividing the words (1-12 to Person A, 13-24 to Person B). This is **less secure** than giving the whole seed to one trusted person. Each half significantly reduces the search space for an attacker. Use Shamir's Secret Sharing (SLIP39) or proper threshold schemes instead.
+:::warning Never split a seed phrase by giving people different words
+Giving words 1 to 12 to one person and 13 to 24 to another adds no redundancy, since losing either half loses the bitcoin, and it weakens the seed: half of a 12-word seed leaves only about 62 bits to guess, within reach of a determined attacker. Use SLIP39 shares or multisig instead.
 :::
 
----
+## How does a family multisig work?
 
-### Level 4: Multisig Inheritance
-**Best for:** Significant amounts, long-term planning
-
-**What it is:** A multisig wallet where heirs hold some keys from the start.
-
-**Example 2-of-3 Setup:**
-- Key 1: You control (primary spending)
-- Key 2: Trusted family member (sealed, stored securely)
-- Key 3: Estate attorney or second family member
-
-**Pros:**
-- No single point of failure
-- Heirs can access funds without reconstructing anything
-- Can spend normally during your lifetime
-- Built-in redundancy
-
-**Cons:**
-- Complex to set up
-- Requires hardware wallets for multiple parties
-- All parties must safeguard wallet descriptor
-- Higher upfront cost
-
-This is the recommended approach for significant holdings.
-
----
-
-### Level 5: Collaborative Custody Services
-**Best for:** Very large holdings, institutional needs
-
-**What it is:** Professional services like Unchained, Casa, or similar that hold one key in a multisig arrangement.
-
-**Pros:**
-- Professional key management
-- Inheritance services built-in
-- Support if something goes wrong
-- Geographic distribution
-
-**Cons:**
-- Monthly/annual fees
-- Counterparty risk (company could fail)
-- Privacy implications
-- Regulatory uncertainty
-
----
-
-## Recommended Setup: Family Multisig
-
-For most people with significant Bitcoin holdings, a family multisig provides the best balance of security and inheritance planning.
-
-### How It Works
+A family multisig is a 2-of-3 multisig wallet in which you hold one key, an heir holds a second, and the third is kept in a vault or by a lawyer.
 
 <div class="doc-diagram">
 
@@ -175,293 +45,137 @@ For most people with significant Bitcoin holdings, a family multisig provides th
 
 </div>
 
-**During your lifetime:** You use Key 1 plus Key 2 or Key 3 to spend.
+While you are alive, you spend with key 1 plus key 2 or key 3. After your death, your heir uses keys 2 and 3. Nobody, including the heir, can spend alone.
 
-**After your passing:** Your heir uses Key 2 plus Key 3 to access funds.
+## Step 1: Set up the multisig
 
-### Step-by-Step Implementation
+Step 1 builds the wallet. Follow the [multisig guide](/docs/learn/wallets/multisig/) to create a 2-of-3 multisig, assigning the keys with inheritance in mind: key 1 on your own device (a Jade Plus, for example), key 2 on a device your heir keeps (a Trezor Safe 5, say), and key 3 on a backup device (such as a Keystone 3 Pro) in secure storage.
 
-#### Step 1: Set Up the Multisig
+## Step 2: Let each key holder back up their own seed
 
-Follow the [Multisig Setup Guide](/docs/learn/wallets/multisig/) to create a 2-of-3 multisig wallet.
+Step 2 keeps each seed with its holder. Each holder backs up their own seed phrase; you do not need to know theirs, and they do not need to know yours.
 
-Assign keys with inheritance in mind:
-- **Key 1:** Your primary device (e.g., Jade Plus)
-- **Key 2:** Heir's device (e.g., Trezor Safe 5), they keep it
-- **Key 3:** Backup device (e.g., Keystone 3 Pro), secure storage
-
-#### Step 2: Distribute the Seeds
-
-Each key holder backs up their own seed phrase. You do NOT need to know their seeds, and they don't need to know yours.
-
-| Key | Held By | Seed Stored |
+| Key | Held by | Seed stored |
 |-----|---------|-------------|
 | Key 1 | You | Your secure location |
-| Key 2 | Primary heir | Their secure location |
-| Key 3 | Backup | Safe deposit box, attorney, etc. |
+| Key 2 | Your main heir | Their secure location |
+| Key 3 | Backup | A safe deposit box or with your lawyer |
 
-#### Step 3: Back Up the Wallet Descriptor
+## Step 3: Give every key holder the wallet descriptor
 
-:::danger Critical Step
-Every key holder MUST have a copy of the wallet descriptor (also called "wallet configuration" or "multisig file"). Without it, the funds cannot be spent even with all three seeds.
+Step 3 makes the wallet recoverable from any two keys.
+
+:::danger Every key holder needs a copy of the wallet descriptor
+Recovering with two of the three seeds is impossible without it, because the third key's xpub is recorded in the descriptor and nowhere else.
 :::
 
-The wallet descriptor contains:
-- The extended public keys (xpubs) of all devices
-- The quorum requirements (2-of-3)
-- Derivation paths
-- Address format
+The **wallet descriptor** (also called the wallet configuration or multisig file) records every key's xpub, the 2-of-3 rule, the derivation paths and the address format. In Sparrow, export it as a PDF from the wallet's `Settings` tab, and store copies with each hardware wallet's backup, with your estate documents and with your instructions.
 
-Export from Sparrow Wallet: `File → Export → Wallet Descriptor`
+## Step 4: Write instructions your heirs can follow
 
-Store copies:
-- With each hardware wallet backup
-- With your estate documents
-- In your instructions letter
-
-#### Step 4: Create Instructions Document
-
-Write clear instructions for your heirs. Include:
+Step 4 writes down what to do, for someone who may know nothing about bitcoin. For example:
 
 ```markdown
-## Bitcoin Inheritance Instructions
+## Bitcoin inheritance instructions
 
-### What You're Inheriting
-- A 2-of-3 multisig Bitcoin wallet
-- You need ANY 2 of 3 keys to access funds
+### What you are inheriting
+A 2-of-3 multisig bitcoin wallet. Any two of its three keys can move the funds.
 
-### What You Need
-1. Two hardware wallets with their seed phrases
-2. The wallet descriptor file (attached/located at ___)
-3. Sparrow Wallet software (https://sparrowwallet.com)
+### What you need
+1. Two of the hardware wallets, or their seed phrases
+2. The wallet descriptor (attached, or kept at ___)
+3. Sparrow Wallet (https://sparrowwallet.com)
 
-### Steps to Access Funds
-1. Download and verify Sparrow Wallet
-2. Go to File → Import Wallet
-3. Select "Wallet Descriptor" and load the file
-4. Connect first hardware wallet, verify it's recognized
-5. Connect second hardware wallet
-6. You can now see balance and send transactions
+### How to reach the funds
+1. Download Sparrow Wallet and check its signature
+2. Choose File, Import Wallet, and load the wallet descriptor
+3. Connect the first hardware wallet and check Sparrow recognises it
+4. Connect the second hardware wallet
+5. You can now see the balance and send transactions
 
-### Important Contacts
-- Estate attorney: [name, phone]
-- Technical helper (if needed): [name, phone]
-- Key 3 location: [details]
+### Contacts
+- Lawyer: [name, phone]
+- Technical helper, if needed: [name, phone]
+- Where key 3 is: [details]
 
-### If Something Goes Wrong
-- DO NOT share seed phrases with "recovery services": they are scams
-- Contact [trusted technical person] before taking any action
-- The Bitcoin cannot be "hacked": if seeds are secure, funds are secure
+### If something goes wrong
+- Never give seed phrases to "recovery services": they are scams
+- Contact [trusted technical person] before doing anything
+- Bitcoin cannot be "hacked": if the seeds are safe, the funds are safe
 ```
 
-#### Step 5: Test the Setup
+## Step 5: Test the plan
 
-Before relying on this for inheritance:
+Step 5 proves it works before anyone depends on it:
 
-1. **Test spending:** Make a small transaction using Keys 1+2, then 1+3, then 2+3
-2. **Test recovery:** Have your heir recover their wallet on a fresh device
-3. **Verify descriptor:** Confirm all parties' descriptor copies produce the same addresses
-4. **Practice run:** Walk your heir through the entire process with a test amount
+1. Spend a small amount with keys 1 and 2, then 1 and 3, then 2 and 3.
+2. Have your heir restore their key on a fresh device.
+3. Check that every holder's copy of the descriptor produces the same addresses.
+4. Walk your heir through the whole recovery with a test amount.
 
-#### Step 6: Secure Storage Checklist
+## Step 6: Record where everything is
 
-| Item | Location | Who Knows |
+Step 6 writes down who holds what, kept with the estate documents:
+
+| Item | Where | Who knows |
 |------|----------|-----------|
 | Key 1 device | Your home | You |
-| Key 1 seed | Your secure location | You only |
-| Key 2 device | Heir's possession | Heir |
-| Key 2 seed | Heir's secure location | Heir only |
-| Key 3 device | Backup location | You (+ executor) |
-| Key 3 seed | With Key 3 device | You (+ executor) |
-| Wallet descriptor | Multiple locations | All parties |
-| Instructions | With estate documents | Executor |
+| Key 1 seed | Your secure location | Only you |
+| Key 2 device | With your heir | Your heir |
+| Key 2 seed | Your heir's secure location | Only your heir |
+| Key 3 device | The backup location | You, and your executor |
+| Key 3 seed | Kept separately from the key 3 device | You, and your executor |
+| Wallet descriptor | Several places | Every key holder |
+| Instructions | With the estate documents | Your executor |
 
----
+## What if you use a single-signature wallet?
 
-## For Single-Sig Wallets
+### A seed phrase and a passphrase, stored apart
 
-If you're not ready for multisig, you can still plan for inheritance with a single-signature wallet.
+Store the seed phrase in one secure place, put a strong [passphrase](/docs/learn/keys/passphrase/) on the wallet, and store the passphrase somewhere else, for example with your lawyer. Leave instructions explaining that both are needed. Neither place alone gives access, though the plan still depends on both surviving and being found.
 
-### Option A: Sealed Letter with Passphrase
+### An automated check-in service
 
-1. Store your seed phrase in a secure location (safe, safe deposit box)
-2. Use a strong passphrase on your wallet
-3. Store the passphrase SEPARATELY (with attorney, different location)
-4. Leave instructions explaining both are needed
+Some services send pre-written messages if you stop checking in for a set time. They need nobody to know in advance, but they depend on the service continuing to exist, and the message should only say where to find the instructions, never contain a seed phrase or passphrase.
 
-**Advantage:** Neither location alone grants access.
+### SLIP39 shares
 
-**Disadvantage:** Still relies on both items surviving and being found.
+Some wallets, including Trezor's, can split a backup into SLIP39 shares, any set number of which rebuild the wallet. A 3-of-5 split might give shares to your main heir, a second heir, your lawyer, a safe deposit box and a trusted friend; any three recover it. Not every wallet supports SLIP39, and recovery is more complex.
 
-### Option B: Time-Locked Instructions
+## What mistakes lose an inheritance?
 
-1. Use a service like [Dead Man's Switch](https://www.deadmansswitch.net/) or similar
-2. Set up regular check-ins (monthly/quarterly)
-3. If you miss check-ins, instructions are automatically sent
+| Mistake | Why it matters | What to do instead |
+|---|---|---|
+| "I'll set it up later" | The most common failure: death does not wait | Set up a basic plan now, and improve it later |
+| Keeping seeds and instructions together | Whoever finds both can take everything | Store them apart |
+| Assuming heirs will work it out | They may never find the wallet, fall for scams or give up | Write clear instructions |
+| Forgetting the multisig descriptor | Two seeds cannot rebuild the wallet without it | Store it with every seed |
+| Never testing | An untested plan is a guess | Walk through it with your heirs |
+| A single point of failure | One lost document, place or person ends the plan | Build in redundancy |
+| Over-engineering | Heirs cannot carry out a plan they do not understand | Match the complexity to their skills |
+| Trusting recovery services | They are scams aimed at grieving families | Warn your heirs explicitly |
 
-**Advantage:** Automated, doesn't require anyone to know in advance.
+## What legal steps should you take?
 
-**Disadvantage:** Relies on third-party service continuing to operate.
+This is general information, not legal advice; consult an estate lawyer who knows digital assets in your jurisdiction.
 
-### Option C: Shamir's Secret Sharing (SLIP39)
+- Mention your bitcoin in your will, even though the keys are handled separately, so that its existence and your wishes are documented. For example: "I own bitcoin. Instructions for accessing it are stored separately and have been provided to [person or place]. I direct that it pass to [beneficiary]."
+- Consider a trust, which can keep the estate private, set conditions on distribution and manage the transition.
+- Keep tax records: purchase dates and prices, which wallets you control, and any taxable events, which can save your heirs money and disputes.
+- If your heirs live in other countries, the laws differ, and where keys are stored can have legal consequences; take advice in each jurisdiction.
 
-Some wallets support SLIP39, which splits your seed into shares where you define how many are needed to reconstruct.
+## How often should you review the plan?
 
-Example: 3-of-5 split
-- Share 1: Primary heir
-- Share 2: Secondary heir  
-- Share 3: Attorney
-- Share 4: Safe deposit box
-- Share 5: Trusted friend
+Once a year, check that you can still reach every key, that the backups still work, that contacts for your lawyer, heirs and executor are current, that the instructions are still accurate, and whether the wallet software has changed. Update the plan after a large change in value, marriage, divorce, a birth or death, a move abroad, a change of lawyer or executor, a hardware wallet reaching the end of its life, or any security concern.
 
-**Advantage:** True threshold security (any 3 of 5 works).
+## What should you do today?
 
-**Disadvantage:** Not all wallets support SLIP39; adds recovery complexity.
+If nothing else, take these five steps; they take about half an hour:
 
----
+1. Write down which wallets hold your bitcoin.
+2. Check that your seed phrase backups exist and are readable.
+3. Tell one trusted person that you own bitcoin and where the instructions are.
+4. Write basic instructions for reaching it.
+5. Store the instructions separately from the seed phrases.
 
-## Common Mistakes to Avoid
-
-### 1. "I'll Set This Up Later"
-The most common mistake. People procrastinate, and tragedy doesn't wait. Set up basic inheritance planning TODAY, even if imperfect. Improve it later.
-
-### 2. Storing Seeds and Instructions Together
-If someone finds your seed phrase AND knows it's for Bitcoin, they can steal everything. Keep seeds and explanatory documents separate.
-
-### 3. Assuming Heirs Will "Figure It Out"
-Most people don't understand Bitcoin. Without clear instructions, heirs may:
-- Never find the wallet
-- Fall for recovery scams
-- Make mistakes that lose funds
-- Give up and assume it's inaccessible
-
-### 4. Forgetting the Wallet Descriptor (Multisig)
-Seed phrases alone do NOT restore a multisig wallet. The descriptor is required. Back it up with every seed.
-
-### 5. Not Testing the Plan
-An untested inheritance plan is no plan at all. Walk through the entire process with your heirs before you need it.
-
-### 6. Single Point of Failure
-If everything depends on one document, one location, or one person, that's a vulnerability. Build in redundancy.
-
-### 7. Over-Engineering
-A complex plan that heirs can't execute is worse than a simple plan they can. Match complexity to your heirs' technical ability.
-
-### 8. Trusting "Bitcoin Recovery Services"
-There is no legitimate way to recover Bitcoin without the seed phrase. Any service claiming otherwise is a scam targeting grieving families. Warn your heirs explicitly.
-
----
-
-## Legal Considerations
-
-:::info Not Legal Advice
-This is educational information, not legal advice. Consult an estate planning attorney familiar with digital assets in your jurisdiction.
-:::
-
-### Include Bitcoin in Your Will
-
-Even if you handle key transfer separately, your will should acknowledge Bitcoin exists. This prevents disputes and ensures your wishes are documented.
-
-Example language (customize with your attorney):
-> "I own Bitcoin cryptocurrency. Instructions for accessing these assets are stored separately and have been provided to [person/location]. I direct that these assets pass to [beneficiary]."
-
-### Consider a Trust
-
-A trust can provide:
-- Privacy (avoids probate records)
-- Conditions on distribution
-- Professional management during transition
-- Tax planning opportunities
-
-Some people create a "Bitcoin trust" specifically for digital assets.
-
-### Document for Taxes
-
-Your heirs may owe taxes on inherited Bitcoin. Keep records of:
-- Acquisition dates and prices (cost basis)
-- Which addresses/wallets you control
-- Any taxable events during your lifetime
-
-This documentation can save heirs significant money and legal complications.
-
-### International Considerations
-
-If you have heirs in different countries:
-- Laws vary significantly by jurisdiction
-- Key storage locations may have legal implications
-- Consider consulting attorneys in relevant jurisdictions
-
----
-
-## Maintenance Schedule
-
-Inheritance planning isn't "set and forget." Review annually:
-
-### Annual Checklist
-
-- [ ] **Verify access:** Can you still access all keys?
-- [ ] **Update amounts:** Has your Bitcoin holding changed significantly?
-- [ ] **Check contacts:** Are attorney, heir, trustee contacts still valid?
-- [ ] **Test backups:** Do seed backups still work?
-- [ ] **Review instructions:** Are they still accurate and clear?
-- [ ] **Life changes:** Marriage, divorce, births, deaths: update beneficiaries?
-- [ ] **Software updates:** Has wallet software changed significantly?
-
-### When to Update Your Plan
-
-- Significant change in Bitcoin value
-- Change in family situation (marriage, divorce, children)
-- Moving to a different jurisdiction
-- Change in estate attorney or executor
-- Hardware wallet reaching end of life
-- Discovering a security concern
-
----
-
-## Quick Start Checklist
-
-If you do nothing else, do this TODAY:
-
-- [ ] **Write down** which wallets/addresses hold your Bitcoin
-- [ ] **Verify** your seed phrase backups exist and are readable
-- [ ] **Tell ONE trusted person** that you own Bitcoin and where to find instructions
-- [ ] **Write basic instructions** explaining how to access your Bitcoin
-- [ ] **Store instructions** separately from seed phrases
-
-This takes 30 minutes and could save your family from permanent loss.
-
----
-
-## Summary
-
-| Approach | Best For | Complexity | Trust Required |
-|----------|----------|------------|----------------|
-| Letter method | Small amounts, high trust | Low | High |
-| Lawyer/executor | Existing estate plan | Low | Medium |
-| Split seed (SLIP39) | Technical heirs | Medium | Distributed |
-| **Multisig (recommended)** | **Significant holdings** | **Medium-High** | **Distributed** |
-| Collaborative custody | Large holdings, institutions | Medium | Service provider |
-
-The best plan is one that:
-1. Actually gets implemented (don't let perfect be the enemy of good)
-2. Your heirs can actually execute
-3. Doesn't create new security vulnerabilities
-4. Gets reviewed and updated regularly
-
----
-
-## Next Steps
-
-1. **Assess your situation:** How much Bitcoin? Who are your heirs? What's their technical level?
-2. **Choose an approach:** Match complexity to your needs and heirs' abilities
-3. **Implement the basics:** Even a simple letter is better than nothing
-4. **Test the plan:** Walk through it before you need it
-5. **Document and store:** Multiple copies, multiple locations
-6. **Schedule reviews:** Annual check-up at minimum
-
-### Related Guides
-
-- [Multisig Setup Guide](/docs/learn/wallets/multisig/): Implement 2-of-3 inheritance multisig
-- [Backup Verification](/docs/wallet-setup/backup-verification/): Ensure your backups work
-- [Threat Model Assessment](/docs/learn/fundamentals/threat-models/): Understand what you're protecting against
-- [Physical Security](/docs/security/physical-security/): Secure storage locations
+The best plan is one that actually gets set up, that your heirs can carry out, that does not weaken your security, and that you review.
