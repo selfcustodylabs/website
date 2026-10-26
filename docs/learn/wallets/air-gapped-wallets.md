@@ -125,9 +125,7 @@ Once you have your laptop, make it impossible to connect to the internet:
 
 ### Step 2: BIOS (Libreboot)
 
-[Libreboot](/docs/libreboot) is an open-source BIOS/firmware replacement with significant security advantages for an air-gapped computer. It removes proprietary firmware like Intel Management Engine (ME) and AMD Platform Security Processor (PSP), eliminating backdoors that could compromise the device.
-
-For an air-gapped setup, where the whole point is maintaining an isolated, tamper-proof system, Libreboot ensures that no hidden code is running on your hardware. The source code is fully auditable.
+[Libreboot](/docs/libreboot/) replaces the laptop's proprietary BIOS with open-source firmware built on coreboot. On supported ThinkPads it strips the Intel Management Engine down with me_cleaner and disables it, and keeps other vendor code to what the board needs to boot. The machine is not free of all closed code, but far less of it runs before the operating system, and the firmware itself can be audited and rebuilt, which suits a computer whose whole purpose is to be trusted.
 
 If your hardware isn't supported by Libreboot, [Coreboot](/docs/coreboot) supports a wider range of laptops and provides most of the same benefits.
 
@@ -160,7 +158,7 @@ Use your air-gapped computer to create a truly random seed phrase with the **[DI
 
 :::info Firmware Options
 For the best air-gapped security, replace the stock BIOS with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)**: removes Intel ME completely
+- **[Libreboot Guide](/docs/libreboot/)**: open-source firmware that strips and disables the Intel ME
 - **[Coreboot Guide](/docs/coreboot)**: supports more laptop models
 :::
 

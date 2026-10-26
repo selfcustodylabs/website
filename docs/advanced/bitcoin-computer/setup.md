@@ -12,7 +12,7 @@ When setting up your Bitcoin computer, it’s essential to focus on three key ar
 
 ## BIOS: Libreboot
 
-Libreboot ([see my guide here](/docs/libreboot)) is an open-source BIOS/firmware replacement that offers significant security advantages for any computer, particularly for an Bitcoin computer. By removing proprietary firmware like Intel Management Engine (ME) or AMD Platform Security Processor (PSP), Libreboot eliminates potential backdoors that could compromise the security of your device. In an Bitcoin computer setup, where the primary concern is creating and broadcasting Bitcoin transactions in a protected, malware-free environment, using Libreboot ensures that no hidden code is running on your hardware, minimizing the risk of attacks. Libreboot is fully transparent, meaning its source code is available for review, making it an ideal choice for those who prioritize control over their system and its security.
+Libreboot ([see my guide here](/docs/libreboot/)) replaces the laptop's proprietary BIOS with open-source firmware built on coreboot. On the ThinkPads it supports, it strips the Intel Management Engine down with me_cleaner and disables it, and keeps the remaining vendor code to what the board needs to boot. That does not make the machine free of closed code, but it removes most of the proprietary software that runs before your operating system, and what is left of the firmware is source you can read and rebuild. For a Bitcoin computer, whose job is to create and broadcast transactions in an environment you trust, that is a much smaller base to trust.
 
 
 ## OS: Linux Mint

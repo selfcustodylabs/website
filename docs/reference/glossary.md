@@ -175,7 +175,7 @@ A wallet connected to the internet. More convenient but less secure than cold st
 A reference to a previous transaction output being spent in a new transaction. Transactions consume inputs and create outputs.
 
 ### Intel ME (Management Engine)
-A subsystem in Intel processors that operates independently and can pose security risks. See [Libreboot Guide](/docs/libreboot).
+The Intel Management Engine is a separate processor in Intel chipsets that runs its own closed firmware, with access to memory and the network, independently of the operating system. On most Intel machines it cannot be removed, only cut down and disabled, as Libreboot and coreboot do with me_cleaner. See the [Libreboot guide](/docs/libreboot/).
 
 ---
 
@@ -202,7 +202,7 @@ The original Bitcoin address format, starting with `1`. Higher transaction fees 
 A "Layer 2" payment network built on top of Bitcoin, enabling fast, low-fee transactions.
 
 ### Libreboot
-Open-source firmware replacement for computer BIOS that removes proprietary code and potential backdoors. See [Libreboot Guide](/docs/libreboot).
+Libreboot is an open-source replacement for a computer's BIOS or UEFI firmware, built on coreboot, that keeps proprietary vendor code to the minimum a board needs and disables the Intel ME where it can. See the [Libreboot guide](/docs/libreboot/).
 
 ---
 

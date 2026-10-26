@@ -51,7 +51,7 @@ Coreboot runs in stages. It begins with a tiny bootblock, followed by romstage (
 ## Related Guides
 
 :::info Libreboot Alternative
-For even more freedom, check out **[Libreboot](/docs/libreboot)**, a Coreboot distribution that removes additional proprietary blobs like Intel ME. It supports fewer devices but offers maximum openness.
+For less proprietary code, see **[Libreboot](/docs/libreboot/)**, a coreboot distribution that keeps vendor code to the minimum a board needs and strips and disables the Intel ME by default. It supports fewer devices.
 :::
 
 :::tip Use Cases

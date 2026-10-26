@@ -1233,7 +1233,7 @@
     },
     "/docs/libreboot/": {
       "title": "Libreboot Installation Guide | Self Custody Labs",
-      "description": "Install Libreboot open-source firmware to replace your BIOS. Remove Intel ME backdoors and enhance security for your Bitcoin computer.",
+      "description": "Install Libreboot on a ThinkPad with a Raspberry Pi Pico: open-source coreboot firmware that strips and disables Intel's ME on your Bitcoin computer.",
       "canonical": "https://selfcustodylabs.com/docs/libreboot/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -1279,6 +1279,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1297,6 +1298,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1333,6 +1335,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1387,6 +1390,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],
@@ -1405,6 +1409,7 @@
       "jsonLd": [
         "Article",
         "BreadcrumbList",
+        "HowTo",
         "Organization+EducationalOrganization",
         "WebSite"
       ],

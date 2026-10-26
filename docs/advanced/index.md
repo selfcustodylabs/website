@@ -142,7 +142,7 @@ A computer used exclusively for Bitcoin operations, separate from your daily-use
 
 ## 🔧 Open-Source Firmware
 
-For users with the highest security requirements, replacing proprietary BIOS/UEFI with open-source firmware eliminates potential backdoors at the deepest level.
+For the highest security requirements, open-source firmware replaces the proprietary BIOS or UEFI, the code that runs before the operating system and that nothing else on the machine can inspect.
 
 <div class="guide-card">
 
@@ -150,7 +150,7 @@ For users with the highest security requirements, replacing proprietary BIOS/UEF
 
 **Difficulty:** Very Advanced | **Cost:** $15-30 (flashing hardware)
 
-Fully open-source firmware that completely replaces proprietary BIOS and removes Intel Management Engine. Maximum transparency and security.
+Open-source firmware that replaces the proprietary BIOS on supported ThinkPads and strips and disables the Intel Management Engine. The least proprietary code you can run on these machines.
 
 **Best for:** Users who want complete control and can verify the entire software stack.
 

@@ -5,35 +5,33 @@ description: "Compile Flashprog from the Libreboot build system. Required tool f
 keywords: ["flashprog", "libreboot", "BIOS flash", "lbmk", "compile"]
 tags: ["libreboot", "flashprog", "build"]
 ---
-# Build Flashprog
+# Build flashprog
 
-To build and install Flashprog, follow these steps
-
-Into `~/lbmk` directory, execute the following command to update trees by installing Flashprog directory:
+flashprog is the program that reads and writes the flash chip through the Raspberry Pi Pico. It is a fork of flashrom, and lbmk builds the version Libreboot tests against. Build it from the `lbmk` directory:
 
 ```bash
 ./mk -b flashprog
 ```
-Navigate into the directory and install Flashprog
+
+lbmk downloads the flashprog source into `src/flashprog/default` and compiles it there (older lbmk versions used `src/flashprog`; `ls src/flashprog` shows which you have). Install it from that directory so that the plain `flashprog` used in the rest of this guide works:
 
 ```bash
-cd src/flashprog
+cd src/flashprog/default
 sudo make install
+cd ../../..
 ```
 
-Once installation is completed, Flashprog will be accessible system-wide by typing flashprog on your terminal
-
-To verify if your Raspberry Pi Pico is ready for use, execute the following command:
+Once the Pico has the serprog firmware on it ([build serprog](/docs/libreboot/raspberry-pico/build-serprog/)), check the two talk to each other, with the Pico plugged in but not yet clipped to anything:
 
 ```bash
 sudo flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M
 ```
 
-If the output consists of several lines beginning with `serprog: ...` and concludes with
+Several lines starting `serprog:` followed by this means the Pico is working:
 
 ```text
-No EEPROM/flash device found
-Note: flashrom can never write if the flash chip isn't found automatically
+No EEPROM/flash device found.
+Note: flashprog can never write if the flash chip isn't found automatically.
 ```
 
-It indicates that the Raspberry Pi Pico is in proper working condition and ready to be utilized.
+"No flash device found" is expected here, because the clip is not on a chip yet. An error about `/dev/ttyACM0` instead means the Pico is on a different port; `sudo dmesg` shows which.

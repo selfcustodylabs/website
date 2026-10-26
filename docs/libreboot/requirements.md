@@ -5,44 +5,42 @@ description: "Hardware list for flashing Libreboot: supported laptops, Raspberry
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "requirements"]
 tags: ["libreboot", "raspberry", "pico", "bios", "pomona", "clip", "usb", "cables"]
 ---
-# Hardware Requirements
+# Hardware requirements
 
-We created this guide specifically for installing Libreboot on Lenovo ThinkPad models with an SOIC8 (8-pin) BIOS chip. To get started, you'll need the following equipment:
+Flashing Libreboot externally needs five things: a supported ThinkPad, a Raspberry Pi Pico H to act as the programmer, a Pomona 5250 SOIC-8 clip, short female-to-female jumper wires, and a micro USB cable that carries data. Together the flashing parts cost about $15 to $30. This guide is written for ThinkPads whose firmware sits on SOIC-8 (8-pin) chips.
 
-## Laptop
+## Which laptop?
 
-Libreboot supports several Lenovo ThinkPad models, with the **ThinkPad T480s** being the latest and most powerful option. It supports NVMe storage and up to 24GB of RAM, making it an excellent choice.
+The models this guide covers, with their Libreboot targets and chip layouts, are listed on the [Libreboot overview](/docs/libreboot/#which-laptops-does-this-guide-cover): the X230, T420, T430, T440p, T480s, T530 and W530. The ThinkPad T480s is the newest and most capable of them, with NVMe storage and up to 24 GB of memory.
 
-Here’s the complete list of supported models covered in this guide.
+### What the T480s needs first
 
-- X Series: X230
-- T Series: T420, T430, T440p, T480s, T530
-- W Series: W530
+Libreboot's [T480 and T480s instructions](https://libreboot.org/docs/install/t480.html) add three requirements the older models do not have:
 
+1. Update Lenovo's own UEFI and embedded controller firmware to the version Libreboot specifies before installing, and change the settings it lists (Thunderbolt BIOS Assist off, Secure Boot off, and others).
+2. Remove both the internal battery and the CMOS coin cell before flashing; on the T480s the battery has to come out completely.
+3. Deal with the Thunderbolt firmware chip. Early T480 and T480s firmware writes debug logs to the Thunderbolt controller's own flash chip until it fills, after which Thunderbolt and fast charging stop working. Libreboot documents an external re-flash of that chip, done before Libreboot itself and in a strict order; follow their page exactly if your machine needs it.
 
-## Raspberry Pi Pico H (with pre-soldered headers)
+## Raspberry Pi Pico H
 
-The Raspberry Pi Pico H is an affordable microcontroller that operates at 3.3V logic levels, ensuring safe communication with your BIOS chip without the risk of damage from 5V signals.
+The Raspberry Pi Pico H is a Pico with its header pins already soldered on, and it is the programmer Libreboot recommends: it runs at 3.3 V logic, so it cannot damage these chips with 5 V signals, and it costs a few dollars. Use the original Pico (RP2040). Libreboot removed support for the Pico 2 because of stability problems, and the Pico W works but needs extra vendor firmware for its unused Wi-Fi chip.
 
-![Pico](/img/libreboot/pico.webp)
+![A Raspberry Pi Pico H board with pre-soldered header pins](/img/libreboot/pico.webp)
 
+## Pomona 5250 SOIC-8 clip
 
-## Pomona 5250 SOIC8 Clip
+The Pomona 5250 is the clip that grips the 8-pin chip while it is still soldered to the board. Cheaper clips exist, but they slip, and a clip that loses contact mid-write is the most common way to end up with a corrupt chip.
 
-The Pomona 5250 clip is widely regarded as the best tool for flashing SOIC8 chips, providing a reliable and secure connection during the process.
+![A blue Pomona 5250 SOIC-8 test clip](/img/libreboot/pomona.webp)
 
-![Pomona](/img/libreboot/pomona.webp)
+## Female-to-female jumper wires, 10 cm
 
+Short wires connect the Pico to the clip. Keep them to about 10 cm: longer wires pick up interference at SPI speeds and cause read and write errors.
 
-## Female-to-Female Dupont Cables (10cm)
+![A multicoloured ribbon of short female-to-female Dupont jumper wires](/img/libreboot/dupont.webp)
 
-You’ll need 10cm female-to-female Dupont cables to connect your Raspberry Pi Pico to the SOIC8 clip. Longer cables may introduce signal instability, increasing the risk of data errors.
+## Micro USB cable that carries data
 
-![Dupont](/img/libreboot/dupont.webp)
+The cable connects the Pico to the computer running the flashing software. Many micro USB cables carry power only; if the Pico does not appear as a device when plugged in with BOOTSEL held, try another cable.
 
-
-## Micro USB Cable (with Data Transfer Support)
-
-A Micro USB cable is required to connect your Raspberry Pi Pico to your laptop. Make sure the cable supports data transfer, not just charging, to ensure proper communication during the flashing process.
-
-![USB](/img/libreboot/usb.webp)
+![A black micro USB to USB-A cable](/img/libreboot/usb.webp)

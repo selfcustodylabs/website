@@ -5,50 +5,47 @@ description: "Build serprog firmware for the Raspberry Pi Pico H so it can act a
 keywords: ["bitcoin", "self custody", "security", "privacy", "libreboot", "build", "serprog"]
 tags: ["libreboot", "raspberry", "pico", "serprog"]
 ---
-# Build Serprog
+# Build serprog
 
-Install the required dependencies
+serprog is open-source firmware that turns a Raspberry Pi Pico into an SPI programmer that flashprog can drive over USB. Build it with lbmk, copy the resulting `.uf2` file onto the Pico while it is in bootloader mode, and check that it reappears as a serial device.
+
+## Step 1: Install the Pico toolchain
 
 ```bash
 sudo apt install cmake libusb-1.0-0-dev libmbedtls-dev gcc-arm-none-eabi -y
 ```
 
-## Build serprog firmware from source
+## Step 2: Build the firmware
 
-To build the pico-serprog firmware from source, navigate to your lbmk folder and run:
+From the `lbmk` directory:
 
 ```bash
 ./mk -b pico-serprog
 ```
 
-This command will automatically compile the firmware for the Raspberry Pi Pico (it will take some time).
+The build takes a few minutes and leaves two files:
 
-Once the build is complete, the firmware files will be located in:
+- `bin/serprog_pico/serprog_pico.uf2`, for the Pico and Pico H
+- `bin/serprog_pico/serprog_pico_w.uf2`, for the Pico W
 
-- `bin/serprog_pico/serprog_pico.uf2`
-- `bin/serprog_pico/serprog_pico_w.uf2`
+Use the original Pico (RP2040). Libreboot removed Pico 2 support because of stability problems.
 
-Files with `pico2` in the name are specifically for the Pico 2, but they are also compatible.
+## Step 3: Copy the firmware onto the Pico
 
+1. Hold down the BOOTSEL button on the Pico and plug it into your computer with the USB cable, then let go. Holding BOOTSEL while plugging in starts the Pico's bootloader, and it appears as a USB drive.
+2. Copy `serprog_pico.uf2` onto that drive. The Pico restarts with the new firmware and the drive disappears.
 
-## Connect the Pico to PC
+To change the firmware later, hold BOOTSEL while plugging in again.
 
-- Connect the USB cable to your laptop
-- Press and hold the BOOTSEL button on your Pico while you plug it in (this forces it into the bootloader mode)
-- The Pico will be detected as USB flash drive
+## Step 4: Check the Pico is detected
 
-## Copy the Firmware
-
-- Drag your `serprog_pico.uf2` into your Pico.
-- Your Pico will disconnect, that means it is now ready and can be unplugged.
-
-Type the following command
+Unplug the Pico, start watching the kernel log, and plug it back in:
 
 ```bash
 sudo dmesg -wH
 ```
 
-Now plug your Raspberry Pico again and you should get the following output
+You should see something like:
 
 ```text
 [  +0.092782] usb 3-7.2: New USB device found, idVendor=cafe, idProduct=4001, bcdDevice= 1.00
@@ -59,8 +56,4 @@ Now plug your Raspberry Pico again and you should get the following output
 [  +0.010021] cdc_acm 3-7.2:1.0: ttyACM0: USB ACM device
 ```
 
-Please ensure you take note of the serial port designation (in this instance, ttyACM0) to which your device is connected. This step is crucial as we'll need to verify the readiness of the device for usage following the installation of flashprog.
-
-Now you can unplug the Raspberry Pico
-
-If you want to change the firwmare in the future, you need to press the BOOTSEL button on the board while you plug it in.
+Note the serial port on the last line (`ttyACM0` here). flashprog needs it, and the rest of this guide assumes `/dev/ttyACM0`; use yours if it differs.

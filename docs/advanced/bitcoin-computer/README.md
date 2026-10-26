@@ -77,6 +77,6 @@ For the highest level of protection, consider an **[Air-Gapped Computer](/docs/l
 
 :::info Firmware Security
 Enhance your Bitcoin computer's security with open-source firmware:
-- **[Libreboot Guide](/docs/libreboot)** - Maximum openness, removes Intel ME
+- **[Libreboot Guide](/docs/libreboot/)**: the most open firmware for supported ThinkPads, with the Intel ME stripped and disabled
 - **[Coreboot Guide](/docs/coreboot)** - Supports more hardware models
 :::
