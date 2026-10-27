@@ -9,7 +9,6 @@ import { redirects, createRedirects } from "./src/data/redirects.js";
 import { contentSecurityPolicy } from "./src/data/securityHeaders.js";
 import { prismLab } from "./src/data/prismTheme.js";
 import { currentAdvisory } from "./src/data/advisories.js";
-import { parseFrontMatter } from "./plugins/revision-history/index.js";
 
 /** Short hash of the commit being built, printed in the footer as the build mark. */
 function buildCommit() {
@@ -227,9 +226,6 @@ const config = {
   onDuplicateRoutes: "warn",
   
   markdown: {
-    // Adds each doc's and note's recent commits as `revisions`, read by
-    // src/components/RevisionHistory (see plugins/revision-history).
-    parseFrontMatter,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
