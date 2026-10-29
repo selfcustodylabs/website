@@ -6,7 +6,7 @@ import Head from "@docusaurus/Head";
 import Cover, { CoverMosaic } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
 import PageRows from "@site/src/components/landing/PageRows";
-import { sidebars, getDoc, plates, absolute } from "@site/src/components/landing/siteIndex";
+import { sidebars, getDoc, absolute } from "@site/src/components/landing/siteIndex";
 import styles from "@site/src/components/landing/landing.module.css";
 
 const TITLE = "Learn Bitcoin Self-Custody: Keys, Wallets, Transactions & Privacy";
@@ -66,13 +66,10 @@ export default function LearnPage() {
               Learn Bitcoin <span className={styles.nowrap}>self-custody</span>
             </>
           }
-          plate={plates["/learn/"]}
-          foot={
-            <>
-              <span>{listed.length} pages</span>
-              <span>{sections.length} sections</span>
-            </>
-          }
+          facts={[
+            { label: "Pages", value: listed.length },
+            { label: "Sections", value: sections.length },
+          ]}
           band={<CoverMosaic bands={sections.map((s) => getDoc(s.pages[0]).band)} />}
         >
           <p className={styles.lede}>

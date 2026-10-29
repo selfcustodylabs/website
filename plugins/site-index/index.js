@@ -17,7 +17,6 @@
  *   sidebars: { [sidebarId]: [{ label, link, items: [permalink] }] }
  *   notes:    [{ permalink, title, description, date, plate, band }], newest first
  *             (field notes, from the blog plugin, for the homepage)
- *   plates:   { "/" | "/learn/" | "/guides/": plate } for the landing covers
  *
  * What the lists show is read from the page, like plugins/structured-data, so
  * a listing cannot drift from what the page says:
@@ -216,10 +215,7 @@ export default function siteIndexPlugin(context) {
           };
         });
 
-      // The landing pages' own plate marks, for their covers.
-      const plates = Object.fromEntries(["/", "/learn/", "/guides/"].map((route) => [route, plateOf(route)]));
-
-      await actions.createData("site-index.json", JSON.stringify({ docs, sidebars: groups, notes, plates }));
+      await actions.createData("site-index.json", JSON.stringify({ docs, sidebars: groups, notes }));
     },
   };
 }

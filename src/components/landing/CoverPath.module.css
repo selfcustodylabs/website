@@ -1,0 +1,210 @@
+/*
+ * The homepage cover's band: three drawings top to bottom, joined by one amber
+ * wire (the path is the subject), each with its label and a link to its page.
+ * Sizes follow the band through container units, so the same layout works from
+ * a 1920 px screen down to a phone.
+ */
+
+.wrap {
+  container-type: inline-size;
+  padding: 2.75rem clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.path {
+  --fig: clamp(7rem, 44cqw, 15rem);
+  --gap: 2.25rem;
+  /* The ground the drawings sit on, so the wire shows only between them. */
+  --ground: var(--scl-bg);
+  display: grid;
+  gap: var(--gap);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--fig) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin: 0;
+}
+
+/* The wire: from the bottom of this drawing to the top of the next. */
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--fig) / 1.6);
+  bottom: calc(-1 * var(--gap));
+  left: calc(var(--fig) / 2 - 1px);
+  width: 2px;
+  background: var(--scl-amber);
+}
+
+.figure {
+  aspect-ratio: 8 / 5;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--scl-dim);
+  border-radius: var(--scl-radius);
+  background: var(--ground);
+}
+
+.figure svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+/* The number hangs, so a label that wraps lines up with itself. */
+.label {
+  display: flex;
+  gap: 0.65rem;
+  margin: 0;
+  color: var(--scl-ink-2);
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.num {
+  flex: none;
+  color: var(--scl-faint);
+}
+
+.name {
+  color: var(--scl-ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  text-wrap: pretty;
+}
+
+/* The link covers the whole step: drawing, label and name. */
+.name::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  border-radius: var(--scl-radius);
+}
+
+.step:hover .name {
+  color: var(--scl-amber-lit);
+}
+
+.step:hover .figure {
+  border-color: var(--scl-dim2);
+}
+
+.name:focus-visible {
+  outline: none;
+}
+
+.name:focus-visible::after {
+  outline: 2px solid var(--scl-amber);
+}
+
+/* ---------- drawings (og_theme.py tones) ---------- */
+
+.dark rect,
+.warm rect,
+.lit rect {
+  fill: none;
+  stroke-width: 2;
+}
+
+.dark rect {
+  stroke: var(--scl-dim2);
+}
+
+.dark circle {
+  fill: var(--scl-dim2);
+}
+
+/* DIE_WARM in og_theme.py; it has no token. */
+.warm rect {
+  stroke: #4a3818;
+}
+
+.warm circle {
+  fill: var(--scl-ember);
+}
+
+.lit rect {
+  stroke: var(--scl-amber);
+  stroke-width: 3;
+}
+
+.lit circle {
+  fill: var(--scl-amber-lit);
+}
+
+.context {
+  fill: none;
+  stroke: var(--scl-dim2);
+  stroke-width: 2;
+}
+
+.screen {
+  fill: var(--scl-band);
+  stroke: var(--scl-dim);
+}
+
+.gap {
+  fill: none;
+  stroke: var(--scl-dim2);
+  stroke-width: 2;
+  stroke-dasharray: 9 7;
+}
+
+.subject {
+  fill: var(--ground);
+  stroke: var(--scl-amber);
+  stroke-width: 3;
+}
+
+.cell,
+.core {
+  fill: var(--scl-amber-lit);
+}
+
+.mesh {
+  stroke: var(--scl-dim);
+  stroke-width: 2;
+}
+
+/* MID in og_theme.py: the links that touch your own node. It has no token. */
+.link {
+  stroke: #604c2a;
+  stroke-width: 2;
+}
+
+.peer {
+  fill: var(--ground);
+  stroke: var(--scl-dim2);
+  stroke-width: 2;
+}
+
+/* Phone and narrow tablet: the band follows the words (Cover.module.css). */
+@media (max-width: 840px) {
+  .wrap {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .path {
+    --fig: clamp(6.5rem, 34cqw, 9rem);
+    --gap: 1.5rem;
+  }
+}

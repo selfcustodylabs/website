@@ -10,9 +10,6 @@ export const sidebars = index.sidebars;
 /** Field notes, newest first, as the blog plugin orders them. */
 export const notes = index.notes;
 
-/** Plate marks of the landing pages themselves, keyed by route ("/", "/learn/", "/guides/"). */
-export const plates = index.plates;
-
 /**
  * One doc by permalink. Throws rather than rendering a hole: a landing page
  * that names a moved or deleted doc should fail the build.

@@ -2,13 +2,14 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 
-import Cover, { CoverMark } from "@site/src/components/landing/Cover";
+import Cover from "@site/src/components/landing/Cover";
+import CoverPath from "@site/src/components/landing/CoverPath";
 import Section from "@site/src/components/landing/Section";
 import RouteFlow from "@site/src/components/landing/RouteFlow";
 import GuideCards from "@site/src/components/landing/GuideCards";
 import NoteCards from "@site/src/components/landing/NoteCards";
 import InlineLinks from "@site/src/components/InlineLinks";
-import { docs, notes, getDoc, allGuides, lastChange, plates } from "@site/src/components/landing/siteIndex";
+import { notes, getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
 import { currentAdvisory } from "@site/src/data/advisories";
 import { positions } from "@site/src/data/positions";
 import { formatDate } from "@site/src/data/guideFacts";
@@ -17,8 +18,13 @@ import styles from "@site/src/components/landing/landing.module.css";
 import t480s from "@site/src/components/landing/img/t480s-libreboot.webp";
 import pico from "@site/src/components/landing/img/pico-clip.webp";
 import dice from "@site/src/components/landing/img/casino-dice.webp";
-// Written by scripts/generate-og-images.py: the share card's dice, tall.
-import coverDice from "@site/src/components/landing/img/cover-dice.webp";
+
+/** The cover's band: the share card's three things, in the order you do them, each with its page. */
+const PATH = [
+  { label: "Dice-rolled seed", motif: "dice", to: "/docs/learn/keys/random/" },
+  { label: "Air-gapped signing", motif: "airgap", to: "/docs/learn/wallets/air-gapped-wallets/" },
+  { label: "Your own node", motif: "node", to: "/docs/bitcoin-node/" },
+];
 
 /** Situations and where each should start: the short form of the Start Here table. */
 const ROUTES = [
@@ -126,35 +132,31 @@ export default function Home() {
         ) : null}
 
         <Cover
-          eyebrow="Bitcoin / Self-custody"
+          eyebrow="Bitcoin self-custody guides"
           title={
             <>
-              Bitcoin <span className={styles.nowrap}>self-custody</span> guides
+              Hold your own <span className={styles.nowrap}>Bitcoin keys.</span>
             </>
           }
-          plate={plates["/"]}
-          foot={
-            <>
-              <span>{Object.keys(docs).length} pages</span>
-              <span>{guides.length} guides</span>
-              {updated ? <span>Last change {updated}</span> : null}
-              <span>
-                Source on <a href="https://github.com/selfcustodylabs/website">GitHub</a>
-              </span>
-            </>
-          }
-          band={
-            <CoverMark
-              photo={coverDice}
-              lines={["Dice-rolled seeds", "Air-gapped signing", "Your own node"]}
-            />
-          }
+          facts={[
+            { label: "Affiliate links", value: "None" },
+            { label: "Sponsors", value: "None" },
+            {
+              label: "Source",
+              value: (
+                <>
+                  Public on <a href="https://github.com/selfcustodylabs/website">GitHub</a>
+                </>
+              ),
+            },
+            ...(updated ? [{ label: "Last change", value: updated }] : []),
+          ]}
+          band={<CoverPath steps={PATH.map((s) => ({ ...s, name: getDoc(s.to).name }))} />}
         >
           <p className={styles.lede}>
-            How to hold your own bitcoin, written down step by step: making a seed with dice, setting
-            up a hardware wallet, multisig, running your own node, and flashing Libreboot onto a
-            ThinkPad. No affiliate links and no money from the companies we write about. Every page
-            shows the date it last changed.
+            How to do it, step by step: making a seed with dice, setting up a hardware wallet, multisig,
+            running your own node, and flashing Libreboot onto a ThinkPad. Every guide states how long
+            it takes and the skill it needs.
           </p>
           <div className={styles.actions}>
             <Link to="/docs/learn/fundamentals/" className={styles.primary}>
@@ -162,9 +164,6 @@ export default function Home() {
             </Link>
             <Link to="/guides/" className={styles.link}>
               All {guides.length} guides
-            </Link>
-            <Link to="/about/" className={styles.link}>
-              How we decide what to recommend
             </Link>
           </div>
         </Cover>

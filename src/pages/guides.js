@@ -6,7 +6,7 @@ import Head from "@docusaurus/Head";
 import Cover, { CoverMosaic } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
 import PageRows from "@site/src/components/landing/PageRows";
-import { allGuides, getDoc, plates, absolute } from "@site/src/components/landing/siteIndex";
+import { allGuides, getDoc, absolute } from "@site/src/components/landing/siteIndex";
 import styles from "@site/src/components/landing/landing.module.css";
 
 const TITLE = "Bitcoin Self-Custody Guides: Setup, Security & Privacy";
@@ -98,17 +98,14 @@ export default function GuidesPage() {
               <span className={styles.nowrap}>Self-custody</span> guides
             </>
           }
-          plate={plates["/guides/"]}
-          foot={
-            <>
-              <span>{guides.length} guides</span>
-              <span>{groups.length} groups</span>
-            </>
-          }
+          facts={[
+            { label: "Guides", value: guides.length },
+            { label: "Groups", value: groups.length },
+          ]}
           band={<CoverMosaic bands={MOSAIC.map((p) => getDoc(p).band)} />}
         >
           <p className={styles.lede}>
-            {guides.length} hands-on guides, each with the time, cost and skill it takes. Several run
+            {guides.length} hands-on guides, each with the time and skill it takes. Several run
             over more than one page, and every guide shows the date it last changed. If a term is new
             to you, the <Link to="/learn/">Learn</Link> pages explain it first.
           </p>

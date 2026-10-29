@@ -1,67 +1,45 @@
 import React from "react";
-import useBaseUrl, { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 import styles from "./Cover.module.css";
 
 /**
- * The top of a landing page, set like the page's own OG card: the words on the
- * left (brand rule, amber eyebrow, H1, a short amber rule, the lede), the
- * evidence band running to the right edge of the screen, and a footer line
- * ending in the plate mark.
+ * The top of a landing page: the words on the left (amber eyebrow, H1, the
+ * lede and actions, then a facts line set like a guide's), and the evidence
+ * band on the right, both inside the same wrap as the content below. The
+ * navbar above carries the name and the mark, so the cover repeats neither.
  *
  * @param {object} props
- * @param {string} props.eyebrow - section trail, as on the card ("Learn")
+ * @param {string} props.eyebrow - the label above the H1 ("Learn")
  * @param {React.ReactNode} props.title - the page's H1
  * @param {React.ReactNode} props.children - lede and actions
- * @param {React.ReactNode} [props.foot] - facts for the footer line
- * @param {string} props.plate - six hex digits of SHA-256 of the page path
- * @param {React.ReactNode} props.band - CoverMark or CoverMosaic
+ * @param {Array<{ label: string, value: React.ReactNode }>} [props.facts] - the facts line
+ * @param {React.ReactNode} props.band - CoverPath or CoverMosaic
  */
-export default function Cover({ eyebrow, title, children, foot, plate, band }) {
+export default function Cover({ eyebrow, title, children, facts = [], band }) {
   return (
     <header className={styles.cover}>
-      <div className={styles.words}>
-        <p className={styles.brand}>Self Custody Labs</p>
-        <p className={styles.eyebrow}>{eyebrow}</p>
-        <h1 className={styles.title}>{title}</h1>
-        <span className={styles.rule} aria-hidden="true" />
-        {children}
-        <div className={styles.foot}>
-          <span className={styles.facts}>{foot}</span>
-          <span
-            className={styles.plate}
-            title="Plate mark: the first six hex digits of SHA-256 of this page's path, as on every share card"
-          >
-            {plate}
-          </span>
+      <div className={styles.inner}>
+        <div className={styles.words}>
+          <p className={styles.eyebrow}>{eyebrow}</p>
+          <h1 className={styles.title}>{title}</h1>
+          {children}
+          {facts.length > 0 ? (
+            <div className={styles.foot}>
+              <dl className={styles.facts}>
+                {facts.map(({ label, value }) => (
+                  <div key={label} className={styles.fact}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ) : null}
         </div>
+        <div className={styles.band}>{band}</div>
       </div>
-      <div className={styles.band}>{band}</div>
     </header>
-  );
-}
-
-/**
- * The homepage band: the toned dice of the site's share card with the mark
- * over them, and the three things the site is about.
- *
- * @param {object} props
- * @param {string} props.photo - imported image URL
- * @param {string[]} props.lines
- */
-export function CoverMark({ photo, lines }) {
-  return (
-    <>
-      <img className={styles.photo} src={photo} alt="" width="900" height="1000" decoding="async" />
-      <div className={styles.mark}>
-        <img src={useBaseUrl("/img/logo.svg")} alt="" width="210" height="212" />
-        <p>
-          {lines.map((line) => (
-            <span key={line}>{line}</span>
-          ))}
-        </p>
-      </div>
-    </>
   );
 }
 

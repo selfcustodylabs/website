@@ -1,50 +1,38 @@
 /*
- * The cover: a landing page opens as its own OG card. Words left, evidence band
- * right, the band running to the edge of the screen like the card's does.
+ * The cover: words left, evidence band right. Both sit in the same wrap as the
+ * content below (.wide in landing.module.css), so the cover's left and right
+ * edges line up with every section under it; until 29 Oct 2026 the band ran
+ * to the edge of the screen like an OG card's, and overshot the page on wide
+ * screens. The navbar above carries the name and the mark, so the cover
+ * repeats neither.
  * --landing-wrap and --landing-gutter come from .landing in landing.module.css.
  */
 
 .cover {
-  /* The words column lines up with the content wrap below it: cqw is the
-     cover's own width, so a classic scrollbar cannot push it out of line
-     the way 100vw would. */
-  container-type: inline-size;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) min(40%, 38.75rem);
+  padding: 3.5rem 0;
   border-bottom: var(--scl-rule);
 }
 
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(40%, 34rem);
+  gap: 4rem;
+  width: min(var(--landing-wrap), 100% - 2 * var(--landing-gutter));
+  margin: 0 auto;
+}
+
 .words {
+  /* A container, for the facts line below. */
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 4rem 4rem 2.25rem max(var(--landing-gutter), calc((100cqw - var(--landing-wrap)) / 2));
-}
-
-.brand {
-  display: flex;
-  gap: 0.9rem;
-  align-items: center;
-  margin: 0;
-  color: var(--scl-ink);
-  font-family: var(--scl-font-mono);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-/* The card's tally bar. */
-.brand::before {
-  content: "";
-  flex: none;
-  width: 4px;
-  height: 1.375rem;
-  background: var(--scl-amber);
+  /* The same inset top and bottom inside the band's frame height. */
+  padding: 1.5rem 0;
 }
 
 .eyebrow {
-  margin: 3.25rem 0 0;
+  margin: 0;
   color: var(--scl-amber);
   font-family: var(--scl-font-mono);
   font-size: 0.875rem;
@@ -55,7 +43,7 @@
 
 .title {
   max-width: 15ch;
-  margin: 1rem 0 0;
+  margin: 1rem 0 1.75rem;
   color: var(--scl-ink);
   font-size: clamp(2.6rem, 5.2vw, 4.75rem);
   font-weight: 800;
@@ -64,89 +52,80 @@
   text-wrap: balance;
 }
 
-.rule {
-  display: block;
-  width: 3.5rem;
-  height: 2px;
-  margin: 2rem 0 1.75rem;
-  background: var(--scl-amber);
-}
+/* ---------- facts line ---------- */
 
+/* Pinned to the bottom of the words column, at least 3rem below the actions. */
 .foot {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  align-items: baseline;
-  justify-content: space-between;
   margin-top: auto;
   padding-top: 3rem;
-  color: var(--scl-muted);
-  font-family: var(--scl-font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
 }
 
+/* A guide's facts line (src/components/doc/GuideFacts.module.css), with each
+   label set over its value: one row, or two aligned columns when the words
+   column is too narrow for it. */
 .facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.5rem;
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  gap: 0.9rem 2.25rem;
+  margin: 0;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid var(--scl-dim2);
 }
 
-.facts a {
+@container (max-width: 31rem) {
+  .facts {
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-flow: row;
+  }
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.fact dt {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fact dd {
+  margin: 0;
+  color: var(--scl-ink);
+  font-size: 0.875rem;
+}
+
+.fact a {
   color: var(--scl-ink);
   text-decoration: underline;
   text-decoration-color: var(--scl-amber);
   text-underline-offset: 0.22em;
 }
 
-.plate {
-  color: var(--scl-faint);
+.fact a:hover {
+  color: var(--scl-amber-lit);
 }
 
 /* ---------- band ---------- */
 
+/* A framed plate. A column, so a band drawn in the flow (CoverPath) is
+   centred and can grow the cover; CoverMosaic is absolute and ignores it. */
 .band {
   position: relative;
-  min-height: 38rem;
-  overflow: hidden;
-  border-left: var(--scl-rule);
-  background: var(--scl-band);
-}
-
-.photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.mark {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  align-items: center;
   justify-content: center;
-}
-
-.mark img {
-  width: min(15vw, 13rem);
-  height: auto;
-}
-
-.mark p {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  margin: 0;
-  color: var(--scl-ink-2);
-  font-family: var(--scl-font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
+  min-height: 34rem;
+  overflow: hidden;
+  border: var(--scl-rule);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
 }
 
 .mosaic {
@@ -165,49 +144,33 @@
   object-fit: cover;
 }
 
-/* Phone and narrow tablet: the band goes on top, as a strip. */
+/* Phone and narrow tablet: the words first, so the H1, the lede and the action
+   fill the first screen; the band follows them. */
 @media (max-width: 840px) {
   .cover {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .inner {
     grid-template-columns: 1fr;
+    gap: 2.25rem;
   }
 
   .words {
-    padding: 2.25rem var(--landing-gutter) 2rem;
+    padding: 0;
   }
 
-  /* The navbar right above already carries the name. */
-  .brand {
-    display: none;
-  }
-
-  .eyebrow {
-    margin-top: 0;
+  .foot {
+    padding-top: 2.25rem;
   }
 
   .band {
-    order: -1;
     min-height: 15rem;
-    border-top: 0;
-    border-bottom: var(--scl-rule);
-    border-left: 0;
-  }
-
-  .mark {
-    gap: 1rem;
-  }
-
-  .mark img {
-    width: 7.5rem;
-  }
-
-  .mark p {
-    gap: 0.3rem;
-    font-size: 0.68rem;
   }
 }
 
 @media print {
-  .cover {
+  .inner {
     grid-template-columns: 1fr;
   }
 

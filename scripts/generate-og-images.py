@@ -4,8 +4,7 @@
 Walks docs/**/*.md and *.mdx, parses the frontmatter title, and renders a 1200x630 PNG
 to static/img/og/ following the URL slug structure. Writes a manifest file
 at src/data/ogManifest.json mapping doc URL paths to image paths, each card's
-right band alone to static/img/og/band/ (the landing pages' guide cards), and
-the homepage cover's dice to src/components/landing/img/cover-dice.webp.
+right band alone to static/img/og/band/ (the landing pages' guide cards).
 
 Design system
 -------------
@@ -40,8 +39,6 @@ OG_DIR = IMG_DIR / "og"
 # Each card's right band alone, same file name as the card (.webp).
 BAND_DIR = OG_DIR / "band"
 MANIFEST = ROOT / "src" / "data" / "ogManifest.json"
-# The homepage cover's dice, imported by src/pages/index.js so the bundler hashes it.
-COVER_BAND = ROOT / "src" / "components" / "landing" / "img" / "cover-dice.webp"
 BRAND_CARD = IMG_DIR / "social-card.png"
 LOGO_MARK = Path(__file__).resolve().parent / "assets" / "logo-mark.png"
 BRAND_PHOTO = IMG_DIR / "seed" / "dice.webp"
@@ -384,13 +381,6 @@ def brand_photo(w, h, blur):
     return Image.blend(Image.new("RGB", photo.size, BG), photo, 0.42)
 
 
-def render_cover_band(out_path):
-    """The homepage cover's right band: the brand card's dice, tall. The mark
-    goes on top in HTML, so it stays sharp and the image needs no text."""
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    brand_photo(900, 1000, 6).save(out_path, "WEBP", quality=80, method=6)
-
-
 def render_brand_card(out_path):
     """The site-wide card: the logo over the dice, for every non-doc route.
 
@@ -471,8 +461,7 @@ def main():
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     render_brand_card(BRAND_CARD)
-    render_cover_band(COVER_BAND)
-    print(f"Generated {count} OG images and bands + social-card.png + homepage cover, "
+    print(f"Generated {count} OG images and bands + social-card.png, "
           f"manifest at {MANIFEST.relative_to(ROOT)}")
 
 
