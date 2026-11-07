@@ -497,7 +497,7 @@
     },
     "/docs/learn/fundamentals/holding-bitcoin/": {
       "title": "Why Holding Your Own Bitcoin Matters | Self Custody Labs",
-      "description": "Understand the difference between holding Bitcoin yourself vs on an exchange. Learn why 'not your keys, not your coins' is essential for true ownership.",
+      "description": "What happens to bitcoin left on an exchange, from Mt. Gox and FTX to the Bitfinex hack and the $6.3 billion Binance hack of 2026, and when to withdraw yours.",
       "canonical": "https://selfcustodylabs.com/docs/learn/fundamentals/holding-bitcoin/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"

@@ -41,7 +41,7 @@ Most readers fit one of four levels. The table is the summary; each level is exp
 
 An opportunistic attacker is not after you in particular. They run automated phishing campaigns, spread malware across millions of machines and pick through the wreckage of exchange hacks, and they move on as soon as a target takes effort.
 
-The defence is a hardware wallet, which keeps keys away from the malware on your computer; a tested backup, which covers a lost or broken device; keeping bitcoin off exchanges; and never typing, pasting or photographing the seed phrase. Most bitcoin holders are at this level, and a hardware wallet with a tested backup is most of what they need.
+The defence is a hardware wallet, which keeps keys away from the malware on your computer; a tested backup, which covers a lost or broken device; [keeping bitcoin off exchanges](/docs/learn/fundamentals/holding-bitcoin/#what-happens-when-an-exchange-is-hacked); and never typing, pasting or photographing the seed phrase. Most bitcoin holders are at this level, and a hardware wallet with a tested backup is most of what they need.
 
 ### Level 2: targeted online attackers
 

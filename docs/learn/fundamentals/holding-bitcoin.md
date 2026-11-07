@@ -1,8 +1,8 @@
 ---
 sidebar_position: 4
 title: "Why Holding Your Own Bitcoin Matters"
-description: "Understand the difference between holding Bitcoin yourself vs on an exchange. Learn why 'not your keys, not your coins' is essential for true ownership."
-keywords: ["hold bitcoin", "exchange risk", "not your keys", "self custody", "bitcoin ownership"]
+description: "What happens to bitcoin left on an exchange, from Mt. Gox and FTX to the Bitfinex hack and the $6.3 billion Binance hack of 2026, and when to withdraw yours."
+keywords: ["hold bitcoin", "exchange risk", "not your keys", "self custody", "bitcoin ownership", "binance hack", "bitfinex hack", "exchange hack"]
 tags: ["self custody", "bitcoin", "exchange", "getting started"]
 slug: /learn/fundamentals/holding-bitcoin
 date: "2026-01-15"
@@ -20,7 +20,7 @@ The exchange holds the keys, so the exchange signs every transaction that moves 
 
 - A withdrawal can be paused at any time, for any reason the exchange considers good enough.
 - An account can be frozen by a compliance team, a court order or a fraud review that takes weeks to clear.
-- A hack of the exchange takes customer coins with it, however careful the customer was.
+- [A hack of the exchange](#what-happens-when-an-exchange-is-hacked) takes customer coins with it, however careful the customer was.
 - A bankruptcy turns every balance into a claim that takes years to settle and is usually paid in dollars.
 
 None of this requires bad intent. It is how a custodial platform works.
@@ -46,6 +46,41 @@ Every customer of these platforms had one thing in common: none of them held the
 ## What does a bankruptcy pay back?
 
 Usually dollars, at the price on the day the company filed. The FTX bankruptcy valued customers' crypto at its price on 11 November 2022, when bitcoin traded at about $17,000, and paid those dollar amounts back from 2025, when bitcoin was worth several times as much. Celsius, BlockFi and Voyager used the same petition-date method. A customer who is "repaid in full" can still end up with a fraction of the bitcoin they had.
+
+## What happens when an exchange is hacked?
+
+When an exchange is hacked, the thief takes coins from wallets the exchange controls, and the exchange then decides who carries the loss: it can pay it from its own money, spread it across every customer's balance, or fail, as Mt. Gox did in 2014. Customers get no say, and cannot withdraw while the decision is made. Bitfinex spread its 2016 loss across its customers; Binance paid its 2026 loss itself. Bitcoin that customers had already withdrawn to their own wallets was beyond the reach of both thieves.
+
+<div class="fixed-width-table">
+
+| Exchange | Date | What was stolen | Who carried the loss |
+|----------|------|-----------------|----------------------|
+| Bitfinex | 2 Aug 2016 | 119,754 BTC, about $72 million at the time | Every customer: each account was cut by 36%, including accounts the thief never touched, and repaid in dollars or company shares by April 2017 |
+| Binance | 29 Oct 2026 | About $6.3 billion, including 18,270 BTC | Binance, from its own funds; withdrawals stopped until 1 November |
+
+</div>
+
+## What happened in the 2026 Binance hack?
+
+On 29 October 2026 attackers took about $6.3 billion in cryptocurrency from Binance's hot wallets, the online wallets that pay out withdrawals, in the largest cryptocurrency theft on record: about four times the $1.5 billion taken from Bybit in February 2025. TRM Labs, a blockchain analysis firm, found that most of it left on ten blockchains in about 20 minutes from 20:05 UTC, including 18,270 BTC sent from a single Binance bitcoin hot wallet. On 31 October the FBI attributed the theft to TraderTraitor, a North Korean state hacking group; North Korea denies it.
+
+The attackers broke no cryptography and, on the evidence published so far, stole no private keys: they made Binance's own signing service sign their transactions. Binance's account, given on 3 November, is that they reached that service through its staff over several months. In June an engineer on the wallet team, searching the web for a popular AI coding tool, installed a tampered copy. In September attackers posing as recruiters put another engineer through job interviews that ended in a "coding exercise" carrying malware. From there they moved between engineers' machines through an internal AI tool until they reached the system that authorises Binance's wallet transactions.
+
+Binance stopped withdrawals the same day, said it would cover every loss from its SAFU fund and company funds, and reopened withdrawals on 1 November. As of 3 November 2026 it said it had replaced 98% of the stolen assets. Token issuers and other services froze or seized about $2.85 billion of what was taken, according to Elliptic. None of it was bitcoin, because bitcoin has no issuer that can freeze it, the same property that means nobody can freeze bitcoin you hold yourself. As of 6 November 2026 the 18,270 BTC sat unmoved in 19 addresses.
+
+Binance's customers were spared because Binance chose to pay and could afford $6.3 billion. A customer could check neither in advance, and none of them could withdraw until 1 November.
+
+Sources: [TRM Labs](https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history), [Elliptic](https://www.elliptic.co/insights/how-north-korea-is-laundering-the-6-4-billion-stolen-from-binance/), [FBI](https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack), [CNBC interview with Binance co-CEO Richard Teng](https://www.cnbc.com/2026/11/03/binance-co-ceo-teng-says-hackers-used-fake-job-interviews-to-steal-6point3-billion-in-crypto.html)
+
+## What happened in the 2016 Bitfinex hack?
+
+On 2 August 2016 a hacker who had broken into Bitfinex's servers used the exchange's own keys and credentials to send 119,754 BTC out of its wallets in more than 2,000 transactions. The coins were worth about $72 million at the time, roughly $600 each, and were about 36% of everything Bitfinex held. Ilya Lichtenstein admitted in 2023 that he carried out the hack, and was sentenced to five years in prison in November 2024.
+
+Bitfinex could not absorb the loss, so it spread it over every customer: each account was cut by 36%, including accounts the thief never touched, and each customer received one BFX token, worth $1, for every dollar taken off. Some customers swapped their tokens for shares in Bitfinex's parent company; Bitfinex bought back the rest at $1 each, the last of them on 3 April 2017.
+
+Bitfinex's customers were made whole in dollars, valued at the time of the hack, not in bitcoin. US investigators seized 94,643 of the stolen bitcoin in February 2022, and because Bitfinex had already repaid its customers, the government, the defendants and the exchange agreed that Bitfinex was the only victim. In January 2025 the government asked the court to return the coins, then worth about $9.3 billion, to Bitfinex. A customer whose balance was cut in 2016 got dollars back; the bitcoin itself is claimed by the exchange.
+
+Sources: [Bitfinex's restitution letter in US v. Lichtenstein](https://storage.courtlistener.com/recap/gov.uscourts.dcd.257738/gov.uscourts.dcd.257738.175.1.pdf), [US Department of Justice](https://www.justice.gov/usao-dc/pr/bitfinex-hacker-sentenced-money-laundering-conspiracy-involving-billions-stolen)
 
 ## Does exchange insurance protect your bitcoin?
 

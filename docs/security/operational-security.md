@@ -33,6 +33,8 @@ Avoid posting about bitcoin under your real name, telling colleagues, acquaintan
 
 The usual failures are trusting an address shown only on a computer, downloading wallet software from a search advert, answering "support" messages on social media, and clicking links in emails that claim to be from an exchange.
 
+The $6.3 billion [Binance theft of October 2026](/docs/learn/fundamentals/holding-bitcoin/#what-happened-in-the-2026-binance-hack) started on engineers' computers: one installed a tampered developer tool found through a web search, and another ran a "coding test" sent by fake recruiters.
+
 ### Assume any device can be compromised
 
 Act as if your computer could be showing fake addresses, your phone could be SIM-swapped or carry spyware, your email could be read by an attacker, public Wi-Fi could be monitored and cloud storage could be breached. So: check addresses on the hardware wallet, protect important accounts with hardware security keys, never store a seed phrase digitally, use a VPN on public networks, and turn on two-factor authentication everywhere, hardware-based where possible.
@@ -63,6 +65,7 @@ Fewer accounts mean fewer breaches, fewer people who know mean fewer routes for 
 | Phishing | Fake emails, websites, wallet apps and browser extensions: "your account has been compromised, click here" |
 | Impersonation | "Tech support" offering help, someone claiming to be from your exchange, "moderators" in Telegram or Discord groups |
 | Romance and trust scams | A relationship built over weeks that ends in a request for funds, an "investment opportunity" from a new friend, a fake job that involves bitcoin transfers |
+| Fake job offers | A recruiter, a series of interviews and a "coding test" or tool to download that installs malware on your computer |
 | Urgency and fear | "Act now or lose your funds", "your account will be locked", pressure to decide quickly |
 
 The defence: slow down, because urgency is the warning sign; check independently, using your own route to the company rather than any link you were sent; ask why they are contacting you at all; and never share a seed phrase, which no legitimate person or company ever needs.
