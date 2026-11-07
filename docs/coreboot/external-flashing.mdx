@@ -8,19 +8,108 @@ date: "2025-08-15"
 ---
 # External flashing
 
-External flashing writes coreboot with a programmer, such as a Raspberry Pi Pico, clipped onto the laptop's flash chip, and it is the only route that can neutralise the Intel Management Engine: detect the chip, back up the whole factory image, run me_cleaner on its ME region and flash the result, flash coreboot to the BIOS region, and check with intelmetool that the ME is disabled.
+External flashing writes coreboot with a programmer, such as a Raspberry Pi Pico, clipped onto the laptop's flash chip, and it is the only route that can neutralise the Intel Management Engine: put the serprog firmware on the Pico, detect the chip, back up the whole factory image, run me_cleaner on its ME region and flash the result, flash coreboot to the BIOS region, and check with intelmetool that the ME is disabled.
 
 External flashing is needed in three cases. The stock firmware locks the ME region against internal access, so neutralising the ME takes an external flash the first time. If an internal flash fails and the laptop no longer boots, an external programmer is the only way to restore it. And some boards do not allow internal flashing at all.
 
 
-## Step 1: Detect the chip
+## Step 1: Put serprog on the Pico
 
-Step 1 connects the programmer to the laptop's flash chip and checks that flashrom can identify the chip. With the laptop switched off and its battery removed:
+Step 1 puts serprog, the open-source firmware that turns a Raspberry Pi Pico into an SPI programmer that flashrom drives over USB, on the Pico. Libreboot publishes serprog prebuilt and signed with each of its releases, so you can download it without Libreboot's build system. The commands are for Libreboot 26.10rev16, the current release as of November 2026.
 
-1. Flash the Raspberry Pi Pico with serprog, as the [Libreboot serprog guide](/docs/libreboot/raspberry-pico/build-serprog/) describes.
-2. Wire the Pico with Dupont cables to a Pomona clip for a SOIC chip (first photo) or a pogo-pin adapter for a WSON chip (second photo), following the [Libreboot wiring guide](/docs/libreboot/raspberry-pico/connection/).
-3. Attach the clip firmly to the chip, so every pin makes contact.
-4. Plug the Pico into the computer you are flashing from with a USB cable.
+Use Libreboot's serprog, not the original pico-serprog it was forked from. The original puts chip select on GP1 instead of GP5, so it would not match the wiring in step 2.
+
+Download the serprog archive and its signature from a Libreboot mirror, and Libreboot's signing key from libreboot.org:
+
+```bash
+mkdir -p ~/serprog && cd ~/serprog
+MIRROR=https://www.mirrorservice.org/sites/libreboot.org/release/stable/26.10rev16/roms
+curl -O $MIRROR/libreboot-26.10rev16-pico-serprog-default.tar.xz
+curl -O $MIRROR/libreboot-26.10rev16-pico-serprog-default.tar.xz.sig
+curl -O https://libreboot.org/lbkey.asc
+```
+
+Any HTTPS mirror on [Libreboot's download page](https://libreboot.org/download.html) serves the same files. Import the key and check the signature:
+
+```bash
+gpg --import lbkey.asc
+gpg --verify libreboot-26.10rev16-pico-serprog-default.tar.xz.sig libreboot-26.10rev16-pico-serprog-default.tar.xz
+```
+
+You should see:
+
+```text
+gpg: Signature made Thu 05 Nov 2026 04:44:58 UTC
+gpg:                using RSA key 8BB1F7D28CF7696DBF4F71925C654067D383B1FF
+gpg: Good signature from "Leah Rowe <info@minifree.org>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8BB1 F7D2 8CF7 696D BF4F  7192 5C65 4067 D383 B1FF
+```
+
+The line that matters is `Good signature`, from the key whose fingerprint Libreboot's download page lists: `8BB1 F7D2 8CF7 696D BF4F 7192 5C65 4067 D383 B1FF`. The warning only means you have not certified the key yourself. If gpg reports `BAD signature`, delete the archive and download it again.
+
+Unpack the archive and copy out the firmware for your board:
+
+```bash
+tar -xf libreboot-26.10rev16-pico-serprog-default.tar.xz
+cp elf/pico-serprog/default/default/noconfig/xbmk/serprog_pico.uf2 ~/
+```
+
+The archive holds a `.uf2` file for every board the Raspberry Pi Pico SDK knows. `serprog_pico.uf2` is for the Pico and Pico H, and `serprog_pico_w.uf2` is for the Pico W. Use an original Pico (RP2040): Libreboot removed Pico 2 support because of stability problems.
+
+<details>
+<summary>Build serprog from source instead</summary>
+
+Libreboot's build system, lbmk, builds serprog from two sources: Libreboot's pico-serprog, at a commit lbmk pins, and the Raspberry Pi Pico SDK 1.5.1. You can build the same firmware without lbmk. On top of the packages from [step 1 of Build coreboot](/docs/coreboot/build/#step-1-install-the-build-tools-and-libraries), install CMake and an ARM cross-compiler, with the package names lbmk's own dependency lists use.
+
+Debian-based distros (e.g., Ubuntu, Linux Mint):
+
+```bash
+sudo apt install -y cmake python3 gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+```
+
+Arch-based distros (e.g., Manjaro, EndeavourOS):
+
+```bash
+sudo pacman -S cmake python arm-none-eabi-binutils arm-none-eabi-gcc arm-none-eabi-newlib
+```
+
+Red Hat-based distros (e.g., Fedora, CentOS, RHEL):
+
+```bash
+sudo dnf install cmake python3 arm-none-eabi-binutils arm-none-eabi-gcc arm-none-eabi-gcc-cs-c++ arm-none-eabi-newlib
+```
+
+Then fetch both sources at the revisions lbmk uses in 26.10rev16 and build for the Pico. The `sed` line is the one-line fix lbmk applies to pico-serprog: without it the build fails on GCC 16, which Arch ships.
+
+```bash
+mkdir -p ~/serprog && cd ~/serprog
+git clone https://github.com/raspberrypi/pico-sdk
+git -C pico-sdk checkout 1.5.1
+git -C pico-sdk submodule update --init lib/tinyusb
+git clone https://codeberg.org/libreboot/pico-serprog
+git -C pico-serprog checkout 3ea792664ed29ca1ff3e2e78d1d16099684781bd
+sed -i 's/enable_spi(baud);/enable_spi();/' pico-serprog/main.c
+cmake -DPICO_BOARD=pico -DPICO_SDK_PATH="$PWD/pico-sdk" -B pico-serprog/build pico-serprog
+cmake --build pico-serprog/build
+cp pico-serprog/build/pico_serprog.uf2 ~/serprog_pico.uf2
+```
+
+For a Pico W, build with `-DPICO_BOARD=pico_w`. The build names its output `pico_serprog.uf2`, and the last command copies it to the name the rest of this step uses.
+
+</details>
+
+Copy `~/serprog_pico.uf2` onto the Pico and check that your computer sees it as a serial device, as steps 3 and 4 of the [Libreboot serprog guide](/docs/libreboot/raspberry-pico/build-serprog/#step-3-copy-the-firmware-onto-the-pico) describe. Plug the Pico in with its BOOTSEL button held down, copy the file onto the `RPI-RP2` drive that appears, then plug the Pico in again while `sudo dmesg -wH` runs and look for a `ttyACM0` line. The rest of this guide assumes `/dev/ttyACM0`.
+
+
+## Step 2: Detect the chip
+
+Step 2 connects the programmer to the laptop's flash chip and checks that flashrom can identify the chip. With the laptop switched off and its battery removed:
+
+1. Wire the Pico with Dupont cables to a Pomona clip for a SOIC chip (first photo) or a pogo-pin adapter for a WSON chip (second photo), following the [Libreboot wiring guide](/docs/libreboot/raspberry-pico/connection/).
+2. Attach the clip firmly to the chip, so every pin makes contact.
+3. Plug the Pico into the computer you are flashing from with a USB cable.
 
 <div className="photo-pair">
 
@@ -46,9 +135,9 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V"
 Once flashrom names one chip, go on to the backup.
 
 
-## Step 2: Back up the factory BIOS
+## Step 3: Back up the factory BIOS
 
-Step 2 reads the whole chip three times and compares the reads, so you have a factory image you can trust. If you are recovering from a failed internal flash, skip this step: an image that does not boot is not worth keeping.
+Step 3 reads the whole chip three times and compares the reads, so you have a factory image you can trust. If you are recovering from a failed internal flash, skip this step: an image that does not boot is not worth keeping.
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -r factory.bin
@@ -76,9 +165,9 @@ If they do, keep `factory.bin` somewhere safe and delete the other two. If they 
 rm factory2.bin factory3.bin
 ```
 
-## Step 3: Neutralise the Intel ME
+## Step 4: Neutralise the Intel ME
 
-Step 3 checks the factory image and runs me_cleaner on its ME region. First confirm the image has the expected layout with `ifdtool`, from the coreboot source tree:
+Step 4 checks the factory image and runs me_cleaner on its ME region. First confirm the image has the expected layout with `ifdtool`, from the coreboot source tree:
 
 ```bash
 cd coreboot/util/ifdtool
@@ -441,9 +530,9 @@ Done! Good luck!
 </details>
 
 
-## Step 4: Flash the neutralised image
+## Step 5: Flash the neutralised image
 
-Step 4 writes the whole neutralised image back to the chip:
+Step 5 writes the whole neutralised image back to the chip:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w factory_me_neutralized.bin
@@ -472,9 +561,9 @@ If they do, delete `flashed.bin`. If they differ, write the image again before g
 rm flashed.bin
 ```
 
-## Step 5: Flash the coreboot BIOS region
+## Step 6: Flash the coreboot BIOS region
 
-Step 5 writes coreboot to the BIOS region of the chip. Skip it if you have already flashed coreboot internally. Remove the CMOS battery first: some laptops keep settings that protect the SPI chip in CMOS or the embedded controller. Then disable the chip's write protection:
+Step 6 writes coreboot to the BIOS region of the chip. Skip it if you have already flashed coreboot internally. Remove the CMOS battery first: some laptops keep settings that protect the SPI chip in CMOS or the embedded controller. Then disable the chip's write protection:
 
 ```bash
 sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" --wp-disable
@@ -495,9 +584,9 @@ sudo flashrom -p serprog:dev=/dev/ttyACM0,spispeed=16M -c "W25Q128.V" -w coreboo
 Then [verify the flashed BIOS region](/docs/coreboot/internal/flashing-bios/#verify-the-flashed-image), reading it back with this same programmer in place of `-p internal`.
 
 
-## Step 6: Verify the Intel ME is neutralised
+## Step 7: Verify the Intel ME is neutralised
 
-Step 6 boots the laptop and checks the ME's state with `intelmetool`, from the coreboot source tree:
+Step 7 boots the laptop and checks the ME's state with `intelmetool`, from the coreboot source tree:
 
 ```bash
 cd coreboot/util/intelmetool
