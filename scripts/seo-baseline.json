@@ -1303,7 +1303,7 @@
     },
     "/docs/libreboot/flashing-bios/": {
       "title": "Flash Libreboot to Your Laptop BIOS | Self Custody Labs",
-      "description": "Flash a Libreboot ROM onto your laptop with an external SPI programmer: locate the chips, split the ROM, detect, and write the new firmware.",
+      "description": "Flash Libreboot onto a ThinkPad with one flash chip or two, using an external SPI programmer: find the chips, back up the factory firmware, write the new image.",
       "canonical": "https://selfcustodylabs.com/docs/libreboot/flashing-bios/",
       "robots": [
         "max-image-preview:large, max-snippet:-1, max-video-preview:-1"

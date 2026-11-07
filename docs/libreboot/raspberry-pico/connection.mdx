@@ -8,7 +8,7 @@ date: "2025-04-07"
 ---
 # Pico-Pomona clip connection
 
-The Pico connects to the laptop's flash chip through the Pomona clip: six jumper wires run from the Pico to the clip, matching each chip pin to its Pico pin, and the clip then grips the chip on the motherboard. Two pins of the chip stay unconnected. The T530 and W530 need one extra part, which holds the second chip quiet while you work on the first.
+The Pico connects to the laptop's flash chip through the Pomona clip: six jumper wires run from the Pico to the clip, matching each chip pin to its Pico pin, and the clip then grips the chip on the motherboard. Two pins of the chip stay unconnected. The wiring is the same whether the board has one flash chip or two; some two-chip boards, such as the T530 and W530, also need a few extra parts that hold the second chip quiet while you work on the first.
 
 ## How do you find pin 1 on the chip?
 
@@ -16,7 +16,7 @@ The flash chips on these ThinkPads are SOIC-8 packages: eight legs, four on each
 
 ![Close-up of a SOIC-8 flash chip on a ThinkPad motherboard with its pins numbered 1 to 4 down one side and 5 to 8 up the other](/img/libreboot/soic8.webp)
 
-The X230, T430, T440p, T530 and W530 have two chips side by side (4 MB and 8 MB), and both are flashed, one at a time. The T420 and T480s have one main chip. [Flashing](/docs/libreboot/flashing-bios/) covers each case.
+A board on a `_12mb` target has two chips side by side, one of 8 MB and one of 4 MB, and you clip and flash them one at a time; every other board has one. [Flashing](/docs/libreboot/flashing-bios/) covers both cases.
 
 ## Which Pico pin goes to which chip pin?
 
@@ -33,15 +33,15 @@ The X230, T430, T440p, T530 and W530 have two chips side by side (4 MB and 8 MB)
 
 ![Pin map of the Raspberry Pi Pico for serprog: SCK on pin 4, MOSI on pin 5, MISO on pin 6, CS on pin 7, GND on pin 38 and 3V3 on pin 36](/img/libreboot/serprog-pins.webp)
 
-## How do you wire the X230, T420, T430, T440p and T480s?
+## How do you wire the clip to the Pico?
 
-Wire the clip straight to the Pico following the table; nothing else is needed. The finished wiring looks like this:
+Wire the clip straight to the Pico following the table. On a one-chip board, and on two-chip boards such as the X230, T430 and T440p, nothing else is needed. The finished wiring looks like this:
 
 ![The Pico wired to the blue Pomona clip with six short jumper wires](/img/libreboot/connection.webp)
 
-## What do the T530 and W530 need?
+## What if a two-chip board's reads never match?
 
-The T530 and W530 have two flash chips on the same SPI bus. They share the data and clock lines, and each has its own chip select (CS) line deciding which one is listening. With the laptop unpowered, the CS line of the chip you are not flashing floats: nothing holds it high or low, so that chip can switch on at random and talk over the one you are reading. The symptoms are read and write errors and dumps that differ every time you read the chip, which shows up as a different `sha1sum` on each read.
+On a two-chip board, reads that differ every time can come from the chip you are not flashing. The two chips sit on the same SPI bus: they share the data and clock lines, and each has its own chip select (CS) line deciding which one is listening. The T530 and W530 need the fix below, and Libreboot's [W541 instructions](https://libreboot.org/docs/install/w541_external.html) describe the same problem, holding the other chip's CS line at 3.3 V through a 47 ohm resistor. With the laptop unpowered, the CS line of the chip you are not flashing floats: nothing holds it high or low, so that chip can switch on at random and talk over the one you are reading. The symptoms are read and write errors and dumps that differ every time you read the chip, which shows up as a different `sha1sum` on each read.
 
 The fix is to hold the other chip's CS pin at 3.3 V, which keeps it switched off while you work on the first.
 

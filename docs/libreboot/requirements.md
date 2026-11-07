@@ -12,7 +12,7 @@ Flashing Libreboot externally needs five things: a supported ThinkPad, a Raspber
 
 ## Which laptop?
 
-The models this guide covers, with their Libreboot targets and chip layouts, are listed on the [Libreboot overview](/docs/libreboot/#which-laptops-does-this-guide-cover): the X230, T420, T430, T440p, T480s, T530 and W530. The ThinkPad T480s is the newest and most capable of them, with NVMe storage and up to 24 GB of memory.
+Any ThinkPad Libreboot supports whose firmware sits on SOIC-8 chips. What matters for the rest of this guide is whether that firmware is on one flash chip or two, which the [Libreboot overview](/docs/libreboot/#which-laptops-does-this-guide-cover) explains how to tell from the target name. Two-chip boards that need the chip-select fix, such as the T530 and W530, also need a test hook, an AMS1117 3.3 V regulator and a 5 V adapter, listed on the [connection page](/docs/libreboot/raspberry-pico/connection/#what-extra-parts-do-you-need).
 
 ### What the T480s needs first
 

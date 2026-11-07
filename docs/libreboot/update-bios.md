@@ -41,7 +41,7 @@ Some kernels are built with `CONFIG_STRICT_DEVMEM`, which blocks this access eve
 
 ## Step 2: Check the chip size
 
-Step 2 confirms the image you built matches the chip. The output of `sudo flashprog -p internal` includes the flash chip and its size; it should match the size in your board target's name (for example 12 MB for `lenovo_thinkpad_x230_12mb`).
+Step 2 confirms the image you built matches the chip. The output of `sudo flashprog -p internal` includes the flash chip and its size; it should match the size in your board target's name (for example 12 MB for `lenovo_thinkpad_x230_12mb`). On a two-chip board, internal flashing sees both chips as one 12 MB flash, so write the whole `libreboot.rom` here, never the 8 MB and 4 MB halves made for external flashing.
 
 ## Step 3: Back up what is on the chip now
 

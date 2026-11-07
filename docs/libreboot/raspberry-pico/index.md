@@ -15,5 +15,5 @@ To flash Libreboot externally you need an SPI programmer, and a Raspberry Pi Pic
 
 ## What are the steps?
 
-1. [Build serprog](/docs/libreboot/raspberry-pico/build-serprog/): compile serprog and copy it onto the Pico
+1. [Build serprog](/docs/libreboot/raspberry-pico/build-serprog/): compile serprog with lbmk, unpack it from the archive lbmk makes and copy it onto the Pico
 2. [Connect the Pico](/docs/libreboot/raspberry-pico/connection/): wire the Pico to the clip, pin for pin

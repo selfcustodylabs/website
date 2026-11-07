@@ -8,35 +8,54 @@ date: "2025-03-29"
 ---
 # Build serprog
 
-serprog is open-source firmware that turns a Raspberry Pi Pico into an SPI programmer that flashprog can drive over USB. Build it with lbmk, copy the resulting `.uf2` file onto the Pico while it is in bootloader mode, and check that it reappears as a serial device.
+serprog is open-source firmware that turns a Raspberry Pi Pico into an SPI programmer that flashprog can drive over USB. Build it with lbmk, unpack the `.uf2` file for your Pico from the archive lbmk leaves in `bin/`, copy it onto the Pico while it is in bootloader mode, and check that it reappears as a serial device. Commands are for Libreboot 26.10rev16 (4 November 2026).
 
-## Step 1: Install the Pico toolchain
+## Step 1: Build the firmware
 
-Step 1 installs the compiler and libraries for the Pico's ARM processor:
-
-```bash
-sudo apt install cmake libusb-1.0-0-dev libmbedtls-dev gcc-arm-none-eabi -y
-```
-
-## Step 2: Build the firmware
-
-Step 2 builds the serprog firmware with lbmk. From the `lbmk` directory:
+Step 1 builds the serprog firmware with lbmk, which compiles it with the Pico toolchain that `./mk dependencies` installed in [build Libreboot](/docs/libreboot/build/). From the `lbmk` directory:
 
 ```bash
 ./mk -b pico-serprog
 ```
 
-The build takes a few minutes and leaves two files:
+The build takes a few minutes. lbmk builds a firmware file for every board the Raspberry Pi Pico SDK knows and packs them all into one archive in `bin/`, next to the ROM archive from [build ROMs](/docs/libreboot/roms/):
 
-- `bin/serprog_pico/serprog_pico.uf2`, for the Pico and Pico H
-- `bin/serprog_pico/serprog_pico_w.uf2`, for the Pico W
+```bash
+ls bin/
+```
 
-Use the original Pico (RP2040). Libreboot removed Pico 2 support because of stability problems.
+```text
+libreboot-26.10rev16-pico-serprog-default.tar.xz
+libreboot-26.10rev16_lenovo_thinkpad_t480s_16mb.tar.xz
+```
+
+As with the ROM archive, the version after `libreboot-` is longer on a clone newer than the 26.10rev16 release.
+
+## Step 2: Unpack the firmware
+
+Step 2 unpacks the serprog archive into the `~/libreboot` folder that already holds your ROM images, and copies out the one file your Pico needs:
+
+```bash
+mkdir -p ~/libreboot
+tar -xf bin/libreboot-*-pico-serprog-default.tar.xz -C ~/libreboot
+ls ~/libreboot/elf/pico-serprog/default/default/noconfig/xbmk/
+```
+
+The archive holds one folder, `elf/pico-serprog/default/default/noconfig/xbmk/`, with a `.uf2` file for each board. Two of them are for this guide:
+
+- `serprog_pico.uf2`, for the Pico and Pico H
+- `serprog_pico_w.uf2`, for the Pico W
+
+Ignore the rest. Use the original Pico (RP2040): Libreboot removed Pico 2 support because of stability problems. Copy the file for your board to your home folder:
+
+```bash
+cp ~/libreboot/elf/pico-serprog/default/default/noconfig/xbmk/serprog_pico.uf2 ~/
+```
 
 ## Step 3: Copy the firmware onto the Pico
 
-1. Hold down the BOOTSEL button on the Pico and plug it into your computer with the USB cable, then let go. Holding BOOTSEL while plugging in starts the Pico's bootloader, and it appears as a USB drive.
-2. Copy `serprog_pico.uf2` onto that drive. The Pico restarts with the new firmware and the drive disappears.
+1. Hold down the BOOTSEL button on the Pico and plug it into your computer with the USB cable, then let go. Holding BOOTSEL while plugging in starts the Pico's bootloader, and it appears as a USB drive named `RPI-RP2`.
+2. Copy `~/serprog_pico.uf2` onto that drive, with your file manager, or with `cp ~/serprog_pico.uf2 /media/$USER/RPI-RP2/` if your desktop mounted it there. The Pico restarts with the new firmware and the drive disappears.
 
 To change the firmware later, hold BOOTSEL while plugging in again.
 
