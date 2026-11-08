@@ -31,14 +31,26 @@ cd lbmk
 
 ## Step 3: Install the build dependencies
 
-Step 3 has lbmk install the packages your distribution needs. Run the one line that matches yours (the names are files in `config/dependencies/`, so check there if yours is not listed):
+Step 3 has lbmk install the packages your distribution needs, from the package list it keeps for that distribution in `config/dependencies/`. On Debian:
 
 ```bash
 sudo ./mk dependencies debian
-sudo ./mk dependencies ubuntu
-sudo ./mk dependencies fedora41
-sudo ./mk dependencies arch
 ```
+
+On any other distribution, replace `debian` with the name of its list. As of Libreboot 26.10rev16 (4 November 2026), lbmk has these:
+
+| Distribution | Name |
+|---|---|
+| Debian | `debian` |
+| Ubuntu 24.04 | `ubuntu2404` |
+| Other Ubuntu releases | `ubuntu` |
+| Linux Mint | `mint` |
+| Fedora 38, 40, 41, 42 or 43 | `fedora` and the version, such as `fedora43` |
+| Arch Linux | `arch` |
+| Gentoo | `gentoo` |
+| Void Linux | `void` |
+
+`ls config/dependencies` shows the lists in your copy of lbmk, so check there if yours is not in the table.
 
 ## Step 4: Use every CPU core
 
