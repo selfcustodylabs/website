@@ -99,7 +99,7 @@ ls bin/
 libreboot-26.10rev16_lenovo_thinkpad_t480s_16mb.tar.xz
 ```
 
-The part after `libreboot-` is the lbmk version. On a clone newer than the 26.10rev16 release it is longer, for example `26.10rev16-3-g1a2b3c4`, which is why the commands below match it with `*`.
+The part after `libreboot-` is the version lbmk is checked out at, and it should read `26.10rev16`. A longer version such as `26.10rev3-158-gb2b6e2ec` means the clone is on lbmk's development branch rather than the release; [step 2 of build Libreboot](/docs/libreboot/build/#step-2-clone-lbmk) explains why and how to check out the release.
 
 ## Step 3: Unpack the archive
 
@@ -107,7 +107,7 @@ Step 3 unpacks the images from the archive into a folder of their own, outside l
 
 ```bash
 mkdir -p ~/libreboot
-tar -xf bin/libreboot-*_lenovo_thinkpad_t480s_16mb.tar.xz -C ~/libreboot
+tar -xf bin/libreboot-26.10rev16_lenovo_thinkpad_t480s_16mb.tar.xz -C ~/libreboot
 ls ~/libreboot/bin/lenovo_thinkpad_t480s_16mb/
 ```
 

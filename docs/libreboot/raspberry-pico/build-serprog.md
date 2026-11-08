@@ -29,7 +29,7 @@ libreboot-26.10rev16-pico-serprog-default.tar.xz
 libreboot-26.10rev16_lenovo_thinkpad_t480s_16mb.tar.xz
 ```
 
-As with the ROM archive, the version after `libreboot-` is longer on a clone newer than the 26.10rev16 release.
+As with the ROM archive, the version after `libreboot-` should read `26.10rev16`; anything longer means lbmk is not on the release tag ([build Libreboot, step 2](/docs/libreboot/build/#step-2-clone-lbmk)).
 
 ## Step 2: Unpack the firmware
 
@@ -37,7 +37,7 @@ Step 2 unpacks the serprog archive into the `~/libreboot` folder that already ho
 
 ```bash
 mkdir -p ~/libreboot
-tar -xf bin/libreboot-*-pico-serprog-default.tar.xz -C ~/libreboot
+tar -xf bin/libreboot-26.10rev16-pico-serprog-default.tar.xz -C ~/libreboot
 ls ~/libreboot/elf/pico-serprog/default/default/noconfig/xbmk/
 ```
 
