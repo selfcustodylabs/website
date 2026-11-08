@@ -127,7 +127,8 @@
     filter: invert(1) hue-rotate(180deg);
   }
 
-  img {
+  img,
+  .doc-video {
     max-width: 100% !important;
     break-inside: avoid;
   }

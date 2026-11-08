@@ -94,7 +94,7 @@ PHOTO_PREFIX = {
     "/docs/libreboot/": "libreboot/t480s.webp",
     "/docs/coreboot/": "coreboot/t430s.webp",
     "/docs/nostr-signing-device/": "nsd/nsd.webp",
-    "/docs/seedsigner/": "seed/rpizero.webp",
+    "/docs/seedsigner/": "seedsigner/finished-microsd.webp",
 }
 
 

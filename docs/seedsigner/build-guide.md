@@ -29,9 +29,21 @@ Step 1 buys the parts, about $40 to $70 in total at the prices below:
 
 </div>
 
-SeedSigner OS also runs on the Pi Zero W, Pi Zero 2 W, Pi 2B, Pi 3B, and Pi 4B. The Zero v1.3 remains our recommendation because its air gap is physical: there is no radio to switch off and nothing to misconfigure. If you use a board with WiFi/Bluetooth (like the faster Zero 2 W), understand that you are trusting software to keep the radios off; SeedSigner OS never enables them, but absent hardware beats disabled hardware.
+SeedSigner OS also runs on the Pi Zero W, Pi Zero 2 W, Pi 2B, Pi 3B, and Pi 4B. The Zero v1.3 remains our recommendation because its air gap is physical: there is no radio to switch off and nothing to misconfigure. If you use a board with WiFi/Bluetooth (like the faster Zero 2 W), understand that you are trusting software to keep the radios off; SeedSigner OS never enables them, but absent hardware beats disabled hardware. A Zero W or WH can have the physical air gap back: its wireless chip, between the processor and the camera connector, can be taken off the board, which cannot be undone. The video below shows one way, with a pair of small side cutters.
+
+<video class="doc-video" controls preload="none" playsInline width="1280" height="720" poster="/img/seedsigner/pi-zero-wifi-removal.webp" src="/video/seedsigner/pi-zero-wifi-removal.mp4" aria-label="Hands take a Raspberry Pi Zero W out of its bag and lift the small wireless chip off the board with side cutters"></video>
+
+The video is from Appendix A of Parman's [Raspberry Pi Zero guide](https://armantheparman.com/how-to-set-up-a-raspberry-pi-zero-air-gapped-with-electrum-desktop-wallet/).
 
 Buy the parts from general electronics retailers (the official [seedsigner.com](https://seedsigner.com) site maintains a current parts list with links). Spreading purchases across ordinary retailers is exactly what makes the supply-chain story boring, which is what you want.
+
+<div class="photo-pair">
+
+![The back of a WaveShare 1.3-inch LCD HAT, printed with its name, "240x240 Pixel" and "ST7789 Controller", above the black 40-pin socket that presses onto the Pi's header](/img/seedsigner/lcd-hat-back.webp)
+
+![The Pi camera module, printed "Raspberry Pi Camera Rev 1.3", with its lens in the middle of a small green board and the ribbon cable running from it to the Pi Zero behind](/img/seedsigner/camera-module.webp)
+
+</div>
 
 ## Step 2: Download and verify SeedSigner OS
 
@@ -71,10 +83,37 @@ Raspberry Pi Imager or balenaEtcher work too; if you use Raspberry Pi Imager, ch
 
 Step 4 puts the four parts together; no tools are needed unless your Pi Zero has no header:
 
+<div class="photo-aside">
+<div>
+
 1. Connect the camera. Lift the retaining clip on the Pi Zero's camera connector, insert the ribbon cable with the contacts facing the board, and press the clip closed. The Zero's connector is smaller than a full-size Pi's, which is why the Zero-specific ribbon matters.
 2. Seat the LCD HAT: press the WaveShare HAT onto the Pi's 40-pin GPIO header. If your Pi Zero came without a soldered header, you will need to solder one (or buy the "WH" variant with the header pre-installed).
 3. Insert the flashed microSD card and close up the case if you have one.
 4. Power it from any USB power source: a phone charger or a power bank is fine. SeedSigner has no battery and needs none; power off between sessions is the security model working as intended.
+
+</div>
+
+![The camera module and the Pi Zero WH laid flat and joined by the ribbon cable, which runs from the connector on the back of the camera board to the camera connector at the end of the Pi](/img/seedsigner/camera-connected.webp)
+
+</div>
+
+The build in these photos uses a Pi Zero WH, the Zero W with its header already soldered on, in a 3D-printed case. The Zero v1.3 has the same layout and goes together the same way.
+
+<div class="photo-pair">
+
+![A Pi Zero WH beside an orange 3D-printed case with the camera module lying in its bottom, joined to the Pi's camera connector by the narrow Zero-size ribbon cable](/img/seedsigner/camera-ribbon.webp)
+
+![The Pi Zero WH seated in the case above the camera, its 40-pin header facing up for the screen HAT and the ribbon cable folded at the end of the case](/img/seedsigner/pi-in-case.webp)
+
+</div>
+
+<div class="photo-pair">
+
+![The finished SeedSigner, powered off: the WaveShare HAT's square screen in the middle, the joystick on its left and the KEY1, KEY2 and KEY3 buttons on its right, filling the top of the case](/img/seedsigner/finished-top.webp)
+
+![The end of the finished SeedSigner, with the red and grey microSD card pushed into its slot through an opening in the case](/img/seedsigner/finished-microsd.webp)
+
+</div>
 
 First boot takes under a minute and lands on the SeedSigner home screen. The device never needs, and never asks for, a network connection.
 

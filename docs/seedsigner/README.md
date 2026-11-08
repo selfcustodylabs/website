@@ -26,7 +26,16 @@ Our favourite does not mean our recommendation for most people. SeedSigner adds 
 
 The [2026 Coldcard entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) reshaped how this site evaluates signing devices: what matters is not what a vendor promises, but what you can verify yourself. SeedSigner is the most complete answer to that standard we know of.
 
+<div class="photo-aside">
+<div>
+
 **Stateless by design.** SeedSigner never stores your seed. The seed exists in RAM only during a signing session and vanishes at power-off. There is no flash memory to extract, no PIN to brute-force, and nothing for a thief to find on the device.
+
+</div>
+
+![A finished SeedSigner, built on a Pi Zero WH in an orange 3D-printed case and powered off: a square screen between a joystick and three buttons on top, and openings in the side of the case for the Pi's ports](/img/seedsigner/finished-angle.webp)
+
+</div>
 
 **No vendor RNG to trust.** You supply the entropy yourself, typically with [dice rolls](/docs/learn/keys/random/), and you can re-derive the resulting seed independently to prove the device honored your input. The exact failure that cost Coldcard users $116M is structurally impossible: there is no vendor seed generation to silently go wrong.
 

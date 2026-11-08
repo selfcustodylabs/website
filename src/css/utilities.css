@@ -21,6 +21,20 @@
 }
 
 /*
+ * A self-hosted video clip, written as one line of HTML so the .md mirror can
+ * drop it; the sentence before it says what it shows. Width and height
+ * attributes on the element reserve its space before the poster loads.
+ */
+.doc-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: var(--scl-radius);
+  background: #000;
+}
+
+/*
  * Two photographs side by side (one above the other on a phone). Plain
  * Markdown images inside, so their alt text survives the .md mirrors.
  */

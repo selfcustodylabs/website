@@ -193,6 +193,10 @@ function normalize(raw, permalink, facts = "") {
       continue;
     }
 
+    // A <video> carries nothing an agent can read, and its src is root-relative:
+    // drop the line. Docs write it on one line, and the prose around it says what it shows.
+    if (/^<video\b.*<\/video>$/.test(trimmed)) continue;
+
     // The blog's excerpt marker (field notes): a page break for the list, not content.
     if (/^(<!--\s*truncate\s*-->|\{\/\*\s*truncate\s*\*\/\})$/.test(trimmed)) continue;
 
