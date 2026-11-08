@@ -50,21 +50,22 @@ On any other distribution, replace `debian` with the name of its list. As of Lib
 | Distribution | Name |
 |---|---|
 | Debian | `debian` |
-| Ubuntu 24.04 | `ubuntu2404` |
-| Other Ubuntu releases | `ubuntu` |
+| Ubuntu, any release | `ubuntu` |
 | Linux Mint | `mint` |
 | Fedora 38, 40, 41, 42 or 43 | `fedora` and the version, such as `fedora43` |
 | Arch Linux | `arch` |
 | Gentoo | `gentoo` |
 | Void Linux | `void` |
 
-`ls config/dependencies` shows the lists in your copy of lbmk, so check there if yours is not in the table.
+`ls config/dependencies` shows the lists in your copy of lbmk, so check there if yours is not in the table. It also shows a `ubuntu2404` list; use `ubuntu` instead, on 24.04 too. As of 26.10rev16 the `ubuntu2404` list leaves out three libraries flashprog needs (`libftdi1-dev`, `libgpiod-dev` and `libjaylink-dev`), and [building flashprog](/docs/libreboot/build-flashprog/) then stops with `The following features require libftdi1`. The `ubuntu` and `mint` lists are links to the `debian` list, which has them.
 
 The lists leave out one thing the 26.10 releases need: the 32-bit C library headers. Since 26.10rev4, building any ThinkPad's images also compiles a 32-bit copy of memtest86+ (used on 32-bit boards such as the X60), and on a 64-bit computer that needs those headers, which no list installs as of 26.10rev16. Without them the build stops with `fatal error: limits.h: No such file or directory`. On Debian, Ubuntu and Linux Mint they come with `gcc-multilib`:
 
 ```bash
 sudo apt install gcc-multilib
 ```
+
+apt then asks to remove the ARM and MIPS cross compilers from lbmk's list, `gcc-arm-linux-gnueabi` and `g++-mipsel-linux-gnu` with the packages they came with, because they conflict with `gcc-multilib`. A ThinkPad build uses neither, so answer yes. Running `./mk dependencies` again later swaps them back and removes `gcc-multilib`, so install `gcc-multilib` again after any rerun.
 
 On Arch Linux, [Libreboot's 26.10 release notes](https://libreboot.org/news/libreboot2610.html) name `lib32-glibc`, from the multilib repository.
 
