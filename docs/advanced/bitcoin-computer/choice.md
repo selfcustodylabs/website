@@ -18,8 +18,17 @@ Some people suggest buying a brand-new laptop for security, but a new laptop sti
 
 ## Which laptop fits your budget?
 
+<div class="photo-aside">
+<div>
+
 - Low budget: the Lenovo ThinkPad [X230](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) or [T430](https://psref.lenovo.com/syspool/sys/pdf/withdrawnbook/thinkpad_t430.pdf). Both are cheap second-hand, sturdy and easy to work on.
 - Medium budget: the Lenovo ThinkPad [T480s](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480s/ThinkPad_T480s_Spec.pdf). Supported by Libreboot since its December 2024 release, it takes NVMe SSDs and up to 24 GB of memory, and is fast enough for other bitcoin work too. It needs Lenovo's firmware updated before flashing; see the [requirements](/docs/libreboot/requirements/).
+
+</div>
+
+![A ThinkPad T480s, the medium-budget choice, booting Libreboot: the purple GRUB menu with the leaping-deer logo is on its screen](/img/libreboot/t480s.webp)
+
+</div>
 
 
 ## What precautions does a second-hand laptop need?

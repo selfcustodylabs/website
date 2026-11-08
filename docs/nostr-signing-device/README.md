@@ -53,6 +53,8 @@ The LILYGO T-Display is the signing hardware, the Horse extension connects it to
 
 </div>
 
+![The LILYGO T-Display 1.14, a small ESP32 board with a colour screen, connected by its USB-C cable and showing the LNbits logo after the firmware is flashed](/img/nsd/nsd.webp)
+
 ## What are the steps?
 
 | Step | Page |
