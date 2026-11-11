@@ -4155,6 +4155,22 @@
         "https://selfcustodylabs.com/#organization"
       ]
     },
+    "/donate/": {
+      "title": "Donate to Self Custody Labs | Self Custody Labs",
+      "description": "Donate Bitcoin to Self Custody Labs on-chain, and check the address against our PGP-signed statement before you send. A donation buys no coverage.",
+      "canonical": "https://selfcustodylabs.com/donate/",
+      "robots": [
+        "max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "ogImage": "https://selfcustodylabs.com/img/social-card.png",
+      "jsonLd": [
+        "Organization+EducationalOrganization",
+        "WebSite"
+      ],
+      "organizationIds": [
+        "https://selfcustodylabs.com/#organization"
+      ]
+    },
     "/guides/": {
       "title": "Bitcoin Self-Custody Guides: Setup, Security & Privacy | Self Custody Labs",
       "description": "Step-by-step Bitcoin guides: hardware wallet setup, seed generation, multisig configuration, node setup, privacy tools, and security best practices.",
@@ -4669,6 +4685,7 @@
     "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/bitbox02-nova/",
     "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/jade-plus/",
     "https://selfcustodylabs.com/docs/wallet-setup/hardware-wallet/trezor-safe-5/",
+    "https://selfcustodylabs.com/donate/",
     "https://selfcustodylabs.com/guides/",
     "https://selfcustodylabs.com/learn/",
     "https://selfcustodylabs.com/notes/",

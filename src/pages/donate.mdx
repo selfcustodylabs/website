@@ -1,0 +1,35 @@
+---
+title: Donate to Self Custody Labs
+description: Donate Bitcoin to Self Custody Labs on-chain, and check the address against our PGP-signed statement before you send. A donation buys no coverage.
+keywords: [donate bitcoin, self custody labs donation, support self custody labs, bitcoin donation address, pgp signed bitcoin address]
+---
+
+import DonationAddress from '@site/src/components/DonationAddress';
+
+# Donate to Self Custody Labs
+
+Self Custody Labs is paid for by its readers: there are no ads, affiliate links or sponsors, and every page is free to read. You can donate Bitcoin on-chain to the address below. Check it against our signed statement before you send, because anyone who took over this website could change the address on it.
+
+<DonationAddress />
+
+## How do you check that the donation address is ours?
+
+The donation address is in a statement signed with the Self Custody Labs PGP key, the key [Keybase](https://keybase.io/selfcustodylabs) links to this domain and to our other accounts. Fetch the key from Keybase rather than from this site, so that whoever changes this site cannot also change the key that vouches for the address. With [GnuPG](https://gnupg.org/) installed:
+
+```bash
+curl -s https://keybase.io/selfcustodylabs/pgp_keys.asc | gpg --import
+curl -sO https://selfcustodylabs.com/donate.txt.asc
+gpg --verify donate.txt.asc
+```
+
+`gpg` should report a good signature from Self Custody Labs, made by the key whose fingerprint is `9501 AF31 C2F8 6F3D B9FC 4078 DF97 DEF6 3B8F 86DC`, the same one our Keybase profile shows. It also warns that the key is not certified with a trusted signature, which only means you have not signed the key yourself. Then open `donate.txt.asc`: the address in it must match the one above, character for character. If the signature fails or the two addresses differ, do not send anything, and [tell us](mailto:selfcustodylabs@proton.me).
+
+After you paste the address into your wallet, compare it again on the screen where you confirm the payment, and on your hardware wallet's screen if you use one. Clipboard malware replaces a copied Bitcoin address with its own, and the confirmation screen is the last place to catch it.
+
+## Is a Bitcoin donation private?
+
+No. The donation address is one address, published once, so every donation to it is public on the blockchain: anyone can look it up and see each payment, and the transaction ties the coins you paid with, and your change, to this site. If that matters to you, send from coins that are not tied to your name and not straight from an exchange, which keeps a record of where each withdrawal went. [Protecting your privacy](/docs/learn/privacy/protecting-privacy/) and [UTXO management](/docs/learn/privacy/utxo-management/) cover how. We do not ask who you are, and we publish no list of donors.
+
+## What does a donation change?
+
+A donation changes nothing about what we write. It buys no coverage, no ranking, no review and no change to a recommendation, and an on-chain payment does not tell us who sent it. How we decide what to recommend, and the positions we hold, are on [About](/about/).

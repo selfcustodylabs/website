@@ -1,0 +1,83 @@
+/* Selectors start at .donation: inside an MDX page the prose rules (.mdx-page article p, a, code) would otherwise win. */
+
+/* Words left, the QR as the evidence band right, as on a cover; on phones the
+   QR follows the words. No bottom rule: the next H2 draws its own. */
+.donation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.75rem;
+  align-items: center;
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--scl-dim2);
+}
+
+.donation .label {
+  margin: 0 0 0.5rem;
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: var(--scl-label-size);
+  font-weight: 600;
+  letter-spacing: var(--scl-label-track);
+  text-transform: uppercase;
+}
+
+/* The whole address stays in view on a phone: it wraps instead of scrolling,
+   clear of the copy button. */
+.donation pre code {
+  padding-right: 3rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Copying is the one action here, so its button does not wait for a hover. */
+.donation [class*="buttonGroup"] button {
+  opacity: 1;
+}
+
+.donation .facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+  margin: 0;
+}
+
+.donation .fact {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.donation .fact dt {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.donation .fact dd {
+  margin: 0;
+  color: var(--scl-ink);
+  font-size: 0.875rem;
+}
+
+.donation .fact .mono {
+  font-family: var(--scl-font-mono);
+  font-size: 0.8rem;
+}
+
+.donation .qr {
+  display: block;
+  width: 246px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 760px) {
+  .donation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

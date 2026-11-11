@@ -13,7 +13,9 @@
  *   node scripts/check-content.mjs --strict   warnings fail too
  */
 
-import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { readFileSync, readdirSync, statSync, existsSync, mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join, relative, sep } from "node:path";
 import yaml from "js-yaml";
 
@@ -228,6 +230,41 @@ for (const url of Object.keys(manifest)) {
   }
   for (const f of present) {
     if (!expected.has(f)) errors.push(`static/worksheets/${f} has no worksheet in src/data/worksheets.js`);
+  }
+}
+
+// Donations: the QR and the signed statement must carry the address /donate/
+// shows, and the statement must be signed by the Self Custody Labs key, checked
+// against the copy in scripts/assets so no network is needed.
+{
+  const { address, pgpFingerprint } = JSON.parse(readFileSync(join(ROOT, "src/data/donation.json"), "utf8"));
+  const qr = readFileSync(join(ROOT, "static/img/donate-qr.svg"), "utf8").match(/payload: (\S+)/)?.[1];
+  if (qr !== `bitcoin:${address}`) {
+    errors.push(`static/img/donate-qr.svg encodes ${qr}, not bitcoin:${address} (npm run donate-qr)`);
+  }
+  const statement = join(ROOT, "static/donate.txt.asc");
+  if (!existsSync(statement)) {
+    errors.push("static/donate.txt.asc is missing: clearsign the donation statement with the Self Custody Labs key");
+  } else {
+    const home = mkdtempSync(join(tmpdir(), "scl-gpg-"));
+    const gpg = (...a) =>
+      spawnSync("gpg", ["--homedir", home, "--batch", "--status-fd", "2", ...a], { encoding: "utf8" });
+    try {
+      const imported = gpg("--import", join(ROOT, "scripts/assets/scl-pgp-key.asc"));
+      if (imported.error) throw new Error("gpg is needed to check static/donate.txt.asc");
+      const { stdout, stderr } = gpg("--output", "-", "--decrypt", statement);
+      const validsig = stderr.match(/^\[GNUPG:\] VALIDSIG .*$/m)?.[0].split(" ");
+      if (!/^\[GNUPG:\] GOODSIG /m.test(stderr) || validsig?.at(-1) !== pgpFingerprint) {
+        errors.push(`static/donate.txt.asc is not validly signed by ${pgpFingerprint}`);
+      } else if (!stdout.includes(address)) {
+        errors.push(`static/donate.txt.asc does not state ${address}`);
+      }
+    } catch (e) {
+      errors.push(e.message);
+    } finally {
+      spawnSync("gpgconf", ["--homedir", home, "--kill", "all"]);
+      rmSync(home, { recursive: true, force: true });
+    }
   }
 }
 

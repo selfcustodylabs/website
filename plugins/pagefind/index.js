@@ -26,7 +26,7 @@
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 
-const STANDALONE = new Set(["/about/", "/books/", "/podcasts/", "/privacy/"]);
+const STANDALONE = new Set(["/about/", "/books/", "/donate/", "/podcasts/", "/privacy/"]);
 
 /** @param {string} route */
 export function isSearchable(route) {

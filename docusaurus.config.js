@@ -382,6 +382,7 @@ const config = {
           // NOTE: onBrokenLinks does not walk themeConfig, so internal routes here
           // are not link-checked by the build. Verify them by hand.
           { label: 'About', to: '/about/', position: 'right' },
+          { label: 'Donate', to: '/donate/', position: 'right' },
         ],
       },
       
@@ -474,6 +475,10 @@ const config = {
               {
                 label: 'About',
                 to: '/about/',
+              },
+              {
+                label: 'Donate',
+                to: '/donate/',
               },
               {
                 label: 'Privacy Policy',

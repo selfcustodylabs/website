@@ -16,6 +16,7 @@
     "og": "python3 scripts/generate-og-images.py",
     "worksheets": "node scripts/build-worksheets.mjs",
     "images": "python3 scripts/optimize-images.py",
+    "donate-qr": "python3 scripts/generate-donate-qr.py",
     "seo:check": "node scripts/seo-snapshot.mjs --compare scripts/seo-baseline.json",
     "seo:accept": "node scripts/seo-snapshot.mjs --write scripts/seo-baseline.json",
     "verify": "npm run lint && npm run check && python3 scripts/optimize-images.py --check && npm run build && npm run seo:check"
