@@ -11,12 +11,21 @@
  *
  * `text` is plain text with Markdown-style links, `[label](/path/)`, rendered
  * by src/components/InlineLinks.jsx. Nothing else of Markdown is supported.
+ *
+ * The first position is set large on the homepage, with its optional `figures`
+ * (label and value pairs) in a window beside the text. Figures repeat numbers
+ * from `text`, so change both together.
  */
 export const positions = [
   {
     subject: "Coldcard",
     stance: "warned, not recommended",
     text: "The [2026 entropy incident](/docs/learn/wallets/coldcard-entropy-incident/) drained roughly 1,816 BTC from more than 5,200 addresses through a seed-generation flaw that went undetected for 1,978 days, after a developer's warning about the same code was dismissed in 2025. Coinkite fixed it quickly once draining began. We still point new buyers elsewhere.",
+    figures: [
+      ["Drained", "About 1,816 BTC"],
+      ["Addresses", "More than 5,200"],
+      ["Undetected", "1,978 days"],
+    ],
   },
   {
     subject: "SeedSigner",

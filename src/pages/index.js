@@ -6,18 +6,12 @@ import Cover from "@site/src/components/landing/Cover";
 import CoverPath from "@site/src/components/landing/CoverPath";
 import Section from "@site/src/components/landing/Section";
 import RouteFlow from "@site/src/components/landing/RouteFlow";
-import GuideCards from "@site/src/components/landing/GuideCards";
-import NoteCards from "@site/src/components/landing/NoteCards";
-import InlineLinks from "@site/src/components/InlineLinks";
-import { notes, getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
+import HomeBento from "@site/src/components/landing/HomeBento";
+import { Arrow } from "@site/src/components/landing/Bento";
+import { getDoc, allGuides, lastChange } from "@site/src/components/landing/siteIndex";
 import { currentAdvisory } from "@site/src/data/advisories";
-import { positions } from "@site/src/data/positions";
 import { formatDate } from "@site/src/data/guideFacts";
 import styles from "@site/src/components/landing/landing.module.css";
-
-import t480s from "@site/src/components/landing/img/t480s-libreboot.webp";
-import pico from "@site/src/components/landing/img/pico-clip.webp";
-import dice from "@site/src/components/landing/img/casino-dice.webp";
 
 /** The cover's band: the share card's three things, in the order you do them, each with its page. */
 const PATH = [
@@ -60,40 +54,6 @@ const ROUTES = [
   },
 ];
 
-/** The guides most readers need, in the order they usually need them. The first is set large. */
-const FEATURED = [
-  "/docs/learn/keys/random/",
-  "/docs/learn/keys/passphrase/",
-  "/docs/wallet-setup/hardware-wallet/",
-  "/docs/wallet-setup/backup-verification/",
-  "/docs/learn/wallets/multisig/",
-  "/docs/seedsigner/",
-  "/docs/bitcoin-node/",
-];
-
-const FIGURES = [
-  {
-    src: t480s,
-    alt: "A ThinkPad T480s on a wooden desk, showing the purple Libreboot GRUB menu with its leaping-deer logo.",
-    caption: "A ThinkPad T480s at the GRUB menu of Libreboot 20241206, after flashing.",
-    link: ["/docs/libreboot/", "Libreboot guide"],
-  },
-  {
-    src: pico,
-    alt: "A Raspberry Pi Pico wired with jumper leads to a blue SOIC8 clip on a ThinkPad motherboard's flash chip, with a red test hook on a second chip.",
-    caption:
-      "Flashing from a Raspberry Pi Pico: the clip sits on the flash chip and the red hook holds the second chip's CS# pin at 3.3V.",
-    link: ["/docs/libreboot/raspberry-pico/connection/", "Wiring the Pico"],
-  },
-  {
-    src: dice,
-    alt: "Translucent blue and green casino dice with flush white pips on a grey counter.",
-    caption:
-      "Casino dice: precision-machined with flush, filled pips, so every face weighs the same. The entropy source for a seed you make yourself.",
-    link: ["/docs/learn/keys/random/", "Dice seed guide"],
-  },
-];
-
 function Bulletin({ advisory }) {
   return (
     <aside className={styles.bulletin} aria-label="Current advisory">
@@ -116,7 +76,6 @@ function Bulletin({ advisory }) {
 
 export default function Home() {
   const guides = allGuides();
-  const featured = FEATURED.map(getDoc);
   const updated = formatDate(lastChange());
 
   return (
@@ -161,69 +120,31 @@ export default function Home() {
           <div className={styles.actions}>
             <Link to="/docs/learn/fundamentals/" className={styles.primary}>
               Start here
+              <Arrow />
             </Link>
-            <Link to="/guides/" className={styles.link}>
+            <Link to="/guides/" className={styles.secondary}>
               All {guides.length} guides
+            </Link>
+            <Link to="/learn/" className={styles.secondary}>
+              Learn the concepts
+            </Link>
+            <Link to="/worksheets/" className={styles.secondary}>
+              Worksheets
             </Link>
           </div>
         </Cover>
 
         <div className={styles.wide}>
-          <Section id="start" title="Where are you starting from">
+          <Section
+            id="start"
+            eyebrow={`Start · ${ROUTES.length} situations`}
+            title="Where are you starting from?"
+            description="Pick the line that describes you. Each names the page to read first and the one after it."
+          >
             <RouteFlow routes={ROUTES} />
           </Section>
 
-          <Section
-            id="guides"
-            title="The guides"
-            aside={<Link to="/guides/">All {guides.length} guides</Link>}
-          >
-            <GuideCards guides={featured} />
-          </Section>
-
-          <Section
-            id="positions"
-            title="Where we stand"
-            aside={<Link to="/about/">Why, and how we decide</Link>}
-          >
-            <dl className={styles.positions}>
-              {positions.map((p) => (
-                <div key={p.subject} className={styles.position}>
-                  <dt>
-                    <span className={styles.subject}>{p.subject}</span>
-                    <span className={styles.stance}>{p.stance}</span>
-                  </dt>
-                  <dd>
-                    <InlineLinks text={p.text} />
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Section>
-
-          {notes.length > 0 ? (
-            <Section
-              id="notes"
-              title="Field notes"
-              aside={<Link to="/notes/">All {notes.length} notes</Link>}
-            >
-              <NoteCards notes={notes.slice(0, 3)} />
-            </Section>
-          ) : null}
-
-          <Section id="hardware" title="Hardware in the guides">
-            <div className={styles.figures}>
-              {FIGURES.map((f, i) => (
-                <figure key={f.link[0]} className={styles.figure}>
-                  <img src={f.src} alt={f.alt} width="800" height="600" loading="lazy" decoding="async" />
-                  <figcaption>
-                    <span className={styles.figNo}>Fig. {i + 1}</span>
-                    {f.caption} <Link to={f.link[0]}>{f.link[1]}</Link>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </Section>
+          <HomeBento />
 
           <p className={styles.closing}>
             Self Custody Labs is published under a pseudonym, with the full source and history of every

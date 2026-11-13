@@ -13,7 +13,7 @@
  *
  * Shape:
  *   docs:     { [permalink]: { title, name, lead, brief, eyebrow, plate, band, label,
- *               description, sidebar, order, guide, updated } }
+ *               description, sidebar, order, guide, steps, command, updated } }
  *   sidebars: { [sidebarId]: [{ label, link, items: [permalink] }] }
  *   notes:    [{ permalink, title, description, date, plate, band }], newest first
  *             (field notes, from the blog plugin, for the homepage)
@@ -28,6 +28,10 @@
  *   eyebrow, plate, band  as on the page's OG card: the section trail, the
  *            SHA-256 plate mark, and the card's right band from
  *            static/img/og/band/ (scripts/generate-og-images.py)
+ *   steps    the names of the page's `## Step N: ...` headings (the same steps
+ *            plugins/structured-data turns into HowTo), or null
+ *   command  the page's first one-line shell block (```bash, ```sh), or null:
+ *            what a card shows and copies is then what the page says to run
  *
  * Permalinks always end in a slash (trailingSlash: true), so they can be used
  * as links and as JSON-LD URLs as they are. `updated` is "YYYY-MM-DD" from git,
@@ -73,16 +77,32 @@ function eyebrowOf(url) {
 /**
  * The page's H1 and the first sentence of the paragraph under it.
  *
- * @param {string} source - the doc file, frontmatter included
+ * @param {Array<object>} list - the page's blocks, from blocks()
  */
-function opening(source) {
-  const list = blocks(source.replace(/^---\n[\s\S]*?\n---\n/, ""));
+function opening(list) {
   const h1 = list.findIndex((b) => b.type === "heading" && b.level === 1);
   if (h1 < 0) return { name: null, lead: null };
   const next = list.slice(h1 + 1).find((b) => b.type !== "code");
   const para = next?.type === "text" ? plain(next.lines.join(" ")) : "";
   const lead = para.split(/(?<=[.!?])\s+(?=[A-Z0-9"(])/)[0] || null;
   return { name: list[h1].text, lead };
+}
+
+const STEP = /^Step \d+:\s*(.+)$/;
+
+/** The names of the page's `## Step N: ...` headings, or null when it has none. */
+function stepsOf(list) {
+  const steps = list
+    .filter((b) => b.type === "heading" && b.level === 2)
+    .map((b) => b.text.match(STEP)?.[1])
+    .filter(Boolean);
+  return steps.length > 0 ? steps : null;
+}
+
+/** The body's first shell code block that is a single line, or null. */
+function commandOf(body) {
+  const m = body.match(/^(`{3,})(?:bash|sh|shell)[^\n]*\n([^\n]+)\n\1[ \t]*$/m);
+  return m ? m[2].trim() : null;
 }
 
 /** A long lead cut at its first colon or semicolon, which is where the answer ends and the detail starts. */
@@ -179,7 +199,9 @@ export default function siteIndexPlugin(context) {
       for (const doc of all) {
         const url = withSlash(doc.permalink);
         const source = readFileSync(join(context.siteDir, doc.source.replace(/^@site\//, "")), "utf8");
-        const { name, lead } = opening(source);
+        const body = source.replace(/^---\n[\s\S]*?\n---\n/, "");
+        const list = blocks(body);
+        const { name, lead } = opening(list);
         docs[url] = {
           title: doc.title,
           name: name ?? doc.title,
@@ -193,6 +215,8 @@ export default function siteIndexPlugin(context) {
           sidebar: doc.sidebar ?? null,
           order: order.get(doc.id) ?? Number.MAX_SAFE_INTEGER,
           guide: doc.frontMatter?.guide ?? null,
+          steps: stepsOf(list),
+          command: commandOf(body),
           updated: doc.lastUpdatedAt ? new Date(doc.lastUpdatedAt).toISOString().slice(0, 10) : null,
         };
       }

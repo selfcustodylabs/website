@@ -1,0 +1,941 @@
+/*
+ * Cards for the homepage and /guides/, laid out as in the Feryx docs homepage
+ * (Nov 2026): a large feature card, wide cards with art or a window on the
+ * right, small cards, and cards with a picture on top, in bento grids. Drawn in
+ * the lab-manual grammar: hairlines, 6px radii, amber only for the subject, and
+ * hover is a colour (the card's border, its title, its action), never a lift.
+ */
+
+/* ---------- grids ---------- */
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(13.5rem, auto);
+  gap: 1rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* /guides/: a group's first guide over two columns, the rest one each, and
+   the last one widened to fill its row (GuideGrid.jsx). */
+.guides {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.span3 {
+  grid-column: span 3;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+/* ---------- card ---------- */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: var(--scl-rule);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
+  transition: border-color 0.2s ease;
+}
+
+.card:has(.cardLink):hover {
+  border-color: var(--scl-dim2);
+}
+
+.title {
+  margin: 0;
+  color: var(--scl-ink);
+  font-size: 1.18rem;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.titleLarge {
+  font-size: clamp(1.4rem, 2.3vw, 1.75rem);
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+}
+
+.titleSmall {
+  font-size: 1.03rem;
+}
+
+.cardLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cardLink:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cardLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--scl-radius);
+}
+
+.card:hover .cardLink {
+  color: var(--scl-amber-lit);
+}
+
+.cardLink:focus-visible {
+  outline: none;
+}
+
+.cardLink:focus-visible::after {
+  box-shadow: inset 0 0 0 2px var(--scl-amber);
+}
+
+/* Links and buttons inside a card sit above the title's link. */
+.over {
+  position: relative;
+  z-index: 2;
+}
+
+.text {
+  margin: 0;
+  color: var(--scl-muted);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.lead {
+  max-width: 48ch;
+  color: var(--scl-ink-2);
+  font-size: 1rem;
+}
+
+.prose a {
+  position: relative;
+  z-index: 2;
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.prose a:hover {
+  color: var(--scl-amber-lit);
+}
+
+.label {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.pill {
+  align-self: flex-start;
+  padding: 0.32rem 0.62rem;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 4px;
+  background: var(--scl-amber-wash);
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.cta {
+  position: relative;
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  padding: 0.66rem 1rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: 4px;
+  color: var(--scl-ink);
+  font-family: var(--scl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.cta svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.card:hover .cta {
+  border-color: var(--scl-amber);
+  background: var(--scl-amber);
+  color: var(--scl-bg);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.chips li {
+  margin: 0;
+  padding: 0.24rem 0.6rem;
+  border: 1px solid var(--scl-dim);
+  border-radius: 4px;
+  background: var(--scl-bg);
+  color: var(--scl-ink-2);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+ol.chips li::before {
+  content: counter(step);
+  counter-increment: step;
+  margin-right: 0.42rem;
+  color: var(--scl-amber);
+  font-family: var(--scl-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.chipsSmall li {
+  padding: 0.18rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* A guide's time and level under its text. */
+.spec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: auto 0 0;
+  padding-top: 0.35rem;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.tile {
+  display: block;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  overflow: hidden;
+  border: 1px solid var(--scl-dim);
+  border-radius: var(--scl-radius);
+  background: var(--scl-band);
+}
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The OG band beside the words. Bands are drawn on --scl-band, so `contain`
+   shows the whole drawing with no visible edge. */
+.art {
+  position: relative;
+  min-height: 12rem;
+  overflow: hidden;
+  border-left: var(--scl-rule);
+  background: var(--scl-band);
+}
+
+.art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.none {
+  color: var(--scl-faint);
+}
+
+/* ---------- windows ---------- */
+
+.win {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--scl-dim);
+  border-radius: 4px;
+  background: var(--scl-bg);
+}
+
+.winBar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--scl-dim);
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.winBar a {
+  color: var(--scl-ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.2em;
+}
+
+.winBar a:hover {
+  color: var(--scl-amber-lit);
+}
+
+.winTag {
+  color: var(--scl-muted);
+  white-space: nowrap;
+}
+
+.code {
+  margin: 0;
+  padding: 0.85rem 0.9rem;
+  overflow-x: auto;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--scl-ink-2);
+  font-family: var(--scl-font-mono);
+  font-size: 0.8rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.prompt {
+  color: var(--scl-amber);
+  user-select: none;
+}
+
+.kv {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 0.85rem 0.85rem;
+}
+
+.kv > div {
+  display: grid;
+  grid-template-columns: 5.6rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.kv dt {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--scl-ink-2);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.ok {
+  color: var(--scl-ok) !important;
+}
+
+/* Three columns: name, year, what happened. */
+.kv3 > div {
+  grid-template-columns: 4.6rem 2.6rem minmax(0, 1fr);
+}
+
+.year {
+  color: var(--scl-faint) !important;
+  font-family: var(--scl-font-mono);
+  font-size: 0.74rem !important;
+}
+
+.copy {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin: -0.35rem -0.55rem;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--scl-ink-2);
+  font: inherit;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: var(--scl-raised);
+  color: var(--scl-ink);
+}
+
+.copy:focus-visible {
+  outline: 2px solid var(--scl-amber);
+}
+
+.copy svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+/* A one-line window at the top of a small card. */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.6rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--scl-dim);
+  border-radius: 4px;
+  background: var(--scl-bg);
+  color: var(--scl-ink-2);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.stripKey {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- feature: words left, band right, like the OG card ---------- */
+
+.feature {
+  grid-row: span 2;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.66fr);
+  min-height: 28rem;
+}
+
+.featureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+  padding: 1.75rem;
+}
+
+/* The section's pages in reading order, at the foot of the feature card. */
+.toc {
+  position: relative;
+  z-index: 2;
+  margin: auto 0 0.4rem;
+  padding: 0;
+  border-top: var(--scl-rule);
+  list-style: none;
+}
+
+.toc li {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0.42rem 0;
+  border-bottom: var(--scl-rule);
+  font-size: 0.88rem;
+}
+
+.tocNo {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.toc a {
+  color: var(--scl-ink-2);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--scl-amber-lit);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- wide card: words left, art or a window right ---------- */
+
+.side {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11.5rem;
+}
+
+.sideBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+  min-width: 0;
+  padding: 1.5rem;
+}
+
+.sideBody .chips {
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.sideWin {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.sideWinBox {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.25rem 0;
+}
+
+.sideWinBox > div {
+  width: 100%;
+}
+
+/* ---------- stacked feature: head, words, steps, then a window at the foot ---------- */
+
+.stack {
+  gap: 1rem;
+  padding: 1.75rem;
+}
+
+.stackHead {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.stackWin {
+  z-index: 2;
+  margin-top: auto;
+}
+
+.devices {
+  margin: 0;
+  padding: 0.35rem 0.85rem 0.5rem;
+  list-style: none;
+}
+
+.devices li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 9.5rem;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: var(--scl-rule);
+  font-size: 0.88rem;
+}
+
+.devices li:last-child {
+  border-bottom: 0;
+}
+
+.devices a {
+  color: var(--scl-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--scl-amber);
+  text-underline-offset: 0.22em;
+}
+
+.devices a:hover {
+  color: var(--scl-amber-lit);
+}
+
+.devCost {
+  color: var(--scl-muted);
+  font-family: var(--scl-font-mono);
+  font-size: 0.78rem;
+}
+
+.devLevel {
+  color: var(--scl-muted);
+  font-size: 0.8rem;
+}
+
+/* ---------- small card ---------- */
+
+.small {
+  gap: 0.7rem;
+  padding: 1.4rem;
+}
+
+.small .chips {
+  margin-top: auto;
+  padding-top: 0.2rem;
+}
+
+/* ---------- picture on top ---------- */
+
+.media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 11rem;
+  overflow: hidden;
+  border-bottom: var(--scl-rule);
+  background: var(--scl-bg);
+}
+
+.mediaPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.82;
+}
+
+/* A note's band, whole, standing in the middle like a plate. */
+.mediaPlate {
+  width: auto;
+  height: 100%;
+}
+
+.badge {
+  position: absolute;
+  bottom: 0.7rem;
+  left: 0.8rem;
+  z-index: 1;
+  padding: 0.22rem 0.55rem;
+  border: 1px solid var(--scl-dim);
+  border-radius: 4px;
+  background: rgba(8, 9, 11, 0.86);
+  color: var(--scl-ink-2);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.mediaBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.62rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+/* Passphrase: the same 24 words, two wallets. */
+.pp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: 4px;
+  background: var(--scl-band);
+}
+
+.ppRow {
+  display: grid;
+  grid-template-columns: auto auto 6.6rem auto auto;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--scl-muted);
+  font-family: var(--scl-font-mono);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.ppRow span {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--scl-dim);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.ppRow i {
+  color: var(--scl-faint);
+  font-style: normal;
+}
+
+.ppNone {
+  color: var(--scl-faint);
+}
+
+.ppLit span:nth-of-type(n + 2) {
+  border-color: var(--scl-amber);
+  color: var(--scl-amber-lit);
+}
+
+/* Backup check: the same addresses on both sides. */
+.bv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 0.8rem;
+  width: min(17rem, 80%);
+}
+
+.bvCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.7rem;
+  border: 1px solid var(--scl-dim2);
+  border-radius: 4px;
+  background: var(--scl-band);
+}
+
+.bvHead {
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.bvRow {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  color: var(--scl-faint);
+  font-family: var(--scl-font-mono);
+  font-size: 0.6rem;
+}
+
+.bvRow i {
+  height: 5px;
+  border-radius: 2px;
+  background: var(--scl-dim2);
+}
+
+.bvOk {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--scl-ok);
+  border-radius: 4px;
+  color: var(--scl-ok);
+  font-family: var(--scl-font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* ---------- positions ---------- */
+
+.position {
+  gap: 0.6rem;
+}
+
+.positionLead {
+  gap: 0.9rem;
+  padding: 1.75rem;
+}
+
+/* positions.js keeps stances lower case for /about/, where they follow a colon. */
+.stance::first-letter {
+  text-transform: uppercase;
+}
+
+.figures {
+  margin-top: auto;
+}
+
+/* ---------- /guides/ ---------- */
+
+.guideCard {
+  gap: 1.1rem;
+  padding: 0.8rem 0.8rem 1.35rem;
+}
+
+.guideBody {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0 0.45rem;
+}
+
+.guideText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.guideText .text {
+  font-size: 0.87rem;
+}
+
+.guideFeature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.78fr);
+  gap: 1.5rem;
+  padding: 1.6rem;
+}
+
+.guideFeature.span3 {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.6fr);
+}
+
+.guideFeatureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.needs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* ---------- smaller screens ---------- */
+
+@media (max-width: 1180px) {
+  .side {
+    grid-template-columns: minmax(0, 1fr) 9rem;
+  }
+
+  .sideWin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sideWinBox {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .devices li {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .devLevel {
+    display: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature,
+  .tall {
+    grid-row: auto;
+  }
+
+  .guides {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guides .span2,
+  .guides .span3 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bento,
+  .guides {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .span2,
+  .span3,
+  .feature,
+  .side,
+  .guides .span2,
+  .guides .span3 {
+    grid-column: auto;
+  }
+
+  .feature,
+  .side,
+  .guideFeature,
+  .guideFeature.span3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .feature {
+    min-height: 0;
+  }
+
+  .feature .art {
+    order: -1;
+    height: 13rem;
+    border-bottom: var(--scl-rule);
+    border-left: 0;
+  }
+
+  .side .art {
+    display: none;
+  }
+
+  .featureBody,
+  .stack,
+  .positionLead {
+    padding: 1.35rem;
+  }
+
+  .ppRow {
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+  }
+}

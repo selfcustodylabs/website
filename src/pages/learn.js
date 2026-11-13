@@ -6,6 +6,7 @@ import Head from "@docusaurus/Head";
 import Cover, { CoverMosaic } from "@site/src/components/landing/Cover";
 import Section from "@site/src/components/landing/Section";
 import PageRows from "@site/src/components/landing/PageRows";
+import { Arrow } from "@site/src/components/landing/Bento";
 import { sidebars, getDoc, absolute } from "@site/src/components/landing/siteIndex";
 import styles from "@site/src/components/landing/landing.module.css";
 
@@ -20,6 +21,41 @@ const REFERENCE = [
   "/docs/reference/address-types/",
   "/docs/reference/faq/",
 ];
+
+/**
+ * Each learn sidebar category's heading and one-line description, by its
+ * sidebar label. A category missing here fails the build: give it a heading
+ * rather than letting it show as a bare label.
+ */
+const HEADINGS = {
+  "Start Here": [
+    "What bitcoin and self-custody are",
+    "Read these first: what bitcoin is, what holding your own keys means, and which setup fits you.",
+  ],
+  "Keys & Seeds": [
+    "How keys and seed phrases work",
+    "Private keys, seed phrases, xpubs and derivation paths, then making a seed with dice and adding a passphrase.",
+  ],
+  Wallets: [
+    "The kinds of wallet",
+    "Software, hardware and air-gapped wallets, multisig, and the Coldcard incident that changed our recommendations.",
+  ],
+  Transactions: [
+    "How transactions move coins",
+    "UTXOs, how a transaction is built, signed and broadcast, the fee you pay, and the types you will meet.",
+  ],
+  Privacy: [
+    "Privacy on a public ledger",
+    "What chain analysis can see, how to manage your coins, and when CoinJoin or PayJoin is worth it.",
+  ],
+  Nodes: ["What a node does", "What a Bitcoin node is, and why running your own changes what your wallet gives away."],
+};
+
+function headingFor(label) {
+  const heading = HEADINGS[label];
+  if (!heading) throw new Error(`[learn] sidebar category "${label}" has no heading in src/pages/learn.js`);
+  return heading;
+}
 
 const slug = (label) => label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -80,24 +116,47 @@ export default function LearnPage() {
           <div className={styles.actions}>
             <Link to="/docs/learn/fundamentals/" className={styles.primary}>
               Read from the start
+              <Arrow />
             </Link>
-            <Link to="/guides/" className={styles.link}>
+            <Link to="/guides/" className={styles.secondary}>
               Hands-on guides
+            </Link>
+            <Link to="/docs/reference/glossary/" className={styles.secondary}>
+              Glossary
+            </Link>
+            <Link to="/docs/reference/faq/" className={styles.secondary}>
+              FAQ
             </Link>
           </div>
         </Cover>
 
         <div className={styles.wide}>
-          {sections.map((section) => (
-            <Section key={section.label} id={slug(section.label)} title={section.label}>
-              <PageRows pages={section.pages.map(getDoc)} />
-            </Section>
-          ))}
+          {sections.map((section, i) => {
+            const [title, description] = headingFor(section.label);
+            return (
+              <Section
+                key={section.label}
+                id={slug(section.label)}
+                number={String(i + 1).padStart(2, "0")}
+                eyebrow={section.label.replace("&", "and")}
+                title={title}
+                description={description}
+              >
+                <PageRows pages={section.pages.map(getDoc)} />
+              </Section>
+            );
+          })}
 
           <Section
             id="reference"
-            title="Reference"
-            aside={<Link to="/docs/reference/">All reference pages</Link>}
+            eyebrow={`Reference · ${REFERENCE.length}`}
+            title="Keep these open while you read"
+            description={
+              <>
+                Definitions, prices and address prefixes to check against.{" "}
+                <Link to="/docs/reference/">All reference pages</Link>
+              </>
+            }
           >
             <PageRows pages={REFERENCE.map(getDoc)} />
           </Section>

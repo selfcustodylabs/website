@@ -2,30 +2,26 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import { Dates, FactList, pageCount } from "./GuideSpec";
 import styles from "./lists.module.css";
 
 /**
- * Pages as rows: the OG card's band as a thumbnail, the page's H1 and the first
- * sentence of its opening answer. With `guides`, each row also carries the
- * guide's time, cost, level and dates.
+ * Pages as rows (/learn/): the OG card's band as a thumbnail, the page's H1 and
+ * the first sentence of its opening answer.
  *
  * @param {object} props
  * @param {Array<object>} props.pages - siteIndex entries
- * @param {boolean} [props.guides] - rows are hands-on guides with `guide` facts
  */
-export default function PageRows({ pages, guides = false }) {
+export default function PageRows({ pages }) {
   return (
-    <ul className={`${styles.rows} ${guides ? styles.guideRows : ""}`}>
+    <ul className={styles.rows}>
       {pages.map((page) => (
-        <PageRow key={page.permalink} page={page} guides={guides} />
+        <PageRow key={page.permalink} page={page} />
       ))}
     </ul>
   );
 }
 
-function PageRow({ page, guides }) {
-  const pages = guides ? pageCount(page.permalink) : null;
+function PageRow({ page }) {
   return (
     <li className={styles.row}>
       <img
@@ -42,18 +38,7 @@ function PageRow({ page, guides }) {
           <Link to={page.permalink}>{page.name}</Link>
         </h3>
         <p className={styles.rowLead}>{page.lead}</p>
-        {pages ? <span className={styles.rowMeta}>{pages} pages</span> : null}
       </div>
-      {guides ? (
-        <FactList guide={page.guide} className={styles.rowFacts}>
-          <div>
-            <dt>Updated</dt>
-            <dd className={styles.date}>
-              <Dates page={page} />
-            </dd>
-          </div>
-        </FactList>
-      ) : null}
     </li>
   );
 }

@@ -22,10 +22,9 @@
   outline-offset: 1px;
 }
 
+/* Type and colour from .primary (landing.module.css); the input's height. */
 .search button {
-  border: 0;
-  font: inherit;
-  font-weight: 600;
+  height: 2.75rem;
   cursor: pointer;
 }
 
